@@ -18,19 +18,22 @@ using System.Reflection;
 
 namespace GasFormsApp
 {
-    public partial class Form1 : Form
+    public partial class _MainForm : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
+        private bool v;
 
-            // 在 Form 加载时自动触发按钮点击事件
-            this.Load += (sender, e) => {
-                button1.PerformClick();  // 模拟点击 button1 按钮
-            };
+        //public Form1()
+        //{
+        //    InitializeComponent();
+        //}
+
+        public _MainForm(bool v)
+        {
+            this.v = v;
+            InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void Button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text.Trim();
 
@@ -109,7 +112,12 @@ namespace GasFormsApp
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
