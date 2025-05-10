@@ -34,9 +34,9 @@ namespace GasFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.CoalSeamTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.MineNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -47,11 +47,11 @@ namespace GasFormsApp
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.SamplingTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SamplingSpotTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@ namespace GasFormsApp
             this.label6 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.BurialDepthTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -210,10 +210,6 @@ namespace GasFormsApp
             this.label38 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.label101 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -231,7 +227,9 @@ namespace GasFormsApp
             this.label88 = new System.Windows.Forms.Label();
             this.textBox84 = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
-            this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox99 = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
             this.textBox85 = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
@@ -262,9 +260,12 @@ namespace GasFormsApp
             this.label109 = new System.Windows.Forms.Label();
             this.textBox98 = new System.Windows.Forms.TextBox();
             this.label110 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.textBox99 = new System.Windows.Forms.TextBox();
-            this.label111 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -296,6 +297,7 @@ namespace GasFormsApp
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 104);
             this.tabPage1.Name = "tabPage1";
@@ -306,9 +308,9 @@ namespace GasFormsApp
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox17);
+            this.groupBox1.Controls.Add(this.CoalSeamTextBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox16);
+            this.groupBox1.Controls.Add(this.MineNameTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox15);
             this.groupBox1.Controls.Add(this.textBox4);
@@ -319,11 +321,11 @@ namespace GasFormsApp
             this.groupBox1.Controls.Add(this.textBox13);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.SamplingTimeDateTimePicker);
             this.groupBox1.Controls.Add(this.textBox12);
             this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.SamplingSpotTextBox);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label8);
@@ -332,7 +334,7 @@ namespace GasFormsApp
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox10);
             this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.BurialDepthTextBox);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
@@ -348,13 +350,14 @@ namespace GasFormsApp
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // textBox17
+            // CoalSeamTextBox
             // 
-            this.textBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox17.Location = new System.Drawing.Point(231, 155);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(240, 26);
-            this.textBox17.TabIndex = 32;
+            this.CoalSeamTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CoalSeamTextBox.Location = new System.Drawing.Point(231, 155);
+            this.CoalSeamTextBox.Name = "CoalSeamTextBox";
+            this.CoalSeamTextBox.Size = new System.Drawing.Size(240, 26);
+            this.CoalSeamTextBox.TabIndex = 32;
+            this.CoalSeamTextBox.Text = "MMM";
             // 
             // label3
             // 
@@ -367,13 +370,14 @@ namespace GasFormsApp
             this.label3.TabIndex = 31;
             this.label3.Text = "煤             层:";
             // 
-            // textBox16
+            // MineNameTextBox
             // 
-            this.textBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox16.Location = new System.Drawing.Point(231, 57);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(240, 26);
-            this.textBox16.TabIndex = 30;
+            this.MineNameTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MineNameTextBox.Location = new System.Drawing.Point(231, 57);
+            this.MineNameTextBox.Name = "MineNameTextBox";
+            this.MineNameTextBox.Size = new System.Drawing.Size(240, 26);
+            this.MineNameTextBox.TabIndex = 30;
+            this.MineNameTextBox.Text = "欧冠黑u发";
             // 
             // label1
             // 
@@ -473,13 +477,13 @@ namespace GasFormsApp
             this.comboBox1.Size = new System.Drawing.Size(253, 27);
             this.comboBox1.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // SamplingTimeDateTimePicker
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(689, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(253, 29);
-            this.dateTimePicker1.TabIndex = 4;
+            this.SamplingTimeDateTimePicker.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(689, 104);
+            this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
+            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(253, 29);
+            this.SamplingTimeDateTimePicker.TabIndex = 4;
             // 
             // textBox12
             // 
@@ -506,13 +510,14 @@ namespace GasFormsApp
             this.textBox7.Size = new System.Drawing.Size(253, 26);
             this.textBox7.TabIndex = 6;
             // 
-            // textBox1
+            // SamplingSpotTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(689, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 26);
-            this.textBox1.TabIndex = 2;
+            this.SamplingSpotTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingSpotTextBox.Location = new System.Drawing.Point(689, 57);
+            this.SamplingSpotTextBox.Name = "SamplingSpotTextBox";
+            this.SamplingSpotTextBox.Size = new System.Drawing.Size(253, 26);
+            this.SamplingSpotTextBox.TabIndex = 2;
+            this.SamplingSpotTextBox.Text = "哈佛侮辱";
             // 
             // label16
             // 
@@ -596,13 +601,14 @@ namespace GasFormsApp
             this.textBox6.Size = new System.Drawing.Size(240, 26);
             this.textBox6.TabIndex = 7;
             // 
-            // textBox3
+            // BurialDepthTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(231, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(240, 26);
-            this.textBox3.TabIndex = 3;
+            this.BurialDepthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BurialDepthTextBox.Location = new System.Drawing.Point(231, 105);
+            this.BurialDepthTextBox.Name = "BurialDepthTextBox";
+            this.BurialDepthTextBox.Size = new System.Drawing.Size(240, 26);
+            this.BurialDepthTextBox.TabIndex = 3;
+            this.BurialDepthTextBox.Text = "123";
             // 
             // label14
             // 
@@ -635,7 +641,7 @@ namespace GasFormsApp
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 16);
             this.label7.TabIndex = 0;
-            this.label7.Text = "埋             深:";
+            this.label7.Text = "埋         深 (m):";
             // 
             // textBox9
             // 
@@ -2196,83 +2202,6 @@ namespace GasFormsApp
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage4.Controls.Add(this.textBox99);
-            this.tabPage4.Controls.Add(this.label111);
-            this.tabPage4.Controls.Add(this.textBox85);
-            this.tabPage4.Controls.Add(this.label102);
-            this.tabPage4.Controls.Add(this.button10);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.textBox86);
-            this.tabPage4.Controls.Add(this.textBox87);
-            this.tabPage4.Controls.Add(this.textBox88);
-            this.tabPage4.Controls.Add(this.label90);
-            this.tabPage4.Controls.Add(this.label91);
-            this.tabPage4.Controls.Add(this.textBox89);
-            this.tabPage4.Controls.Add(this.label92);
-            this.tabPage4.Controls.Add(this.label93);
-            this.tabPage4.Controls.Add(this.textBox90);
-            this.tabPage4.Controls.Add(this.label94);
-            this.tabPage4.Controls.Add(this.textBox91);
-            this.tabPage4.Controls.Add(this.label95);
-            this.tabPage4.Controls.Add(this.textBox92);
-            this.tabPage4.Controls.Add(this.textBox93);
-            this.tabPage4.Controls.Add(this.textBox94);
-            this.tabPage4.Controls.Add(this.label97);
-            this.tabPage4.Controls.Add(this.textBox95);
-            this.tabPage4.Controls.Add(this.label98);
-            this.tabPage4.Controls.Add(this.label99);
-            this.tabPage4.Controls.Add(this.textBox96);
-            this.tabPage4.Controls.Add(this.label100);
-            this.tabPage4.Controls.Add(this.label108);
-            this.tabPage4.Controls.Add(this.textBox97);
-            this.tabPage4.Controls.Add(this.label109);
-            this.tabPage4.Controls.Add(this.textBox98);
-            this.tabPage4.Controls.Add(this.label110);
-            this.tabPage4.Location = new System.Drawing.Point(4, 104);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1460, 629);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("楷体", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(170, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1318, 85);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "瓦斯含量测定装置系统";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(3, 25);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer1";
-            this.shapeContainer2.Size = new System.Drawing.Size(1029, 563);
-            this.shapeContainer2.TabIndex = 28;
-            this.shapeContainer2.TabStop = false;
-            // 
             // label101
             // 
             this.label101.AutoSize = true;
@@ -2447,14 +2376,68 @@ namespace GasFormsApp
             this.label89.TabIndex = 22;
             this.label89.Text = "第 一 份 煤 样 重 量(g):";
             // 
-            // shapeContainer3
+            // tabPage4
             // 
-            this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer3.Name = "shapeContainer2";
-            this.shapeContainer3.Size = new System.Drawing.Size(1275, 713);
-            this.shapeContainer3.TabIndex = 7;
-            this.shapeContainer3.TabStop = false;
+            this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage4.Controls.Add(this.textBox99);
+            this.tabPage4.Controls.Add(this.label111);
+            this.tabPage4.Controls.Add(this.textBox85);
+            this.tabPage4.Controls.Add(this.label102);
+            this.tabPage4.Controls.Add(this.button10);
+            this.tabPage4.Controls.Add(this.button7);
+            this.tabPage4.Controls.Add(this.textBox86);
+            this.tabPage4.Controls.Add(this.textBox87);
+            this.tabPage4.Controls.Add(this.textBox88);
+            this.tabPage4.Controls.Add(this.label90);
+            this.tabPage4.Controls.Add(this.label91);
+            this.tabPage4.Controls.Add(this.textBox89);
+            this.tabPage4.Controls.Add(this.label92);
+            this.tabPage4.Controls.Add(this.label93);
+            this.tabPage4.Controls.Add(this.textBox90);
+            this.tabPage4.Controls.Add(this.label94);
+            this.tabPage4.Controls.Add(this.textBox91);
+            this.tabPage4.Controls.Add(this.label95);
+            this.tabPage4.Controls.Add(this.textBox92);
+            this.tabPage4.Controls.Add(this.textBox93);
+            this.tabPage4.Controls.Add(this.textBox94);
+            this.tabPage4.Controls.Add(this.label97);
+            this.tabPage4.Controls.Add(this.textBox95);
+            this.tabPage4.Controls.Add(this.label98);
+            this.tabPage4.Controls.Add(this.label99);
+            this.tabPage4.Controls.Add(this.textBox96);
+            this.tabPage4.Controls.Add(this.label100);
+            this.tabPage4.Controls.Add(this.label108);
+            this.tabPage4.Controls.Add(this.textBox97);
+            this.tabPage4.Controls.Add(this.label109);
+            this.tabPage4.Controls.Add(this.textBox98);
+            this.tabPage4.Controls.Add(this.label110);
+            this.tabPage4.Location = new System.Drawing.Point(4, 104);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // textBox99
+            // 
+            this.textBox99.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox99.Location = new System.Drawing.Point(431, 454);
+            this.textBox99.Name = "textBox99";
+            this.textBox99.Size = new System.Drawing.Size(179, 26);
+            this.textBox99.TabIndex = 55;
+            this.textBox99.Text = "0";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label111.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label111.Location = new System.Drawing.Point(343, 457);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(79, 16);
+            this.label111.TabIndex = 56;
+            this.label111.Text = "挥 发 分:";
             // 
             // textBox85
             // 
@@ -2778,6 +2761,49 @@ namespace GasFormsApp
             this.label110.TabIndex = 32;
             this.label110.Text = "吸附常数a:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Silver;
+            this.label2.Font = new System.Drawing.Font("楷体", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(170, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1318, 85);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "瓦斯含量测定装置系统";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(3, 25);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer1";
+            this.shapeContainer2.Size = new System.Drawing.Size(1029, 563);
+            this.shapeContainer2.TabIndex = 28;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // shapeContainer3
+            // 
+            this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer3.Name = "shapeContainer2";
+            this.shapeContainer3.Size = new System.Drawing.Size(1275, 713);
+            this.shapeContainer3.TabIndex = 7;
+            this.shapeContainer3.TabStop = false;
+            // 
             // shapeContainer4
             // 
             this.shapeContainer4.Location = new System.Drawing.Point(0, 0);
@@ -2787,31 +2813,21 @@ namespace GasFormsApp
             this.shapeContainer4.TabIndex = 9;
             this.shapeContainer4.TabStop = false;
             // 
-            // textBox99
+            // button2
             // 
-            this.textBox99.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox99.Location = new System.Drawing.Point(431, 454);
-            this.textBox99.Name = "textBox99";
-            this.textBox99.Size = new System.Drawing.Size(179, 26);
-            this.textBox99.TabIndex = 55;
-            this.textBox99.Text = "0";
-            // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label111.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label111.Location = new System.Drawing.Point(343, 457);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(79, 16);
-            this.label111.TabIndex = 56;
-            this.label111.Text = "挥 发 分:";
+            this.button2.Location = new System.Drawing.Point(1302, 467);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1468, 822);
+            this.ClientSize = new System.Drawing.Size(1444, 822);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
@@ -2856,11 +2872,11 @@ namespace GasFormsApp
         private TextBox textBox13;
         private Label label20;
         private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker SamplingTimeDateTimePicker;
         private TextBox textBox12;
         private TextBox textBox8;
         private TextBox textBox7;
-        private TextBox textBox1;
+        private TextBox SamplingSpotTextBox;
         private Label label16;
         private Label label12;
         private Label label8;
@@ -2869,7 +2885,7 @@ namespace GasFormsApp
         private Label label6;
         private TextBox textBox10;
         private TextBox textBox6;
-        private TextBox textBox3;
+        private TextBox BurialDepthTextBox;
         private Label label14;
         private Label label10;
         private Label label7;
@@ -2878,9 +2894,9 @@ namespace GasFormsApp
         private TextBox textBox5;
         private Label label9;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private TextBox textBox16;
+        private TextBox MineNameTextBox;
         private Label label1;
-        private TextBox textBox17;
+        private TextBox CoalSeamTextBox;
         private Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private GroupBox groupBox2;
@@ -3073,5 +3089,6 @@ namespace GasFormsApp
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
         private TextBox textBox99;
         private Label label111;
+        private Button button2;
     }
 }

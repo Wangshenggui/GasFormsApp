@@ -1,9 +1,28 @@
 ﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Packaging;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DocumentFormat.OpenXml.Packaging;
+using Microsoft.Office.Interop.Word;
+using System;
+using System.IO;
+using System.Windows.Forms;
+using DocumentFormat.OpenXml.Wordprocessing;
+using System.Reflection;
+using GasFormsApp.WordPperation;
 
 namespace GasFormsApp
 {
@@ -51,9 +70,6 @@ namespace GasFormsApp
             tabPage3.ImageIndex = 2;
             tabPage4.ImageIndex = 3;
 
-            //标签页文本
-            textBox1.Text = "危楼高百尺，\n手可摘星宸，\n不敢高声语，\n恐惊天上人。\n";
-            textBox2.Text = "人间四月芳菲尽，\n山寺桃花始盛开，\n常恨春归无觅处，\n不知转入此中来。\n";
             #endregion
 
 
@@ -88,14 +104,14 @@ namespace GasFormsApp
             TabPage tabPage = tabControl1.TabPages[e.Index];
             string tabText = tabPage.Text;
             Image tabImage = imageList1.Images[e.Index];
-            Rectangle bounds = e.Bounds;
+            System.Drawing.Rectangle bounds = e.Bounds;
 
             // 判断是否是当前选中的标签页
             bool isSelected = (e.Index == tabControl1.SelectedIndex);
 
             // 背景色
-            Color backColor = isSelected ? Color.LightBlue : SystemColors.Control;
-            Color textColor = isSelected ? Color.Black : Color.Gray;
+            System.Drawing.Color backColor = isSelected ? System.Drawing.Color.LightBlue : SystemColors.Control;
+            System.Drawing.Color textColor = isSelected ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
 
             // 填充背景
             using (SolidBrush backgroundBrush = new SolidBrush(backColor))
@@ -118,7 +134,7 @@ namespace GasFormsApp
             int textY = iconY + iconHeight + 4;
 
             // 绘制文字
-            TextRenderer.DrawText(e.Graphics, tabText, e.Font, new Point(textX, textY), textColor);
+            TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -154,6 +170,68 @@ namespace GasFormsApp
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string name = SamplingSpotTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("请输入姓名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            // 选择保存位置
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Word 文件 (*.docx)|*.docx",
+                Title = "保存生成的 Word 文件"
+            };
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string outputPath = saveDialog.FileName;
+
+                // 获取程序集
+                var assembly = Assembly.GetExecutingAssembly();
+                string resourceName = "GasFormsApp.WordTemplate.docx"; // 注意这个名字必须和实际资源名一致
+
+                // 尝试读取嵌入资源
+                using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
+                {
+                    if (resourceStream == null)
+                    {
+                        MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // 将嵌入资源复制到内存流以便修改
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        resourceStream.CopyTo(memoryStream);
+
+                        // 替换占位符
+                        WordPperation.BasicInfo basicInfo = new BasicInfo();
+
+                        // 调用示例
+                        var placeholders = new Dictionary<string, string>
+                        {
+                            {"{{MineName}}", MineNameTextBox.Text.Trim()},
+                            {"{{SamplingSpot}}", SamplingSpotTextBox.Text.Trim()},
+                            {"{{SamplingTime}}", SamplingTimeDateTimePicker.Text.Trim()},
+                            {"{{BurialDepth}}", BurialDepthTextBox.Text.Trim()},
+                            {"{{CoalSeam}}", CoalSeamTextBox.Text.Trim()},
+                        };
+                        basicInfo.ReplacePlaceholders(memoryStream, placeholders);
+
+                        // 保存到用户指定路径
+                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
+                    }
+                }
+
+                MessageBox.Show("Word 文件生成成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
