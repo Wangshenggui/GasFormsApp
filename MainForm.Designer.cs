@@ -33,24 +33,25 @@ namespace GasFormsApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CoalSeamTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MineNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.InitialVolumeTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.SampleNumTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SampleModeComboBox = new System.Windows.Forms.ComboBox();
             this.SamplingTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.RawCoalMoistureTextBox = new System.Windows.Forms.TextBox();
+            this.LabTempTextBox = new System.Windows.Forms.TextBox();
+            this.LabAtmPressureTextBox = new System.Windows.Forms.TextBox();
             this.SamplingSpotTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,49 +59,49 @@ namespace GasFormsApp
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.MoistureSampleTextBox = new System.Windows.Forms.TextBox();
+            this.UndTempTextBox = new System.Windows.Forms.TextBox();
             this.BurialDepthTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.SampleWeightTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.UndAtmPressureTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
-            this.textBox55 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox63 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
-            this.textBox66 = new System.Windows.Forms.TextBox();
-            this.textBox67 = new System.Windows.Forms.TextBox();
-            this.textBox68 = new System.Windows.Forms.TextBox();
-            this.textBox69 = new System.Windows.Forms.TextBox();
-            this.textBox70 = new System.Windows.Forms.TextBox();
-            this.textBox71 = new System.Windows.Forms.TextBox();
-            this.textBox72 = new System.Windows.Forms.TextBox();
-            this.textBox73 = new System.Windows.Forms.TextBox();
-            this.textBox74 = new System.Windows.Forms.TextBox();
-            this.textBox75 = new System.Windows.Forms.TextBox();
-            this.textBox76 = new System.Windows.Forms.TextBox();
-            this.textBox77 = new System.Windows.Forms.TextBox();
-            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox60 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox31 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox41 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox50 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox40 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox51 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox32 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox42 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox59 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox52 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox49 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox39 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox33 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox43 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox58 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox53 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox48 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox38 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox34 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox44 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox57 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox54 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox47 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox37 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox35 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox45 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox56 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox55 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox46 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox36 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -144,36 +145,36 @@ namespace GasFormsApp
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox11 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox20 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox10 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox21 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox2 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox12 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox29 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox22 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox19 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox9 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox3 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox13 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox28 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox23 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox18 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox8 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox4 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox14 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox27 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox24 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox17 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox7 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox5 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox15 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox26 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox25 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox16 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox6 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox48 = new System.Windows.Forms.TextBox();
@@ -265,7 +266,6 @@ namespace GasFormsApp
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -306,6 +306,16 @@ namespace GasFormsApp
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1302, 467);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.CoalSeamTextBox);
@@ -313,18 +323,18 @@ namespace GasFormsApp
             this.groupBox1.Controls.Add(this.MineNameTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.InitialVolumeTextBox);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.SampleNumTextBox);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.SampleModeComboBox);
             this.groupBox1.Controls.Add(this.SamplingTimeDateTimePicker);
-            this.groupBox1.Controls.Add(this.textBox12);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.RawCoalMoistureTextBox);
+            this.groupBox1.Controls.Add(this.LabTempTextBox);
+            this.groupBox1.Controls.Add(this.LabAtmPressureTextBox);
             this.groupBox1.Controls.Add(this.SamplingSpotTextBox);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label12);
@@ -332,15 +342,15 @@ namespace GasFormsApp
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.MoistureSampleTextBox);
+            this.groupBox1.Controls.Add(this.UndTempTextBox);
             this.groupBox1.Controls.Add(this.BurialDepthTextBox);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.SampleWeightTextBox);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.UndAtmPressureTextBox);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.shapeContainer1);
             this.groupBox1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -398,13 +408,14 @@ namespace GasFormsApp
             this.textBox15.Size = new System.Drawing.Size(711, 108);
             this.textBox15.TabIndex = 27;
             // 
-            // textBox4
+            // InitialVolumeTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox4.Location = new System.Drawing.Point(689, 354);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(253, 26);
-            this.textBox4.TabIndex = 24;
+            this.InitialVolumeTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.InitialVolumeTextBox.Location = new System.Drawing.Point(689, 354);
+            this.InitialVolumeTextBox.Name = "InitialVolumeTextBox";
+            this.InitialVolumeTextBox.Size = new System.Drawing.Size(253, 26);
+            this.InitialVolumeTextBox.TabIndex = 24;
+            this.InitialVolumeTextBox.Text = "56";
             // 
             // label18
             // 
@@ -446,13 +457,14 @@ namespace GasFormsApp
             this.label19.TabIndex = 19;
             this.label19.Text = "煤   样   重   量:";
             // 
-            // textBox13
+            // SampleNumTextBox
             // 
-            this.textBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox13.Location = new System.Drawing.Point(231, 354);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(240, 26);
-            this.textBox13.TabIndex = 23;
+            this.SampleNumTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampleNumTextBox.Location = new System.Drawing.Point(231, 354);
+            this.SampleNumTextBox.Name = "SampleNumTextBox";
+            this.SampleNumTextBox.Size = new System.Drawing.Size(240, 26);
+            this.SampleNumTextBox.TabIndex = 23;
+            this.SampleNumTextBox.Text = "2025";
             // 
             // label20
             // 
@@ -465,17 +477,18 @@ namespace GasFormsApp
             this.label20.TabIndex = 20;
             this.label20.Text = "煤   样   编   号:";
             // 
-            // comboBox1
+            // SampleModeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.SampleModeComboBox.FormattingEnabled = true;
+            this.SampleModeComboBox.Items.AddRange(new object[] {
             "风排渣",
             "水排渣",
             "取芯钻杆"});
-            this.comboBox1.Location = new System.Drawing.Point(689, 253);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 27);
-            this.comboBox1.TabIndex = 10;
+            this.SampleModeComboBox.Location = new System.Drawing.Point(689, 253);
+            this.SampleModeComboBox.Name = "SampleModeComboBox";
+            this.SampleModeComboBox.Size = new System.Drawing.Size(253, 27);
+            this.SampleModeComboBox.TabIndex = 10;
+            this.SampleModeComboBox.Text = "定点风排渣";
             // 
             // SamplingTimeDateTimePicker
             // 
@@ -485,30 +498,33 @@ namespace GasFormsApp
             this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(253, 29);
             this.SamplingTimeDateTimePicker.TabIndex = 4;
             // 
-            // textBox12
+            // RawCoalMoistureTextBox
             // 
-            this.textBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox12.Location = new System.Drawing.Point(689, 302);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(253, 26);
-            this.textBox12.TabIndex = 12;
+            this.RawCoalMoistureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RawCoalMoistureTextBox.Location = new System.Drawing.Point(689, 302);
+            this.RawCoalMoistureTextBox.Name = "RawCoalMoistureTextBox";
+            this.RawCoalMoistureTextBox.Size = new System.Drawing.Size(253, 26);
+            this.RawCoalMoistureTextBox.TabIndex = 12;
+            this.RawCoalMoistureTextBox.Text = "22";
             // 
-            // textBox8
+            // LabTempTextBox
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox8.Location = new System.Drawing.Point(689, 204);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(253, 26);
-            this.textBox8.TabIndex = 0;
+            this.LabTempTextBox.BackColor = System.Drawing.Color.White;
+            this.LabTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabTempTextBox.Location = new System.Drawing.Point(689, 204);
+            this.LabTempTextBox.Name = "LabTempTextBox";
+            this.LabTempTextBox.Size = new System.Drawing.Size(253, 26);
+            this.LabTempTextBox.TabIndex = 0;
+            this.LabTempTextBox.Text = "25";
             // 
-            // textBox7
+            // LabAtmPressureTextBox
             // 
-            this.textBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox7.Location = new System.Drawing.Point(689, 155);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(253, 26);
-            this.textBox7.TabIndex = 6;
+            this.LabAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabAtmPressureTextBox.Location = new System.Drawing.Point(689, 155);
+            this.LabAtmPressureTextBox.Name = "LabAtmPressureTextBox";
+            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(253, 26);
+            this.LabAtmPressureTextBox.TabIndex = 6;
+            this.LabAtmPressureTextBox.Text = "1.01";
             // 
             // SamplingSpotTextBox
             // 
@@ -585,21 +601,23 @@ namespace GasFormsApp
             this.label6.TabIndex = 2;
             this.label6.Text = "取   样   地    点:";
             // 
-            // textBox10
+            // MoistureSampleTextBox
             // 
-            this.textBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox10.Location = new System.Drawing.Point(231, 302);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(240, 26);
-            this.textBox10.TabIndex = 11;
+            this.MoistureSampleTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MoistureSampleTextBox.Location = new System.Drawing.Point(231, 302);
+            this.MoistureSampleTextBox.Name = "MoistureSampleTextBox";
+            this.MoistureSampleTextBox.Size = new System.Drawing.Size(240, 26);
+            this.MoistureSampleTextBox.TabIndex = 11;
+            this.MoistureSampleTextBox.Text = "33";
             // 
-            // textBox6
+            // UndTempTextBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox6.Location = new System.Drawing.Point(231, 253);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(240, 26);
-            this.textBox6.TabIndex = 7;
+            this.UndTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndTempTextBox.Location = new System.Drawing.Point(231, 253);
+            this.UndTempTextBox.Name = "UndTempTextBox";
+            this.UndTempTextBox.Size = new System.Drawing.Size(240, 26);
+            this.UndTempTextBox.TabIndex = 7;
+            this.UndTempTextBox.Text = "31";
             // 
             // BurialDepthTextBox
             // 
@@ -643,13 +661,14 @@ namespace GasFormsApp
             this.label7.TabIndex = 0;
             this.label7.Text = "埋         深 (m):";
             // 
-            // textBox9
+            // SampleWeightTextBox
             // 
-            this.textBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox9.Location = new System.Drawing.Point(826, 559);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(240, 26);
-            this.textBox9.TabIndex = 9;
+            this.SampleWeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampleWeightTextBox.Location = new System.Drawing.Point(826, 559);
+            this.SampleWeightTextBox.Name = "SampleWeightTextBox";
+            this.SampleWeightTextBox.Size = new System.Drawing.Size(240, 26);
+            this.SampleWeightTextBox.TabIndex = 9;
+            this.SampleWeightTextBox.Text = "666";
             // 
             // label13
             // 
@@ -662,13 +681,14 @@ namespace GasFormsApp
             this.label13.TabIndex = 0;
             this.label13.Text = "样  品  重  量(g):";
             // 
-            // textBox5
+            // UndAtmPressureTextBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox5.Location = new System.Drawing.Point(231, 204);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(240, 26);
-            this.textBox5.TabIndex = 5;
+            this.UndAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndAtmPressureTextBox.Location = new System.Drawing.Point(231, 204);
+            this.UndAtmPressureTextBox.Name = "UndAtmPressureTextBox";
+            this.UndAtmPressureTextBox.Size = new System.Drawing.Size(240, 26);
+            this.UndAtmPressureTextBox.TabIndex = 5;
+            this.UndAtmPressureTextBox.Text = "1.05";
             // 
             // label9
             // 
@@ -702,36 +722,36 @@ namespace GasFormsApp
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox49);
-            this.groupBox2.Controls.Add(this.textBox50);
-            this.groupBox2.Controls.Add(this.textBox51);
-            this.groupBox2.Controls.Add(this.textBox52);
-            this.groupBox2.Controls.Add(this.textBox53);
-            this.groupBox2.Controls.Add(this.textBox54);
-            this.groupBox2.Controls.Add(this.textBox55);
-            this.groupBox2.Controls.Add(this.textBox56);
-            this.groupBox2.Controls.Add(this.textBox57);
-            this.groupBox2.Controls.Add(this.textBox58);
-            this.groupBox2.Controls.Add(this.textBox59);
-            this.groupBox2.Controls.Add(this.textBox60);
-            this.groupBox2.Controls.Add(this.textBox61);
-            this.groupBox2.Controls.Add(this.textBox62);
-            this.groupBox2.Controls.Add(this.textBox63);
-            this.groupBox2.Controls.Add(this.textBox64);
-            this.groupBox2.Controls.Add(this.textBox65);
-            this.groupBox2.Controls.Add(this.textBox66);
-            this.groupBox2.Controls.Add(this.textBox67);
-            this.groupBox2.Controls.Add(this.textBox68);
-            this.groupBox2.Controls.Add(this.textBox69);
-            this.groupBox2.Controls.Add(this.textBox70);
-            this.groupBox2.Controls.Add(this.textBox71);
-            this.groupBox2.Controls.Add(this.textBox72);
-            this.groupBox2.Controls.Add(this.textBox73);
-            this.groupBox2.Controls.Add(this.textBox74);
-            this.groupBox2.Controls.Add(this.textBox75);
-            this.groupBox2.Controls.Add(this.textBox76);
-            this.groupBox2.Controls.Add(this.textBox77);
-            this.groupBox2.Controls.Add(this.textBox78);
+            this.groupBox2.Controls.Add(this.DesorbTextBox60);
+            this.groupBox2.Controls.Add(this.DesorbTextBox31);
+            this.groupBox2.Controls.Add(this.DesorbTextBox41);
+            this.groupBox2.Controls.Add(this.DesorbTextBox50);
+            this.groupBox2.Controls.Add(this.DesorbTextBox40);
+            this.groupBox2.Controls.Add(this.DesorbTextBox51);
+            this.groupBox2.Controls.Add(this.DesorbTextBox32);
+            this.groupBox2.Controls.Add(this.DesorbTextBox42);
+            this.groupBox2.Controls.Add(this.DesorbTextBox59);
+            this.groupBox2.Controls.Add(this.DesorbTextBox52);
+            this.groupBox2.Controls.Add(this.DesorbTextBox49);
+            this.groupBox2.Controls.Add(this.DesorbTextBox39);
+            this.groupBox2.Controls.Add(this.DesorbTextBox33);
+            this.groupBox2.Controls.Add(this.DesorbTextBox43);
+            this.groupBox2.Controls.Add(this.DesorbTextBox58);
+            this.groupBox2.Controls.Add(this.DesorbTextBox53);
+            this.groupBox2.Controls.Add(this.DesorbTextBox48);
+            this.groupBox2.Controls.Add(this.DesorbTextBox38);
+            this.groupBox2.Controls.Add(this.DesorbTextBox34);
+            this.groupBox2.Controls.Add(this.DesorbTextBox44);
+            this.groupBox2.Controls.Add(this.DesorbTextBox57);
+            this.groupBox2.Controls.Add(this.DesorbTextBox54);
+            this.groupBox2.Controls.Add(this.DesorbTextBox47);
+            this.groupBox2.Controls.Add(this.DesorbTextBox37);
+            this.groupBox2.Controls.Add(this.DesorbTextBox35);
+            this.groupBox2.Controls.Add(this.DesorbTextBox45);
+            this.groupBox2.Controls.Add(this.DesorbTextBox56);
+            this.groupBox2.Controls.Add(this.DesorbTextBox55);
+            this.groupBox2.Controls.Add(this.DesorbTextBox46);
+            this.groupBox2.Controls.Add(this.DesorbTextBox36);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label17);
@@ -775,36 +795,36 @@ namespace GasFormsApp
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox46);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox27);
-            this.groupBox2.Controls.Add(this.textBox36);
-            this.groupBox2.Controls.Add(this.textBox26);
-            this.groupBox2.Controls.Add(this.textBox37);
-            this.groupBox2.Controls.Add(this.textBox18);
-            this.groupBox2.Controls.Add(this.textBox28);
-            this.groupBox2.Controls.Add(this.textBox45);
-            this.groupBox2.Controls.Add(this.textBox38);
-            this.groupBox2.Controls.Add(this.textBox35);
-            this.groupBox2.Controls.Add(this.textBox25);
-            this.groupBox2.Controls.Add(this.textBox19);
-            this.groupBox2.Controls.Add(this.textBox29);
-            this.groupBox2.Controls.Add(this.textBox44);
-            this.groupBox2.Controls.Add(this.textBox39);
-            this.groupBox2.Controls.Add(this.textBox34);
-            this.groupBox2.Controls.Add(this.textBox24);
-            this.groupBox2.Controls.Add(this.textBox20);
-            this.groupBox2.Controls.Add(this.textBox30);
-            this.groupBox2.Controls.Add(this.textBox43);
-            this.groupBox2.Controls.Add(this.textBox40);
-            this.groupBox2.Controls.Add(this.textBox33);
-            this.groupBox2.Controls.Add(this.textBox23);
-            this.groupBox2.Controls.Add(this.textBox21);
-            this.groupBox2.Controls.Add(this.textBox31);
-            this.groupBox2.Controls.Add(this.textBox42);
-            this.groupBox2.Controls.Add(this.textBox41);
-            this.groupBox2.Controls.Add(this.textBox32);
-            this.groupBox2.Controls.Add(this.textBox22);
+            this.groupBox2.Controls.Add(this.DesorbTextBox30);
+            this.groupBox2.Controls.Add(this.DesorbTextBox1);
+            this.groupBox2.Controls.Add(this.DesorbTextBox11);
+            this.groupBox2.Controls.Add(this.DesorbTextBox20);
+            this.groupBox2.Controls.Add(this.DesorbTextBox10);
+            this.groupBox2.Controls.Add(this.DesorbTextBox21);
+            this.groupBox2.Controls.Add(this.DesorbTextBox2);
+            this.groupBox2.Controls.Add(this.DesorbTextBox12);
+            this.groupBox2.Controls.Add(this.DesorbTextBox29);
+            this.groupBox2.Controls.Add(this.DesorbTextBox22);
+            this.groupBox2.Controls.Add(this.DesorbTextBox19);
+            this.groupBox2.Controls.Add(this.DesorbTextBox9);
+            this.groupBox2.Controls.Add(this.DesorbTextBox3);
+            this.groupBox2.Controls.Add(this.DesorbTextBox13);
+            this.groupBox2.Controls.Add(this.DesorbTextBox28);
+            this.groupBox2.Controls.Add(this.DesorbTextBox23);
+            this.groupBox2.Controls.Add(this.DesorbTextBox18);
+            this.groupBox2.Controls.Add(this.DesorbTextBox8);
+            this.groupBox2.Controls.Add(this.DesorbTextBox4);
+            this.groupBox2.Controls.Add(this.DesorbTextBox14);
+            this.groupBox2.Controls.Add(this.DesorbTextBox27);
+            this.groupBox2.Controls.Add(this.DesorbTextBox24);
+            this.groupBox2.Controls.Add(this.DesorbTextBox17);
+            this.groupBox2.Controls.Add(this.DesorbTextBox7);
+            this.groupBox2.Controls.Add(this.DesorbTextBox5);
+            this.groupBox2.Controls.Add(this.DesorbTextBox15);
+            this.groupBox2.Controls.Add(this.DesorbTextBox26);
+            this.groupBox2.Controls.Add(this.DesorbTextBox25);
+            this.groupBox2.Controls.Add(this.DesorbTextBox16);
+            this.groupBox2.Controls.Add(this.DesorbTextBox6);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.textBox48);
@@ -846,245 +866,245 @@ namespace GasFormsApp
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // textBox49
+            // DesorbTextBox60
             // 
-            this.textBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox49.Location = new System.Drawing.Point(808, 488);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(78, 26);
-            this.textBox49.TabIndex = 103;
+            this.DesorbTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox60.Location = new System.Drawing.Point(808, 488);
+            this.DesorbTextBox60.Name = "DesorbTextBox60";
+            this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox60.TabIndex = 103;
             // 
-            // textBox50
+            // DesorbTextBox31
             // 
-            this.textBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox50.Location = new System.Drawing.Point(535, 200);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(78, 26);
-            this.textBox50.TabIndex = 44;
+            this.DesorbTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox31.Location = new System.Drawing.Point(535, 200);
+            this.DesorbTextBox31.Name = "DesorbTextBox31";
+            this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox31.TabIndex = 44;
             // 
-            // textBox51
+            // DesorbTextBox41
             // 
-            this.textBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox51.Location = new System.Drawing.Point(674, 200);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(78, 26);
-            this.textBox51.TabIndex = 84;
+            this.DesorbTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox41.Location = new System.Drawing.Point(674, 200);
+            this.DesorbTextBox41.Name = "DesorbTextBox41";
+            this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox41.TabIndex = 84;
             // 
-            // textBox52
+            // DesorbTextBox50
             // 
-            this.textBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox52.Location = new System.Drawing.Point(674, 488);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(78, 26);
-            this.textBox52.TabIndex = 93;
+            this.DesorbTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox50.Location = new System.Drawing.Point(674, 488);
+            this.DesorbTextBox50.Name = "DesorbTextBox50";
+            this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox50.TabIndex = 93;
             // 
-            // textBox53
+            // DesorbTextBox40
             // 
-            this.textBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox53.Location = new System.Drawing.Point(535, 488);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(78, 26);
-            this.textBox53.TabIndex = 83;
+            this.DesorbTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox40.Location = new System.Drawing.Point(535, 488);
+            this.DesorbTextBox40.Name = "DesorbTextBox40";
+            this.DesorbTextBox40.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox40.TabIndex = 83;
             // 
-            // textBox54
+            // DesorbTextBox51
             // 
-            this.textBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox54.Location = new System.Drawing.Point(808, 200);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(78, 26);
-            this.textBox54.TabIndex = 94;
+            this.DesorbTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox51.Location = new System.Drawing.Point(808, 200);
+            this.DesorbTextBox51.Name = "DesorbTextBox51";
+            this.DesorbTextBox51.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox51.TabIndex = 94;
             // 
-            // textBox55
+            // DesorbTextBox32
             // 
-            this.textBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox55.Location = new System.Drawing.Point(535, 232);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(78, 26);
-            this.textBox55.TabIndex = 66;
+            this.DesorbTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox32.Location = new System.Drawing.Point(535, 232);
+            this.DesorbTextBox32.Name = "DesorbTextBox32";
+            this.DesorbTextBox32.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox32.TabIndex = 66;
             // 
-            // textBox56
+            // DesorbTextBox42
             // 
-            this.textBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox56.Location = new System.Drawing.Point(674, 232);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(78, 26);
-            this.textBox56.TabIndex = 85;
+            this.DesorbTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox42.Location = new System.Drawing.Point(674, 232);
+            this.DesorbTextBox42.Name = "DesorbTextBox42";
+            this.DesorbTextBox42.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox42.TabIndex = 85;
             // 
-            // textBox57
+            // DesorbTextBox59
             // 
-            this.textBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox57.Location = new System.Drawing.Point(808, 456);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(78, 26);
-            this.textBox57.TabIndex = 102;
+            this.DesorbTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox59.Location = new System.Drawing.Point(808, 456);
+            this.DesorbTextBox59.Name = "DesorbTextBox59";
+            this.DesorbTextBox59.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox59.TabIndex = 102;
             // 
-            // textBox58
+            // DesorbTextBox52
             // 
-            this.textBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox58.Location = new System.Drawing.Point(808, 232);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(78, 26);
-            this.textBox58.TabIndex = 95;
+            this.DesorbTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox52.Location = new System.Drawing.Point(808, 232);
+            this.DesorbTextBox52.Name = "DesorbTextBox52";
+            this.DesorbTextBox52.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox52.TabIndex = 95;
             // 
-            // textBox59
+            // DesorbTextBox49
             // 
-            this.textBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox59.Location = new System.Drawing.Point(674, 456);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(78, 26);
-            this.textBox59.TabIndex = 92;
+            this.DesorbTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox49.Location = new System.Drawing.Point(674, 456);
+            this.DesorbTextBox49.Name = "DesorbTextBox49";
+            this.DesorbTextBox49.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox49.TabIndex = 92;
             // 
-            // textBox60
+            // DesorbTextBox39
             // 
-            this.textBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox60.Location = new System.Drawing.Point(535, 456);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(78, 26);
-            this.textBox60.TabIndex = 82;
+            this.DesorbTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox39.Location = new System.Drawing.Point(535, 456);
+            this.DesorbTextBox39.Name = "DesorbTextBox39";
+            this.DesorbTextBox39.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox39.TabIndex = 82;
             // 
-            // textBox61
+            // DesorbTextBox33
             // 
-            this.textBox61.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox61.Location = new System.Drawing.Point(535, 264);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(78, 26);
-            this.textBox61.TabIndex = 76;
+            this.DesorbTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox33.Location = new System.Drawing.Point(535, 264);
+            this.DesorbTextBox33.Name = "DesorbTextBox33";
+            this.DesorbTextBox33.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox33.TabIndex = 76;
             // 
-            // textBox62
+            // DesorbTextBox43
             // 
-            this.textBox62.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox62.Location = new System.Drawing.Point(674, 264);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(78, 26);
-            this.textBox62.TabIndex = 86;
+            this.DesorbTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox43.Location = new System.Drawing.Point(674, 264);
+            this.DesorbTextBox43.Name = "DesorbTextBox43";
+            this.DesorbTextBox43.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox43.TabIndex = 86;
             // 
-            // textBox63
+            // DesorbTextBox58
             // 
-            this.textBox63.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox63.Location = new System.Drawing.Point(808, 424);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(78, 26);
-            this.textBox63.TabIndex = 101;
+            this.DesorbTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox58.Location = new System.Drawing.Point(808, 424);
+            this.DesorbTextBox58.Name = "DesorbTextBox58";
+            this.DesorbTextBox58.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox58.TabIndex = 101;
             // 
-            // textBox64
+            // DesorbTextBox53
             // 
-            this.textBox64.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox64.Location = new System.Drawing.Point(808, 264);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(78, 26);
-            this.textBox64.TabIndex = 96;
+            this.DesorbTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox53.Location = new System.Drawing.Point(808, 264);
+            this.DesorbTextBox53.Name = "DesorbTextBox53";
+            this.DesorbTextBox53.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox53.TabIndex = 96;
             // 
-            // textBox65
+            // DesorbTextBox48
             // 
-            this.textBox65.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox65.Location = new System.Drawing.Point(674, 424);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(78, 26);
-            this.textBox65.TabIndex = 91;
+            this.DesorbTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox48.Location = new System.Drawing.Point(674, 424);
+            this.DesorbTextBox48.Name = "DesorbTextBox48";
+            this.DesorbTextBox48.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox48.TabIndex = 91;
             // 
-            // textBox66
+            // DesorbTextBox38
             // 
-            this.textBox66.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox66.Location = new System.Drawing.Point(535, 424);
-            this.textBox66.Name = "textBox66";
-            this.textBox66.Size = new System.Drawing.Size(78, 26);
-            this.textBox66.TabIndex = 81;
+            this.DesorbTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox38.Location = new System.Drawing.Point(535, 424);
+            this.DesorbTextBox38.Name = "DesorbTextBox38";
+            this.DesorbTextBox38.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox38.TabIndex = 81;
             // 
-            // textBox67
+            // DesorbTextBox34
             // 
-            this.textBox67.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox67.Location = new System.Drawing.Point(535, 296);
-            this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(78, 26);
-            this.textBox67.TabIndex = 77;
+            this.DesorbTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox34.Location = new System.Drawing.Point(535, 296);
+            this.DesorbTextBox34.Name = "DesorbTextBox34";
+            this.DesorbTextBox34.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox34.TabIndex = 77;
             // 
-            // textBox68
+            // DesorbTextBox44
             // 
-            this.textBox68.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox68.Location = new System.Drawing.Point(674, 296);
-            this.textBox68.Name = "textBox68";
-            this.textBox68.Size = new System.Drawing.Size(78, 26);
-            this.textBox68.TabIndex = 87;
+            this.DesorbTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox44.Location = new System.Drawing.Point(674, 296);
+            this.DesorbTextBox44.Name = "DesorbTextBox44";
+            this.DesorbTextBox44.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox44.TabIndex = 87;
             // 
-            // textBox69
+            // DesorbTextBox57
             // 
-            this.textBox69.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox69.Location = new System.Drawing.Point(808, 392);
-            this.textBox69.Name = "textBox69";
-            this.textBox69.Size = new System.Drawing.Size(78, 26);
-            this.textBox69.TabIndex = 100;
+            this.DesorbTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox57.Location = new System.Drawing.Point(808, 392);
+            this.DesorbTextBox57.Name = "DesorbTextBox57";
+            this.DesorbTextBox57.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox57.TabIndex = 100;
             // 
-            // textBox70
+            // DesorbTextBox54
             // 
-            this.textBox70.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox70.Location = new System.Drawing.Point(808, 296);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(78, 26);
-            this.textBox70.TabIndex = 97;
+            this.DesorbTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox54.Location = new System.Drawing.Point(808, 296);
+            this.DesorbTextBox54.Name = "DesorbTextBox54";
+            this.DesorbTextBox54.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox54.TabIndex = 97;
             // 
-            // textBox71
+            // DesorbTextBox47
             // 
-            this.textBox71.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox71.Location = new System.Drawing.Point(674, 392);
-            this.textBox71.Name = "textBox71";
-            this.textBox71.Size = new System.Drawing.Size(78, 26);
-            this.textBox71.TabIndex = 90;
+            this.DesorbTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox47.Location = new System.Drawing.Point(674, 392);
+            this.DesorbTextBox47.Name = "DesorbTextBox47";
+            this.DesorbTextBox47.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox47.TabIndex = 90;
             // 
-            // textBox72
+            // DesorbTextBox37
             // 
-            this.textBox72.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox72.Location = new System.Drawing.Point(535, 392);
-            this.textBox72.Name = "textBox72";
-            this.textBox72.Size = new System.Drawing.Size(78, 26);
-            this.textBox72.TabIndex = 80;
+            this.DesorbTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox37.Location = new System.Drawing.Point(535, 392);
+            this.DesorbTextBox37.Name = "DesorbTextBox37";
+            this.DesorbTextBox37.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox37.TabIndex = 80;
             // 
-            // textBox73
+            // DesorbTextBox35
             // 
-            this.textBox73.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox73.Location = new System.Drawing.Point(535, 328);
-            this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(78, 26);
-            this.textBox73.TabIndex = 78;
+            this.DesorbTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox35.Location = new System.Drawing.Point(535, 328);
+            this.DesorbTextBox35.Name = "DesorbTextBox35";
+            this.DesorbTextBox35.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox35.TabIndex = 78;
             // 
-            // textBox74
+            // DesorbTextBox45
             // 
-            this.textBox74.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox74.Location = new System.Drawing.Point(674, 328);
-            this.textBox74.Name = "textBox74";
-            this.textBox74.Size = new System.Drawing.Size(78, 26);
-            this.textBox74.TabIndex = 88;
+            this.DesorbTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox45.Location = new System.Drawing.Point(674, 328);
+            this.DesorbTextBox45.Name = "DesorbTextBox45";
+            this.DesorbTextBox45.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox45.TabIndex = 88;
             // 
-            // textBox75
+            // DesorbTextBox56
             // 
-            this.textBox75.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox75.Location = new System.Drawing.Point(808, 360);
-            this.textBox75.Name = "textBox75";
-            this.textBox75.Size = new System.Drawing.Size(78, 26);
-            this.textBox75.TabIndex = 99;
+            this.DesorbTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox56.Location = new System.Drawing.Point(808, 360);
+            this.DesorbTextBox56.Name = "DesorbTextBox56";
+            this.DesorbTextBox56.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox56.TabIndex = 99;
             // 
-            // textBox76
+            // DesorbTextBox55
             // 
-            this.textBox76.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox76.Location = new System.Drawing.Point(808, 328);
-            this.textBox76.Name = "textBox76";
-            this.textBox76.Size = new System.Drawing.Size(78, 26);
-            this.textBox76.TabIndex = 98;
+            this.DesorbTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox55.Location = new System.Drawing.Point(808, 328);
+            this.DesorbTextBox55.Name = "DesorbTextBox55";
+            this.DesorbTextBox55.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox55.TabIndex = 98;
             // 
-            // textBox77
+            // DesorbTextBox46
             // 
-            this.textBox77.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox77.Location = new System.Drawing.Point(674, 360);
-            this.textBox77.Name = "textBox77";
-            this.textBox77.Size = new System.Drawing.Size(78, 26);
-            this.textBox77.TabIndex = 89;
+            this.DesorbTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox46.Location = new System.Drawing.Point(674, 360);
+            this.DesorbTextBox46.Name = "DesorbTextBox46";
+            this.DesorbTextBox46.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox46.TabIndex = 89;
             // 
-            // textBox78
+            // DesorbTextBox36
             // 
-            this.textBox78.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox78.Location = new System.Drawing.Point(535, 360);
-            this.textBox78.Name = "textBox78";
-            this.textBox78.Size = new System.Drawing.Size(78, 26);
-            this.textBox78.TabIndex = 79;
+            this.DesorbTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox36.Location = new System.Drawing.Point(535, 360);
+            this.DesorbTextBox36.Name = "DesorbTextBox36";
+            this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox36.TabIndex = 79;
             // 
             // label4
             // 
@@ -1553,245 +1573,245 @@ namespace GasFormsApp
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "0";
             // 
-            // textBox46
+            // DesorbTextBox30
             // 
-            this.textBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox46.Location = new System.Drawing.Point(401, 488);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(78, 26);
-            this.textBox46.TabIndex = 31;
+            this.DesorbTextBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox30.Location = new System.Drawing.Point(401, 488);
+            this.DesorbTextBox30.Name = "DesorbTextBox30";
+            this.DesorbTextBox30.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox30.TabIndex = 31;
             // 
-            // textBox14
+            // DesorbTextBox1
             // 
-            this.textBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox14.Location = new System.Drawing.Point(128, 200);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(78, 26);
-            this.textBox14.TabIndex = 2;
+            this.DesorbTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox1.Location = new System.Drawing.Point(128, 200);
+            this.DesorbTextBox1.Name = "DesorbTextBox1";
+            this.DesorbTextBox1.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox1.TabIndex = 2;
             // 
-            // textBox27
+            // DesorbTextBox11
             // 
-            this.textBox27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox27.Location = new System.Drawing.Point(267, 200);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(78, 26);
-            this.textBox27.TabIndex = 12;
+            this.DesorbTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox11.Location = new System.Drawing.Point(267, 200);
+            this.DesorbTextBox11.Name = "DesorbTextBox11";
+            this.DesorbTextBox11.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox11.TabIndex = 12;
             // 
-            // textBox36
+            // DesorbTextBox20
             // 
-            this.textBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox36.Location = new System.Drawing.Point(267, 488);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(78, 26);
-            this.textBox36.TabIndex = 21;
+            this.DesorbTextBox20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox20.Location = new System.Drawing.Point(267, 488);
+            this.DesorbTextBox20.Name = "DesorbTextBox20";
+            this.DesorbTextBox20.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox20.TabIndex = 21;
             // 
-            // textBox26
+            // DesorbTextBox10
             // 
-            this.textBox26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox26.Location = new System.Drawing.Point(128, 488);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(78, 26);
-            this.textBox26.TabIndex = 11;
+            this.DesorbTextBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox10.Location = new System.Drawing.Point(128, 488);
+            this.DesorbTextBox10.Name = "DesorbTextBox10";
+            this.DesorbTextBox10.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox10.TabIndex = 11;
             // 
-            // textBox37
+            // DesorbTextBox21
             // 
-            this.textBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox37.Location = new System.Drawing.Point(401, 200);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(78, 26);
-            this.textBox37.TabIndex = 22;
+            this.DesorbTextBox21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox21.Location = new System.Drawing.Point(401, 200);
+            this.DesorbTextBox21.Name = "DesorbTextBox21";
+            this.DesorbTextBox21.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox21.TabIndex = 22;
             // 
-            // textBox18
+            // DesorbTextBox2
             // 
-            this.textBox18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox18.Location = new System.Drawing.Point(128, 232);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(78, 26);
-            this.textBox18.TabIndex = 3;
+            this.DesorbTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox2.Location = new System.Drawing.Point(128, 232);
+            this.DesorbTextBox2.Name = "DesorbTextBox2";
+            this.DesorbTextBox2.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox2.TabIndex = 3;
             // 
-            // textBox28
+            // DesorbTextBox12
             // 
-            this.textBox28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox28.Location = new System.Drawing.Point(267, 232);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(78, 26);
-            this.textBox28.TabIndex = 13;
+            this.DesorbTextBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox12.Location = new System.Drawing.Point(267, 232);
+            this.DesorbTextBox12.Name = "DesorbTextBox12";
+            this.DesorbTextBox12.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox12.TabIndex = 13;
             // 
-            // textBox45
+            // DesorbTextBox29
             // 
-            this.textBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox45.Location = new System.Drawing.Point(401, 456);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(78, 26);
-            this.textBox45.TabIndex = 30;
+            this.DesorbTextBox29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox29.Location = new System.Drawing.Point(401, 456);
+            this.DesorbTextBox29.Name = "DesorbTextBox29";
+            this.DesorbTextBox29.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox29.TabIndex = 30;
             // 
-            // textBox38
+            // DesorbTextBox22
             // 
-            this.textBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox38.Location = new System.Drawing.Point(401, 232);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(78, 26);
-            this.textBox38.TabIndex = 23;
+            this.DesorbTextBox22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox22.Location = new System.Drawing.Point(401, 232);
+            this.DesorbTextBox22.Name = "DesorbTextBox22";
+            this.DesorbTextBox22.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox22.TabIndex = 23;
             // 
-            // textBox35
+            // DesorbTextBox19
             // 
-            this.textBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox35.Location = new System.Drawing.Point(267, 456);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(78, 26);
-            this.textBox35.TabIndex = 20;
+            this.DesorbTextBox19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox19.Location = new System.Drawing.Point(267, 456);
+            this.DesorbTextBox19.Name = "DesorbTextBox19";
+            this.DesorbTextBox19.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox19.TabIndex = 20;
             // 
-            // textBox25
+            // DesorbTextBox9
             // 
-            this.textBox25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox25.Location = new System.Drawing.Point(128, 456);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(78, 26);
-            this.textBox25.TabIndex = 10;
+            this.DesorbTextBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox9.Location = new System.Drawing.Point(128, 456);
+            this.DesorbTextBox9.Name = "DesorbTextBox9";
+            this.DesorbTextBox9.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox9.TabIndex = 10;
             // 
-            // textBox19
+            // DesorbTextBox3
             // 
-            this.textBox19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox19.Location = new System.Drawing.Point(128, 264);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(78, 26);
-            this.textBox19.TabIndex = 4;
+            this.DesorbTextBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox3.Location = new System.Drawing.Point(128, 264);
+            this.DesorbTextBox3.Name = "DesorbTextBox3";
+            this.DesorbTextBox3.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox3.TabIndex = 4;
             // 
-            // textBox29
+            // DesorbTextBox13
             // 
-            this.textBox29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox29.Location = new System.Drawing.Point(267, 264);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(78, 26);
-            this.textBox29.TabIndex = 14;
+            this.DesorbTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox13.Location = new System.Drawing.Point(267, 264);
+            this.DesorbTextBox13.Name = "DesorbTextBox13";
+            this.DesorbTextBox13.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox13.TabIndex = 14;
             // 
-            // textBox44
+            // DesorbTextBox28
             // 
-            this.textBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox44.Location = new System.Drawing.Point(401, 424);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(78, 26);
-            this.textBox44.TabIndex = 29;
+            this.DesorbTextBox28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox28.Location = new System.Drawing.Point(401, 424);
+            this.DesorbTextBox28.Name = "DesorbTextBox28";
+            this.DesorbTextBox28.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox28.TabIndex = 29;
             // 
-            // textBox39
+            // DesorbTextBox23
             // 
-            this.textBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox39.Location = new System.Drawing.Point(401, 264);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(78, 26);
-            this.textBox39.TabIndex = 24;
+            this.DesorbTextBox23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox23.Location = new System.Drawing.Point(401, 264);
+            this.DesorbTextBox23.Name = "DesorbTextBox23";
+            this.DesorbTextBox23.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox23.TabIndex = 24;
             // 
-            // textBox34
+            // DesorbTextBox18
             // 
-            this.textBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox34.Location = new System.Drawing.Point(267, 424);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(78, 26);
-            this.textBox34.TabIndex = 19;
+            this.DesorbTextBox18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox18.Location = new System.Drawing.Point(267, 424);
+            this.DesorbTextBox18.Name = "DesorbTextBox18";
+            this.DesorbTextBox18.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox18.TabIndex = 19;
             // 
-            // textBox24
+            // DesorbTextBox8
             // 
-            this.textBox24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox24.Location = new System.Drawing.Point(128, 424);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(78, 26);
-            this.textBox24.TabIndex = 9;
+            this.DesorbTextBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox8.Location = new System.Drawing.Point(128, 424);
+            this.DesorbTextBox8.Name = "DesorbTextBox8";
+            this.DesorbTextBox8.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox8.TabIndex = 9;
             // 
-            // textBox20
+            // DesorbTextBox4
             // 
-            this.textBox20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox20.Location = new System.Drawing.Point(128, 296);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(78, 26);
-            this.textBox20.TabIndex = 5;
+            this.DesorbTextBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox4.Location = new System.Drawing.Point(128, 296);
+            this.DesorbTextBox4.Name = "DesorbTextBox4";
+            this.DesorbTextBox4.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox4.TabIndex = 5;
             // 
-            // textBox30
+            // DesorbTextBox14
             // 
-            this.textBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox30.Location = new System.Drawing.Point(267, 296);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(78, 26);
-            this.textBox30.TabIndex = 15;
+            this.DesorbTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox14.Location = new System.Drawing.Point(267, 296);
+            this.DesorbTextBox14.Name = "DesorbTextBox14";
+            this.DesorbTextBox14.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox14.TabIndex = 15;
             // 
-            // textBox43
+            // DesorbTextBox27
             // 
-            this.textBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox43.Location = new System.Drawing.Point(401, 392);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(78, 26);
-            this.textBox43.TabIndex = 28;
+            this.DesorbTextBox27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox27.Location = new System.Drawing.Point(401, 392);
+            this.DesorbTextBox27.Name = "DesorbTextBox27";
+            this.DesorbTextBox27.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox27.TabIndex = 28;
             // 
-            // textBox40
+            // DesorbTextBox24
             // 
-            this.textBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox40.Location = new System.Drawing.Point(401, 296);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(78, 26);
-            this.textBox40.TabIndex = 25;
+            this.DesorbTextBox24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox24.Location = new System.Drawing.Point(401, 296);
+            this.DesorbTextBox24.Name = "DesorbTextBox24";
+            this.DesorbTextBox24.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox24.TabIndex = 25;
             // 
-            // textBox33
+            // DesorbTextBox17
             // 
-            this.textBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox33.Location = new System.Drawing.Point(267, 392);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(78, 26);
-            this.textBox33.TabIndex = 18;
+            this.DesorbTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox17.Location = new System.Drawing.Point(267, 392);
+            this.DesorbTextBox17.Name = "DesorbTextBox17";
+            this.DesorbTextBox17.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox17.TabIndex = 18;
             // 
-            // textBox23
+            // DesorbTextBox7
             // 
-            this.textBox23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox23.Location = new System.Drawing.Point(128, 392);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(78, 26);
-            this.textBox23.TabIndex = 8;
+            this.DesorbTextBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox7.Location = new System.Drawing.Point(128, 392);
+            this.DesorbTextBox7.Name = "DesorbTextBox7";
+            this.DesorbTextBox7.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox7.TabIndex = 8;
             // 
-            // textBox21
+            // DesorbTextBox5
             // 
-            this.textBox21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox21.Location = new System.Drawing.Point(128, 328);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(78, 26);
-            this.textBox21.TabIndex = 6;
+            this.DesorbTextBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox5.Location = new System.Drawing.Point(128, 328);
+            this.DesorbTextBox5.Name = "DesorbTextBox5";
+            this.DesorbTextBox5.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox5.TabIndex = 6;
             // 
-            // textBox31
+            // DesorbTextBox15
             // 
-            this.textBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox31.Location = new System.Drawing.Point(267, 328);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(78, 26);
-            this.textBox31.TabIndex = 16;
+            this.DesorbTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox15.Location = new System.Drawing.Point(267, 328);
+            this.DesorbTextBox15.Name = "DesorbTextBox15";
+            this.DesorbTextBox15.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox15.TabIndex = 16;
             // 
-            // textBox42
+            // DesorbTextBox26
             // 
-            this.textBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox42.Location = new System.Drawing.Point(401, 360);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(78, 26);
-            this.textBox42.TabIndex = 27;
+            this.DesorbTextBox26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox26.Location = new System.Drawing.Point(401, 360);
+            this.DesorbTextBox26.Name = "DesorbTextBox26";
+            this.DesorbTextBox26.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox26.TabIndex = 27;
             // 
-            // textBox41
+            // DesorbTextBox25
             // 
-            this.textBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox41.Location = new System.Drawing.Point(401, 328);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(78, 26);
-            this.textBox41.TabIndex = 26;
+            this.DesorbTextBox25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox25.Location = new System.Drawing.Point(401, 328);
+            this.DesorbTextBox25.Name = "DesorbTextBox25";
+            this.DesorbTextBox25.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox25.TabIndex = 26;
             // 
-            // textBox32
+            // DesorbTextBox16
             // 
-            this.textBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox32.Location = new System.Drawing.Point(267, 360);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(78, 26);
-            this.textBox32.TabIndex = 17;
+            this.DesorbTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox16.Location = new System.Drawing.Point(267, 360);
+            this.DesorbTextBox16.Name = "DesorbTextBox16";
+            this.DesorbTextBox16.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox16.TabIndex = 17;
             // 
-            // textBox22
+            // DesorbTextBox6
             // 
-            this.textBox22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox22.Location = new System.Drawing.Point(128, 360);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(78, 26);
-            this.textBox22.TabIndex = 7;
+            this.DesorbTextBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox6.Location = new System.Drawing.Point(128, 360);
+            this.DesorbTextBox6.Name = "DesorbTextBox6";
+            this.DesorbTextBox6.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox6.TabIndex = 7;
             // 
             // label22
             // 
@@ -2813,16 +2833,6 @@ namespace GasFormsApp
             this.shapeContainer4.TabIndex = 9;
             this.shapeContainer4.TabStop = false;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1302, 467);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2864,18 +2874,18 @@ namespace GasFormsApp
         private TabPage tabPage4;
         private GroupBox groupBox1;
         private TextBox textBox15;
-        private TextBox textBox4;
+        private TextBox InitialVolumeTextBox;
         private Label label18;
         private TextBox textBox11;
         private Label label21;
         private Label label19;
-        private TextBox textBox13;
+        private TextBox SampleNumTextBox;
         private Label label20;
-        private ComboBox comboBox1;
+        private ComboBox SampleModeComboBox;
         private DateTimePicker SamplingTimeDateTimePicker;
-        private TextBox textBox12;
-        private TextBox textBox8;
-        private TextBox textBox7;
+        private TextBox RawCoalMoistureTextBox;
+        private TextBox LabTempTextBox;
+        private TextBox LabAtmPressureTextBox;
         private TextBox SamplingSpotTextBox;
         private Label label16;
         private Label label12;
@@ -2883,15 +2893,15 @@ namespace GasFormsApp
         private Label label15;
         private Label label11;
         private Label label6;
-        private TextBox textBox10;
-        private TextBox textBox6;
+        private TextBox MoistureSampleTextBox;
+        private TextBox UndTempTextBox;
         private TextBox BurialDepthTextBox;
         private Label label14;
         private Label label10;
         private Label label7;
-        private TextBox textBox9;
+        private TextBox SampleWeightTextBox;
         private Label label13;
-        private TextBox textBox5;
+        private TextBox UndAtmPressureTextBox;
         private Label label9;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private TextBox MineNameTextBox;
@@ -2913,36 +2923,36 @@ namespace GasFormsApp
         private Button button9;
         private Button button8;
         private TextBox textBox2;
-        private TextBox textBox46;
-        private TextBox textBox14;
-        private TextBox textBox27;
-        private TextBox textBox36;
-        private TextBox textBox26;
-        private TextBox textBox37;
-        private TextBox textBox18;
-        private TextBox textBox28;
-        private TextBox textBox45;
-        private TextBox textBox38;
-        private TextBox textBox35;
-        private TextBox textBox25;
-        private TextBox textBox19;
-        private TextBox textBox29;
-        private TextBox textBox44;
-        private TextBox textBox39;
-        private TextBox textBox34;
-        private TextBox textBox24;
-        private TextBox textBox20;
-        private TextBox textBox30;
-        private TextBox textBox43;
-        private TextBox textBox40;
-        private TextBox textBox33;
-        private TextBox textBox23;
-        private TextBox textBox21;
-        private TextBox textBox31;
-        private TextBox textBox42;
-        private TextBox textBox41;
-        private TextBox textBox32;
-        private TextBox textBox22;
+        private TextBox DesorbTextBox30;
+        private TextBox DesorbTextBox1;
+        private TextBox DesorbTextBox11;
+        private TextBox DesorbTextBox20;
+        private TextBox DesorbTextBox10;
+        private TextBox DesorbTextBox21;
+        private TextBox DesorbTextBox2;
+        private TextBox DesorbTextBox12;
+        private TextBox DesorbTextBox29;
+        private TextBox DesorbTextBox22;
+        private TextBox DesorbTextBox19;
+        private TextBox DesorbTextBox9;
+        private TextBox DesorbTextBox3;
+        private TextBox DesorbTextBox13;
+        private TextBox DesorbTextBox28;
+        private TextBox DesorbTextBox23;
+        private TextBox DesorbTextBox18;
+        private TextBox DesorbTextBox8;
+        private TextBox DesorbTextBox4;
+        private TextBox DesorbTextBox14;
+        private TextBox DesorbTextBox27;
+        private TextBox DesorbTextBox24;
+        private TextBox DesorbTextBox17;
+        private TextBox DesorbTextBox7;
+        private TextBox DesorbTextBox5;
+        private TextBox DesorbTextBox15;
+        private TextBox DesorbTextBox26;
+        private TextBox DesorbTextBox25;
+        private TextBox DesorbTextBox16;
+        private TextBox DesorbTextBox6;
         private Label label22;
         private Label label23;
         private TextBox textBox48;
@@ -2978,36 +2988,36 @@ namespace GasFormsApp
         private Label label28;
         private Label label38;
         private Label label48;
-        private TextBox textBox49;
-        private TextBox textBox50;
-        private TextBox textBox51;
-        private TextBox textBox52;
-        private TextBox textBox53;
-        private TextBox textBox54;
-        private TextBox textBox55;
-        private TextBox textBox56;
-        private TextBox textBox57;
-        private TextBox textBox58;
-        private TextBox textBox59;
-        private TextBox textBox60;
-        private TextBox textBox61;
-        private TextBox textBox62;
-        private TextBox textBox63;
-        private TextBox textBox64;
-        private TextBox textBox65;
-        private TextBox textBox66;
-        private TextBox textBox67;
-        private TextBox textBox68;
-        private TextBox textBox69;
-        private TextBox textBox70;
-        private TextBox textBox71;
-        private TextBox textBox72;
-        private TextBox textBox73;
-        private TextBox textBox74;
-        private TextBox textBox75;
-        private TextBox textBox76;
-        private TextBox textBox77;
-        private TextBox textBox78;
+        private TextBox DesorbTextBox60;
+        private TextBox DesorbTextBox31;
+        private TextBox DesorbTextBox41;
+        private TextBox DesorbTextBox50;
+        private TextBox DesorbTextBox40;
+        private TextBox DesorbTextBox51;
+        private TextBox DesorbTextBox32;
+        private TextBox DesorbTextBox42;
+        private TextBox DesorbTextBox59;
+        private TextBox DesorbTextBox52;
+        private TextBox DesorbTextBox49;
+        private TextBox DesorbTextBox39;
+        private TextBox DesorbTextBox33;
+        private TextBox DesorbTextBox43;
+        private TextBox DesorbTextBox58;
+        private TextBox DesorbTextBox53;
+        private TextBox DesorbTextBox48;
+        private TextBox DesorbTextBox38;
+        private TextBox DesorbTextBox34;
+        private TextBox DesorbTextBox44;
+        private TextBox DesorbTextBox57;
+        private TextBox DesorbTextBox54;
+        private TextBox DesorbTextBox47;
+        private TextBox DesorbTextBox37;
+        private TextBox DesorbTextBox35;
+        private TextBox DesorbTextBox45;
+        private TextBox DesorbTextBox56;
+        private TextBox DesorbTextBox55;
+        private TextBox DesorbTextBox46;
+        private TextBox DesorbTextBox36;
         private Label label4;
         private Label label5;
         private Label label17;

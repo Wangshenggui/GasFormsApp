@@ -15,6 +15,13 @@ namespace GasFormsApp
         public LoginForm()
         {
             InitializeComponent();
+
+            MainForm main = new MainForm(false);
+            this.Hide();
+
+            main.ShowDialog();
+
+            this.Close();  // 关闭 LoginForm
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -46,6 +53,11 @@ namespace GasFormsApp
             {
                 BtnLogin_Click(null, null);
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

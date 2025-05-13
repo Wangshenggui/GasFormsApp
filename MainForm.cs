@@ -23,6 +23,8 @@ using System.Windows.Forms;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Reflection;
 using GasFormsApp.WordPperation;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.Diagnostics;
 
 namespace GasFormsApp
 {
@@ -72,7 +74,7 @@ namespace GasFormsApp
 
             #endregion
 
-
+            button2_Click(button2, EventArgs.Empty);
         }
 
         // 从嵌入的资源中加载图标
@@ -214,23 +216,184 @@ namespace GasFormsApp
                         // 替换占位符
                         WordPperation.BasicInfo basicInfo = new BasicInfo();
 
-                        // 调用示例
+                        // 基本信息替换
                         var placeholders = new Dictionary<string, string>
                         {
-                            {"{{MineName}}", MineNameTextBox.Text.Trim()},
-                            {"{{SamplingSpot}}", SamplingSpotTextBox.Text.Trim()},
-                            {"{{SamplingTime}}", SamplingTimeDateTimePicker.Text.Trim()},
-                            {"{{BurialDepth}}", BurialDepthTextBox.Text.Trim()},
-                            {"{{CoalSeam}}", CoalSeamTextBox.Text.Trim()},
+                            {"MineName", MineNameTextBox.Text.Trim()},//矿井名称
+                            {"SamplingSpot", SamplingSpotTextBox.Text.Trim()},//取样地点
+                            {"SamplingTime", "2020/1/5"/*SamplingTimeDateTimePicker.Text.Trim()*/},//取样时间
+                            {"BurialDepth", BurialDepthTextBox.Text.Trim()},//埋深
+                            {"CoalSeam", CoalSeamTextBox.Text.Trim()},//煤层
+                            {"SampleNum", SampleNumTextBox.Text.Trim()},//煤样编号
+                            {"UndAtmPressure", UndAtmPressureTextBox.Text.Trim()},//井下大气压力（KPa）
+                            {"LabAtmPressure", LabAtmPressureTextBox.Text.Trim()},//实验室大气压力（KPa）
+                            {"UndTemp", UndTempTextBox.Text.Trim()},//井下环境温度(℃)
+                            {"LabTemp", LabTempTextBox.Text.Trim()},//实验室温度(℃)
+                            {"SampleWeight", SampleWeightTextBox.Text.Trim()},//煤样重量（g）
+                            {"SampleMode", SampleModeComboBox.Text.Trim()},//取样方式
+                            {"MoistureSample", MoistureSampleTextBox.Text.Trim()},//煤样水分（%）
+                            {"RawCoalMoisture", RawCoalMoistureTextBox.Text.Trim()},//原煤水分（%）
+                            {"InitialVolume", InitialVolumeTextBox.Text.Trim()},//量管初始体积（ml）
                         };
+                        basicInfo.ReplacePlaceholders(memoryStream, placeholders);
+
+                        // 实验数据替换
+                        //placeholders = new Dictionary<string, string>
+                        //{
+                        //    {"D001", DesorbTextBox1.Text.Trim()},
+                        //};
+
+                        // 循环填充 D001 到 D060
+                        for (int i = 1; i <= 60; i++)
+                        {
+                            string placeholderKey = $"D{(i < 10 ? "00" : "0")}{i}";  // 生成 D001 到 D060
+                            string textBoxValue = Controls[$"DesorbTextBox{i}"]?.Text.Trim();  // 获取对应 TextBox 的值
+
+                            placeholders.Add(placeholderKey, i.ToString());
+                        }
                         basicInfo.ReplacePlaceholders(memoryStream, placeholders);
 
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
+
+                        // 插入图表
+                        InsertChart insertChart = new InsertChart();
+
+                        DesorbTextBox1.Text = "14";
+                        DesorbTextBox2.Text = "20";
+                        DesorbTextBox3.Text = "26";
+                        DesorbTextBox4.Text = "32";
+                        DesorbTextBox5.Text = "36";
+                        DesorbTextBox6.Text = "42";
+                        DesorbTextBox7.Text = "46";
+                        DesorbTextBox8.Text = "48";
+                        DesorbTextBox9.Text = "54";
+                        DesorbTextBox10.Text = "58";
+                        DesorbTextBox11.Text = "60";
+                        DesorbTextBox12.Text = "64";
+                        DesorbTextBox13.Text = "66";
+                        DesorbTextBox14.Text = "70";
+                        DesorbTextBox15.Text = "72";
+                        DesorbTextBox16.Text = "76";
+                        DesorbTextBox17.Text = "80";
+                        DesorbTextBox18.Text = "82";
+                        DesorbTextBox19.Text = "84";
+                        DesorbTextBox20.Text = "86";
+                        DesorbTextBox21.Text = "90";
+                        DesorbTextBox22.Text = "92";
+                        DesorbTextBox23.Text = "94";
+                        DesorbTextBox24.Text = "96";
+                        DesorbTextBox25.Text = "98";
+                        DesorbTextBox26.Text = "100";
+                        DesorbTextBox27.Text = "102";
+                        DesorbTextBox28.Text = "106";
+                        DesorbTextBox29.Text = "108";
+                        DesorbTextBox30.Text = "110";
+                        // 从文本框或其他地方获取数据，并将其传入函数
+                        // 假设这些是你窗体上的 TextBox 控件
+                        TextBox[] DesorbTextBox = new TextBox[]
+                        {
+                            DesorbTextBox1,
+                            DesorbTextBox2,
+                            DesorbTextBox3,
+                            DesorbTextBox4,
+                            DesorbTextBox5,
+                            DesorbTextBox6,
+                            DesorbTextBox7,
+                            DesorbTextBox8,
+                            DesorbTextBox9,
+                            DesorbTextBox10,
+                            DesorbTextBox11,
+                            DesorbTextBox12,
+                            DesorbTextBox13,
+                            DesorbTextBox14,
+                            DesorbTextBox15,
+                            DesorbTextBox16,
+                            DesorbTextBox17,
+                            DesorbTextBox18,
+                            DesorbTextBox19,
+                            DesorbTextBox20,
+                            DesorbTextBox21,
+                            DesorbTextBox22,
+                            DesorbTextBox23,
+                            DesorbTextBox24,
+                            DesorbTextBox25,
+                            DesorbTextBox26,
+                            DesorbTextBox27,
+                            DesorbTextBox28,
+                            DesorbTextBox29,
+                            DesorbTextBox30,
+                        };
+
+                        double t0 = 3;
+                        double[,] data = new double[DesorbTextBox.Length, 2]; // 数组大小根据 DesorbTextBox 数量来确定
+
+                        for (int i = 0; i < DesorbTextBox.Length; i++) // 循环次数根据 DesorbTextBox 数量确定
+                        {
+                            double sqrtValue = 0;
+                            if (i>20)
+                            {
+                                switch (i)
+                                {
+                                    case (21):
+                                        sqrtValue = Math.Sqrt(t0 + 22); // 计算平方根
+                                        break;
+                                    case (22):
+                                        sqrtValue = Math.Sqrt(t0 + 24);
+                                        break;
+                                    case (23):
+                                        sqrtValue = Math.Sqrt(t0 + 26);
+                                        break;
+                                    case (24):
+                                        sqrtValue = Math.Sqrt(t0 + 28);
+                                        break;
+                                    case (25):
+                                        sqrtValue = Math.Sqrt(t0 + 30);
+                                        break;
+                                    case (26):
+                                        sqrtValue = Math.Sqrt(t0 + 35);
+                                        break;
+                                    case (27):
+                                        sqrtValue = Math.Sqrt(t0 + 40);
+                                        break;
+                                    case (28):
+                                        sqrtValue = Math.Sqrt(t0 + 45);
+                                        break;
+                                    case (29):
+                                        sqrtValue = Math.Sqrt(t0 + 50);
+                                        break;
+                                    case (30):
+                                        sqrtValue = Math.Sqrt(t0 + 60);
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                sqrtValue = sqrtValue = Math.Sqrt(t0 + (i + 1));
+                            }
+                            double textBoxValue = double.Parse(DesorbTextBox[i].Text.Trim()); // 获取每个文本框的值并转换为 double
+                            data[i, 0] = sqrtValue; // 将平方根值存储在第一列
+                            data[i, 1] = textBoxValue; // 将文本框值存储在第二列
+                        }
+
+
+                        insertChart.InsertChartToWord(outputPath, data);
                     }
                 }
 
-                MessageBox.Show("Word 文件生成成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string filePath = @"C:\Users\Mac\Desktop\GitHub\GasFormsApp\1.docx";
+
+                try
+                {
+                    // 使用默认的程序打开 Word 文档（通常是 Word 或 Office 应用程序）
+                    Process.Start(filePath);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("无法打开文件: " + ex.Message);
+                }
+                this.Close();
+                //MessageBox.Show("Word 文件生成成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

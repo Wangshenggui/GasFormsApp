@@ -102,9 +102,9 @@ namespace GasFormsApp
                     doc.MainDocumentPart.Document.Save();
                 }
 
-                // 插入图表
-                InsertChart insertChart = new InsertChart();
-                insertChart.InsertChartToWord(outputPath);
+                //// 插入图表
+                //InsertChart insertChart = new InsertChart();
+                //insertChart.InsertChartToWord(outputPath);
 
                 //System.Windows.Forms.Application.Exit();
                 MessageBox.Show("Word 文件生成成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);

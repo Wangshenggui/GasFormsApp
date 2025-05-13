@@ -37,6 +37,9 @@ namespace GasFormsApp.WordPperation
                     {
                         sw.Write(docText);
                     }
+
+                    // 保存修改后的文档
+                    wordDoc.MainDocumentPart.Document.Save();
                 }
             }
             catch (Exception ex)
