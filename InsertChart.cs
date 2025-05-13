@@ -52,11 +52,11 @@ namespace GasFormsApp
             chart.ChartTitle.Text = "姓名与数据曲线";
             chart.HasLegend = false;
             chart.ChartTitle.Font.Name = "Arial Narrow";         // 设置字体
-            chart.ChartTitle.Font.Size = 10;              // 设置字体大小
+            chart.ChartTitle.Font.Size = 8;              // 设置字体大小
             chart.ChartTitle.Font.Bold = true;            // 加粗
             chart.ChartTitle.Font.Italic = false;          // 斜体
 
-            chart.ChartTitle.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red); // 设置颜色
+            chart.ChartTitle.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black); // 设置颜色
             // 把标题往上移动，紧贴图表上方
             chart.ChartTitle.IncludeInLayout = false;
             chart.ChartTitle.Top = 0;
@@ -78,8 +78,8 @@ namespace GasFormsApp
             // 设置点的大小（建议值 2~5，默认是5）
             series.MarkerSize = 2;
             // 设置点颜色（边框和填充）
-            series.MarkerForegroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);      // 点边框色
-            series.MarkerBackgroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);      // 点填充色
+            series.MarkerForegroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);      // 点边框色
+            series.MarkerBackgroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);      // 点填充色
 
 
             //// 添加一个新系列，只包含前5个数据点
@@ -189,10 +189,10 @@ namespace GasFormsApp
                 Console.WriteLine($"拟合方程: {bestTrendline.DataLabel.Text}");
 
                 // 设置最佳拟合曲线的样式
-                bestSeries.MarkerStyle = Microsoft.Office.Interop.Excel.XlMarkerStyle.xlMarkerStyleCircle;
-                bestSeries.MarkerSize = 5;
-                bestSeries.MarkerForegroundColor = ColorTranslator.ToOle(Color.DarkBlue);
-                bestSeries.MarkerBackgroundColor = ColorTranslator.ToOle(Color.DarkBlue);
+                bestSeries.MarkerStyle = Microsoft.Office.Interop.Excel.XlMarkerStyle.xlMarkerStyleSquare;
+                bestSeries.MarkerSize = 3;
+                bestSeries.MarkerForegroundColor = ColorTranslator.ToOle(Color.Black);
+                bestSeries.MarkerBackgroundColor = ColorTranslator.ToOle(Color.Black);
 
                 bestTrendline.DisplayEquation = true;
                 bestTrendline.DisplayRSquared = true;
@@ -231,7 +231,7 @@ namespace GasFormsApp
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).TickLabels.Font.Size = 10;
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).TickLabels.Font.Bold = true;            // 加粗
             // 禁用 Y 轴刻度线
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).MajorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkNone;
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).MajorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkOutside;
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).MinorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkNone;
             // 设置 X 轴刻度字体大小为 10
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).TickLabels.Font.Size = 10;
@@ -239,21 +239,21 @@ namespace GasFormsApp
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MinimumScale = 0;
             // 设置步长为1，确保显示1, 2, 3, 4, 5, 6...
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MajorUnit = 1;
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MaximumScale = 10 - 0.01;
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MaximumScale = 8 - 0.01;
             // 使用自定义格式隐藏0
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).TickLabels.NumberFormat = "0;0;;@";
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).TickLabels.Font.Bold = true;            // 加粗
             // 禁用 X 轴刻度线
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MajorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkNone;
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MajorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkOutside;
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MinorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkNone;
             // 加粗 Y 轴
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line.Weight = 1.25f;
             // 设置坐标轴线条颜色为黑色
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkBlue);
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             // 加粗 X 轴
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).Format.Line.Weight = 1.25f;
             // 设置坐标轴线条颜色为黑色
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).Format.Line.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkBlue);
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).Format.Line.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             // 获取 Y 轴 LineFormat
             var yAxisLineFormat = chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line;
             // 为 Y 轴添加箭头
