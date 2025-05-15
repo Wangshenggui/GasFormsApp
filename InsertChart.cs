@@ -229,7 +229,7 @@ namespace GasFormsApp
             chart.ChartArea.Format.Line.Visible = Microsoft.Office.Core.MsoTriState.msoFalse;
             // 设置 Y 轴刻度字体大小为 10
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).TickLabels.Font.Size = 10;
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).TickLabels.Font.Bold = true;            // 加粗
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).TickLabels.Font.Bold = false;            // 加粗
             // 禁用 Y 轴刻度线
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).MajorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkOutside;
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).MinorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkNone;
@@ -242,16 +242,16 @@ namespace GasFormsApp
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MaximumScale = 8 - 0.01;
             // 使用自定义格式隐藏0
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).TickLabels.NumberFormat = "0;0;;@";
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).TickLabels.Font.Bold = true;            // 加粗
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).TickLabels.Font.Bold = false;            // 加粗
             // 禁用 X 轴刻度线
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MajorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkOutside;
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).MinorTickMark = Microsoft.Office.Interop.Excel.XlTickMark.xlTickMarkNone;
             // 加粗 Y 轴
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line.Weight = 1.25f;
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line.Weight = 0.5f;
             // 设置坐标轴线条颜色为黑色
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlValue).Format.Line.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             // 加粗 X 轴
-            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).Format.Line.Weight = 1.25f;
+            chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).Format.Line.Weight = 0.5f;
             // 设置坐标轴线条颜色为黑色
             chart.Axes(Microsoft.Office.Interop.Excel.XlAxisType.xlCategory).Format.Line.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             // 获取 Y 轴 LineFormat

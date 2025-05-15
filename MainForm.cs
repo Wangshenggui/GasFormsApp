@@ -33,6 +33,24 @@ namespace GasFormsApp
         private bool v;
         private ImageList imageList1;
 
+        public string MineNameText => MineNameTextBox.Text;
+        public string SamplingSpotText => SamplingSpotTextBox.Text;
+        //public string SamplingTimeText => SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
+        public string SamplingTimeText;
+        public string BurialDepthText => BurialDepthTextBox.Text;
+        public string CoalSeamText => CoalSeamTextBox.Text;
+        public string SampleNumText => SampleNumTextBox.Text;
+        public string UndAtmPressureText => UndAtmPressureTextBox.Text;
+        public string LabAtmPressureText => LabAtmPressureTextBox.Text;
+        public string UndTempText => UndTempTextBox.Text;
+        public string LabTempText => LabTempTextBox.Text;
+        public string SampleWeightText => SampleWeightTextBox.Text;
+        public string SampleModeText => SampleModeComboBox.Text;
+        public string MoistureSampleText => MoistureSampleTextBox.Text;
+        public string RawCoalMoistureText => RawCoalMoistureTextBox.Text;
+        public string InitialVolumeText => InitialVolumeTextBox.Text;
+
+
         public MainForm(bool v)
         {
             this.v = v;
@@ -74,7 +92,57 @@ namespace GasFormsApp
 
             #endregion
 
-            button2_Click(button2, EventArgs.Empty);
+            #region 模拟用户输入 tabPage2
+            // 模拟用户输入
+            MineNameTextBox.Text = "矿井名称";
+            SamplingSpotTextBox.Text = "采样地点";
+            BurialDepthTextBox.Text = "埋深";
+            CoalSeamTextBox.Text = "煤层";
+
+            LabAtmPressureTextBox.Text = "1.01";
+            UndAtmPressureTextBox.Text = "1.05";
+            LabTempTextBox.Text = "25";
+            UndTempTextBox.Text = "30";
+            MoistureSampleTextBox.Text = "水分";
+            RawCoalMoistureTextBox.Text = "原水分";
+            SampleNumTextBox.Text = "编号";
+            InitialVolumeTextBox.Text = "初始体积";
+            SampleWeightTextBox.Text = "重量";
+
+            DesorbTextBox1.Text = "14";
+            DesorbTextBox2.Text = "20";
+            DesorbTextBox3.Text = "26";
+            DesorbTextBox4.Text = "32";
+            DesorbTextBox5.Text = "36";
+            DesorbTextBox6.Text = "42";
+            DesorbTextBox7.Text = "46";
+            DesorbTextBox8.Text = "48";
+            DesorbTextBox9.Text = "54";
+            DesorbTextBox10.Text = "58";
+            DesorbTextBox11.Text = "60";
+            DesorbTextBox12.Text = "64";
+            DesorbTextBox13.Text = "66";
+            DesorbTextBox14.Text = "70";
+            DesorbTextBox15.Text = "72";
+            DesorbTextBox16.Text = "76";
+            DesorbTextBox17.Text = "80";
+            DesorbTextBox18.Text = "82";
+            DesorbTextBox19.Text = "84";
+            DesorbTextBox20.Text = "86";
+            DesorbTextBox21.Text = "90";
+            DesorbTextBox22.Text = "92";
+            DesorbTextBox23.Text = "94";
+            DesorbTextBox24.Text = "96";
+            DesorbTextBox25.Text = "98";
+            DesorbTextBox26.Text = "100";
+            DesorbTextBox27.Text = "102";
+            DesorbTextBox28.Text = "106";
+            DesorbTextBox29.Text = "108";
+            DesorbTextBox30.Text = "110";
+            #endregion
+
+            //button2_Click(button2, EventArgs.Empty);
+            SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
         }
 
         // 从嵌入的资源中加载图标
@@ -91,15 +159,6 @@ namespace GasFormsApp
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -139,41 +198,7 @@ namespace GasFormsApp
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox50_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox53_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox52_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             string name = SamplingSpotTextBox.Text.Trim();
@@ -214,44 +239,9 @@ namespace GasFormsApp
                         resourceStream.CopyTo(memoryStream);
 
                         // 替换占位符
-                        WordPperation.BasicInfo basicInfo = new BasicInfo();
-
-                        // 基本信息替换
-                        var placeholders = new Dictionary<string, string>
-                        {
-                            {"MineName", MineNameTextBox.Text.Trim()},//矿井名称
-                            {"SamplingSpot", SamplingSpotTextBox.Text.Trim()},//取样地点
-                            {"SamplingTime", "2020/1/5"/*SamplingTimeDateTimePicker.Text.Trim()*/},//取样时间
-                            {"BurialDepth", BurialDepthTextBox.Text.Trim()},//埋深
-                            {"CoalSeam", CoalSeamTextBox.Text.Trim()},//煤层
-                            {"SampleNum", SampleNumTextBox.Text.Trim()},//煤样编号
-                            {"UndAtmPressure", UndAtmPressureTextBox.Text.Trim()},//井下大气压力（KPa）
-                            {"LabAtmPressure", LabAtmPressureTextBox.Text.Trim()},//实验室大气压力（KPa）
-                            {"UndTemp", UndTempTextBox.Text.Trim()},//井下环境温度(℃)
-                            {"LabTemp", LabTempTextBox.Text.Trim()},//实验室温度(℃)
-                            {"SampleWeight", SampleWeightTextBox.Text.Trim()},//煤样重量（g）
-                            {"SampleMode", SampleModeComboBox.Text.Trim()},//取样方式
-                            {"MoistureSample", MoistureSampleTextBox.Text.Trim()},//煤样水分（%）
-                            {"RawCoalMoisture", RawCoalMoistureTextBox.Text.Trim()},//原煤水分（%）
-                            {"InitialVolume", InitialVolumeTextBox.Text.Trim()},//量管初始体积（ml）
-                        };
-                        basicInfo.ReplacePlaceholders(memoryStream, placeholders);
-
-                        // 实验数据替换
-                        //placeholders = new Dictionary<string, string>
-                        //{
-                        //    {"D001", DesorbTextBox1.Text.Trim()},
-                        //};
-
-                        // 循环填充 D001 到 D060
-                        for (int i = 1; i <= 60; i++)
-                        {
-                            string placeholderKey = $"D{(i < 10 ? "00" : "0")}{i}";  // 生成 D001 到 D060
-                            string textBoxValue = Controls[$"DesorbTextBox{i}"]?.Text.Trim();  // 获取对应 TextBox 的值
-
-                            placeholders.Add(placeholderKey, i.ToString());
-                        }
-                        basicInfo.ReplacePlaceholders(memoryStream, placeholders);
+                        BasicInfo basicInfo = new BasicInfo();
+                        Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
+                        basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
 
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
@@ -259,71 +249,15 @@ namespace GasFormsApp
                         // 插入图表
                         InsertChart insertChart = new InsertChart();
 
-                        DesorbTextBox1.Text = "14";
-                        DesorbTextBox2.Text = "20";
-                        DesorbTextBox3.Text = "26";
-                        DesorbTextBox4.Text = "32";
-                        DesorbTextBox5.Text = "36";
-                        DesorbTextBox6.Text = "42";
-                        DesorbTextBox7.Text = "46";
-                        DesorbTextBox8.Text = "48";
-                        DesorbTextBox9.Text = "54";
-                        DesorbTextBox10.Text = "58";
-                        DesorbTextBox11.Text = "60";
-                        DesorbTextBox12.Text = "64";
-                        DesorbTextBox13.Text = "66";
-                        DesorbTextBox14.Text = "70";
-                        DesorbTextBox15.Text = "72";
-                        DesorbTextBox16.Text = "76";
-                        DesorbTextBox17.Text = "80";
-                        DesorbTextBox18.Text = "82";
-                        DesorbTextBox19.Text = "84";
-                        DesorbTextBox20.Text = "86";
-                        DesorbTextBox21.Text = "90";
-                        DesorbTextBox22.Text = "92";
-                        DesorbTextBox23.Text = "94";
-                        DesorbTextBox24.Text = "96";
-                        DesorbTextBox25.Text = "98";
-                        DesorbTextBox26.Text = "100";
-                        DesorbTextBox27.Text = "102";
-                        DesorbTextBox28.Text = "106";
-                        DesorbTextBox29.Text = "108";
-                        DesorbTextBox30.Text = "110";
                         // 从文本框或其他地方获取数据，并将其传入函数
                         // 假设这些是你窗体上的 TextBox 控件
-                        TextBox[] DesorbTextBox = new TextBox[]
+                        TextBox[] DesorbTextBox = new TextBox[60];
+                        for (int i = 0; i < 60; i++)
                         {
-                            DesorbTextBox1,
-                            DesorbTextBox2,
-                            DesorbTextBox3,
-                            DesorbTextBox4,
-                            DesorbTextBox5,
-                            DesorbTextBox6,
-                            DesorbTextBox7,
-                            DesorbTextBox8,
-                            DesorbTextBox9,
-                            DesorbTextBox10,
-                            DesorbTextBox11,
-                            DesorbTextBox12,
-                            DesorbTextBox13,
-                            DesorbTextBox14,
-                            DesorbTextBox15,
-                            DesorbTextBox16,
-                            DesorbTextBox17,
-                            DesorbTextBox18,
-                            DesorbTextBox19,
-                            DesorbTextBox20,
-                            DesorbTextBox21,
-                            DesorbTextBox22,
-                            DesorbTextBox23,
-                            DesorbTextBox24,
-                            DesorbTextBox25,
-                            DesorbTextBox26,
-                            DesorbTextBox27,
-                            DesorbTextBox28,
-                            DesorbTextBox29,
-                            DesorbTextBox30,
-                        };
+                            string controlName = $"DesorbTextBox{i + 1}";
+                            DesorbTextBox[i] = this.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
+                        }
+
 
                         double t0 = 3;
                         double[,] data = new double[DesorbTextBox.Length, 2]; // 数组大小根据 DesorbTextBox 数量来确定
@@ -369,14 +303,29 @@ namespace GasFormsApp
                             }
                             else
                             {
-                                sqrtValue = sqrtValue = Math.Sqrt(t0 + (i + 1));
+                                sqrtValue = Math.Sqrt(t0 + (i + 1));
                             }
-                            double textBoxValue = double.Parse(DesorbTextBox[i].Text.Trim()); // 获取每个文本框的值并转换为 double
+                            //double textBoxValue = double.Parse(DesorbTextBox[i].Text.Trim()); // 获取每个文本框的值并转换为 double
+                            double textBoxValue = 0.0;
+
+                            if (!string.IsNullOrWhiteSpace(DesorbTextBox[i].Text) &&
+                                double.TryParse(DesorbTextBox[i].Text.Trim(), out double value))
+                            {
+                                textBoxValue = value;
+                            }
+                            else
+                            {
+                                // 你可以选择：
+                                // 1. 保持 textBoxValue 为 0.0（默认）
+                                // 2. 给出提示
+                                // 3. 跳过这一项
+                                // 4. 抛出异常，自定义消息
+                                textBoxValue = 0;
+                            }
+
                             data[i, 0] = sqrtValue; // 将平方根值存储在第一列
                             data[i, 1] = textBoxValue; // 将文本框值存储在第二列
                         }
-
-
                         insertChart.InsertChartToWord(outputPath, data);
                     }
                 }
@@ -395,6 +344,12 @@ namespace GasFormsApp
                 this.Close();
                 //MessageBox.Show("Word 文件生成成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void SamplingTimeDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
+            Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
         }
     }
 }

@@ -11,6 +11,45 @@ namespace GasFormsApp.WordPperation
 {
     internal class BasicInfo
     {
+        MainForm mainForm = new MainForm(true);
+        public void ReplaceWordPlaceholders(MemoryStream memoryStream,string SamplingTimeText)
+        {
+            Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
+            // 基本信息替换
+            var placeholders = new Dictionary<string, string>
+            {
+                {"MineName", mainForm.MineNameText},//矿井名称
+                {"SamplingSpot", mainForm.SamplingSpotText},//取样地点
+                {"SamplingTime", SamplingTimeText},//取样时间
+                {"BurialDepth", mainForm.BurialDepthText},//埋深
+                {"CoalSeam", mainForm.CoalSeamText},//煤层
+                {"SampleNum", mainForm.SampleNumText},//煤样编号
+                {"UndAtmPressure", mainForm.UndAtmPressureText},//井下大气压力（KPa）
+                {"LabAtmPressure", mainForm.LabAtmPressureText},//实验室大气压力（KPa）
+                {"UndTemp", mainForm.UndTempText},//井下环境温度(℃)
+                {"LabTemp", mainForm.LabTempText},//实验室温度(℃)
+                {"SampleWeight", mainForm.SampleWeightText},//煤样重量（g）
+                {"SampleMode", mainForm.SampleModeText},//取样方式
+                {"MoistureSample", mainForm.MoistureSampleText},//煤样水分（%）
+                {"RawCoalMoisture", mainForm.RawCoalMoistureText},//原煤水分（%）
+                {"InitialVolume", mainForm.InitialVolumeText},//量管初始体积（ml）
+            };
+            ReplacePlaceholders(memoryStream, placeholders);
+
+            // 实验数据替换
+            placeholders = new Dictionary<string, string>();
+            for (int i = 1; i <= 60; i++)
+            {
+                string key = $"D{i:000}";
+                var textBox = mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+                if (textBox != null)
+                {
+                    placeholders[key] = textBox.Text.Trim();
+                }
+            }
+            ReplacePlaceholders(memoryStream, placeholders);
+        }
+
         public void ReplacePlaceholders(MemoryStream memoryStream, Dictionary<string, string> placeholderValues)
         {
             try
