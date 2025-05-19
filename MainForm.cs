@@ -50,8 +50,25 @@ namespace GasFormsApp
         public string MoistureSampleText => MoistureSampleTextBox.Text;
         public string RawCoalMoistureText => RawCoalMoistureTextBox.Text;
         public string InitialVolumeText => InitialVolumeTextBox.Text;
-        
-        
+
+        public string DesorpVolNormalText => DesorpVolNormalTextBox.Text;
+        public string Sample1WeightText => Sample1WeightTextBox.Text;
+        public string Sample2WeightText => Sample2WeightTextBox.Text;
+        public string S1DesorpVolText => S1DesorpVolTextBox.Text;
+        public string S2DesorpVolText => S2DesorpVolTextBox.Text;
+        public string AdsorpConstAText => AdsorpConstATextBox.Text;
+        public string AdsorpConstBText => AdsorpConstBTextBox.Text;
+        public string MadText => MadTextBox.Text;
+        public string AadText => AadTextBox.Text;
+        public string PorosityText => PorosityTextBox.Text;
+        public string AppDensityText => AppDensityTextBox.Text;
+        public string NonDesorpGasQtyText => NonDesorpGasQtyTextBox.Text;
+        public string VadText => VadTextBox.Text;
+
+
+
+
+
 
 
         public MainForm(bool v)
@@ -142,6 +159,21 @@ namespace GasFormsApp
             DesorbTextBox28.Text = "106";
             DesorbTextBox29.Text = "108";
             DesorbTextBox30.Text = "110";
+
+            DesorpVolNormalTextBox.Text = "123";
+            Sample1WeightTextBox.Text = "111";
+            Sample2WeightTextBox.Text = "222";
+            S1DesorpVolTextBox.Text = "333";
+            S2DesorpVolTextBox.Text = "444";
+
+            AdsorpConstATextBox.Text = "38.0";
+            AdsorpConstBTextBox.Text = "0.9";
+            MadTextBox.Text = "2.9";
+            AadTextBox.Text = "11.5";
+            PorosityTextBox.Text = "6.21";
+            AppDensityTextBox.Text = "1.34";
+            NonDesorpGasQtyTextBox.Text = "1.9254";
+            VadTextBox.Text = "18.444";
             #endregion
 
             //button2_Click(button2, EventArgs.Empty);

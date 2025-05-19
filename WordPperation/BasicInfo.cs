@@ -37,6 +37,21 @@ namespace GasFormsApp.WordPperation
                 {"InitialVolume", mainForm.InitialVolumeText},//量管初始体积（ml）
                 {"UgDesorpVol", maxKey},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
+                {"DesorpVolNormal", mainForm.DesorpVolNormalText},//实验室常压解吸W2(ml)
+                {"Sample1WeightText", mainForm.Sample1WeightText},//粉碎后第1份煤样重(g)
+                {"Sample2WeightText", mainForm.Sample2WeightText},//粉碎后第2份煤样重(g)
+                {"S1DesorpVolText", mainForm.S1DesorpVolText},//第1份煤样解吸量(ml)
+                {"S2DesorpVolText", mainForm.S2DesorpVolText},//第2份煤样解吸量(ml)
+                {"AdsorpConstAText", mainForm.AdsorpConstAText},//煤的吸附常数a值
+                {"AdsorpConstBText", mainForm.AdsorpConstBText},//煤的吸附常数b值
+                {"MadText", mainForm.MadText},//水分
+                {"AadText", mainForm.AadText},//灰分
+                {"PorosityText", mainForm.PorosityText},//孔隙率
+                {"AppDensityText", mainForm.AppDensityText},//视密度
+                {"NonDesorpGasQtyText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
+                {"VadText", mainForm.VadText},//挥发分Vad
+                
+
             };
             ReplacePlaceholders(memoryStream, placeholders);
 
