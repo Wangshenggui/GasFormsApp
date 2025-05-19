@@ -11,7 +11,9 @@ namespace GasFormsApp.WordPperation
 {
     internal class BasicInfo
     {
+        InsertChart insertChart = new InsertChart();
         MainForm mainForm = new MainForm(true);
+        static string maxKey = null;
         public void ReplaceWordPlaceholders(MemoryStream memoryStream,string SamplingTimeText)
         {
             Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
@@ -33,18 +35,34 @@ namespace GasFormsApp.WordPperation
                 {"MoistureSample", mainForm.MoistureSampleText},//煤样水分（%）
                 {"RawCoalMoisture", mainForm.RawCoalMoistureText},//原煤水分（%）
                 {"InitialVolume", mainForm.InitialVolumeText},//量管初始体积（ml）
+                {"UgDesorpVol", maxKey},//井下解吸量W11(ml)
+                {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
             };
             ReplacePlaceholders(memoryStream, placeholders);
 
             // 实验数据替换
             placeholders = new Dictionary<string, string>();
+            double maxValue = double.MinValue;
+            
+
             for (int i = 1; i <= 60; i++)
             {
                 string key = $"D{i:000}";
                 var textBox = mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+
                 if (textBox != null)
                 {
-                    placeholders[key] = textBox.Text.Trim();
+                    string text = textBox.Text.Trim();
+                    placeholders[key] = text;
+
+                    if (double.TryParse(text, out double val))
+                    {
+                        if (val > maxValue)
+                        {
+                            maxValue = val;
+                            maxKey = key;
+                        }
+                    }
                 }
             }
             ReplacePlaceholders(memoryStream, placeholders);

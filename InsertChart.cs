@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,19 @@ namespace GasFormsApp
 {
     internal class InsertChart
     {
+        //public string GasLossVolText => "R2";
+        private static string GasLossVolText;
+
+        public static void SetGasLossVolText(string text)
+        {
+            GasLossVolText = text;
+        }
+
+        public static string GetGasLossVolText()
+        {
+            return GasLossVolText;
+        }
+
         public void InsertChartToWord(string outputPath, double[,] data)
         {
             // 创建一个 Excel 应用实例来生成图表
@@ -70,16 +84,21 @@ namespace GasFormsApp
             // 手动添加唯一系列
             Microsoft.Office.Interop.Excel.Series series = (Microsoft.Office.Interop.Excel.Series)chart.SeriesCollection().NewSeries();
             int lastRow = worksheet.Cells[worksheet.Rows.Count, 1].End(Microsoft.Office.Interop.Excel.XlDirection.xlUp).Row;
-            series.XValues = worksheet.Range["A2:A" +lastRow.ToString()]; // X值范围（不含标题）
+            series.XValues = worksheet.Range["A2:A" + lastRow.ToString()]; // X值范围（不含标题）
             series.Values = worksheet.Range["B2:B" + lastRow.ToString()];  // Y值范围（不含标题）
             series.Name = "数据系列"; // 可选命名
+
             // 设置点样式为圆形
             series.MarkerStyle = Microsoft.Office.Interop.Excel.XlMarkerStyle.xlMarkerStyleCircle;
             // 设置点的大小（建议值 2~5，默认是5）
             series.MarkerSize = 2;
+            // 设置点无边框（透明边框）
+            series.MarkerForegroundColorIndex = Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexNone;
+            // 设置点填充为黑色
+            series.MarkerBackgroundColor = System.Drawing.Color.Black.ToArgb();
             // 设置点颜色（边框和填充）
-            series.MarkerForegroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);      // 点边框色
-            series.MarkerBackgroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);      // 点填充色
+            //series.MarkerForegroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);      // 点边框色
+            //series.MarkerBackgroundColor = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);      // 点填充色
 
 
             //// 添加一个新系列，只包含前5个数据点
@@ -184,16 +203,31 @@ namespace GasFormsApp
                 var bestSeries = bestFitLine.series;
                 var bestTrendline = bestFitLine.trendline;
 
+                string labelText = bestTrendline.DataLabel.Text;
+                var interceptMatch = Regex.Match(labelText, @"x\s*([+-]\s*[0-9.]+)");
+
+                if (interceptMatch.Success)
+                {
+                    string interceptStr = interceptMatch.Groups[1].Value.Replace(" ", "");
+                    double intercept = double.Parse(interceptStr);
+                    // intercept 就是截距了
+                    SetGasLossVolText(Math.Abs(intercept).ToString());
+                }
+                
                 Console.WriteLine($"最大 R² 值: {bestFitLine.r2Value}");
+                Console.WriteLine($"GasLossVolText: {GetGasLossVolText()}");
                 Console.WriteLine($"最佳拟合曲线的范围: 第{bestFitLine.startRow}到{bestFitLine.endRow}点");
                 Console.WriteLine($"拟合方程: {bestTrendline.DataLabel.Text}");
 
                 // 设置最佳拟合曲线的样式
                 bestSeries.MarkerStyle = Microsoft.Office.Interop.Excel.XlMarkerStyle.xlMarkerStyleSquare;
                 bestSeries.MarkerSize = 3;
-                bestSeries.MarkerForegroundColor = ColorTranslator.ToOle(Color.Black);
-                bestSeries.MarkerBackgroundColor = ColorTranslator.ToOle(Color.Black);
-
+                //bestSeries.MarkerForegroundColor = ColorTranslator.ToOle(Color.White);
+                //bestSeries.MarkerBackgroundColor = ColorTranslator.ToOle(Color.Black);
+                // 设置点无边框（透明边框）
+                bestSeries.MarkerForegroundColorIndex = Microsoft.Office.Interop.Excel.XlColorIndex.xlColorIndexNone;
+                // 设置点填充为黑色
+                bestSeries.MarkerBackgroundColor = System.Drawing.Color.Black.ToArgb();
                 bestTrendline.DisplayEquation = true;
                 bestTrendline.DisplayRSquared = true;
                 bestTrendline.Forward = 10;   // 向前延伸5个单位（根据需要调整）

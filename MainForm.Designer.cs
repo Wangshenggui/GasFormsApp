@@ -125,11 +125,6 @@ namespace GasFormsApp
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.label106 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label105 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.InitialVolumeTextBox = new System.Windows.Forms.TextBox();
@@ -256,6 +251,10 @@ namespace GasFormsApp
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -626,6 +625,10 @@ namespace GasFormsApp
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.DesorbTextBox60);
             this.groupBox2.Controls.Add(this.DesorbTextBox31);
             this.groupBox2.Controls.Add(this.DesorbTextBox41);
@@ -686,11 +689,6 @@ namespace GasFormsApp
             this.groupBox2.Controls.Add(this.label79);
             this.groupBox2.Controls.Add(this.label80);
             this.groupBox2.Controls.Add(this.label81);
-            this.groupBox2.Controls.Add(this.dateTimePicker5);
-            this.groupBox2.Controls.Add(this.label106);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.label105);
-            this.groupBox2.Controls.Add(this.label104);
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.InitialVolumeTextBox);
@@ -1334,54 +1332,6 @@ namespace GasFormsApp
             this.label81.Size = new System.Drawing.Size(39, 16);
             this.label81.TabIndex = 45;
             this.label81.Text = "115:";
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker5.Location = new System.Drawing.Point(665, 34);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(266, 29);
-            this.dateTimePicker5.TabIndex = 37;
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label106.Location = new System.Drawing.Point(556, 94);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(111, 16);
-            this.label106.TabIndex = 41;
-            this.label106.Text = "解吸开始时间:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(213, 88);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(292, 29);
-            this.dateTimePicker3.TabIndex = 36;
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label105.Location = new System.Drawing.Point(73, 95);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(111, 16);
-            this.label105.TabIndex = 40;
-            this.label105.Text = "取芯结束时间:";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label104.Location = new System.Drawing.Point(556, 40);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(111, 16);
-            this.label104.TabIndex = 39;
-            this.label104.Text = "取芯开始时间:";
             // 
             // button9
             // 
@@ -2694,6 +2644,46 @@ namespace GasFormsApp
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 2;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(213, 91);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(292, 26);
+            this.textBox1.TabIndex = 104;
+            this.textBox1.Text = "0";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.IndianRed;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(73, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(143, 16);
+            this.label18.TabIndex = 105;
+            this.label18.Text = "大 气 压 力(kPa):";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.IndianRed;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(534, 94);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(135, 16);
+            this.label19.TabIndex = 106;
+            this.label19.Text = "量管内水温 (℃):";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(674, 91);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(292, 26);
+            this.textBox2.TabIndex = 107;
+            this.textBox2.Text = "0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2767,11 +2757,6 @@ namespace GasFormsApp
         private Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private GroupBox groupBox2;
-        private DateTimePicker dateTimePicker5;
-        private Label label106;
-        private DateTimePicker dateTimePicker3;
-        private Label label105;
-        private Label label104;
         private Button button9;
         private Button button8;
         private TextBox InitialVolumeTextBox;
@@ -2953,5 +2938,9 @@ namespace GasFormsApp
         private Label label111;
         private Button button2;
         private DateTimePicker dateTimePicker1;
+        private TextBox textBox2;
+        private Label label19;
+        private TextBox textBox1;
+        private Label label18;
     }
 }

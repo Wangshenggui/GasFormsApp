@@ -25,6 +25,7 @@ using System.Reflection;
 using GasFormsApp.WordPperation;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace GasFormsApp
 {
@@ -49,6 +50,8 @@ namespace GasFormsApp
         public string MoistureSampleText => MoistureSampleTextBox.Text;
         public string RawCoalMoistureText => RawCoalMoistureTextBox.Text;
         public string InitialVolumeText => InitialVolumeTextBox.Text;
+        
+        
 
 
         public MainForm(bool v)
@@ -265,7 +268,7 @@ namespace GasFormsApp
                         for (int i = 0; i < DesorbTextBox.Length; i++) // 循环次数根据 DesorbTextBox 数量确定
                         {
                             double sqrtValue = 0;
-                            if (i>20)
+                            if (i > 20)
                             {
                                 switch (i)
                                 {
@@ -329,21 +332,85 @@ namespace GasFormsApp
                         insertChart.InsertChartToWord(outputPath, data);
                     }
                 }
+            }
 
-                string filePath = @"C:\Users\Mac\Desktop\GitHub\GasFormsApp\1.docx";
+            // 使用上面的路径
+            //if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string outputPath = saveDialog.FileName;
 
+                // 获取程序集中的 Word 模板资源
+                var assembly = Assembly.GetExecutingAssembly();
+                string resourceName = "GasFormsApp.WordTemplate.docx";
+
+                using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
+                {
+                    if (resourceStream == null)
+                    {
+                        MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // 复制模板到内存
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        resourceStream.CopyTo(memoryStream);
+
+                        // 替换占位符
+                        BasicInfo basicInfo = new BasicInfo();
+                        basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
+
+                        // 写入替换后的 Word 文件到磁盘（必须先写到 outputPath）
+                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
+                    }
+                }
+
+                // === 确保图表已经复制到剪贴板 ===
+                //chart.Copy();
+
+                // 打开 Word 插入图表
+                var wordApp = new Microsoft.Office.Interop.Word.Application();
+                wordApp.Visible = false;
+
+                var doc = wordApp.Documents.Open(outputPath);
+
+                if (doc.Bookmarks.Exists("ChartPlaceholder"))
+                {
+                    var bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
+
+                    bookmarkRange.Paste(); // 粘贴剪贴板内容（图表）
+
+                    // 粘贴后书签可能丢失，建议重新添加
+                    doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
+
+                    Marshal.ReleaseComObject(bookmarkRange);
+                }
+                else
+                {
+                    MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                // 保存并关闭 Word 文档
+                doc.Save();
+                doc.Close(false);
+                Marshal.ReleaseComObject(doc);
+
+                wordApp.Quit(false);
+                Marshal.ReleaseComObject(wordApp);
+
+                // 打开生成的 Word 文件
                 try
                 {
-                    // 使用默认的程序打开 Word 文档（通常是 Word 或 Office 应用程序）
-                    Process.Start(filePath);
+                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("无法打开文件: " + ex.Message);
                 }
+
                 this.Close();
-                //MessageBox.Show("Word 文件生成成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void SamplingTimeDateTimePicker_ValueChanged(object sender, EventArgs e)
