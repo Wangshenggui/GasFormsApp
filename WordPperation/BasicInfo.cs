@@ -50,7 +50,13 @@ namespace GasFormsApp.WordPperation
                 {"AppDensityText", mainForm.AppDensityText},//视密度
                 {"NonDesorpGasQtyText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
                 {"VadText", mainForm.VadText},//挥发分Vad
-                
+                {"W1Text", mainForm.W1_Text},//W1
+                {"W2Text", mainForm.W2_Text},//W2
+                {"W3Text", mainForm.W3_Text},//W3
+                {"WaText", mainForm.Wa_Text},//Wa
+                {"WcText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
+                {"WText", mainForm.W_Text},//W
+                {"PText", mainForm.P_Text},//P
 
             };
             ReplacePlaceholders(memoryStream, placeholders);

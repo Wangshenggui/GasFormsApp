@@ -64,6 +64,14 @@ namespace GasFormsApp
         public string AppDensityText => AppDensityTextBox.Text;
         public string NonDesorpGasQtyText => NonDesorpGasQtyTextBox.Text;
         public string VadText => VadTextBox.Text;
+        public string W1_Text => W1_TextBox.Text;
+        public string W2_Text => W2_TextBox.Text;
+        public string W3_Text => W3_TextBox.Text;
+        public string Wa_Text => Wa_TextBox.Text;
+        public string W_Text => W_TextBox.Text;
+        public string P_Text => P_TextBox.Text;
+
+
 
 
 
@@ -174,6 +182,13 @@ namespace GasFormsApp
             AppDensityTextBox.Text = "1.34";
             NonDesorpGasQtyTextBox.Text = "1.9254";
             VadTextBox.Text = "18.444";
+
+            W1_TextBox.Text = "w1fasd";
+            W2_TextBox.Text = "w2nhrt";
+            W3_TextBox.Text = "w3shrt";
+            Wa_TextBox.Text = "wa270";
+            W_TextBox.Text = "WWW";
+            P_TextBox.Text = "PPP";
             #endregion
 
             //button2_Click(button2, EventArgs.Empty);

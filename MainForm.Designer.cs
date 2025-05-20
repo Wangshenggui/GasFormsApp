@@ -65,6 +65,10 @@ namespace GasFormsApp
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.DesorbTextBox60 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox31 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox41 = new System.Windows.Forms.TextBox();
@@ -214,21 +218,19 @@ namespace GasFormsApp
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.VadTextBox = new System.Windows.Forms.TextBox();
             this.label111 = new System.Windows.Forms.Label();
-            this.textBox85 = new System.Windows.Forms.TextBox();
+            this.P_TextBox = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox86 = new System.Windows.Forms.TextBox();
-            this.textBox87 = new System.Windows.Forms.TextBox();
-            this.textBox88 = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
+            this.Wa_TextBox = new System.Windows.Forms.TextBox();
+            this.W2_TextBox = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
-            this.textBox89 = new System.Windows.Forms.TextBox();
+            this.W_TextBox = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
             this.label93 = new System.Windows.Forms.Label();
-            this.textBox90 = new System.Windows.Forms.TextBox();
+            this.W3_TextBox = new System.Windows.Forms.TextBox();
             this.label94 = new System.Windows.Forms.Label();
-            this.textBox91 = new System.Windows.Forms.TextBox();
+            this.W1_TextBox = new System.Windows.Forms.TextBox();
             this.label95 = new System.Windows.Forms.Label();
             this.NonDesorpGasQtyTextBox = new System.Windows.Forms.TextBox();
             this.AadTextBox = new System.Windows.Forms.TextBox();
@@ -251,10 +253,6 @@ namespace GasFormsApp
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -762,6 +760,46 @@ namespace GasFormsApp
             this.groupBox2.Size = new System.Drawing.Size(1052, 612);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(674, 91);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(292, 26);
+            this.textBox2.TabIndex = 107;
+            this.textBox2.Text = "0";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.IndianRed;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(534, 94);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(135, 16);
+            this.label19.TabIndex = 106;
+            this.label19.Text = "量管内水温 (℃):";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(213, 91);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(292, 26);
+            this.textBox1.TabIndex = 104;
+            this.textBox1.Text = "0";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.IndianRed;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(73, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(143, 16);
+            this.label18.TabIndex = 105;
+            this.label18.Text = "大 气 压 力(kPa):";
             // 
             // DesorbTextBox60
             // 
@@ -2197,21 +2235,19 @@ namespace GasFormsApp
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabPage4.Controls.Add(this.VadTextBox);
             this.tabPage4.Controls.Add(this.label111);
-            this.tabPage4.Controls.Add(this.textBox85);
+            this.tabPage4.Controls.Add(this.P_TextBox);
             this.tabPage4.Controls.Add(this.label102);
             this.tabPage4.Controls.Add(this.button10);
             this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.textBox86);
-            this.tabPage4.Controls.Add(this.textBox87);
-            this.tabPage4.Controls.Add(this.textBox88);
-            this.tabPage4.Controls.Add(this.label90);
+            this.tabPage4.Controls.Add(this.Wa_TextBox);
+            this.tabPage4.Controls.Add(this.W2_TextBox);
             this.tabPage4.Controls.Add(this.label91);
-            this.tabPage4.Controls.Add(this.textBox89);
+            this.tabPage4.Controls.Add(this.W_TextBox);
             this.tabPage4.Controls.Add(this.label92);
             this.tabPage4.Controls.Add(this.label93);
-            this.tabPage4.Controls.Add(this.textBox90);
+            this.tabPage4.Controls.Add(this.W3_TextBox);
             this.tabPage4.Controls.Add(this.label94);
-            this.tabPage4.Controls.Add(this.textBox91);
+            this.tabPage4.Controls.Add(this.W1_TextBox);
             this.tabPage4.Controls.Add(this.label95);
             this.tabPage4.Controls.Add(this.NonDesorpGasQtyTextBox);
             this.tabPage4.Controls.Add(this.AadTextBox);
@@ -2254,16 +2290,16 @@ namespace GasFormsApp
             this.label111.TabIndex = 56;
             this.label111.Text = "挥 发 分:";
             // 
-            // textBox85
+            // P_TextBox
             // 
-            this.textBox85.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox85.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox85.Location = new System.Drawing.Point(880, 454);
-            this.textBox85.Name = "textBox85";
-            this.textBox85.ReadOnly = true;
-            this.textBox85.Size = new System.Drawing.Size(179, 26);
-            this.textBox85.TabIndex = 53;
-            this.textBox85.Text = "0";
+            this.P_TextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.P_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.P_TextBox.Location = new System.Drawing.Point(880, 454);
+            this.P_TextBox.Name = "P_TextBox";
+            this.P_TextBox.ReadOnly = true;
+            this.P_TextBox.Size = new System.Drawing.Size(179, 26);
+            this.P_TextBox.TabIndex = 53;
+            this.P_TextBox.Text = "0";
             // 
             // label102
             // 
@@ -2303,49 +2339,27 @@ namespace GasFormsApp
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // textBox86
+            // Wa_TextBox
             // 
-            this.textBox86.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox86.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox86.Location = new System.Drawing.Point(880, 246);
-            this.textBox86.Name = "textBox86";
-            this.textBox86.ReadOnly = true;
-            this.textBox86.Size = new System.Drawing.Size(179, 26);
-            this.textBox86.TabIndex = 43;
-            this.textBox86.Text = "0";
+            this.Wa_TextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.Wa_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Wa_TextBox.Location = new System.Drawing.Point(880, 246);
+            this.Wa_TextBox.Name = "Wa_TextBox";
+            this.Wa_TextBox.ReadOnly = true;
+            this.Wa_TextBox.Size = new System.Drawing.Size(179, 26);
+            this.Wa_TextBox.TabIndex = 43;
+            this.Wa_TextBox.Text = "0";
             // 
-            // textBox87
+            // W2_TextBox
             // 
-            this.textBox87.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox87.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox87.Location = new System.Drawing.Point(880, 312);
-            this.textBox87.Name = "textBox87";
-            this.textBox87.ReadOnly = true;
-            this.textBox87.Size = new System.Drawing.Size(179, 26);
-            this.textBox87.TabIndex = 42;
-            this.textBox87.Text = "0";
-            // 
-            // textBox88
-            // 
-            this.textBox88.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox88.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox88.Location = new System.Drawing.Point(880, 117);
-            this.textBox88.Name = "textBox88";
-            this.textBox88.ReadOnly = true;
-            this.textBox88.Size = new System.Drawing.Size(179, 26);
-            this.textBox88.TabIndex = 44;
-            this.textBox88.Text = "0";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.BackColor = System.Drawing.Color.IndianRed;
-            this.label90.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label90.Location = new System.Drawing.Point(792, 315);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(87, 16);
-            this.label90.TabIndex = 48;
-            this.label90.Text = "Wc(m^3/t):";
+            this.W2_TextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.W2_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W2_TextBox.Location = new System.Drawing.Point(880, 117);
+            this.W2_TextBox.Name = "W2_TextBox";
+            this.W2_TextBox.ReadOnly = true;
+            this.W2_TextBox.Size = new System.Drawing.Size(179, 26);
+            this.W2_TextBox.TabIndex = 44;
+            this.W2_TextBox.Text = "0";
             // 
             // label91
             // 
@@ -2358,16 +2372,16 @@ namespace GasFormsApp
             this.label91.TabIndex = 47;
             this.label91.Text = "Wa(m^3/t):";
             // 
-            // textBox89
+            // W_TextBox
             // 
-            this.textBox89.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox89.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox89.Location = new System.Drawing.Point(880, 381);
-            this.textBox89.Name = "textBox89";
-            this.textBox89.ReadOnly = true;
-            this.textBox89.Size = new System.Drawing.Size(179, 26);
-            this.textBox89.TabIndex = 39;
-            this.textBox89.Text = "0";
+            this.W_TextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.W_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W_TextBox.Location = new System.Drawing.Point(880, 381);
+            this.W_TextBox.Name = "W_TextBox";
+            this.W_TextBox.ReadOnly = true;
+            this.W_TextBox.Size = new System.Drawing.Size(179, 26);
+            this.W_TextBox.TabIndex = 39;
+            this.W_TextBox.Text = "0";
             // 
             // label92
             // 
@@ -2391,16 +2405,16 @@ namespace GasFormsApp
             this.label93.TabIndex = 49;
             this.label93.Text = "W(m^3/t):";
             // 
-            // textBox90
+            // W3_TextBox
             // 
-            this.textBox90.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox90.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox90.Location = new System.Drawing.Point(880, 183);
-            this.textBox90.Name = "textBox90";
-            this.textBox90.ReadOnly = true;
-            this.textBox90.Size = new System.Drawing.Size(179, 26);
-            this.textBox90.TabIndex = 40;
-            this.textBox90.Text = "0";
+            this.W3_TextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.W3_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W3_TextBox.Location = new System.Drawing.Point(880, 183);
+            this.W3_TextBox.Name = "W3_TextBox";
+            this.W3_TextBox.ReadOnly = true;
+            this.W3_TextBox.Size = new System.Drawing.Size(179, 26);
+            this.W3_TextBox.TabIndex = 40;
+            this.W3_TextBox.Text = "0";
             // 
             // label94
             // 
@@ -2413,16 +2427,16 @@ namespace GasFormsApp
             this.label94.TabIndex = 46;
             this.label94.Text = "W3(m^3/t):";
             // 
-            // textBox91
+            // W1_TextBox
             // 
-            this.textBox91.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox91.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox91.Location = new System.Drawing.Point(880, 54);
-            this.textBox91.Name = "textBox91";
-            this.textBox91.ReadOnly = true;
-            this.textBox91.Size = new System.Drawing.Size(179, 26);
-            this.textBox91.TabIndex = 41;
-            this.textBox91.Text = "0";
+            this.W1_TextBox.BackColor = System.Drawing.Color.MistyRose;
+            this.W1_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W1_TextBox.Location = new System.Drawing.Point(880, 54);
+            this.W1_TextBox.Name = "W1_TextBox";
+            this.W1_TextBox.ReadOnly = true;
+            this.W1_TextBox.Size = new System.Drawing.Size(179, 26);
+            this.W1_TextBox.TabIndex = 41;
+            this.W1_TextBox.Text = "0";
             // 
             // label95
             // 
@@ -2644,46 +2658,6 @@ namespace GasFormsApp
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 2;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(213, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 26);
-            this.textBox1.TabIndex = 104;
-            this.textBox1.Text = "0";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.IndianRed;
-            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(73, 94);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(143, 16);
-            this.label18.TabIndex = 105;
-            this.label18.Text = "大 气 压 力(kPa):";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.IndianRed;
-            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(534, 94);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(135, 16);
-            this.label19.TabIndex = 106;
-            this.label19.Text = "量管内水温 (℃):";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(674, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 26);
-            this.textBox2.TabIndex = 107;
-            this.textBox2.Text = "0";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2903,21 +2877,19 @@ namespace GasFormsApp
         private TextBox Sample1WeightTextBox;
         private Label label89;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
-        private TextBox textBox85;
+        private TextBox P_TextBox;
         private Label label102;
         private Button button10;
         private Button button7;
-        private TextBox textBox86;
-        private TextBox textBox87;
-        private TextBox textBox88;
-        private Label label90;
+        private TextBox Wa_TextBox;
+        private TextBox W2_TextBox;
         private Label label91;
-        private TextBox textBox89;
+        private TextBox W_TextBox;
         private Label label92;
         private Label label93;
-        private TextBox textBox90;
+        private TextBox W3_TextBox;
         private Label label94;
-        private TextBox textBox91;
+        private TextBox W1_TextBox;
         private Label label95;
         private TextBox NonDesorpGasQtyTextBox;
         private TextBox AadTextBox;
