@@ -195,6 +195,85 @@ namespace GasFormsApp
             SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
         }
 
+        string GetPythonPath()
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = "where",
+                Arguments = "python",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using (var process = Process.Start(psi))
+            {
+                string output = process.StandardOutput.ReadLine();  // 取第一行输出
+                process.WaitForExit();
+                return output;  // 返回第一个找到的 python.exe 路径
+            }
+        }
+        static string ExtractPythonScript(string resourceName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                if (stream == null)
+                    throw new Exception("资源未找到: " + resourceName);
+
+                string tempPath = Path.Combine(Path.GetTempPath(), "temp_script.py");
+                using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
+                {
+                    stream.CopyTo(fileStream);
+                }
+                return tempPath;
+            }
+        }
+        public void CreateExcelWithChart()
+        {
+            // 自动获取 Python 可执行文件路径
+            string pythonExe = GetPythonPath();
+
+            // 从嵌入资源中提取 Python 脚本，资源名示例 "WindowsFormsApp1.aaa.py"
+            string resourceName = "GasFormsApp.aaa.py";  // 注意：一定要改成你项目的资源名，确认见下文
+            string scriptPath = ExtractPythonScript(resourceName);
+
+            // 创建进程启动信息
+            var psi = new ProcessStartInfo
+            {
+                FileName = pythonExe,
+                Arguments = $"\"{scriptPath}\"",  // 给路径加双引号防止空格问题
+                UseShellExecute = false,
+                CreateNoWindow = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+            };
+
+            // 启动进程
+            var process = new Process();
+            process.StartInfo = psi;
+            process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
+            process.ErrorDataReceived += (sender, e) => Console.WriteLine("ERR: " + e.Data);
+
+            process.Start();
+            process.BeginOutputReadLine();
+            process.BeginErrorReadLine();
+            process.WaitForExit();
+
+            Console.WriteLine("Python 脚本执行完成。");
+
+            // 可选：运行完删除临时脚本
+            try
+            {
+                if (File.Exists(scriptPath))
+                    File.Delete(scriptPath);
+            }
+            catch { }
+
+
+        }
+
+
         // 从嵌入的资源中加载图标
         private Icon LoadIconFromResource(string resourceName)
         {
@@ -376,10 +455,46 @@ namespace GasFormsApp
                             data[i, 0] = sqrtValue; // 将平方根值存储在第一列
                             data[i, 1] = textBoxValue; // 将文本框值存储在第二列
                         }
-                        insertChart.InsertChartToWord(outputPath, data);
+                        //insertChart.InsertChartToWord(outputPath, data);
+                        CreateExcelWithChart();
+
+                        // 使用别名创建 Word 应用实例
+                        Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                        // 打开生成的 Word 文件
+                        Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(outputPath);
+                        wordApp.Visible = false;
+                        Microsoft.Office.Interop.Word.Range bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
+                        Microsoft.Office.Interop.Word.Bookmarks bookmarks = doc.Bookmarks;
+                        // 插入到 Word 书签位置
+                        if (doc.Bookmarks.Exists("ChartPlaceholder"))
+                        {
+                            bookmarkRange.Paste();
+                        }
+                        else
+                        {
+                            MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        // 插入图表完毕后释放 Word 中用到的所有对象
+                        if (bookmarkRange != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarkRange);
+                        if (bookmarks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarks);
+
+                        doc.Save();
+                        doc.Close(false);
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(doc);
                     }
                 }
+                ////打开生成的 Word 文件
+                //try
+                //{
+                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("无法打开文件: " + ex.Message);
+                //}
             }
+
 
             // 使用上面的路径
             //if (saveDialog.ShowDialog() == DialogResult.OK)
