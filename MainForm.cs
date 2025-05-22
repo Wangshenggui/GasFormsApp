@@ -26,6 +26,8 @@ using GasFormsApp.WordPperation;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.IO.MemoryMappedFiles;
+using System.Threading;
 
 namespace GasFormsApp
 {
@@ -456,7 +458,58 @@ namespace GasFormsApp
                             data[i, 1] = textBoxValue; // 将文本框值存储在第二列
                         }
                         //insertChart.InsertChartToWord(outputPath, data);
-                        CreateExcelWithChart();
+
+                        const string mapName = "Local\\MySharedMemory";
+                        int totalBytes = DesorbTextBox.Length * 2 * sizeof(double);
+
+                        using (var mmf = MemoryMappedFile.CreateOrOpen(mapName, totalBytes))
+                        {
+                            using (var writeAccessor = mmf.CreateViewAccessor(0, totalBytes))
+                            {
+                                Console.WriteLine("[C#] 写入共享内存...");
+                                int offset = 0;
+                                for (int i = 0; i < DesorbTextBox.Length; i++)
+                                {
+                                    Console.Write($"[C#] 第{i + 1}行: ");
+                                    for (int j = 0; j < 2; j++)
+                                    {
+                                        double val = data[i, j];
+                                        writeAccessor.Write(offset, val);
+                                        Console.Write($"{val} ");
+                                        offset += sizeof(double);
+                                    }
+                                    Console.WriteLine();
+                                }
+                            }
+
+                            const string memoryName = "Local\\tempSharedMemory";
+                            int temptotalBytes = 5 * sizeof(double);
+
+                            using (var tempmmf = MemoryMappedFile.CreateOrOpen(memoryName, temptotalBytes))
+                            {
+                                // 调用 Python 脚本写入共享内存
+                                CreateExcelWithChart();  // 实际是执行 Python 写入数据
+
+                                // 等待 Python 写入（你也可以用事件或信号同步更优雅地替代）
+                                //Thread.Sleep(1000);
+
+                                // 读取共享内存中的数据
+                                using (var accessor = tempmmf.CreateViewAccessor(0, temptotalBytes))
+                                {
+                                    double[] values = new double[5];
+                                    for (int i = 0; i < values.Length; i++)
+                                    {
+                                        values[i] = accessor.ReadDouble(i * sizeof(double));
+                                    }
+
+                                    Console.WriteLine("读取共享内存数据:");
+                                    foreach (var v in values)
+                                    {
+                                        Console.WriteLine(v);
+                                    }
+                                }
+                            }
+                        }
 
                         // 使用别名创建 Word 应用实例
                         Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();

@@ -8,19 +8,79 @@ import os
 from PIL import Image
 import win32clipboard
 from win32con import CF_DIB
+import ctypes
+from ctypes import wintypes
+import struct
+import time
 
 # 设置中文字体（解决乱码）
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 黑体
 matplotlib.rcParams['axes.unicode_minus'] = False    # 负号显示正常
 
-# 示例数据
-x = np.array([1, 2, 3, 4, 5])
-y = np.array([2, 3, 5, 7, 11])
+PAGE_READWRITE = 0x04
+FILE_MAP_READ = 0x0004
+INVALID_HANDLE_VALUE = -1
+
+kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
+
+OpenFileMapping = kernel32.OpenFileMappingW
+OpenFileMapping.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.LPCWSTR]
+OpenFileMapping.restype = wintypes.HANDLE
+
+MapViewOfFile = kernel32.MapViewOfFile
+MapViewOfFile.argtypes = [wintypes.HANDLE, wintypes.DWORD,
+                          wintypes.DWORD, wintypes.DWORD, ctypes.c_size_t]
+MapViewOfFile.restype = wintypes.LPVOID
+
+UnmapViewOfFile = kernel32.UnmapViewOfFile
+UnmapViewOfFile.argtypes = [wintypes.LPCVOID]
+UnmapViewOfFile.restype = wintypes.BOOL
+
+CloseHandle = kernel32.CloseHandle
+CloseHandle.argtypes = [wintypes.HANDLE]
+CloseHandle.restype = wintypes.BOOL
+def read_shared_memory(map_name="Local\\MySharedMemory", rows=60, cols=2, retries=10, retry_interval=1):
+    size = rows * cols * 8  # 每个double占8字节
+    hMap = None
+
+    for attempt in range(retries):
+        hMap = OpenFileMapping(FILE_MAP_READ, False, map_name)
+        if hMap:
+            break
+        time.sleep(retry_interval)
+
+    if not hMap:
+        raise RuntimeError("无法打开共享内存")
+
+    pBuf = MapViewOfFile(hMap, FILE_MAP_READ, 0, 0, size)
+    if not pBuf:
+        CloseHandle(hMap)
+        raise ctypes.WinError(ctypes.get_last_error())
+
+    try:
+        buffer_type = ctypes.c_char * size
+        buffer = buffer_type.from_address(pBuf)
+        read_bytes = bytes(buffer[:])
+        values = struct.unpack('d' * rows * cols, read_bytes)
+        matrix = [values[i*cols:(i+1)*cols] for i in range(rows)]
+        return matrix
+    finally:
+        UnmapViewOfFile(pBuf)
+        CloseHandle(hMap)
+data = read_shared_memory()
+# 转换共享内存数据为x,y
+x = np.array([row[0] for row in data if row[0] != 0 and row[1] != 0])
+y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 
 # 线性拟合
 coefficients = np.polyfit(x, y, 1)
 slope, intercept = coefficients
 fitted_y = slope * x + intercept
+
+# 计算R^2
+ss_res = np.sum((y - fitted_y) ** 2)
+ss_tot = np.sum((y - np.mean(y)) ** 2)
+r_squared = 1 - ss_res / ss_tot
 
 # 创建图形
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -79,3 +139,13 @@ send_to_clipboard(image)
 
 # 打开 Word 文档
 # os.startfile('你干嘛.docx')
+
+import mmap
+import struct
+# 写入 slope 到共享内存：Local\\tempSharedMemory
+slope_mem_name = "Local\\tempSharedMemory"
+slope_bytes = struct.pack('3d', slope,intercept,r_squared)  # 8 字节 double
+
+with mmap.mmap(-1, len(slope_bytes), tagname=slope_mem_name, access=mmap.ACCESS_WRITE) as slope_mmap:
+    slope_mmap.write(slope_bytes)
+
