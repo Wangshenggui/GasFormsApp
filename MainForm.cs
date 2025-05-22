@@ -28,6 +28,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.IO.MemoryMappedFiles;
 using System.Threading;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace GasFormsApp
 {
@@ -98,7 +99,7 @@ namespace GasFormsApp
 
             // 创建并绑定图像列表到 TabControl
             imageList1 = new ImageList();
-            imageList1.ImageSize = new Size(64, 64);
+            imageList1.ImageSize = new System.Drawing.Size(64, 64);
             tabControl1.ImageList = imageList1;
 
             // 加载嵌入资源图标
@@ -332,24 +333,17 @@ namespace GasFormsApp
         
         private void button2_Click(object sender, EventArgs e)
         {
-            string name = SamplingSpotTextBox.Text.Trim();
-
-            if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("请输入姓名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            
             // 选择保存位置
-            SaveFileDialog saveDialog = new SaveFileDialog
-            {
-                Filter = "Word 文件 (*.docx)|*.docx",
-                Title = "保存生成的 Word 文件"
-            };
+            //SaveFileDialog saveDialog = new SaveFileDialog
+            //{
+            //    Filter = "Word 文件 (*.docx)|*.docx",
+            //    Title = "保存生成的 Word 文件"
+            //};
 
-            if (saveDialog.ShowDialog() == DialogResult.OK)
+            //if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                string outputPath = saveDialog.FileName;
+                //string outputPath = saveDialog.FileName;
+                string outputPath = @"D:\1.docx";
 
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
@@ -482,6 +476,7 @@ namespace GasFormsApp
                                 }
                             }
 
+
                             const string memoryName = "Local\\tempSharedMemory";
                             int temptotalBytes = 5 * sizeof(double);
 
@@ -501,6 +496,7 @@ namespace GasFormsApp
                                     {
                                         values[i] = accessor.ReadDouble(i * sizeof(double));
                                     }
+                                    InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F3"));
 
                                     Console.WriteLine("读取共享内存数据:");
                                     foreach (var v in values)
@@ -552,7 +548,8 @@ namespace GasFormsApp
             // 使用上面的路径
             //if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                string outputPath = saveDialog.FileName;
+                //string outputPath = saveDialog.FileName;
+                string outputPath = @"D:\1.docx";
 
                 // 获取程序集中的 Word 模板资源
                 var assembly = Assembly.GetExecutingAssembly();
@@ -607,21 +604,26 @@ namespace GasFormsApp
 
                 // 保存并关闭 Word 文档
                 doc.Save();
+
+                // 导出为PDF，参数依次为：输出文件路径，导出格式
+                string pdfPath = @"E:\E-Desktop\GitHub\GasFormsApp\1.pdf";
+                doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+
                 doc.Close(false);
                 Marshal.ReleaseComObject(doc);
 
                 wordApp.Quit(false);
                 Marshal.ReleaseComObject(wordApp);
 
-                // 打开生成的 Word 文件
-                try
-                {
-                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("无法打开文件: " + ex.Message);
-                }
+                //// 打开生成的 Word 文件
+                //try
+                //{
+                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("无法打开文件: " + ex.Message);
+                //}
 
                 this.Close();
             }
