@@ -29,6 +29,8 @@ using System.Runtime.InteropServices;
 using System.IO.MemoryMappedFiles;
 using System.Threading;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using Microsoft.Office.Core;
 
 namespace GasFormsApp
 {
@@ -334,16 +336,17 @@ namespace GasFormsApp
         private void button2_Click(object sender, EventArgs e)
         {
             // 选择保存位置
-            //SaveFileDialog saveDialog = new SaveFileDialog
-            //{
-            //    Filter = "Word 文件 (*.docx)|*.docx",
-            //    Title = "保存生成的 Word 文件"
-            //};
-
-            //if (saveDialog.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveDialog = new SaveFileDialog
             {
-                //string outputPath = saveDialog.FileName;
-                string outputPath = @"D:\1.docx";
+                Filter = "Word 文件 (*.docx)|*.docx",
+                Title = "保存生成的 Word 文件"
+            };
+
+            string outputPath = "";
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                outputPath = saveDialog.FileName;
+                //string outputPath = @"D:\1.docx";
 
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
@@ -517,7 +520,27 @@ namespace GasFormsApp
                         // 插入到 Word 书签位置
                         if (doc.Bookmarks.Exists("ChartPlaceholder"))
                         {
+                            bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
+
+                            // 粘贴图片
                             bookmarkRange.Paste();
+
+                            // 获取刚插入的 InlineShape（剪贴板内容必须是图片）
+                            if (bookmarkRange.InlineShapes.Count > 0)
+                            {
+                                var pastedImage = bookmarkRange.InlineShapes[1];
+
+                                pastedImage.LockAspectRatio = MsoTriState.msoFalse;  // 不锁比例
+                                float k = 33;
+                                pastedImage.Width = 6*k;
+                                pastedImage.Height = 4*k;  // 高度也设置为20磅
+                            }
+
+                            // 可选：重新添加书签（如果被清除）
+                            if (!doc.Bookmarks.Exists("ChartPlaceholder"))
+                            {
+                                doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
+                            }
                         }
                         else
                         {
@@ -533,23 +556,24 @@ namespace GasFormsApp
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(doc);
                     }
                 }
-                ////打开生成的 Word 文件
-                //try
-                //{
-                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine("无法打开文件: " + ex.Message);
-                //}
+                //打开生成的 Word 文件
+                try
+                {
+                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("无法打开文件: " + ex.Message);
+                }
             }
 
 
             // 使用上面的路径
             //if (saveDialog.ShowDialog() == DialogResult.OK)
+            if (false)
             {
                 //string outputPath = saveDialog.FileName;
-                string outputPath = @"D:\1.docx";
+                //string outputPath = @"D:\1.docx";
 
                 // 获取程序集中的 Word 模板资源
                 var assembly = Assembly.GetExecutingAssembly();
@@ -615,15 +639,15 @@ namespace GasFormsApp
                 wordApp.Quit(false);
                 Marshal.ReleaseComObject(wordApp);
 
-                //// 打开生成的 Word 文件
-                //try
-                //{
-                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine("无法打开文件: " + ex.Message);
-                //}
+                // 打开生成的 Word 文件
+                try
+                {
+                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("无法打开文件: " + ex.Message);
+                }
 
                 this.Close();
             }

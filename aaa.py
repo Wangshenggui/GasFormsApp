@@ -191,7 +191,7 @@ data = read_shared_memory()
 x = np.array([row[0] for row in data if row[0] != 0 and row[1] != 0])
 y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 # 创建图形和坐标轴
-fig, ax = plt.subplots(figsize=(2.05, 2.70))
+fig, ax = plt.subplots(figsize=(6, 4))
 
 # 绘制散点图(原始数据)和拟合线
 ax.scatter(x, y, s=10, color='black', label='原始数据')
@@ -254,7 +254,7 @@ doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头�
 doc.add_picture(img_bytes, width=Inches(5.0))
 doc.save('你干嘛.docx')
 # 打开 Word 文档
-os.startfile('你干嘛.docx')
+# os.startfile('你干嘛.docx')
 
 # 关闭图形释放内存
 plt.close()
