@@ -69,7 +69,11 @@ namespace GasFormsApp
         public string AppDensityText => AppDensityTextBox.Text;
         public string NonDesorpGasQtyText => NonDesorpGasQtyTextBox.Text;
         public string VadText => VadTextBox.Text;
-        public string W1_Text => W1_TextBox.Text;
+        public string W1_Text
+        {
+            get => W1_TextBox.Text;
+            set => W1_TextBox.Text = value;
+        }
         public string W2_Text => W2_TextBox.Text;
         public string W3_Text => W3_TextBox.Text;
         public string Wa_Text => Wa_TextBox.Text;
@@ -77,7 +81,8 @@ namespace GasFormsApp
         public string P_Text => P_TextBox.Text;
 
 
-
+        public static double 井下解吸体积 = 0.0;
+        public static double W1 = 0.0;
 
 
 
@@ -139,39 +144,19 @@ namespace GasFormsApp
             MoistureSampleTextBox.Text = "水分";
             RawCoalMoistureTextBox.Text = "原水分";
             SampleNumTextBox.Text = "编号";
-            InitialVolumeTextBox.Text = "初始体积";
-            SampleWeightTextBox.Text = "重量";
+            //InitialVolumeTextBox.Text = "初始体积";
+            //SampleWeightTextBox.Text = "95";
 
-            DesorbTextBox1.Text = "14";
-            DesorbTextBox2.Text = "20";
-            DesorbTextBox3.Text = "26";
-            DesorbTextBox4.Text = "32";
-            DesorbTextBox5.Text = "36";
-            DesorbTextBox6.Text = "42";
-            DesorbTextBox7.Text = "46";
-            DesorbTextBox8.Text = "48";
-            DesorbTextBox9.Text = "54";
-            DesorbTextBox10.Text = "58";
-            DesorbTextBox11.Text = "60";
-            DesorbTextBox12.Text = "64";
-            DesorbTextBox13.Text = "66";
-            DesorbTextBox14.Text = "70";
-            DesorbTextBox15.Text = "72";
-            DesorbTextBox16.Text = "76";
-            DesorbTextBox17.Text = "80";
-            DesorbTextBox18.Text = "82";
-            DesorbTextBox19.Text = "84";
-            DesorbTextBox20.Text = "86";
-            DesorbTextBox21.Text = "90";
-            DesorbTextBox22.Text = "92";
-            DesorbTextBox23.Text = "94";
-            DesorbTextBox24.Text = "96";
-            DesorbTextBox25.Text = "98";
-            DesorbTextBox26.Text = "100";
-            DesorbTextBox27.Text = "102";
-            DesorbTextBox28.Text = "106";
-            DesorbTextBox29.Text = "108";
-            DesorbTextBox30.Text = "110";
+            DesorbTextBox1.Text = "1";
+            DesorbTextBox2.Text = "2";
+            DesorbTextBox3.Text = "3";
+            DesorbTextBox4.Text = "4";
+            DesorbTextBox5.Text = "5";
+            //DesorbTextBox6.Text = "6";
+            //DesorbTextBox7.Text = "7";
+            //DesorbTextBox8.Text = "8";
+            //DesorbTextBox9.Text = "9";
+            //DesorbTextBox10.Text = "10";
 
             DesorpVolNormalTextBox.Text = "123";
             Sample1WeightTextBox.Text = "111";
@@ -188,13 +173,14 @@ namespace GasFormsApp
             NonDesorpGasQtyTextBox.Text = "1.9254";
             VadTextBox.Text = "18.444";
 
-            W1_TextBox.Text = "w1fasd";
-            W2_TextBox.Text = "w2nhrt";
-            W3_TextBox.Text = "w3shrt";
-            Wa_TextBox.Text = "wa270";
-            W_TextBox.Text = "WWW";
-            P_TextBox.Text = "PPP";
+            //W1_TextBox.Text = "w1fasd";
+            //W2_TextBox.Text = "w2nhrt";
+            //W3_TextBox.Text = "w3shrt";
+            //Wa_TextBox.Text = "wa270";
+            //W_TextBox.Text = "WWW";
+            //P_TextBox.Text = "PPP";
             #endregion
+
 
             //button2_Click(button2, EventArgs.Empty);
             SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
@@ -387,7 +373,7 @@ namespace GasFormsApp
                         }
 
 
-                        double t0 = 3;
+                        double t0 = 2;
                         double[,] data = new double[DesorbTextBox.Length, 2]; // 数组大小根据 DesorbTextBox 数量来确定
 
                         for (int i = 0; i < DesorbTextBox.Length; i++) // 循环次数根据 DesorbTextBox 数量确定
@@ -501,11 +487,65 @@ namespace GasFormsApp
                                     }
                                     InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F3"));
 
-                                    Console.WriteLine("读取共享内存数据:");
-                                    foreach (var v in values)
+                                    // 找出最大数据
+                                    double maxValue = double.MinValue;
+                                    for (int i = 1; i <= 60; i++)
                                     {
-                                        Console.WriteLine(v);
+                                        string key = $"D{i:000}";
+                                        var textBox = Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+
+                                        if (textBox != null)
+                                        {
+                                            string text = textBox.Text.Trim();
+                                            if (double.TryParse(text, out double val))
+                                            {
+                                                if (val > maxValue)
+                                                {
+                                                    maxValue = val;
+                                                }
+                                            }
+                                        }
                                     }
+                                    // 量管初始体积
+                                    float initialVolume;
+                                    if (float.TryParse(InitialVolumeTextBox.Text, out initialVolume))
+                                    {
+                                        // 计算井下解吸体积
+                                        井下解吸体积 = maxValue - initialVolume;
+                                    }
+                                    else
+                                    {
+                                        // 转换失败，比如用户输入了非数字
+                                        MessageBox.Show("请输入有效的数字");
+                                    }
+                                    Console.WriteLine($"井下解析体积:{井下解吸体积}");
+                                    Console.WriteLine($"瓦斯损失量:{values[1]}");
+
+                                    // 计算W1
+                                    // 量管初始体积
+                                    float SampleWeight;
+                                    if (float.TryParse(SampleWeightTextBox.Text, out SampleWeight))
+                                    {
+                                        // 计算W1
+                                        W1 = (井下解吸体积 + Math.Abs(values[1])) / SampleWeight;
+                                    }
+                                    else
+                                    {
+                                        // 转换失败，比如用户输入了非数字
+                                        MessageBox.Show("请输入有效的数字");
+                                    }
+                                    W1_TextBox.Text = W1.ToString();
+                                    Console.WriteLine($"W1(m^3/t):{W1_TextBox.Text}");
+
+
+
+
+
+                                    //Console.WriteLine("读取共享内存数据:");
+                                    //foreach (var v in values)
+                                    //{
+                                    //    Console.WriteLine(v);
+                                    //}
                                 }
                             }
                         }
@@ -556,21 +596,21 @@ namespace GasFormsApp
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(doc);
                     }
                 }
-                //打开生成的 Word 文件
-                try
-                {
-                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("无法打开文件: " + ex.Message);
-                }
+                ////打开生成的 Word 文件
+                //try
+                //{
+                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("无法打开文件: " + ex.Message);
+                //}
             }
 
 
             // 使用上面的路径
             //if (saveDialog.ShowDialog() == DialogResult.OK)
-            if (false)
+            //if (false)
             {
                 //string outputPath = saveDialog.FileName;
                 //string outputPath = @"D:\1.docx";
@@ -658,6 +698,106 @@ namespace GasFormsApp
         {
             SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
             Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label38_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label40_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

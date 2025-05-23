@@ -340,7 +340,7 @@ namespace GasFormsApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.BackColor = System.Drawing.Color.Fuchsia;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(81, 160);
             this.label3.Name = "label3";
@@ -359,7 +359,7 @@ namespace GasFormsApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BackColor = System.Drawing.Color.Fuchsia;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(81, 62);
             this.label1.Name = "label1";
@@ -378,7 +378,7 @@ namespace GasFormsApp
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label20.BackColor = System.Drawing.Color.Fuchsia;
             this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(81, 359);
             this.label20.Name = "label20";
@@ -444,7 +444,7 @@ namespace GasFormsApp
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label16.BackColor = System.Drawing.Color.Fuchsia;
             this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(525, 308);
             this.label16.Name = "label16";
@@ -455,7 +455,7 @@ namespace GasFormsApp
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label12.BackColor = System.Drawing.Color.Fuchsia;
             this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label12.Location = new System.Drawing.Point(525, 209);
             this.label12.Name = "label12";
@@ -466,7 +466,7 @@ namespace GasFormsApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.BackColor = System.Drawing.Color.Fuchsia;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.Location = new System.Drawing.Point(525, 110);
             this.label8.Name = "label8";
@@ -477,7 +477,7 @@ namespace GasFormsApp
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label15.BackColor = System.Drawing.Color.Fuchsia;
             this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(525, 258);
             this.label15.Name = "label15";
@@ -488,7 +488,7 @@ namespace GasFormsApp
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label11.BackColor = System.Drawing.Color.Fuchsia;
             this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(525, 160);
             this.label11.Name = "label11";
@@ -499,7 +499,7 @@ namespace GasFormsApp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.BackColor = System.Drawing.Color.Fuchsia;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(525, 62);
             this.label6.Name = "label6";
@@ -534,7 +534,7 @@ namespace GasFormsApp
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label14.BackColor = System.Drawing.Color.Fuchsia;
             this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.Location = new System.Drawing.Point(81, 308);
             this.label14.Name = "label14";
@@ -545,7 +545,7 @@ namespace GasFormsApp
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label10.BackColor = System.Drawing.Color.Fuchsia;
             this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.Location = new System.Drawing.Point(81, 258);
             this.label10.Name = "label10";
@@ -556,7 +556,7 @@ namespace GasFormsApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.BackColor = System.Drawing.Color.Fuchsia;
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(81, 110);
             this.label7.Name = "label7";
@@ -571,11 +571,12 @@ namespace GasFormsApp
             this.SampleWeightTextBox.Name = "SampleWeightTextBox";
             this.SampleWeightTextBox.Size = new System.Drawing.Size(253, 26);
             this.SampleWeightTextBox.TabIndex = 9;
+            this.SampleWeightTextBox.Text = "95";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label13.BackColor = System.Drawing.Color.Fuchsia;
             this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label13.Location = new System.Drawing.Point(525, 359);
             this.label13.Name = "label13";
@@ -594,7 +595,7 @@ namespace GasFormsApp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label9.BackColor = System.Drawing.Color.Fuchsia;
             this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.Location = new System.Drawing.Point(81, 209);
             this.label9.Name = "label9";
@@ -1649,7 +1650,7 @@ namespace GasFormsApp
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.IndianRed;
+            this.label22.BackColor = System.Drawing.Color.Fuchsia;
             this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label22.Location = new System.Drawing.Point(73, 40);
             this.label22.Name = "label22";
@@ -1660,13 +1661,14 @@ namespace GasFormsApp
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.IndianRed;
+            this.label23.BackColor = System.Drawing.Color.Fuchsia;
             this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label23.Location = new System.Drawing.Point(108, 203);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(23, 16);
             this.label23.TabIndex = 3;
             this.label23.Text = "1:";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // textBox48
             // 
@@ -1682,13 +1684,14 @@ namespace GasFormsApp
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.IndianRed;
+            this.label33.BackColor = System.Drawing.Color.Fuchsia;
             this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label33.Location = new System.Drawing.Point(239, 203);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(31, 16);
             this.label33.TabIndex = 3;
             this.label33.Text = "11:";
+            this.label33.Click += new System.EventHandler(this.label33_Click);
             // 
             // textBox47
             // 
@@ -1725,13 +1728,14 @@ namespace GasFormsApp
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.IndianRed;
+            this.label24.BackColor = System.Drawing.Color.Fuchsia;
             this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.Location = new System.Drawing.Point(108, 235);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(23, 16);
             this.label24.TabIndex = 3;
             this.label24.Text = "2:";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // label52
             // 
@@ -1747,13 +1751,14 @@ namespace GasFormsApp
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.IndianRed;
+            this.label34.BackColor = System.Drawing.Color.Fuchsia;
             this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label34.Location = new System.Drawing.Point(239, 235);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(31, 16);
             this.label34.TabIndex = 3;
             this.label34.Text = "12:";
+            this.label34.Click += new System.EventHandler(this.label34_Click);
             // 
             // label53
             // 
@@ -1779,46 +1784,50 @@ namespace GasFormsApp
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.Color.IndianRed;
+            this.label42.BackColor = System.Drawing.Color.Fuchsia;
             this.label42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.Location = new System.Drawing.Point(239, 491);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(31, 16);
             this.label42.TabIndex = 3;
             this.label42.Text = "20:";
+            this.label42.Click += new System.EventHandler(this.label42_Click);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.IndianRed;
+            this.label32.BackColor = System.Drawing.Color.Fuchsia;
             this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label32.Location = new System.Drawing.Point(100, 491);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(31, 16);
             this.label32.TabIndex = 3;
             this.label32.Text = "10:";
+            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.IndianRed;
+            this.label25.BackColor = System.Drawing.Color.Fuchsia;
             this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label25.Location = new System.Drawing.Point(108, 267);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(23, 16);
             this.label25.TabIndex = 3;
             this.label25.Text = "3:";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.IndianRed;
+            this.label35.BackColor = System.Drawing.Color.Fuchsia;
             this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label35.Location = new System.Drawing.Point(239, 267);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(31, 16);
             this.label35.TabIndex = 3;
             this.label35.Text = "13:";
+            this.label35.Click += new System.EventHandler(this.label35_Click);
             // 
             // label51
             // 
@@ -1845,46 +1854,50 @@ namespace GasFormsApp
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.IndianRed;
+            this.label41.BackColor = System.Drawing.Color.Fuchsia;
             this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label41.Location = new System.Drawing.Point(239, 459);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(31, 16);
             this.label41.TabIndex = 3;
             this.label41.Text = "19:";
+            this.label41.Click += new System.EventHandler(this.label41_Click);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.IndianRed;
+            this.label31.BackColor = System.Drawing.Color.Fuchsia;
             this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label31.Location = new System.Drawing.Point(108, 459);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(23, 16);
             this.label31.TabIndex = 3;
             this.label31.Text = "9:";
+            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.IndianRed;
+            this.label26.BackColor = System.Drawing.Color.Fuchsia;
             this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(108, 299);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(23, 16);
             this.label26.TabIndex = 3;
             this.label26.Text = "4:";
+            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.IndianRed;
+            this.label36.BackColor = System.Drawing.Color.Fuchsia;
             this.label36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label36.Location = new System.Drawing.Point(239, 299);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(31, 16);
             this.label36.TabIndex = 3;
             this.label36.Text = "14:";
+            this.label36.Click += new System.EventHandler(this.label36_Click);
             // 
             // label50
             // 
@@ -1911,46 +1924,50 @@ namespace GasFormsApp
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.Color.IndianRed;
+            this.label40.BackColor = System.Drawing.Color.Fuchsia;
             this.label40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label40.Location = new System.Drawing.Point(239, 427);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(31, 16);
             this.label40.TabIndex = 3;
             this.label40.Text = "18:";
+            this.label40.Click += new System.EventHandler(this.label40_Click);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.IndianRed;
+            this.label30.BackColor = System.Drawing.Color.Fuchsia;
             this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label30.Location = new System.Drawing.Point(108, 427);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(23, 16);
             this.label30.TabIndex = 3;
             this.label30.Text = "8:";
+            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.IndianRed;
+            this.label27.BackColor = System.Drawing.Color.Fuchsia;
             this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label27.Location = new System.Drawing.Point(108, 331);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(23, 16);
             this.label27.TabIndex = 3;
             this.label27.Text = "5:";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.IndianRed;
+            this.label37.BackColor = System.Drawing.Color.Fuchsia;
             this.label37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label37.Location = new System.Drawing.Point(239, 331);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(31, 16);
             this.label37.TabIndex = 3;
             this.label37.Text = "15:";
+            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // label49
             // 
@@ -1977,46 +1994,50 @@ namespace GasFormsApp
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.IndianRed;
+            this.label39.BackColor = System.Drawing.Color.Fuchsia;
             this.label39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label39.Location = new System.Drawing.Point(239, 395);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(31, 16);
             this.label39.TabIndex = 3;
             this.label39.Text = "17:";
+            this.label39.Click += new System.EventHandler(this.label39_Click);
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.IndianRed;
+            this.label29.BackColor = System.Drawing.Color.Fuchsia;
             this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label29.Location = new System.Drawing.Point(108, 395);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(23, 16);
             this.label29.TabIndex = 3;
             this.label29.Text = "7:";
+            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.IndianRed;
+            this.label28.BackColor = System.Drawing.Color.Fuchsia;
             this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.Location = new System.Drawing.Point(108, 363);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(23, 16);
             this.label28.TabIndex = 3;
             this.label28.Text = "6:";
+            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.IndianRed;
+            this.label38.BackColor = System.Drawing.Color.Fuchsia;
             this.label38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label38.Location = new System.Drawing.Point(239, 363);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(31, 16);
             this.label38.TabIndex = 3;
             this.label38.Text = "16:";
+            this.label38.Click += new System.EventHandler(this.label38_Click);
             // 
             // label48
             // 
@@ -2441,7 +2462,7 @@ namespace GasFormsApp
             // label95
             // 
             this.label95.AutoSize = true;
-            this.label95.BackColor = System.Drawing.Color.IndianRed;
+            this.label95.BackColor = System.Drawing.Color.Fuchsia;
             this.label95.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label95.Location = new System.Drawing.Point(792, 57);
             this.label95.Name = "label95";

@@ -35,7 +35,7 @@ namespace GasFormsApp.WordPperation
                 {"MoistureSample", mainForm.MoistureSampleText},//煤样水分（%）
                 {"RawCoalMoisture", mainForm.RawCoalMoistureText},//原煤水分（%）
                 {"InitialVolume", mainForm.InitialVolumeText},//量管初始体积（ml）
-                {"UgDesorpVol", maxKey},//井下解吸量W11(ml)
+                {"UgDesorpVol", MainForm.井下解吸体积.ToString()},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
                 {"DesorpVolNormal", mainForm.DesorpVolNormalText},//实验室常压解吸W2(ml)
                 {"Sample1WeightText", mainForm.Sample1WeightText},//粉碎后第1份煤样重(g)
@@ -50,7 +50,7 @@ namespace GasFormsApp.WordPperation
                 {"AppDensityText", mainForm.AppDensityText},//视密度
                 {"NonDesorpGasQtyText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
                 {"VadText", mainForm.VadText},//挥发分Vad
-                {"W1Text", mainForm.W1_Text},//W1
+                {"W1Text", MainForm.W1.ToString("F3")},//W1
                 {"W2Text", mainForm.W2_Text},//W2
                 {"W3Text", mainForm.W3_Text},//W3
                 {"WaText", mainForm.Wa_Text},//Wa
@@ -59,6 +59,7 @@ namespace GasFormsApp.WordPperation
                 {"PText", mainForm.P_Text},//P
 
             };
+            Console.WriteLine($"TTTTTTTTTTTTTTTTTTTTTTTT:{MainForm.W1}");
             ReplacePlaceholders(memoryStream, placeholders);
 
             // 实验数据替换

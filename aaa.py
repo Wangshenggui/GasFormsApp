@@ -202,7 +202,7 @@ y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 ax.scatter(x, y, s=10, color='green', label='原始数据')
 slope = best_coefficients[0]
 intercept = best_coefficients[1]
-x_new = np.linspace(0, max(np.array([row[0] for row in read_shared_memory() if row[0] != 0 and row[1] != 0])), 100)
+x_new = np.linspace(0, 8, 100)
 y_new = slope * x_new + intercept
 ax.plot(x_new, y_new, color='red', label=f'拟合线: y = {slope:.3f}x + {intercept:.3f}')
 
