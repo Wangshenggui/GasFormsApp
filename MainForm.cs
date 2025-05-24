@@ -31,6 +31,7 @@ using System.Threading;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.ExtendedProperties;
 using Microsoft.Office.Core;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
 
 namespace GasFormsApp
 {
@@ -39,22 +40,78 @@ namespace GasFormsApp
         private bool v;
         private ImageList imageList1;
 
-        public string MineNameText => MineNameTextBox.Text;
-        public string SamplingSpotText => SamplingSpotTextBox.Text;
-        //public string SamplingTimeText => SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
+        public static string MineNameText
+        {
+            get;
+            set;
+        }
+        public static string SamplingSpotText
+        {
+            get;
+            set;
+        }
         public string SamplingTimeText;
-        public string BurialDepthText => BurialDepthTextBox.Text;
-        public string CoalSeamText => CoalSeamTextBox.Text;
-        public string SampleNumText => SampleNumTextBox.Text;
-        public string UndAtmPressureText => UndAtmPressureTextBox.Text;
-        public string LabAtmPressureText => LabAtmPressureTextBox.Text;
-        public string UndTempText => UndTempTextBox.Text;
-        public string LabTempText => LabTempTextBox.Text;
-        public string SampleWeightText => SampleWeightTextBox.Text;
-        public string SampleModeText => SampleModeComboBox.Text;
-        public string MoistureSampleText => MoistureSampleTextBox.Text;
-        public string RawCoalMoistureText => RawCoalMoistureTextBox.Text;
-        public string InitialVolumeText => InitialVolumeTextBox.Text;
+        public static string BurialDepthText
+        {
+            get;
+            set;
+        }
+        public static string CoalSeamText
+        {
+            get;
+            set;
+        }
+        public static string SampleNumText
+        {
+            get;
+            set;
+        }
+        public static string UndAtmPressureText
+        {
+            get;
+            set;
+        }
+        public static string LabAtmPressureText
+        {
+            get;
+            set;
+        }
+        public static string UndTempText
+        {
+            get;
+            set;
+        }
+        public static string LabTempText
+        {
+            get;
+            set;
+        }
+        public static string SampleWeightText
+        {
+            get;
+            set;
+        }
+        public static string SampleModeText
+        {
+            get;
+            set;
+        }
+        public static string MoistureSampleText
+        {
+            get;
+            set;
+        }
+        public static string RawCoalMoistureText
+        {
+            get;
+            set;
+        }
+        public static string InitialVolumeText
+        {
+            get;
+            set;
+        }
+
 
         public string DesorpVolNormalText => DesorpVolNormalTextBox.Text;
         public string Sample1WeightText => Sample1WeightTextBox.Text;
@@ -74,7 +131,11 @@ namespace GasFormsApp
             get => W1_TextBox.Text;
             set => W1_TextBox.Text = value;
         }
-        public string W2_Text => W2_TextBox.Text;
+        public string W2_Text
+        {
+            get => W2_TextBox.Text;
+            set => W2_TextBox.Text = value;
+        }
         public string W3_Text => W3_TextBox.Text;
         public string Wa_Text => Wa_TextBox.Text;
         public string W_Text => W_TextBox.Text;
@@ -83,12 +144,18 @@ namespace GasFormsApp
 
         public static double 井下解吸体积 = 0.0;
         public static double W1 = 0.0;
+        public static double W2 = 0.0;
+        public static double W3 = 0.0;
+        public static double Wa = 0.0;
+        public static double Wc = 0.0;
+        public static double W = 0.0;
+        public static double P = 0.0;
 
 
 
 
 
-
+        private BasicInfo basicInfo;
         public MainForm(bool v)
         {
             this.v = v;
@@ -96,6 +163,7 @@ namespace GasFormsApp
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+
 
             #region 初始化 tabPage1
             //// 设置表头名称
@@ -131,47 +199,47 @@ namespace GasFormsApp
             #endregion
 
             #region 模拟用户输入 tabPage2
-            // 模拟用户输入
-            MineNameTextBox.Text = "矿井名称";
-            SamplingSpotTextBox.Text = "采样地点";
-            BurialDepthTextBox.Text = "埋深";
-            CoalSeamTextBox.Text = "煤层";
+            //// 模拟用户输入
+            //MineNameTextBox.Text = "矿井名称";
+            //SamplingSpotTextBox.Text = "采样地点";
+            //BurialDepthTextBox.Text = "埋深";
+            //CoalSeamTextBox.Text = "煤层";
 
-            LabAtmPressureTextBox.Text = "1.01";
-            UndAtmPressureTextBox.Text = "1.05";
-            LabTempTextBox.Text = "25";
-            UndTempTextBox.Text = "30";
-            MoistureSampleTextBox.Text = "水分";
-            RawCoalMoistureTextBox.Text = "原水分";
-            SampleNumTextBox.Text = "编号";
+            //LabAtmPressureTextBox.Text = "1.01";
+            //UndAtmPressureTextBox.Text = "1.05";
+            //LabTempTextBox.Text = "25";
+            //UndTempTextBox.Text = "30";
+            //MoistureSampleTextBox.Text = "水分";
+            //RawCoalMoistureTextBox.Text = "原水分";
+            //SampleNumTextBox.Text = "编号";
             //InitialVolumeTextBox.Text = "初始体积";
             //SampleWeightTextBox.Text = "95";
 
-            DesorbTextBox1.Text = "1";
-            DesorbTextBox2.Text = "2";
-            DesorbTextBox3.Text = "3";
-            DesorbTextBox4.Text = "4";
-            DesorbTextBox5.Text = "5";
+            //DesorbTextBox1.Text = "1";
+            //DesorbTextBox2.Text = "2";
+            //DesorbTextBox3.Text = "3";
+            //DesorbTextBox4.Text = "4";
+            //DesorbTextBox5.Text = "5";
             //DesorbTextBox6.Text = "6";
             //DesorbTextBox7.Text = "7";
             //DesorbTextBox8.Text = "8";
             //DesorbTextBox9.Text = "9";
             //DesorbTextBox10.Text = "10";
 
-            DesorpVolNormalTextBox.Text = "123";
-            Sample1WeightTextBox.Text = "111";
-            Sample2WeightTextBox.Text = "222";
-            S1DesorpVolTextBox.Text = "333";
-            S2DesorpVolTextBox.Text = "444";
+            //DesorpVolNormalTextBox.Text = "123";
+            //Sample1WeightTextBox.Text = "111";
+            //Sample2WeightTextBox.Text = "222";
+            //S1DesorpVolTextBox.Text = "333";
+            //S2DesorpVolTextBox.Text = "444";
 
-            AdsorpConstATextBox.Text = "38.0";
-            AdsorpConstBTextBox.Text = "0.9";
-            MadTextBox.Text = "2.9";
-            AadTextBox.Text = "11.5";
-            PorosityTextBox.Text = "6.21";
-            AppDensityTextBox.Text = "1.34";
-            NonDesorpGasQtyTextBox.Text = "1.9254";
-            VadTextBox.Text = "18.444";
+            //AdsorpConstATextBox.Text = "38.0";
+            //AdsorpConstBTextBox.Text = "0.9";
+            //MadTextBox.Text = "2.9";
+            //AadTextBox.Text = "11.5";
+            //PorosityTextBox.Text = "6.21";
+            //AppDensityTextBox.Text = "1.34";
+            //NonDesorpGasQtyTextBox.Text = "1.9254";
+            //VadTextBox.Text = "18.444";
 
             //W1_TextBox.Text = "w1fasd";
             //W2_TextBox.Text = "w2nhrt";
@@ -318,7 +386,6 @@ namespace GasFormsApp
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
-        
         private void button2_Click(object sender, EventArgs e)
         {
             // 选择保存位置
@@ -353,8 +420,11 @@ namespace GasFormsApp
                         resourceStream.CopyTo(memoryStream);
 
                         // 替换占位符
-                        BasicInfo basicInfo = new BasicInfo();
+                        BasicInfo basicInfo = new BasicInfo(this);
                         Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
+                        SampleModeText = SampleModeComboBox.Text;
+                        Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
+
                         basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
 
                         // 保存到用户指定路径
@@ -537,9 +607,62 @@ namespace GasFormsApp
                                     W1_TextBox.Text = W1.ToString();
                                     Console.WriteLine($"W1(m^3/t):{W1_TextBox.Text}");
 
+                                    // 计算W2
+                                    // 常压解吸体积
+                                    float DesorpVolNormal;
+                                    if (float.TryParse(DesorpVolNormalTextBox.Text, out DesorpVolNormal))
+                                    {
+                                        // 计算W2
+                                        W2 = DesorpVolNormal / SampleWeight;
+                                    }
+                                    else
+                                    {
+                                        // 转换失败，比如用户输入了非数字
+                                        MessageBox.Show("请输入有效的数字");
+                                    }
+                                    W2_TextBox.Text = W2.ToString();
+                                    Console.WriteLine($"W2(m^3/t):{W2_TextBox.Text}");
 
+                                    // 计算W3
+                                    // 密封粉碎解析量
+                                    float CrushDesorp;
+                                    if (float.TryParse(CrushDesorpTextBox.Text, out CrushDesorp))
+                                    {
+                                        // 计算W3
+                                        W3 = CrushDesorp;
+                                    }
+                                    else
+                                    {
+                                        // 转换失败，比如用户输入了非数字
+                                        MessageBox.Show("请输入有效的数字");
+                                    }
+                                    W3_TextBox.Text = W3.ToString();
+                                    Console.WriteLine($"W3(m^3/t):{W3_TextBox.Text}");
 
+                                    // 计算Wa
+                                    Wa = W1 + W2 + W3;
+                                    Wa_TextBox.Text = Wa.ToString();
+                                    Console.WriteLine($"Wa(m^3/t):{Wa_TextBox.Text}");
 
+                                    // 计算Wc
+                                    Wc = getWc();
+                                    Wc_TextBox.Text = Wc.ToString();
+                                    NonDesorpGasQtyTextBox.Text = Wc.ToString();
+                                    Console.WriteLine($"Wc(m^3/t):{Wc_TextBox.Text}");
+
+                                    // 计算W
+                                    W = Wa + Wc;
+                                    W_TextBox.Text = W.ToString();
+                                    Console.WriteLine($"W(m^3/t):{W_TextBox.Text}");
+
+                                    // 计算P
+                                    double at = 1000 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100) + 310 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(MadTextBox.Text.Trim()) * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100);
+                                    double bt = Convert.ToDouble(AdsorpConstATextBox.Text.Trim()) * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim()) * (100 - Convert.ToDouble(AadTextBox.Text.Trim()) - Convert.ToDouble(MadTextBox.Text.Trim())) + 1000 * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100) - 100 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim()) + 310 * Convert.ToDouble(MadTextBox.Text.Trim()) * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100) - 31 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(MadTextBox.Text.Trim()) * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim());
+                                    double ct = -100 * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim()) - 31 * Convert.ToDouble(MadTextBox.Text.Trim()) * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim());
+                                    double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
+                                    P = Pt;
+                                    P_TextBox.Text = Convert.ToString(Pt);
+                                    Console.WriteLine($"P(MPa):{P_TextBox.Text}");
 
                                     //Console.WriteLine("读取共享内存数据:");
                                     //foreach (var v in values)
@@ -633,7 +756,7 @@ namespace GasFormsApp
                         resourceStream.CopyTo(memoryStream);
 
                         // 替换占位符
-                        BasicInfo basicInfo = new BasicInfo();
+                        BasicInfo basicInfo = new BasicInfo(this);
                         basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
 
                         // 写入替换后的 Word 文件到磁盘（必须先写到 outputPath）
@@ -670,7 +793,7 @@ namespace GasFormsApp
                 doc.Save();
 
                 // 导出为PDF，参数依次为：输出文件路径，导出格式
-                string pdfPath = @"E:\E-Desktop\GitHub\GasFormsApp\1.pdf";
+                string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
                 doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
 
                 doc.Close(false);
@@ -700,104 +823,92 @@ namespace GasFormsApp
             Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
         }
 
-        private void label23_Click(object sender, EventArgs e)
+        void getMaxVal()
         {
-
+            try
+            {
+                decimal one1 = Convert.ToDecimal(Sample1WeightTextBox.Text.Trim());
+                decimal two1 = Convert.ToDecimal(Sample2WeightTextBox.Text.Trim());
+                decimal one = Convert.ToDecimal(S1DesorpVolTextBox.Text.Trim());
+                decimal two = Convert.ToDecimal(S2DesorpVolTextBox.Text.Trim());
+                if (one > 0 && two > 0 && one1 > 0 && two1 > 0)
+                {
+                    CrushDesorpTextBox.Text = (Math.Round(one / one1 > two / two1 ? one / one1 : two / two1, 4)).ToString();
+                }
+            }
+            catch { }
+        }
+        /// <summary>
+        /// 计算Wc
+        /// </summary>
+        /// <returns></returns>
+        private double getWc()
+        {
+            float p = 0.1f;//0.103f
+            float AD = Convert.ToSingle(AadTextBox.Text.Trim());//灰分
+            float Md = Convert.ToSingle(MadTextBox.Text.Trim());//水分
+            float F = Convert.ToSingle(PorosityTextBox.Text.Trim());//孔隙率
+            float r = Convert.ToSingle(AppDensityTextBox.Text.Trim());//视密度
+            float a = Convert.ToSingle(AdsorpConstATextBox.Text.Trim());// 吸附常数a
+            float b = Convert.ToSingle(AdsorpConstBTextBox.Text.Trim());// 吸附常数b
+            double x = a * b * p * (100 - AD - Md) / ((1 + b * p) * 100 * (1 + 0.31 * Md)) + F / (100 * r);
+            return Math.Round(x, 4);
         }
 
-        private void label24_Click(object sender, EventArgs e)
+        private void Sample1WeightTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            getMaxVal();
         }
 
-        private void label25_Click(object sender, EventArgs e)
+        private void Sample2WeightTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            getMaxVal();
         }
 
-        private void label26_Click(object sender, EventArgs e)
+        private void S1DesorpVolTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            getMaxVal();
         }
 
-        private void label27_Click(object sender, EventArgs e)
+        private void S2DesorpVolTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            getMaxVal();
         }
 
-        private void label28_Click(object sender, EventArgs e)
-        {
 
+        //public string SamplingTimeText;
+
+
+
+        private void TextModificationTriggered(object sender, EventArgs e)
+        {
+            MineNameText = MineNameTextBox.Text;
+            SamplingSpotText = SamplingSpotTextBox.Text;
+            BurialDepthText = BurialDepthTextBox.Text;
+            CoalSeamText = CoalSeamTextBox.Text;
+            SampleNumText = SampleNumTextBox.Text;
+            UndAtmPressureText = UndAtmPressureTextBox.Text;
+            LabAtmPressureText = LabAtmPressureTextBox.Text;
+            UndTempText = UndTempTextBox.Text;
+            LabTempText = LabTempTextBox.Text;
+            SampleWeightText = SampleWeightTextBox.Text;
+            MoistureSampleText = MoistureSampleTextBox.Text;
+            RawCoalMoistureText = RawCoalMoistureTextBox.Text;
+            InitialVolumeText = InitialVolumeTextBox.Text;
+
+            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成Control类型（适用于WinForms）
+            if (control != null)
+            {
+                string controlName = control.Name;
+                Console.WriteLine($"触发事件的控件名称是：{controlName}");
+            }
         }
 
-        private void label29_Click(object sender, EventArgs e)
+        private void SampleModeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SampleModeText = SampleModeComboBox.Text;
+            Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
         }
 
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label38_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label39_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label42_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

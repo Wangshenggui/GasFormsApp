@@ -14,27 +14,32 @@ namespace GasFormsApp.WordPperation
         InsertChart insertChart = new InsertChart();
         MainForm mainForm = new MainForm(true);
         static string maxKey = null;
+
+        public BasicInfo(MainForm form)
+        {
+            this.mainForm = form;
+        }
         public void ReplaceWordPlaceholders(MemoryStream memoryStream,string SamplingTimeText)
         {
             Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
             // 基本信息替换
             var placeholders = new Dictionary<string, string>
             {
-                {"MineName", mainForm.MineNameText},//矿井名称
-                {"SamplingSpot", mainForm.SamplingSpotText},//取样地点
+                {"MineName", MainForm.MineNameText},//矿井名称
+                {"SamplingSpot", MainForm.SamplingSpotText},//取样地点
                 {"SamplingTime", SamplingTimeText},//取样时间
-                {"BurialDepth", mainForm.BurialDepthText},//埋深
-                {"CoalSeam", mainForm.CoalSeamText},//煤层
-                {"SampleNum", mainForm.SampleNumText},//煤样编号
-                {"UndAtmPressure", mainForm.UndAtmPressureText},//井下大气压力（KPa）
-                {"LabAtmPressure", mainForm.LabAtmPressureText},//实验室大气压力（KPa）
-                {"UndTemp", mainForm.UndTempText},//井下环境温度(℃)
-                {"LabTemp", mainForm.LabTempText},//实验室温度(℃)
-                {"SampleWeight", mainForm.SampleWeightText},//煤样重量（g）
-                {"SampleMode", mainForm.SampleModeText},//取样方式
-                {"MoistureSample", mainForm.MoistureSampleText},//煤样水分（%）
-                {"RawCoalMoisture", mainForm.RawCoalMoistureText},//原煤水分（%）
-                {"InitialVolume", mainForm.InitialVolumeText},//量管初始体积（ml）
+                {"BurialDepth", MainForm.BurialDepthText},//埋深
+                {"CoalSeam", MainForm.CoalSeamText},//煤层
+                {"SampleNum", MainForm.SampleNumText},//煤样编号
+                {"UndAtmPressure", MainForm.UndAtmPressureText},//井下大气压力（KPa）
+                {"LabAtmPressure", MainForm.LabAtmPressureText},//实验室大气压力（KPa）
+                {"UndTemp", MainForm.UndTempText},//井下环境温度(℃)
+                {"LabTemp", MainForm.LabTempText},//实验室温度(℃)
+                {"SampleWeight", MainForm.SampleWeightText},//煤样重量（g）
+                {"SampleMode", MainForm.SampleModeText},//取样方式
+                {"MoistureSample", MainForm.MoistureSampleText},//煤样水分（%）
+                {"RawCoalMoisture", MainForm.RawCoalMoistureText},//原煤水分（%）
+                {"InitialVolume", MainForm.InitialVolumeText},//量管初始体积（ml）
                 {"UgDesorpVol", MainForm.井下解吸体积.ToString()},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
                 {"DesorpVolNormal", mainForm.DesorpVolNormalText},//实验室常压解吸W2(ml)
@@ -50,13 +55,13 @@ namespace GasFormsApp.WordPperation
                 {"AppDensityText", mainForm.AppDensityText},//视密度
                 {"NonDesorpGasQtyText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
                 {"VadText", mainForm.VadText},//挥发分Vad
-                {"W1Text", MainForm.W1.ToString("F3")},//W1
-                {"W2Text", mainForm.W2_Text},//W2
-                {"W3Text", mainForm.W3_Text},//W3
-                {"WaText", mainForm.Wa_Text},//Wa
-                {"WcText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
-                {"WText", mainForm.W_Text},//W
-                {"PText", mainForm.P_Text},//P
+                {"W1Text", MainForm.W1.ToString("F4")},//W1
+                {"W2Text", MainForm.W2.ToString("F4")},//W2
+                {"W3Text", MainForm.W3.ToString("F4")},//W3
+                {"WaText", MainForm.Wa.ToString("F4")},//Wa
+                {"WcText", MainForm.Wc.ToString("F4")},//不可解吸瓦斯量Wc
+                {"WText", MainForm.W.ToString("F4")},//W
+                {"PText", MainForm.P.ToString("F4")},//P
 
             };
             Console.WriteLine($"TTTTTTTTTTTTTTTTTTTTTTTT:{MainForm.W1}");
@@ -75,6 +80,7 @@ namespace GasFormsApp.WordPperation
                 if (textBox != null)
                 {
                     string text = textBox.Text.Trim();
+                    Console.WriteLine($"获取：{text}");
                     placeholders[key] = text;
 
                     if (double.TryParse(text, out double val))
