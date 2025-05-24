@@ -191,7 +191,7 @@ data = read_shared_memory()
 x = np.array([row[0] for row in data if row[0] != 0 and row[1] != 0])
 y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 # 创建图形和坐标轴
-fig, ax = plt.subplots(figsize=(6, 4))
+fig, ax = plt.subplots(figsize=(6, 6))
 
 # 绘制散点图(原始数据)和拟合线
 ax.scatter(x, y, s=10, color='black', label='原始数据')
@@ -202,22 +202,24 @@ y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 ax.scatter(x, y, s=10, color='green', label='原始数据')
 slope = best_coefficients[0]
 intercept = best_coefficients[1]
-x_new = np.linspace(0, 8, 100)
+x_new = np.linspace(0, 3.33, 100)
 y_new = slope * x_new + intercept
 ax.plot(x_new, y_new, color='red', label=f'拟合线: y = {slope:.3f}x + {intercept:.3f}')
+ax.text(0.2, 275, f'y = {slope:.3f}x + {intercept:.3f}', fontsize=16, color='black')
 
-# 设置图表标题
-sign = '+' if intercept >= 0 else '-'
-abs_intercept = abs(intercept)
-ax.set_title(f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \nR2 = {best_r2:.5f}', pad=15,fontsize=20)
+
+# # 设置图表标题
+# sign = '+' if intercept >= 0 else '-'
+# abs_intercept = abs(intercept)
+# ax.set_title(f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \nR2 = {best_r2:.5f}', pad=15,fontsize=20)
 
 # 设置坐标轴范围
 ax.set_xlim(0, 9)
-ax.set_ylim(-60, 160)
+ax.set_ylim(-300, 320)
 
 # 设置刻度
 ax.set_xticks(np.arange(1, 9, 1))  # X轴1到8，步长1
-ax.set_yticks(np.arange(-60, 141, 20))  # Y轴-60到140，步长20
+ax.set_yticks(np.arange(-300, 301, 50))  # Y轴-60到140，步长20
 ax.tick_params(axis='x', labelsize=20)  # 设置X轴刻度标签字体大小为12
 ax.tick_params(axis='y', labelsize=20)  # 设置Y轴刻度标签字体大小为12
 
@@ -233,13 +235,13 @@ for spine in ax.spines.values():
 
 # 画一条自定义的X轴线，长度比坐标轴范围短一点
 ax.plot([0, 7.9], [0, 0], color='black', lw=1.0)    # X轴线：水平线，从x=0到7.9，y=0固定
-ax.plot([0, 0], [-60, 140], color='black', lw=1.0)  # Y轴线：竖直线，x=0固定，y从-60到150
+ax.plot([0, 0], [-300, 300], color='black', lw=1.0)  # Y轴线：竖直线，x=0固定，y从-60到150
 
 
 # 添加箭头风格的坐标轴
 ax.annotate('', xy=(8.5, 0), xytext=(0, 0),
             arrowprops=dict(arrowstyle='->', lw=1.0, color='black'))  # X轴箭头
-ax.annotate('', xy=(0, 160), xytext=(0, -62),
+ax.annotate('', xy=(0, 320), xytext=(0, -302),
             arrowprops=dict(arrowstyle='->', lw=1.0, color='black'))  # Y轴箭头
 
 # 保存图像到内存字节流
@@ -254,7 +256,7 @@ doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头�
 doc.add_picture(img_bytes, width=Inches(5.0))
 doc.save('你干嘛.docx')
 # 打开 Word 文档
-# os.startfile('你干嘛.docx')
+os.startfile('你干嘛.docx')
 
 # 关闭图形释放内存
 plt.close()

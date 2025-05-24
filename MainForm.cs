@@ -171,6 +171,7 @@ namespace GasFormsApp
             tabPage2.Text = "井下解吸";
             tabPage3.Text = "常压解吸";
             tabPage4.Text = "实验结果";
+            tabPage5.Text = " 备  注 ";
 
             // 创建并绑定图像列表到 TabControl
             imageList1 = new ImageList();
@@ -184,6 +185,7 @@ namespace GasFormsApp
                 imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.2.ico").ToBitmap());
                 imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.3.ico").ToBitmap());
                 imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.4.ico").ToBitmap());
+                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.5.ico").ToBitmap());
             }
             catch (Exception ex)
             {
@@ -195,6 +197,7 @@ namespace GasFormsApp
             tabPage2.ImageIndex = 1;
             tabPage3.ImageIndex = 2;
             tabPage4.ImageIndex = 3;
+            tabPage5.ImageIndex = 4;
 
             #endregion
 
@@ -215,16 +218,16 @@ namespace GasFormsApp
             //InitialVolumeTextBox.Text = "初始体积";
             //SampleWeightTextBox.Text = "95";
 
-            //DesorbTextBox1.Text = "1";
-            //DesorbTextBox2.Text = "2";
-            //DesorbTextBox3.Text = "3";
-            //DesorbTextBox4.Text = "4";
-            //DesorbTextBox5.Text = "5";
-            //DesorbTextBox6.Text = "6";
-            //DesorbTextBox7.Text = "7";
-            //DesorbTextBox8.Text = "8";
-            //DesorbTextBox9.Text = "9";
-            //DesorbTextBox10.Text = "10";
+            DesorbTextBox1.Text = "1";
+            DesorbTextBox2.Text = "122";
+            DesorbTextBox3.Text = "133";
+            DesorbTextBox4.Text = "144";
+            DesorbTextBox5.Text = "155";
+            DesorbTextBox6.Text = "160";
+            DesorbTextBox7.Text = "170";
+            DesorbTextBox8.Text = "180";
+            DesorbTextBox9.Text = "190";
+            DesorbTextBox10.Text = "210";
 
             //DesorpVolNormalTextBox.Text = "123";
             //Sample1WeightTextBox.Text = "111";
@@ -249,6 +252,8 @@ namespace GasFormsApp
             //P_TextBox.Text = "PPP";
             #endregion
 
+
+            CH4_CheckBox.Text = "CH₄";
 
             //button2_Click(button2, EventArgs.Empty);
             SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
@@ -419,17 +424,6 @@ namespace GasFormsApp
                     {
                         resourceStream.CopyTo(memoryStream);
 
-                        // 替换占位符
-                        BasicInfo basicInfo = new BasicInfo(this);
-                        Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
-                        SampleModeText = SampleModeComboBox.Text;
-                        Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
-
-                        basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
-
-                        // 保存到用户指定路径
-                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
-
                         // 插入图表
                         InsertChart insertChart = new InsertChart();
 
@@ -441,7 +435,6 @@ namespace GasFormsApp
                             string controlName = $"DesorbTextBox{i + 1}";
                             DesorbTextBox[i] = this.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
                         }
-
 
                         double t0 = 2;
                         double[,] data = new double[DesorbTextBox.Length, 2]; // 数组大小根据 DesorbTextBox 数量来确定
@@ -663,15 +656,22 @@ namespace GasFormsApp
                                     P = Pt;
                                     P_TextBox.Text = Convert.ToString(Pt);
                                     Console.WriteLine($"P(MPa):{P_TextBox.Text}");
-
-                                    //Console.WriteLine("读取共享内存数据:");
-                                    //foreach (var v in values)
-                                    //{
-                                    //    Console.WriteLine(v);
-                                    //}
                                 }
                             }
                         }
+
+                        // 替换占位符
+                        BasicInfo basicInfo = new BasicInfo(this);
+                        Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
+                        SampleModeText = SampleModeComboBox.Text;
+                        Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
+
+                        basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
+
+                        // 保存到用户指定路径
+                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
+
+                        
 
                         // 使用别名创建 Word 应用实例
                         Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
@@ -694,9 +694,9 @@ namespace GasFormsApp
                                 var pastedImage = bookmarkRange.InlineShapes[1];
 
                                 pastedImage.LockAspectRatio = MsoTriState.msoFalse;  // 不锁比例
-                                float k = 33;
+                                float k = 25;
                                 pastedImage.Width = 6*k;
-                                pastedImage.Height = 4*k;  // 高度也设置为20磅
+                                pastedImage.Height = 6*k;  // 高度也设置为20磅
                             }
 
                             // 可选：重新添加书签（如果被清除）
@@ -714,9 +714,16 @@ namespace GasFormsApp
                         if (bookmarkRange != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarkRange);
                         if (bookmarks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarks);
 
+
+                        // 保存并关闭 Word 文档
                         doc.Save();
+                        // 导出为PDF，参数依次为：输出文件路径，导出格式
+                        string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
+                        doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
                         doc.Close(false);
-                        System.Runtime.InteropServices.Marshal.ReleaseComObject(doc);
+                        Marshal.ReleaseComObject(doc);
+                        wordApp.Quit(false);
+                        Marshal.ReleaseComObject(wordApp);
                     }
                 }
                 ////打开生成的 Word 文件
@@ -728,92 +735,95 @@ namespace GasFormsApp
                 //{
                 //    Console.WriteLine("无法打开文件: " + ex.Message);
                 //}
+                this.Close();
+            }
+            else
+            {
+                return;
             }
 
 
             // 使用上面的路径
-            //if (saveDialog.ShowDialog() == DialogResult.OK)
-            //if (false)
-            {
-                //string outputPath = saveDialog.FileName;
-                //string outputPath = @"D:\1.docx";
+            //{
+            //    //string outputPath = saveDialog.FileName;
+            //    //string outputPath = @"D:\1.docx";
 
-                // 获取程序集中的 Word 模板资源
-                var assembly = Assembly.GetExecutingAssembly();
-                string resourceName = "GasFormsApp.WordTemplate.docx";
+            //    // 获取程序集中的 Word 模板资源
+            //    var assembly = Assembly.GetExecutingAssembly();
+            //    string resourceName = "GasFormsApp.WordTemplate.docx";
 
-                using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
-                {
-                    if (resourceStream == null)
-                    {
-                        MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+            //    using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
+            //    {
+            //        if (resourceStream == null)
+            //        {
+            //            MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            return;
+            //        }
 
-                    // 复制模板到内存
-                    using (MemoryStream memoryStream = new MemoryStream())
-                    {
-                        resourceStream.CopyTo(memoryStream);
+            //        // 复制模板到内存
+            //        using (MemoryStream memoryStream = new MemoryStream())
+            //        {
+            //            resourceStream.CopyTo(memoryStream);
 
-                        // 替换占位符
-                        BasicInfo basicInfo = new BasicInfo(this);
-                        basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
+            //            // 替换占位符
+            //            BasicInfo basicInfo = new BasicInfo(this);
+            //            basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
 
-                        // 写入替换后的 Word 文件到磁盘（必须先写到 outputPath）
-                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
-                    }
-                }
+            //            // 写入替换后的 Word 文件到磁盘（必须先写到 outputPath）
+            //            File.WriteAllBytes(outputPath, memoryStream.ToArray());
+            //        }
+            //    }
 
-                // === 确保图表已经复制到剪贴板 ===
-                //chart.Copy();
+            //    // === 确保图表已经复制到剪贴板 ===
+            //    //chart.Copy();
 
-                // 打开 Word 插入图表
-                var wordApp = new Microsoft.Office.Interop.Word.Application();
-                wordApp.Visible = false;
+            //    // 打开 Word 插入图表
+            //    var wordApp = new Microsoft.Office.Interop.Word.Application();
+            //    wordApp.Visible = false;
 
-                var doc = wordApp.Documents.Open(outputPath);
+            //    var doc = wordApp.Documents.Open(outputPath);
 
-                if (doc.Bookmarks.Exists("ChartPlaceholder"))
-                {
-                    var bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
+            //    if (doc.Bookmarks.Exists("ChartPlaceholder"))
+            //    {
+            //        var bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
 
-                    bookmarkRange.Paste(); // 粘贴剪贴板内容（图表）
+            //        bookmarkRange.Paste(); // 粘贴剪贴板内容（图表）
 
-                    // 粘贴后书签可能丢失，建议重新添加
-                    doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
+            //        // 粘贴后书签可能丢失，建议重新添加
+            //        doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
 
-                    Marshal.ReleaseComObject(bookmarkRange);
-                }
-                else
-                {
-                    MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            //        Marshal.ReleaseComObject(bookmarkRange);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
 
-                // 保存并关闭 Word 文档
-                doc.Save();
+            //    // 保存并关闭 Word 文档
+            //    doc.Save();
 
-                // 导出为PDF，参数依次为：输出文件路径，导出格式
-                string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
-                doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+            //    // 导出为PDF，参数依次为：输出文件路径，导出格式
+            //    string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
+            //    doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
 
-                doc.Close(false);
-                Marshal.ReleaseComObject(doc);
+            //    doc.Close(false);
+            //    Marshal.ReleaseComObject(doc);
 
-                wordApp.Quit(false);
-                Marshal.ReleaseComObject(wordApp);
+            //    wordApp.Quit(false);
+            //    Marshal.ReleaseComObject(wordApp);
 
-                // 打开生成的 Word 文件
-                try
-                {
-                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("无法打开文件: " + ex.Message);
-                }
+            //    // 打开生成的 Word 文件
+            //    try
+            //    {
+            //        Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("无法打开文件: " + ex.Message);
+            //    }
 
-                this.Close();
-            }
+            //    this.Close();
+            //}
 
         }
 
@@ -910,5 +920,10 @@ namespace GasFormsApp
             Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
         }
 
+
+        private void CheckBox_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;
+        }
     }
 }
