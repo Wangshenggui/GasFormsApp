@@ -289,8 +289,6 @@ namespace GasFormsApp
             #endregion
 
 
-            CH4_CheckBox.Text = "CH₄";
-
             //button2_Click(button2, EventArgs.Empty);
             SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
         }
@@ -427,6 +425,8 @@ namespace GasFormsApp
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
+        // 默认状态下不勾选 自然瓦斯成分
+        string Word_resourceName = "GasFormsApp.WordTemplate_1.docx"; // 注意这个名字必须和实际资源名一致
         private void button2_Click(object sender, EventArgs e)
         {
             // 选择保存位置
@@ -444,10 +444,10 @@ namespace GasFormsApp
 
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
-                string resourceName = "GasFormsApp.WordTemplate.docx"; // 注意这个名字必须和实际资源名一致
+                //string resourceName = "GasFormsApp.WordTemplate.docx"; // 注意这个名字必须和实际资源名一致
 
                 // 尝试读取嵌入资源
-                using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
+                using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
                 {
                     if (resourceStream == null)
                     {
@@ -762,105 +762,21 @@ namespace GasFormsApp
                         Marshal.ReleaseComObject(wordApp);
                     }
                 }
-                ////打开生成的 Word 文件
-                //try
-                //{
-                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine("无法打开文件: " + ex.Message);
-                //}
+                //打开生成的 Word 文件
+                try
+                {
+                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("无法打开文件: " + ex.Message);
+                }
                 this.Close();
             }
             else
             {
                 return;
             }
-
-
-            // 使用上面的路径
-            //{
-            //    //string outputPath = saveDialog.FileName;
-            //    //string outputPath = @"D:\1.docx";
-
-            //    // 获取程序集中的 Word 模板资源
-            //    var assembly = Assembly.GetExecutingAssembly();
-            //    string resourceName = "GasFormsApp.WordTemplate.docx";
-
-            //    using (Stream resourceStream = assembly.GetManifestResourceStream(resourceName))
-            //    {
-            //        if (resourceStream == null)
-            //        {
-            //            MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            return;
-            //        }
-
-            //        // 复制模板到内存
-            //        using (MemoryStream memoryStream = new MemoryStream())
-            //        {
-            //            resourceStream.CopyTo(memoryStream);
-
-            //            // 替换占位符
-            //            BasicInfo basicInfo = new BasicInfo(this);
-            //            basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
-
-            //            // 写入替换后的 Word 文件到磁盘（必须先写到 outputPath）
-            //            File.WriteAllBytes(outputPath, memoryStream.ToArray());
-            //        }
-            //    }
-
-            //    // === 确保图表已经复制到剪贴板 ===
-            //    //chart.Copy();
-
-            //    // 打开 Word 插入图表
-            //    var wordApp = new Microsoft.Office.Interop.Word.Application();
-            //    wordApp.Visible = false;
-
-            //    var doc = wordApp.Documents.Open(outputPath);
-
-            //    if (doc.Bookmarks.Exists("ChartPlaceholder"))
-            //    {
-            //        var bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
-
-            //        bookmarkRange.Paste(); // 粘贴剪贴板内容（图表）
-
-            //        // 粘贴后书签可能丢失，建议重新添加
-            //        doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
-
-            //        Marshal.ReleaseComObject(bookmarkRange);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-
-            //    // 保存并关闭 Word 文档
-            //    doc.Save();
-
-            //    // 导出为PDF，参数依次为：输出文件路径，导出格式
-            //    string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
-            //    doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
-
-            //    doc.Close(false);
-            //    Marshal.ReleaseComObject(doc);
-
-            //    wordApp.Quit(false);
-            //    Marshal.ReleaseComObject(wordApp);
-
-            //    // 打开生成的 Word 文件
-            //    try
-            //    {
-            //        Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine("无法打开文件: " + ex.Message);
-            //    }
-
-            //    this.Close();
-            //}
-
         }
 
         private void SamplingTimeDateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -963,7 +879,27 @@ namespace GasFormsApp
 
         private void CheckBox_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;
+            if (sender is System.Windows.Forms.CheckBox checkBox)
+            {
+                // 通过 Name 判断哪个被点击
+                string name = checkBox.Name;
+                string text = checkBox.Text;
+                bool isChecked = checkBox.Checked;
+
+                if (name == "GasCompCheckBox")
+                {
+                    if (isChecked)
+                    {
+                        Console.WriteLine("勾选");
+                        Word_resourceName = "GasFormsApp.WordTemplate.docx";
+                    }
+                    else
+                    {
+                        Console.WriteLine("取消勾选");
+                        Word_resourceName = "GasFormsApp.WordTemplate_1.docx";
+                    }
+                }
+            }
         }
     }
 }
