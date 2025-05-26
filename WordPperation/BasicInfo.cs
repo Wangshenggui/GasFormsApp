@@ -34,7 +34,8 @@ namespace GasFormsApp.WordPperation
             string MoistureSampleText,
             string RawCoalMoistureText,
             string InitialVolumeText,
-            string SamplingTimeText)
+            string SamplingTimeText,
+            string ReportTimeText)
         {
             Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
             // 基本信息替换
@@ -77,7 +78,22 @@ namespace GasFormsApp.WordPperation
                 {"WcText", MainForm.Wc.ToString("F4")},//不可解吸瓦斯量Wc
                 {"WText", MainForm.W.ToString("F4")},//W
                 {"PText", MainForm.P.ToString("F4")},//P
-
+                {"CH4Text", mainForm.CH4Text},//CH4
+                {"CO2Text", mainForm.CO2Text},//CO2
+                {"N2Text", mainForm.N2Text},//N2
+                {"O2Text", mainForm.O2Text},//O2
+                {"C2H4Text", mainForm.C2H4Text},//C2H4
+                {"C3H8Text", mainForm.C3H8Text},//C3H8
+                {"C2H6Text", mainForm.C2H6Text},//C2H6
+                {"C3H6Text", mainForm.C3H6Text},//C3H6
+                {"C2H2Text", mainForm.C2H2Text},//C2H2
+                {"COText", mainForm.COText},//CO
+                {"UndTestersText", mainForm.UndTestersText},//井下测试人员
+                {"LabTestersText", mainForm.LabTestersText},//实验室测试人员
+                {"AuditorText", mainForm.AuditorText},//审 核 人 员
+                {"ReportTimeText", ReportTimeText},//出报告时间
+                {"RemarkText", mainForm.RemarkText},//备注
+                
             };
             Console.WriteLine($"TTTTTTTTTTTTTTTTTTTTTTTT:{MainForm.W1}");
             ReplacePlaceholders(memoryStream, placeholders);

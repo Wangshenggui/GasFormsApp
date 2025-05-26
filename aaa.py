@@ -202,13 +202,13 @@ y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 ax.scatter(x, y, s=10, color='black', marker='s',label='原始数据')
 slope = best_coefficients[0]
 intercept = best_coefficients[1]
-x_new = np.linspace(0, 3.33, 100)
+x_new = np.linspace(0, np.max(x)+1, 100)
 y_new = slope * x_new + intercept
 ax.plot(x_new, y_new, color='black', label=f'拟合线: y = {slope:.3f}x + {intercept:.3f}')
 
 sign = '+' if intercept >= 0 else '-'
 abs_intercept = abs(intercept)
-ax.text(0.6, 275, f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \n\tR2 = {best_r2:.5f}', fontsize=18, color='black')
+ax.text(0.6, 275, f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \n    R2 = {best_r2:.5f}', fontsize=18, color='black')
 
 
 # # 设置图表标题
@@ -259,7 +259,7 @@ doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头�
 doc.add_picture(img_bytes, width=Inches(5.0))
 doc.save('你干嘛.docx')
 # 打开 Word 文档
-os.startfile('你干嘛.docx')
+# os.startfile('你干嘛.docx')
 
 # 关闭图形释放内存
 plt.close()

@@ -147,6 +147,25 @@ namespace GasFormsApp
         public static double W = 0.0;
         public static double P = 0.0;
 
+        public string CH4Text => CH4TextBox.Text;
+        public string CO2Text => CO2TextBox.Text;
+        public string N2Text => N2TextBox.Text;
+        public string O2Text => O2TextBox.Text;
+        public string C2H4Text => C2H4TextBox.Text;
+        public string C3H8Text => C3H8TextBox.Text;
+        public string C2H6Text => C2H6TextBox.Text;
+        public string C3H6Text => C3H6TextBox.Text;
+        public string C2H2Text => C2H2TextBox.Text;
+        public string COText => COTextBox.Text;
+
+
+        public string UndTestersText => UndTestersTextBox.Text;
+        public string LabTestersText => LabTestersTextBox.Text;
+        public string AuditorText => AuditorTextBox.Text;
+        public string ReportTimeText;
+        public string RemarkText => RemarkTextBox.Text;
+        
+
 
 
 
@@ -288,6 +307,7 @@ namespace GasFormsApp
             //P_TextBox.Text = "PPP";
             #endregion
 
+            GasCompGroupBox.Enabled = false;
 
             //button2_Click(button2, EventArgs.Empty);
             SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
@@ -686,6 +706,7 @@ namespace GasFormsApp
                         Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
                         SampleModeText = SampleModeComboBox.Text;
                         Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
+                        ReportTimeText = dateTimePicker1.Text;
 
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
                             MineNameText,
@@ -702,7 +723,8 @@ namespace GasFormsApp
                             MoistureSampleText,
                             RawCoalMoistureText,
                             InitialVolumeText,
-                            SamplingTimeText);
+                            SamplingTimeText,
+                            ReportTimeText);
 
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
@@ -771,7 +793,7 @@ namespace GasFormsApp
                 {
                     Console.WriteLine("无法打开文件: " + ex.Message);
                 }
-                this.Close();
+                //this.Close();
             }
             else
             {
@@ -892,14 +914,22 @@ namespace GasFormsApp
                     {
                         Console.WriteLine("勾选");
                         Word_resourceName = "GasFormsApp.WordTemplate.docx";
+                        GasCompGroupBox.Enabled = true;
                     }
                     else
                     {
                         Console.WriteLine("取消勾选");
                         Word_resourceName = "GasFormsApp.WordTemplate_1.docx";
+                        GasCompGroupBox.Enabled = false;
                     }
                 }
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            ReportTimeText = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            Console.WriteLine("用户选择了新的时间：" + ReportTimeText);
         }
     }
 }

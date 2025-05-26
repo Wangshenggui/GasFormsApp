@@ -258,6 +258,37 @@ namespace GasFormsApp
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.GasCompGroupBox = new System.Windows.Forms.GroupBox();
+            this.CH4_Lable = new System.Windows.Forms.Label();
+            this.label103 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.CH4TextBox = new System.Windows.Forms.TextBox();
+            this.CO2TextBox = new System.Windows.Forms.TextBox();
+            this.N2TextBox = new System.Windows.Forms.TextBox();
+            this.O2TextBox = new System.Windows.Forms.TextBox();
+            this.C2H4TextBox = new System.Windows.Forms.TextBox();
+            this.C3H8TextBox = new System.Windows.Forms.TextBox();
+            this.C2H6TextBox = new System.Windows.Forms.TextBox();
+            this.C3H6TextBox = new System.Windows.Forms.TextBox();
+            this.C2H2TextBox = new System.Windows.Forms.TextBox();
+            this.COTextBox = new System.Windows.Forms.TextBox();
+            this.label116 = new System.Windows.Forms.Label();
+            this.UndTestersTextBox = new System.Windows.Forms.TextBox();
+            this.LabTestersTextBox = new System.Windows.Forms.TextBox();
+            this.label117 = new System.Windows.Forms.Label();
+            this.AuditorTextBox = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.RemarkTextBox = new System.Windows.Forms.TextBox();
+            this.label120 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -267,6 +298,7 @@ namespace GasFormsApp
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.GasCompGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2727,6 +2759,18 @@ namespace GasFormsApp
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5.Controls.Add(this.button2);
+            this.tabPage5.Controls.Add(this.RemarkTextBox);
+            this.tabPage5.Controls.Add(this.label120);
+            this.tabPage5.Controls.Add(this.dateTimePicker1);
+            this.tabPage5.Controls.Add(this.label119);
+            this.tabPage5.Controls.Add(this.AuditorTextBox);
+            this.tabPage5.Controls.Add(this.label118);
+            this.tabPage5.Controls.Add(this.LabTestersTextBox);
+            this.tabPage5.Controls.Add(this.label117);
+            this.tabPage5.Controls.Add(this.UndTestersTextBox);
+            this.tabPage5.Controls.Add(this.label116);
+            this.tabPage5.Controls.Add(this.GasCompGroupBox);
             this.tabPage5.Controls.Add(this.GasCompCheckBox);
             this.tabPage5.Location = new System.Drawing.Point(4, 104);
             this.tabPage5.Name = "tabPage5";
@@ -2739,17 +2783,17 @@ namespace GasFormsApp
             // 
             this.GasCompCheckBox.AutoSize = true;
             this.GasCompCheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.GasCompCheckBox.Location = new System.Drawing.Point(78, 55);
+            this.GasCompCheckBox.Location = new System.Drawing.Point(46, 29);
             this.GasCompCheckBox.Name = "GasCompCheckBox";
-            this.GasCompCheckBox.Size = new System.Drawing.Size(199, 31);
+            this.GasCompCheckBox.Size = new System.Drawing.Size(244, 31);
             this.GasCompCheckBox.TabIndex = 9;
-            this.GasCompCheckBox.Text = "自然瓦斯成分";
+            this.GasCompCheckBox.Text = "自然瓦斯成分(%)";
             this.GasCompCheckBox.UseVisualStyleBackColor = true;
             this.GasCompCheckBox.Click += new System.EventHandler(this.CheckBox_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(176, 0);
+            this.button2.Location = new System.Drawing.Point(8, 522);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(296, 85);
             this.button2.TabIndex = 3;
@@ -2808,12 +2852,323 @@ namespace GasFormsApp
             this.shapeContainer4.TabIndex = 9;
             this.shapeContainer4.TabStop = false;
             // 
+            // GasCompGroupBox
+            // 
+            this.GasCompGroupBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.GasCompGroupBox.Controls.Add(this.COTextBox);
+            this.GasCompGroupBox.Controls.Add(this.C2H2TextBox);
+            this.GasCompGroupBox.Controls.Add(this.C3H6TextBox);
+            this.GasCompGroupBox.Controls.Add(this.C2H6TextBox);
+            this.GasCompGroupBox.Controls.Add(this.C3H8TextBox);
+            this.GasCompGroupBox.Controls.Add(this.C2H4TextBox);
+            this.GasCompGroupBox.Controls.Add(this.O2TextBox);
+            this.GasCompGroupBox.Controls.Add(this.N2TextBox);
+            this.GasCompGroupBox.Controls.Add(this.CO2TextBox);
+            this.GasCompGroupBox.Controls.Add(this.CH4TextBox);
+            this.GasCompGroupBox.Controls.Add(this.label115);
+            this.GasCompGroupBox.Controls.Add(this.label114);
+            this.GasCompGroupBox.Controls.Add(this.label113);
+            this.GasCompGroupBox.Controls.Add(this.label112);
+            this.GasCompGroupBox.Controls.Add(this.label107);
+            this.GasCompGroupBox.Controls.Add(this.label106);
+            this.GasCompGroupBox.Controls.Add(this.label105);
+            this.GasCompGroupBox.Controls.Add(this.label104);
+            this.GasCompGroupBox.Controls.Add(this.label103);
+            this.GasCompGroupBox.Controls.Add(this.CH4_Lable);
+            this.GasCompGroupBox.Location = new System.Drawing.Point(327, 44);
+            this.GasCompGroupBox.Name = "GasCompGroupBox";
+            this.GasCompGroupBox.Size = new System.Drawing.Size(1028, 412);
+            this.GasCompGroupBox.TabIndex = 10;
+            this.GasCompGroupBox.TabStop = false;
+            this.GasCompGroupBox.Text = "自然瓦斯成分";
+            // 
+            // CH4_Lable
+            // 
+            this.CH4_Lable.AutoSize = true;
+            this.CH4_Lable.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4_Lable.Location = new System.Drawing.Point(49, 26);
+            this.CH4_Lable.Name = "CH4_Lable";
+            this.CH4_Lable.Size = new System.Drawing.Size(95, 27);
+            this.CH4_Lable.TabIndex = 11;
+            this.CH4_Lable.Text = "CH₄(%)";
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label103.Location = new System.Drawing.Point(421, 26);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(95, 27);
+            this.label103.TabIndex = 21;
+            this.label103.Text = "CO₂(%)";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label104.Location = new System.Drawing.Point(793, 26);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(80, 27);
+            this.label104.TabIndex = 22;
+            this.label104.Text = "N₂(%)";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label105.Location = new System.Drawing.Point(49, 126);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(80, 27);
+            this.label105.TabIndex = 23;
+            this.label105.Text = "O₂(%)";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label106.Location = new System.Drawing.Point(421, 126);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(103, 27);
+            this.label106.TabIndex = 24;
+            this.label106.Text = "C₂H₄(%)";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label107.Location = new System.Drawing.Point(793, 126);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(103, 27);
+            this.label107.TabIndex = 25;
+            this.label107.Text = "C₃H₈(%)";
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label112.Location = new System.Drawing.Point(49, 226);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(103, 27);
+            this.label112.TabIndex = 26;
+            this.label112.Text = "C₂H₆(%)";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label113.Location = new System.Drawing.Point(421, 226);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(103, 27);
+            this.label113.TabIndex = 27;
+            this.label113.Text = "C₃H₆(%)";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label114.Location = new System.Drawing.Point(793, 226);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(103, 27);
+            this.label114.TabIndex = 28;
+            this.label114.Text = "C₂H₂(%)";
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label115.Location = new System.Drawing.Point(49, 326);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(87, 27);
+            this.label115.TabIndex = 29;
+            this.label115.Text = "CO(%)";
+            // 
+            // CH4TextBox
+            // 
+            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4TextBox.Location = new System.Drawing.Point(54, 56);
+            this.CH4TextBox.Name = "CH4TextBox";
+            this.CH4TextBox.Size = new System.Drawing.Size(179, 38);
+            this.CH4TextBox.TabIndex = 30;
+            this.CH4TextBox.Text = "0";
+            // 
+            // CO2TextBox
+            // 
+            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2TextBox.Location = new System.Drawing.Point(426, 56);
+            this.CO2TextBox.Name = "CO2TextBox";
+            this.CO2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.CO2TextBox.TabIndex = 31;
+            this.CO2TextBox.Text = "0";
+            // 
+            // N2TextBox
+            // 
+            this.N2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2TextBox.Location = new System.Drawing.Point(798, 56);
+            this.N2TextBox.Name = "N2TextBox";
+            this.N2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.N2TextBox.TabIndex = 32;
+            this.N2TextBox.Text = "0";
+            // 
+            // O2TextBox
+            // 
+            this.O2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2TextBox.Location = new System.Drawing.Point(54, 156);
+            this.O2TextBox.Name = "O2TextBox";
+            this.O2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.O2TextBox.TabIndex = 33;
+            this.O2TextBox.Text = "0";
+            // 
+            // C2H4TextBox
+            // 
+            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4TextBox.Location = new System.Drawing.Point(426, 156);
+            this.C2H4TextBox.Name = "C2H4TextBox";
+            this.C2H4TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C2H4TextBox.TabIndex = 34;
+            this.C2H4TextBox.Text = "0";
+            // 
+            // C3H8TextBox
+            // 
+            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8TextBox.Location = new System.Drawing.Point(798, 156);
+            this.C3H8TextBox.Name = "C3H8TextBox";
+            this.C3H8TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C3H8TextBox.TabIndex = 35;
+            this.C3H8TextBox.Text = "0";
+            // 
+            // C2H6TextBox
+            // 
+            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H6TextBox.Location = new System.Drawing.Point(54, 256);
+            this.C2H6TextBox.Name = "C2H6TextBox";
+            this.C2H6TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C2H6TextBox.TabIndex = 36;
+            this.C2H6TextBox.Text = "0";
+            // 
+            // C3H6TextBox
+            // 
+            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H6TextBox.Location = new System.Drawing.Point(426, 256);
+            this.C3H6TextBox.Name = "C3H6TextBox";
+            this.C3H6TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C3H6TextBox.TabIndex = 37;
+            this.C3H6TextBox.Text = "0";
+            // 
+            // C2H2TextBox
+            // 
+            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H2TextBox.Location = new System.Drawing.Point(798, 256);
+            this.C2H2TextBox.Name = "C2H2TextBox";
+            this.C2H2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C2H2TextBox.TabIndex = 38;
+            this.C2H2TextBox.Text = "0";
+            // 
+            // COTextBox
+            // 
+            this.COTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.COTextBox.Location = new System.Drawing.Point(54, 356);
+            this.COTextBox.Name = "COTextBox";
+            this.COTextBox.Size = new System.Drawing.Size(179, 38);
+            this.COTextBox.TabIndex = 39;
+            this.COTextBox.Text = "0";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label116.Location = new System.Drawing.Point(3, 111);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(208, 27);
+            this.label116.TabIndex = 40;
+            this.label116.Text = "井下测试人员：";
+            // 
+            // UndTestersTextBox
+            // 
+            this.UndTestersTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndTestersTextBox.Location = new System.Drawing.Point(61, 141);
+            this.UndTestersTextBox.Name = "UndTestersTextBox";
+            this.UndTestersTextBox.Size = new System.Drawing.Size(260, 38);
+            this.UndTestersTextBox.TabIndex = 40;
+            // 
+            // LabTestersTextBox
+            // 
+            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabTestersTextBox.Location = new System.Drawing.Point(61, 227);
+            this.LabTestersTextBox.Name = "LabTestersTextBox";
+            this.LabTestersTextBox.Size = new System.Drawing.Size(260, 38);
+            this.LabTestersTextBox.TabIndex = 41;
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label117.Location = new System.Drawing.Point(3, 197);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(236, 27);
+            this.label117.TabIndex = 42;
+            this.label117.Text = "实验室测试人员：";
+            // 
+            // AuditorTextBox
+            // 
+            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AuditorTextBox.Location = new System.Drawing.Point(61, 323);
+            this.AuditorTextBox.Name = "AuditorTextBox";
+            this.AuditorTextBox.Size = new System.Drawing.Size(260, 38);
+            this.AuditorTextBox.TabIndex = 43;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label118.Location = new System.Drawing.Point(3, 293);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(152, 27);
+            this.label118.TabIndex = 44;
+            this.label118.Text = "审核人员：";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label119.Location = new System.Drawing.Point(3, 388);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(180, 27);
+            this.label119.TabIndex = 46;
+            this.label119.Text = "出报告时间：";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(61, 418);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(260, 38);
+            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // RemarkTextBox
+            // 
+            this.RemarkTextBox.Location = new System.Drawing.Point(149, 477);
+            this.RemarkTextBox.Multiline = true;
+            this.RemarkTextBox.Name = "RemarkTextBox";
+            this.RemarkTextBox.Size = new System.Drawing.Size(1206, 144);
+            this.RemarkTextBox.TabIndex = 47;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label120.Location = new System.Drawing.Point(70, 477);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(96, 27);
+            this.label120.TabIndex = 48;
+            this.label120.Text = "备注：";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 822);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
@@ -2837,6 +3192,8 @@ namespace GasFormsApp
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.GasCompGroupBox.ResumeLayout(false);
+            this.GasCompGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3070,5 +3427,36 @@ namespace GasFormsApp
         private CheckBox GasCompCheckBox;
         private TextBox t0TextBox;
         private Label label90;
+        private GroupBox GasCompGroupBox;
+        private Label label115;
+        private Label label114;
+        private Label label113;
+        private Label label112;
+        private Label label107;
+        private Label label106;
+        private Label label105;
+        private Label label104;
+        private Label label103;
+        private Label CH4_Lable;
+        private TextBox COTextBox;
+        private TextBox C2H2TextBox;
+        private TextBox C3H6TextBox;
+        private TextBox C2H6TextBox;
+        private TextBox C3H8TextBox;
+        private TextBox C2H4TextBox;
+        private TextBox O2TextBox;
+        private TextBox N2TextBox;
+        private TextBox CO2TextBox;
+        private TextBox CH4TextBox;
+        private Label label116;
+        private TextBox UndTestersTextBox;
+        private Label label119;
+        private TextBox AuditorTextBox;
+        private Label label118;
+        private TextBox LabTestersTextBox;
+        private Label label117;
+        private DateTimePicker dateTimePicker1;
+        private TextBox RemarkTextBox;
+        private Label label120;
     }
 }
