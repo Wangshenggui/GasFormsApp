@@ -370,7 +370,6 @@ namespace GasFormsApp
             this.MineNameTextBox.Name = "MineNameTextBox";
             this.MineNameTextBox.Size = new System.Drawing.Size(240, 26);
             this.MineNameTextBox.TabIndex = 30;
-            this.MineNameTextBox.Text = "fdga";
             this.MineNameTextBox.TextChanged += new System.EventHandler(this.TextModificationTriggered);
             // 
             // label1

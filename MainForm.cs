@@ -40,69 +40,69 @@ namespace GasFormsApp
         private bool v;
         private ImageList imageList1;
 
-        public static string MineNameText
+        private string MineNameText
         {
             get;
             set;
         }
-        public static string SamplingSpotText;
+        private string SamplingSpotText;
         public string SamplingTimeText;
-        public static string BurialDepthText
+        private string BurialDepthText
         {
             get;
             set;
         }
-        public static string CoalSeamText
+        private string CoalSeamText
         {
             get;
             set;
         }
-        public static string SampleNumText
+        private string SampleNumText
         {
             get;
             set;
         }
-        public static string UndAtmPressureText
+        private string UndAtmPressureText
         {
             get;
             set;
         }
-        public static string LabAtmPressureText
+        private string LabAtmPressureText
         {
             get;
             set;
         }
-        public static string UndTempText
+        private string UndTempText
         {
             get;
             set;
         }
-        public static string LabTempText
+        private string LabTempText
         {
             get;
             set;
         }
-        public static string SampleWeightText
+        private string SampleWeightText
         {
             get;
             set;
         }
-        public static string SampleModeText
+        private string SampleModeText
         {
             get;
             set;
         }
-        public static string MoistureSampleText
+        private string MoistureSampleText
         {
             get;
             set;
         }
-        public static string RawCoalMoistureText
+        private string RawCoalMoistureText
         {
             get;
             set;
         }
-        public static string InitialVolumeText
+        private string InitialVolumeText
         {
             get;
             set;
