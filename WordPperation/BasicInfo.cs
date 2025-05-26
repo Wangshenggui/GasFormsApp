@@ -19,27 +19,42 @@ namespace GasFormsApp.WordPperation
         {
             this.mainForm = form;
         }
-        public void ReplaceWordPlaceholders(MemoryStream memoryStream,string SamplingTimeText)
+        public void ReplaceWordPlaceholders(MemoryStream memoryStream,
+            string MineNameText,
+            string SamplingSpotText,
+            string BurialDepthText,
+            string CoalSeamText,
+            string SampleNumText,
+            string UndAtmPressureText,
+            string LabAtmPressureText,
+            string UndTempText,
+            string LabTempText,
+            string SampleWeightText,
+            string SampleModeText,
+            string MoistureSampleText,
+            string RawCoalMoistureText,
+            string InitialVolumeText,
+            string SamplingTimeText)
         {
             Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
             // 基本信息替换
             var placeholders = new Dictionary<string, string>
             {
-                {"MineName", MainForm.MineNameText},//矿井名称
-                {"SamplingSpot", MainForm.SamplingSpotText},//取样地点
+                {"MineName", MineNameText},//矿井名称
+                {"SamplingSpot", SamplingSpotText},//取样地点
                 {"SamplingTime", SamplingTimeText},//取样时间
-                {"BurialDepth", MainForm.BurialDepthText},//埋深
-                {"CoalSeam", MainForm.CoalSeamText},//煤层
-                {"SampleNum", MainForm.SampleNumText},//煤样编号
-                {"UndAtmPressure", MainForm.UndAtmPressureText},//井下大气压力（KPa）
-                {"LabAtmPressure", MainForm.LabAtmPressureText},//实验室大气压力（KPa）
-                {"UndTemp", MainForm.UndTempText},//井下环境温度(℃)
-                {"LabTemp", MainForm.LabTempText},//实验室温度(℃)
-                {"SampleWeight", MainForm.SampleWeightText},//煤样重量（g）
-                {"SampleMode", MainForm.SampleModeText},//取样方式
-                {"MoistureSample", MainForm.MoistureSampleText},//煤样水分（%）
-                {"RawCoalMoisture", MainForm.RawCoalMoistureText},//原煤水分（%）
-                {"InitialVolume", MainForm.InitialVolumeText},//量管初始体积（ml）
+                {"BurialDepth", BurialDepthText},//埋深
+                {"CoalSeam", CoalSeamText},//煤层
+                {"SampleNum", SampleNumText},//煤样编号
+                {"UndAtmPressure", UndAtmPressureText},//井下大气压力（KPa）
+                {"LabAtmPressure", LabAtmPressureText},//实验室大气压力（KPa）
+                {"UndTemp", UndTempText},//井下环境温度(℃)
+                {"LabTemp", LabTempText},//实验室温度(℃)
+                {"SampleWeight", SampleWeightText},//煤样重量（g）
+                {"SampleMode", SampleModeText},//取样方式
+                {"MoistureSample", MoistureSampleText},//煤样水分（%）
+                {"RawCoalMoisture", RawCoalMoistureText},//原煤水分（%）
+                {"InitialVolume", InitialVolumeText},//量管初始体积（ml）
                 {"UgDesorpVol", MainForm.井下解吸体积.ToString()},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
                 {"DesorpVolNormal", mainForm.DesorpVolNormalText},//实验室常压解吸W2(ml)

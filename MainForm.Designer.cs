@@ -248,23 +248,23 @@ namespace GasFormsApp
             this.label109 = new System.Windows.Forms.Label();
             this.AdsorpConstATextBox = new System.Windows.Forms.TextBox();
             this.label110 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.C3H8_CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H4_CheckBox = new System.Windows.Forms.CheckBox();
+            this.O2_CheckBox = new System.Windows.Forms.CheckBox();
+            this.N2_CheckBox = new System.Windows.Forms.CheckBox();
+            this.CO2_CheckBox = new System.Windows.Forms.CheckBox();
+            this.CH4_CheckBox = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.CH4_CheckBox = new System.Windows.Forms.CheckBox();
-            this.CO2_CheckBox = new System.Windows.Forms.CheckBox();
-            this.N2_CheckBox = new System.Windows.Forms.CheckBox();
-            this.O2_CheckBox = new System.Windows.Forms.CheckBox();
-            this.C2H4_CheckBox = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.C3H8_CheckBox = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -272,8 +272,8 @@ namespace GasFormsApp
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -370,6 +370,7 @@ namespace GasFormsApp
             this.MineNameTextBox.Name = "MineNameTextBox";
             this.MineNameTextBox.Size = new System.Drawing.Size(240, 26);
             this.MineNameTextBox.TabIndex = 30;
+            this.MineNameTextBox.Text = "fdga";
             this.MineNameTextBox.TextChanged += new System.EventHandler(this.TextModificationTriggered);
             // 
             // label1
@@ -2709,6 +2710,137 @@ namespace GasFormsApp
             this.label110.TabIndex = 32;
             this.label110.Text = "吸附常数a:";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5.Controls.Add(this.checkBox4);
+            this.tabPage5.Controls.Add(this.checkBox1);
+            this.tabPage5.Controls.Add(this.checkBox2);
+            this.tabPage5.Controls.Add(this.checkBox3);
+            this.tabPage5.Controls.Add(this.C3H8_CheckBox);
+            this.tabPage5.Controls.Add(this.C2H4_CheckBox);
+            this.tabPage5.Controls.Add(this.O2_CheckBox);
+            this.tabPage5.Controls.Add(this.N2_CheckBox);
+            this.tabPage5.Controls.Add(this.CO2_CheckBox);
+            this.tabPage5.Controls.Add(this.CH4_CheckBox);
+            this.tabPage5.Location = new System.Drawing.Point(4, 104);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox4.Location = new System.Drawing.Point(38, 17);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(174, 68);
+            this.checkBox4.TabIndex = 9;
+            this.checkBox4.Text = "牛逼";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.Click += new System.EventHandler(this.CheckBox_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox1.Location = new System.Drawing.Point(710, 139);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(52, 31);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "O₂";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox2.Location = new System.Drawing.Point(579, 139);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(52, 31);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "N₂";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox3.Location = new System.Drawing.Point(450, 139);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(66, 31);
+            this.checkBox3.TabIndex = 6;
+            this.checkBox3.Text = "CO₂";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // C3H8_CheckBox
+            // 
+            this.C3H8_CheckBox.AutoSize = true;
+            this.C3H8_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8_CheckBox.Location = new System.Drawing.Point(332, 139);
+            this.C3H8_CheckBox.Name = "C3H8_CheckBox";
+            this.C3H8_CheckBox.Size = new System.Drawing.Size(66, 31);
+            this.C3H8_CheckBox.TabIndex = 5;
+            this.C3H8_CheckBox.Text = "CH₄";
+            this.C3H8_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C2H4_CheckBox
+            // 
+            this.C2H4_CheckBox.AutoSize = true;
+            this.C2H4_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4_CheckBox.Location = new System.Drawing.Point(841, 55);
+            this.C2H4_CheckBox.Name = "C2H4_CheckBox";
+            this.C2H4_CheckBox.Size = new System.Drawing.Size(73, 31);
+            this.C2H4_CheckBox.TabIndex = 4;
+            this.C2H4_CheckBox.Text = "C₂H₄";
+            this.C2H4_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // O2_CheckBox
+            // 
+            this.O2_CheckBox.AutoSize = true;
+            this.O2_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2_CheckBox.Location = new System.Drawing.Point(710, 55);
+            this.O2_CheckBox.Name = "O2_CheckBox";
+            this.O2_CheckBox.Size = new System.Drawing.Size(52, 31);
+            this.O2_CheckBox.TabIndex = 3;
+            this.O2_CheckBox.Text = "O₂";
+            this.O2_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // N2_CheckBox
+            // 
+            this.N2_CheckBox.AutoSize = true;
+            this.N2_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2_CheckBox.Location = new System.Drawing.Point(579, 55);
+            this.N2_CheckBox.Name = "N2_CheckBox";
+            this.N2_CheckBox.Size = new System.Drawing.Size(52, 31);
+            this.N2_CheckBox.TabIndex = 2;
+            this.N2_CheckBox.Text = "N₂";
+            this.N2_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CO2_CheckBox
+            // 
+            this.CO2_CheckBox.AutoSize = true;
+            this.CO2_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2_CheckBox.Location = new System.Drawing.Point(450, 55);
+            this.CO2_CheckBox.Name = "CO2_CheckBox";
+            this.CO2_CheckBox.Size = new System.Drawing.Size(66, 31);
+            this.CO2_CheckBox.TabIndex = 1;
+            this.CO2_CheckBox.Text = "CO₂";
+            this.CO2_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CH4_CheckBox
+            // 
+            this.CH4_CheckBox.AutoSize = true;
+            this.CH4_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4_CheckBox.Location = new System.Drawing.Point(332, 55);
+            this.CH4_CheckBox.Name = "CH4_CheckBox";
+            this.CH4_CheckBox.Size = new System.Drawing.Size(66, 31);
+            this.CH4_CheckBox.TabIndex = 0;
+            this.CH4_CheckBox.Text = "CH₄";
+            this.CH4_CheckBox.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(176, 0);
@@ -2770,137 +2902,6 @@ namespace GasFormsApp
             this.shapeContainer4.TabIndex = 9;
             this.shapeContainer4.TabStop = false;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage5.Controls.Add(this.checkBox4);
-            this.tabPage5.Controls.Add(this.checkBox1);
-            this.tabPage5.Controls.Add(this.checkBox2);
-            this.tabPage5.Controls.Add(this.checkBox3);
-            this.tabPage5.Controls.Add(this.C3H8_CheckBox);
-            this.tabPage5.Controls.Add(this.C2H4_CheckBox);
-            this.tabPage5.Controls.Add(this.O2_CheckBox);
-            this.tabPage5.Controls.Add(this.N2_CheckBox);
-            this.tabPage5.Controls.Add(this.CO2_CheckBox);
-            this.tabPage5.Controls.Add(this.CH4_CheckBox);
-            this.tabPage5.Location = new System.Drawing.Point(4, 104);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1460, 629);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            // 
-            // CH4_CheckBox
-            // 
-            this.CH4_CheckBox.AutoSize = true;
-            this.CH4_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CH4_CheckBox.Location = new System.Drawing.Point(332, 55);
-            this.CH4_CheckBox.Name = "CH4_CheckBox";
-            this.CH4_CheckBox.Size = new System.Drawing.Size(66, 31);
-            this.CH4_CheckBox.TabIndex = 0;
-            this.CH4_CheckBox.Text = "CH₄";
-            this.CH4_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // CO2_CheckBox
-            // 
-            this.CO2_CheckBox.AutoSize = true;
-            this.CO2_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO2_CheckBox.Location = new System.Drawing.Point(450, 55);
-            this.CO2_CheckBox.Name = "CO2_CheckBox";
-            this.CO2_CheckBox.Size = new System.Drawing.Size(66, 31);
-            this.CO2_CheckBox.TabIndex = 1;
-            this.CO2_CheckBox.Text = "CO₂";
-            this.CO2_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // N2_CheckBox
-            // 
-            this.N2_CheckBox.AutoSize = true;
-            this.N2_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.N2_CheckBox.Location = new System.Drawing.Point(579, 55);
-            this.N2_CheckBox.Name = "N2_CheckBox";
-            this.N2_CheckBox.Size = new System.Drawing.Size(52, 31);
-            this.N2_CheckBox.TabIndex = 2;
-            this.N2_CheckBox.Text = "N₂";
-            this.N2_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // O2_CheckBox
-            // 
-            this.O2_CheckBox.AutoSize = true;
-            this.O2_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.O2_CheckBox.Location = new System.Drawing.Point(710, 55);
-            this.O2_CheckBox.Name = "O2_CheckBox";
-            this.O2_CheckBox.Size = new System.Drawing.Size(52, 31);
-            this.O2_CheckBox.TabIndex = 3;
-            this.O2_CheckBox.Text = "O₂";
-            this.O2_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // C2H4_CheckBox
-            // 
-            this.C2H4_CheckBox.AutoSize = true;
-            this.C2H4_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H4_CheckBox.Location = new System.Drawing.Point(841, 55);
-            this.C2H4_CheckBox.Name = "C2H4_CheckBox";
-            this.C2H4_CheckBox.Size = new System.Drawing.Size(73, 31);
-            this.C2H4_CheckBox.TabIndex = 4;
-            this.C2H4_CheckBox.Text = "C₂H₄";
-            this.C2H4_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox1.Location = new System.Drawing.Point(710, 139);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(52, 31);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "O₂";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox2.Location = new System.Drawing.Point(579, 139);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(52, 31);
-            this.checkBox2.TabIndex = 7;
-            this.checkBox2.Text = "N₂";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox3.Location = new System.Drawing.Point(450, 139);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(66, 31);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "CO₂";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // C3H8_CheckBox
-            // 
-            this.C3H8_CheckBox.AutoSize = true;
-            this.C3H8_CheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H8_CheckBox.Location = new System.Drawing.Point(332, 139);
-            this.C3H8_CheckBox.Name = "C3H8_CheckBox";
-            this.C3H8_CheckBox.Size = new System.Drawing.Size(66, 31);
-            this.C3H8_CheckBox.TabIndex = 5;
-            this.C3H8_CheckBox.Text = "CH₄";
-            this.C3H8_CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox4.Location = new System.Drawing.Point(38, 17);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(174, 68);
-            this.checkBox4.TabIndex = 9;
-            this.checkBox4.Text = "牛逼";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.Click += new System.EventHandler(this.CheckBox_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2927,9 +2928,9 @@ namespace GasFormsApp
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

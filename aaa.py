@@ -205,7 +205,10 @@ intercept = best_coefficients[1]
 x_new = np.linspace(0, 3.33, 100)
 y_new = slope * x_new + intercept
 ax.plot(x_new, y_new, color='red', label=f'拟合线: y = {slope:.3f}x + {intercept:.3f}')
-ax.text(0.2, 275, f'y = {slope:.3f}x + {intercept:.3f}', fontsize=16, color='black')
+
+sign = '+' if intercept >= 0 else '-'
+abs_intercept = abs(intercept)
+ax.text(0.6, 275, f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \n\tR2 = {best_r2:.5f}', fontsize=18, color='black')
 
 
 # # 设置图表标题

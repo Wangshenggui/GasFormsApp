@@ -45,11 +45,7 @@ namespace GasFormsApp
             get;
             set;
         }
-        public static string SamplingSpotText
-        {
-            get;
-            set;
-        }
+        public static string SamplingSpotText;
         public string SamplingTimeText;
         public static string BurialDepthText
         {
@@ -666,7 +662,22 @@ namespace GasFormsApp
                         SampleModeText = SampleModeComboBox.Text;
                         Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
 
-                        basicInfo.ReplaceWordPlaceholders(memoryStream, SamplingTimeText);
+                        basicInfo.ReplaceWordPlaceholders(memoryStream,
+                            MineNameText,
+                            SamplingSpotText,
+                            BurialDepthText,
+                            CoalSeamText,
+                            SampleNumText,
+                            UndAtmPressureText,
+                            LabAtmPressureText,
+                            UndTempText,
+                            LabTempText,
+                            SampleWeightText,
+                            SampleModeText,
+                            MoistureSampleText,
+                            RawCoalMoistureText,
+                            InitialVolumeText,
+                            SamplingTimeText);
 
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
@@ -694,7 +705,7 @@ namespace GasFormsApp
                                 var pastedImage = bookmarkRange.InlineShapes[1];
 
                                 pastedImage.LockAspectRatio = MsoTriState.msoFalse;  // 不锁比例
-                                float k = 25;
+                                float k = 32;
                                 pastedImage.Width = 6*k;
                                 pastedImage.Height = 6*k;  // 高度也设置为20磅
                             }
@@ -726,15 +737,15 @@ namespace GasFormsApp
                         Marshal.ReleaseComObject(wordApp);
                     }
                 }
-                ////打开生成的 Word 文件
-                //try
-                //{
-                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine("无法打开文件: " + ex.Message);
-                //}
+                //打开生成的 Word 文件
+                try
+                {
+                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("无法打开文件: " + ex.Message);
+                }
                 this.Close();
             }
             else
@@ -906,11 +917,15 @@ namespace GasFormsApp
             RawCoalMoistureText = RawCoalMoistureTextBox.Text;
             InitialVolumeText = InitialVolumeTextBox.Text;
 
-            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成Control类型（适用于WinForms）
+
+            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成 Control 类型（适用于 WinForms）
             if (control != null)
             {
                 string controlName = control.Name;
+                string controlText = control.Text;
+
                 Console.WriteLine($"触发事件的控件名称是：{controlName}");
+                //Console.WriteLine($"控件的文本内容是：{controlText}");
             }
         }
 
