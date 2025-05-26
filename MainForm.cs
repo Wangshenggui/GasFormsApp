@@ -150,7 +150,7 @@ namespace GasFormsApp
 
 
 
-
+        private List<TextBox> desorbTextBoxes;
         private BasicInfo basicInfo;
         public MainForm(bool v)
         {
@@ -214,16 +214,56 @@ namespace GasFormsApp
             //InitialVolumeTextBox.Text = "初始体积";
             //SampleWeightTextBox.Text = "95";
 
-            DesorbTextBox1.Text = "1";
-            DesorbTextBox2.Text = "122";
-            DesorbTextBox3.Text = "133";
-            DesorbTextBox4.Text = "144";
-            DesorbTextBox5.Text = "155";
-            DesorbTextBox6.Text = "160";
-            DesorbTextBox7.Text = "170";
-            DesorbTextBox8.Text = "180";
-            DesorbTextBox9.Text = "190";
-            DesorbTextBox10.Text = "210";
+            DesorbTextBox1.Text = "26";
+            DesorbTextBox2.Text = "38";
+            DesorbTextBox3.Text = "46";
+            DesorbTextBox4.Text = "54";
+            DesorbTextBox5.Text = "58";
+            DesorbTextBox6.Text = "62";
+            DesorbTextBox7.Text = "66";
+            DesorbTextBox8.Text = "70";
+            DesorbTextBox9.Text = "74";
+            DesorbTextBox10.Text = "76";
+
+            DesorbTextBox11.Text = "78";
+            DesorbTextBox12.Text = "82";
+            DesorbTextBox13.Text = "84";
+            DesorbTextBox14.Text = "86";
+            DesorbTextBox15.Text = "88";
+            DesorbTextBox16.Text = "90";
+            DesorbTextBox17.Text = "92";
+            DesorbTextBox18.Text = "94";
+            DesorbTextBox19.Text = "96";
+            DesorbTextBox20.Text = "98";
+
+            DesorbTextBox21.Text = "100";
+            DesorbTextBox22.Text = "102";
+            DesorbTextBox23.Text = "102";
+            DesorbTextBox24.Text = "102";
+            //DesorbTextBox25.Text = "98";
+            //DesorbTextBox26.Text = "100";
+            //DesorbTextBox27.Text = "102";
+            //DesorbTextBox28.Text = "106";
+            //DesorbTextBox29.Text = "108";
+            //DesorbTextBox30.Text = "110";
+
+
+
+            //////////////////desorbTextBoxes = new List<TextBox>();
+            //////////////////for (int i = 1; i <= 60; i++)
+            //////////////////{
+            //////////////////    var textBox = this.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+            //////////////////    if (textBox != null)
+            //////////////////    {
+            //////////////////        desorbTextBoxes.Add(textBox);
+            //////////////////    }
+            //////////////////}
+            //////////////////// 填入文本
+            //////////////////for (int i = 0; i < desorbTextBoxes.Count; i++)
+            //////////////////{
+            //////////////////    desorbTextBoxes[i].Text = (i + 1).ToString();
+            //////////////////}
+
 
             //DesorpVolNormalTextBox.Text = "123";
             //Sample1WeightTextBox.Text = "111";
@@ -432,55 +472,22 @@ namespace GasFormsApp
                             DesorbTextBox[i] = this.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
                         }
 
-                        double t0 = 2;
+                        float t0_temp;
+                        float t0 = 0;
+                        if (float.TryParse(t0TextBox.Text, out t0_temp))
+                        {
+                            t0= t0_temp;
+                        }
+                        else
+                        {
+                            // 转换失败，比如用户输入了非数字
+                            MessageBox.Show("请输入有效的数字");
+                        }
                         double[,] data = new double[DesorbTextBox.Length, 2]; // 数组大小根据 DesorbTextBox 数量来确定
 
                         for (int i = 0; i < DesorbTextBox.Length; i++) // 循环次数根据 DesorbTextBox 数量确定
                         {
-                            double sqrtValue = 0;
-                            if (i > 20)
-                            {
-                                switch (i)
-                                {
-                                    case (21):
-                                        sqrtValue = Math.Sqrt(t0 + 22); // 计算平方根
-                                        break;
-                                    case (22):
-                                        sqrtValue = Math.Sqrt(t0 + 24);
-                                        break;
-                                    case (23):
-                                        sqrtValue = Math.Sqrt(t0 + 26);
-                                        break;
-                                    case (24):
-                                        sqrtValue = Math.Sqrt(t0 + 28);
-                                        break;
-                                    case (25):
-                                        sqrtValue = Math.Sqrt(t0 + 30);
-                                        break;
-                                    case (26):
-                                        sqrtValue = Math.Sqrt(t0 + 35);
-                                        break;
-                                    case (27):
-                                        sqrtValue = Math.Sqrt(t0 + 40);
-                                        break;
-                                    case (28):
-                                        sqrtValue = Math.Sqrt(t0 + 45);
-                                        break;
-                                    case (29):
-                                        sqrtValue = Math.Sqrt(t0 + 50);
-                                        break;
-                                    case (30):
-                                        sqrtValue = Math.Sqrt(t0 + 60);
-                                        break;
-                                }
-                            }
-                            else
-                            {
-                                sqrtValue = Math.Sqrt(t0 + (i + 1));
-                            }
-                            //double textBoxValue = double.Parse(DesorbTextBox[i].Text.Trim()); // 获取每个文本框的值并转换为 double
                             double textBoxValue = 0.0;
-
                             if (!string.IsNullOrWhiteSpace(DesorbTextBox[i].Text) &&
                                 double.TryParse(DesorbTextBox[i].Text.Trim(), out double value))
                             {
@@ -488,13 +495,31 @@ namespace GasFormsApp
                             }
                             else
                             {
-                                // 你可以选择：
-                                // 1. 保持 textBoxValue 为 0.0（默认）
-                                // 2. 给出提示
-                                // 3. 跳过这一项
-                                // 4. 抛出异常，自定义消息
                                 textBoxValue = 0;
                             }
+
+                            double sqrtValue = 0.0;
+                            int j = i + 1;
+                            // 定义映射数组，存储31~45对应的a值
+                            int[] map31to45 = { 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60 };
+                            // 定义映射数组，存储46~60对应的a值
+                            int[] map46to60 = { 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135 };
+
+                            if (j >= 1 && j <= 30)
+                            {
+                                sqrtValue = Math.Sqrt(t0+j);
+                            }
+                            else if (j >= 31 && j <= 45)
+                            {
+                                int a = map31to45[j - 31];  // j-31对应数组索引0~14
+                                sqrtValue = Math.Sqrt(t0+a);
+                            }
+                            else if (j >= 46 && j <= 60)
+                            {
+                                int a = map46to60[j - 46];  // j-46对应数组索引0~14
+                                sqrtValue = Math.Sqrt(t0+a);
+                            }
+                            Console.WriteLine($"sqrtValue:{sqrtValue}>>>---{j}");
 
                             data[i, 0] = sqrtValue; // 将平方根值存储在第一列
                             data[i, 1] = textBoxValue; // 将文本框值存储在第二列
@@ -737,15 +762,15 @@ namespace GasFormsApp
                         Marshal.ReleaseComObject(wordApp);
                     }
                 }
-                //打开生成的 Word 文件
-                try
-                {
-                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("无法打开文件: " + ex.Message);
-                }
+                ////打开生成的 Word 文件
+                //try
+                //{
+                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("无法打开文件: " + ex.Message);
+                //}
                 this.Close();
             }
             else

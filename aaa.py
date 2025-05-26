@@ -194,17 +194,17 @@ y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
 fig, ax = plt.subplots(figsize=(6, 6))
 
 # 绘制散点图(原始数据)和拟合线
-ax.scatter(x, y, s=10, color='black', label='原始数据')
+ax.scatter(x, y, s=4, color='black', label='原始数据')
 data = read_shared_memory()[:DataExtentEnd]
 # 先筛选出满足条件的点
 x = np.array([row[0] for row in data if row[0] != 0 and row[1] != 0])
 y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
-ax.scatter(x, y, s=10, color='green', label='原始数据')
+ax.scatter(x, y, s=10, color='black', marker='s',label='原始数据')
 slope = best_coefficients[0]
 intercept = best_coefficients[1]
 x_new = np.linspace(0, 3.33, 100)
 y_new = slope * x_new + intercept
-ax.plot(x_new, y_new, color='red', label=f'拟合线: y = {slope:.3f}x + {intercept:.3f}')
+ax.plot(x_new, y_new, color='black', label=f'拟合线: y = {slope:.3f}x + {intercept:.3f}')
 
 sign = '+' if intercept >= 0 else '-'
 abs_intercept = abs(intercept)
