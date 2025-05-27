@@ -37,7 +37,7 @@ namespace GasFormsApp.WordPperation
             string SamplingTimeText,
             string ReportTimeText)
         {
-            Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
+            //Console.WriteLine("用户选择了新的时间：" + mainForm.SamplingTimeText);
             // 基本信息替换
             var placeholders = new Dictionary<string, string>
             {

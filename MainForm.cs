@@ -32,6 +32,7 @@ using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.ExtendedProperties;
 using Microsoft.Office.Core;
 using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using GasFormsApp.TabControl;
 
 namespace GasFormsApp
 {
@@ -40,73 +41,7 @@ namespace GasFormsApp
         private bool v;
         private ImageList imageList1;
 
-        private string MineNameText
-        {
-            get;
-            set;
-        }
-        private string SamplingSpotText;
-        public string SamplingTimeText;
-        private string BurialDepthText
-        {
-            get;
-            set;
-        }
-        private string CoalSeamText
-        {
-            get;
-            set;
-        }
-        private string SampleNumText
-        {
-            get;
-            set;
-        }
-        private string UndAtmPressureText
-        {
-            get;
-            set;
-        }
-        private string LabAtmPressureText
-        {
-            get;
-            set;
-        }
-        private string UndTempText
-        {
-            get;
-            set;
-        }
-        private string LabTempText
-        {
-            get;
-            set;
-        }
-        private string SampleWeightText
-        {
-            get;
-            set;
-        }
-        private string SampleModeText
-        {
-            get;
-            set;
-        }
-        private string MoistureSampleText
-        {
-            get;
-            set;
-        }
-        private string RawCoalMoistureText
-        {
-            get;
-            set;
-        }
-        private string InitialVolumeText
-        {
-            get;
-            set;
-        }
+        
 
 
         public string DesorpVolNormalText => DesorpVolNormalTextBox.Text;
@@ -139,6 +74,7 @@ namespace GasFormsApp
 
 
         public static double 井下解吸体积 = 0.0;
+        public static double 井下解吸校准体积 = 0.0;
         public static double W1 = 0.0;
         public static double W2 = 0.0;
         public static double W3 = 0.0;
@@ -164,9 +100,11 @@ namespace GasFormsApp
         public string AuditorText => AuditorTextBox.Text;
         public string ReportTimeText;
         public string RemarkText => RemarkTextBox.Text;
-        
 
 
+        private tabControl_1 myTabLogic1;
+        private tabControl_2 myTabLogic2;
+        private tabControl_3 myTabLogic3;
 
 
         private List<TextBox> desorbTextBoxes;
@@ -218,21 +156,6 @@ namespace GasFormsApp
 
             #region 模拟用户输入 tabPage2
             //// 模拟用户输入
-            //MineNameTextBox.Text = "矿井名称";
-            //SamplingSpotTextBox.Text = "采样地点";
-            //BurialDepthTextBox.Text = "埋深";
-            //CoalSeamTextBox.Text = "煤层";
-
-            //LabAtmPressureTextBox.Text = "1.01";
-            //UndAtmPressureTextBox.Text = "1.05";
-            //LabTempTextBox.Text = "25";
-            //UndTempTextBox.Text = "30";
-            //MoistureSampleTextBox.Text = "水分";
-            //RawCoalMoistureTextBox.Text = "原水分";
-            //SampleNumTextBox.Text = "编号";
-            //InitialVolumeTextBox.Text = "初始体积";
-            //SampleWeightTextBox.Text = "95";
-
             DesorbTextBox1.Text = "26";
             DesorbTextBox2.Text = "38";
             DesorbTextBox3.Text = "46";
@@ -266,51 +189,56 @@ namespace GasFormsApp
             //DesorbTextBox29.Text = "108";
             //DesorbTextBox30.Text = "110";
 
-
-
-            //////////////////desorbTextBoxes = new List<TextBox>();
-            //////////////////for (int i = 1; i <= 60; i++)
-            //////////////////{
-            //////////////////    var textBox = this.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
-            //////////////////    if (textBox != null)
-            //////////////////    {
-            //////////////////        desorbTextBoxes.Add(textBox);
-            //////////////////    }
-            //////////////////}
-            //////////////////// 填入文本
-            //////////////////for (int i = 0; i < desorbTextBoxes.Count; i++)
-            //////////////////{
-            //////////////////    desorbTextBoxes[i].Text = (i + 1).ToString();
-            //////////////////}
-
-
-            //DesorpVolNormalTextBox.Text = "123";
-            //Sample1WeightTextBox.Text = "111";
-            //Sample2WeightTextBox.Text = "222";
-            //S1DesorpVolTextBox.Text = "333";
-            //S2DesorpVolTextBox.Text = "444";
-
-            //AdsorpConstATextBox.Text = "38.0";
-            //AdsorpConstBTextBox.Text = "0.9";
-            //MadTextBox.Text = "2.9";
-            //AadTextBox.Text = "11.5";
-            //PorosityTextBox.Text = "6.21";
-            //AppDensityTextBox.Text = "1.34";
-            //NonDesorpGasQtyTextBox.Text = "1.9254";
-            //VadTextBox.Text = "18.444";
-
-            //W1_TextBox.Text = "w1fasd";
-            //W2_TextBox.Text = "w2nhrt";
-            //W3_TextBox.Text = "w3shrt";
-            //Wa_TextBox.Text = "wa270";
-            //W_TextBox.Text = "WWW";
-            //P_TextBox.Text = "PPP";
             #endregion
+
+            myTabLogic1 = new tabControl_1(
+                this,
+                this.MineNameTextBox,
+                this.SamplingSpotTextBox,
+                this.BurialDepthTextBox,
+                this.CoalSeamTextBox,
+                this.LabAtmPressureTextBox,
+                this.UndAtmPressureTextBox,
+                this.LabTempTextBox,
+                this.UndTempTextBox,
+                this.MoistureSampleTextBox,
+                this.RawCoalMoistureTextBox,
+                this.SampleNumTextBox,
+                this.SampleWeightTextBox,
+                this.InitialVolumeTextBox
+            );
+
+            myTabLogic2 = new tabControl_2(
+                this,
+                this.button9,
+                this.t0TextBox,
+                this.InitialVolumeTextBox,
+                this.DesVolUndTextBox,
+                this.UndTempTextBox,
+                this.UndAtmPressureTextBox,
+                this.UndDesorpCalTextBox,
+                this.SampLossVolTextBox
+            );
+
+            myTabLogic3 = new tabControl_3(
+                this,
+                this.DesorpVolNormalTextBox,
+                this.DesorpVolNormalCalTextBox,
+                this.Sample1WeightTextBox,
+                this.Sample2WeightTextBox,
+                this.S1DesorpVolTextBox,
+                this.S1DesorpVolCalTextBox,
+                this.S2DesorpVolTextBox,
+                this.S2DesorpVolCalTextBox,
+                this.CrushDesorpTextBox
+                );
+
+
 
             GasCompGroupBox.Enabled = false;
 
             //button2_Click(button2, EventArgs.Empty);
-            SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
+            //SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
         }
 
         string GetPythonPath()
@@ -353,7 +281,7 @@ namespace GasFormsApp
             string pythonExe = GetPythonPath();
 
             // 从嵌入资源中提取 Python 脚本，资源名示例 "WindowsFormsApp1.aaa.py"
-            string resourceName = "GasFormsApp.aaa.py";  // 注意：一定要改成你项目的资源名，确认见下文
+            string resourceName = "GasFormsApp.Python.aaa.py";  // 注意：一定要改成你项目的资源名，确认见下文
             string scriptPath = ExtractPythonScript(resourceName);
 
             // 创建进程启动信息
@@ -703,27 +631,27 @@ namespace GasFormsApp
 
                         // 替换占位符
                         BasicInfo basicInfo = new BasicInfo(this);
-                        Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
-                        SampleModeText = SampleModeComboBox.Text;
-                        Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
+                        Console.WriteLine("用户选择了新的时间：" + SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"));
+                        //SampleModeText = SampleModeComboBox.Text;
+                        Console.WriteLine("用户选择了新取样方式：" + SampleModeComboBox.Text);
                         ReportTimeText = dateTimePicker1.Text;
 
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
-                            MineNameText,
-                            SamplingSpotText,
-                            BurialDepthText,
-                            CoalSeamText,
-                            SampleNumText,
-                            UndAtmPressureText,
-                            LabAtmPressureText,
-                            UndTempText,
-                            LabTempText,
-                            SampleWeightText,
-                            SampleModeText,
-                            MoistureSampleText,
-                            RawCoalMoistureText,
-                            InitialVolumeText,
-                            SamplingTimeText,
+                            MineNameTextBox.Text,
+                            SamplingSpotTextBox.Text,
+                            BurialDepthTextBox.Text,
+                            CoalSeamTextBox.Text,
+                            SampleNumTextBox.Text,
+                            UndAtmPressureTextBox.Text,
+                            LabAtmPressureTextBox.Text,
+                            UndTempTextBox.Text,
+                            LabTempTextBox.Text,
+                            SampleWeightTextBox.Text,
+                            SampleModeComboBox.Text,
+                            MoistureSampleTextBox.Text,
+                            RawCoalMoistureTextBox.Text,
+                            InitialVolumeTextBox.Text,
+                            SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
                             ReportTimeText);
 
                         // 保存到用户指定路径
@@ -803,8 +731,8 @@ namespace GasFormsApp
 
         private void SamplingTimeDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
-            Console.WriteLine("用户选择了新的时间：" + SamplingTimeText);
+            //SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
+            Console.WriteLine("用户选择了新的时间：" + SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"));
         }
 
         void getMaxVal()
@@ -864,38 +792,38 @@ namespace GasFormsApp
 
 
 
-        private void TextModificationTriggered(object sender, EventArgs e)
-        {
-            MineNameText = MineNameTextBox.Text;
-            SamplingSpotText = SamplingSpotTextBox.Text;
-            BurialDepthText = BurialDepthTextBox.Text;
-            CoalSeamText = CoalSeamTextBox.Text;
-            SampleNumText = SampleNumTextBox.Text;
-            UndAtmPressureText = UndAtmPressureTextBox.Text;
-            LabAtmPressureText = LabAtmPressureTextBox.Text;
-            UndTempText = UndTempTextBox.Text;
-            LabTempText = LabTempTextBox.Text;
-            SampleWeightText = SampleWeightTextBox.Text;
-            MoistureSampleText = MoistureSampleTextBox.Text;
-            RawCoalMoistureText = RawCoalMoistureTextBox.Text;
-            InitialVolumeText = InitialVolumeTextBox.Text;
+        //private void TextModificationTriggered(object sender, EventArgs e)
+        //{
+        //    MineNameText = MineNameTextBox.Text;
+        //    SamplingSpotText = SamplingSpotTextBox.Text;
+        //    BurialDepthText = BurialDepthTextBox.Text;
+        //    CoalSeamText = CoalSeamTextBox.Text;
+        //    SampleNumText = SampleNumTextBox.Text;
+        //    UndAtmPressureText = UndAtmPressureTextBox.Text;
+        //    LabAtmPressureText = LabAtmPressureTextBox.Text;
+        //    UndTempText = UndTempTextBox.Text;
+        //    LabTempText = LabTempTextBox.Text;
+        //    SampleWeightText = SampleWeightTextBox.Text;
+        //    MoistureSampleText = MoistureSampleTextBox.Text;
+        //    RawCoalMoistureText = RawCoalMoistureTextBox.Text;
+        //    InitialVolumeText = InitialVolumeTextBox.Text;
 
 
-            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成 Control 类型（适用于 WinForms）
-            if (control != null)
-            {
-                string controlName = control.Name;
-                string controlText = control.Text;
+        //    System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成 Control 类型（适用于 WinForms）
+        //    if (control != null)
+        //    {
+        //        string controlName = control.Name;
+        //        string controlText = control.Text;
 
-                Console.WriteLine($"触发事件的控件名称是：{controlName}");
-                //Console.WriteLine($"控件的文本内容是：{controlText}");
-            }
-        }
+        //        Console.WriteLine($"触发事件的控件名称是：{controlName}");
+        //        //Console.WriteLine($"控件的文本内容是：{controlText}");
+        //    }
+        //}
 
         private void SampleModeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SampleModeText = SampleModeComboBox.Text;
-            Console.WriteLine("用户选择了新取样方式：" + SampleModeText);
+            //SampleModeText = SampleModeComboBox.Text;
+            Console.WriteLine("用户选择了新取样方式：" + SampleModeComboBox.Text);
         }
 
 
@@ -931,5 +859,8 @@ namespace GasFormsApp
             ReportTimeText = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             Console.WriteLine("用户选择了新的时间：" + ReportTimeText);
         }
+
+        
+
     }
 }

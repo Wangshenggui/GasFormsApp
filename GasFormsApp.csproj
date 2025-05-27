@@ -103,6 +103,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabControl\tabControl_1.cs" />
+    <Compile Include="TabControl\tabControl_2.cs" />
+    <Compile Include="TabControl\tabControl_3.cs" />
     <Compile Include="WordPperation\BasicInfo.cs" />
     <Compile Include="InsertChart.cs" />
     <Compile Include="LoginForm.cs">
@@ -163,11 +166,12 @@
     <EmbeddedResource Include="Image\4.ico" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="aaa.py" />
+    <EmbeddedResource Include="Python\aaa.py" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Image\5.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

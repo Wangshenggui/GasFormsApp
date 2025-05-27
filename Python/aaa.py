@@ -259,7 +259,7 @@ doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头�
 doc.add_picture(img_bytes, width=Inches(5.0))
 doc.save('你干嘛.docx')
 # 打开 Word 文档
-# os.startfile('你干嘛.docx')
+os.startfile('你干嘛.docx')
 
 # 关闭图形释放内存
 plt.close()
