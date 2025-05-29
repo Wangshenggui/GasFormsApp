@@ -11,13 +11,13 @@ namespace GasFormsApp.WordPperation
 {
     internal class BasicInfo
     {
+        private MainForm _mainForm;
         InsertChart insertChart = new InsertChart();
-        MainForm mainForm = new MainForm(true);
         static string maxKey = null;
 
         public BasicInfo(MainForm form)
         {
-            this.mainForm = form;
+            _mainForm = form;
         }
         public void ReplaceWordPlaceholders(MemoryStream memoryStream,
             string MineNameText,
@@ -56,21 +56,21 @@ namespace GasFormsApp.WordPperation
                 {"MoistureSample", MoistureSampleText},//煤样水分（%）
                 {"RawCoalMoisture", RawCoalMoistureText},//原煤水分（%）
                 {"InitialVolume", InitialVolumeText},//量管初始体积（ml）
-                {"UgDesorpVol", MainForm.井下解吸体积.ToString()},//井下解吸量W11(ml)
+                {"UgDesorpVol", Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text).ToString("F3")},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
-                {"DesorpVolNormal", mainForm.DesorpVolNormalText},//实验室常压解吸W2(ml)
-                {"Sample1WeightText", mainForm.Sample1WeightText},//粉碎后第1份煤样重(g)
-                {"Sample2WeightText", mainForm.Sample2WeightText},//粉碎后第2份煤样重(g)
-                {"S1DesorpVolText", mainForm.S1DesorpVolText},//第1份煤样解吸量(ml)
-                {"S2DesorpVolText", mainForm.S2DesorpVolText},//第2份煤样解吸量(ml)
-                {"AdsorpConstAText", mainForm.AdsorpConstAText},//煤的吸附常数a值
-                {"AdsorpConstBText", mainForm.AdsorpConstBText},//煤的吸附常数b值
-                {"MadText", mainForm.MadText},//水分
-                {"AadText", mainForm.AadText},//灰分
-                {"PorosityText", mainForm.PorosityText},//孔隙率
-                {"AppDensityText", mainForm.AppDensityText},//视密度
-                {"NonDesorpGasQtyText", mainForm.NonDesorpGasQtyText},//不可解吸瓦斯量Wc
-                {"VadText", mainForm.VadText},//挥发分Vad
+                {"DesorpVolNormal", _mainForm.DesorpVolNormalCalTextBox.Text},//实验室常压解吸W2(ml)
+                {"Sample1WeightText", _mainForm.Sample1WeightTextBox.Text},//粉碎后第1份煤样重(g)
+                {"Sample2WeightText", _mainForm.Sample2WeightTextBox.Text},//粉碎后第2份煤样重(g)
+                {"S1DesorpVolText", _mainForm.S1DesorpVolCalTextBox.Text},//第1份煤样解吸量-校准(ml)
+                {"S2DesorpVolText", _mainForm.S2DesorpVolCalTextBox.Text},//第2份煤样解吸量-校准(ml)
+                {"AdsorpConstAText", _mainForm.AdsorpConstATextBox.Text},//煤的吸附常数a值
+                {"AdsorpConstBText", _mainForm.AdsorpConstBTextBox.Text},//煤的吸附常数b值
+                {"MadText", _mainForm.MadTextBox.Text},//水分
+                {"AadText", _mainForm.AadTextBox.Text},//灰分
+                {"PorosityText", _mainForm.PorosityTextBox.Text},//孔隙率
+                {"AppDensityText", _mainForm.AppDensityTextBox.Text},//视密度
+                {"NonDesorpGasQtyText", _mainForm.NonDesorpGasQtyTextBox.Text},//不可解吸瓦斯量Wc
+                {"VadText", _mainForm.VadTextBox.Text},//挥发分Vad
                 {"W1Text", MainForm.W1.ToString("F4")},//W1
                 {"W2Text", MainForm.W2.ToString("F4")},//W2
                 {"W3Text", MainForm.W3.ToString("F4")},//W3
@@ -78,21 +78,21 @@ namespace GasFormsApp.WordPperation
                 {"WcText", MainForm.Wc.ToString("F4")},//不可解吸瓦斯量Wc
                 {"WText", MainForm.W.ToString("F4")},//W
                 {"PText", MainForm.P.ToString("F4")},//P
-                {"CH4Text", mainForm.CH4Text},//CH4
-                {"CO2Text", mainForm.CO2Text},//CO2
-                {"N2Text", mainForm.N2Text},//N2
-                {"O2Text", mainForm.O2Text},//O2
-                {"C2H4Text", mainForm.C2H4Text},//C2H4
-                {"C3H8Text", mainForm.C3H8Text},//C3H8
-                {"C2H6Text", mainForm.C2H6Text},//C2H6
-                {"C3H6Text", mainForm.C3H6Text},//C3H6
-                {"C2H2Text", mainForm.C2H2Text},//C2H2
-                {"COText", mainForm.COText},//CO
-                {"UndTestersText", mainForm.UndTestersText},//井下测试人员
-                {"LabTestersText", mainForm.LabTestersText},//实验室测试人员
-                {"AuditorText", mainForm.AuditorText},//审 核 人 员
+                {"CH4Text", _mainForm.CH4TextBox.Text},//CH4
+                {"CO2Text", _mainForm.CO2TextBox.Text},//CO2
+                {"N2Text", _mainForm.N2TextBox.Text},//N2
+                {"O2Text", _mainForm.O2TextBox.Text},//O2
+                {"C2H4Text", _mainForm.C2H4TextBox.Text},//C2H4
+                {"C3H8Text", _mainForm.C3H8TextBox.Text},//C3H8
+                {"C2H6Text", _mainForm.C2H6TextBox.Text},//C2H6
+                {"C3H6Text", _mainForm.C3H6TextBox.Text},//C3H6
+                {"C2H2Text", _mainForm.C2H2TextBox.Text},//C2H2
+                {"COText", _mainForm.COTextBox.Text},//CO
+                {"UndTestersText", _mainForm.UndTestersTextBox.Text},//井下测试人员
+                {"LabTestersText", _mainForm.LabTestersTextBox.Text},//实验室测试人员
+                {"AuditorText", _mainForm.AuditorTextBox.Text},//审 核 人 员
                 {"ReportTimeText", ReportTimeText},//出报告时间
-                {"RemarkText", mainForm.RemarkText},//备注
+                {"RemarkText", _mainForm.RemarkTextBox.Text},//备注
                 
             };
             Console.WriteLine($"TTTTTTTTTTTTTTTTTTTTTTTT:{MainForm.W1}");
@@ -106,7 +106,7 @@ namespace GasFormsApp.WordPperation
             for (int i = 1; i <= 60; i++)
             {
                 string key = $"D{i:000}";
-                var textBox = mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+                var textBox = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
 
                 if (textBox != null)
                 {

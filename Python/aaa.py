@@ -259,7 +259,7 @@ doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头�
 doc.add_picture(img_bytes, width=Inches(5.0))
 doc.save('你干嘛.docx')
 # 打开 Word 文档
-os.startfile('你干嘛.docx')
+# os.startfile('你干嘛.docx')
 
 # 关闭图形释放内存
 plt.close()
@@ -291,7 +291,7 @@ send_to_clipboard(image)
 import mmap
 slope_mem_name = "Local\\tempSharedMemory"  # 共享内存名称
 # 打包斜率和截距、R平方值(3个双精度浮点数)
-slope_bytes = struct.pack('3d', slope, intercept, r_squared)  
+slope_bytes = struct.pack('5d', slope, intercept, r_squared,0,555)  
 
 # 创建内存映射并写入数据
 with mmap.mmap(-1, len(slope_bytes), tagname=slope_mem_name, access=mmap.ACCESS_WRITE) as slope_mmap:

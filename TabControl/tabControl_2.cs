@@ -7,6 +7,7 @@ using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,120 +16,96 @@ namespace GasFormsApp.TabControl
     internal class tabControl_2
     {
         private MainForm _mainForm;
-        private Button _button;
-        private TextBox _t0TextBox;
-        private TextBox _InitialVolumeTextBox;
-        private TextBox _DesVolUndTextBox;
-        private TextBox _UndTempTextBox;
-        private TextBox _UndAtmPressureTextBox;
-        private TextBox _UndDesorpCalTextBox;
-        private TextBox _SampLossVolTextBox;
 
 
         // 构造函数接收 TextBox 控件
-        public tabControl_2(
-            MainForm form,
-            Button button9,
-            TextBox t0TextBox,
-            TextBox InitialVolumeTextBox,
-            TextBox DesVolUndTextBox,
-            TextBox UndTempTextBox,
-            TextBox UndAtmPressureTextBox,
-            TextBox UndDesorpCalTextBox,
-            TextBox SampLossVolTextBox)
+        public tabControl_2(MainForm form)
         {
             _mainForm = form;
-            _button = button9;
-            _t0TextBox = t0TextBox;
-            _InitialVolumeTextBox = InitialVolumeTextBox;
-            _DesVolUndTextBox = DesVolUndTextBox;
-            _UndTempTextBox = UndTempTextBox;
-            _UndAtmPressureTextBox = UndAtmPressureTextBox;
-            _UndDesorpCalTextBox = UndDesorpCalTextBox;
-            _SampLossVolTextBox = SampLossVolTextBox;
 
             // 注册回调函数
-            _button.Click += button9_Click;
-            
-        }
+            _mainForm.button9.Click += button9_Click;
 
-        string GetPythonPath()
-        {
-            var psi = new ProcessStartInfo
+            //注册KeyPress回调函数
+            _mainForm.t0TextBox.KeyPress += NumericTextBox_KeyPress;
+            for (int i = 1; i <= 30; i++)
             {
-                FileName = "where",
-                Arguments = "python",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
+                string controlName = "DesorbTextBox" + i;
 
-            using (var process = Process.Start(psi))
-            {
-                string output = process.StandardOutput.ReadLine();  // 取第一行输出
-                process.WaitForExit();
-                return output;  // 返回第一个找到的 python.exe 路径
-            }
-        }
-        static string ExtractPythonScript(string resourceName)
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                if (stream == null)
-                    throw new Exception("资源未找到: " + resourceName);
+                System.Windows.Forms.Control ctl = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
 
-                string tempPath = Path.Combine(Path.GetTempPath(), "temp_script.py");
-                using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
+                if (ctl is TextBox tb)
                 {
-                    stream.CopyTo(fileStream);
+                    tb.KeyPress += NumericTextBox_KeyPress;
                 }
-                return tempPath;
             }
         }
-        public void CreateExcelWithChart()
+
+        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // 自动获取 Python 可执行文件路径
-            string pythonExe = GetPythonPath();
+            TextBox tb = sender as TextBox;
+            if (tb == null) return;
 
-            // 从嵌入资源中提取 Python 脚本，资源名示例 "WindowsFormsApp1.aaa.py"
-            string resourceName = "GasFormsApp.Python.aaa.py";  // 注意：一定要改成你项目的资源名，确认见下文
-            string scriptPath = ExtractPythonScript(resourceName);
+            //// 可以用控件的名字区分
+            //if (tb.Name == "BurialDepthTextBox")
+            //{
 
-            // 创建进程启动信息
-            var psi = new ProcessStartInfo
+            //}
+            //else if (tb.Name == "MineNameTextBox")
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
+
+            // 公共的输入限制代码
+            // 允许数字和退格键
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
             {
-                FileName = pythonExe,
-                Arguments = $"\"{scriptPath}\"",  // 给路径加双引号防止空格问题
-                UseShellExecute = false,
-                CreateNoWindow = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-            };
-
-            // 启动进程
-            var process = new Process();
-            process.StartInfo = psi;
-            process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
-            process.ErrorDataReceived += (sender, e) => Console.WriteLine("ERR: " + e.Data);
-
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
-            process.WaitForExit();
-
-            Console.WriteLine("Python 脚本执行完成。");
-
-            // 可选：运行完删除临时脚本
-            try
-            {
-                if (File.Exists(scriptPath))
-                    File.Delete(scriptPath);
+                return;
             }
-            catch { }
 
+            // 允许一个小数点
+            if (e.KeyChar == '.' && !tb.Text.Contains("."))
+            {
+                return;
+            }
 
+            // 允许负号，只能第一个字符，且文本中没负号
+            //if (e.KeyChar == '-' && tb.SelectionStart == 0 && !tb.Text.Contains("-"))
+            //{
+            //    return;
+            //}
+
+            e.Handled = true;
         }
+
+        /// <summary>
+        /// 计算井下解吸校准体积（Desorption Calibrated Volume）
+        /// </summary>
+        /// <param name="desorptionVolume">井下解吸体积（Desorption Volume）</param>
+        /// <param name="pressure">压强（Pressure）</param>
+        /// <param name="temperature">温度（Temperature）</param>
+        /// <returns>计算得到的校准体积</returns>
+        public static double CalculateDesorptionCalibratedVolume(double desorptionVolume, double pressure, double temperature)
+        {
+            // 保存输入变量，方便理解
+            //double num2 = desorptionVolume;
+            //double num3 = pressure;
+            //double num4 = temperature;
+
+            // 公式部分：
+            // ((num2 * 273.2) * ((num3 - (4.905 * (1 - num2/800))) - (0.699 * e^(0.0597 * num4)))) / (101.3 * (273.2 + num4))
+            double result = ((desorptionVolume * 273.2) *
+                            ((pressure - (4.905 * (1.0 - (desorptionVolume / 800.0)))) - (0.699 * Math.Exp(0.0597 * temperature))))
+                            / (101.3 * (273.2 + temperature));
+
+            return result;
+        }
+
+
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -144,7 +121,7 @@ namespace GasFormsApp.TabControl
 
             float t0_temp;
             float t0 = 0;
-            if (float.TryParse(_t0TextBox.Text, out t0_temp))
+            if (float.TryParse(_mainForm.t0TextBox.Text, out t0_temp))
             {
                 t0 = t0_temp;
             }
@@ -225,16 +202,70 @@ namespace GasFormsApp.TabControl
 
                 using (var tempmmf = MemoryMappedFile.CreateOrOpen(memoryName, temptotalBytes))
                 {
-                    // 调用 Python 脚本写入共享内存
-                    CreateExcelWithChart();  // 实际是执行 Python 写入数据
+                    //等待共享内存有数据
+                    // 资源名称通常是 {默认命名空间}.{文件夹}.{文件名}
+                    string resourceName = "GasFormsApp.Python.aaa.exe";
 
-                    // 等待 Python 写入（你也可以用事件或信号同步更优雅地替代）
-                    //Thread.Sleep(1000);
+                    // 获取当前程序集
+                    Assembly assembly = Assembly.GetExecutingAssembly();
+
+                    using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                    {
+                        if (stream == null)
+                        {
+                            Console.WriteLine("未找到嵌入资源：" + resourceName);
+                            return;
+                        }
+
+                        // 创建临时文件路径
+                        string tempFilePath = Path.Combine(Path.GetTempPath(), "tempProgram.exe");
+
+                        // 将资源写入临时文件
+                        using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                        {
+                            stream.CopyTo(fs);
+                        }
+
+                        // 运行临时的 exe 文件
+                        // 启动进程
+                        Process process = Process.Start(tempFilePath);
+
+                        // 等待子进程退出
+                        process.WaitForExit();
+
+                        Console.WriteLine("子进程已退出，准备删除临时文件");
+
+                        // 删除临时文件
+                        File.Delete(tempFilePath);
+                        Console.WriteLine("临时文件已删除");
+                    }
+
+
+
+
 
                     // 读取共享内存中的数据
                     using (var accessor = tempmmf.CreateViewAccessor(0, temptotalBytes))
                     {
                         double[] values = new double[5];
+                        double lastValue = 0;
+
+                        int a = 0;
+                        //等待第5个数据不为0（下标4）
+                        while (true)
+                        {
+                            lastValue = accessor.ReadDouble(4 * sizeof(double));
+                            if (lastValue != 0)
+                            {
+                                break;
+                            }
+
+                            Console.WriteLine("等待数据......" + a++);
+                            Thread.Sleep(10); // 避免忙等待，占用CPU过高
+                        }
+
+
+                        //double[] values = new double[5];
                         for (int i = 0; i < values.Length; i++)
                         {
                             values[i] = accessor.ReadDouble(i * sizeof(double));
@@ -288,27 +319,26 @@ namespace GasFormsApp.TabControl
                                 // 或者：return -1; // 如果你希望返回默认值而不是抛异常
                             }
                         }
+
+
                         // 量管初始体积
                         float initialVolume;
-                        if (float.TryParse(_InitialVolumeTextBox.Text, out initialVolume))
+                        if (float.TryParse(_mainForm.InitialVolumeTextBox.Text, out initialVolume))
                         {
                             // 计算井下解吸体积
                             MainForm.井下解吸体积 = maxValue - initialVolume;
-                            _DesVolUndTextBox.Text = MainForm.井下解吸体积.ToString();
+                            _mainForm.DesVolUndTextBox.Text = MainForm.井下解吸体积.ToString();
 
 
                             int temp1;
-                            if (int.TryParse(_UndTempTextBox.Text, out temp1))
+                            if (int.TryParse(_mainForm.UndTempTextBox.Text, out temp1))
                             {
                                 float temp2;
-                                if (float.TryParse(_UndAtmPressureTextBox.Text, out temp2))
+                                if (float.TryParse(_mainForm.UndAtmPressureTextBox.Text, out temp2))
                                 {
-                                    MainForm.井下解吸校准体积 =
-                                        (273.2 / (101.3 * (273.2 + temp1)))
-                                        * (temp2 - 0.00981 * 800.0 - GetValueFromTable(temp1))
-                                        * MainForm.井下解吸体积;
-                                    _UndDesorpCalTextBox.Text = MainForm.井下解吸校准体积.ToString();
-                                    _SampLossVolTextBox.Text = Math.Abs(values[1]).ToString();
+                                    MainForm.井下解吸校准体积 = CalculateDesorptionCalibratedVolume(MainForm.井下解吸体积, temp2,temp1);
+                                    _mainForm.UndDesorpCalTextBox.Text = MainForm.井下解吸校准体积.ToString("F4");
+                                    _mainForm.SampLossVolTextBox.Text = Math.Abs(values[1]).ToString("F4");
                                 }
                             }
 

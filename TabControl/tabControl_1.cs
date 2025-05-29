@@ -11,66 +11,37 @@ namespace GasFormsApp.TabControl
     {
         private MainForm _mainForm;
 
-        private TextBox _MineNameTextBox;
-        private TextBox _SamplingSpotTextBox;
-        private TextBox _BurialDepthTextBox;
-        private TextBox _CoalSeamTextBox;
-        private TextBox _LabAtmPressureTextBox;
-        private TextBox _UndAtmPressureTextBox;
-        private TextBox _LabTempTextBox;
-        private TextBox _UndTempTextBox;
-        private TextBox _MoistureSampleTextBox;
-        private TextBox _RawCoalMoistureTextBox;
-        private TextBox _SampleNumTextBox;
-        private TextBox _SampleWeightTextBox;
-        private TextBox _InitialVolumeTextBox;
-
 
         // 构造函数接收 TextBox 控件
-        public tabControl_1(MainForm form,
-            TextBox MineNameTextBox,
-            TextBox SamplingSpotTextBox,
-            TextBox BurialDepthTextBox,
-            TextBox CoalSeamTextBox,
-            TextBox LabAtmPressureTextBox,
-            TextBox UndAtmPressureTextBox,
-            TextBox LabTempTextBox,
-            TextBox UndTempTextBox,
-            TextBox MoistureSampleTextBox,
-            TextBox RawCoalMoistureTextBox,
-            TextBox SampleNumTextBox,
-            TextBox SampleWeightTextBox,
-            TextBox InitialVolumeTextBox)
+        public tabControl_1(MainForm form)
         {
             _mainForm = form;
-            _MineNameTextBox = MineNameTextBox;
-            _SamplingSpotTextBox = SamplingSpotTextBox;
-            _BurialDepthTextBox = BurialDepthTextBox;
-            _CoalSeamTextBox = CoalSeamTextBox;
-            _LabAtmPressureTextBox = LabAtmPressureTextBox;
-            _UndAtmPressureTextBox = UndAtmPressureTextBox;
-            _LabTempTextBox = LabTempTextBox;
-            _UndTempTextBox = UndTempTextBox;
-            _MoistureSampleTextBox = MoistureSampleTextBox;
-            _RawCoalMoistureTextBox = RawCoalMoistureTextBox;
-            _SampleNumTextBox = SampleNumTextBox;
-            _SampleWeightTextBox = SampleWeightTextBox;
-            _InitialVolumeTextBox = InitialVolumeTextBox;
 
             // 注册回调函数
-            _MineNameTextBox.TextChanged += TextModificationTriggered;
-            _SamplingSpotTextBox.TextChanged += TextModificationTriggered;
-            _BurialDepthTextBox.TextChanged += TextModificationTriggered;
-            _CoalSeamTextBox.TextChanged += TextModificationTriggered;
-            _LabAtmPressureTextBox.TextChanged += TextModificationTriggered;
-            _UndAtmPressureTextBox.TextChanged += TextModificationTriggered;
-            _LabTempTextBox.TextChanged += TextModificationTriggered;
-            _UndTempTextBox.TextChanged += TextModificationTriggered;
-            _MoistureSampleTextBox.TextChanged += TextModificationTriggered;
-            _RawCoalMoistureTextBox.TextChanged += TextModificationTriggered;
-            _SampleNumTextBox.TextChanged += TextModificationTriggered;
-            _SampleWeightTextBox.TextChanged += TextModificationTriggered;
-            _InitialVolumeTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.MineNameTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.SamplingSpotTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.BurialDepthTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.CoalSeamTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.LabAtmPressureTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.UndAtmPressureTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.LabTempTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.UndTempTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.MoistureSampleTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.RawCoalMoistureTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.SampleNumTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.SampleWeightTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.InitialVolumeTextBox.TextChanged += TextModificationTriggered;
+
+            //注册KeyPress回调函数
+            _mainForm.BurialDepthTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.LabAtmPressureTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.UndAtmPressureTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.LabTempTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.UndTempTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.MoistureSampleTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.RawCoalMoistureTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.SampleWeightTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.InitialVolumeTextBox.KeyPress += NumericTextBox_KeyPress;
         }
         private void TextModificationTriggered(object sender, EventArgs e)
         {
@@ -85,15 +56,55 @@ namespace GasFormsApp.TabControl
             }
         }
 
-        // 示例方法：设置文本
-        public void SetText(string text)
+        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _MineNameTextBox.Text = text;
-        }
+            TextBox tb = sender as TextBox;
+            if (tb == null) return;
 
-        public string GetText(TextBox textBox)
-        {
-            return textBox.Text;
+            // 如果文本为空，且输入的是数字或小数点，则先插入0
+            if (string.IsNullOrEmpty(tb.Text))
+            {
+                if (char.IsDigit(e.KeyChar) || e.KeyChar == '.')
+                {
+                    tb.Text = "0";
+                    tb.SelectionStart = tb.Text.Length; // 光标移到末尾
+                }
+            }
+
+            //// 可以用控件的名字区分
+            //if (tb.Name == "BurialDepthTextBox")
+            //{
+
+            //}
+            //else if (tb.Name == "MineNameTextBox")
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
+
+            // 公共的输入限制代码
+            // 允许数字和退格键
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
+            {
+                return;
+            }
+
+            // 允许一个小数点
+            if (e.KeyChar == '.' && !tb.Text.Contains("."))
+            {
+                return;
+            }
+
+            // 允许负号，只能第一个字符，且文本中没负号
+            //if (e.KeyChar == '-' && tb.SelectionStart == 0 && !tb.Text.Contains("-"))
+            //{
+            //    return;
+            //}
+
+            e.Handled = true;
         }
     }
 }

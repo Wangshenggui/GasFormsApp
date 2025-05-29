@@ -41,37 +41,6 @@ namespace GasFormsApp
         private bool v;
         private ImageList imageList1;
 
-        
-
-
-        public string DesorpVolNormalText => DesorpVolNormalTextBox.Text;
-        public string Sample1WeightText => Sample1WeightTextBox.Text;
-        public string Sample2WeightText => Sample2WeightTextBox.Text;
-        public string S1DesorpVolText => S1DesorpVolTextBox.Text;
-        public string S2DesorpVolText => S2DesorpVolTextBox.Text;
-        public string AdsorpConstAText => AdsorpConstATextBox.Text;
-        public string AdsorpConstBText => AdsorpConstBTextBox.Text;
-        public string MadText => MadTextBox.Text;
-        public string AadText => AadTextBox.Text;
-        public string PorosityText => PorosityTextBox.Text;
-        public string AppDensityText => AppDensityTextBox.Text;
-        public string NonDesorpGasQtyText => NonDesorpGasQtyTextBox.Text;
-        public string VadText => VadTextBox.Text;
-        public string W1_Text
-        {
-            get => W1_TextBox.Text;
-            set => W1_TextBox.Text = value;
-        }
-        public string W2_Text
-        {
-            get => W2_TextBox.Text;
-            set => W2_TextBox.Text = value;
-        }
-        public string W3_Text => W3_TextBox.Text;
-        public string Wa_Text => Wa_TextBox.Text;
-        public string W_Text => W_TextBox.Text;
-        public string P_Text => P_TextBox.Text;
-
 
         public static double 井下解吸体积 = 0.0;
         public static double 井下解吸校准体积 = 0.0;
@@ -83,32 +52,14 @@ namespace GasFormsApp
         public static double W = 0.0;
         public static double P = 0.0;
 
-        public string CH4Text => CH4TextBox.Text;
-        public string CO2Text => CO2TextBox.Text;
-        public string N2Text => N2TextBox.Text;
-        public string O2Text => O2TextBox.Text;
-        public string C2H4Text => C2H4TextBox.Text;
-        public string C3H8Text => C3H8TextBox.Text;
-        public string C2H6Text => C2H6TextBox.Text;
-        public string C3H6Text => C3H6TextBox.Text;
-        public string C2H2Text => C2H2TextBox.Text;
-        public string COText => COTextBox.Text;
-
-
-        public string UndTestersText => UndTestersTextBox.Text;
-        public string LabTestersText => LabTestersTextBox.Text;
-        public string AuditorText => AuditorTextBox.Text;
-        public string ReportTimeText;
-        public string RemarkText => RemarkTextBox.Text;
-
-
         private tabControl_1 myTabLogic1;
         private tabControl_2 myTabLogic2;
         private tabControl_3 myTabLogic3;
+        private tabControl_4 myTabLogic4;
+        private tabControl_5 myTabLogic5;
 
 
         private List<TextBox> desorbTextBoxes;
-        private BasicInfo basicInfo;
         public MainForm(bool v)
         {
             this.v = v;
@@ -155,33 +106,47 @@ namespace GasFormsApp
             #endregion
 
             #region 模拟用户输入 tabPage2
-            //// 模拟用户输入
-            DesorbTextBox1.Text = "26";
-            DesorbTextBox2.Text = "38";
-            DesorbTextBox3.Text = "46";
-            DesorbTextBox4.Text = "54";
-            DesorbTextBox5.Text = "58";
-            DesorbTextBox6.Text = "62";
-            DesorbTextBox7.Text = "66";
-            DesorbTextBox8.Text = "70";
-            DesorbTextBox9.Text = "74";
-            DesorbTextBox10.Text = "76";
 
-            DesorbTextBox11.Text = "78";
-            DesorbTextBox12.Text = "82";
-            DesorbTextBox13.Text = "84";
-            DesorbTextBox14.Text = "86";
-            DesorbTextBox15.Text = "88";
-            DesorbTextBox16.Text = "90";
-            DesorbTextBox17.Text = "92";
-            DesorbTextBox18.Text = "94";
-            DesorbTextBox19.Text = "96";
-            DesorbTextBox20.Text = "98";
+            // 模拟用户输入
+            MineNameTextBox.Text = "名称";
+            SamplingSpotTextBox.Text = "地点";
+            BurialDepthTextBox.Text = "456";
+            CoalSeamTextBox.Text = "煤层";
+            LabAtmPressureTextBox.Text = "101.2";
+            UndAtmPressureTextBox.Text = "103.4";
+            LabTempTextBox.Text = "25";
+            UndTempTextBox.Text = "18";
+            MoistureSampleTextBox.Text = "1.2";
+            RawCoalMoistureTextBox.Text = "4.1";
+            SampleNumTextBox.Text = "M2025";
+            SampleWeightTextBox.Text = "105";
+            InitialVolumeTextBox.Text = "3";
 
-            DesorbTextBox21.Text = "100";
-            DesorbTextBox22.Text = "102";
-            DesorbTextBox23.Text = "102";
-            DesorbTextBox24.Text = "102";
+            t0TextBox.Text = "2";
+            DesorbTextBox1.Text = "10";
+            DesorbTextBox2.Text = "12";
+            DesorbTextBox3.Text = "14";
+            DesorbTextBox4.Text = "18";
+            DesorbTextBox5.Text = "22";
+            //DesorbTextBox6.Text = "62";
+            //DesorbTextBox7.Text = "66";
+            //DesorbTextBox8.Text = "70";
+            //DesorbTextBox9.Text = "74";
+            //DesorbTextBox10.Text = "76";
+            //DesorbTextBox11.Text = "78";
+            //DesorbTextBox12.Text = "82";
+            //DesorbTextBox13.Text = "84";
+            //DesorbTextBox14.Text = "86";
+            //DesorbTextBox15.Text = "88";
+            //DesorbTextBox16.Text = "90";
+            //DesorbTextBox17.Text = "92";
+            //DesorbTextBox18.Text = "94";
+            //DesorbTextBox19.Text = "96";
+            //DesorbTextBox20.Text = "98";
+            //DesorbTextBox21.Text = "100";
+            //DesorbTextBox22.Text = "102";
+            //DesorbTextBox23.Text = "102";
+            //DesorbTextBox24.Text = "102";
             //DesorbTextBox25.Text = "98";
             //DesorbTextBox26.Text = "100";
             //DesorbTextBox27.Text = "102";
@@ -189,137 +154,47 @@ namespace GasFormsApp
             //DesorbTextBox29.Text = "108";
             //DesorbTextBox30.Text = "110";
 
+            DesorpVolNormalTextBox.Text = "1";
+            Sample1WeightTextBox.Text = "100";
+            Sample2WeightTextBox.Text = "100";
+            S1DesorpVolTextBox.Text = "30";
+            S2DesorpVolTextBox.Text = "30";
+
+            AdsorpConstATextBox.Text = "1";
+            AdsorpConstBTextBox.Text = "2";
+            MadTextBox.Text = "3";
+            AadTextBox.Text = "4";
+            PorosityTextBox.Text = "5";
+            AppDensityTextBox.Text = "6";
+            VadTextBox.Text = "7";
+
             #endregion
 
             myTabLogic1 = new tabControl_1(
-                this,
-                this.MineNameTextBox,
-                this.SamplingSpotTextBox,
-                this.BurialDepthTextBox,
-                this.CoalSeamTextBox,
-                this.LabAtmPressureTextBox,
-                this.UndAtmPressureTextBox,
-                this.LabTempTextBox,
-                this.UndTempTextBox,
-                this.MoistureSampleTextBox,
-                this.RawCoalMoistureTextBox,
-                this.SampleNumTextBox,
-                this.SampleWeightTextBox,
-                this.InitialVolumeTextBox
+                this
             );
 
             myTabLogic2 = new tabControl_2(
-                this,
-                this.button9,
-                this.t0TextBox,
-                this.InitialVolumeTextBox,
-                this.DesVolUndTextBox,
-                this.UndTempTextBox,
-                this.UndAtmPressureTextBox,
-                this.UndDesorpCalTextBox,
-                this.SampLossVolTextBox
+                this
             );
 
             myTabLogic3 = new tabControl_3(
-                this,
-                this.DesorpVolNormalTextBox,
-                this.DesorpVolNormalCalTextBox,
-                this.Sample1WeightTextBox,
-                this.Sample2WeightTextBox,
-                this.S1DesorpVolTextBox,
-                this.S1DesorpVolCalTextBox,
-                this.S2DesorpVolTextBox,
-                this.S2DesorpVolCalTextBox,
-                this.CrushDesorpTextBox
+                this
                 );
 
+            myTabLogic4 = new tabControl_4(
+                this
+            );
+
+            myTabLogic5 = new tabControl_5(
+                this
+            );
 
 
             GasCompGroupBox.Enabled = false;
-
-            //button2_Click(button2, EventArgs.Empty);
-            //SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
         }
 
-        string GetPythonPath()
-        {
-            var psi = new ProcessStartInfo
-            {
-                FileName = "where",
-                Arguments = "python",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            using (var process = Process.Start(psi))
-            {
-                string output = process.StandardOutput.ReadLine();  // 取第一行输出
-                process.WaitForExit();
-                return output;  // 返回第一个找到的 python.exe 路径
-            }
-        }
-        static string ExtractPythonScript(string resourceName)
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                if (stream == null)
-                    throw new Exception("资源未找到: " + resourceName);
-
-                string tempPath = Path.Combine(Path.GetTempPath(), "temp_script.py");
-                using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
-                {
-                    stream.CopyTo(fileStream);
-                }
-                return tempPath;
-            }
-        }
-        public void CreateExcelWithChart()
-        {
-            // 自动获取 Python 可执行文件路径
-            string pythonExe = GetPythonPath();
-
-            // 从嵌入资源中提取 Python 脚本，资源名示例 "WindowsFormsApp1.aaa.py"
-            string resourceName = "GasFormsApp.Python.aaa.py";  // 注意：一定要改成你项目的资源名，确认见下文
-            string scriptPath = ExtractPythonScript(resourceName);
-
-            // 创建进程启动信息
-            var psi = new ProcessStartInfo
-            {
-                FileName = pythonExe,
-                Arguments = $"\"{scriptPath}\"",  // 给路径加双引号防止空格问题
-                UseShellExecute = false,
-                CreateNoWindow = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-            };
-
-            // 启动进程
-            var process = new Process();
-            process.StartInfo = psi;
-            process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
-            process.ErrorDataReceived += (sender, e) => Console.WriteLine("ERR: " + e.Data);
-
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
-            process.WaitForExit();
-
-            Console.WriteLine("Python 脚本执行完成。");
-
-            // 可选：运行完删除临时脚本
-            try
-            {
-                if (File.Exists(scriptPath))
-                    File.Delete(scriptPath);
-            }
-            catch { }
-
-
-        }
-
-
+        
         // 从嵌入的资源中加载图标
         private Icon LoadIconFromResource(string resourceName)
         {
@@ -333,7 +208,6 @@ namespace GasFormsApp
                 return new Icon(stream);
             }
         }
-
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -372,495 +246,5 @@ namespace GasFormsApp
             // 绘制文字
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
-
-        // 默认状态下不勾选 自然瓦斯成分
-        string Word_resourceName = "GasFormsApp.WordTemplate_1.docx"; // 注意这个名字必须和实际资源名一致
-        private void button2_Click(object sender, EventArgs e)
-        {
-            // 选择保存位置
-            SaveFileDialog saveDialog = new SaveFileDialog
-            {
-                Filter = "Word 文件 (*.docx)|*.docx",
-                Title = "保存生成的 Word 文件"
-            };
-
-            string outputPath = "";
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                outputPath = saveDialog.FileName;
-                //string outputPath = @"D:\1.docx";
-
-                // 获取程序集
-                var assembly = Assembly.GetExecutingAssembly();
-                //string resourceName = "GasFormsApp.WordTemplate.docx"; // 注意这个名字必须和实际资源名一致
-
-                // 尝试读取嵌入资源
-                using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
-                {
-                    if (resourceStream == null)
-                    {
-                        MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // 将嵌入资源复制到内存流以便修改
-                    using (MemoryStream memoryStream = new MemoryStream())
-                    {
-                        resourceStream.CopyTo(memoryStream);
-
-                        // 插入图表
-                        InsertChart insertChart = new InsertChart();
-
-                        // 从文本框或其他地方获取数据，并将其传入函数
-                        // 假设这些是你窗体上的 TextBox 控件
-                        TextBox[] DesorbTextBox = new TextBox[60];
-                        for (int i = 0; i < 60; i++)
-                        {
-                            string controlName = $"DesorbTextBox{i + 1}";
-                            DesorbTextBox[i] = this.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
-                        }
-
-                        float t0_temp;
-                        float t0 = 0;
-                        if (float.TryParse(t0TextBox.Text, out t0_temp))
-                        {
-                            t0= t0_temp;
-                        }
-                        else
-                        {
-                            // 转换失败，比如用户输入了非数字
-                            MessageBox.Show("请输入有效的数字");
-                        }
-                        double[,] data = new double[DesorbTextBox.Length, 2]; // 数组大小根据 DesorbTextBox 数量来确定
-
-                        for (int i = 0; i < DesorbTextBox.Length; i++) // 循环次数根据 DesorbTextBox 数量确定
-                        {
-                            double textBoxValue = 0.0;
-                            if (!string.IsNullOrWhiteSpace(DesorbTextBox[i].Text) &&
-                                double.TryParse(DesorbTextBox[i].Text.Trim(), out double value))
-                            {
-                                textBoxValue = value;
-                            }
-                            else
-                            {
-                                textBoxValue = 0;
-                            }
-
-                            double sqrtValue = 0.0;
-                            int j = i + 1;
-                            // 定义映射数组，存储31~45对应的a值
-                            int[] map31to45 = { 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60 };
-                            // 定义映射数组，存储46~60对应的a值
-                            int[] map46to60 = { 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135 };
-
-                            if (j >= 1 && j <= 30)
-                            {
-                                sqrtValue = Math.Sqrt(t0+j);
-                            }
-                            else if (j >= 31 && j <= 45)
-                            {
-                                int a = map31to45[j - 31];  // j-31对应数组索引0~14
-                                sqrtValue = Math.Sqrt(t0+a);
-                            }
-                            else if (j >= 46 && j <= 60)
-                            {
-                                int a = map46to60[j - 46];  // j-46对应数组索引0~14
-                                sqrtValue = Math.Sqrt(t0+a);
-                            }
-                            Console.WriteLine($"sqrtValue:{sqrtValue}>>>---{j}");
-
-                            data[i, 0] = sqrtValue; // 将平方根值存储在第一列
-                            data[i, 1] = textBoxValue; // 将文本框值存储在第二列
-                        }
-                        //insertChart.InsertChartToWord(outputPath, data);
-
-                        const string mapName = "Local\\MySharedMemory";
-                        int totalBytes = DesorbTextBox.Length * 2 * sizeof(double);
-
-                        using (var mmf = MemoryMappedFile.CreateOrOpen(mapName, totalBytes))
-                        {
-                            using (var writeAccessor = mmf.CreateViewAccessor(0, totalBytes))
-                            {
-                                Console.WriteLine("[C#] 写入共享内存...");
-                                int offset = 0;
-                                for (int i = 0; i < DesorbTextBox.Length; i++)
-                                {
-                                    Console.Write($"[C#] 第{i + 1}行: ");
-                                    for (int j = 0; j < 2; j++)
-                                    {
-                                        double val = data[i, j];
-                                        writeAccessor.Write(offset, val);
-                                        Console.Write($"{val} ");
-                                        offset += sizeof(double);
-                                    }
-                                    Console.WriteLine();
-                                }
-                            }
-
-
-                            const string memoryName = "Local\\tempSharedMemory";
-                            int temptotalBytes = 5 * sizeof(double);
-
-                            using (var tempmmf = MemoryMappedFile.CreateOrOpen(memoryName, temptotalBytes))
-                            {
-                                // 调用 Python 脚本写入共享内存
-                                CreateExcelWithChart();  // 实际是执行 Python 写入数据
-
-                                // 等待 Python 写入（你也可以用事件或信号同步更优雅地替代）
-                                //Thread.Sleep(1000);
-
-                                // 读取共享内存中的数据
-                                using (var accessor = tempmmf.CreateViewAccessor(0, temptotalBytes))
-                                {
-                                    double[] values = new double[5];
-                                    for (int i = 0; i < values.Length; i++)
-                                    {
-                                        values[i] = accessor.ReadDouble(i * sizeof(double));
-                                    }
-                                    InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F3"));
-
-                                    // 找出最大数据
-                                    double maxValue = double.MinValue;
-                                    for (int i = 1; i <= 60; i++)
-                                    {
-                                        string key = $"D{i:000}";
-                                        var textBox = Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
-
-                                        if (textBox != null)
-                                        {
-                                            string text = textBox.Text.Trim();
-                                            if (double.TryParse(text, out double val))
-                                            {
-                                                if (val > maxValue)
-                                                {
-                                                    maxValue = val;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    // 量管初始体积
-                                    float initialVolume;
-                                    if (float.TryParse(InitialVolumeTextBox.Text, out initialVolume))
-                                    {
-                                        // 计算井下解吸体积
-                                        井下解吸体积 = maxValue - initialVolume;
-                                    }
-                                    else
-                                    {
-                                        // 转换失败，比如用户输入了非数字
-                                        MessageBox.Show("请输入有效的数字");
-                                    }
-                                    Console.WriteLine($"井下解析体积:{井下解吸体积}");
-                                    Console.WriteLine($"瓦斯损失量:{values[1]}");
-
-                                    // 计算W1
-                                    // 量管初始体积
-                                    float SampleWeight;
-                                    if (float.TryParse(SampleWeightTextBox.Text, out SampleWeight))
-                                    {
-                                        // 计算W1
-                                        W1 = (井下解吸体积 + Math.Abs(values[1])) / SampleWeight;
-                                    }
-                                    else
-                                    {
-                                        // 转换失败，比如用户输入了非数字
-                                        MessageBox.Show("请输入有效的数字");
-                                    }
-                                    W1_TextBox.Text = W1.ToString();
-                                    Console.WriteLine($"W1(m^3/t):{W1_TextBox.Text}");
-
-                                    // 计算W2
-                                    // 常压解吸体积
-                                    float DesorpVolNormal;
-                                    if (float.TryParse(DesorpVolNormalTextBox.Text, out DesorpVolNormal))
-                                    {
-                                        // 计算W2
-                                        W2 = DesorpVolNormal / SampleWeight;
-                                    }
-                                    else
-                                    {
-                                        // 转换失败，比如用户输入了非数字
-                                        MessageBox.Show("请输入有效的数字");
-                                    }
-                                    W2_TextBox.Text = W2.ToString();
-                                    Console.WriteLine($"W2(m^3/t):{W2_TextBox.Text}");
-
-                                    // 计算W3
-                                    // 密封粉碎解析量
-                                    float CrushDesorp;
-                                    if (float.TryParse(CrushDesorpTextBox.Text, out CrushDesorp))
-                                    {
-                                        // 计算W3
-                                        W3 = CrushDesorp;
-                                    }
-                                    else
-                                    {
-                                        // 转换失败，比如用户输入了非数字
-                                        MessageBox.Show("请输入有效的数字");
-                                    }
-                                    W3_TextBox.Text = W3.ToString();
-                                    Console.WriteLine($"W3(m^3/t):{W3_TextBox.Text}");
-
-                                    // 计算Wa
-                                    Wa = W1 + W2 + W3;
-                                    Wa_TextBox.Text = Wa.ToString();
-                                    Console.WriteLine($"Wa(m^3/t):{Wa_TextBox.Text}");
-
-                                    // 计算Wc
-                                    Wc = getWc();
-                                    Wc_TextBox.Text = Wc.ToString();
-                                    NonDesorpGasQtyTextBox.Text = Wc.ToString();
-                                    Console.WriteLine($"Wc(m^3/t):{Wc_TextBox.Text}");
-
-                                    // 计算W
-                                    W = Wa + Wc;
-                                    W_TextBox.Text = W.ToString();
-                                    Console.WriteLine($"W(m^3/t):{W_TextBox.Text}");
-
-                                    // 计算P
-                                    double at = 1000 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100) + 310 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(MadTextBox.Text.Trim()) * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100);
-                                    double bt = Convert.ToDouble(AdsorpConstATextBox.Text.Trim()) * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim()) * (100 - Convert.ToDouble(AadTextBox.Text.Trim()) - Convert.ToDouble(MadTextBox.Text.Trim())) + 1000 * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100) - 100 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim()) + 310 * Convert.ToDouble(MadTextBox.Text.Trim()) * (Convert.ToDouble(PorosityTextBox.Text.Trim()) / 100) - 31 * Convert.ToDouble(AdsorpConstBTextBox.Text.Trim()) * Convert.ToDouble(MadTextBox.Text.Trim()) * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim());
-                                    double ct = -100 * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim()) - 31 * Convert.ToDouble(MadTextBox.Text.Trim()) * Convert.ToDouble(W_TextBox.Text.Trim()) * Convert.ToDouble(AppDensityTextBox.Text.Trim());
-                                    double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
-                                    P = Pt;
-                                    P_TextBox.Text = Convert.ToString(Pt);
-                                    Console.WriteLine($"P(MPa):{P_TextBox.Text}");
-                                }
-                            }
-                        }
-
-                        // 替换占位符
-                        BasicInfo basicInfo = new BasicInfo(this);
-                        Console.WriteLine("用户选择了新的时间：" + SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"));
-                        //SampleModeText = SampleModeComboBox.Text;
-                        Console.WriteLine("用户选择了新取样方式：" + SampleModeComboBox.Text);
-                        ReportTimeText = dateTimePicker1.Text;
-
-                        basicInfo.ReplaceWordPlaceholders(memoryStream,
-                            MineNameTextBox.Text,
-                            SamplingSpotTextBox.Text,
-                            BurialDepthTextBox.Text,
-                            CoalSeamTextBox.Text,
-                            SampleNumTextBox.Text,
-                            UndAtmPressureTextBox.Text,
-                            LabAtmPressureTextBox.Text,
-                            UndTempTextBox.Text,
-                            LabTempTextBox.Text,
-                            SampleWeightTextBox.Text,
-                            SampleModeComboBox.Text,
-                            MoistureSampleTextBox.Text,
-                            RawCoalMoistureTextBox.Text,
-                            InitialVolumeTextBox.Text,
-                            SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
-                            ReportTimeText);
-
-                        // 保存到用户指定路径
-                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
-
-                        
-
-                        // 使用别名创建 Word 应用实例
-                        Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-                        // 打开生成的 Word 文件
-                        Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(outputPath);
-                        wordApp.Visible = false;
-                        Microsoft.Office.Interop.Word.Range bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
-                        Microsoft.Office.Interop.Word.Bookmarks bookmarks = doc.Bookmarks;
-                        // 插入到 Word 书签位置
-                        if (doc.Bookmarks.Exists("ChartPlaceholder"))
-                        {
-                            bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
-
-                            // 粘贴图片
-                            bookmarkRange.Paste();
-
-                            // 获取刚插入的 InlineShape（剪贴板内容必须是图片）
-                            if (bookmarkRange.InlineShapes.Count > 0)
-                            {
-                                var pastedImage = bookmarkRange.InlineShapes[1];
-
-                                pastedImage.LockAspectRatio = MsoTriState.msoFalse;  // 不锁比例
-                                float k = 32;
-                                pastedImage.Width = 6*k;
-                                pastedImage.Height = 6*k;  // 高度也设置为20磅
-                            }
-
-                            // 可选：重新添加书签（如果被清除）
-                            if (!doc.Bookmarks.Exists("ChartPlaceholder"))
-                            {
-                                doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        // 插入图表完毕后释放 Word 中用到的所有对象
-                        if (bookmarkRange != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarkRange);
-                        if (bookmarks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarks);
-
-
-                        // 保存并关闭 Word 文档
-                        doc.Save();
-                        // 导出为PDF，参数依次为：输出文件路径，导出格式
-                        string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
-                        doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
-                        doc.Close(false);
-                        Marshal.ReleaseComObject(doc);
-                        wordApp.Quit(false);
-                        Marshal.ReleaseComObject(wordApp);
-                    }
-                }
-                //打开生成的 Word 文件
-                try
-                {
-                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("无法打开文件: " + ex.Message);
-                }
-                //this.Close();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void SamplingTimeDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            //SamplingTimeText = SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd");
-            Console.WriteLine("用户选择了新的时间：" + SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"));
-        }
-
-        void getMaxVal()
-        {
-            try
-            {
-                decimal one1 = Convert.ToDecimal(Sample1WeightTextBox.Text.Trim());
-                decimal two1 = Convert.ToDecimal(Sample2WeightTextBox.Text.Trim());
-                decimal one = Convert.ToDecimal(S1DesorpVolTextBox.Text.Trim());
-                decimal two = Convert.ToDecimal(S2DesorpVolTextBox.Text.Trim());
-                if (one > 0 && two > 0 && one1 > 0 && two1 > 0)
-                {
-                    CrushDesorpTextBox.Text = (Math.Round(one / one1 > two / two1 ? one / one1 : two / two1, 4)).ToString();
-                }
-            }
-            catch { }
-        }
-        /// <summary>
-        /// 计算Wc
-        /// </summary>
-        /// <returns></returns>
-        private double getWc()
-        {
-            float p = 0.1f;//0.103f
-            float AD = Convert.ToSingle(AadTextBox.Text.Trim());//灰分
-            float Md = Convert.ToSingle(MadTextBox.Text.Trim());//水分
-            float F = Convert.ToSingle(PorosityTextBox.Text.Trim());//孔隙率
-            float r = Convert.ToSingle(AppDensityTextBox.Text.Trim());//视密度
-            float a = Convert.ToSingle(AdsorpConstATextBox.Text.Trim());// 吸附常数a
-            float b = Convert.ToSingle(AdsorpConstBTextBox.Text.Trim());// 吸附常数b
-            double x = a * b * p * (100 - AD - Md) / ((1 + b * p) * 100 * (1 + 0.31 * Md)) + F / (100 * r);
-            return Math.Round(x, 4);
-        }
-
-        private void Sample1WeightTextBox_TextChanged(object sender, EventArgs e)
-        {
-            getMaxVal();
-        }
-
-        private void Sample2WeightTextBox_TextChanged(object sender, EventArgs e)
-        {
-            getMaxVal();
-        }
-
-        private void S1DesorpVolTextBox_TextChanged(object sender, EventArgs e)
-        {
-            getMaxVal();
-        }
-
-        private void S2DesorpVolTextBox_TextChanged(object sender, EventArgs e)
-        {
-            getMaxVal();
-        }
-
-
-        //public string SamplingTimeText;
-
-
-
-        //private void TextModificationTriggered(object sender, EventArgs e)
-        //{
-        //    MineNameText = MineNameTextBox.Text;
-        //    SamplingSpotText = SamplingSpotTextBox.Text;
-        //    BurialDepthText = BurialDepthTextBox.Text;
-        //    CoalSeamText = CoalSeamTextBox.Text;
-        //    SampleNumText = SampleNumTextBox.Text;
-        //    UndAtmPressureText = UndAtmPressureTextBox.Text;
-        //    LabAtmPressureText = LabAtmPressureTextBox.Text;
-        //    UndTempText = UndTempTextBox.Text;
-        //    LabTempText = LabTempTextBox.Text;
-        //    SampleWeightText = SampleWeightTextBox.Text;
-        //    MoistureSampleText = MoistureSampleTextBox.Text;
-        //    RawCoalMoistureText = RawCoalMoistureTextBox.Text;
-        //    InitialVolumeText = InitialVolumeTextBox.Text;
-
-
-        //    System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成 Control 类型（适用于 WinForms）
-        //    if (control != null)
-        //    {
-        //        string controlName = control.Name;
-        //        string controlText = control.Text;
-
-        //        Console.WriteLine($"触发事件的控件名称是：{controlName}");
-        //        //Console.WriteLine($"控件的文本内容是：{controlText}");
-        //    }
-        //}
-
-        private void SampleModeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //SampleModeText = SampleModeComboBox.Text;
-            Console.WriteLine("用户选择了新取样方式：" + SampleModeComboBox.Text);
-        }
-
-
-        private void CheckBox_Click(object sender, EventArgs e)
-        {
-            if (sender is System.Windows.Forms.CheckBox checkBox)
-            {
-                // 通过 Name 判断哪个被点击
-                string name = checkBox.Name;
-                string text = checkBox.Text;
-                bool isChecked = checkBox.Checked;
-
-                if (name == "GasCompCheckBox")
-                {
-                    if (isChecked)
-                    {
-                        Console.WriteLine("勾选");
-                        Word_resourceName = "GasFormsApp.WordTemplate.docx";
-                        GasCompGroupBox.Enabled = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("取消勾选");
-                        Word_resourceName = "GasFormsApp.WordTemplate_1.docx";
-                        GasCompGroupBox.Enabled = false;
-                    }
-                }
-            }
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            ReportTimeText = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            Console.WriteLine("用户选择了新的时间：" + ReportTimeText);
-        }
-
-        
-
     }
 }
