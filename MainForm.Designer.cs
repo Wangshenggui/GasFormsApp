@@ -66,14 +66,20 @@ namespace GasFormsApp
             this.label9 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
             this.t0TextBox = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.DesorbTextBox60 = new System.Windows.Forms.TextBox();
+            this.DesVolUndTextBox = new System.Windows.Forms.TextBox();
             this.DesorbTextBox31 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
             this.DesorbTextBox41 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
             this.DesorbTextBox50 = new System.Windows.Forms.TextBox();
+            this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
             this.DesorbTextBox40 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox51 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox32 = new System.Windows.Forms.TextBox();
@@ -191,11 +197,6 @@ namespace GasFormsApp
             this.label28 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.DesVolUndTextBox = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.S2DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
             this.label122 = new System.Windows.Forms.Label();
@@ -294,6 +295,7 @@ namespace GasFormsApp
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -681,19 +683,9 @@ namespace GasFormsApp
             this.tabPage2.Size = new System.Drawing.Size(1460, 629);
             this.tabPage2.TabIndex = 1;
             // 
-            // UndDesorpCalTextBox
-            // 
-            this.UndDesorpCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.UndDesorpCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndDesorpCalTextBox.Location = new System.Drawing.Point(195, 484);
-            this.UndDesorpCalTextBox.Name = "UndDesorpCalTextBox";
-            this.UndDesorpCalTextBox.ReadOnly = true;
-            this.UndDesorpCalTextBox.Size = new System.Drawing.Size(265, 26);
-            this.UndDesorpCalTextBox.TabIndex = 110;
-            this.UndDesorpCalTextBox.Text = "0";
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.UndDesorpCalTextBox);
             this.groupBox2.Controls.Add(this.t0TextBox);
             this.groupBox2.Controls.Add(this.label90);
@@ -829,6 +821,26 @@ namespace GasFormsApp
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox3.Location = new System.Drawing.Point(746, 210);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
+            // UndDesorpCalTextBox
+            // 
+            this.UndDesorpCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.UndDesorpCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndDesorpCalTextBox.Location = new System.Drawing.Point(195, 484);
+            this.UndDesorpCalTextBox.Name = "UndDesorpCalTextBox";
+            this.UndDesorpCalTextBox.ReadOnly = true;
+            this.UndDesorpCalTextBox.Size = new System.Drawing.Size(265, 26);
+            this.UndDesorpCalTextBox.TabIndex = 110;
+            this.UndDesorpCalTextBox.Text = "0";
+            // 
             // t0TextBox
             // 
             this.t0TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -849,6 +861,17 @@ namespace GasFormsApp
             this.label90.TabIndex = 109;
             this.label90.Text = "              t0:";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(84, 489);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 16);
+            this.label18.TabIndex = 111;
+            this.label18.Text = "井下解吸校准:";
+            // 
             // DesorbTextBox60
             // 
             this.DesorbTextBox60.BackColor = System.Drawing.SystemColors.MenuText;
@@ -857,6 +880,17 @@ namespace GasFormsApp
             this.DesorbTextBox60.Name = "DesorbTextBox60";
             this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox60.TabIndex = 103;
+            // 
+            // DesVolUndTextBox
+            // 
+            this.DesVolUndTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.DesVolUndTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesVolUndTextBox.Location = new System.Drawing.Point(195, 437);
+            this.DesVolUndTextBox.Name = "DesVolUndTextBox";
+            this.DesVolUndTextBox.ReadOnly = true;
+            this.DesVolUndTextBox.Size = new System.Drawing.Size(265, 26);
+            this.DesVolUndTextBox.TabIndex = 0;
+            this.DesVolUndTextBox.Text = "0";
             // 
             // DesorbTextBox31
             // 
@@ -867,6 +901,16 @@ namespace GasFormsApp
             this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox31.TabIndex = 44;
             // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label53.Location = new System.Drawing.Point(84, 442);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(111, 16);
+            this.label53.TabIndex = 3;
+            this.label53.Text = "井下解吸体积:";
+            // 
             // DesorbTextBox41
             // 
             this.DesorbTextBox41.BackColor = System.Drawing.SystemColors.MenuText;
@@ -876,6 +920,16 @@ namespace GasFormsApp
             this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox41.TabIndex = 84;
             // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label54.Location = new System.Drawing.Point(84, 537);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(111, 16);
+            this.label54.TabIndex = 3;
+            this.label54.Text = "取样损失体积:";
+            // 
             // DesorbTextBox50
             // 
             this.DesorbTextBox50.BackColor = System.Drawing.SystemColors.MenuText;
@@ -884,6 +938,17 @@ namespace GasFormsApp
             this.DesorbTextBox50.Name = "DesorbTextBox50";
             this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox50.TabIndex = 93;
+            // 
+            // SampLossVolTextBox
+            // 
+            this.SampLossVolTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.SampLossVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampLossVolTextBox.Location = new System.Drawing.Point(195, 534);
+            this.SampLossVolTextBox.Name = "SampLossVolTextBox";
+            this.SampLossVolTextBox.ReadOnly = true;
+            this.SampLossVolTextBox.Size = new System.Drawing.Size(264, 26);
+            this.SampLossVolTextBox.TabIndex = 0;
+            this.SampLossVolTextBox.Text = "0";
             // 
             // DesorbTextBox40
             // 
@@ -2032,59 +2097,6 @@ namespace GasFormsApp
             this.label48.TabIndex = 3;
             this.label48.Text = "26:";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(84, 489);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 16);
-            this.label18.TabIndex = 111;
-            this.label18.Text = "井下解吸校准:";
-            // 
-            // DesVolUndTextBox
-            // 
-            this.DesVolUndTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.DesVolUndTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesVolUndTextBox.Location = new System.Drawing.Point(195, 437);
-            this.DesVolUndTextBox.Name = "DesVolUndTextBox";
-            this.DesVolUndTextBox.ReadOnly = true;
-            this.DesVolUndTextBox.Size = new System.Drawing.Size(265, 26);
-            this.DesVolUndTextBox.TabIndex = 0;
-            this.DesVolUndTextBox.Text = "0";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label53.Location = new System.Drawing.Point(84, 442);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(111, 16);
-            this.label53.TabIndex = 3;
-            this.label53.Text = "井下解吸体积:";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(84, 537);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(111, 16);
-            this.label54.TabIndex = 3;
-            this.label54.Text = "取样损失体积:";
-            // 
-            // SampLossVolTextBox
-            // 
-            this.SampLossVolTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.SampLossVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampLossVolTextBox.Location = new System.Drawing.Point(195, 534);
-            this.SampLossVolTextBox.Name = "SampLossVolTextBox";
-            this.SampLossVolTextBox.ReadOnly = true;
-            this.SampLossVolTextBox.Size = new System.Drawing.Size(264, 26);
-            this.SampLossVolTextBox.TabIndex = 0;
-            this.SampLossVolTextBox.Text = "0";
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -3127,6 +3139,7 @@ namespace GasFormsApp
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -3400,5 +3413,6 @@ namespace GasFormsApp
         public TextBox Wc_TextBox;
         public TextBox W_TextBox;
         public TextBox P_TextBox;
+        public PictureBox pictureBox3;
     }
 }

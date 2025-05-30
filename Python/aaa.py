@@ -252,40 +252,44 @@ img_bytes = io.BytesIO()
 plt.savefig(img_bytes, format='png', dpi=300, bbox_inches='tight')
 img_bytes.seek(0)  # 将指针移回起始位置
 
-# 把图像插入 Word 文档
-doc = Document()
-doc.add_heading('去除X轴0刻度的图', level=1)
-doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头和线性拟合线：')
-doc.add_picture(img_bytes, width=Inches(5.0))
-doc.save('你干嘛.docx')
+# 将 BytesIO 中的内容写入本地文件
+with open('output_image.png', 'wb') as f:
+    f.write(img_bytes.read())
+
+# # 把图像插入 Word 文档
+# doc = Document()
+# doc.add_heading('去除X轴0刻度的图', level=1)
+# doc.add_paragraph('图中X轴从0开始，但不显示0刻度，仍保留箭头和线性拟合线：')
+# doc.add_picture(img_bytes, width=Inches(5.0))
+# doc.save('你干嘛.docx')
 # 打开 Word 文档
 # os.startfile('你干嘛.docx')
 
 # 关闭图形释放内存
 plt.close()
 
-# ---------- 复制图像到剪贴板（仅限 Windows） ----------
-def send_to_clipboard(im):
-    """
-    将图像复制到Windows剪贴板
+# # ---------- 复制图像到剪贴板（仅限 Windows） ----------
+# def send_to_clipboard(im):
+#     """
+#     将图像复制到Windows剪贴板
     
-    参数:
-        im: PIL图像对象
-    """
-    output = io.BytesIO()
-    im.convert('RGB').save(output, 'BMP')  # 转换为BMP格式
-    data = output.getvalue()[14:]  # 去掉BMP头的前14字节
-    output.close()
+#     参数:
+#         im: PIL图像对象
+#     """
+#     output = io.BytesIO()
+#     im.convert('RGB').save(output, 'BMP')  # 转换为BMP格式
+#     data = output.getvalue()[14:]  # 去掉BMP头的前14字节
+#     output.close()
 
-    # 操作剪贴板
-    win32clipboard.OpenClipboard()
-    win32clipboard.EmptyClipboard()
-    win32clipboard.SetClipboardData(CF_DIB, data)  # 设置剪贴板数据
-    win32clipboard.CloseClipboard()
+#     # 操作剪贴板
+#     win32clipboard.OpenClipboard()
+#     win32clipboard.EmptyClipboard()
+#     win32clipboard.SetClipboardData(CF_DIB, data)  # 设置剪贴板数据
+#     win32clipboard.CloseClipboard()
 
 # 从字节流加载为PIL图像并复制到剪贴板
-image = Image.open(img_bytes)
-send_to_clipboard(image)
+# image = Image.open(img_bytes)
+# send_to_clipboard(image)
 
 # 将拟合结果写入共享内存
 import mmap

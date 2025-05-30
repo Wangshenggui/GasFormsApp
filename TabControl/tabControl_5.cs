@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Word;
 
 namespace GasFormsApp.TabControl
 {
@@ -248,28 +249,30 @@ namespace GasFormsApp.TabControl
                         // 插入到 Word 书签位置
                         if (doc.Bookmarks.Exists("ChartPlaceholder"))
                         {
-                            bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
+                            // 获取当前目录下的图片路径
+                            string imagePath = Path.Combine(Environment.CurrentDirectory, "output_image.png");
 
-                            // 粘贴图片
-                            bookmarkRange.Paste();
+                            // 插入图片作为 InlineShape
+                            InlineShape insertedImage = doc.InlineShapes.AddPicture(
+                                FileName: imagePath,
+                                LinkToFile: false,
+                                SaveWithDocument: true,
+                                Range: bookmarkRange
+                            );
 
-                            // 获取刚插入的 InlineShape（剪贴板内容必须是图片）
-                            if (bookmarkRange.InlineShapes.Count > 0)
-                            {
-                                var pastedImage = bookmarkRange.InlineShapes[1];
+                            // 设置图片大小
+                            insertedImage.LockAspectRatio = MsoTriState.msoFalse;
+                            float k = 32;
+                            insertedImage.Width = 6 * k;
+                            insertedImage.Height = 6 * k;
 
-                                pastedImage.LockAspectRatio = MsoTriState.msoFalse;  // 不锁比例
-                                float k = 32;
-                                pastedImage.Width = 6 * k;
-                                pastedImage.Height = 6 * k;  // 高度也设置为20磅
-                            }
-
-                            // 可选：重新添加书签（如果被清除）
+                            // 重新添加书签（如果插入后书签被清除）
                             if (!doc.Bookmarks.Exists("ChartPlaceholder"))
                             {
-                                doc.Bookmarks.Add("ChartPlaceholder", bookmarkRange);
+                                doc.Bookmarks.Add("ChartPlaceholder", insertedImage.Range);
                             }
                         }
+
                         else
                         {
                             MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

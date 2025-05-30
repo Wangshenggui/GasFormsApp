@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
@@ -200,49 +201,72 @@ namespace GasFormsApp.TabControl
                 const string memoryName = "Local\\tempSharedMemory";
                 int temptotalBytes = 5 * sizeof(double);
 
+
+                // 设置等待状态
+                void SetWaitCursor(System.Windows.Forms.Control control, Cursor cursor)
+                {
+                    control.Cursor = cursor;
+                    foreach (System.Windows.Forms.Control child in control.Controls)
+                    {
+                        SetWaitCursor(child, cursor);
+                    }
+                }
+                // 等待
+                SetWaitCursor(_mainForm, Cursors.WaitCursor);
                 using (var tempmmf = MemoryMappedFile.CreateOrOpen(memoryName, temptotalBytes))
                 {
                     //等待共享内存有数据
                     // 资源名称通常是 {默认命名空间}.{文件夹}.{文件名}
                     string resourceName = "GasFormsApp.Python.aaa.exe";
+                    string tempFilePath = Path.Combine(Environment.CurrentDirectory, "tempProgram.bin");  // 改成 .bin
 
-                    // 获取当前程序集
-                    Assembly assembly = Assembly.GetExecutingAssembly();
-
-                    using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                    Console.WriteLine($"开始检查临时文件是否存在：{tempFilePath}");
+                    if (!File.Exists(tempFilePath))
                     {
-                        if (stream == null)
+                        Console.WriteLine("临时文件不存在，准备从嵌入资源中提取...");
+                        Assembly assembly = Assembly.GetExecutingAssembly();
+                        using (Stream stream = assembly.GetManifestResourceStream(resourceName))
                         {
-                            Console.WriteLine("未找到嵌入资源：" + resourceName);
-                            return;
+                            if (stream == null)
+                            {
+                                Console.WriteLine($"未找到嵌入资源：{resourceName}");
+                                return;
+                            }
+
+                            using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                            {
+                                stream.CopyTo(fs);
+                                Console.WriteLine("资源写入临时文件完成。");
+                            }
                         }
-
-                        // 创建临时文件路径
-                        string tempFilePath = Path.Combine(Path.GetTempPath(), "tempProgram.exe");
-
-                        // 将资源写入临时文件
-                        using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
-                        {
-                            stream.CopyTo(fs);
-                        }
-
-                        // 运行临时的 exe 文件
-                        // 启动进程
-                        Process process = Process.Start(tempFilePath);
-
-                        // 等待子进程退出
-                        process.WaitForExit();
-
-                        Console.WriteLine("子进程已退出，准备删除临时文件");
-
-                        // 删除临时文件
-                        File.Delete(tempFilePath);
-                        Console.WriteLine("临时文件已删除");
+                    }
+                    else
+                    {
+                        Console.WriteLine("临时文件已存在，跳过写入步骤。");
                     }
 
+                    try
+                    {
+                        Console.WriteLine("启动临时程序...");
+                        //Process process = Process.Start(tempFilePath);
+                        ProcessStartInfo psi = new ProcessStartInfo
+                        {
+                            FileName = "cmd.exe",
+                            Arguments = $"/c \"{tempFilePath}\"",
+                            UseShellExecute = false,     // 必须设置为 false 才能隐藏窗口
+                            CreateNoWindow = true,       // 不显示命令行窗口
+                            RedirectStandardOutput = true,  // 如果需要，可以重定向输出
+                            RedirectStandardError = true
+                        };
 
-
-
+                        Process process = Process.Start(psi);
+                        process.WaitForExit();
+                        Console.WriteLine("临时程序执行完毕。");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"执行程序时发生错误：{ex.Message}");
+                    }
 
                     // 读取共享内存中的数据
                     using (var accessor = tempmmf.CreateViewAccessor(0, temptotalBytes))
@@ -255,13 +279,37 @@ namespace GasFormsApp.TabControl
                         while (true)
                         {
                             lastValue = accessor.ReadDouble(4 * sizeof(double));
-                            if (lastValue != 0)
+                            if (lastValue != 0 || a++>100 * 10)
                             {
                                 break;
                             }
 
-                            Console.WriteLine("等待数据......" + a++);
+                            Console.WriteLine("等待数据......");
                             Thread.Sleep(10); // 避免忙等待，占用CPU过高
+                        }
+
+                        string imageName = "output_image.png";
+                        string imagePath = Path.Combine(Environment.CurrentDirectory, imageName);
+                        // 设置 PictureBox 的显示模式
+                        _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+                        try
+                        {
+                            if (File.Exists(imagePath))
+                            {
+                                // 避免文件被锁，使用 Image.FromStream
+                                using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                                {
+                                    _mainForm.pictureBox3.Image = Image.FromStream(fs);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("找不到图片文件：" + imagePath);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("加载图片时出错：" + ex.Message);
                         }
 
 
@@ -348,7 +396,9 @@ namespace GasFormsApp.TabControl
                             // 转换失败，比如用户输入了非数字
                             MessageBox.Show("请输入有效的数字");
                         }
-
+                        SetWaitCursor(_mainForm, Cursors.Default);
+                        // 计算完成提示框
+                        MessageBox.Show("计算完成！", "提示：");
                     }
                 }
             }

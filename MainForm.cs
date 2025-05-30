@@ -68,6 +68,8 @@ namespace GasFormsApp
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
 
+            //this.UseWaitCursor = true;
+            //this.UseWaitCursor = false;
 
             #region 初始化 tabPage1
             //// 设置表头名称
@@ -246,5 +248,6 @@ namespace GasFormsApp
             // 绘制文字
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
+
     }
 }
