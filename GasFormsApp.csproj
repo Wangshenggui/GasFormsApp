@@ -179,6 +179,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Python\aaa.exe" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Python\bbb.exe" />
+    <EmbeddedResource Include="Python\bbb.py" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

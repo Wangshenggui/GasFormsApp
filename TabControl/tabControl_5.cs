@@ -180,6 +180,17 @@ namespace GasFormsApp.TabControl
         string Word_resourceName = "GasFormsApp.WordTemplate_1.docx"; // 注意这个名字必须和实际资源名一致
         private void button2_Click(object sender, EventArgs e)
         {
+            //if (MainForm.python执行标志 == true)
+            //{
+            //    // 写入一个 int 值
+            //    MainForm.python执行标志 = false;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("请计算井下解吸！", "提示：");
+            //    MainForm.python执行标志 = false;
+            //    return;
+            //}
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
             {
@@ -237,61 +248,154 @@ namespace GasFormsApp.TabControl
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
 
+                        const string MapName = "Local\\IllustrateMemory";
+                        const int Size = 256;  // 固定大小内存，单位字节
 
-
-                        // 使用别名创建 Word 应用实例
-                        Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-                        // 打开生成的 Word 文件
-                        Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(outputPath);
-                        wordApp.Visible = false;
-                        Microsoft.Office.Interop.Word.Range bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
-                        Microsoft.Office.Interop.Word.Bookmarks bookmarks = doc.Bookmarks;
-                        // 插入到 Word 书签位置
-                        if (doc.Bookmarks.Exists("ChartPlaceholder"))
+                        void WriteString(string value)
                         {
-                            // 获取当前目录下的图片路径
-                            string imagePath = Path.Combine(Environment.CurrentDirectory, "output_image.png");
+                            var mmf = MemoryMappedFile.CreateOrOpen(MapName, Size);
+                            var accessor = mmf.CreateViewAccessor(0, Size);
 
-                            // 插入图片作为 InlineShape
-                            InlineShape insertedImage = doc.InlineShapes.AddPicture(
-                                FileName: imagePath,
-                                LinkToFile: false,
-                                SaveWithDocument: true,
-                                Range: bookmarkRange
-                            );
+                            byte[] bytes = Encoding.UTF8.GetBytes(value);
 
-                            // 设置图片大小
-                            insertedImage.LockAspectRatio = MsoTriState.msoFalse;
-                            float k = 32;
-                            insertedImage.Width = 6 * k;
-                            insertedImage.Height = 6 * k;
+                            if (bytes.Length > Size)
+                                throw new ArgumentException($"字符串太长，最大支持 {Size} 字节");
 
-                            // 重新添加书签（如果插入后书签被清除）
-                            if (!doc.Bookmarks.Exists("ChartPlaceholder"))
+                            // 先写入长度（int，4字节）
+                            accessor.Write(0, bytes.Length);
+
+                            // 再写入字符串字节，紧跟长度后面写
+                            accessor.WriteArray(4, bytes, 0, bytes.Length);
+
+                            Console.WriteLine($"写入字符串：{value}");
+                        }
+
+                        string ReadString()
+                        {
+                            var mmf = MemoryMappedFile.OpenExisting(MapName);
+                            var accessor = mmf.CreateViewAccessor(0, Size);
+
+                            int length = accessor.ReadInt32(0);
+                            if (length > Size - 4 || length < 0)
+                                throw new InvalidOperationException("读取长度不合理");
+
+                            byte[] bytes = new byte[length];
+                            accessor.ReadArray(4, bytes, 0, length);
+
+                            string value = Encoding.UTF8.GetString(bytes);
+                            return value;
+                        }
+                        // 写入一个 int 值
+                        WriteString(outputPath);
+                        string val = ReadString();
+                        Console.WriteLine("读取的值：" + val);
+
+                        // 资源名称通常是 {默认命名空间}.{文件夹}.{文件名}
+                        string resourceName = "GasFormsApp.Python.bbb.exe";
+                        string tempFilePath = Path.Combine(Environment.CurrentDirectory, "tempProgrambbb.bin");  // 改成 .bin
+
+                        Console.WriteLine($"开始检查临时文件是否存在：{tempFilePath}");
+                        if (!File.Exists(tempFilePath))
+                        {
+                            Console.WriteLine("临时文件不存在，准备从嵌入资源中提取...");
+                            assembly = Assembly.GetExecutingAssembly();
+                            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
                             {
-                                doc.Bookmarks.Add("ChartPlaceholder", insertedImage.Range);
+                                if (stream == null)
+                                {
+                                    Console.WriteLine($"未找到嵌入资源：{resourceName}");
+                                    return;
+                                }
+
+                                using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                                {
+                                    stream.CopyTo(fs);
+                                    Console.WriteLine("资源写入临时文件完成。");
+                                }
                             }
                         }
-
                         else
                         {
-                            MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Console.WriteLine("临时文件已存在，跳过写入步骤。");
                         }
 
-                        // 插入图表完毕后释放 Word 中用到的所有对象
-                        if (bookmarkRange != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarkRange);
-                        if (bookmarks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarks);
+                        try
+                        {
+                            Console.WriteLine("启动临时程序...");
+                            //Process process = Process.Start(tempFilePath);
+                            ProcessStartInfo psi = new ProcessStartInfo
+                            {
+                                FileName = "cmd.exe",
+                                Arguments = $"/c \"{tempFilePath}\"",
+                                UseShellExecute = false,     // 必须设置为 false 才能隐藏窗口
+                                CreateNoWindow = true,       // 不显示命令行窗口
+                                RedirectStandardOutput = true,  // 如果需要，可以重定向输出
+                                RedirectStandardError = true
+                            };
+
+                            Process process = Process.Start(psi);
+                            process.WaitForExit();
+                            Console.WriteLine("临时程序执行完毕。");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"执行程序时发生错误：{ex.Message}");
+                        }
 
 
-                        // 保存并关闭 Word 文档
-                        doc.Save();
-                        // 导出为PDF，参数依次为：输出文件路径，导出格式
-                        string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
-                        doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
-                        doc.Close(false);
-                        Marshal.ReleaseComObject(doc);
-                        wordApp.Quit(false);
-                        Marshal.ReleaseComObject(wordApp);
+                        //// 使用别名创建 Word 应用实例
+                        //Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
+                        //// 打开生成的 Word 文件
+                        //Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(outputPath);
+                        //wordApp.Visible = false;
+                        //Microsoft.Office.Interop.Word.Range bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
+                        //Microsoft.Office.Interop.Word.Bookmarks bookmarks = doc.Bookmarks;
+                        //// 插入到 Word 书签位置
+                        //if (doc.Bookmarks.Exists("ChartPlaceholder"))
+                        //{
+                        //    // 获取当前目录下的图片路径
+                        //    string imagePath = Path.Combine(Environment.CurrentDirectory, "output_image.png");
+
+                        //    // 插入图片作为 InlineShape
+                        //    InlineShape insertedImage = doc.InlineShapes.AddPicture(
+                        //        FileName: imagePath,
+                        //        LinkToFile: false,
+                        //        SaveWithDocument: true,
+                        //        Range: bookmarkRange
+                        //    );
+
+                        //    // 设置图片大小
+                        //    insertedImage.LockAspectRatio = MsoTriState.msoFalse;
+                        //    float k = 32;
+                        //    insertedImage.Width = 6 * k;
+                        //    insertedImage.Height = 6 * k;
+
+                        //    // 重新添加书签（如果插入后书签被清除）
+                        //    if (!doc.Bookmarks.Exists("ChartPlaceholder"))
+                        //    {
+                        //        doc.Bookmarks.Add("ChartPlaceholder", insertedImage.Range);
+                        //    }
+                        //}
+
+                        //else
+                        //{
+                        //    MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //}
+
+                        //// 插入图表完毕后释放 Word 中用到的所有对象
+                        //if (bookmarkRange != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarkRange);
+                        //if (bookmarks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarks);
+
+
+                        //// 保存并关闭 Word 文档
+                        //doc.Save();
+                        //// 导出为PDF，参数依次为：输出文件路径，导出格式
+                        //string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
+                        //doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+                        //doc.Close(false);
+                        //Marshal.ReleaseComObject(doc);
+                        //wordApp.Quit(false);
+                        //Marshal.ReleaseComObject(wordApp);
                     }
                 }
                 //打开生成的 Word 文件

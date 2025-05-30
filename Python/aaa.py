@@ -1,14 +1,8 @@
 # 导入必要的库
-from docx import Document  # 用于操作Word文档
-from docx.shared import Inches  # 用于设置图片尺寸
 import matplotlib.pyplot as plt  # 绘图库
 import numpy as np  # 数值计算库
 import io  # 用于内存字节流操作
 import matplotlib  # 绘图基础库
-import os  # 操作系统接口
-from PIL import Image  # 图像处理库
-import win32clipboard  # Windows剪贴板操作
-from win32con import CF_DIB  # 剪贴板格式常量
 import ctypes  # 用于调用C/C++共享内存
 from ctypes import wintypes  # Windows类型定义
 import struct  # 字节打包/解包
@@ -300,3 +294,6 @@ slope_bytes = struct.pack('5d', slope, intercept, r_squared,0,555)
 # 创建内存映射并写入数据
 with mmap.mmap(-1, len(slope_bytes), tagname=slope_mem_name, access=mmap.ACCESS_WRITE) as slope_mmap:
     slope_mmap.write(slope_bytes)
+    
+import sys
+sys.exit(0)  # 退出Python程序，0表示正常退出

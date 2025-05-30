@@ -41,6 +41,8 @@ namespace GasFormsApp
         private bool v;
         private ImageList imageList1;
 
+        //python执行标志
+        public static bool python执行标志 = false;
 
         public static double 井下解吸体积 = 0.0;
         public static double 井下解吸校准体积 = 0.0;
@@ -249,5 +251,9 @@ namespace GasFormsApp
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
