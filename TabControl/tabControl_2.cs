@@ -47,20 +47,6 @@ namespace GasFormsApp.TabControl
             TextBox tb = sender as TextBox;
             if (tb == null) return;
 
-            //// 可以用控件的名字区分
-            //if (tb.Name == "BurialDepthTextBox")
-            //{
-
-            //}
-            //else if (tb.Name == "MineNameTextBox")
-            //{
-
-            //}
-            //else
-            //{
-
-            //}
-
             // 公共的输入限制代码
             // 允许数字和退格键
             if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
@@ -73,12 +59,6 @@ namespace GasFormsApp.TabControl
             {
                 return;
             }
-
-            // 允许负号，只能第一个字符，且文本中没负号
-            //if (e.KeyChar == '-' && tb.SelectionStart == 0 && !tb.Text.Contains("-"))
-            //{
-            //    return;
-            //}
 
             e.Handled = true;
         }
@@ -105,7 +85,6 @@ namespace GasFormsApp.TabControl
 
             return result;
         }
-
 
 
         private void button9_Click(object sender, EventArgs e)
@@ -216,52 +195,34 @@ namespace GasFormsApp.TabControl
                 using (var tempmmf = MemoryMappedFile.CreateOrOpen(memoryName, temptotalBytes))
                 {
                     //等待共享内存有数据
-                    // 资源名称通常是 {默认命名空间}.{文件夹}.{文件名}
-                    string resourceName = "GasFormsApp.Python.aaa.exe";
-                    string tempFilePath = Path.Combine(Environment.CurrentDirectory, "tempProgram.bin");  // 改成 .bin
-
-                    Console.WriteLine($"开始检查临时文件是否存在：{tempFilePath}");
-                    if (!File.Exists(tempFilePath))
-                    {
-                        Console.WriteLine("临时文件不存在，准备从嵌入资源中提取...");
-                        Assembly assembly = Assembly.GetExecutingAssembly();
-                        using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-                        {
-                            if (stream == null)
-                            {
-                                Console.WriteLine($"未找到嵌入资源：{resourceName}");
-                                return;
-                            }
-
-                            using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
-                            {
-                                stream.CopyTo(fs);
-                                Console.WriteLine("资源写入临时文件完成。");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("临时文件已存在，跳过写入步骤。");
-                    }
-
+                    
                     try
                     {
-                        Console.WriteLine("启动临时程序...");
-                        //Process process = Process.Start(tempFilePath);
+                        var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
+                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc";           // 你实际的 .py 文件路径
+
                         ProcessStartInfo psi = new ProcessStartInfo
                         {
-                            FileName = "cmd.exe",
-                            Arguments = $"/c \"{tempFilePath}\"",
-                            UseShellExecute = false,     // 必须设置为 false 才能隐藏窗口
-                            CreateNoWindow = true,       // 不显示命令行窗口
-                            RedirectStandardOutput = true,  // 如果需要，可以重定向输出
-                            RedirectStandardError = true
+                            FileName = pythonPath,
+                            Arguments = $"\"{scriptPath}\"",         // 加上引号，防止路径带空格
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true,
+                            CreateNoWindow = true
                         };
 
-                        Process process = Process.Start(psi);
-                        process.WaitForExit();
-                        Console.WriteLine("临时程序执行完毕。");
+                        using (Process process = Process.Start(psi))
+                        {
+                            string output = process.StandardOutput.ReadToEnd();
+                            string error = process.StandardError.ReadToEnd();
+                            process.WaitForExit();
+
+                            Console.WriteLine("Python output:\n" + output);
+                            if (!string.IsNullOrEmpty(error))
+                            {
+                                Console.WriteLine("Python error:\n" + error);
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -279,7 +240,7 @@ namespace GasFormsApp.TabControl
                         while (true)
                         {
                             lastValue = accessor.ReadDouble(4 * sizeof(double));
-                            if (lastValue != 0 || a++>100 * 10)
+                            if (lastValue != 0 || a++>100 * 5)
                             {
                                 break;
                             }
@@ -287,8 +248,14 @@ namespace GasFormsApp.TabControl
                             Console.WriteLine("等待数据......");
                             Thread.Sleep(10); // 避免忙等待，占用CPU过高
                         }
+                        if( a> 100 * 5)
+                        {
+                            SetWaitCursor(_mainForm, Cursors.Default);
+                            MessageBox.Show("计算失败！！！", "错误：");
+                            return;
+                        }
 
-                        string imageName = "output_image.png";
+                        string imageName = "Python_embed\\Python\\images\\output_image.png";
                         string imagePath = Path.Combine(Environment.CurrentDirectory, imageName);
                         // 设置 PictureBox 的显示模式
                         _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;

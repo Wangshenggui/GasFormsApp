@@ -201,6 +201,18 @@ namespace GasFormsApp.TabControl
             string outputPath = "";
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
+                // 设置等待状态
+                void SetWaitCursor(System.Windows.Forms.Control control, Cursor cursor)
+                {
+                    control.Cursor = cursor;
+                    foreach (System.Windows.Forms.Control child in control.Controls)
+                    {
+                        SetWaitCursor(child, cursor);
+                    }
+                }
+                // 等待
+                SetWaitCursor(_mainForm, Cursors.WaitCursor);
+
                 outputPath = saveDialog.FileName;
                 //string outputPath = @"D:\1.docx";
 
@@ -290,114 +302,41 @@ namespace GasFormsApp.TabControl
                         string val = ReadString();
                         Console.WriteLine("读取的值：" + val);
 
-                        // 资源名称通常是 {默认命名空间}.{文件夹}.{文件名}
-                        string resourceName = "GasFormsApp.Python.bbb.exe";
-                        string tempFilePath = Path.Combine(Environment.CurrentDirectory, "tempProgrambbb.bin");  // 改成 .bin
-
-                        Console.WriteLine($"开始检查临时文件是否存在：{tempFilePath}");
-                        if (!File.Exists(tempFilePath))
-                        {
-                            Console.WriteLine("临时文件不存在，准备从嵌入资源中提取...");
-                            assembly = Assembly.GetExecutingAssembly();
-                            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-                            {
-                                if (stream == null)
-                                {
-                                    Console.WriteLine($"未找到嵌入资源：{resourceName}");
-                                    return;
-                                }
-
-                                using (FileStream fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
-                                {
-                                    stream.CopyTo(fs);
-                                    Console.WriteLine("资源写入临时文件完成。");
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("临时文件已存在，跳过写入步骤。");
-                        }
-
                         try
                         {
-                            Console.WriteLine("启动临时程序...");
-                            //Process process = Process.Start(tempFilePath);
+                            var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
+                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";           // 你实际的 .py 文件路径
+
                             ProcessStartInfo psi = new ProcessStartInfo
                             {
-                                FileName = "cmd.exe",
-                                Arguments = $"/c \"{tempFilePath}\"",
-                                UseShellExecute = false,     // 必须设置为 false 才能隐藏窗口
-                                CreateNoWindow = true,       // 不显示命令行窗口
-                                RedirectStandardOutput = true,  // 如果需要，可以重定向输出
-                                RedirectStandardError = true
+                                FileName = pythonPath,
+                                Arguments = $"\"{scriptPath}\"",         // 加上引号，防止路径带空格
+                                UseShellExecute = false,
+                                RedirectStandardOutput = true,
+                                RedirectStandardError = true,
+                                CreateNoWindow = true
                             };
 
-                            Process process = Process.Start(psi);
-                            process.WaitForExit();
-                            Console.WriteLine("临时程序执行完毕。");
+                            using (Process process = Process.Start(psi))
+                            {
+                                string output = process.StandardOutput.ReadToEnd();
+                                string error = process.StandardError.ReadToEnd();
+                                process.WaitForExit();
+
+                                Console.WriteLine("Python output:\n" + output);
+                                if (!string.IsNullOrEmpty(error))
+                                {
+                                    Console.WriteLine("Python error:\n" + error);
+                                }
+                            }
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine($"执行程序时发生错误：{ex.Message}");
                         }
-
-
-                        //// 使用别名创建 Word 应用实例
-                        //Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.Application();
-                        //// 打开生成的 Word 文件
-                        //Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open(outputPath);
-                        //wordApp.Visible = false;
-                        //Microsoft.Office.Interop.Word.Range bookmarkRange = doc.Bookmarks["ChartPlaceholder"].Range;
-                        //Microsoft.Office.Interop.Word.Bookmarks bookmarks = doc.Bookmarks;
-                        //// 插入到 Word 书签位置
-                        //if (doc.Bookmarks.Exists("ChartPlaceholder"))
-                        //{
-                        //    // 获取当前目录下的图片路径
-                        //    string imagePath = Path.Combine(Environment.CurrentDirectory, "output_image.png");
-
-                        //    // 插入图片作为 InlineShape
-                        //    InlineShape insertedImage = doc.InlineShapes.AddPicture(
-                        //        FileName: imagePath,
-                        //        LinkToFile: false,
-                        //        SaveWithDocument: true,
-                        //        Range: bookmarkRange
-                        //    );
-
-                        //    // 设置图片大小
-                        //    insertedImage.LockAspectRatio = MsoTriState.msoFalse;
-                        //    float k = 32;
-                        //    insertedImage.Width = 6 * k;
-                        //    insertedImage.Height = 6 * k;
-
-                        //    // 重新添加书签（如果插入后书签被清除）
-                        //    if (!doc.Bookmarks.Exists("ChartPlaceholder"))
-                        //    {
-                        //        doc.Bookmarks.Add("ChartPlaceholder", insertedImage.Range);
-                        //    }
-                        //}
-
-                        //else
-                        //{
-                        //    MessageBox.Show("未找到书签 'ChartPlaceholder'，请检查 Word 模板！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //}
-
-                        //// 插入图表完毕后释放 Word 中用到的所有对象
-                        //if (bookmarkRange != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarkRange);
-                        //if (bookmarks != null) System.Runtime.InteropServices.Marshal.ReleaseComObject(bookmarks);
-
-
-                        //// 保存并关闭 Word 文档
-                        //doc.Save();
-                        //// 导出为PDF，参数依次为：输出文件路径，导出格式
-                        //string pdfPath = Path.ChangeExtension(outputPath, ".pdf");
-                        //doc.ExportAsFixedFormat(pdfPath, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
-                        //doc.Close(false);
-                        //Marshal.ReleaseComObject(doc);
-                        //wordApp.Quit(false);
-                        //Marshal.ReleaseComObject(wordApp);
                     }
                 }
+                SetWaitCursor(_mainForm, Cursors.Default);
                 //打开生成的 Word 文件
                 try
                 {
