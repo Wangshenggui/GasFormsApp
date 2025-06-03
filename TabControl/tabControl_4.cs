@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -43,20 +38,6 @@ namespace GasFormsApp.TabControl
             TextBox tb = sender as TextBox;
             if (tb == null) return;
 
-            //// 可以用控件的名字区分
-            //if (tb.Name == "BurialDepthTextBox")
-            //{
-
-            //}
-            //else if (tb.Name == "MineNameTextBox")
-            //{
-
-            //}
-            //else
-            //{
-
-            //}
-
             // 公共的输入限制代码
             // 允许数字和退格键
             if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
@@ -69,12 +50,6 @@ namespace GasFormsApp.TabControl
             {
                 return;
             }
-
-            // 允许负号，只能第一个字符，且文本中没负号
-            //if (e.KeyChar == '-' && tb.SelectionStart == 0 && !tb.Text.Contains("-"))
-            //{
-            //    return;
-            //}
 
             e.Handled = true;
         }
@@ -97,7 +72,7 @@ namespace GasFormsApp.TabControl
         }
         private void TextModificationTriggered(object sender, EventArgs e)
         {
-            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成 Control 类型（适用于 WinForms）
+            Control control = sender as Control;  // 转成 Control 类型（适用于 WinForms）
             if (control != null)
             {
                 string controlName = control.Name;
@@ -136,9 +111,6 @@ namespace GasFormsApp.TabControl
                 MainForm.W = MainForm.Wa + MainForm.Wc;
                 _mainForm.W_TextBox.Text = MainForm.W.ToString("F4");
 
-                // 计算P
-
-
                 /* 
                  * AdsorpConstBTextBox -> 吸附常数b 
                  * PorosityTextBox -> 孔隙率
@@ -148,7 +120,7 @@ namespace GasFormsApp.TabControl
                  * AadTextBox -> 灰分
                  * W_TextBox -> W
                  */
-                //// 计算P
+                // 计算P
                 double at = 
                     1000 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim()) 
                     * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100) 

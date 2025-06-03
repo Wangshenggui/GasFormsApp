@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -43,20 +40,6 @@ namespace GasFormsApp.TabControl
             TextBox tb = sender as TextBox;
             if (tb == null) return;
 
-            //// 可以用控件的名字区分
-            //if (tb.Name == "BurialDepthTextBox")
-            //{
-
-            //}
-            //else if (tb.Name == "MineNameTextBox")
-            //{
-
-            //}
-            //else
-            //{
-
-            //}
-
             // 公共的输入限制代码
             // 允许数字和退格键
             if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
@@ -69,12 +52,6 @@ namespace GasFormsApp.TabControl
             {
                 return;
             }
-
-            // 允许负号，只能第一个字符，且文本中没负号
-            //if (e.KeyChar == '-' && tb.SelectionStart == 0 && !tb.Text.Contains("-"))
-            //{
-            //    return;
-            //}
 
             e.Handled = true;
         }
@@ -94,34 +71,7 @@ namespace GasFormsApp.TabControl
             }
             catch { }
         }
-        // 查表函数：传入索引，返回对应值（查不到返回 -1 或抛异常，根据需求可改）
-        double GetValueFromTable(int index)
-        {
-            Dictionary<int, double> lookupTable = new Dictionary<int, double>()
-            {
-                {  0, 0.6105 },{  1, 0.6567 },{  2, 0.7057 },{  3, 0.7579 },{  4, 0.8134 },
-                {  5, 0.8723 },{  6, 0.9350 },{  7, 1.0016 },{  8, 1.0726 },{  9, 1.1478 },
-                { 10, 1.2277 },{ 11, 1.3124 },{ 12, 1.4023 },{ 13, 1.4973 },{ 14, 1.5981 },
-                { 15, 1.7049 },{ 16, 1.8177 },{ 17, 1.9371 },{ 18, 2.0634 },{ 19, 2.1967 },
-                { 20, 2.3378 },{ 21, 2.4684 },{ 22, 2.6433 },{ 23, 2.8088 },{ 24, 2.9833 },
-                { 25, 3.1683 },{ 26, 3.3609 },{ 27, 3.5648 },{ 28, 3.7795 },{ 29, 4.0053 },
-                { 30, 4.2428 },{ 31, 4.4922 },{ 32, 4.7546 },{ 33, 5.0300 },{ 34, 5.3192 },
-                { 35, 5.6228 },{ 36, 5.9411 },{ 37, 6.2750 },{ 38, 6.6248 },{ 39, 6.9916 },
-                { 40, 7.3758 },{ 41, 7.7779 },{ 42, 8.1992 },{ 43, 8.6391 },{ 44, 9.1004 },
-                { 45, 9.5830 },{ 46, 10.0857 },{ 47, 10.6123 },{ 48, 11.1602 },{ 49, 11.7348 },
-                { 50, 12.3334 }
-            };
-
-            if (lookupTable.TryGetValue(index, out double value))
-            {
-                return value;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException(nameof(index), "索引不在查找表中。");
-                // 或者：return -1; // 如果你希望返回默认值而不是抛异常
-            }
-        }
+        
         /// <summary>
         /// 计算换算到标准状态（101.3 kPa，0℃）的体积
         /// </summary>
@@ -151,7 +101,7 @@ namespace GasFormsApp.TabControl
         }
         private void TextModificationTriggered(object sender, EventArgs e)
         {
-            System.Windows.Forms.Control control = sender as System.Windows.Forms.Control;  // 转成 Control 类型（适用于 WinForms）
+            Control control = sender as Control;  // 转成 Control 类型（适用于 WinForms）
             if (control != null)
             {
                 string controlName = control.Name;

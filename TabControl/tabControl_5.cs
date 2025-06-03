@@ -1,18 +1,11 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
-using GasFormsApp.WordPperation;
-using Microsoft.Office.Core;
+﻿using GasFormsApp.WordPperation;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO.MemoryMappedFiles;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Word;
 
 namespace GasFormsApp.TabControl
 {
@@ -37,20 +30,6 @@ namespace GasFormsApp.TabControl
             TextBox tb = sender as TextBox;
             if (tb == null) return;
 
-            //// 可以用控件的名字区分
-            //if (tb.Name == "BurialDepthTextBox")
-            //{
-
-            //}
-            //else if (tb.Name == "MineNameTextBox")
-            //{
-
-            //}
-            //else
-            //{
-
-            //}
-
             // 公共的输入限制代码
             // 允许数字和退格键
             if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
@@ -64,18 +43,12 @@ namespace GasFormsApp.TabControl
                 return;
             }
 
-            // 允许负号，只能第一个字符，且文本中没负号
-            //if (e.KeyChar == '-' && tb.SelectionStart == 0 && !tb.Text.Contains("-"))
-            //{
-            //    return;
-            //}
-
             e.Handled = true;
         }
 
         private void CheckBox_Click(object sender, EventArgs e)
         {
-            if (sender is System.Windows.Forms.CheckBox checkBox)
+            if (sender is CheckBox checkBox)
             {
                 // 通过 Name 判断哪个被点击
                 string name = checkBox.Name;
@@ -134,63 +107,11 @@ namespace GasFormsApp.TabControl
                 return tempPath;
             }
         }
-        public void CreateExcelWithChart()
-        {
-            // 自动获取 Python 可执行文件路径
-            string pythonExe = GetPythonPath();
-
-            // 从嵌入资源中提取 Python 脚本，资源名示例 "WindowsFormsApp1.aaa.py"
-            string resourceName = "GasFormsApp.Python.aaa.py";  // 注意：一定要改成你项目的资源名，确认见下文
-            string scriptPath = ExtractPythonScript(resourceName);
-
-            // 创建进程启动信息
-            var psi = new ProcessStartInfo
-            {
-                FileName = pythonExe,
-                Arguments = $"\"{scriptPath}\"",  // 给路径加双引号防止空格问题
-                UseShellExecute = false,
-                CreateNoWindow = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-            };
-
-            // 启动进程
-            var process = new Process();
-            process.StartInfo = psi;
-            process.OutputDataReceived += (sender, e) => Console.WriteLine(e.Data);
-            process.ErrorDataReceived += (sender, e) => Console.WriteLine("ERR: " + e.Data);
-
-            process.Start();
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
-            process.WaitForExit();
-
-            Console.WriteLine("Python 脚本执行完成。");
-
-            // 可选：运行完删除临时脚本
-            try
-            {
-                if (File.Exists(scriptPath))
-                    File.Delete(scriptPath);
-            }
-            catch { }
-        }
-
+        
         // 默认状态下不勾选 自然瓦斯成分
         string Word_resourceName = "GasFormsApp.WordTemplate_1.docx"; // 注意这个名字必须和实际资源名一致
         private void button2_Click(object sender, EventArgs e)
         {
-            //if (MainForm.python执行标志 == true)
-            //{
-            //    // 写入一个 int 值
-            //    MainForm.python执行标志 = false;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("请计算井下解吸！", "提示：");
-            //    MainForm.python执行标志 = false;
-            //    return;
-            //}
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
             {

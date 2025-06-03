@@ -95,7 +95,6 @@ namespace GasFormsApp.WordPperation
                 {"RemarkText", _mainForm.RemarkTextBox.Text},//备注
                 
             };
-            Console.WriteLine($"TTTTTTTTTTTTTTTTTTTTTTTT:{MainForm.W1}");
             ReplacePlaceholders(memoryStream, placeholders);
 
             // 实验数据替换
