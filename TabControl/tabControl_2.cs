@@ -7,6 +7,8 @@ using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace GasFormsApp.TabControl
 {
@@ -20,11 +22,45 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
+
+            _mainForm.toolTip1.SetToolTip(_mainForm.DrawCurvesButton, "计算(Ctrl + D)");
+
             // 注册回调函数
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
+        }
 
-            //注册KeyPress回调函数
-            _mainForm.t0TextBox.KeyPress += NumericTextBox_KeyPress;
+        private void ValidateNumericTextBox(TextBox textBox)
+        {
+            string input = textBox.Text;
+
+            // 重置颜色
+            textBox.BackColor = SystemColors.Window;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+            else if (!double.TryParse(input, out double value) || value < 0)
+            {
+                textBox.BackColor = Color.Red;
+            }
+        }
+        private void ValidateEmptyTextBox(TextBox textBox)
+        {
+            string input = textBox.Text;
+
+            // 重置背景色
+            textBox.BackColor = SystemColors.Window;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+        }
+        public void TabControl_2_InputCheckTimer_Tick()
+        {
+            ValidateNumericTextBox(_mainForm.t0TextBox);
+
             for (int i = 1; i <= 30; i++)
             {
                 string controlName = "DesorbTextBox" + i;
@@ -33,32 +69,10 @@ namespace GasFormsApp.TabControl
 
                 if (ctl is TextBox tb)
                 {
-                    tb.KeyPress += NumericTextBox_KeyPress;
+                    ValidateNumericTextBox(tb);
                 }
             }
         }
-
-        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox tb = sender as TextBox;
-            if (tb == null) return;
-
-            // 公共的输入限制代码
-            // 允许数字和退格键
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
-            {
-                return;
-            }
-
-            // 允许一个小数点
-            if (e.KeyChar == '.' && !tb.Text.Contains("."))
-            {
-                return;
-            }
-
-            e.Handled = true;
-        }
-
         /// <summary>
         /// 计算井下解吸校准体积（Desorption Calibrated Volume）
         /// </summary>
@@ -77,7 +91,7 @@ namespace GasFormsApp.TabControl
         }
 
 
-        private void DrawCurvesButton_Click(object sender, EventArgs e)
+        public void DrawCurvesButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("你干么：" + 45);
             // 从文本框或其他地方获取数据，并将其传入函数

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -13,45 +14,50 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
+            
+            _mainForm.toolTip1.SetToolTip(_mainForm.ExpCalcButton, "计算(Ctrl + D)");
 
             // 注册回调函数
-            _mainForm.AdsorpConstATextBox.TextChanged += TextModificationTriggered;
-            _mainForm.AdsorpConstBTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.MadTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.AadTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.PorosityTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.AppDensityTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.VadTextBox.TextChanged += TextModificationTriggered;
-
-            //注册KeyPress回调函数
-            _mainForm.AdsorpConstATextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.AdsorpConstBTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.MadTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.AadTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.PorosityTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.AppDensityTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.VadTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.ExpCalcButton.Click += ExpCalcButton_Click;
         }
 
-        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void ValidateNumericTextBox(TextBox textBox)
         {
-            TextBox tb = sender as TextBox;
-            if (tb == null) return;
+            string input = textBox.Text;
 
-            // 公共的输入限制代码
-            // 允许数字和退格键
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
+            // 重置颜色
+            textBox.BackColor = SystemColors.Window;
+
+            if (string.IsNullOrWhiteSpace(input))
             {
-                return;
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
-
-            // 允许一个小数点
-            if (e.KeyChar == '.' && !tb.Text.Contains("."))
+            else if (!double.TryParse(input, out double value) || value < 0)
             {
-                return;
+                textBox.BackColor = Color.Red;
             }
+        }
+        private void ValidateEmptyTextBox(TextBox textBox)
+        {
+            string input = textBox.Text;
 
-            e.Handled = true;
+            // 重置背景色
+            textBox.BackColor = SystemColors.Window;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+        }
+        public void TabControl_4_InputCheckTimer_Tick()
+        {
+            ValidateNumericTextBox(_mainForm.AdsorpConstATextBox);
+            ValidateNumericTextBox(_mainForm.AdsorpConstBTextBox);
+            ValidateNumericTextBox(_mainForm.MadTextBox);
+            ValidateNumericTextBox(_mainForm.AadTextBox);
+            ValidateNumericTextBox(_mainForm.PorosityTextBox);
+            ValidateNumericTextBox(_mainForm.AppDensityTextBox);
+            ValidateNumericTextBox(_mainForm.VadTextBox);
         }
 
         /// <summary>
@@ -70,88 +76,81 @@ namespace GasFormsApp.TabControl
             double x = a * b * p * (100 - AD - Md) / ((1 + b * p) * 100 * (1 + 0.31 * Md)) + F / (100 * r);
             return Math.Round(x, 4);
         }
-        private void TextModificationTriggered(object sender, EventArgs e)
+        public void ExpCalcButton_Click(object sender, EventArgs e)
         {
-            Control control = sender as Control;  // 转成 Control 类型（适用于 WinForms）
-            if (control != null)
-            {
-                string controlName = control.Name;
-                string controlText = control.Text;
+            //计算Wc
+            MainForm.Wc = getWc();
+            _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString();
 
-                //计算Wc
-                MainForm.Wc = getWc();
-                _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString();
+            // 计算W1
+            float SampleWeight = (float)Convert.ToDecimal(_mainForm.SampleWeightTextBox.Text);// 煤样重量
+            float SampLossVol = (float)Convert.ToDecimal(_mainForm.SampLossVolTextBox.Text);// 取样损失体积
+            float UndDesorpCal = (float)Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text);// 井下解吸校准
+            MainForm.W1 = (UndDesorpCal + Math.Abs(SampLossVol)) / SampleWeight;
+            _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F4");
 
-                // 计算W1
-                float SampleWeight = (float)Convert.ToDecimal(_mainForm.SampleWeightTextBox.Text);// 煤样重量
-                float SampLossVol = (float)Convert.ToDecimal(_mainForm.SampLossVolTextBox.Text);// 取样损失体积
-                float UndDesorpCal = (float)Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text);// 井下解吸校准
-                MainForm.W1 = (UndDesorpCal + Math.Abs(SampLossVol)) / SampleWeight;
-                _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F4");
+            // 计算W2
+            float DesorpVolNormal = (float)Convert.ToDecimal(_mainForm.DesorpVolNormalCalTextBox.Text);// 实验室解吸
+            MainForm.W2 = DesorpVolNormal / SampleWeight;
+            _mainForm.W2_TextBox.Text = MainForm.W2.ToString("F4");
 
-                // 计算W2
-                float DesorpVolNormal = (float)Convert.ToDecimal(_mainForm.DesorpVolNormalCalTextBox.Text);// 实验室解吸
-                MainForm.W2 = DesorpVolNormal / SampleWeight;
-                _mainForm.W2_TextBox.Text = MainForm.W2.ToString("F4");
+            // 计算W3
+            float CrushDesorp = (float)Convert.ToDecimal(_mainForm.CrushDesorpTextBox.Text);
+            MainForm.W3 = CrushDesorp;
+            _mainForm.W3_TextBox.Text = MainForm.W3.ToString("F4");
 
-                // 计算W3
-                float CrushDesorp = (float)Convert.ToDecimal(_mainForm.CrushDesorpTextBox.Text);
-                MainForm.W3 = CrushDesorp;
-                _mainForm.W3_TextBox.Text = MainForm.W3.ToString("F4");
+            // 计算Wa
+            MainForm.Wa = MainForm.W1 + MainForm.W2 + MainForm.W3;
+            _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F4");
 
-                // 计算Wa
-                MainForm.Wa = MainForm.W1 + MainForm.W2 + MainForm.W3;
-                _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F4");
+            // 计算Wc
+            MainForm.Wc = (float)Convert.ToDecimal(_mainForm.NonDesorpGasQtyTextBox.Text);
+            _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F4");
 
-                // 计算Wc
-                MainForm.Wc = (float)Convert.ToDecimal(_mainForm.NonDesorpGasQtyTextBox.Text);
-                _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F4");
+            // 计算W
+            MainForm.W = MainForm.Wa + MainForm.Wc;
+            _mainForm.W_TextBox.Text = MainForm.W.ToString("F4");
 
-                // 计算W
-                MainForm.W = MainForm.Wa + MainForm.Wc;
-                _mainForm.W_TextBox.Text = MainForm.W.ToString("F4");
-
-                /* 
-                 * AdsorpConstBTextBox -> 吸附常数b 
-                 * PorosityTextBox -> 孔隙率
-                 * MadTextBox -> 水分
-                 * AdsorpConstATextBox -> 吸附常数a
-                 * AppDensityTextBox -> 视密度
-                 * AadTextBox -> 灰分
-                 * W_TextBox -> W
-                 */
-                // 计算P
-                double at = 
-                    1000 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim()) 
-                    * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100) 
-                    + 310 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim()) 
-                    * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100);
-                double bt = 
-                    Convert.ToDouble(_mainForm.AdsorpConstATextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim()) 
-                    * (100 - Convert.ToDouble(_mainForm.AadTextBox.Text.Trim()) - Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())) 
-                    + 1000 * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100) 
-                    - 100 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim()) 
-                    + 310 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim()) 
-                    * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100) 
-                    - 31 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
-                double ct = 
-                    -100 * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim()) 
-                    - 31 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim()) 
-                    * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
-                double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
-                MainForm.P = Pt;
-                _mainForm.P_TextBox.Text = MainForm.P.ToString("F4");
-            }
+            /* 
+             * AdsorpConstBTextBox -> 吸附常数b 
+             * PorosityTextBox -> 孔隙率
+             * MadTextBox -> 水分
+             * AdsorpConstATextBox -> 吸附常数a
+             * AppDensityTextBox -> 视密度
+             * AadTextBox -> 灰分
+             * W_TextBox -> W
+             */
+            // 计算P
+            double at =
+                1000 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
+                * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
+                + 310 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
+                * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100);
+            double bt =
+                Convert.ToDouble(_mainForm.AdsorpConstATextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim())
+                * (100 - Convert.ToDouble(_mainForm.AadTextBox.Text.Trim()) - Convert.ToDouble(_mainForm.MadTextBox.Text.Trim()))
+                + 1000 * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
+                - 100 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim())
+                + 310 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
+                * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
+                - 31 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
+            double ct =
+                -100 * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim())
+                - 31 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
+                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
+            double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
+            MainForm.P = Pt;
+            _mainForm.P_TextBox.Text = MainForm.P.ToString("F4");
         }
     }
 }

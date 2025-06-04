@@ -81,70 +81,70 @@ namespace GasFormsApp
 
             #endregion
 
-            #region 模拟用户输入 tabPage2
+            //#region 模拟用户输入 tabPage2
 
-            // 模拟用户输入
-            MineNameTextBox.Text = "名称";
-            SamplingSpotTextBox.Text = "地点";
-            BurialDepthTextBox.Text = "456";
-            CoalSeamTextBox.Text = "煤层";
-            LabAtmPressureTextBox.Text = "101.2";
-            UndAtmPressureTextBox.Text = "103.4";
-            LabTempTextBox.Text = "25";
-            UndTempTextBox.Text = "18";
-            MoistureSampleTextBox.Text = "1.2";
-            RawCoalMoistureTextBox.Text = "4.1";
-            SampleNumTextBox.Text = "M2025";
-            SampleWeightTextBox.Text = "105";
-            InitialVolumeTextBox.Text = "3";
+            //// 模拟用户输入
+            //MineNameTextBox.Text = "名称";
+            //SamplingSpotTextBox.Text = "地点";
+            //BurialDepthTextBox.Text = "456";
+            //CoalSeamTextBox.Text = "煤层";
+            //LabAtmPressureTextBox.Text = "101.2";
+            //UndAtmPressureTextBox.Text = "103.4";
+            //LabTempTextBox.Text = "25";
+            //UndTempTextBox.Text = "18";
+            //MoistureSampleTextBox.Text = "1.2";
+            //RawCoalMoistureTextBox.Text = "4.1";
+            //SampleNumTextBox.Text = "M2025";
+            //SampleWeightTextBox.Text = "105";
+            //InitialVolumeTextBox.Text = "3";
 
-            t0TextBox.Text = "2";
-            DesorbTextBox1.Text = "10";
-            DesorbTextBox2.Text = "12";
-            DesorbTextBox3.Text = "14";
-            DesorbTextBox4.Text = "18";
-            DesorbTextBox5.Text = "22";
-            //DesorbTextBox6.Text = "62";
-            //DesorbTextBox7.Text = "66";
-            //DesorbTextBox8.Text = "70";
-            //DesorbTextBox9.Text = "74";
-            //DesorbTextBox10.Text = "76";
-            //DesorbTextBox11.Text = "78";
-            //DesorbTextBox12.Text = "82";
-            //DesorbTextBox13.Text = "84";
-            //DesorbTextBox14.Text = "86";
-            //DesorbTextBox15.Text = "88";
-            //DesorbTextBox16.Text = "90";
-            //DesorbTextBox17.Text = "92";
-            //DesorbTextBox18.Text = "94";
-            //DesorbTextBox19.Text = "96";
-            //DesorbTextBox20.Text = "98";
-            //DesorbTextBox21.Text = "100";
-            //DesorbTextBox22.Text = "102";
-            //DesorbTextBox23.Text = "102";
-            //DesorbTextBox24.Text = "102";
-            //DesorbTextBox25.Text = "98";
-            //DesorbTextBox26.Text = "100";
-            //DesorbTextBox27.Text = "102";
-            //DesorbTextBox28.Text = "106";
-            //DesorbTextBox29.Text = "108";
-            //DesorbTextBox30.Text = "110";
+            //t0TextBox.Text = "2";
+            //DesorbTextBox1.Text = "10";
+            //DesorbTextBox2.Text = "12";
+            //DesorbTextBox3.Text = "14";
+            //DesorbTextBox4.Text = "18";
+            //DesorbTextBox5.Text = "22";
+            ////DesorbTextBox6.Text = "62";
+            ////DesorbTextBox7.Text = "66";
+            ////DesorbTextBox8.Text = "70";
+            ////DesorbTextBox9.Text = "74";
+            ////DesorbTextBox10.Text = "76";
+            ////DesorbTextBox11.Text = "78";
+            ////DesorbTextBox12.Text = "82";
+            ////DesorbTextBox13.Text = "84";
+            ////DesorbTextBox14.Text = "86";
+            ////DesorbTextBox15.Text = "88";
+            ////DesorbTextBox16.Text = "90";
+            ////DesorbTextBox17.Text = "92";
+            ////DesorbTextBox18.Text = "94";
+            ////DesorbTextBox19.Text = "96";
+            ////DesorbTextBox20.Text = "98";
+            ////DesorbTextBox21.Text = "100";
+            ////DesorbTextBox22.Text = "102";
+            ////DesorbTextBox23.Text = "102";
+            ////DesorbTextBox24.Text = "102";
+            ////DesorbTextBox25.Text = "98";
+            ////DesorbTextBox26.Text = "100";
+            ////DesorbTextBox27.Text = "102";
+            ////DesorbTextBox28.Text = "106";
+            ////DesorbTextBox29.Text = "108";
+            ////DesorbTextBox30.Text = "110";
 
-            DesorpVolNormalTextBox.Text = "1";
-            Sample1WeightTextBox.Text = "100";
-            Sample2WeightTextBox.Text = "100";
-            S1DesorpVolTextBox.Text = "30";
-            S2DesorpVolTextBox.Text = "30";
+            //DesorpVolNormalTextBox.Text = "1";
+            //Sample1WeightTextBox.Text = "100";
+            //Sample2WeightTextBox.Text = "100";
+            //S1DesorpVolTextBox.Text = "30";
+            //S2DesorpVolTextBox.Text = "30";
 
-            AdsorpConstATextBox.Text = "1";
-            AdsorpConstBTextBox.Text = "2";
-            MadTextBox.Text = "3";
-            AadTextBox.Text = "4";
-            PorosityTextBox.Text = "5";
-            AppDensityTextBox.Text = "6";
-            VadTextBox.Text = "7";
+            //AdsorpConstATextBox.Text = "1";
+            //AdsorpConstBTextBox.Text = "2";
+            //MadTextBox.Text = "3";
+            //AadTextBox.Text = "4";
+            //PorosityTextBox.Text = "5";
+            //AppDensityTextBox.Text = "6";
+            //VadTextBox.Text = "7";
 
-            #endregion
+            //#endregion
 
             myTabLogic1 = new tabControl_1(
                 this
@@ -168,6 +168,8 @@ namespace GasFormsApp
 
 
             GasCompGroupBox.Enabled = false;
+            //开启定时器
+            InputCheckTimer.Enabled = true;
         }
 
         
@@ -226,6 +228,49 @@ namespace GasFormsApp
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        //文本检测100ms定时器
+        int a = 0;
+        private void InputCheckTimer_Tick(object sender, EventArgs e)
+        {
+            myTabLogic1.TabControl_1_InputCheckTimer_Tick();
+            myTabLogic2.TabControl_2_InputCheckTimer_Tick();
+            myTabLogic3.TabControl_3_InputCheckTimer_Tick();
+            myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+        }
+
+        //快捷键操作
+        private void TabControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            TabPage currentTab = tabControl1.SelectedTab;
+
+            if (e.Control && e.KeyCode == Keys.D)
+            {
+                switch (currentTab.Name)
+                {
+                    case "tabPage2":
+                        myTabLogic2.DrawCurvesButton_Click(sender, e);
+                        break;
+                    case "tabPage3":
+                        myTabLogic3.LabDesorbButton_Click(sender, e);
+                        break;
+                    case "tabPage4":
+                        myTabLogic4.ExpCalcButton_Click(sender, e);
+                        break;
+                }
+
+                e.Handled = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.S)
+            {
+                if (currentTab.Name == "tabPage5")
+                {
+                    myTabLogic5.GenReportButton_Click(sender, e);
+                }
+
+                e.Handled = true;
+            }
         }
     }
 }

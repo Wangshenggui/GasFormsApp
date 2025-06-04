@@ -19,31 +19,11 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
+            _mainForm.toolTip1.SetToolTip(_mainForm.GenReportButton, "生成报告(Ctrl + S)");
+
             // 注册回调函数
-            _mainForm.button2.Click += button2_Click;
+            _mainForm.GenReportButton.Click += GenReportButton_Click;
             _mainForm.GasCompCheckBox.Click += CheckBox_Click;
-
-        }
-
-        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox tb = sender as TextBox;
-            if (tb == null) return;
-
-            // 公共的输入限制代码
-            // 允许数字和退格键
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
-            {
-                return;
-            }
-
-            // 允许一个小数点
-            if (e.KeyChar == '.' && !tb.Text.Contains("."))
-            {
-                return;
-            }
-
-            e.Handled = true;
         }
 
         private void CheckBox_Click(object sender, EventArgs e)
@@ -73,44 +53,9 @@ namespace GasFormsApp.TabControl
             }
         }
 
-        string GetPythonPath()
-        {
-            var psi = new ProcessStartInfo
-            {
-                FileName = "where",
-                Arguments = "python",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-
-            using (var process = Process.Start(psi))
-            {
-                string output = process.StandardOutput.ReadLine();  // 取第一行输出
-                process.WaitForExit();
-                return output;  // 返回第一个找到的 python.exe 路径
-            }
-        }
-        static string ExtractPythonScript(string resourceName)
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                if (stream == null)
-                    throw new Exception("资源未找到: " + resourceName);
-
-                string tempPath = Path.Combine(Path.GetTempPath(), "temp_script.py");
-                using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
-                {
-                    stream.CopyTo(fileStream);
-                }
-                return tempPath;
-            }
-        }
-        
         // 默认状态下不勾选 自然瓦斯成分
         string Word_resourceName = "GasFormsApp.WordTemplate_1.docx"; // 注意这个名字必须和实际资源名一致
-        private void button2_Click(object sender, EventArgs e)
+        public void GenReportButton_Click(object sender, EventArgs e)
         {
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
@@ -135,11 +80,9 @@ namespace GasFormsApp.TabControl
                 SetWaitCursor(_mainForm, Cursors.WaitCursor);
 
                 outputPath = saveDialog.FileName;
-                //string outputPath = @"D:\1.docx";
 
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
-                //string resourceName = "GasFormsApp.WordTemplate.docx"; // 注意这个名字必须和实际资源名一致
 
                 // 尝试读取嵌入资源
                 using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))

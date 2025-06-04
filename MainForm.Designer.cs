@@ -30,6 +30,7 @@ namespace GasFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -67,6 +68,7 @@ namespace GasFormsApp
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
             this.t0TextBox = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
@@ -135,6 +137,7 @@ namespace GasFormsApp
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
+            this.DrawCurvesButton = new System.Windows.Forms.Button();
             this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox11 = new System.Windows.Forms.TextBox();
@@ -196,6 +199,7 @@ namespace GasFormsApp
             this.label38 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.LabDesorbButton = new System.Windows.Forms.Button();
             this.S2DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
             this.label122 = new System.Windows.Forms.Label();
             this.S1DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
@@ -250,6 +254,7 @@ namespace GasFormsApp
             this.AdsorpConstATextBox = new System.Windows.Forms.TextBox();
             this.label110 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.GenReportButton = new System.Windows.Forms.Button();
             this.RemarkTextBox = new System.Windows.Forms.TextBox();
             this.label120 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -287,20 +292,20 @@ namespace GasFormsApp
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.DrawCurvesButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
+            this.ExpCalcButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.GasCompGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -321,6 +326,7 @@ namespace GasFormsApp
             this.tabControl1.Size = new System.Drawing.Size(1468, 737);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
+            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabControl_KeyDown);
             // 
             // tabPage1
             // 
@@ -375,18 +381,18 @@ namespace GasFormsApp
             // InitialVolumeTextBox
             // 
             this.InitialVolumeTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.InitialVolumeTextBox.Location = new System.Drawing.Point(231, 405);
+            this.InitialVolumeTextBox.Location = new System.Drawing.Point(231, 358);
             this.InitialVolumeTextBox.Name = "InitialVolumeTextBox";
             this.InitialVolumeTextBox.Size = new System.Drawing.Size(240, 26);
-            this.InitialVolumeTextBox.TabIndex = 3;
+            this.InitialVolumeTextBox.TabIndex = 13;
             this.InitialVolumeTextBox.Text = "0";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label19.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(81, 408);
+            this.label19.Location = new System.Drawing.Point(81, 361);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(151, 16);
             this.label19.TabIndex = 4;
@@ -395,34 +401,35 @@ namespace GasFormsApp
             // CoalSeamTextBox
             // 
             this.CoalSeamTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CoalSeamTextBox.Location = new System.Drawing.Point(231, 155);
+            this.CoalSeamTextBox.Location = new System.Drawing.Point(689, 107);
             this.CoalSeamTextBox.Name = "CoalSeamTextBox";
             this.CoalSeamTextBox.Size = new System.Drawing.Size(240, 26);
-            this.CoalSeamTextBox.TabIndex = 32;
+            this.CoalSeamTextBox.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(81, 160);
+            this.label3.Location = new System.Drawing.Point(525, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 16);
+            this.label3.Size = new System.Drawing.Size(167, 16);
             this.label3.TabIndex = 31;
-            this.label3.Text = "煤             层:";
+            this.label3.Text = "煤               层:";
             // 
             // MineNameTextBox
             // 
+            this.MineNameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.MineNameTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MineNameTextBox.Location = new System.Drawing.Point(231, 57);
             this.MineNameTextBox.Name = "MineNameTextBox";
             this.MineNameTextBox.Size = new System.Drawing.Size(240, 26);
-            this.MineNameTextBox.TabIndex = 30;
+            this.MineNameTextBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(81, 62);
             this.label1.Name = "label1";
@@ -433,17 +440,17 @@ namespace GasFormsApp
             // SampleNumTextBox
             // 
             this.SampleNumTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampleNumTextBox.Location = new System.Drawing.Point(231, 354);
+            this.SampleNumTextBox.Location = new System.Drawing.Point(231, 307);
             this.SampleNumTextBox.Name = "SampleNumTextBox";
             this.SampleNumTextBox.Size = new System.Drawing.Size(240, 26);
-            this.SampleNumTextBox.TabIndex = 23;
+            this.SampleNumTextBox.TabIndex = 11;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label20.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(81, 359);
+            this.label20.Location = new System.Drawing.Point(81, 312);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(151, 16);
             this.label20.TabIndex = 20;
@@ -453,29 +460,30 @@ namespace GasFormsApp
             // 
             this.SampleModeComboBox.FormattingEnabled = true;
             this.SampleModeComboBox.Items.AddRange(new object[] {
+            "定点风排渣",
             "风排渣",
             "水排渣",
             "取芯钻杆"});
             this.SampleModeComboBox.Location = new System.Drawing.Point(689, 253);
             this.SampleModeComboBox.Name = "SampleModeComboBox";
-            this.SampleModeComboBox.Size = new System.Drawing.Size(253, 27);
+            this.SampleModeComboBox.Size = new System.Drawing.Size(240, 27);
             this.SampleModeComboBox.TabIndex = 10;
             this.SampleModeComboBox.Text = "定点风排渣";
             // 
             // SamplingTimeDateTimePicker
             // 
             this.SamplingTimeDateTimePicker.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(689, 104);
+            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(231, 406);
             this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
-            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(253, 29);
-            this.SamplingTimeDateTimePicker.TabIndex = 4;
+            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(240, 29);
+            this.SamplingTimeDateTimePicker.TabIndex = 15;
             // 
             // RawCoalMoistureTextBox
             // 
             this.RawCoalMoistureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.RawCoalMoistureTextBox.Location = new System.Drawing.Point(689, 302);
             this.RawCoalMoistureTextBox.Name = "RawCoalMoistureTextBox";
-            this.RawCoalMoistureTextBox.Size = new System.Drawing.Size(253, 26);
+            this.RawCoalMoistureTextBox.Size = new System.Drawing.Size(240, 26);
             this.RawCoalMoistureTextBox.TabIndex = 12;
             // 
             // LabTempTextBox
@@ -484,15 +492,15 @@ namespace GasFormsApp
             this.LabTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LabTempTextBox.Location = new System.Drawing.Point(689, 204);
             this.LabTempTextBox.Name = "LabTempTextBox";
-            this.LabTempTextBox.Size = new System.Drawing.Size(253, 26);
-            this.LabTempTextBox.TabIndex = 0;
+            this.LabTempTextBox.Size = new System.Drawing.Size(240, 26);
+            this.LabTempTextBox.TabIndex = 8;
             // 
             // LabAtmPressureTextBox
             // 
             this.LabAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LabAtmPressureTextBox.Location = new System.Drawing.Point(689, 155);
             this.LabAtmPressureTextBox.Name = "LabAtmPressureTextBox";
-            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(253, 26);
+            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(240, 26);
             this.LabAtmPressureTextBox.TabIndex = 6;
             // 
             // SamplingSpotTextBox
@@ -500,13 +508,13 @@ namespace GasFormsApp
             this.SamplingSpotTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SamplingSpotTextBox.Location = new System.Drawing.Point(689, 57);
             this.SamplingSpotTextBox.Name = "SamplingSpotTextBox";
-            this.SamplingSpotTextBox.Size = new System.Drawing.Size(253, 26);
+            this.SamplingSpotTextBox.Size = new System.Drawing.Size(240, 26);
             this.SamplingSpotTextBox.TabIndex = 2;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label16.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.Location = new System.Drawing.Point(525, 308);
             this.label16.Name = "label16";
@@ -517,7 +525,7 @@ namespace GasFormsApp
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label12.Location = new System.Drawing.Point(525, 209);
             this.label12.Name = "label12";
@@ -528,18 +536,18 @@ namespace GasFormsApp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(525, 110);
+            this.label8.Location = new System.Drawing.Point(81, 412);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(159, 16);
+            this.label8.Size = new System.Drawing.Size(151, 16);
             this.label8.TabIndex = 2;
-            this.label8.Text = "取   样   时    间:";
+            this.label8.Text = "取   样   时   间:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(525, 258);
             this.label15.Name = "label15";
@@ -550,7 +558,7 @@ namespace GasFormsApp
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(525, 160);
             this.label11.Name = "label11";
@@ -561,26 +569,26 @@ namespace GasFormsApp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(525, 62);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(159, 16);
             this.label6.TabIndex = 2;
-            this.label6.Text = "取   样   地    点:";
+            this.label6.Text = "取   样   地   点 :";
             // 
             // MoistureSampleTextBox
             // 
             this.MoistureSampleTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MoistureSampleTextBox.Location = new System.Drawing.Point(231, 302);
+            this.MoistureSampleTextBox.Location = new System.Drawing.Point(231, 255);
             this.MoistureSampleTextBox.Name = "MoistureSampleTextBox";
             this.MoistureSampleTextBox.Size = new System.Drawing.Size(240, 26);
-            this.MoistureSampleTextBox.TabIndex = 11;
+            this.MoistureSampleTextBox.TabIndex = 9;
             // 
             // UndTempTextBox
             // 
             this.UndTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndTempTextBox.Location = new System.Drawing.Point(231, 253);
+            this.UndTempTextBox.Location = new System.Drawing.Point(231, 206);
             this.UndTempTextBox.Name = "UndTempTextBox";
             this.UndTempTextBox.Size = new System.Drawing.Size(240, 26);
             this.UndTempTextBox.TabIndex = 7;
@@ -596,9 +604,9 @@ namespace GasFormsApp
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(81, 308);
+            this.label14.Location = new System.Drawing.Point(81, 261);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(151, 16);
             this.label14.TabIndex = 0;
@@ -607,9 +615,9 @@ namespace GasFormsApp
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(81, 258);
+            this.label10.Location = new System.Drawing.Point(81, 211);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(151, 16);
             this.label10.TabIndex = 0;
@@ -618,7 +626,7 @@ namespace GasFormsApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.Location = new System.Drawing.Point(81, 110);
             this.label7.Name = "label7";
@@ -631,13 +639,13 @@ namespace GasFormsApp
             this.SampleWeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SampleWeightTextBox.Location = new System.Drawing.Point(689, 354);
             this.SampleWeightTextBox.Name = "SampleWeightTextBox";
-            this.SampleWeightTextBox.Size = new System.Drawing.Size(253, 26);
-            this.SampleWeightTextBox.TabIndex = 9;
+            this.SampleWeightTextBox.Size = new System.Drawing.Size(240, 26);
+            this.SampleWeightTextBox.TabIndex = 14;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label13.Location = new System.Drawing.Point(525, 359);
             this.label13.Name = "label13";
@@ -648,7 +656,7 @@ namespace GasFormsApp
             // UndAtmPressureTextBox
             // 
             this.UndAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndAtmPressureTextBox.Location = new System.Drawing.Point(231, 204);
+            this.UndAtmPressureTextBox.Location = new System.Drawing.Point(231, 157);
             this.UndAtmPressureTextBox.Name = "UndAtmPressureTextBox";
             this.UndAtmPressureTextBox.Size = new System.Drawing.Size(240, 26);
             this.UndAtmPressureTextBox.TabIndex = 5;
@@ -656,9 +664,9 @@ namespace GasFormsApp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(81, 209);
+            this.label9.Location = new System.Drawing.Point(81, 162);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(151, 16);
             this.label9.TabIndex = 0;
@@ -821,6 +829,15 @@ namespace GasFormsApp
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox3.Location = new System.Drawing.Point(746, 157);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
             // UndDesorpCalTextBox
             // 
             this.UndDesorpCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
@@ -830,6 +847,7 @@ namespace GasFormsApp
             this.UndDesorpCalTextBox.ReadOnly = true;
             this.UndDesorpCalTextBox.Size = new System.Drawing.Size(265, 26);
             this.UndDesorpCalTextBox.TabIndex = 110;
+            this.UndDesorpCalTextBox.TabStop = false;
             this.UndDesorpCalTextBox.Text = "0";
             // 
             // t0TextBox
@@ -838,13 +856,13 @@ namespace GasFormsApp
             this.t0TextBox.Location = new System.Drawing.Point(674, 37);
             this.t0TextBox.Name = "t0TextBox";
             this.t0TextBox.Size = new System.Drawing.Size(292, 26);
-            this.t0TextBox.TabIndex = 108;
+            this.t0TextBox.TabIndex = 1;
             this.t0TextBox.Text = "0";
             // 
             // label90
             // 
             this.label90.AutoSize = true;
-            this.label90.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label90.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label90.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label90.Location = new System.Drawing.Point(534, 40);
             this.label90.Name = "label90";
@@ -871,6 +889,7 @@ namespace GasFormsApp
             this.DesorbTextBox60.Name = "DesorbTextBox60";
             this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox60.TabIndex = 103;
+            this.DesorbTextBox60.TabStop = false;
             // 
             // DesVolUndTextBox
             // 
@@ -881,6 +900,7 @@ namespace GasFormsApp
             this.DesVolUndTextBox.ReadOnly = true;
             this.DesVolUndTextBox.Size = new System.Drawing.Size(265, 26);
             this.DesVolUndTextBox.TabIndex = 0;
+            this.DesVolUndTextBox.TabStop = false;
             this.DesVolUndTextBox.Text = "0";
             // 
             // DesorbTextBox31
@@ -891,6 +911,7 @@ namespace GasFormsApp
             this.DesorbTextBox31.Name = "DesorbTextBox31";
             this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox31.TabIndex = 44;
+            this.DesorbTextBox31.TabStop = false;
             // 
             // label53
             // 
@@ -910,6 +931,7 @@ namespace GasFormsApp
             this.DesorbTextBox41.Name = "DesorbTextBox41";
             this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox41.TabIndex = 84;
+            this.DesorbTextBox41.TabStop = false;
             // 
             // label54
             // 
@@ -929,6 +951,7 @@ namespace GasFormsApp
             this.DesorbTextBox50.Name = "DesorbTextBox50";
             this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox50.TabIndex = 93;
+            this.DesorbTextBox50.TabStop = false;
             // 
             // SampLossVolTextBox
             // 
@@ -939,6 +962,7 @@ namespace GasFormsApp
             this.SampLossVolTextBox.ReadOnly = true;
             this.SampLossVolTextBox.Size = new System.Drawing.Size(264, 26);
             this.SampLossVolTextBox.TabIndex = 0;
+            this.SampLossVolTextBox.TabStop = false;
             this.SampLossVolTextBox.Text = "0";
             // 
             // DesorbTextBox40
@@ -949,6 +973,7 @@ namespace GasFormsApp
             this.DesorbTextBox40.Name = "DesorbTextBox40";
             this.DesorbTextBox40.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox40.TabIndex = 83;
+            this.DesorbTextBox40.TabStop = false;
             // 
             // DesorbTextBox51
             // 
@@ -958,6 +983,7 @@ namespace GasFormsApp
             this.DesorbTextBox51.Name = "DesorbTextBox51";
             this.DesorbTextBox51.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox51.TabIndex = 94;
+            this.DesorbTextBox51.TabStop = false;
             // 
             // DesorbTextBox32
             // 
@@ -967,6 +993,7 @@ namespace GasFormsApp
             this.DesorbTextBox32.Name = "DesorbTextBox32";
             this.DesorbTextBox32.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox32.TabIndex = 66;
+            this.DesorbTextBox32.TabStop = false;
             // 
             // DesorbTextBox42
             // 
@@ -976,6 +1003,7 @@ namespace GasFormsApp
             this.DesorbTextBox42.Name = "DesorbTextBox42";
             this.DesorbTextBox42.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox42.TabIndex = 85;
+            this.DesorbTextBox42.TabStop = false;
             // 
             // DesorbTextBox59
             // 
@@ -985,6 +1013,7 @@ namespace GasFormsApp
             this.DesorbTextBox59.Name = "DesorbTextBox59";
             this.DesorbTextBox59.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox59.TabIndex = 102;
+            this.DesorbTextBox59.TabStop = false;
             // 
             // DesorbTextBox52
             // 
@@ -994,6 +1023,7 @@ namespace GasFormsApp
             this.DesorbTextBox52.Name = "DesorbTextBox52";
             this.DesorbTextBox52.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox52.TabIndex = 95;
+            this.DesorbTextBox52.TabStop = false;
             // 
             // DesorbTextBox49
             // 
@@ -1003,6 +1033,7 @@ namespace GasFormsApp
             this.DesorbTextBox49.Name = "DesorbTextBox49";
             this.DesorbTextBox49.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox49.TabIndex = 92;
+            this.DesorbTextBox49.TabStop = false;
             // 
             // DesorbTextBox39
             // 
@@ -1012,6 +1043,7 @@ namespace GasFormsApp
             this.DesorbTextBox39.Name = "DesorbTextBox39";
             this.DesorbTextBox39.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox39.TabIndex = 82;
+            this.DesorbTextBox39.TabStop = false;
             // 
             // DesorbTextBox33
             // 
@@ -1021,6 +1053,7 @@ namespace GasFormsApp
             this.DesorbTextBox33.Name = "DesorbTextBox33";
             this.DesorbTextBox33.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox33.TabIndex = 76;
+            this.DesorbTextBox33.TabStop = false;
             // 
             // DesorbTextBox43
             // 
@@ -1030,6 +1063,7 @@ namespace GasFormsApp
             this.DesorbTextBox43.Name = "DesorbTextBox43";
             this.DesorbTextBox43.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox43.TabIndex = 86;
+            this.DesorbTextBox43.TabStop = false;
             // 
             // DesorbTextBox58
             // 
@@ -1039,6 +1073,7 @@ namespace GasFormsApp
             this.DesorbTextBox58.Name = "DesorbTextBox58";
             this.DesorbTextBox58.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox58.TabIndex = 101;
+            this.DesorbTextBox58.TabStop = false;
             // 
             // DesorbTextBox53
             // 
@@ -1048,6 +1083,7 @@ namespace GasFormsApp
             this.DesorbTextBox53.Name = "DesorbTextBox53";
             this.DesorbTextBox53.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox53.TabIndex = 96;
+            this.DesorbTextBox53.TabStop = false;
             // 
             // DesorbTextBox48
             // 
@@ -1057,6 +1093,7 @@ namespace GasFormsApp
             this.DesorbTextBox48.Name = "DesorbTextBox48";
             this.DesorbTextBox48.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox48.TabIndex = 91;
+            this.DesorbTextBox48.TabStop = false;
             // 
             // DesorbTextBox38
             // 
@@ -1066,6 +1103,7 @@ namespace GasFormsApp
             this.DesorbTextBox38.Name = "DesorbTextBox38";
             this.DesorbTextBox38.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox38.TabIndex = 81;
+            this.DesorbTextBox38.TabStop = false;
             // 
             // DesorbTextBox34
             // 
@@ -1075,6 +1113,7 @@ namespace GasFormsApp
             this.DesorbTextBox34.Name = "DesorbTextBox34";
             this.DesorbTextBox34.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox34.TabIndex = 77;
+            this.DesorbTextBox34.TabStop = false;
             // 
             // DesorbTextBox44
             // 
@@ -1084,6 +1123,7 @@ namespace GasFormsApp
             this.DesorbTextBox44.Name = "DesorbTextBox44";
             this.DesorbTextBox44.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox44.TabIndex = 87;
+            this.DesorbTextBox44.TabStop = false;
             // 
             // DesorbTextBox57
             // 
@@ -1093,6 +1133,7 @@ namespace GasFormsApp
             this.DesorbTextBox57.Name = "DesorbTextBox57";
             this.DesorbTextBox57.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox57.TabIndex = 100;
+            this.DesorbTextBox57.TabStop = false;
             // 
             // DesorbTextBox54
             // 
@@ -1102,6 +1143,7 @@ namespace GasFormsApp
             this.DesorbTextBox54.Name = "DesorbTextBox54";
             this.DesorbTextBox54.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox54.TabIndex = 97;
+            this.DesorbTextBox54.TabStop = false;
             // 
             // DesorbTextBox47
             // 
@@ -1111,6 +1153,7 @@ namespace GasFormsApp
             this.DesorbTextBox47.Name = "DesorbTextBox47";
             this.DesorbTextBox47.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox47.TabIndex = 90;
+            this.DesorbTextBox47.TabStop = false;
             // 
             // DesorbTextBox37
             // 
@@ -1120,6 +1163,7 @@ namespace GasFormsApp
             this.DesorbTextBox37.Name = "DesorbTextBox37";
             this.DesorbTextBox37.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox37.TabIndex = 80;
+            this.DesorbTextBox37.TabStop = false;
             // 
             // DesorbTextBox35
             // 
@@ -1129,6 +1173,7 @@ namespace GasFormsApp
             this.DesorbTextBox35.Name = "DesorbTextBox35";
             this.DesorbTextBox35.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox35.TabIndex = 78;
+            this.DesorbTextBox35.TabStop = false;
             // 
             // DesorbTextBox45
             // 
@@ -1138,6 +1183,7 @@ namespace GasFormsApp
             this.DesorbTextBox45.Name = "DesorbTextBox45";
             this.DesorbTextBox45.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox45.TabIndex = 88;
+            this.DesorbTextBox45.TabStop = false;
             // 
             // DesorbTextBox56
             // 
@@ -1147,6 +1193,7 @@ namespace GasFormsApp
             this.DesorbTextBox56.Name = "DesorbTextBox56";
             this.DesorbTextBox56.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox56.TabIndex = 99;
+            this.DesorbTextBox56.TabStop = false;
             // 
             // DesorbTextBox55
             // 
@@ -1156,6 +1203,7 @@ namespace GasFormsApp
             this.DesorbTextBox55.Name = "DesorbTextBox55";
             this.DesorbTextBox55.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox55.TabIndex = 98;
+            this.DesorbTextBox55.TabStop = false;
             // 
             // DesorbTextBox46
             // 
@@ -1165,6 +1213,7 @@ namespace GasFormsApp
             this.DesorbTextBox46.Name = "DesorbTextBox46";
             this.DesorbTextBox46.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox46.TabIndex = 89;
+            this.DesorbTextBox46.TabStop = false;
             // 
             // DesorbTextBox36
             // 
@@ -1174,6 +1223,7 @@ namespace GasFormsApp
             this.DesorbTextBox36.Name = "DesorbTextBox36";
             this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox36.TabIndex = 79;
+            this.DesorbTextBox36.TabStop = false;
             // 
             // label4
             // 
@@ -1505,6 +1555,19 @@ namespace GasFormsApp
             this.label81.TabIndex = 45;
             this.label81.Text = "115:";
             // 
+            // DrawCurvesButton
+            // 
+            this.DrawCurvesButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DrawCurvesButton.Image = ((System.Drawing.Image)(resources.GetObject("DrawCurvesButton.Image")));
+            this.DrawCurvesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DrawCurvesButton.Location = new System.Drawing.Point(682, 519);
+            this.DrawCurvesButton.Name = "DrawCurvesButton";
+            this.DrawCurvesButton.Size = new System.Drawing.Size(130, 41);
+            this.DrawCurvesButton.TabIndex = 33;
+            this.DrawCurvesButton.Text = "计    算";
+            this.DrawCurvesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DrawCurvesButton.UseVisualStyleBackColor = true;
+            // 
             // DesorbTextBox30
             // 
             this.DesorbTextBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1748,7 +1811,7 @@ namespace GasFormsApp
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label23.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label23.Location = new System.Drawing.Point(116, 106);
             this.label23.Name = "label23";
@@ -1759,7 +1822,7 @@ namespace GasFormsApp
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label33.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label33.Location = new System.Drawing.Point(247, 106);
             this.label33.Name = "label33";
@@ -1770,7 +1833,7 @@ namespace GasFormsApp
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label43.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label43.Location = new System.Drawing.Point(381, 106);
             this.label43.Name = "label43";
@@ -1781,7 +1844,7 @@ namespace GasFormsApp
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label24.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.Location = new System.Drawing.Point(116, 138);
             this.label24.Name = "label24";
@@ -1792,7 +1855,7 @@ namespace GasFormsApp
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label52.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label52.Location = new System.Drawing.Point(381, 394);
             this.label52.Name = "label52";
@@ -1803,7 +1866,7 @@ namespace GasFormsApp
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label34.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label34.Location = new System.Drawing.Point(247, 138);
             this.label34.Name = "label34";
@@ -1814,7 +1877,7 @@ namespace GasFormsApp
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label44.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label44.Location = new System.Drawing.Point(381, 138);
             this.label44.Name = "label44";
@@ -1825,7 +1888,7 @@ namespace GasFormsApp
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.Location = new System.Drawing.Point(247, 394);
             this.label42.Name = "label42";
@@ -1836,7 +1899,7 @@ namespace GasFormsApp
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label32.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label32.Location = new System.Drawing.Point(108, 394);
             this.label32.Name = "label32";
@@ -1847,7 +1910,7 @@ namespace GasFormsApp
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label25.Location = new System.Drawing.Point(116, 170);
             this.label25.Name = "label25";
@@ -1858,7 +1921,7 @@ namespace GasFormsApp
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label35.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label35.Location = new System.Drawing.Point(247, 170);
             this.label35.Name = "label35";
@@ -1869,7 +1932,7 @@ namespace GasFormsApp
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label51.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label51.Location = new System.Drawing.Point(381, 362);
             this.label51.Name = "label51";
@@ -1880,7 +1943,7 @@ namespace GasFormsApp
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label45.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label45.Location = new System.Drawing.Point(381, 170);
             this.label45.Name = "label45";
@@ -1891,7 +1954,7 @@ namespace GasFormsApp
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label41.Location = new System.Drawing.Point(247, 362);
             this.label41.Name = "label41";
@@ -1902,7 +1965,7 @@ namespace GasFormsApp
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label31.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label31.Location = new System.Drawing.Point(116, 362);
             this.label31.Name = "label31";
@@ -1913,7 +1976,7 @@ namespace GasFormsApp
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label26.Location = new System.Drawing.Point(116, 202);
             this.label26.Name = "label26";
@@ -1924,7 +1987,7 @@ namespace GasFormsApp
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label36.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label36.Location = new System.Drawing.Point(247, 202);
             this.label36.Name = "label36";
@@ -1935,7 +1998,7 @@ namespace GasFormsApp
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label50.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label50.Location = new System.Drawing.Point(381, 330);
             this.label50.Name = "label50";
@@ -1946,7 +2009,7 @@ namespace GasFormsApp
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label46.Location = new System.Drawing.Point(381, 202);
             this.label46.Name = "label46";
@@ -1957,7 +2020,7 @@ namespace GasFormsApp
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label40.Location = new System.Drawing.Point(247, 330);
             this.label40.Name = "label40";
@@ -1968,7 +2031,7 @@ namespace GasFormsApp
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label30.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label30.Location = new System.Drawing.Point(116, 330);
             this.label30.Name = "label30";
@@ -1979,7 +2042,7 @@ namespace GasFormsApp
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label27.Location = new System.Drawing.Point(116, 234);
             this.label27.Name = "label27";
@@ -1990,7 +2053,7 @@ namespace GasFormsApp
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label37.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label37.Location = new System.Drawing.Point(247, 234);
             this.label37.Name = "label37";
@@ -2001,7 +2064,7 @@ namespace GasFormsApp
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label49.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label49.Location = new System.Drawing.Point(381, 298);
             this.label49.Name = "label49";
@@ -2012,7 +2075,7 @@ namespace GasFormsApp
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label47.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label47.Location = new System.Drawing.Point(381, 234);
             this.label47.Name = "label47";
@@ -2023,7 +2086,7 @@ namespace GasFormsApp
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label39.Location = new System.Drawing.Point(247, 298);
             this.label39.Name = "label39";
@@ -2034,7 +2097,7 @@ namespace GasFormsApp
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label29.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label29.Location = new System.Drawing.Point(116, 298);
             this.label29.Name = "label29";
@@ -2045,7 +2108,7 @@ namespace GasFormsApp
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label28.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.Location = new System.Drawing.Point(116, 266);
             this.label28.Name = "label28";
@@ -2056,7 +2119,7 @@ namespace GasFormsApp
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label38.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label38.Location = new System.Drawing.Point(247, 266);
             this.label38.Name = "label38";
@@ -2067,7 +2130,7 @@ namespace GasFormsApp
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label48.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label48.Location = new System.Drawing.Point(381, 266);
             this.label48.Name = "label48";
@@ -2078,6 +2141,7 @@ namespace GasFormsApp
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage3.Controls.Add(this.LabDesorbButton);
             this.tabPage3.Controls.Add(this.S2DesorpVolCalTextBox);
             this.tabPage3.Controls.Add(this.label122);
             this.tabPage3.Controls.Add(this.S1DesorpVolCalTextBox);
@@ -2107,6 +2171,19 @@ namespace GasFormsApp
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
+            // LabDesorbButton
+            // 
+            this.LabDesorbButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabDesorbButton.Image = ((System.Drawing.Image)(resources.GetObject("LabDesorbButton.Image")));
+            this.LabDesorbButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabDesorbButton.Location = new System.Drawing.Point(837, 533);
+            this.LabDesorbButton.Name = "LabDesorbButton";
+            this.LabDesorbButton.Size = new System.Drawing.Size(130, 41);
+            this.LabDesorbButton.TabIndex = 37;
+            this.LabDesorbButton.Text = "计    算";
+            this.LabDesorbButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LabDesorbButton.UseVisualStyleBackColor = true;
+            // 
             // S2DesorpVolCalTextBox
             // 
             this.S2DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
@@ -2116,6 +2193,7 @@ namespace GasFormsApp
             this.S2DesorpVolCalTextBox.ReadOnly = true;
             this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(258, 26);
             this.S2DesorpVolCalTextBox.TabIndex = 36;
+            this.S2DesorpVolCalTextBox.TabStop = false;
             this.S2DesorpVolCalTextBox.Text = "0";
             // 
             // label122
@@ -2138,6 +2216,7 @@ namespace GasFormsApp
             this.S1DesorpVolCalTextBox.ReadOnly = true;
             this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(258, 26);
             this.S1DesorpVolCalTextBox.TabIndex = 34;
+            this.S1DesorpVolCalTextBox.TabStop = false;
             this.S1DesorpVolCalTextBox.Text = "0";
             // 
             // label121
@@ -2160,6 +2239,7 @@ namespace GasFormsApp
             this.DesorpVolNormalCalTextBox.ReadOnly = true;
             this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(258, 26);
             this.DesorpVolNormalCalTextBox.TabIndex = 31;
+            this.DesorpVolNormalCalTextBox.TabStop = false;
             this.DesorpVolNormalCalTextBox.Text = "0";
             // 
             // label22
@@ -2219,13 +2299,12 @@ namespace GasFormsApp
             this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(709, 67);
             this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
             this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(258, 26);
-            this.DesorpVolNormalTextBox.TabIndex = 14;
-            this.DesorpVolNormalTextBox.Text = "0";
+            this.DesorpVolNormalTextBox.TabIndex = 1;
             // 
             // label84
             // 
             this.label84.AutoSize = true;
-            this.label84.BackColor = System.Drawing.Color.Magenta;
+            this.label84.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label84.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label84.Location = new System.Drawing.Point(513, 70);
             this.label84.Name = "label84";
@@ -2239,13 +2318,12 @@ namespace GasFormsApp
             this.Sample2WeightTextBox.Location = new System.Drawing.Point(709, 253);
             this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
             this.Sample2WeightTextBox.Size = new System.Drawing.Size(258, 26);
-            this.Sample2WeightTextBox.TabIndex = 16;
-            this.Sample2WeightTextBox.Text = "0";
+            this.Sample2WeightTextBox.TabIndex = 3;
             // 
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.Color.Fuchsia;
+            this.label85.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label85.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label85.Location = new System.Drawing.Point(505, 256);
             this.label85.Name = "label85";
@@ -2262,6 +2340,7 @@ namespace GasFormsApp
             this.CrushDesorpTextBox.ReadOnly = true;
             this.CrushDesorpTextBox.Size = new System.Drawing.Size(258, 26);
             this.CrushDesorpTextBox.TabIndex = 24;
+            this.CrushDesorpTextBox.TabStop = false;
             this.CrushDesorpTextBox.Text = "0";
             // 
             // label86
@@ -2281,13 +2360,12 @@ namespace GasFormsApp
             this.S2DesorpVolTextBox.Location = new System.Drawing.Point(709, 337);
             this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
             this.S2DesorpVolTextBox.Size = new System.Drawing.Size(258, 26);
-            this.S2DesorpVolTextBox.TabIndex = 23;
-            this.S2DesorpVolTextBox.Text = "0";
+            this.S2DesorpVolTextBox.TabIndex = 5;
             // 
             // label87
             // 
             this.label87.AutoSize = true;
-            this.label87.BackColor = System.Drawing.Color.Fuchsia;
+            this.label87.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label87.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label87.Location = new System.Drawing.Point(505, 340);
             this.label87.Name = "label87";
@@ -2301,13 +2379,12 @@ namespace GasFormsApp
             this.S1DesorpVolTextBox.Location = new System.Drawing.Point(709, 295);
             this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
             this.S1DesorpVolTextBox.Size = new System.Drawing.Size(258, 26);
-            this.S1DesorpVolTextBox.TabIndex = 19;
-            this.S1DesorpVolTextBox.Text = "0";
+            this.S1DesorpVolTextBox.TabIndex = 4;
             // 
             // label88
             // 
             this.label88.AutoSize = true;
-            this.label88.BackColor = System.Drawing.Color.Fuchsia;
+            this.label88.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label88.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label88.Location = new System.Drawing.Point(505, 298);
             this.label88.Name = "label88";
@@ -2321,13 +2398,12 @@ namespace GasFormsApp
             this.Sample1WeightTextBox.Location = new System.Drawing.Point(709, 211);
             this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
             this.Sample1WeightTextBox.Size = new System.Drawing.Size(258, 26);
-            this.Sample1WeightTextBox.TabIndex = 15;
-            this.Sample1WeightTextBox.Text = "0";
+            this.Sample1WeightTextBox.TabIndex = 2;
             // 
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.BackColor = System.Drawing.Color.Fuchsia;
+            this.label89.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label89.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label89.Location = new System.Drawing.Point(505, 212);
             this.label89.Name = "label89";
@@ -2338,6 +2414,7 @@ namespace GasFormsApp
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage4.Controls.Add(this.ExpCalcButton);
             this.tabPage4.Controls.Add(this.Wc_TextBox);
             this.tabPage4.Controls.Add(this.label21);
             this.tabPage4.Controls.Add(this.VadTextBox);
@@ -2377,19 +2454,20 @@ namespace GasFormsApp
             // 
             // Wc_TextBox
             // 
-            this.Wc_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.Wc_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.Wc_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Wc_TextBox.Location = new System.Drawing.Point(880, 325);
             this.Wc_TextBox.Name = "Wc_TextBox";
             this.Wc_TextBox.ReadOnly = true;
             this.Wc_TextBox.Size = new System.Drawing.Size(179, 26);
             this.Wc_TextBox.TabIndex = 57;
+            this.Wc_TextBox.TabStop = false;
             this.Wc_TextBox.Text = "0";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Fuchsia;
+            this.label21.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(792, 328);
             this.label21.Name = "label21";
@@ -2403,13 +2481,12 @@ namespace GasFormsApp
             this.VadTextBox.Location = new System.Drawing.Point(431, 454);
             this.VadTextBox.Name = "VadTextBox";
             this.VadTextBox.Size = new System.Drawing.Size(179, 26);
-            this.VadTextBox.TabIndex = 55;
-            this.VadTextBox.Text = "0";
+            this.VadTextBox.TabIndex = 7;
             // 
             // label111
             // 
             this.label111.AutoSize = true;
-            this.label111.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label111.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label111.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label111.Location = new System.Drawing.Point(343, 457);
             this.label111.Name = "label111";
@@ -2419,19 +2496,20 @@ namespace GasFormsApp
             // 
             // P_TextBox
             // 
-            this.P_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.P_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.P_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.P_TextBox.Location = new System.Drawing.Point(880, 460);
             this.P_TextBox.Name = "P_TextBox";
             this.P_TextBox.ReadOnly = true;
             this.P_TextBox.Size = new System.Drawing.Size(179, 26);
             this.P_TextBox.TabIndex = 53;
+            this.P_TextBox.TabStop = false;
             this.P_TextBox.Text = "0";
             // 
             // label102
             // 
             this.label102.AutoSize = true;
-            this.label102.BackColor = System.Drawing.Color.Fuchsia;
+            this.label102.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label102.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label102.Location = new System.Drawing.Point(808, 465);
             this.label102.Name = "label102";
@@ -2441,30 +2519,32 @@ namespace GasFormsApp
             // 
             // Wa_TextBox
             // 
-            this.Wa_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.Wa_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.Wa_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Wa_TextBox.Location = new System.Drawing.Point(880, 252);
             this.Wa_TextBox.Name = "Wa_TextBox";
             this.Wa_TextBox.ReadOnly = true;
             this.Wa_TextBox.Size = new System.Drawing.Size(179, 26);
             this.Wa_TextBox.TabIndex = 43;
+            this.Wa_TextBox.TabStop = false;
             this.Wa_TextBox.Text = "0";
             // 
             // W2_TextBox
             // 
-            this.W2_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.W2_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W2_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.W2_TextBox.Location = new System.Drawing.Point(880, 123);
             this.W2_TextBox.Name = "W2_TextBox";
             this.W2_TextBox.ReadOnly = true;
             this.W2_TextBox.Size = new System.Drawing.Size(179, 26);
             this.W2_TextBox.TabIndex = 44;
+            this.W2_TextBox.TabStop = false;
             this.W2_TextBox.Text = "0";
             // 
             // label91
             // 
             this.label91.AutoSize = true;
-            this.label91.BackColor = System.Drawing.Color.Fuchsia;
+            this.label91.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label91.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label91.Location = new System.Drawing.Point(792, 255);
             this.label91.Name = "label91";
@@ -2474,19 +2554,20 @@ namespace GasFormsApp
             // 
             // W_TextBox
             // 
-            this.W_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.W_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.W_TextBox.Location = new System.Drawing.Point(880, 387);
             this.W_TextBox.Name = "W_TextBox";
             this.W_TextBox.ReadOnly = true;
             this.W_TextBox.Size = new System.Drawing.Size(179, 26);
             this.W_TextBox.TabIndex = 39;
+            this.W_TextBox.TabStop = false;
             this.W_TextBox.Text = "0";
             // 
             // label92
             // 
             this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.Fuchsia;
+            this.label92.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label92.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label92.Location = new System.Drawing.Point(792, 126);
             this.label92.Name = "label92";
@@ -2497,7 +2578,7 @@ namespace GasFormsApp
             // label93
             // 
             this.label93.AutoSize = true;
-            this.label93.BackColor = System.Drawing.Color.Fuchsia;
+            this.label93.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label93.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label93.Location = new System.Drawing.Point(792, 390);
             this.label93.Name = "label93";
@@ -2507,19 +2588,20 @@ namespace GasFormsApp
             // 
             // W3_TextBox
             // 
-            this.W3_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.W3_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W3_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.W3_TextBox.Location = new System.Drawing.Point(880, 189);
             this.W3_TextBox.Name = "W3_TextBox";
             this.W3_TextBox.ReadOnly = true;
             this.W3_TextBox.Size = new System.Drawing.Size(179, 26);
             this.W3_TextBox.TabIndex = 40;
+            this.W3_TextBox.TabStop = false;
             this.W3_TextBox.Text = "0";
             // 
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.BackColor = System.Drawing.Color.Fuchsia;
+            this.label94.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label94.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label94.Location = new System.Drawing.Point(792, 192);
             this.label94.Name = "label94";
@@ -2529,19 +2611,20 @@ namespace GasFormsApp
             // 
             // W1_TextBox
             // 
-            this.W1_TextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.W1_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W1_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.W1_TextBox.Location = new System.Drawing.Point(880, 60);
             this.W1_TextBox.Name = "W1_TextBox";
             this.W1_TextBox.ReadOnly = true;
             this.W1_TextBox.Size = new System.Drawing.Size(179, 26);
             this.W1_TextBox.TabIndex = 41;
+            this.W1_TextBox.TabStop = false;
             this.W1_TextBox.Text = "0";
             // 
             // label95
             // 
             this.label95.AutoSize = true;
-            this.label95.BackColor = System.Drawing.Color.Fuchsia;
+            this.label95.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label95.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label95.Location = new System.Drawing.Point(792, 63);
             this.label95.Name = "label95";
@@ -2551,13 +2634,14 @@ namespace GasFormsApp
             // 
             // NonDesorpGasQtyTextBox
             // 
-            this.NonDesorpGasQtyTextBox.BackColor = System.Drawing.Color.DarkGray;
+            this.NonDesorpGasQtyTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.NonDesorpGasQtyTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.NonDesorpGasQtyTextBox.Location = new System.Drawing.Point(508, 518);
             this.NonDesorpGasQtyTextBox.Name = "NonDesorpGasQtyTextBox";
             this.NonDesorpGasQtyTextBox.ReadOnly = true;
             this.NonDesorpGasQtyTextBox.Size = new System.Drawing.Size(102, 26);
             this.NonDesorpGasQtyTextBox.TabIndex = 31;
+            this.NonDesorpGasQtyTextBox.TabStop = false;
             this.NonDesorpGasQtyTextBox.Text = "0";
             // 
             // AadTextBox
@@ -2566,8 +2650,7 @@ namespace GasFormsApp
             this.AadTextBox.Location = new System.Drawing.Point(431, 253);
             this.AadTextBox.Name = "AadTextBox";
             this.AadTextBox.Size = new System.Drawing.Size(179, 26);
-            this.AadTextBox.TabIndex = 28;
-            this.AadTextBox.Text = "0";
+            this.AadTextBox.TabIndex = 4;
             // 
             // PorosityTextBox
             // 
@@ -2575,13 +2658,12 @@ namespace GasFormsApp
             this.PorosityTextBox.Location = new System.Drawing.Point(431, 319);
             this.PorosityTextBox.Name = "PorosityTextBox";
             this.PorosityTextBox.Size = new System.Drawing.Size(179, 26);
-            this.PorosityTextBox.TabIndex = 29;
-            this.PorosityTextBox.Text = "0";
+            this.PorosityTextBox.TabIndex = 5;
             // 
             // label97
             // 
             this.label97.AutoSize = true;
-            this.label97.BackColor = System.Drawing.Color.Fuchsia;
+            this.label97.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label97.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label97.Location = new System.Drawing.Point(343, 521);
             this.label97.Name = "label97";
@@ -2595,13 +2677,12 @@ namespace GasFormsApp
             this.AdsorpConstBTextBox.Location = new System.Drawing.Point(431, 124);
             this.AdsorpConstBTextBox.Name = "AdsorpConstBTextBox";
             this.AdsorpConstBTextBox.Size = new System.Drawing.Size(179, 26);
-            this.AdsorpConstBTextBox.TabIndex = 26;
-            this.AdsorpConstBTextBox.Text = "0";
+            this.AdsorpConstBTextBox.TabIndex = 2;
             // 
             // label98
             // 
             this.label98.AutoSize = true;
-            this.label98.BackColor = System.Drawing.Color.Fuchsia;
+            this.label98.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label98.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label98.Location = new System.Drawing.Point(343, 322);
             this.label98.Name = "label98";
@@ -2612,7 +2693,7 @@ namespace GasFormsApp
             // label99
             // 
             this.label99.AutoSize = true;
-            this.label99.BackColor = System.Drawing.Color.Fuchsia;
+            this.label99.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label99.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label99.Location = new System.Drawing.Point(343, 256);
             this.label99.Name = "label99";
@@ -2626,13 +2707,12 @@ namespace GasFormsApp
             this.AppDensityTextBox.Location = new System.Drawing.Point(431, 388);
             this.AppDensityTextBox.Name = "AppDensityTextBox";
             this.AppDensityTextBox.Size = new System.Drawing.Size(179, 26);
-            this.AppDensityTextBox.TabIndex = 30;
-            this.AppDensityTextBox.Text = "0";
+            this.AppDensityTextBox.TabIndex = 6;
             // 
             // label100
             // 
             this.label100.AutoSize = true;
-            this.label100.BackColor = System.Drawing.Color.Fuchsia;
+            this.label100.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label100.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label100.Location = new System.Drawing.Point(343, 127);
             this.label100.Name = "label100";
@@ -2643,7 +2723,7 @@ namespace GasFormsApp
             // label108
             // 
             this.label108.AutoSize = true;
-            this.label108.BackColor = System.Drawing.Color.Fuchsia;
+            this.label108.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label108.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label108.Location = new System.Drawing.Point(343, 391);
             this.label108.Name = "label108";
@@ -2657,13 +2737,12 @@ namespace GasFormsApp
             this.MadTextBox.Location = new System.Drawing.Point(431, 190);
             this.MadTextBox.Name = "MadTextBox";
             this.MadTextBox.Size = new System.Drawing.Size(179, 26);
-            this.MadTextBox.TabIndex = 27;
-            this.MadTextBox.Text = "0";
+            this.MadTextBox.TabIndex = 3;
             // 
             // label109
             // 
             this.label109.AutoSize = true;
-            this.label109.BackColor = System.Drawing.Color.Fuchsia;
+            this.label109.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label109.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label109.Location = new System.Drawing.Point(343, 193);
             this.label109.Name = "label109";
@@ -2677,13 +2756,12 @@ namespace GasFormsApp
             this.AdsorpConstATextBox.Location = new System.Drawing.Point(431, 61);
             this.AdsorpConstATextBox.Name = "AdsorpConstATextBox";
             this.AdsorpConstATextBox.Size = new System.Drawing.Size(179, 26);
-            this.AdsorpConstATextBox.TabIndex = 25;
-            this.AdsorpConstATextBox.Text = "0";
+            this.AdsorpConstATextBox.TabIndex = 1;
             // 
             // label110
             // 
             this.label110.AutoSize = true;
-            this.label110.BackColor = System.Drawing.Color.Fuchsia;
+            this.label110.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label110.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label110.Location = new System.Drawing.Point(343, 64);
             this.label110.Name = "label110";
@@ -2694,7 +2772,7 @@ namespace GasFormsApp
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage5.Controls.Add(this.button2);
+            this.tabPage5.Controls.Add(this.GenReportButton);
             this.tabPage5.Controls.Add(this.RemarkTextBox);
             this.tabPage5.Controls.Add(this.label120);
             this.tabPage5.Controls.Add(this.dateTimePicker1);
@@ -2713,6 +2791,19 @@ namespace GasFormsApp
             this.tabPage5.Size = new System.Drawing.Size(1460, 629);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
+            // 
+            // GenReportButton
+            // 
+            this.GenReportButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GenReportButton.Image = global::GasFormsApp.Properties.Resources.保存;
+            this.GenReportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GenReportButton.Location = new System.Drawing.Point(1195, 420);
+            this.GenReportButton.Name = "GenReportButton";
+            this.GenReportButton.Size = new System.Drawing.Size(145, 50);
+            this.GenReportButton.TabIndex = 3;
+            this.GenReportButton.Text = "生 成 报 告";
+            this.GenReportButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GenReportButton.UseVisualStyleBackColor = true;
             // 
             // RemarkTextBox
             // 
@@ -2832,7 +2923,7 @@ namespace GasFormsApp
             this.GasCompGroupBox.Controls.Add(this.CH4_Lable);
             this.GasCompGroupBox.Location = new System.Drawing.Point(61, 59);
             this.GasCompGroupBox.Name = "GasCompGroupBox";
-            this.GasCompGroupBox.Size = new System.Drawing.Size(909, 337);
+            this.GasCompGroupBox.Size = new System.Drawing.Size(909, 355);
             this.GasCompGroupBox.TabIndex = 10;
             this.GasCompGroupBox.TabStop = false;
             this.GasCompGroupBox.Text = "自然瓦斯成分";
@@ -3089,40 +3180,22 @@ namespace GasFormsApp
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox3
+            // InputCheckTimer
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.Location = new System.Drawing.Point(717, 91);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
+            this.InputCheckTimer.Tick += new System.EventHandler(this.InputCheckTimer_Tick);
             // 
-            // DrawCurvesButton
+            // ExpCalcButton
             // 
-            this.DrawCurvesButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DrawCurvesButton.Image = ((System.Drawing.Image)(resources.GetObject("DrawCurvesButton.Image")));
-            this.DrawCurvesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DrawCurvesButton.Location = new System.Drawing.Point(682, 519);
-            this.DrawCurvesButton.Name = "DrawCurvesButton";
-            this.DrawCurvesButton.Size = new System.Drawing.Size(130, 41);
-            this.DrawCurvesButton.TabIndex = 33;
-            this.DrawCurvesButton.Text = "计    算";
-            this.DrawCurvesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DrawCurvesButton.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Image = global::GasFormsApp.Properties.Resources.保存;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(768, 557);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 50);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "生 成 报 告";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.ExpCalcButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ExpCalcButton.Image = ((System.Drawing.Image)(resources.GetObject("ExpCalcButton.Image")));
+            this.ExpCalcButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExpCalcButton.Location = new System.Drawing.Point(902, 521);
+            this.ExpCalcButton.Name = "ExpCalcButton";
+            this.ExpCalcButton.Size = new System.Drawing.Size(130, 41);
+            this.ExpCalcButton.TabIndex = 38;
+            this.ExpCalcButton.Text = "计    算";
+            this.ExpCalcButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExpCalcButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -3146,6 +3219,7 @@ namespace GasFormsApp
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -3155,7 +3229,6 @@ namespace GasFormsApp
             this.GasCompGroupBox.ResumeLayout(false);
             this.GasCompGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3186,7 +3259,6 @@ namespace GasFormsApp
         private Label label1;
         private Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private GroupBox groupBox2;
         private Label label23;
         private Label label33;
         private Label label43;
@@ -3394,7 +3466,7 @@ namespace GasFormsApp
         public TextBox VadTextBox;
         public TextBox NonDesorpGasQtyTextBox;
         public TextBox W1_TextBox;
-        public Button button2;
+        public Button GenReportButton;
         public CheckBox GasCompCheckBox;
         public GroupBox GasCompGroupBox;
         public ComboBox SampleModeComboBox;
@@ -3421,5 +3493,10 @@ namespace GasFormsApp
         public TextBox W_TextBox;
         public TextBox P_TextBox;
         public PictureBox pictureBox3;
+        private Timer InputCheckTimer;
+        public GroupBox groupBox2;
+        public Button LabDesorbButton;
+        public Button ExpCalcButton;
+        public ToolTip toolTip1;
     }
 }

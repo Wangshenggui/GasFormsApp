@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -14,46 +16,47 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
-            // 注册回调函数
-            _mainForm.DesorpVolNormalTextBox.TextChanged += TextModificationTriggered;
-            //_DesorpVolNormalCalTextBox.TextChanged += TextModificationTriggered;
+            _mainForm.toolTip1.SetToolTip(_mainForm.LabDesorbButton, "计算(Ctrl + D)");
 
-            _mainForm.Sample1WeightTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.Sample2WeightTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.S1DesorpVolTextBox.TextChanged += TextModificationTriggered;
-            //_mainForm.S1DesorpVolCalTextBox.TextChanged += TextModificationTriggered;
-            _mainForm.S2DesorpVolTextBox.TextChanged += TextModificationTriggered;
-            //_mainForm.S2DesorpVolCalTextBox.TextChanged += TextModificationTriggered;
-            //_mainForm.CrushDesorpTextBox.TextChanged += TextModificationTriggered;
-
-
-            //注册KeyPress回调函数
-            _mainForm.DesorpVolNormalTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.Sample1WeightTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.Sample2WeightTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.S1DesorpVolTextBox.KeyPress += NumericTextBox_KeyPress;
-            _mainForm.S2DesorpVolTextBox.KeyPress += NumericTextBox_KeyPress;
+            _mainForm.LabDesorbButton.Click += LabDesorbButton_Click;
         }
 
-        private void NumericTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void ValidateNumericTextBox(TextBox textBox)
         {
-            TextBox tb = sender as TextBox;
-            if (tb == null) return;
+            string input = textBox.Text;
 
-            // 公共的输入限制代码
-            // 允许数字和退格键
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\b')
+            // 重置颜色
+            textBox.BackColor = SystemColors.Window;
+
+            if (string.IsNullOrWhiteSpace(input))
             {
-                return;
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
-
-            // 允许一个小数点
-            if (e.KeyChar == '.' && !tb.Text.Contains("."))
+            else if (!double.TryParse(input, out double value) || value < 0)
             {
-                return;
+                textBox.BackColor = Color.Red;
             }
+        }
+        private void ValidateEmptyTextBox(TextBox textBox)
+        {
+            string input = textBox.Text;
 
-            e.Handled = true;
+            // 重置背景色
+            textBox.BackColor = SystemColors.Window;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+        }
+        public void TabControl_3_InputCheckTimer_Tick()
+        {
+            ValidateNumericTextBox(_mainForm.DesorpVolNormalTextBox);
+
+            ValidateNumericTextBox(_mainForm.Sample1WeightTextBox);
+            ValidateNumericTextBox(_mainForm.Sample2WeightTextBox);
+            ValidateNumericTextBox(_mainForm.S1DesorpVolTextBox);
+            ValidateNumericTextBox(_mainForm.S2DesorpVolTextBox);
         }
 
         void getMaxVal()
@@ -99,87 +102,36 @@ namespace GasFormsApp.TabControl
 
             return V0;
         }
-        private void TextModificationTriggered(object sender, EventArgs e)
+        public void LabDesorbButton_Click(object sender, EventArgs e)
         {
-            Control control = sender as Control;  // 转成 Control 类型（适用于 WinForms）
-            if (control != null)
-            {
-                string controlName = control.Name;
-                string controlText = control.Text;
-
-                double temp = 0;
-                switch (controlName)
-                {
-                    //常 压 解 吸 体 积(ml):
-                    case "DesorpVolNormalTextBox":
-                        temp = CalcStandardVolume(
+            double temp = 0;
+            temp = CalcStandardVolume(
                             (double)Convert.ToDecimal(_mainForm.DesorpVolNormalTextBox.Text),
                             (double)Convert.ToDecimal(_mainForm.LabAtmPressureTextBox.Text),
                             (double)Convert.ToDecimal(_mainForm.LabTempTextBox.Text),
                             5.886,
                             1000
                             );
-                        _mainForm.DesorpVolNormalCalTextBox.Text = temp.ToString("F4");
-                        break;
+            _mainForm.DesorpVolNormalCalTextBox.Text = temp.ToString("F4");
 
-
-
-                    //第 一 份 煤 样 重 量(g):
-                    case "Sample1WeightTextBox":
-                        
-                        getMaxVal();
-                        break;
-
-                    //第 二 份 煤 样 重 量(g):
-                    case "Sample2WeightTextBox":
-                        getMaxVal();
-                        break;
-
-                    //第一份煤样解吸量(ml ）:
-                    case "S1DesorpVolTextBox":
-                        temp = CalcStandardVolume(
+            temp = CalcStandardVolume(
                             (double)Convert.ToDecimal(_mainForm.S1DesorpVolTextBox.Text),
                             (double)Convert.ToDecimal(_mainForm.LabAtmPressureTextBox.Text),
                             (double)Convert.ToDecimal(_mainForm.LabTempTextBox.Text),
                             5.886,
                             1000
                             );
-                        _mainForm.S1DesorpVolCalTextBox.Text = temp.ToString("F4");
-                        getMaxVal();
-                        break;
+            _mainForm.S1DesorpVolCalTextBox.Text = temp.ToString("F4");
 
-                    //第一份煤样解吸校准值:
-                    case "S1DesorpVolCalTextBox":
-
-                        break;
-
-                    //第二份煤样解吸量(ml ）:
-                    case "S2DesorpVolTextBox":
-                        temp = CalcStandardVolume(
+            temp = CalcStandardVolume(
                             (double)Convert.ToDecimal(_mainForm.S2DesorpVolTextBox.Text),
                             (double)Convert.ToDecimal(_mainForm.LabAtmPressureTextBox.Text),
                             (double)Convert.ToDecimal(_mainForm.LabTempTextBox.Text),
                             5.886,
                             1000
                             );
-                        _mainForm.S2DesorpVolCalTextBox.Text = temp.ToString("F4");
-                        getMaxVal();
-                        break;
-
-                    //第二份煤样解吸校准值:
-                    case "S2DesorpVolCalTextBox":
-
-                        break;
-
-                    case "CrushDesorpTextBox":
-
-                        break;
-
-                    default:
-                        Console.WriteLine("未处理的控件");
-                        break;
-                }
-            }
+            _mainForm.S2DesorpVolCalTextBox.Text = temp.ToString("F4");
+            getMaxVal();
         }
     }
 }
