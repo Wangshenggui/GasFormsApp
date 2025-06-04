@@ -93,7 +93,6 @@ namespace GasFormsApp.WordPperation
                 {"AuditorText", _mainForm.AuditorTextBox.Text},//审 核 人 员
                 {"ReportTimeText", ReportTimeText},//出报告时间
                 {"RemarkText", _mainForm.RemarkTextBox.Text},//备注
-                
             };
             ReplacePlaceholders(memoryStream, placeholders);
 

@@ -67,7 +67,6 @@ namespace GasFormsApp
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
             this.t0TextBox = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
@@ -136,7 +135,6 @@ namespace GasFormsApp
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox11 = new System.Windows.Forms.TextBox();
@@ -252,7 +250,6 @@ namespace GasFormsApp
             this.AdsorpConstATextBox = new System.Windows.Forms.TextBox();
             this.label110 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.RemarkTextBox = new System.Windows.Forms.TextBox();
             this.label120 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -285,22 +282,25 @@ namespace GasFormsApp
             this.label103 = new System.Windows.Forms.Label();
             this.CH4_Lable = new System.Windows.Forms.Label();
             this.GasCompCheckBox = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.DrawCurvesButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.GasCompGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -375,9 +375,9 @@ namespace GasFormsApp
             // InitialVolumeTextBox
             // 
             this.InitialVolumeTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.InitialVolumeTextBox.Location = new System.Drawing.Point(254, 412);
+            this.InitialVolumeTextBox.Location = new System.Drawing.Point(231, 405);
             this.InitialVolumeTextBox.Name = "InitialVolumeTextBox";
-            this.InitialVolumeTextBox.Size = new System.Drawing.Size(292, 26);
+            this.InitialVolumeTextBox.Size = new System.Drawing.Size(240, 26);
             this.InitialVolumeTextBox.TabIndex = 3;
             this.InitialVolumeTextBox.Text = "0";
             // 
@@ -386,11 +386,11 @@ namespace GasFormsApp
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.RoyalBlue;
             this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(114, 415);
+            this.label19.Location = new System.Drawing.Point(81, 408);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(143, 16);
+            this.label19.Size = new System.Drawing.Size(151, 16);
             this.label19.TabIndex = 4;
-            this.label19.Text = "量管初始体积(ml):";
+            this.label19.Text = "量管初始体积 (ml):";
             // 
             // CoalSeamTextBox
             // 
@@ -754,7 +754,7 @@ namespace GasFormsApp
             this.groupBox2.Controls.Add(this.label79);
             this.groupBox2.Controls.Add(this.label80);
             this.groupBox2.Controls.Add(this.label81);
-            this.groupBox2.Controls.Add(this.button9);
+            this.groupBox2.Controls.Add(this.DrawCurvesButton);
             this.groupBox2.Controls.Add(this.DesorbTextBox30);
             this.groupBox2.Controls.Add(this.DesorbTextBox1);
             this.groupBox2.Controls.Add(this.DesorbTextBox11);
@@ -820,15 +820,6 @@ namespace GasFormsApp
             this.groupBox2.Size = new System.Drawing.Size(1052, 612);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.Location = new System.Drawing.Point(746, 210);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
             // 
             // UndDesorpCalTextBox
             // 
@@ -1513,19 +1504,6 @@ namespace GasFormsApp
             this.label81.Size = new System.Drawing.Size(39, 16);
             this.label81.TabIndex = 45;
             this.label81.Text = "115:";
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(657, 525);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(130, 41);
-            this.button9.TabIndex = 33;
-            this.button9.Text = "计    算";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // DesorbTextBox30
             // 
@@ -2736,103 +2714,96 @@ namespace GasFormsApp
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(8, 522);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(296, 85);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // RemarkTextBox
             // 
-            this.RemarkTextBox.Location = new System.Drawing.Point(149, 477);
+            this.RemarkTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RemarkTextBox.Location = new System.Drawing.Point(1107, 339);
             this.RemarkTextBox.Multiline = true;
             this.RemarkTextBox.Name = "RemarkTextBox";
-            this.RemarkTextBox.Size = new System.Drawing.Size(1206, 144);
+            this.RemarkTextBox.Size = new System.Drawing.Size(260, 57);
             this.RemarkTextBox.TabIndex = 47;
+            this.RemarkTextBox.Text = "测试煤样由贵州省煤安技术服务有限公司技术人员现场采集并送达，实验室基于来样进行测试。";
             // 
             // label120
             // 
             this.label120.AutoSize = true;
-            this.label120.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label120.Location = new System.Drawing.Point(70, 477);
+            this.label120.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label120.Location = new System.Drawing.Point(1049, 321);
             this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(96, 27);
+            this.label120.Size = new System.Drawing.Size(79, 16);
             this.label120.TabIndex = 48;
-            this.label120.Text = "备注：";
+            this.label120.Text = "备   注：";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(61, 418);
+            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(1107, 277);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 38);
+            this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // label119
             // 
             this.label119.AutoSize = true;
-            this.label119.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label119.Location = new System.Drawing.Point(3, 388);
+            this.label119.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label119.Location = new System.Drawing.Point(1049, 257);
             this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(180, 27);
+            this.label119.Size = new System.Drawing.Size(103, 16);
             this.label119.TabIndex = 46;
             this.label119.Text = "出报告时间：";
             // 
             // AuditorTextBox
             // 
-            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AuditorTextBox.Location = new System.Drawing.Point(61, 323);
+            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AuditorTextBox.Location = new System.Drawing.Point(1107, 212);
             this.AuditorTextBox.Name = "AuditorTextBox";
-            this.AuditorTextBox.Size = new System.Drawing.Size(260, 38);
+            this.AuditorTextBox.Size = new System.Drawing.Size(260, 26);
             this.AuditorTextBox.TabIndex = 43;
             // 
             // label118
             // 
             this.label118.AutoSize = true;
-            this.label118.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label118.Location = new System.Drawing.Point(3, 293);
+            this.label118.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label118.Location = new System.Drawing.Point(1049, 192);
             this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(152, 27);
+            this.label118.Size = new System.Drawing.Size(87, 16);
             this.label118.TabIndex = 44;
             this.label118.Text = "审核人员：";
             // 
             // LabTestersTextBox
             // 
-            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabTestersTextBox.Location = new System.Drawing.Point(61, 227);
+            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabTestersTextBox.Location = new System.Drawing.Point(1107, 146);
             this.LabTestersTextBox.Name = "LabTestersTextBox";
-            this.LabTestersTextBox.Size = new System.Drawing.Size(260, 38);
+            this.LabTestersTextBox.Size = new System.Drawing.Size(260, 26);
             this.LabTestersTextBox.TabIndex = 41;
             // 
             // label117
             // 
             this.label117.AutoSize = true;
-            this.label117.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label117.Location = new System.Drawing.Point(3, 197);
+            this.label117.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label117.Location = new System.Drawing.Point(1049, 126);
             this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(236, 27);
+            this.label117.Size = new System.Drawing.Size(135, 16);
             this.label117.TabIndex = 42;
             this.label117.Text = "实验室测试人员：";
             // 
             // UndTestersTextBox
             // 
-            this.UndTestersTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndTestersTextBox.Location = new System.Drawing.Point(61, 141);
+            this.UndTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndTestersTextBox.Location = new System.Drawing.Point(1107, 80);
             this.UndTestersTextBox.Name = "UndTestersTextBox";
-            this.UndTestersTextBox.Size = new System.Drawing.Size(260, 38);
+            this.UndTestersTextBox.Size = new System.Drawing.Size(260, 26);
             this.UndTestersTextBox.TabIndex = 40;
             // 
             // label116
             // 
             this.label116.AutoSize = true;
-            this.label116.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label116.Location = new System.Drawing.Point(3, 111);
+            this.label116.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label116.Location = new System.Drawing.Point(1049, 60);
             this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(208, 27);
+            this.label116.Size = new System.Drawing.Size(119, 16);
             this.label116.TabIndex = 40;
             this.label116.Text = "井下测试人员：";
             // 
@@ -2859,224 +2830,213 @@ namespace GasFormsApp
             this.GasCompGroupBox.Controls.Add(this.label104);
             this.GasCompGroupBox.Controls.Add(this.label103);
             this.GasCompGroupBox.Controls.Add(this.CH4_Lable);
-            this.GasCompGroupBox.Location = new System.Drawing.Point(327, 44);
+            this.GasCompGroupBox.Location = new System.Drawing.Point(61, 59);
             this.GasCompGroupBox.Name = "GasCompGroupBox";
-            this.GasCompGroupBox.Size = new System.Drawing.Size(1028, 412);
+            this.GasCompGroupBox.Size = new System.Drawing.Size(909, 337);
             this.GasCompGroupBox.TabIndex = 10;
             this.GasCompGroupBox.TabStop = false;
             this.GasCompGroupBox.Text = "自然瓦斯成分";
             // 
             // COTextBox
             // 
-            this.COTextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.COTextBox.Location = new System.Drawing.Point(54, 356);
+            this.COTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.COTextBox.Location = new System.Drawing.Point(54, 296);
             this.COTextBox.Name = "COTextBox";
-            this.COTextBox.Size = new System.Drawing.Size(179, 38);
+            this.COTextBox.Size = new System.Drawing.Size(179, 26);
             this.COTextBox.TabIndex = 39;
             this.COTextBox.Text = "0";
             // 
             // C2H2TextBox
             // 
-            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H2TextBox.Location = new System.Drawing.Point(798, 256);
+            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H2TextBox.Location = new System.Drawing.Point(678, 216);
             this.C2H2TextBox.Name = "C2H2TextBox";
-            this.C2H2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C2H2TextBox.Size = new System.Drawing.Size(179, 26);
             this.C2H2TextBox.TabIndex = 38;
             this.C2H2TextBox.Text = "0";
             // 
             // C3H6TextBox
             // 
-            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H6TextBox.Location = new System.Drawing.Point(426, 256);
+            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H6TextBox.Location = new System.Drawing.Point(366, 216);
             this.C3H6TextBox.Name = "C3H6TextBox";
-            this.C3H6TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C3H6TextBox.Size = new System.Drawing.Size(179, 26);
             this.C3H6TextBox.TabIndex = 37;
             this.C3H6TextBox.Text = "0";
             // 
             // C2H6TextBox
             // 
-            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H6TextBox.Location = new System.Drawing.Point(54, 256);
+            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H6TextBox.Location = new System.Drawing.Point(54, 216);
             this.C2H6TextBox.Name = "C2H6TextBox";
-            this.C2H6TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C2H6TextBox.Size = new System.Drawing.Size(179, 26);
             this.C2H6TextBox.TabIndex = 36;
             this.C2H6TextBox.Text = "0";
             // 
             // C3H8TextBox
             // 
-            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H8TextBox.Location = new System.Drawing.Point(798, 156);
+            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8TextBox.Location = new System.Drawing.Point(678, 136);
             this.C3H8TextBox.Name = "C3H8TextBox";
-            this.C3H8TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C3H8TextBox.Size = new System.Drawing.Size(179, 26);
             this.C3H8TextBox.TabIndex = 35;
             this.C3H8TextBox.Text = "0";
             // 
             // C2H4TextBox
             // 
-            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H4TextBox.Location = new System.Drawing.Point(426, 156);
+            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4TextBox.Location = new System.Drawing.Point(366, 136);
             this.C2H4TextBox.Name = "C2H4TextBox";
-            this.C2H4TextBox.Size = new System.Drawing.Size(179, 38);
+            this.C2H4TextBox.Size = new System.Drawing.Size(179, 26);
             this.C2H4TextBox.TabIndex = 34;
             this.C2H4TextBox.Text = "0";
             // 
             // O2TextBox
             // 
-            this.O2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.O2TextBox.Location = new System.Drawing.Point(54, 156);
+            this.O2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2TextBox.Location = new System.Drawing.Point(54, 136);
             this.O2TextBox.Name = "O2TextBox";
-            this.O2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.O2TextBox.Size = new System.Drawing.Size(179, 26);
             this.O2TextBox.TabIndex = 33;
             this.O2TextBox.Text = "0";
             // 
             // N2TextBox
             // 
-            this.N2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.N2TextBox.Location = new System.Drawing.Point(798, 56);
+            this.N2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2TextBox.Location = new System.Drawing.Point(678, 56);
             this.N2TextBox.Name = "N2TextBox";
-            this.N2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.N2TextBox.Size = new System.Drawing.Size(179, 26);
             this.N2TextBox.TabIndex = 32;
             this.N2TextBox.Text = "0";
             // 
             // CO2TextBox
             // 
-            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO2TextBox.Location = new System.Drawing.Point(426, 56);
+            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2TextBox.Location = new System.Drawing.Point(366, 56);
             this.CO2TextBox.Name = "CO2TextBox";
-            this.CO2TextBox.Size = new System.Drawing.Size(179, 38);
+            this.CO2TextBox.Size = new System.Drawing.Size(179, 26);
             this.CO2TextBox.TabIndex = 31;
             this.CO2TextBox.Text = "0";
             // 
             // CH4TextBox
             // 
-            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CH4TextBox.Location = new System.Drawing.Point(54, 56);
             this.CH4TextBox.Name = "CH4TextBox";
-            this.CH4TextBox.Size = new System.Drawing.Size(179, 38);
+            this.CH4TextBox.Size = new System.Drawing.Size(179, 26);
             this.CH4TextBox.TabIndex = 30;
             this.CH4TextBox.Text = "0";
             // 
             // label115
             // 
             this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label115.Location = new System.Drawing.Point(49, 326);
+            this.label115.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label115.Location = new System.Drawing.Point(49, 266);
             this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(87, 27);
+            this.label115.Size = new System.Drawing.Size(65, 21);
             this.label115.TabIndex = 29;
             this.label115.Text = "CO(%)";
             // 
             // label114
             // 
             this.label114.AutoSize = true;
-            this.label114.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label114.Location = new System.Drawing.Point(793, 226);
+            this.label114.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label114.Location = new System.Drawing.Point(673, 186);
             this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(103, 27);
+            this.label114.Size = new System.Drawing.Size(75, 21);
             this.label114.TabIndex = 28;
             this.label114.Text = "C₂H₂(%)";
             // 
             // label113
             // 
             this.label113.AutoSize = true;
-            this.label113.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label113.Location = new System.Drawing.Point(421, 226);
+            this.label113.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label113.Location = new System.Drawing.Point(361, 186);
             this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(103, 27);
+            this.label113.Size = new System.Drawing.Size(75, 21);
             this.label113.TabIndex = 27;
             this.label113.Text = "C₃H₆(%)";
             // 
             // label112
             // 
             this.label112.AutoSize = true;
-            this.label112.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label112.Location = new System.Drawing.Point(49, 226);
+            this.label112.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label112.Location = new System.Drawing.Point(49, 186);
             this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(103, 27);
+            this.label112.Size = new System.Drawing.Size(75, 21);
             this.label112.TabIndex = 26;
             this.label112.Text = "C₂H₆(%)";
             // 
             // label107
             // 
             this.label107.AutoSize = true;
-            this.label107.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label107.Location = new System.Drawing.Point(793, 126);
+            this.label107.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label107.Location = new System.Drawing.Point(673, 106);
             this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(103, 27);
+            this.label107.Size = new System.Drawing.Size(75, 21);
             this.label107.TabIndex = 25;
             this.label107.Text = "C₃H₈(%)";
             // 
             // label106
             // 
             this.label106.AutoSize = true;
-            this.label106.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label106.Location = new System.Drawing.Point(421, 126);
+            this.label106.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label106.Location = new System.Drawing.Point(361, 106);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(103, 27);
+            this.label106.Size = new System.Drawing.Size(75, 21);
             this.label106.TabIndex = 24;
             this.label106.Text = "C₂H₄(%)";
             // 
             // label105
             // 
             this.label105.AutoSize = true;
-            this.label105.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label105.Location = new System.Drawing.Point(49, 126);
+            this.label105.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label105.Location = new System.Drawing.Point(49, 106);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(80, 27);
+            this.label105.Size = new System.Drawing.Size(59, 21);
             this.label105.TabIndex = 23;
             this.label105.Text = "O₂(%)";
             // 
             // label104
             // 
             this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label104.Location = new System.Drawing.Point(793, 26);
+            this.label104.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label104.Location = new System.Drawing.Point(673, 26);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(80, 27);
+            this.label104.Size = new System.Drawing.Size(59, 21);
             this.label104.TabIndex = 22;
             this.label104.Text = "N₂(%)";
             // 
             // label103
             // 
             this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label103.Location = new System.Drawing.Point(421, 26);
+            this.label103.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label103.Location = new System.Drawing.Point(361, 26);
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(95, 27);
+            this.label103.Size = new System.Drawing.Size(70, 21);
             this.label103.TabIndex = 21;
             this.label103.Text = "CO₂(%)";
             // 
             // CH4_Lable
             // 
             this.CH4_Lable.AutoSize = true;
-            this.CH4_Lable.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4_Lable.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CH4_Lable.Location = new System.Drawing.Point(49, 26);
             this.CH4_Lable.Name = "CH4_Lable";
-            this.CH4_Lable.Size = new System.Drawing.Size(95, 27);
+            this.CH4_Lable.Size = new System.Drawing.Size(70, 21);
             this.CH4_Lable.TabIndex = 11;
             this.CH4_Lable.Text = "CH₄(%)";
             // 
             // GasCompCheckBox
             // 
             this.GasCompCheckBox.AutoSize = true;
-            this.GasCompCheckBox.Font = new System.Drawing.Font("宋体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.GasCompCheckBox.Location = new System.Drawing.Point(46, 29);
+            this.GasCompCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GasCompCheckBox.Location = new System.Drawing.Point(61, 29);
             this.GasCompCheckBox.Name = "GasCompCheckBox";
-            this.GasCompCheckBox.Size = new System.Drawing.Size(244, 31);
+            this.GasCompCheckBox.Size = new System.Drawing.Size(146, 20);
             this.GasCompCheckBox.TabIndex = 9;
             this.GasCompCheckBox.Text = "自然瓦斯成分(%)";
             this.GasCompCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -3118,6 +3078,52 @@ namespace GasFormsApp
             this.shapeContainer4.TabIndex = 9;
             this.shapeContainer4.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox3.Location = new System.Drawing.Point(717, 91);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
+            // DrawCurvesButton
+            // 
+            this.DrawCurvesButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DrawCurvesButton.Image = ((System.Drawing.Image)(resources.GetObject("DrawCurvesButton.Image")));
+            this.DrawCurvesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DrawCurvesButton.Location = new System.Drawing.Point(682, 519);
+            this.DrawCurvesButton.Name = "DrawCurvesButton";
+            this.DrawCurvesButton.Size = new System.Drawing.Size(130, 41);
+            this.DrawCurvesButton.TabIndex = 33;
+            this.DrawCurvesButton.Text = "计    算";
+            this.DrawCurvesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DrawCurvesButton.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Image = global::GasFormsApp.Properties.Resources.保存;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(768, 557);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(145, 50);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "生 成 报 告";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3140,7 +3146,6 @@ namespace GasFormsApp
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -3150,6 +3155,7 @@ namespace GasFormsApp
             this.GasCompGroupBox.ResumeLayout(false);
             this.GasCompGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3336,7 +3342,7 @@ namespace GasFormsApp
         public TextBox SamplingSpotTextBox;
         public TextBox MineNameTextBox;
         public TextBox CoalSeamTextBox;
-        public Button button9;
+        public Button DrawCurvesButton;
         public TextBox DesorbTextBox30;
         public TextBox DesorbTextBox11;
         public TextBox DesorbTextBox20;

@@ -21,7 +21,7 @@ namespace GasFormsApp.TabControl
             _mainForm = form;
 
             // 注册回调函数
-            _mainForm.button9.Click += button9_Click;
+            _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
 
             //注册KeyPress回调函数
             _mainForm.t0TextBox.KeyPress += NumericTextBox_KeyPress;
@@ -77,7 +77,7 @@ namespace GasFormsApp.TabControl
         }
 
 
-        private void button9_Click(object sender, EventArgs e)
+        private void DrawCurvesButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("你干么：" + 45);
             // 从文本框或其他地方获取数据，并将其传入函数
