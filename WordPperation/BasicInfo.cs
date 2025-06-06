@@ -56,7 +56,7 @@ namespace GasFormsApp.WordPperation
                 {"MoistureSample", MoistureSampleText},//煤样水分（%）
                 {"RawCoalMoisture", RawCoalMoistureText},//原煤水分（%）
                 {"InitialVolume", InitialVolumeText},//量管初始体积（ml）
-                {"UgDesorpVol", Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text).ToString("F3")},//井下解吸量W11(ml)
+                {"UgDesorpVol", Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text).ToString("F4")},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
                 {"DesorpVolNormal", _mainForm.DesorpVolNormalCalTextBox.Text},//实验室常压解吸W2(ml)
                 {"Sample1WeightText", _mainForm.Sample1WeightTextBox.Text},//粉碎后第1份煤样重(g)

@@ -210,13 +210,15 @@ ax.text(0.6, 275, f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \n    R2 = {best
 # abs_intercept = abs(intercept)
 # ax.set_title(f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \nR2 = {best_r2:.5f}', pad=15,fontsize=20)
 
+_xxx = 13
+_yyy = 500
 # 设置坐标轴范围
-ax.set_xlim(0, 9)
-ax.set_ylim(-300, 320)
+ax.set_xlim(0, _xxx)
+ax.set_ylim(-_yyy, _yyy+100)
 
 # 设置刻度
-ax.set_xticks(np.arange(1, 9, 1))  # X轴1到8，步长1
-ax.set_yticks(np.arange(-300, 301, 50))  # Y轴-60到140，步长20
+ax.set_xticks(np.arange(1, _xxx, 1))  # X轴1到8，步长1
+ax.set_yticks(np.arange(-_yyy, _yyy+1, 50))  # Y轴-60到140，步长20
 ax.tick_params(axis='x', labelsize=20)  # 设置X轴刻度标签字体大小为12
 ax.tick_params(axis='y', labelsize=20)  # 设置Y轴刻度标签字体大小为12
 
@@ -231,14 +233,14 @@ for spine in ax.spines.values():
     spine.set_visible(False)
 
 # 画一条自定义的X轴线，长度比坐标轴范围短一点
-ax.plot([0, 7.9], [0, 0], color='black', lw=1.0)    # X轴线：水平线，从x=0到7.9，y=0固定
-ax.plot([0, 0], [-300, 300], color='black', lw=1.0)  # Y轴线：竖直线，x=0固定，y从-60到150
+ax.plot([0, _xxx-2+0.9], [0, 0], color='black', lw=1.0)    # X轴线：水平线，从x=0到7.9，y=0固定
+ax.plot([0, 0], [-_yyy, _yyy], color='black', lw=1.0)  # Y轴线：竖直线，x=0固定，y从-60到150
 
 
 # 添加箭头风格的坐标轴
-ax.annotate('', xy=(8.5, 0), xytext=(0, 0),
+ax.annotate('', xy=(_xxx-1+0.5, 0), xytext=(0, 0),
             arrowprops=dict(arrowstyle='->', lw=1.0, color='black'))  # X轴箭头
-ax.annotate('', xy=(0, 320), xytext=(0, -302),
+ax.annotate('', xy=(0, _yyy+100), xytext=(0, -(_yyy+2)),
             arrowprops=dict(arrowstyle='->', lw=1.0, color='black'))  # Y轴箭头
 
 # 保存图像到内存字节流
@@ -255,6 +257,11 @@ file_path = os.path.join(target_dir, "output_image.png")
 
 with open(file_path, 'wb') as f:
     f.write(img_bytes.read())
+
+from PIL import Image
+file_path = os.path.join("images", "output_image.png")  # 或你已有的 file_path
+img = Image.open(file_path)
+img.show()  # 弹出查看器窗口
 
 # # 把图像插入 Word 文档
 # doc = Document()

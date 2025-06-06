@@ -203,7 +203,7 @@ namespace GasFormsApp.TabControl
                     try
                     {
                         var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc";           // 你实际的 .py 文件路径
+                        var scriptPath = @"Python_embed\Python\aaa.py";           // 你实际的 .py 文件路径
 
                         ProcessStartInfo psi = new ProcessStartInfo
                         {
@@ -249,7 +249,7 @@ namespace GasFormsApp.TabControl
                                 break;
                             }
 
-                            Console.WriteLine("等待数据......");
+                            //Console.WriteLine("等待数据......");
                             Thread.Sleep(10); // 避免忙等待，占用CPU过高
                         }
                         if( a> 100 * 5)
@@ -289,7 +289,7 @@ namespace GasFormsApp.TabControl
                         {
                             values[i] = accessor.ReadDouble(i * sizeof(double));
                         }
-                        InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F3"));
+                        InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F4"));
 
                         // 找出最大数据
                         double maxValue = double.MinValue;
