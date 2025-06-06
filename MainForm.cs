@@ -130,6 +130,56 @@ namespace GasFormsApp
             DesorbTextBox29.Text = "646";
             DesorbTextBox30.Text = "654";
 
+            DesorbTextBox31.Text = "682";
+            DesorbTextBox32.Text = "704";
+            DesorbTextBox33.Text = "716";
+            DesorbTextBox34.Text = "726";
+            DesorbTextBox35.Text = "736";
+            DesorbTextBox36.Text = "744";
+            //DesorbTextBox37.Text = "276";
+            //DesorbTextBox38.Text = "302";
+            //DesorbTextBox39.Text = "324";
+            //DesorbTextBox40.Text = "338";
+            //DesorbTextBox41.Text = "358";
+            //DesorbTextBox42.Text = "386";
+            //DesorbTextBox43.Text = "416";
+            //DesorbTextBox44.Text = "446";
+            //DesorbTextBox45.Text = "458";
+            //DesorbTextBox46.Text = "474";
+            //DesorbTextBox47.Text = "486";
+            //DesorbTextBox48.Text = "498";
+            //DesorbTextBox49.Text = "514";
+            //DesorbTextBox50.Text = "530";
+            //DesorbTextBox51.Text = "548";
+            //DesorbTextBox52.Text = "560";
+            //DesorbTextBox53.Text = "572";
+            //DesorbTextBox54.Text = "582";
+            //DesorbTextBox55.Text = "596";
+            //DesorbTextBox56.Text = "608";
+            //DesorbTextBox57.Text = "618";
+            //DesorbTextBox58.Text = "630";
+            //DesorbTextBox59.Text = "646";
+            //DesorbTextBox60.Text = "654";
+
+            DataNumTextBox31.Text = "35";
+            DataNumTextBox32.Text = "40";
+            DataNumTextBox33.Text = "45";
+            DataNumTextBox34.Text = "50";
+            DataNumTextBox35.Text = "55";
+            DataNumTextBox36.Text = "60";
+
+            //// 模拟输入数据
+            //for (int i = 31; i <= 60; i++)
+            //{
+            //    string controlName = "DataNumTextBox" + i;
+            //    Control[] foundControls = this.Controls.Find(controlName, true);
+            //    if (foundControls.Length > 0 && foundControls[0] is TextBox)
+            //    {
+            //        ((TextBox)foundControls[0]).Text = i.ToString(); // 可自定义内容
+            //    }
+            //}
+
+
             //DesorpVolNormalTextBox.Text = "1";
             //Sample1WeightTextBox.Text = "100";
             //Sample2WeightTextBox.Text = "100";

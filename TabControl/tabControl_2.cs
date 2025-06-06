@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Color = System.Drawing.Color;
+using Control = System.Windows.Forms.Control;
 using TextBox = System.Windows.Forms.TextBox;
 
 namespace GasFormsApp.TabControl
@@ -118,6 +121,27 @@ namespace GasFormsApp.TabControl
 
             for (int i = 0; i < DesorbTextBox.Length; i++) // 循环次数根据 DesorbTextBox 数量确定
             {
+                int a = i + 1;
+                string controlName = "";
+                double Sqrt_Value = 0.0;
+                if(i<30)
+                {
+                    controlName = $"DataNumLabel{a}";
+                    var textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as Label;
+                    Console.WriteLine($"取标签值:{controlName}->{textBox.Text}");
+                    //直接取标签文本作为横坐标
+                    Sqrt_Value = Math.Sqrt(t0 + a);
+                }
+                else if (i >= 30)
+                {
+                    controlName = $"DataNumTextBox{a}";
+                    var textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
+                    Console.WriteLine($"取DataNumTextBox:{controlName}->{textBox.Text}");
+                    //直接取标签文本作为横坐标
+                    if (!string.IsNullOrEmpty(textBox.Text))
+                        Sqrt_Value = Math.Sqrt(t0 + (double)Convert.ToDecimal(textBox.Text.Trim()));
+                }
+
                 double textBoxValue = 0.0;
                 if (!string.IsNullOrWhiteSpace(DesorbTextBox[i].Text) &&
                     double.TryParse(DesorbTextBox[i].Text.Trim(), out double value))
@@ -128,31 +152,10 @@ namespace GasFormsApp.TabControl
                 {
                     textBoxValue = 0;
                 }
+                controlName = $"DesorbTextBox{i + 1}";
+                Console.WriteLine($"数据框值:{controlName}->{textBoxValue}");
 
-                double sqrtValue = 0.0;
-                int j = i + 1;
-                // 定义映射数组，存储31~45对应的a值
-                int[] map31to45 = { 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60 };
-                // 定义映射数组，存储46~60对应的a值
-                int[] map46to60 = { 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135 };
-
-                if (j >= 1 && j <= 30)
-                {
-                    sqrtValue = Math.Sqrt(t0 + j);
-                }
-                else if (j >= 31 && j <= 45)
-                {
-                    int a = map31to45[j - 31];  // j-31对应数组索引0~14
-                    sqrtValue = Math.Sqrt(t0 + a);
-                }
-                else if (j >= 46 && j <= 60)
-                {
-                    int a = map46to60[j - 46];  // j-46对应数组索引0~14
-                    sqrtValue = Math.Sqrt(t0 + a);
-                }
-                Console.WriteLine($"sqrtValue:{sqrtValue}>>>---{j}");
-
-                data[i, 0] = sqrtValue; // 将平方根值存储在第一列
+                data[i, 0] = Sqrt_Value; // 将平方根值存储在第一列
                 data[i, 1] = textBoxValue; // 将文本框值存储在第二列
             }
             //insertChart.InsertChartToWord(outputPath, data);

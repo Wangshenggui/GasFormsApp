@@ -67,8 +67,38 @@ namespace GasFormsApp
             this.label9 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DataNumTextBox60 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox59 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox58 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox57 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox56 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox55 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox54 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox53 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox52 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox51 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox50 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox49 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox48 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox47 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox46 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox45 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox44 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox43 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox42 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox41 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox40 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox39 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox38 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox37 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox36 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox35 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox34 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox33 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox32 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox31 = new System.Windows.Forms.TextBox();
             this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
             this.t0TextBox = new System.Windows.Forms.TextBox();
             this.label90 = new System.Windows.Forms.Label();
@@ -107,36 +137,6 @@ namespace GasFormsApp
             this.DesorbTextBox55 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox46 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox36 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
             this.DrawCurvesButton = new System.Windows.Forms.Button();
             this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
@@ -168,36 +168,36 @@ namespace GasFormsApp
             this.DesorbTextBox25 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox16 = new System.Windows.Forms.TextBox();
             this.DesorbTextBox6 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
+            this.DataNumLabel1 = new System.Windows.Forms.Label();
+            this.DataNumLabel11 = new System.Windows.Forms.Label();
+            this.DataNumLabel21 = new System.Windows.Forms.Label();
+            this.DataNumLabel2 = new System.Windows.Forms.Label();
+            this.DataNumLabel30 = new System.Windows.Forms.Label();
+            this.DataNumLabel12 = new System.Windows.Forms.Label();
+            this.DataNumLabel22 = new System.Windows.Forms.Label();
+            this.DataNumLabel20 = new System.Windows.Forms.Label();
+            this.DataNumLabel10 = new System.Windows.Forms.Label();
+            this.DataNumLabel3 = new System.Windows.Forms.Label();
+            this.DataNumLabel13 = new System.Windows.Forms.Label();
+            this.DataNumLabel29 = new System.Windows.Forms.Label();
+            this.DataNumLabel23 = new System.Windows.Forms.Label();
+            this.DataNumLabel19 = new System.Windows.Forms.Label();
+            this.DataNumLabel9 = new System.Windows.Forms.Label();
+            this.DataNumLabel4 = new System.Windows.Forms.Label();
+            this.DataNumLabel14 = new System.Windows.Forms.Label();
+            this.DataNumLabel28 = new System.Windows.Forms.Label();
+            this.DataNumLabel24 = new System.Windows.Forms.Label();
+            this.DataNumLabel18 = new System.Windows.Forms.Label();
+            this.DataNumLabel8 = new System.Windows.Forms.Label();
+            this.DataNumLabel5 = new System.Windows.Forms.Label();
+            this.DataNumLabel15 = new System.Windows.Forms.Label();
+            this.DataNumLabel27 = new System.Windows.Forms.Label();
+            this.DataNumLabel25 = new System.Windows.Forms.Label();
+            this.DataNumLabel17 = new System.Windows.Forms.Label();
+            this.DataNumLabel7 = new System.Windows.Forms.Label();
+            this.DataNumLabel6 = new System.Windows.Forms.Label();
+            this.DataNumLabel16 = new System.Windows.Forms.Label();
+            this.DataNumLabel26 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.LabDesorbButton = new System.Windows.Forms.Button();
             this.S2DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
@@ -223,6 +223,7 @@ namespace GasFormsApp
             this.Sample1WeightTextBox = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ExpCalcButton = new System.Windows.Forms.Button();
             this.Wc_TextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.VadTextBox = new System.Windows.Forms.TextBox();
@@ -293,14 +294,13 @@ namespace GasFormsApp
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
-            this.ExpCalcButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -684,6 +684,7 @@ namespace GasFormsApp
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage2.Controls.Add(this.pictureBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 104);
             this.tabPage2.Name = "tabPage2";
@@ -691,9 +692,47 @@ namespace GasFormsApp
             this.tabPage2.Size = new System.Drawing.Size(1460, 629);
             this.tabPage2.TabIndex = 1;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox3.Location = new System.Drawing.Point(14, 86);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox3);
+            this.groupBox2.Controls.Add(this.DataNumTextBox60);
+            this.groupBox2.Controls.Add(this.DataNumTextBox59);
+            this.groupBox2.Controls.Add(this.DataNumTextBox58);
+            this.groupBox2.Controls.Add(this.DataNumTextBox57);
+            this.groupBox2.Controls.Add(this.DataNumTextBox56);
+            this.groupBox2.Controls.Add(this.DataNumTextBox55);
+            this.groupBox2.Controls.Add(this.DataNumTextBox54);
+            this.groupBox2.Controls.Add(this.DataNumTextBox53);
+            this.groupBox2.Controls.Add(this.DataNumTextBox52);
+            this.groupBox2.Controls.Add(this.DataNumTextBox51);
+            this.groupBox2.Controls.Add(this.DataNumTextBox50);
+            this.groupBox2.Controls.Add(this.DataNumTextBox49);
+            this.groupBox2.Controls.Add(this.DataNumTextBox48);
+            this.groupBox2.Controls.Add(this.DataNumTextBox47);
+            this.groupBox2.Controls.Add(this.DataNumTextBox46);
+            this.groupBox2.Controls.Add(this.DataNumTextBox45);
+            this.groupBox2.Controls.Add(this.DataNumTextBox44);
+            this.groupBox2.Controls.Add(this.DataNumTextBox43);
+            this.groupBox2.Controls.Add(this.DataNumTextBox42);
+            this.groupBox2.Controls.Add(this.DataNumTextBox41);
+            this.groupBox2.Controls.Add(this.DataNumTextBox40);
+            this.groupBox2.Controls.Add(this.DataNumTextBox39);
+            this.groupBox2.Controls.Add(this.DataNumTextBox38);
+            this.groupBox2.Controls.Add(this.DataNumTextBox37);
+            this.groupBox2.Controls.Add(this.DataNumTextBox36);
+            this.groupBox2.Controls.Add(this.DataNumTextBox35);
+            this.groupBox2.Controls.Add(this.DataNumTextBox34);
+            this.groupBox2.Controls.Add(this.DataNumTextBox33);
+            this.groupBox2.Controls.Add(this.DataNumTextBox32);
+            this.groupBox2.Controls.Add(this.DataNumTextBox31);
             this.groupBox2.Controls.Add(this.UndDesorpCalTextBox);
             this.groupBox2.Controls.Add(this.t0TextBox);
             this.groupBox2.Controls.Add(this.label90);
@@ -732,36 +771,6 @@ namespace GasFormsApp
             this.groupBox2.Controls.Add(this.DesorbTextBox55);
             this.groupBox2.Controls.Add(this.DesorbTextBox46);
             this.groupBox2.Controls.Add(this.DesorbTextBox36);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label55);
-            this.groupBox2.Controls.Add(this.label56);
-            this.groupBox2.Controls.Add(this.label57);
-            this.groupBox2.Controls.Add(this.label58);
-            this.groupBox2.Controls.Add(this.label59);
-            this.groupBox2.Controls.Add(this.label60);
-            this.groupBox2.Controls.Add(this.label61);
-            this.groupBox2.Controls.Add(this.label62);
-            this.groupBox2.Controls.Add(this.label63);
-            this.groupBox2.Controls.Add(this.label64);
-            this.groupBox2.Controls.Add(this.label65);
-            this.groupBox2.Controls.Add(this.label66);
-            this.groupBox2.Controls.Add(this.label67);
-            this.groupBox2.Controls.Add(this.label68);
-            this.groupBox2.Controls.Add(this.label69);
-            this.groupBox2.Controls.Add(this.label70);
-            this.groupBox2.Controls.Add(this.label71);
-            this.groupBox2.Controls.Add(this.label72);
-            this.groupBox2.Controls.Add(this.label73);
-            this.groupBox2.Controls.Add(this.label74);
-            this.groupBox2.Controls.Add(this.label75);
-            this.groupBox2.Controls.Add(this.label76);
-            this.groupBox2.Controls.Add(this.label77);
-            this.groupBox2.Controls.Add(this.label78);
-            this.groupBox2.Controls.Add(this.label79);
-            this.groupBox2.Controls.Add(this.label80);
-            this.groupBox2.Controls.Add(this.label81);
             this.groupBox2.Controls.Add(this.DrawCurvesButton);
             this.groupBox2.Controls.Add(this.DesorbTextBox30);
             this.groupBox2.Controls.Add(this.DesorbTextBox1);
@@ -793,50 +802,401 @@ namespace GasFormsApp
             this.groupBox2.Controls.Add(this.DesorbTextBox25);
             this.groupBox2.Controls.Add(this.DesorbTextBox16);
             this.groupBox2.Controls.Add(this.DesorbTextBox6);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label33);
-            this.groupBox2.Controls.Add(this.label43);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label52);
-            this.groupBox2.Controls.Add(this.label34);
-            this.groupBox2.Controls.Add(this.label44);
-            this.groupBox2.Controls.Add(this.label42);
-            this.groupBox2.Controls.Add(this.label32);
-            this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.label35);
-            this.groupBox2.Controls.Add(this.label51);
-            this.groupBox2.Controls.Add(this.label45);
-            this.groupBox2.Controls.Add(this.label41);
-            this.groupBox2.Controls.Add(this.label31);
-            this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.label36);
-            this.groupBox2.Controls.Add(this.label50);
-            this.groupBox2.Controls.Add(this.label46);
-            this.groupBox2.Controls.Add(this.label40);
-            this.groupBox2.Controls.Add(this.label30);
-            this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.label37);
-            this.groupBox2.Controls.Add(this.label49);
-            this.groupBox2.Controls.Add(this.label47);
-            this.groupBox2.Controls.Add(this.label39);
-            this.groupBox2.Controls.Add(this.label29);
-            this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.label38);
-            this.groupBox2.Controls.Add(this.label48);
+            this.groupBox2.Controls.Add(this.DataNumLabel1);
+            this.groupBox2.Controls.Add(this.DataNumLabel11);
+            this.groupBox2.Controls.Add(this.DataNumLabel21);
+            this.groupBox2.Controls.Add(this.DataNumLabel2);
+            this.groupBox2.Controls.Add(this.DataNumLabel30);
+            this.groupBox2.Controls.Add(this.DataNumLabel12);
+            this.groupBox2.Controls.Add(this.DataNumLabel22);
+            this.groupBox2.Controls.Add(this.DataNumLabel20);
+            this.groupBox2.Controls.Add(this.DataNumLabel10);
+            this.groupBox2.Controls.Add(this.DataNumLabel3);
+            this.groupBox2.Controls.Add(this.DataNumLabel13);
+            this.groupBox2.Controls.Add(this.DataNumLabel29);
+            this.groupBox2.Controls.Add(this.DataNumLabel23);
+            this.groupBox2.Controls.Add(this.DataNumLabel19);
+            this.groupBox2.Controls.Add(this.DataNumLabel9);
+            this.groupBox2.Controls.Add(this.DataNumLabel4);
+            this.groupBox2.Controls.Add(this.DataNumLabel14);
+            this.groupBox2.Controls.Add(this.DataNumLabel28);
+            this.groupBox2.Controls.Add(this.DataNumLabel24);
+            this.groupBox2.Controls.Add(this.DataNumLabel18);
+            this.groupBox2.Controls.Add(this.DataNumLabel8);
+            this.groupBox2.Controls.Add(this.DataNumLabel5);
+            this.groupBox2.Controls.Add(this.DataNumLabel15);
+            this.groupBox2.Controls.Add(this.DataNumLabel27);
+            this.groupBox2.Controls.Add(this.DataNumLabel25);
+            this.groupBox2.Controls.Add(this.DataNumLabel17);
+            this.groupBox2.Controls.Add(this.DataNumLabel7);
+            this.groupBox2.Controls.Add(this.DataNumLabel6);
+            this.groupBox2.Controls.Add(this.DataNumLabel16);
+            this.groupBox2.Controls.Add(this.DataNumLabel26);
             this.groupBox2.Location = new System.Drawing.Point(204, 8);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1052, 612);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // pictureBox3
+            // DataNumTextBox60
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.Location = new System.Drawing.Point(746, 157);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(300, 300);
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
+            this.DataNumTextBox60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox60.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox60.Location = new System.Drawing.Point(776, 394);
+            this.DataNumTextBox60.Name = "DataNumTextBox60";
+            this.DataNumTextBox60.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox60.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox60.TabIndex = 141;
+            this.DataNumTextBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox59
+            // 
+            this.DataNumTextBox59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox59.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox59.Location = new System.Drawing.Point(776, 362);
+            this.DataNumTextBox59.Name = "DataNumTextBox59";
+            this.DataNumTextBox59.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox59.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox59.TabIndex = 140;
+            this.DataNumTextBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox58
+            // 
+            this.DataNumTextBox58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox58.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox58.Location = new System.Drawing.Point(776, 330);
+            this.DataNumTextBox58.Name = "DataNumTextBox58";
+            this.DataNumTextBox58.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox58.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox58.TabIndex = 139;
+            this.DataNumTextBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox57
+            // 
+            this.DataNumTextBox57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox57.Location = new System.Drawing.Point(776, 298);
+            this.DataNumTextBox57.Name = "DataNumTextBox57";
+            this.DataNumTextBox57.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox57.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox57.TabIndex = 138;
+            this.DataNumTextBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox56
+            // 
+            this.DataNumTextBox56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox56.Location = new System.Drawing.Point(776, 266);
+            this.DataNumTextBox56.Name = "DataNumTextBox56";
+            this.DataNumTextBox56.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox56.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox56.TabIndex = 137;
+            this.DataNumTextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox55
+            // 
+            this.DataNumTextBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox55.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox55.Location = new System.Drawing.Point(776, 234);
+            this.DataNumTextBox55.Name = "DataNumTextBox55";
+            this.DataNumTextBox55.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox55.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox55.TabIndex = 136;
+            this.DataNumTextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox54
+            // 
+            this.DataNumTextBox54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox54.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox54.Location = new System.Drawing.Point(776, 202);
+            this.DataNumTextBox54.Name = "DataNumTextBox54";
+            this.DataNumTextBox54.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox54.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox54.TabIndex = 135;
+            this.DataNumTextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox53
+            // 
+            this.DataNumTextBox53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox53.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox53.Location = new System.Drawing.Point(776, 170);
+            this.DataNumTextBox53.Name = "DataNumTextBox53";
+            this.DataNumTextBox53.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox53.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox53.TabIndex = 134;
+            this.DataNumTextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox52
+            // 
+            this.DataNumTextBox52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox52.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox52.Location = new System.Drawing.Point(776, 138);
+            this.DataNumTextBox52.Name = "DataNumTextBox52";
+            this.DataNumTextBox52.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox52.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox52.TabIndex = 133;
+            this.DataNumTextBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox51
+            // 
+            this.DataNumTextBox51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox51.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox51.Location = new System.Drawing.Point(776, 106);
+            this.DataNumTextBox51.Name = "DataNumTextBox51";
+            this.DataNumTextBox51.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox51.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox51.TabIndex = 132;
+            this.DataNumTextBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox50
+            // 
+            this.DataNumTextBox50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox50.Location = new System.Drawing.Point(642, 394);
+            this.DataNumTextBox50.Name = "DataNumTextBox50";
+            this.DataNumTextBox50.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox50.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox50.TabIndex = 131;
+            this.DataNumTextBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox49
+            // 
+            this.DataNumTextBox49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox49.Location = new System.Drawing.Point(642, 362);
+            this.DataNumTextBox49.Name = "DataNumTextBox49";
+            this.DataNumTextBox49.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox49.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox49.TabIndex = 130;
+            this.DataNumTextBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox48
+            // 
+            this.DataNumTextBox48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox48.Location = new System.Drawing.Point(642, 330);
+            this.DataNumTextBox48.Name = "DataNumTextBox48";
+            this.DataNumTextBox48.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox48.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox48.TabIndex = 129;
+            this.DataNumTextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox47
+            // 
+            this.DataNumTextBox47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox47.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox47.Location = new System.Drawing.Point(642, 298);
+            this.DataNumTextBox47.Name = "DataNumTextBox47";
+            this.DataNumTextBox47.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox47.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox47.TabIndex = 128;
+            this.DataNumTextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox46
+            // 
+            this.DataNumTextBox46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox46.Location = new System.Drawing.Point(642, 266);
+            this.DataNumTextBox46.Name = "DataNumTextBox46";
+            this.DataNumTextBox46.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox46.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox46.TabIndex = 127;
+            this.DataNumTextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox45
+            // 
+            this.DataNumTextBox45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox45.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox45.Location = new System.Drawing.Point(642, 234);
+            this.DataNumTextBox45.Name = "DataNumTextBox45";
+            this.DataNumTextBox45.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox45.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox45.TabIndex = 126;
+            this.DataNumTextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox44
+            // 
+            this.DataNumTextBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox44.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox44.Location = new System.Drawing.Point(642, 202);
+            this.DataNumTextBox44.Name = "DataNumTextBox44";
+            this.DataNumTextBox44.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox44.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox44.TabIndex = 125;
+            this.DataNumTextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox43
+            // 
+            this.DataNumTextBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox43.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox43.Location = new System.Drawing.Point(642, 170);
+            this.DataNumTextBox43.Name = "DataNumTextBox43";
+            this.DataNumTextBox43.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox43.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox43.TabIndex = 124;
+            this.DataNumTextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox42
+            // 
+            this.DataNumTextBox42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox42.Location = new System.Drawing.Point(642, 138);
+            this.DataNumTextBox42.Name = "DataNumTextBox42";
+            this.DataNumTextBox42.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox42.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox42.TabIndex = 123;
+            this.DataNumTextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox41
+            // 
+            this.DataNumTextBox41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox41.Location = new System.Drawing.Point(642, 106);
+            this.DataNumTextBox41.Name = "DataNumTextBox41";
+            this.DataNumTextBox41.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox41.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox41.TabIndex = 122;
+            this.DataNumTextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox40
+            // 
+            this.DataNumTextBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox40.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox40.Location = new System.Drawing.Point(503, 394);
+            this.DataNumTextBox40.Name = "DataNumTextBox40";
+            this.DataNumTextBox40.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox40.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox40.TabIndex = 121;
+            this.DataNumTextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox39
+            // 
+            this.DataNumTextBox39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox39.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox39.Location = new System.Drawing.Point(503, 362);
+            this.DataNumTextBox39.Name = "DataNumTextBox39";
+            this.DataNumTextBox39.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox39.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox39.TabIndex = 120;
+            this.DataNumTextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox38
+            // 
+            this.DataNumTextBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox38.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox38.Location = new System.Drawing.Point(503, 330);
+            this.DataNumTextBox38.Name = "DataNumTextBox38";
+            this.DataNumTextBox38.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox38.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox38.TabIndex = 119;
+            this.DataNumTextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox37
+            // 
+            this.DataNumTextBox37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox37.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox37.Location = new System.Drawing.Point(503, 298);
+            this.DataNumTextBox37.Name = "DataNumTextBox37";
+            this.DataNumTextBox37.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox37.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox37.TabIndex = 118;
+            this.DataNumTextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox36
+            // 
+            this.DataNumTextBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox36.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox36.Location = new System.Drawing.Point(503, 266);
+            this.DataNumTextBox36.Name = "DataNumTextBox36";
+            this.DataNumTextBox36.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox36.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox36.TabIndex = 117;
+            this.DataNumTextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox35
+            // 
+            this.DataNumTextBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox35.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox35.Location = new System.Drawing.Point(503, 234);
+            this.DataNumTextBox35.Name = "DataNumTextBox35";
+            this.DataNumTextBox35.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox35.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox35.TabIndex = 116;
+            this.DataNumTextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox34
+            // 
+            this.DataNumTextBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox34.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox34.Location = new System.Drawing.Point(503, 202);
+            this.DataNumTextBox34.Name = "DataNumTextBox34";
+            this.DataNumTextBox34.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox34.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox34.TabIndex = 115;
+            this.DataNumTextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox33
+            // 
+            this.DataNumTextBox33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox33.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox33.Location = new System.Drawing.Point(503, 170);
+            this.DataNumTextBox33.Name = "DataNumTextBox33";
+            this.DataNumTextBox33.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox33.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox33.TabIndex = 114;
+            this.DataNumTextBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox32
+            // 
+            this.DataNumTextBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox32.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox32.Location = new System.Drawing.Point(503, 138);
+            this.DataNumTextBox32.Name = "DataNumTextBox32";
+            this.DataNumTextBox32.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox32.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox32.TabIndex = 113;
+            this.DataNumTextBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox31
+            // 
+            this.DataNumTextBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox31.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox31.Location = new System.Drawing.Point(503, 106);
+            this.DataNumTextBox31.Name = "DataNumTextBox31";
+            this.DataNumTextBox31.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox31.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox31.TabIndex = 112;
+            this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UndDesorpCalTextBox
             // 
@@ -883,7 +1243,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox60
             // 
-            this.DesorbTextBox60.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox60.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox60.Location = new System.Drawing.Point(816, 391);
             this.DesorbTextBox60.Name = "DesorbTextBox60";
@@ -905,7 +1265,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox31
             // 
-            this.DesorbTextBox31.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox31.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox31.Location = new System.Drawing.Point(543, 103);
             this.DesorbTextBox31.Name = "DesorbTextBox31";
@@ -925,7 +1285,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox41
             // 
-            this.DesorbTextBox41.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox41.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox41.Location = new System.Drawing.Point(682, 103);
             this.DesorbTextBox41.Name = "DesorbTextBox41";
@@ -945,7 +1305,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox50
             // 
-            this.DesorbTextBox50.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox50.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox50.Location = new System.Drawing.Point(682, 391);
             this.DesorbTextBox50.Name = "DesorbTextBox50";
@@ -967,7 +1327,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox40
             // 
-            this.DesorbTextBox40.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox40.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox40.Location = new System.Drawing.Point(543, 391);
             this.DesorbTextBox40.Name = "DesorbTextBox40";
@@ -977,7 +1337,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox51
             // 
-            this.DesorbTextBox51.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox51.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox51.Location = new System.Drawing.Point(816, 103);
             this.DesorbTextBox51.Name = "DesorbTextBox51";
@@ -987,7 +1347,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox32
             // 
-            this.DesorbTextBox32.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox32.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox32.Location = new System.Drawing.Point(543, 135);
             this.DesorbTextBox32.Name = "DesorbTextBox32";
@@ -997,7 +1357,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox42
             // 
-            this.DesorbTextBox42.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox42.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox42.Location = new System.Drawing.Point(682, 135);
             this.DesorbTextBox42.Name = "DesorbTextBox42";
@@ -1007,7 +1367,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox59
             // 
-            this.DesorbTextBox59.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox59.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox59.Location = new System.Drawing.Point(816, 359);
             this.DesorbTextBox59.Name = "DesorbTextBox59";
@@ -1017,7 +1377,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox52
             // 
-            this.DesorbTextBox52.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox52.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox52.Location = new System.Drawing.Point(816, 135);
             this.DesorbTextBox52.Name = "DesorbTextBox52";
@@ -1027,7 +1387,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox49
             // 
-            this.DesorbTextBox49.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox49.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox49.Location = new System.Drawing.Point(682, 359);
             this.DesorbTextBox49.Name = "DesorbTextBox49";
@@ -1037,7 +1397,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox39
             // 
-            this.DesorbTextBox39.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox39.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox39.Location = new System.Drawing.Point(543, 359);
             this.DesorbTextBox39.Name = "DesorbTextBox39";
@@ -1047,7 +1407,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox33
             // 
-            this.DesorbTextBox33.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox33.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox33.Location = new System.Drawing.Point(543, 167);
             this.DesorbTextBox33.Name = "DesorbTextBox33";
@@ -1057,7 +1417,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox43
             // 
-            this.DesorbTextBox43.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox43.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox43.Location = new System.Drawing.Point(682, 167);
             this.DesorbTextBox43.Name = "DesorbTextBox43";
@@ -1067,7 +1427,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox58
             // 
-            this.DesorbTextBox58.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox58.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox58.Location = new System.Drawing.Point(816, 327);
             this.DesorbTextBox58.Name = "DesorbTextBox58";
@@ -1077,7 +1437,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox53
             // 
-            this.DesorbTextBox53.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox53.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox53.Location = new System.Drawing.Point(816, 167);
             this.DesorbTextBox53.Name = "DesorbTextBox53";
@@ -1087,7 +1447,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox48
             // 
-            this.DesorbTextBox48.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox48.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox48.Location = new System.Drawing.Point(682, 327);
             this.DesorbTextBox48.Name = "DesorbTextBox48";
@@ -1097,7 +1457,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox38
             // 
-            this.DesorbTextBox38.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox38.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox38.Location = new System.Drawing.Point(543, 327);
             this.DesorbTextBox38.Name = "DesorbTextBox38";
@@ -1107,7 +1467,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox34
             // 
-            this.DesorbTextBox34.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox34.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox34.Location = new System.Drawing.Point(543, 199);
             this.DesorbTextBox34.Name = "DesorbTextBox34";
@@ -1117,7 +1477,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox44
             // 
-            this.DesorbTextBox44.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox44.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox44.Location = new System.Drawing.Point(682, 199);
             this.DesorbTextBox44.Name = "DesorbTextBox44";
@@ -1127,7 +1487,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox57
             // 
-            this.DesorbTextBox57.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox57.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox57.Location = new System.Drawing.Point(816, 295);
             this.DesorbTextBox57.Name = "DesorbTextBox57";
@@ -1137,7 +1497,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox54
             // 
-            this.DesorbTextBox54.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox54.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox54.Location = new System.Drawing.Point(816, 199);
             this.DesorbTextBox54.Name = "DesorbTextBox54";
@@ -1147,7 +1507,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox47
             // 
-            this.DesorbTextBox47.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox47.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox47.Location = new System.Drawing.Point(682, 295);
             this.DesorbTextBox47.Name = "DesorbTextBox47";
@@ -1157,7 +1517,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox37
             // 
-            this.DesorbTextBox37.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox37.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox37.Location = new System.Drawing.Point(543, 295);
             this.DesorbTextBox37.Name = "DesorbTextBox37";
@@ -1167,7 +1527,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox35
             // 
-            this.DesorbTextBox35.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox35.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox35.Location = new System.Drawing.Point(543, 231);
             this.DesorbTextBox35.Name = "DesorbTextBox35";
@@ -1177,7 +1537,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox45
             // 
-            this.DesorbTextBox45.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox45.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox45.Location = new System.Drawing.Point(682, 231);
             this.DesorbTextBox45.Name = "DesorbTextBox45";
@@ -1187,7 +1547,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox56
             // 
-            this.DesorbTextBox56.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox56.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox56.Location = new System.Drawing.Point(816, 263);
             this.DesorbTextBox56.Name = "DesorbTextBox56";
@@ -1197,7 +1557,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox55
             // 
-            this.DesorbTextBox55.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox55.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox55.Location = new System.Drawing.Point(816, 231);
             this.DesorbTextBox55.Name = "DesorbTextBox55";
@@ -1207,7 +1567,7 @@ namespace GasFormsApp
             // 
             // DesorbTextBox46
             // 
-            this.DesorbTextBox46.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox46.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox46.Location = new System.Drawing.Point(682, 263);
             this.DesorbTextBox46.Name = "DesorbTextBox46";
@@ -1217,343 +1577,13 @@ namespace GasFormsApp
             // 
             // DesorbTextBox36
             // 
-            this.DesorbTextBox36.BackColor = System.Drawing.SystemColors.MenuText;
+            this.DesorbTextBox36.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorbTextBox36.Location = new System.Drawing.Point(543, 263);
             this.DesorbTextBox36.Name = "DesorbTextBox36";
             this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox36.TabIndex = 79;
             this.DesorbTextBox36.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(516, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 16);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "32:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(654, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 16);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "52:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(788, 106);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 16);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "90:";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label55.Location = new System.Drawing.Point(516, 138);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(31, 16);
-            this.label55.TabIndex = 59;
-            this.label55.Text = "34:";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label56.Location = new System.Drawing.Point(780, 394);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(39, 16);
-            this.label56.TabIndex = 75;
-            this.label56.Text = "135:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label57.Location = new System.Drawing.Point(654, 138);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(31, 16);
-            this.label57.TabIndex = 50;
-            this.label57.Text = "54:";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label58.Location = new System.Drawing.Point(788, 138);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(31, 16);
-            this.label58.TabIndex = 51;
-            this.label58.Text = "95:";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label59.Location = new System.Drawing.Point(654, 394);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(31, 16);
-            this.label59.TabIndex = 52;
-            this.label59.Text = "85:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label60.Location = new System.Drawing.Point(515, 394);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(31, 16);
-            this.label60.TabIndex = 53;
-            this.label60.Text = "50:";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label61.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label61.Location = new System.Drawing.Point(516, 170);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(31, 16);
-            this.label61.TabIndex = 54;
-            this.label61.Text = "36:";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label62.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label62.Location = new System.Drawing.Point(654, 170);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(31, 16);
-            this.label62.TabIndex = 55;
-            this.label62.Text = "56:";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label63.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label63.Location = new System.Drawing.Point(780, 362);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(39, 16);
-            this.label63.TabIndex = 56;
-            this.label63.Text = "130:";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label64.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label64.Location = new System.Drawing.Point(780, 170);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(39, 16);
-            this.label64.TabIndex = 57;
-            this.label64.Text = "100:";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label65.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label65.Location = new System.Drawing.Point(654, 362);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(31, 16);
-            this.label65.TabIndex = 58;
-            this.label65.Text = "80:";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label66.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label66.Location = new System.Drawing.Point(516, 362);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(31, 16);
-            this.label66.TabIndex = 60;
-            this.label66.Text = "48:";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label67.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label67.Location = new System.Drawing.Point(516, 202);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(31, 16);
-            this.label67.TabIndex = 74;
-            this.label67.Text = "38:";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label68.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label68.Location = new System.Drawing.Point(654, 202);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(31, 16);
-            this.label68.TabIndex = 61;
-            this.label68.Text = "58:";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label69.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label69.Location = new System.Drawing.Point(780, 330);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(39, 16);
-            this.label69.TabIndex = 73;
-            this.label69.Text = "125:";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label70.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label70.Location = new System.Drawing.Point(780, 202);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(39, 16);
-            this.label70.TabIndex = 72;
-            this.label70.Text = "105:";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label71.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label71.Location = new System.Drawing.Point(654, 330);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(31, 16);
-            this.label71.TabIndex = 71;
-            this.label71.Text = "75:";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label72.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label72.Location = new System.Drawing.Point(516, 330);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(31, 16);
-            this.label72.TabIndex = 70;
-            this.label72.Text = "46:";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label73.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label73.Location = new System.Drawing.Point(516, 234);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(31, 16);
-            this.label73.TabIndex = 69;
-            this.label73.Text = "40:";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label74.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label74.Location = new System.Drawing.Point(654, 234);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(31, 16);
-            this.label74.TabIndex = 68;
-            this.label74.Text = "60:";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label75.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label75.Location = new System.Drawing.Point(780, 298);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(39, 16);
-            this.label75.TabIndex = 67;
-            this.label75.Text = "120:";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label76.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label76.Location = new System.Drawing.Point(780, 234);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(39, 16);
-            this.label76.TabIndex = 65;
-            this.label76.Text = "110:";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label77.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label77.Location = new System.Drawing.Point(654, 298);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(31, 16);
-            this.label77.TabIndex = 64;
-            this.label77.Text = "70:";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label78.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label78.Location = new System.Drawing.Point(516, 298);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(31, 16);
-            this.label78.TabIndex = 63;
-            this.label78.Text = "44:";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label79.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label79.Location = new System.Drawing.Point(516, 266);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(31, 16);
-            this.label79.TabIndex = 62;
-            this.label79.Text = "42:";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label80.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label80.Location = new System.Drawing.Point(654, 266);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(31, 16);
-            this.label80.TabIndex = 49;
-            this.label80.Text = "65:";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label81.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label81.Location = new System.Drawing.Point(780, 266);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(39, 16);
-            this.label81.TabIndex = 45;
-            this.label81.Text = "115:";
             // 
             // DrawCurvesButton
             // 
@@ -1808,335 +1838,335 @@ namespace GasFormsApp
             this.DesorbTextBox6.Size = new System.Drawing.Size(78, 26);
             this.DesorbTextBox6.TabIndex = 7;
             // 
-            // label23
+            // DataNumLabel1
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(116, 106);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(23, 16);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "1:";
+            this.DataNumLabel1.AutoSize = true;
+            this.DataNumLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel1.Location = new System.Drawing.Point(116, 106);
+            this.DataNumLabel1.Name = "DataNumLabel1";
+            this.DataNumLabel1.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel1.TabIndex = 3;
+            this.DataNumLabel1.Text = "1";
             // 
-            // label33
+            // DataNumLabel11
             // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label33.Location = new System.Drawing.Point(247, 106);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(31, 16);
-            this.label33.TabIndex = 3;
-            this.label33.Text = "11:";
+            this.DataNumLabel11.AutoSize = true;
+            this.DataNumLabel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel11.Location = new System.Drawing.Point(247, 106);
+            this.DataNumLabel11.Name = "DataNumLabel11";
+            this.DataNumLabel11.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel11.TabIndex = 3;
+            this.DataNumLabel11.Text = "11";
             // 
-            // label43
+            // DataNumLabel21
             // 
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label43.Location = new System.Drawing.Point(381, 106);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(31, 16);
-            this.label43.TabIndex = 3;
-            this.label43.Text = "21:";
+            this.DataNumLabel21.AutoSize = true;
+            this.DataNumLabel21.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel21.Location = new System.Drawing.Point(381, 106);
+            this.DataNumLabel21.Name = "DataNumLabel21";
+            this.DataNumLabel21.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel21.TabIndex = 3;
+            this.DataNumLabel21.Text = "21";
             // 
-            // label24
+            // DataNumLabel2
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(116, 138);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(23, 16);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "2:";
+            this.DataNumLabel2.AutoSize = true;
+            this.DataNumLabel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel2.Location = new System.Drawing.Point(116, 138);
+            this.DataNumLabel2.Name = "DataNumLabel2";
+            this.DataNumLabel2.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel2.TabIndex = 3;
+            this.DataNumLabel2.Text = "2";
             // 
-            // label52
+            // DataNumLabel30
             // 
-            this.label52.AutoSize = true;
-            this.label52.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label52.Location = new System.Drawing.Point(381, 394);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(31, 16);
-            this.label52.TabIndex = 3;
-            this.label52.Text = "30:";
+            this.DataNumLabel30.AutoSize = true;
+            this.DataNumLabel30.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel30.Location = new System.Drawing.Point(381, 394);
+            this.DataNumLabel30.Name = "DataNumLabel30";
+            this.DataNumLabel30.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel30.TabIndex = 3;
+            this.DataNumLabel30.Text = "30";
             // 
-            // label34
+            // DataNumLabel12
             // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(247, 138);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(31, 16);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "12:";
+            this.DataNumLabel12.AutoSize = true;
+            this.DataNumLabel12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel12.Location = new System.Drawing.Point(247, 138);
+            this.DataNumLabel12.Name = "DataNumLabel12";
+            this.DataNumLabel12.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel12.TabIndex = 3;
+            this.DataNumLabel12.Text = "12";
             // 
-            // label44
+            // DataNumLabel22
             // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label44.Location = new System.Drawing.Point(381, 138);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(31, 16);
-            this.label44.TabIndex = 3;
-            this.label44.Text = "22:";
+            this.DataNumLabel22.AutoSize = true;
+            this.DataNumLabel22.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel22.Location = new System.Drawing.Point(381, 138);
+            this.DataNumLabel22.Name = "DataNumLabel22";
+            this.DataNumLabel22.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel22.TabIndex = 3;
+            this.DataNumLabel22.Text = "22";
             // 
-            // label42
+            // DataNumLabel20
             // 
-            this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label42.Location = new System.Drawing.Point(247, 394);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(31, 16);
-            this.label42.TabIndex = 3;
-            this.label42.Text = "20:";
+            this.DataNumLabel20.AutoSize = true;
+            this.DataNumLabel20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel20.Location = new System.Drawing.Point(247, 394);
+            this.DataNumLabel20.Name = "DataNumLabel20";
+            this.DataNumLabel20.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel20.TabIndex = 3;
+            this.DataNumLabel20.Text = "20";
             // 
-            // label32
+            // DataNumLabel10
             // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.Location = new System.Drawing.Point(108, 394);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(31, 16);
-            this.label32.TabIndex = 3;
-            this.label32.Text = "10:";
+            this.DataNumLabel10.AutoSize = true;
+            this.DataNumLabel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel10.Location = new System.Drawing.Point(108, 394);
+            this.DataNumLabel10.Name = "DataNumLabel10";
+            this.DataNumLabel10.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel10.TabIndex = 3;
+            this.DataNumLabel10.Text = "10";
             // 
-            // label25
+            // DataNumLabel3
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(116, 170);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(23, 16);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "3:";
+            this.DataNumLabel3.AutoSize = true;
+            this.DataNumLabel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel3.Location = new System.Drawing.Point(116, 170);
+            this.DataNumLabel3.Name = "DataNumLabel3";
+            this.DataNumLabel3.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel3.TabIndex = 3;
+            this.DataNumLabel3.Text = "3";
             // 
-            // label35
+            // DataNumLabel13
             // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label35.Location = new System.Drawing.Point(247, 170);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(31, 16);
-            this.label35.TabIndex = 3;
-            this.label35.Text = "13:";
+            this.DataNumLabel13.AutoSize = true;
+            this.DataNumLabel13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel13.Location = new System.Drawing.Point(247, 170);
+            this.DataNumLabel13.Name = "DataNumLabel13";
+            this.DataNumLabel13.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel13.TabIndex = 3;
+            this.DataNumLabel13.Text = "13";
             // 
-            // label51
+            // DataNumLabel29
             // 
-            this.label51.AutoSize = true;
-            this.label51.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label51.Location = new System.Drawing.Point(381, 362);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(31, 16);
-            this.label51.TabIndex = 3;
-            this.label51.Text = "29:";
+            this.DataNumLabel29.AutoSize = true;
+            this.DataNumLabel29.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel29.Location = new System.Drawing.Point(381, 362);
+            this.DataNumLabel29.Name = "DataNumLabel29";
+            this.DataNumLabel29.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel29.TabIndex = 3;
+            this.DataNumLabel29.Text = "29";
             // 
-            // label45
+            // DataNumLabel23
             // 
-            this.label45.AutoSize = true;
-            this.label45.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label45.Location = new System.Drawing.Point(381, 170);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(31, 16);
-            this.label45.TabIndex = 3;
-            this.label45.Text = "23:";
+            this.DataNumLabel23.AutoSize = true;
+            this.DataNumLabel23.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel23.Location = new System.Drawing.Point(381, 170);
+            this.DataNumLabel23.Name = "DataNumLabel23";
+            this.DataNumLabel23.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel23.TabIndex = 3;
+            this.DataNumLabel23.Text = "23";
             // 
-            // label41
+            // DataNumLabel19
             // 
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(247, 362);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(31, 16);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "19:";
+            this.DataNumLabel19.AutoSize = true;
+            this.DataNumLabel19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel19.Location = new System.Drawing.Point(247, 362);
+            this.DataNumLabel19.Name = "DataNumLabel19";
+            this.DataNumLabel19.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel19.TabIndex = 3;
+            this.DataNumLabel19.Text = "19";
             // 
-            // label31
+            // DataNumLabel9
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label31.Location = new System.Drawing.Point(116, 362);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(23, 16);
-            this.label31.TabIndex = 3;
-            this.label31.Text = "9:";
+            this.DataNumLabel9.AutoSize = true;
+            this.DataNumLabel9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel9.Location = new System.Drawing.Point(116, 362);
+            this.DataNumLabel9.Name = "DataNumLabel9";
+            this.DataNumLabel9.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel9.TabIndex = 3;
+            this.DataNumLabel9.Text = "9";
             // 
-            // label26
+            // DataNumLabel4
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(116, 202);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(23, 16);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "4:";
+            this.DataNumLabel4.AutoSize = true;
+            this.DataNumLabel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel4.Location = new System.Drawing.Point(116, 202);
+            this.DataNumLabel4.Name = "DataNumLabel4";
+            this.DataNumLabel4.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel4.TabIndex = 3;
+            this.DataNumLabel4.Text = "4";
             // 
-            // label36
+            // DataNumLabel14
             // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label36.Location = new System.Drawing.Point(247, 202);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(31, 16);
-            this.label36.TabIndex = 3;
-            this.label36.Text = "14:";
+            this.DataNumLabel14.AutoSize = true;
+            this.DataNumLabel14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel14.Location = new System.Drawing.Point(247, 202);
+            this.DataNumLabel14.Name = "DataNumLabel14";
+            this.DataNumLabel14.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel14.TabIndex = 3;
+            this.DataNumLabel14.Text = "14";
             // 
-            // label50
+            // DataNumLabel28
             // 
-            this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label50.Location = new System.Drawing.Point(381, 330);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(31, 16);
-            this.label50.TabIndex = 3;
-            this.label50.Text = "28:";
+            this.DataNumLabel28.AutoSize = true;
+            this.DataNumLabel28.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel28.Location = new System.Drawing.Point(381, 330);
+            this.DataNumLabel28.Name = "DataNumLabel28";
+            this.DataNumLabel28.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel28.TabIndex = 3;
+            this.DataNumLabel28.Text = "28";
             // 
-            // label46
+            // DataNumLabel24
             // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label46.Location = new System.Drawing.Point(381, 202);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(31, 16);
-            this.label46.TabIndex = 3;
-            this.label46.Text = "24:";
+            this.DataNumLabel24.AutoSize = true;
+            this.DataNumLabel24.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel24.Location = new System.Drawing.Point(381, 202);
+            this.DataNumLabel24.Name = "DataNumLabel24";
+            this.DataNumLabel24.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel24.TabIndex = 3;
+            this.DataNumLabel24.Text = "24";
             // 
-            // label40
+            // DataNumLabel18
             // 
-            this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label40.Location = new System.Drawing.Point(247, 330);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(31, 16);
-            this.label40.TabIndex = 3;
-            this.label40.Text = "18:";
+            this.DataNumLabel18.AutoSize = true;
+            this.DataNumLabel18.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel18.Location = new System.Drawing.Point(247, 330);
+            this.DataNumLabel18.Name = "DataNumLabel18";
+            this.DataNumLabel18.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel18.TabIndex = 3;
+            this.DataNumLabel18.Text = "18";
             // 
-            // label30
+            // DataNumLabel8
             // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.Location = new System.Drawing.Point(116, 330);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(23, 16);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "8:";
+            this.DataNumLabel8.AutoSize = true;
+            this.DataNumLabel8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel8.Location = new System.Drawing.Point(116, 330);
+            this.DataNumLabel8.Name = "DataNumLabel8";
+            this.DataNumLabel8.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel8.TabIndex = 3;
+            this.DataNumLabel8.Text = "8";
             // 
-            // label27
+            // DataNumLabel5
             // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(116, 234);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(23, 16);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "5:";
+            this.DataNumLabel5.AutoSize = true;
+            this.DataNumLabel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel5.Location = new System.Drawing.Point(116, 234);
+            this.DataNumLabel5.Name = "DataNumLabel5";
+            this.DataNumLabel5.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel5.TabIndex = 3;
+            this.DataNumLabel5.Text = "5";
             // 
-            // label37
+            // DataNumLabel15
             // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label37.Location = new System.Drawing.Point(247, 234);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(31, 16);
-            this.label37.TabIndex = 3;
-            this.label37.Text = "15:";
+            this.DataNumLabel15.AutoSize = true;
+            this.DataNumLabel15.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel15.Location = new System.Drawing.Point(247, 234);
+            this.DataNumLabel15.Name = "DataNumLabel15";
+            this.DataNumLabel15.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel15.TabIndex = 3;
+            this.DataNumLabel15.Text = "15";
             // 
-            // label49
+            // DataNumLabel27
             // 
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label49.Location = new System.Drawing.Point(381, 298);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(31, 16);
-            this.label49.TabIndex = 3;
-            this.label49.Text = "27:";
+            this.DataNumLabel27.AutoSize = true;
+            this.DataNumLabel27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel27.Location = new System.Drawing.Point(381, 298);
+            this.DataNumLabel27.Name = "DataNumLabel27";
+            this.DataNumLabel27.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel27.TabIndex = 3;
+            this.DataNumLabel27.Text = "27";
             // 
-            // label47
+            // DataNumLabel25
             // 
-            this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label47.Location = new System.Drawing.Point(381, 234);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(31, 16);
-            this.label47.TabIndex = 3;
-            this.label47.Text = "25:";
+            this.DataNumLabel25.AutoSize = true;
+            this.DataNumLabel25.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel25.Location = new System.Drawing.Point(381, 234);
+            this.DataNumLabel25.Name = "DataNumLabel25";
+            this.DataNumLabel25.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel25.TabIndex = 3;
+            this.DataNumLabel25.Text = "25";
             // 
-            // label39
+            // DataNumLabel17
             // 
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label39.Location = new System.Drawing.Point(247, 298);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(31, 16);
-            this.label39.TabIndex = 3;
-            this.label39.Text = "17:";
+            this.DataNumLabel17.AutoSize = true;
+            this.DataNumLabel17.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel17.Location = new System.Drawing.Point(247, 298);
+            this.DataNumLabel17.Name = "DataNumLabel17";
+            this.DataNumLabel17.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel17.TabIndex = 3;
+            this.DataNumLabel17.Text = "17";
             // 
-            // label29
+            // DataNumLabel7
             // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.Location = new System.Drawing.Point(116, 298);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(23, 16);
-            this.label29.TabIndex = 3;
-            this.label29.Text = "7:";
+            this.DataNumLabel7.AutoSize = true;
+            this.DataNumLabel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel7.Location = new System.Drawing.Point(116, 298);
+            this.DataNumLabel7.Name = "DataNumLabel7";
+            this.DataNumLabel7.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel7.TabIndex = 3;
+            this.DataNumLabel7.Text = "7";
             // 
-            // label28
+            // DataNumLabel6
             // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.Location = new System.Drawing.Point(116, 266);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(23, 16);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "6:";
+            this.DataNumLabel6.AutoSize = true;
+            this.DataNumLabel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel6.Location = new System.Drawing.Point(116, 266);
+            this.DataNumLabel6.Name = "DataNumLabel6";
+            this.DataNumLabel6.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel6.TabIndex = 3;
+            this.DataNumLabel6.Text = "6";
             // 
-            // label38
+            // DataNumLabel16
             // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label38.Location = new System.Drawing.Point(247, 266);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(31, 16);
-            this.label38.TabIndex = 3;
-            this.label38.Text = "16:";
+            this.DataNumLabel16.AutoSize = true;
+            this.DataNumLabel16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel16.Location = new System.Drawing.Point(247, 266);
+            this.DataNumLabel16.Name = "DataNumLabel16";
+            this.DataNumLabel16.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel16.TabIndex = 3;
+            this.DataNumLabel16.Text = "16";
             // 
-            // label48
+            // DataNumLabel26
             // 
-            this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label48.Location = new System.Drawing.Point(381, 266);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(31, 16);
-            this.label48.TabIndex = 3;
-            this.label48.Text = "26:";
+            this.DataNumLabel26.AutoSize = true;
+            this.DataNumLabel26.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel26.Location = new System.Drawing.Point(381, 266);
+            this.DataNumLabel26.Name = "DataNumLabel26";
+            this.DataNumLabel26.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel26.TabIndex = 3;
+            this.DataNumLabel26.Text = "26";
             // 
             // tabPage3
             // 
@@ -2451,6 +2481,19 @@ namespace GasFormsApp
             this.tabPage4.Size = new System.Drawing.Size(1460, 629);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
+            // 
+            // ExpCalcButton
+            // 
+            this.ExpCalcButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ExpCalcButton.Image = ((System.Drawing.Image)(resources.GetObject("ExpCalcButton.Image")));
+            this.ExpCalcButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExpCalcButton.Location = new System.Drawing.Point(902, 521);
+            this.ExpCalcButton.Name = "ExpCalcButton";
+            this.ExpCalcButton.Size = new System.Drawing.Size(130, 41);
+            this.ExpCalcButton.TabIndex = 38;
+            this.ExpCalcButton.Text = "计    算";
+            this.ExpCalcButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExpCalcButton.UseVisualStyleBackColor = true;
             // 
             // Wc_TextBox
             // 
@@ -3184,19 +3227,6 @@ namespace GasFormsApp
             // 
             this.InputCheckTimer.Tick += new System.EventHandler(this.InputCheckTimer_Tick);
             // 
-            // ExpCalcButton
-            // 
-            this.ExpCalcButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ExpCalcButton.Image = ((System.Drawing.Image)(resources.GetObject("ExpCalcButton.Image")));
-            this.ExpCalcButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExpCalcButton.Location = new System.Drawing.Point(902, 521);
-            this.ExpCalcButton.Name = "ExpCalcButton";
-            this.ExpCalcButton.Size = new System.Drawing.Size(130, 41);
-            this.ExpCalcButton.TabIndex = 38;
-            this.ExpCalcButton.Text = "计    算";
-            this.ExpCalcButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ExpCalcButton.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3217,9 +3247,9 @@ namespace GasFormsApp
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -3259,38 +3289,38 @@ namespace GasFormsApp
         private Label label1;
         private Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Label label23;
-        private Label label33;
-        private Label label43;
+        private Label DataNumLabel1;
+        private Label DataNumLabel11;
+        private Label DataNumLabel21;
         private Label label54;
-        private Label label24;
-        private Label label52;
-        private Label label34;
+        private Label DataNumLabel2;
+        private Label DataNumLabel30;
+        private Label DataNumLabel12;
         private Label label53;
-        private Label label44;
-        private Label label42;
-        private Label label32;
-        private Label label25;
-        private Label label35;
-        private Label label51;
-        private Label label45;
-        private Label label41;
-        private Label label31;
-        private Label label26;
-        private Label label36;
-        private Label label50;
-        private Label label46;
-        private Label label40;
-        private Label label30;
-        private Label label27;
-        private Label label37;
-        private Label label49;
-        private Label label47;
-        private Label label39;
-        private Label label29;
-        private Label label28;
-        private Label label38;
-        private Label label48;
+        private Label DataNumLabel22;
+        private Label DataNumLabel20;
+        private Label DataNumLabel10;
+        private Label DataNumLabel3;
+        private Label DataNumLabel13;
+        private Label DataNumLabel29;
+        private Label DataNumLabel23;
+        private Label DataNumLabel19;
+        private Label DataNumLabel9;
+        private Label DataNumLabel4;
+        private Label DataNumLabel14;
+        private Label DataNumLabel28;
+        private Label DataNumLabel24;
+        private Label DataNumLabel18;
+        private Label DataNumLabel8;
+        private Label DataNumLabel5;
+        private Label DataNumLabel15;
+        private Label DataNumLabel27;
+        private Label DataNumLabel25;
+        private Label DataNumLabel17;
+        private Label DataNumLabel7;
+        private Label DataNumLabel6;
+        private Label DataNumLabel16;
+        private Label DataNumLabel26;
         private TextBox DesorbTextBox60;
         private TextBox DesorbTextBox31;
         private TextBox DesorbTextBox41;
@@ -3321,36 +3351,6 @@ namespace GasFormsApp
         private TextBox DesorbTextBox55;
         private TextBox DesorbTextBox46;
         private TextBox DesorbTextBox36;
-        private Label label4;
-        private Label label5;
-        private Label label17;
-        private Label label55;
-        private Label label56;
-        private Label label57;
-        private Label label58;
-        private Label label59;
-        private Label label60;
-        private Label label61;
-        private Label label62;
-        private Label label63;
-        private Label label64;
-        private Label label65;
-        private Label label66;
-        private Label label67;
-        private Label label68;
-        private Label label69;
-        private Label label70;
-        private Label label71;
-        private Label label72;
-        private Label label73;
-        private Label label74;
-        private Label label75;
-        private Label label76;
-        private Label label77;
-        private Label label78;
-        private Label label79;
-        private Label label80;
-        private Label label81;
         private Label label101;
         private Label label96;
         private Label label82;
@@ -3498,5 +3498,35 @@ namespace GasFormsApp
         public Button LabDesorbButton;
         public Button ExpCalcButton;
         public ToolTip toolTip1;
+        public TextBox DataNumTextBox31;
+        public TextBox DataNumTextBox40;
+        public TextBox DataNumTextBox39;
+        public TextBox DataNumTextBox38;
+        public TextBox DataNumTextBox37;
+        public TextBox DataNumTextBox36;
+        public TextBox DataNumTextBox35;
+        public TextBox DataNumTextBox34;
+        public TextBox DataNumTextBox33;
+        public TextBox DataNumTextBox32;
+        public TextBox DataNumTextBox60;
+        public TextBox DataNumTextBox59;
+        public TextBox DataNumTextBox58;
+        public TextBox DataNumTextBox57;
+        public TextBox DataNumTextBox56;
+        public TextBox DataNumTextBox55;
+        public TextBox DataNumTextBox54;
+        public TextBox DataNumTextBox53;
+        public TextBox DataNumTextBox52;
+        public TextBox DataNumTextBox51;
+        public TextBox DataNumTextBox50;
+        public TextBox DataNumTextBox49;
+        public TextBox DataNumTextBox48;
+        public TextBox DataNumTextBox47;
+        public TextBox DataNumTextBox46;
+        public TextBox DataNumTextBox45;
+        public TextBox DataNumTextBox44;
+        public TextBox DataNumTextBox43;
+        public TextBox DataNumTextBox42;
+        public TextBox DataNumTextBox41;
     }
 }
