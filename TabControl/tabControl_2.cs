@@ -32,6 +32,26 @@ namespace GasFormsApp.TabControl
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
         }
 
+        private void ValidateNumericDataNumTextBox31_60(TextBox textBox)
+        {
+            string input = textBox.Text;
+
+            // 重置颜色
+            textBox.BackColor = Color.FromArgb(192, 192, 255);
+
+            if(input.Contains(" "))
+            {
+                textBox.BackColor = Color.Red;
+            }
+            else if (string.IsNullOrWhiteSpace(input))
+            {
+                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+            else if (!double.TryParse(input, out double value) || value < 0 || value <= 30)
+            {
+                textBox.BackColor = Color.Red;
+            }
+        }
         private void ValidateNumericTextBox(TextBox textBox)
         {
             string input = textBox.Text;
@@ -63,6 +83,17 @@ namespace GasFormsApp.TabControl
         public void TabControl_2_InputCheckTimer_Tick()
         {
             ValidateNumericTextBox(_mainForm.t0TextBox);
+
+            
+            for (int i = 31; i <= 60; i++)
+            {
+                string controlName = "DataNumTextBox" + i;
+                Control ctl = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
+                if (ctl is TextBox tb)
+                {
+                    ValidateNumericDataNumTextBox31_60(tb);
+                }
+            }
 
             for (int i = 1; i <= 30; i++)
             {

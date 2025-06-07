@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace GasFormsApp.TabControl
 {
@@ -40,21 +41,39 @@ namespace GasFormsApp.TabControl
                     if (isChecked)
                     {
                         Console.WriteLine("勾选");
-                        Word_resourceName = "GasFormsApp.WordTemplate.docx";
                         _mainForm.GasCompGroupBox.Enabled = true;
+                        MainForm.GasCompCheckBoxFlag = true;
                     }
                     else
                     {
                         Console.WriteLine("取消勾选");
-                        Word_resourceName = "GasFormsApp.WordTemplate_1.docx";
                         _mainForm.GasCompGroupBox.Enabled = false;
+                        MainForm.GasCompCheckBoxFlag = false;
                     }
                 }
             }
         }
 
-        // 默认状态下不勾选 自然瓦斯成分
-        string Word_resourceName = "GasFormsApp.WordTemplate_1.docx"; // 注意这个名字必须和实际资源名一致
+        private static readonly Dictionary<(bool, bool), string> resourceMap = new Dictionary<(bool, bool), string>
+        {
+            { ( true,  true), "GasFormsApp.WordTemplate.docx" },
+            { ( true, false), "GasFormsApp.WordTemplate_NoGasComponent.docx" },
+            { (false,  true), "GasFormsApp.WordTemplate_NoWc.docx" },
+            { (false, false), "GasFormsApp.WordTemplate_NoWcNoGasComponent.docx" }
+        };
+        private string Word_ResourceName(bool wcFlag, bool gasCompFlag)
+        {
+            if (resourceMap.TryGetValue((wcFlag, gasCompFlag), out var resourceName))
+            {
+                return resourceName;
+            }
+            else
+            {
+                // 万一有意外组合，返回默认值
+                return "GasFormsApp.WordTemplate.docx";
+            }
+        }
+
         public void GenReportButton_Click(object sender, EventArgs e)
         {
             // 选择保存位置
@@ -85,6 +104,7 @@ namespace GasFormsApp.TabControl
                 var assembly = Assembly.GetExecutingAssembly();
 
                 // 尝试读取嵌入资源
+                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag);
                 using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
                 {
                     if (resourceStream == null)

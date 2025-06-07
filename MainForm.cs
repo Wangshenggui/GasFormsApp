@@ -16,6 +16,11 @@ namespace GasFormsApp
         //python执行标志
         public static bool python执行标志 = false;
 
+        //Wc选择标志
+        public static bool WcOutCheckBoxFlag = false;
+        //瓦斯含量选择标志
+        public static bool GasCompCheckBoxFlag = false;
+
         public static double 井下解吸体积 = 0.0;
         public static double 井下解吸校准体积 = 0.0;
         public static double W1 = 0.0;
@@ -99,43 +104,83 @@ namespace GasFormsApp
             InitialVolumeTextBox.Text = "3";
 
             t0TextBox.Text = "2";
-            DesorbTextBox1.Text = "94";
-            DesorbTextBox2.Text = "126";
-            DesorbTextBox3.Text = "152";
-            DesorbTextBox4.Text = "184";
-            DesorbTextBox5.Text = "216";
-            DesorbTextBox6.Text = "240";
-            DesorbTextBox7.Text = "276";
-            DesorbTextBox8.Text = "302";
-            DesorbTextBox9.Text = "324";
-            DesorbTextBox10.Text = "338";
-            DesorbTextBox11.Text = "358";
-            DesorbTextBox12.Text = "386";
-            DesorbTextBox13.Text = "416";
-            DesorbTextBox14.Text = "446";
-            DesorbTextBox15.Text = "458";
-            DesorbTextBox16.Text = "474";
-            DesorbTextBox17.Text = "486";
-            DesorbTextBox18.Text = "498";
-            DesorbTextBox19.Text = "514";
-            DesorbTextBox20.Text = "530";
-            DesorbTextBox21.Text = "548";
-            DesorbTextBox22.Text = "560";
-            DesorbTextBox23.Text = "572";
-            DesorbTextBox24.Text = "582";
-            DesorbTextBox25.Text = "596";
-            DesorbTextBox26.Text = "608";
-            DesorbTextBox27.Text = "618";
-            DesorbTextBox28.Text = "630";
-            DesorbTextBox29.Text = "646";
-            DesorbTextBox30.Text = "654";
+            //DesorbTextBox1.Text = "94";
+            //DesorbTextBox2.Text = "126";
+            //DesorbTextBox3.Text = "152";
+            //DesorbTextBox4.Text = "184";
+            //DesorbTextBox5.Text = "216";
+            //DesorbTextBox6.Text = "240";
+            //DesorbTextBox7.Text = "276";
+            //DesorbTextBox8.Text = "302";
+            //DesorbTextBox9.Text = "324";
+            //DesorbTextBox10.Text = "338";
+            //DesorbTextBox11.Text = "358";
+            //DesorbTextBox12.Text = "386";
+            //DesorbTextBox13.Text = "416";
+            //DesorbTextBox14.Text = "446";
+            //DesorbTextBox15.Text = "458";
+            //DesorbTextBox16.Text = "474";
+            //DesorbTextBox17.Text = "486";
+            //DesorbTextBox18.Text = "498";
+            //DesorbTextBox19.Text = "514";
+            //DesorbTextBox20.Text = "530";
+            //DesorbTextBox21.Text = "548";
+            //DesorbTextBox22.Text = "560";
+            //DesorbTextBox23.Text = "572";
+            //DesorbTextBox24.Text = "582";
+            //DesorbTextBox25.Text = "596";
+            //DesorbTextBox26.Text = "608";
+            //DesorbTextBox27.Text = "618";
+            //DesorbTextBox28.Text = "630";
+            //DesorbTextBox29.Text = "646";
+            //DesorbTextBox30.Text = "654";
 
-            DesorbTextBox31.Text = "682";
-            DesorbTextBox32.Text = "704";
-            DesorbTextBox33.Text = "716";
-            DesorbTextBox34.Text = "726";
-            DesorbTextBox35.Text = "736";
-            DesorbTextBox36.Text = "744";
+            //DesorbTextBox31.Text = "682";
+            //DesorbTextBox32.Text = "704";
+            //DesorbTextBox33.Text = "716";
+            //DesorbTextBox34.Text = "726";
+            //DesorbTextBox35.Text = "736";
+            //DesorbTextBox36.Text = "744";
+
+            DesorbTextBox1.Text = "36";
+            DesorbTextBox2.Text = "56";
+            DesorbTextBox3.Text = "76";
+            DesorbTextBox4.Text = "86";
+            DesorbTextBox5.Text = "98";
+            DesorbTextBox6.Text = "106";
+            DesorbTextBox7.Text = "114";
+            DesorbTextBox8.Text = "122";
+            DesorbTextBox9.Text = "128";
+            DesorbTextBox10.Text = "144";
+            DesorbTextBox11.Text = "152";
+            DesorbTextBox12.Text = "166";
+            DesorbTextBox13.Text = "178";
+            DesorbTextBox14.Text = "192";
+            DesorbTextBox15.Text = "200";
+            DesorbTextBox16.Text = "208";
+            DesorbTextBox17.Text = "218";
+            DesorbTextBox18.Text = "232";
+            DesorbTextBox19.Text = "244";
+            DesorbTextBox20.Text = "250";
+            //DesorbTextBox21.Text = "270";
+            //DesorbTextBox22.Text = "298";
+            //DesorbTextBox23.Text = "324";
+            //DesorbTextBox24.Text = "358";
+            //DesorbTextBox25.Text = "390";
+            //DesorbTextBox26.Text = "408";
+            //DesorbTextBox27.Text = "416";
+            //DesorbTextBox28.Text = "428";
+            //DesorbTextBox29.Text = "442";
+            //DesorbTextBox30.Text = "444";
+
+
+            //DesorbTextBox31.Text = "682";
+            //DesorbTextBox32.Text = "704";
+            //DesorbTextBox33.Text = "716";
+            //DesorbTextBox34.Text = "726";
+            //DesorbTextBox35.Text = "736";
+            //DesorbTextBox36.Text = "744";
+
             //DesorbTextBox37.Text = "276";
             //DesorbTextBox38.Text = "302";
             //DesorbTextBox39.Text = "324";
