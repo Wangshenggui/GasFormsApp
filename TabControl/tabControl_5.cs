@@ -40,15 +40,23 @@ namespace GasFormsApp.TabControl
                 {
                     if (isChecked)
                     {
-                        Console.WriteLine("勾选");
                         _mainForm.GasCompGroupBox.Enabled = true;
+
+                        MainForm.WcOutCheckBoxFlag = false;
                         MainForm.GasCompCheckBoxFlag = true;
+                        _mainForm.WcOutCheckBox.Checked = false;
+
+                        Console.WriteLine($"GasCompGroupBox---{MainForm.WcOutCheckBoxFlag}&&&{MainForm.GasCompCheckBoxFlag}");
                     }
                     else
                     {
-                        Console.WriteLine("取消勾选");
                         _mainForm.GasCompGroupBox.Enabled = false;
+
+                        MainForm.WcOutCheckBoxFlag = true;
                         MainForm.GasCompCheckBoxFlag = false;
+                        _mainForm.WcOutCheckBox.Checked = true;
+
+                        Console.WriteLine($"GasCompGroupBox---{MainForm.WcOutCheckBoxFlag}&&&{MainForm.GasCompCheckBoxFlag}");
                     }
                 }
             }

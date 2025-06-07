@@ -94,13 +94,46 @@ namespace GasFormsApp.WordPperation
                 {"AuditorText", _mainForm.AuditorTextBox.Text},//审 核 人 员
                 {"ReportTimeText", ReportTimeText},//出报告时间
                 {"RemarkText", _mainForm.RemarkTextBox.Text},//备注
+
+                //以下是30分钟以后解吸时间填充
+                { "T31", _mainForm.DataNumTextBox31.Text },
+                { "T32", _mainForm.DataNumTextBox32.Text },
+                { "T33", _mainForm.DataNumTextBox33.Text },
+                { "T34", _mainForm.DataNumTextBox34.Text },
+                { "T35", _mainForm.DataNumTextBox35.Text },
+                { "T36", _mainForm.DataNumTextBox36.Text },
+                { "T37", _mainForm.DataNumTextBox37.Text },
+                { "T38", _mainForm.DataNumTextBox38.Text },
+                { "T39", _mainForm.DataNumTextBox39.Text },
+                { "T40", _mainForm.DataNumTextBox40.Text },
+                { "T41", _mainForm.DataNumTextBox41.Text },
+                { "T42", _mainForm.DataNumTextBox42.Text },
+                { "T43", _mainForm.DataNumTextBox43.Text },
+                { "T44", _mainForm.DataNumTextBox44.Text },
+                { "T45", _mainForm.DataNumTextBox45.Text },
+                { "T46", _mainForm.DataNumTextBox46.Text },
+                { "T47", _mainForm.DataNumTextBox47.Text },
+                { "T48", _mainForm.DataNumTextBox48.Text },
+                { "T49", _mainForm.DataNumTextBox49.Text },
+                { "T50", _mainForm.DataNumTextBox50.Text },
+                { "T51", _mainForm.DataNumTextBox51.Text },
+                { "T52", _mainForm.DataNumTextBox52.Text },
+                { "T53", _mainForm.DataNumTextBox53.Text },
+                { "T54", _mainForm.DataNumTextBox54.Text },
+                { "T55", _mainForm.DataNumTextBox55.Text },
+                { "T56", _mainForm.DataNumTextBox56.Text },
+                { "T57", _mainForm.DataNumTextBox57.Text },
+                { "T58", _mainForm.DataNumTextBox58.Text },
+                { "T59", _mainForm.DataNumTextBox59.Text },
+                { "T60", _mainForm.DataNumTextBox60.Text },
+
             };
             ReplacePlaceholders(memoryStream, placeholders);
 
             // 实验数据替换
             placeholders = new Dictionary<string, string>();
             double maxValue = double.MinValue;
-            
+
 
             for (int i = 1; i <= 60; i++)
             {

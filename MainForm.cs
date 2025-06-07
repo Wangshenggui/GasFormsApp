@@ -17,7 +17,7 @@ namespace GasFormsApp
         public static bool python执行标志 = false;
 
         //Wc选择标志
-        public static bool WcOutCheckBoxFlag = false;
+        public static bool WcOutCheckBoxFlag = true;
         //瓦斯含量选择标志
         public static bool GasCompCheckBoxFlag = false;
 
@@ -366,6 +366,16 @@ namespace GasFormsApp
 
                 e.Handled = true;
             }
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
