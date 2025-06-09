@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -8,6 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Font = System.Drawing.Font;
 
 namespace GasFormsApp.TabControl
 {
@@ -26,7 +28,48 @@ namespace GasFormsApp.TabControl
 
             _mainForm.dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
 
+
+            //_mainForm.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //_mainForm.dataGridView1.MultiSelect = false;
+
+            _mainForm.dataGridView1.CellBeginEdit += (s, e) => {
+                Console.WriteLine($"CellBeginEdit at row {e.RowIndex}, col {e.ColumnIndex}");
+            };
         }
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            var dgv = sender as DataGridView;
+            var cell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            bool isRowSelected = dgv.Rows[e.RowIndex].Selected;
+            bool isCellSelected = cell.Selected;
+
+            if (isRowSelected)
+            {
+                if (isCellSelected)
+                {
+                    // 选中单元格：橙色背景，黑色字体
+                    e.Graphics.FillRectangle(Brushes.Orange, e.CellBounds);
+                    TextRenderer.DrawText(e.Graphics, e.FormattedValue?.ToString() ?? "",
+                        e.CellStyle.Font, e.CellBounds, Color.Black,
+                        TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
+                    e.Handled = true;
+                }
+                else
+                {
+                    // 选中行但该单元格没选中：淡蓝背景，默认字体颜色
+                    e.Graphics.FillRectangle(Brushes.LightBlue, e.CellBounds);
+                    TextRenderer.DrawText(e.Graphics, e.FormattedValue?.ToString() ?? "",
+                        e.CellStyle.Font, e.CellBounds, dgv.DefaultCellStyle.ForeColor,
+                        TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
+                    e.Handled = true;
+                }
+            }
+        }
+
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -52,7 +95,6 @@ namespace GasFormsApp.TabControl
         [Serializable]
         public class UserData
         {
-            public string ID { get; set; }
             /// <summary>
             /// ///////////////////////////////
             /// </summary>
@@ -167,64 +209,63 @@ namespace GasFormsApp.TabControl
                 // 创建用户数据对象，这里是模拟数据，也可以从界面控件读取
                 var user = new UserData
                 {
-                    ID = "001",
-                    矿井名称 = "某矿井",
-                    取样地点 = "某工作面",
-                    取样时间 = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                    埋深 = "500m",
-                    煤层 = "3#煤",
-                    煤样编号 = "CY202506",
-                    实验室大气压力 = "101.3kPa",
-                    实验室温度 = "25°C",
-                    取样方式 = "钻探",
-                    原煤水分 = "2.5%",
-                    取样深度 = "5m",
-                    井下大气压力 = "102kPa",
-                    井下环境温度 = "27°C",
-                    煤样重量 = "1.2kg",
-                    煤样水分 = "1.8%",
-                    量管初始体积 = "100ml",
+                    矿井名称 = _mainForm.MineNameTextBox.Text,
+                    取样地点 = _mainForm.SamplingSpotTextBox.Text,
+                    取样时间 = _mainForm.SamplingTimeDateTimePicker.Text,
+                    埋深 = _mainForm.BurialDepthTextBox.Text,
+                    煤层 = _mainForm.CoalSeamTextBox.Text,
+                    煤样编号 = _mainForm.SampleNumTextBox.Text,
+                    实验室大气压力 = _mainForm.LabAtmPressureTextBox.Text,
+                    实验室温度 = _mainForm.LabTempTextBox.Text,
+                    取样方式 = _mainForm.SampleModeComboBox.Text,
+                    原煤水分 = _mainForm.RawCoalMoistureTextBox.Text,
+                    取样深度 = _mainForm.SamplingDepthTextBox.Text,
+                    井下大气压力 = _mainForm.UndAtmPressureTextBox.Text,
+                    井下环境温度 = _mainForm.UndTempTextBox.Text,
+                    煤样重量 = _mainForm.SampleWeightTextBox.Text,
+                    煤样水分 = _mainForm.MoistureSampleTextBox.Text,
+                    量管初始体积 = _mainForm.InitialVolumeTextBox.Text,
 
-                    井下解吸量W11 = "0.5",
-                    瓦斯损失量W12 = "0.1",
+                    井下解吸量W11 = _mainForm.UndDesorpCalTextBox.Text,
+                    瓦斯损失量W12 = _mainForm.SampLossVolTextBox.Text,
 
-                    实验室常压解吸W2 = "0.3",
-                    粉碎后第1份煤样重 = "0.6",
-                    第1份煤样解吸量 = "0.15",
-                    粉碎后第2份煤样重 = "0.5",
-                    第2份煤样解吸量 = "0.12",
+                    实验室常压解吸W2 = _mainForm.DesorpVolNormalCalTextBox.Text,
+                    粉碎后第1份煤样重 = _mainForm.Sample1WeightTextBox.Text,
+                    第1份煤样解吸量 = _mainForm.S1DesorpVolCalTextBox.Text,
+                    粉碎后第2份煤样重 = _mainForm.Sample2WeightTextBox.Text,
+                    第2份煤样解吸量 = _mainForm.S2DesorpVolCalTextBox.Text,
 
-                    a = "0.98",
-                    b = "1.05",
-                    Mad = "3.2%",
-                    Aad = "12%",
-                    Vad = "30%",
-                    K = "0.7",
-                    r = "1.0",
+                    a = _mainForm.AdsorpConstATextBox.Text,
+                    b = _mainForm.AdsorpConstBTextBox.Text,
+                    Mad = _mainForm.MadTextBox.Text,
+                    Aad = _mainForm.AadTextBox.Text,
+                    Vad = _mainForm.VadTextBox.Text,
+                    K = _mainForm.PorosityTextBox.Text,
+                    r = _mainForm.AppDensityTextBox.Text,
 
-                    CH4 = "85%",
-                    CO2 = "10%",
-                    N2 = "3%",
-                    O2 = "1%",
-                    C2H4 = "0.2%",
-                    C3H8 = "0.1%",
-                    C2H6 = "0.05%",
-                    C3H6 = "0.01%",
-                    C2H2 = "0.03%",
-                    CO = "0.02%",
+                    CH4 = _mainForm.CH4TextBox.Text,
+                    CO2 = _mainForm.CO2TextBox.Text,
+                    N2 = _mainForm.N2TextBox.Text,
+                    O2 = _mainForm.O2TextBox.Text,
+                    C2H4 = _mainForm.C2H4TextBox.Text,
+                    C3H8 = _mainForm.C3H8TextBox.Text,
+                    C2H6 = _mainForm.C2H6TextBox.Text,
+                    C3H6 = _mainForm.C3H6TextBox.Text,
+                    C2H2 = _mainForm.C2H2TextBox.Text,
+                    CO = _mainForm.COTextBox.Text,
 
-                    W1 = "0.5",
-                    W2 = "0.3",
-                    W3 = "0.2",
-                    Wa = "1.0",
-                    Wc = "0.9",
-                    W = "2.2",
-                    P = "0.8",
+                    W1 = _mainForm.W1_TextBox.Text,
+                    W2 = _mainForm.W2_TextBox.Text,
+                    W3 = _mainForm.W3_TextBox.Text,
+                    Wa = _mainForm.Wa_TextBox.Text,
+                    Wc = _mainForm.Wc_TextBox.Text,
+                    W = _mainForm.W_TextBox.Text,
+                    P = _mainForm.P_TextBox.Text,
 
-                    实验室测试人员 = "张三",
-                    审核人员 = "李四",
-                    出报告时间 = DateTime.Now.ToString("yyyy-MM-dd"),
-                    备注 = "数据自动生成"
+                    实验室测试人员 = _mainForm.LabTestersTextBox.Text,
+                    审核人员 = _mainForm.AuditorTextBox.Text,
+                    出报告时间 = _mainForm.dateTimePicker1.Text,
+                    备注 = _mainForm.RemarkTextBox.Text,
                 };
 
 
@@ -250,6 +291,20 @@ namespace GasFormsApp.TabControl
         /// 按钮2点击事件：读取所有保存的用户数据并绑定到 DataGridView
         /// </summary>
         private void button2_Click(object sender, EventArgs e)
+        {
+            // 设置筛选关键字
+            string Keyword = _mainForm.textBox1.Text;
+            if (string.IsNullOrEmpty(Keyword))
+            {
+                全部显示();
+            }
+            else
+            {
+                查询显示(Keyword);
+            }
+        }
+
+        void 全部显示()
         {
             try
             {
@@ -296,5 +351,135 @@ namespace GasFormsApp.TabControl
                 Console.WriteLine("读取失败：" + ex.Message);
             }
         }
+        private string _currentKeyword = "";
+        private List<UserData> LoadAllUsers()
+        {
+            if (!Directory.Exists(SystemDataPath))
+            {
+                Console.WriteLine("BinData 文件夹不存在！");
+                return new List<UserData>();
+            }
+
+            string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
+            if (files.Length == 0)
+            {
+                Console.WriteLine("没有找到数据文件！");
+                return new List<UserData>();
+            }
+
+            List<UserData> allUsers = new List<UserData>();
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            foreach (var file in files)
+            {
+                using (FileStream fs = new FileStream(file, FileMode.Open))
+                {
+                    UserData user = (UserData)formatter.Deserialize(fs);
+                    allUsers.Add(user);
+                }
+            }
+            return allUsers;
+        }
+        private void 查询显示(string filterKeyword)
+        {
+            try
+            {
+                List<UserData> allUsers = LoadAllUsers();
+
+                if (allUsers.Count == 0)
+                {
+                    Console.WriteLine("没有数据，无法筛选！");
+                    return;
+                }
+
+                
+                _currentKeyword = filterKeyword; // 保存当前关键字，用于高亮
+
+                List<UserData> filteredUsers;
+                if (string.IsNullOrEmpty(filterKeyword))
+                {
+                    filteredUsers = allUsers;
+                }
+                else
+                {
+                    filteredUsers = allUsers
+                        .Where(u =>
+                            u.GetType()
+                             .GetProperties()
+                             .Where(p => p.PropertyType == typeof(string))
+                             .Select(p => p.GetValue(u) as string)
+                             .Any(val => !string.IsNullOrEmpty(val) &&
+                                         val.IndexOf(filterKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                        )
+                        .ToList();
+                }
+
+                var sortableList = new SortableBindingList<UserData>(filteredUsers);
+                _mainForm.dataGridView1.DataSource = null;
+                _mainForm.dataGridView1.DataSource = sortableList;
+                _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                // 绑定高亮事件（防止重复绑定）
+                _mainForm.dataGridView1.CellPainting -= DataGridView1_CellPainting;
+                _mainForm.dataGridView1.CellPainting += DataGridView1_CellPainting;
+
+                Console.WriteLine($"数据加载完成，筛选关键字：'{filterKeyword}'，结果数：{filteredUsers.Count}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("读取失败：" + ex.Message);
+            }
+        }
+        private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            var dgv = sender as DataGridView;
+
+            string cellText = e.FormattedValue?.ToString();
+            if (string.IsNullOrEmpty(cellText) || string.IsNullOrEmpty(_currentKeyword))
+                return;
+
+            int matchIndex = cellText.IndexOf(_currentKeyword, StringComparison.OrdinalIgnoreCase);
+            if (matchIndex < 0)
+                return;
+
+            e.Handled = true;
+            e.PaintBackground(e.CellBounds, true);
+
+            using (var normalBrush = new SolidBrush(dgv.DefaultCellStyle.ForeColor))
+            using (var highlightBrush = new SolidBrush(Color.Red))
+            using (var boldFont = new Font(e.CellStyle.Font, FontStyle.Bold))
+            {
+                var g = e.Graphics;
+                var font = e.CellStyle.Font;
+                var bounds = e.CellBounds;
+
+                string before = cellText.Substring(0, matchIndex);
+                string match = cellText.Substring(matchIndex, _currentKeyword.Length);
+                string after = cellText.Substring(matchIndex + _currentKeyword.Length);
+
+                float x = bounds.X;
+                float y = bounds.Y + (bounds.Height - font.Height) / 2;
+
+                Size sizeBefore = TextRenderer.MeasureText(before, font);
+                Size sizeMatch = TextRenderer.MeasureText(match, boldFont);
+
+                // 普通文字
+                g.DrawString(before, font, normalBrush, x, y);
+                x += (matchIndex == 0) ? sizeBefore.Width : sizeBefore.Width - 8;
+
+                // 加粗红色高亮文字
+                g.DrawString(match, boldFont, highlightBrush, x, y);
+                x += sizeMatch.Width - 8;
+
+                // 普通文字
+                g.DrawString(after, font, normalBrush, x, y);
+            }
+        }
+
+
+
     }
 }

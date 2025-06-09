@@ -303,8 +303,9 @@ namespace GasFormsApp
             this.CH4_Lable = new System.Windows.Forms.Label();
             this.GasCompCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -3332,8 +3333,9 @@ namespace GasFormsApp
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage6.Controls.Add(this.button2);
+            this.tabPage6.Controls.Add(this.textBox1);
             this.tabPage6.Controls.Add(this.button1);
+            this.tabPage6.Controls.Add(this.button2);
             this.tabPage6.Controls.Add(this.dataGridView1);
             this.tabPage6.Location = new System.Drawing.Point(4, 104);
             this.tabPage6.Name = "tabPage6";
@@ -3342,23 +3344,32 @@ namespace GasFormsApp
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             // 
-            // button2
+            // textBox1
             // 
-            this.button2.Location = new System.Drawing.Point(1301, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "刷新列表";
-            this.button2.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(1189, 440);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(122, 21);
+            this.textBox1.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1281, 122);
+            this.button1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(1235, 36);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.Size = new System.Drawing.Size(120, 50);
+            this.button1.TabIndex = 3;
             this.button1.Text = "保存数据";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(1235, 111);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 50);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "刷新列表";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -3382,6 +3393,7 @@ namespace GasFormsApp
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(8, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -3394,7 +3406,8 @@ namespace GasFormsApp
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1132, 523);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1132, 612);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
             // 
@@ -3487,6 +3500,7 @@ namespace GasFormsApp
             this.GasCompGroupBox.ResumeLayout(false);
             this.GasCompGroupBox.PerformLayout();
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -3773,5 +3787,6 @@ namespace GasFormsApp
         public DataGridView dataGridView1;
         public Button button2;
         public Button button1;
+        public TextBox textBox1;
     }
 }
