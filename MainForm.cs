@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using GasFormsApp.TabControl;
 
@@ -17,7 +19,7 @@ namespace GasFormsApp
         public static bool python执行标志 = false;
 
         //Wc选择标志
-        public static bool WcOutCheckBoxFlag = true;
+        public static bool WcOutCheckBoxFlag = false;
         //瓦斯含量选择标志
         public static bool GasCompCheckBoxFlag = false;
 
@@ -36,6 +38,8 @@ namespace GasFormsApp
         private tabControl_3 myTabLogic3;
         private tabControl_4 myTabLogic4;
         private tabControl_5 myTabLogic5;
+        private tabControl_6 myTabLogic6;
+
 
 
         private List<TextBox> desorbTextBoxes;
@@ -57,6 +61,7 @@ namespace GasFormsApp
             tabPage3.Text = "常压解吸";
             tabPage4.Text = "实验结果";
             tabPage5.Text = " 备  注 ";
+            tabPage6.Text = "历史记录";
 
             // 创建并绑定图像列表到 TabControl
             imageList1 = new ImageList();
@@ -71,6 +76,7 @@ namespace GasFormsApp
                 imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.3.ico").ToBitmap());
                 imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.4.ico").ToBitmap());
                 imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.5.ico").ToBitmap());
+                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.6.ico").ToBitmap());
             }
             catch (Exception ex)
             {
@@ -83,8 +89,27 @@ namespace GasFormsApp
             tabPage3.ImageIndex = 2;
             tabPage4.ImageIndex = 3;
             tabPage5.ImageIndex = 4;
+            tabPage6.ImageIndex = 5;
 
             #endregion
+
+
+            ////dataGridView1.Columns.Add("Id", "Id");
+            ////dataGridView1.Columns.Add("Name", "Name");
+
+            //DataTable table = new DataTable();
+            //table.Columns.Add("Id", typeof(int));
+            //table.Columns.Add("Name", typeof(string));
+
+            //table.Rows.Add(1, "Alice");
+            //table.Rows.Add(2, "Bob");
+            //table.Rows.Add(3, "Bob");
+
+            //dataGridView1.DataSource = table;  // 自动生成列，显示数据
+
+
+
+
 
             //#region 模拟用户输入 tabPage2
 
@@ -104,7 +129,7 @@ namespace GasFormsApp
             //InitialVolumeTextBox.Text = "3";
 
             //t0TextBox.Text = "2";
-            
+
             //DesorbTextBox1.Text = "36";
             //DesorbTextBox2.Text = "56";
             //DesorbTextBox3.Text = "76";
@@ -187,6 +212,10 @@ namespace GasFormsApp
             );
 
             myTabLogic5 = new tabControl_5(
+                this
+            );
+
+            myTabLogic6 = new tabControl_6(
                 this
             );
 
@@ -295,16 +324,6 @@ namespace GasFormsApp
 
                 e.Handled = true;
             }
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

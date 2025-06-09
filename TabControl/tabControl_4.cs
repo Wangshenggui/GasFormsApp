@@ -22,7 +22,6 @@ namespace GasFormsApp.TabControl
 
             
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
-            _mainForm.WcOutCheckBox.Checked = true;
         }
 
         private void WcOutCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -32,20 +31,12 @@ namespace GasFormsApp.TabControl
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打勾;
 
                 MainForm.WcOutCheckBoxFlag = true;
-                MainForm.GasCompCheckBoxFlag = false;
-                _mainForm.GasCompCheckBox.Checked = false;
-
-                Console.WriteLine($"WcOutCheckBoxFlag---{MainForm.WcOutCheckBoxFlag}&&&{MainForm.GasCompCheckBoxFlag}");
             }
             else
             {
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打叉;
 
                 MainForm.WcOutCheckBoxFlag = false;
-                MainForm.GasCompCheckBoxFlag = true;
-                _mainForm.GasCompCheckBox.Checked = true;
-
-                Console.WriteLine($"WcOutCheckBoxFlag---{MainForm.WcOutCheckBoxFlag}&&&{MainForm.GasCompCheckBoxFlag}");
             }
         }
 

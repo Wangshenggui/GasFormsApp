@@ -42,21 +42,13 @@ namespace GasFormsApp.TabControl
                     {
                         _mainForm.GasCompGroupBox.Enabled = true;
 
-                        MainForm.WcOutCheckBoxFlag = false;
                         MainForm.GasCompCheckBoxFlag = true;
-                        _mainForm.WcOutCheckBox.Checked = false;
-
-                        Console.WriteLine($"GasCompGroupBox---{MainForm.WcOutCheckBoxFlag}&&&{MainForm.GasCompCheckBoxFlag}");
                     }
                     else
                     {
                         _mainForm.GasCompGroupBox.Enabled = false;
 
-                        MainForm.WcOutCheckBoxFlag = true;
                         MainForm.GasCompCheckBoxFlag = false;
-                        _mainForm.WcOutCheckBox.Checked = true;
-
-                        Console.WriteLine($"GasCompGroupBox---{MainForm.WcOutCheckBoxFlag}&&&{MainForm.GasCompCheckBoxFlag}");
                     }
                 }
             }
@@ -69,6 +61,14 @@ namespace GasFormsApp.TabControl
             { (false,  true), "GasFormsApp.WordTemplate_NoWc.docx" },
             { (false, false), "GasFormsApp.WordTemplate_NoWcNoGasComponent.docx" }
         };
+        //private static readonly Dictionary<(bool, bool), string> resourceMap = new Dictionary<(bool, bool), string>
+        //{
+        //    { ( true,  true), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate.docx" },
+        //    { ( true, false), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoGasComponent.docx" },
+        //    { (false,  true), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoWc.docx" },
+        //    { (false, false), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoWcNoGasComponent.docx" }
+        //};
+
         private string Word_ResourceName(bool wcFlag, bool gasCompFlag)
         {
             if (resourceMap.TryGetValue((wcFlag, gasCompFlag), out var resourceName))
@@ -114,6 +114,7 @@ namespace GasFormsApp.TabControl
                 // 尝试读取嵌入资源
                 string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag);
                 using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+                //using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {

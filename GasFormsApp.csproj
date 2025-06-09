@@ -128,11 +128,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabControl\SortableBindingList.cs" />
     <Compile Include="TabControl\tabControl_1.cs" />
     <Compile Include="TabControl\tabControl_2.cs" />
     <Compile Include="TabControl\tabControl_3.cs" />
     <Compile Include="TabControl\tabControl_4.cs" />
     <Compile Include="TabControl\tabControl_5.cs" />
+    <Compile Include="TabControl\tabControl_6.cs" />
     <Compile Include="WordPperation\BasicInfo.cs" />
     <Compile Include="InsertChart.cs" />
     <Compile Include="LoginForm.cs">
@@ -210,6 +212,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Image\6.ico" />
     <Content Include="Image\保存.png" />
     <None Include="Image\打勾.png" />
     <None Include="Image\打叉.png" />
