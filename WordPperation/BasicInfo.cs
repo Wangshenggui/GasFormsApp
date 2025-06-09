@@ -89,7 +89,6 @@ namespace GasFormsApp.WordPperation
                 {"C3H6Text", _mainForm.C3H6TextBox.Text},//C3H6
                 {"C2H2Text", _mainForm.C2H2TextBox.Text},//C2H2
                 {"COText", _mainForm.COTextBox.Text},//CO
-                {"UndTestersText", _mainForm.UndTestersTextBox.Text},//井下测试人员
                 {"LabTestersText", _mainForm.LabTestersTextBox.Text},//实验室测试人员
                 {"AuditorText", _mainForm.AuditorTextBox.Text},//审 核 人 员
                 {"ReportTimeText", ReportTimeText},//出报告时间

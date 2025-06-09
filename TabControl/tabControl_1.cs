@@ -35,7 +35,11 @@ namespace GasFormsApp.TabControl
             // 重置颜色
             textBox.BackColor = SystemColors.Window;
 
-            if (string.IsNullOrWhiteSpace(input))
+            if (input.Contains(" "))
+            {
+                textBox.BackColor = Color.Red;
+            }
+            else if (string.IsNullOrWhiteSpace(input))
             {
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
@@ -56,6 +60,7 @@ namespace GasFormsApp.TabControl
             ValidateNumericTextBox(_mainForm.RawCoalMoistureTextBox);
             ValidateNumericTextBox(_mainForm.SampleWeightTextBox);
             ValidateNumericTextBox(_mainForm.InitialVolumeTextBox);
+            ValidateNumericTextBox(_mainForm.SamplingDepthTextBox);
 
             ValidateEmptyTextBox(_mainForm.MineNameTextBox);
             ValidateEmptyTextBox(_mainForm.SamplingSpotTextBox);

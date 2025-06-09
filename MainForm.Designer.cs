@@ -70,6 +70,11 @@ namespace GasFormsApp
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.t0TextBox = new System.Windows.Forms.TextBox();
@@ -272,8 +277,6 @@ namespace GasFormsApp
             this.label118 = new System.Windows.Forms.Label();
             this.LabTestersTextBox = new System.Windows.Forms.TextBox();
             this.label117 = new System.Windows.Forms.Label();
-            this.UndTestersTextBox = new System.Windows.Forms.TextBox();
-            this.label116 = new System.Windows.Forms.Label();
             this.GasCompGroupBox = new System.Windows.Forms.GroupBox();
             this.COTextBox = new System.Windows.Forms.TextBox();
             this.C2H2TextBox = new System.Windows.Forms.TextBox();
@@ -303,11 +306,6 @@ namespace GasFormsApp
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -870,6 +868,63 @@ namespace GasFormsApp
             this.groupBox2.Size = new System.Drawing.Size(1324, 612);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(774, 58);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(119, 16);
+            this.label29.TabIndex = 148;
+            this.label29.Text = "时间   解吸量 ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(640, 58);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(119, 16);
+            this.label28.TabIndex = 147;
+            this.label28.Text = "时间   解吸量 ";
+            this.label28.Click += new System.EventHandler(this.label28_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(501, 58);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(119, 16);
+            this.label27.TabIndex = 146;
+            this.label27.Text = "时间   解吸量 ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label26.Location = new System.Drawing.Point(369, 58);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(119, 16);
+            this.label26.TabIndex = 145;
+            this.label26.Text = "时间   解吸量 ";
+            this.label26.Click += new System.EventHandler(this.label26_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label25.Location = new System.Drawing.Point(233, 58);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(119, 16);
+            this.label25.TabIndex = 144;
+            this.label25.Text = "时间   解吸量 ";
             // 
             // label24
             // 
@@ -2938,8 +2993,6 @@ namespace GasFormsApp
             this.tabPage5.Controls.Add(this.label118);
             this.tabPage5.Controls.Add(this.LabTestersTextBox);
             this.tabPage5.Controls.Add(this.label117);
-            this.tabPage5.Controls.Add(this.UndTestersTextBox);
-            this.tabPage5.Controls.Add(this.label116);
             this.tabPage5.Controls.Add(this.GasCompGroupBox);
             this.tabPage5.Controls.Add(this.GasCompCheckBox);
             this.tabPage5.Location = new System.Drawing.Point(4, 104);
@@ -3036,24 +3089,6 @@ namespace GasFormsApp
             this.label117.Size = new System.Drawing.Size(135, 16);
             this.label117.TabIndex = 42;
             this.label117.Text = "实验室测试人员：";
-            // 
-            // UndTestersTextBox
-            // 
-            this.UndTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndTestersTextBox.Location = new System.Drawing.Point(1107, 80);
-            this.UndTestersTextBox.Name = "UndTestersTextBox";
-            this.UndTestersTextBox.Size = new System.Drawing.Size(260, 26);
-            this.UndTestersTextBox.TabIndex = 40;
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label116.Location = new System.Drawing.Point(1049, 60);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(119, 16);
-            this.label116.TabIndex = 40;
-            this.label116.Text = "井下测试人员：";
             // 
             // GasCompGroupBox
             // 
@@ -3341,63 +3376,6 @@ namespace GasFormsApp
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(233, 58);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(119, 16);
-            this.label25.TabIndex = 144;
-            this.label25.Text = "时间   解吸量 ";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(369, 58);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(119, 16);
-            this.label26.TabIndex = 145;
-            this.label26.Text = "时间   解吸量 ";
-            this.label26.Click += new System.EventHandler(this.label26_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(501, 58);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(119, 16);
-            this.label27.TabIndex = 146;
-            this.label27.Text = "时间   解吸量 ";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.Location = new System.Drawing.Point(640, 58);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(119, 16);
-            this.label28.TabIndex = 147;
-            this.label28.Text = "时间   解吸量 ";
-            this.label28.Click += new System.EventHandler(this.label28_Click);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.Location = new System.Drawing.Point(774, 58);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(119, 16);
-            this.label29.TabIndex = 148;
-            this.label29.Text = "时间   解吸量 ";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3563,7 +3541,6 @@ namespace GasFormsApp
         private Label label104;
         private Label label103;
         private Label CH4_Lable;
-        private Label label116;
         private Label label119;
         private Label label118;
         private Label label117;
@@ -3656,7 +3633,6 @@ namespace GasFormsApp
         public TextBox N2TextBox;
         public TextBox CO2TextBox;
         public TextBox CH4TextBox;
-        public TextBox UndTestersTextBox;
         public TextBox AuditorTextBox;
         public TextBox LabTestersTextBox;
         public TextBox W2_TextBox;

@@ -59,7 +59,11 @@ namespace GasFormsApp.TabControl
             // 重置颜色
             textBox.BackColor = SystemColors.Window;
 
-            if (string.IsNullOrWhiteSpace(input))
+            if (input.Contains(" "))
+            {
+                textBox.BackColor = Color.Red;
+            }
+            else if (string.IsNullOrWhiteSpace(input))
             {
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
@@ -95,7 +99,7 @@ namespace GasFormsApp.TabControl
                 }
             }
 
-            for (int i = 1; i <= 30; i++)
+            for (int i = 1; i <= 60; i++)
             {
                 string controlName = "DesorbTextBox" + i;
 
@@ -237,7 +241,7 @@ namespace GasFormsApp.TabControl
                     try
                     {
                         var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                        var scriptPath = @"Python_embed\Python\aaa.py";           // 你实际的 .py 文件路径
+                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc";           // 你实际的 .py 文件路径
 
                         ProcessStartInfo psi = new ProcessStartInfo
                         {

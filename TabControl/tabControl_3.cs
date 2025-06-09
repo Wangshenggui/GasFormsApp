@@ -28,7 +28,11 @@ namespace GasFormsApp.TabControl
             // 重置颜色
             textBox.BackColor = SystemColors.Window;
 
-            if (string.IsNullOrWhiteSpace(input))
+            if (input.Contains(" "))
+            {
+                textBox.BackColor = Color.Red;
+            }
+            else if (string.IsNullOrWhiteSpace(input))
             {
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
