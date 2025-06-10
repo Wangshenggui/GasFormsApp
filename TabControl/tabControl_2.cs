@@ -193,6 +193,12 @@ namespace GasFormsApp.TabControl
                 data[i, 0] = Sqrt_Value; // 将平方根值存储在第一列
                 data[i, 1] = textBoxValue; // 将文本框值存储在第二列
             }
+            if(data[4, 1] == 0)
+            {
+                Console.WriteLine($"解吸时间不可少于5分钟");
+                MessageBox.Show($"解吸时间不可少于5分钟", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             //insertChart.InsertChartToWord(outputPath, data);
 
             const string mapName = "Local\\MySharedMemory";
@@ -241,7 +247,7 @@ namespace GasFormsApp.TabControl
                     try
                     {
                         var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc";           // 你实际的 .py 文件路径
+                        var scriptPath = @"Python_embed\Python\aaa.py";           // 你实际的 .py 文件路径
 
                         ProcessStartInfo psi = new ProcessStartInfo
                         {
@@ -293,7 +299,7 @@ namespace GasFormsApp.TabControl
                         if( a> 100 * 5)
                         {
                             SetWaitCursor(_mainForm, Cursors.Default);
-                            MessageBox.Show("计算失败！！！", "错误：");
+                            MessageBox.Show($"计算失败！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
@@ -378,7 +384,8 @@ namespace GasFormsApp.TabControl
                         }
                         SetWaitCursor(_mainForm, Cursors.Default);
                         // 计算完成提示框
-                        MessageBox.Show("计算完成！", "提示：");
+                        //MessageBox.Show("计算完成！", "提示：");
+                        MessageBox.Show($"计算完成！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

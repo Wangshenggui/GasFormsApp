@@ -279,58 +279,42 @@ namespace GasFormsApp
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
-        //绑定所有控件的鼠标点击事件
-        private void RegisterMouseClickRecursive(Control control)
-        {
-            control.MouseDown += AnyControl_MouseDown;
-
-            // 递归绑定子控件
-            foreach (Control child in control.Controls)
-            {
-                RegisterMouseClickRecursive(child);
-            }
-        }
-        // 鼠标点击回调
-        private void AnyControl_MouseDown(object sender, MouseEventArgs e)
-        {
-            // 延迟执行：等文本框处理完 Ctrl+V 粘贴后再读取
-            this.BeginInvoke(new Action(() =>
-            {
-                myTabLogic1.TabControl_1_InputCheckTimer_Tick();
-                myTabLogic2.TabControl_2_InputCheckTimer_Tick();
-                myTabLogic3.TabControl_3_InputCheckTimer_Tick();
-                myTabLogic4.TabControl_4_InputCheckTimer_Tick();
-            }));
-        }
-        // 加载界面
         private void MainForm_Load(object sender, EventArgs e)
         {
-            RegisterMouseClickRecursive(this);
+
         }
 
         //文本检测100ms定时器
         int a = 0;
         private void InputCheckTimer_Tick(object sender, EventArgs e)
         {
-            //myTabLogic1.TabControl_1_InputCheckTimer_Tick();
-            //myTabLogic2.TabControl_2_InputCheckTimer_Tick();
-            //myTabLogic3.TabControl_3_InputCheckTimer_Tick();
-            //myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+            if(a++==1)
+            {
+                a = 0;
+                TabPage currentTab = tabControl1.SelectedTab;
+
+                switch (currentTab.Name)
+                {
+                    case "tabPage1":
+                        myTabLogic1.TabControl_1_InputCheckTimer_Tick();
+                        break;
+                    case "tabPage2":
+                        myTabLogic2.TabControl_2_InputCheckTimer_Tick();
+                        break;
+                    case "tabPage3":
+                        myTabLogic3.TabControl_3_InputCheckTimer_Tick();
+                        break;
+                    case "tabPage4":
+                        myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+                        break;
+                }
+            }
         }
 
         //快捷键操作
         private void TabControl_KeyDown(object sender, KeyEventArgs e)
         {
             TabPage currentTab = tabControl1.SelectedTab;
-
-            // 延迟执行：等文本框处理完 Ctrl+V 粘贴后再读取
-            this.BeginInvoke(new Action(() =>
-            {
-                myTabLogic1.TabControl_1_InputCheckTimer_Tick();
-                myTabLogic2.TabControl_2_InputCheckTimer_Tick();
-                myTabLogic3.TabControl_3_InputCheckTimer_Tick();
-                myTabLogic4.TabControl_4_InputCheckTimer_Tick();
-            }));
 
             // 计算
             if (e.Control && e.KeyCode == Keys.D)
@@ -359,10 +343,6 @@ namespace GasFormsApp
                 if (currentTab.Name == "tabPage5")
                 {
                     myTabLogic5.GenReportButton_Click(sender, e);
-                }
-                else if (currentTab.Name == "tabPage6")
-                {
-                    myTabLogic6.ExportTheDocumentButton_Click(sender, e);
                 }
 
                 e.Handled = true;
@@ -399,31 +379,6 @@ namespace GasFormsApp
 
                 e.Handled = true;
             }
-            // 粘贴
-            else if (e.Control && e.KeyCode == Keys.V)
-            {
-                // 延迟执行：等文本框处理完 Ctrl+V 粘贴后再读取
-                this.BeginInvoke(new Action(() =>
-                {
-                    switch (currentTab.Name)
-                    {
-                        case "tabPage1":
-                            myTabLogic1.TabControl_1_InputCheckTimer_Tick();
-                            break;
-                        case "tabPage2":
-                            myTabLogic2.TabControl_2_InputCheckTimer_Tick();
-                            break;
-                        case "tabPage3":
-                            myTabLogic3.TabControl_3_InputCheckTimer_Tick();
-                            break;
-                        case "tabPage4":
-                            myTabLogic4.TabControl_4_InputCheckTimer_Tick();
-                            break;
-                    }
-                }));
-
-            e.Handled = true;
-            }
         }
         // tab5调用tab6的函数
         public void tab5_6_SaveButton(object sender, EventArgs e)
@@ -436,7 +391,5 @@ namespace GasFormsApp
         {
             myTabLogic5.GenerateReportToDatabase(doc_name);
         }
-
-        
     }
 }
