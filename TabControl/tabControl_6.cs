@@ -28,11 +28,14 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.label30, "查 找(Ctrl + F)");
             _mainForm.toolTip1.SetToolTip(_mainForm.ReloadDataButton, "刷 新(Ctrl + R)");
             _mainForm.toolTip1.SetToolTip(_mainForm.DeleteDataButton, "删 除(Ctrl + D)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.ExportTheDocumentButton, "导出报告(Ctrl + G)");
             
 
             //注册回调函数
             _mainForm.ReloadDataButton.Click += ReloadDataButton_Click;
             _mainForm.DeleteDataButton.Click += DeleteDataButton_Click;
+            _mainForm.ExportTheDocumentButton.Click += ExportTheDocumentButton_Click;
+
 
             _mainForm.dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
 
@@ -368,12 +371,72 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        // 导出word文档
+        public void ExportTheDocumentButton_Click(object sender, EventArgs e)
+        {
+            // 获取当前行的 ID 作为文件名
+            string name = _mainForm.dataGridView1.CurrentRow?.Cells["ID"]?.Value?.ToString();
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show("无法获取文档名称，请确认表格中有选中行。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 构建系统内部文件路径
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string systemDataPath = Path.Combine(currentDir, "SystemData");
+
+            if (!Directory.Exists(systemDataPath))
+            {
+                Directory.CreateDirectory(systemDataPath);
+                Console.WriteLine("[Log] SystemData 文件夹不存在，已创建。");
+            }
+
+            string outputPath = Path.Combine(systemDataPath, $"{name}_Doc.docx");
+            Console.WriteLine($"[Log] 原始文档路径：{outputPath}");
+
+            // 弹出保存对话框让用户选择目标路径
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Word 文件 (*.docx)|*.docx",
+                Title = "导出 Word 文件",
+                FileName = $"{name}_Doc.docx" // 设置默认文件名
+            };
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                string userSelectedPath = saveDialog.FileName;
+                Console.WriteLine($"[Log] 用户选择保存路径：{userSelectedPath}");
+
+                try
+                {
+                    // 判断源文件是否存在
+                    if (!File.Exists(outputPath))
+                    {
+                        MessageBox.Show($"源文件不存在：{outputPath}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    File.Copy(outputPath, userSelectedPath, overwrite: true);
+                    MessageBox.Show("文件导出成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"导出失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         // 删除数据
         public void DeleteDataButton_Click(object sender, EventArgs e)
         {
-            string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
-
+            // 获取当前行的 ID 作为文件名
+            string name = _mainForm.dataGridView1.CurrentRow?.Cells["ID"]?.Value?.ToString();
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show("无法获取文档名称，请确认表格中有选中行。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (string.IsNullOrEmpty(name))
             {
                 MessageBox.Show("请选择要处理的行。");

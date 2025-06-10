@@ -317,6 +317,7 @@ namespace GasFormsApp
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ExportTheDocumentButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -3351,6 +3352,7 @@ namespace GasFormsApp
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage6.Controls.Add(this.ExportTheDocumentButton);
             this.tabPage6.Controls.Add(this.DeleteDataButton);
             this.tabPage6.Controls.Add(this.pictureBox2);
             this.tabPage6.Controls.Add(this.FindTextBox);
@@ -3370,7 +3372,7 @@ namespace GasFormsApp
             this.DeleteDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteDataButton.Font = new System.Drawing.Font("宋体", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DeleteDataButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteDataButton.Location = new System.Drawing.Point(1178, 480);
+            this.DeleteDataButton.Location = new System.Drawing.Point(1178, 531);
             this.DeleteDataButton.Name = "DeleteDataButton";
             this.DeleteDataButton.Size = new System.Drawing.Size(222, 37);
             this.DeleteDataButton.TabIndex = 36;
@@ -3509,6 +3511,19 @@ namespace GasFormsApp
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // ExportTheDocumentButton
+            // 
+            this.ExportTheDocumentButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ExportTheDocumentButton.Image = global::GasFormsApp.Properties.Resources.打印;
+            this.ExportTheDocumentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportTheDocumentButton.Location = new System.Drawing.Point(1178, 441);
+            this.ExportTheDocumentButton.Name = "ExportTheDocumentButton";
+            this.ExportTheDocumentButton.Size = new System.Drawing.Size(222, 40);
+            this.ExportTheDocumentButton.TabIndex = 4;
+            this.ExportTheDocumentButton.Text = "导 出 报 告      ";
+            this.ExportTheDocumentButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExportTheDocumentButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -3836,5 +3851,6 @@ namespace GasFormsApp
         public PictureBox pictureBox2;
         public Button DeleteDataButton;
         public Label label30;
+        public Button ExportTheDocumentButton;
     }
 }
