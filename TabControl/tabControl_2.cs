@@ -247,7 +247,7 @@ namespace GasFormsApp.TabControl
                     try
                     {
                         var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                        var scriptPath = @"Python_embed\Python\aaa.py";           // 你实际的 .py 文件路径
+                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc";           // 你实际的 .py 文件路径
 
                         ProcessStartInfo psi = new ProcessStartInfo
                         {

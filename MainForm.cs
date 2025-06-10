@@ -281,7 +281,10 @@ namespace GasFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            myTabLogic1.TabControl_1_InputCheckTimer_Tick();
+            myTabLogic2.TabControl_2_InputCheckTimer_Tick();
+            myTabLogic3.TabControl_3_InputCheckTimer_Tick();
+            myTabLogic4.TabControl_4_InputCheckTimer_Tick();
         }
 
         //文本检测100ms定时器
