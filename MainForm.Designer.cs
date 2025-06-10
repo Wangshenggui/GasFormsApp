@@ -32,9 +32,9 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -271,6 +271,7 @@ namespace GasFormsApp
             this.W1_TextBox = new System.Windows.Forms.TextBox();
             this.label95 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.GenReportButton = new System.Windows.Forms.Button();
             this.RemarkTextBox = new System.Windows.Forms.TextBox();
             this.label120 = new System.Windows.Forms.Label();
@@ -303,9 +304,11 @@ namespace GasFormsApp
             this.CH4_Lable = new System.Windows.Forms.Label();
             this.GasCompCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DeleteDataButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FindTextBox = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.ReloadDataButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -326,6 +329,7 @@ namespace GasFormsApp
             this.tabPage5.SuspendLayout();
             this.GasCompGroupBox.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -346,7 +350,7 @@ namespace GasFormsApp
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1468, 737);
+            this.tabControl1.Size = new System.Drawing.Size(1443, 734);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabControl_KeyDown);
@@ -358,7 +362,7 @@ namespace GasFormsApp
             this.tabPage1.Location = new System.Drawing.Point(4, 104);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage1.Size = new System.Drawing.Size(1435, 626);
             this.tabPage1.TabIndex = 0;
             // 
             // groupBox1
@@ -732,7 +736,7 @@ namespace GasFormsApp
             this.tabPage2.Location = new System.Drawing.Point(4, 104);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage2.Size = new System.Drawing.Size(1435, 626);
             this.tabPage2.TabIndex = 1;
             // 
             // groupBox2
@@ -2325,7 +2329,7 @@ namespace GasFormsApp
             this.tabPage3.Location = new System.Drawing.Point(4, 104);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage3.Size = new System.Drawing.Size(1435, 626);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -2592,7 +2596,7 @@ namespace GasFormsApp
             this.tabPage4.Location = new System.Drawing.Point(4, 104);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage4.Size = new System.Drawing.Size(1435, 626);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             // 
@@ -2993,6 +2997,7 @@ namespace GasFormsApp
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5.Controls.Add(this.SaveButton);
             this.tabPage5.Controls.Add(this.GenReportButton);
             this.tabPage5.Controls.Add(this.RemarkTextBox);
             this.tabPage5.Controls.Add(this.label120);
@@ -3007,16 +3012,29 @@ namespace GasFormsApp
             this.tabPage5.Location = new System.Drawing.Point(4, 104);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage5.Size = new System.Drawing.Size(1435, 626);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveButton.Image = global::GasFormsApp.Properties.Resources.保存;
+            this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveButton.Location = new System.Drawing.Point(1273, 364);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(145, 50);
+            this.SaveButton.TabIndex = 49;
+            this.SaveButton.Text = " 保 存 数 据";
+            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SaveButton.UseVisualStyleBackColor = true;
             // 
             // GenReportButton
             // 
             this.GenReportButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.GenReportButton.Image = global::GasFormsApp.Properties.Resources.保存;
+            this.GenReportButton.Image = global::GasFormsApp.Properties.Resources.打印;
             this.GenReportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GenReportButton.Location = new System.Drawing.Point(1195, 420);
+            this.GenReportButton.Location = new System.Drawing.Point(1007, 364);
             this.GenReportButton.Name = "GenReportButton";
             this.GenReportButton.Size = new System.Drawing.Size(145, 50);
             this.GenReportButton.TabIndex = 3;
@@ -3027,7 +3045,7 @@ namespace GasFormsApp
             // RemarkTextBox
             // 
             this.RemarkTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RemarkTextBox.Location = new System.Drawing.Point(1107, 339);
+            this.RemarkTextBox.Location = new System.Drawing.Point(1107, 278);
             this.RemarkTextBox.Multiline = true;
             this.RemarkTextBox.Name = "RemarkTextBox";
             this.RemarkTextBox.Size = new System.Drawing.Size(260, 57);
@@ -3038,7 +3056,7 @@ namespace GasFormsApp
             // 
             this.label120.AutoSize = true;
             this.label120.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label120.Location = new System.Drawing.Point(1049, 321);
+            this.label120.Location = new System.Drawing.Point(1049, 260);
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(79, 16);
             this.label120.TabIndex = 48;
@@ -3048,7 +3066,7 @@ namespace GasFormsApp
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(1107, 277);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1107, 216);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
             this.dateTimePicker1.TabIndex = 5;
@@ -3057,7 +3075,7 @@ namespace GasFormsApp
             // 
             this.label119.AutoSize = true;
             this.label119.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label119.Location = new System.Drawing.Point(1049, 257);
+            this.label119.Location = new System.Drawing.Point(1049, 196);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(103, 16);
             this.label119.TabIndex = 46;
@@ -3066,7 +3084,7 @@ namespace GasFormsApp
             // AuditorTextBox
             // 
             this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AuditorTextBox.Location = new System.Drawing.Point(1107, 212);
+            this.AuditorTextBox.Location = new System.Drawing.Point(1107, 151);
             this.AuditorTextBox.Name = "AuditorTextBox";
             this.AuditorTextBox.Size = new System.Drawing.Size(260, 26);
             this.AuditorTextBox.TabIndex = 43;
@@ -3075,7 +3093,7 @@ namespace GasFormsApp
             // 
             this.label118.AutoSize = true;
             this.label118.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label118.Location = new System.Drawing.Point(1049, 192);
+            this.label118.Location = new System.Drawing.Point(1049, 131);
             this.label118.Name = "label118";
             this.label118.Size = new System.Drawing.Size(87, 16);
             this.label118.TabIndex = 44;
@@ -3084,7 +3102,7 @@ namespace GasFormsApp
             // LabTestersTextBox
             // 
             this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabTestersTextBox.Location = new System.Drawing.Point(1107, 146);
+            this.LabTestersTextBox.Location = new System.Drawing.Point(1107, 85);
             this.LabTestersTextBox.Name = "LabTestersTextBox";
             this.LabTestersTextBox.Size = new System.Drawing.Size(260, 26);
             this.LabTestersTextBox.TabIndex = 41;
@@ -3093,7 +3111,7 @@ namespace GasFormsApp
             // 
             this.label117.AutoSize = true;
             this.label117.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label117.Location = new System.Drawing.Point(1049, 126);
+            this.label117.Location = new System.Drawing.Point(1049, 65);
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(135, 16);
             this.label117.TabIndex = 42;
@@ -3333,43 +3351,68 @@ namespace GasFormsApp
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage6.Controls.Add(this.textBox1);
-            this.tabPage6.Controls.Add(this.button1);
-            this.tabPage6.Controls.Add(this.button2);
+            this.tabPage6.Controls.Add(this.DeleteDataButton);
+            this.tabPage6.Controls.Add(this.pictureBox2);
+            this.tabPage6.Controls.Add(this.FindTextBox);
+            this.tabPage6.Controls.Add(this.label30);
+            this.tabPage6.Controls.Add(this.ReloadDataButton);
             this.tabPage6.Controls.Add(this.dataGridView1);
             this.tabPage6.Location = new System.Drawing.Point(4, 104);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1460, 629);
+            this.tabPage6.Size = new System.Drawing.Size(1435, 626);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             // 
-            // textBox1
+            // DeleteDataButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(1189, 440);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 21);
-            this.textBox1.TabIndex = 6;
+            this.DeleteDataButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteDataButton.Font = new System.Drawing.Font("宋体", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DeleteDataButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteDataButton.Location = new System.Drawing.Point(1178, 480);
+            this.DeleteDataButton.Name = "DeleteDataButton";
+            this.DeleteDataButton.Size = new System.Drawing.Size(222, 37);
+            this.DeleteDataButton.TabIndex = 36;
+            this.DeleteDataButton.Text = "删    除";
+            this.DeleteDataButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // pictureBox2
             // 
-            this.button1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(1235, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "保存数据";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox2.Location = new System.Drawing.Point(1113, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(314, 314);
+            this.pictureBox2.TabIndex = 35;
+            this.pictureBox2.TabStop = false;
             // 
-            // button2
+            // FindTextBox
             // 
-            this.button2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(1235, 111);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 50);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "刷新列表";
-            this.button2.UseVisualStyleBackColor = true;
+            this.FindTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FindTextBox.Location = new System.Drawing.Point(1178, 337);
+            this.FindTextBox.Name = "FindTextBox";
+            this.FindTextBox.Size = new System.Drawing.Size(222, 26);
+            this.FindTextBox.TabIndex = 6;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(1130, 341);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(55, 16);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "查找：";
+            // 
+            // ReloadDataButton
+            // 
+            this.ReloadDataButton.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ReloadDataButton.Location = new System.Drawing.Point(1178, 384);
+            this.ReloadDataButton.Name = "ReloadDataButton";
+            this.ReloadDataButton.Size = new System.Drawing.Size(222, 37);
+            this.ReloadDataButton.TabIndex = 2;
+            this.ReloadDataButton.Text = "刷新列表";
+            this.ReloadDataButton.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -3377,37 +3420,38 @@ namespace GasFormsApp
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(8, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1132, 612);
+            this.dataGridView1.Size = new System.Drawing.Size(1099, 617);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
             // 
@@ -3501,6 +3545,7 @@ namespace GasFormsApp
             this.GasCompGroupBox.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -3785,8 +3830,11 @@ namespace GasFormsApp
         private Label label25;
         private TabPage tabPage6;
         public DataGridView dataGridView1;
-        public Button button2;
-        public Button button1;
-        public TextBox textBox1;
+        public Button ReloadDataButton;
+        public TextBox FindTextBox;
+        public Button SaveButton;
+        public PictureBox pictureBox2;
+        public Button DeleteDataButton;
+        public Label label30;
     }
 }

@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using GasFormsApp.TabControl;
 
 namespace GasFormsApp
@@ -298,6 +299,7 @@ namespace GasFormsApp
         {
             TabPage currentTab = tabControl1.SelectedTab;
 
+            // 计算
             if (e.Control && e.KeyCode == Keys.D)
             {
                 switch (currentTab.Name)
@@ -311,11 +313,15 @@ namespace GasFormsApp
                     case "tabPage4":
                         myTabLogic4.ExpCalcButton_Click(sender, e);
                         break;
+                    case "tabPage6":
+                        myTabLogic6.DeleteDataButton_Click(sender, e);
+                        break;
                 }
 
                 e.Handled = true;
             }
-            else if (e.Control && e.KeyCode == Keys.S)
+            // 生成
+            else if (e.Control && e.KeyCode == Keys.G)
             {
                 if (currentTab.Name == "tabPage5")
                 {
@@ -324,6 +330,49 @@ namespace GasFormsApp
 
                 e.Handled = true;
             }
+            // 保存
+            else if (e.Control && e.KeyCode == Keys.S)
+            {
+                if (currentTab.Name == "tabPage5")
+                {
+                    myTabLogic5._SaveButton_Click(sender, e);
+                }
+
+                e.Handled = true;
+            }
+            // 刷新
+            else if (e.Control && e.KeyCode == Keys.R)
+            {
+                if (currentTab.Name == "tabPage6")
+                {
+                    myTabLogic6.ReloadDataButton_Click(sender, e);
+                }
+
+                e.Handled = true;
+            }
+            // 查找
+            else if (e.Control && e.KeyCode == Keys.F)
+            {
+                if (currentTab.Name == "tabPage6")
+                {
+                    //搜索框进入编辑模式
+                    FindTextBox.Focus();
+                    FindTextBox.SelectAll();
+                }
+
+                e.Handled = true;
+            }
+        }
+        // tab5调用tab6的函数
+        public void tab5_6_SaveButton(object sender, EventArgs e)
+        {
+            myTabLogic6.SaveButton_Click(sender, e);
+        }
+
+        // tab6调用tab5的函数
+        public void tab6_5_GenerateReportToDatabase(string doc_name)
+        {
+            myTabLogic5.GenerateReportToDatabase(doc_name);
         }
     }
 }

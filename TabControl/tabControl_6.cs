@@ -1,10 +1,12 @@
-﻿using DocumentFormat.OpenXml.Presentation;
+﻿using DocumentFormat.OpenXml.InkML;
+using DocumentFormat.OpenXml.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,54 +24,87 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
+            _mainForm.toolTip1.SetToolTip(_mainForm.FindTextBox, "查 找(Ctrl + F)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.label30, "查 找(Ctrl + F)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.ReloadDataButton, "刷 新(Ctrl + R)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.DeleteDataButton, "删 除(Ctrl + D)");
+            
+
             //注册回调函数
-            _mainForm.button1.Click += button1_Click;
-            _mainForm.button2.Click += button2_Click;
+            _mainForm.ReloadDataButton.Click += ReloadDataButton_Click;
+            _mainForm.DeleteDataButton.Click += DeleteDataButton_Click;
 
             _mainForm.dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
 
+            //禁用默认复制模式
+            _mainForm.dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            _mainForm.dataGridView1.KeyDown += dataGridView1_KeyDown;
 
-            //_mainForm.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //_mainForm.dataGridView1.MultiSelect = false;
+            _mainForm.dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
             _mainForm.dataGridView1.CellBeginEdit += (s, e) => {
                 Console.WriteLine($"CellBeginEdit at row {e.RowIndex}, col {e.ColumnIndex}");
             };
         }
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return;
-
-            var dgv = sender as DataGridView;
-            var cell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-            bool isRowSelected = dgv.Rows[e.RowIndex].Selected;
-            bool isCellSelected = cell.Selected;
-
-            if (isRowSelected)
+            if (_mainForm.dataGridView1.CurrentRow != null)
             {
-                if (isCellSelected)
+                string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
+                Console.WriteLine("当前选中名称：" + name);
+
+                // E:\E-Desktop\GitHub\GasFormsApp\bin\Release\SystemData
+                
+                string newImageName = $"{name}_Image.png";
+                string imagePath = Path.Combine("SystemData", newImageName);
+                // 设置 PictureBox 的显示模式
+                _mainForm.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                try
                 {
-                    // 选中单元格：橙色背景，黑色字体
-                    e.Graphics.FillRectangle(Brushes.Orange, e.CellBounds);
-                    TextRenderer.DrawText(e.Graphics, e.FormattedValue?.ToString() ?? "",
-                        e.CellStyle.Font, e.CellBounds, Color.Black,
-                        TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
-                    e.Handled = true;
+                    if (File.Exists(imagePath))
+                    {
+                        // 避免文件被锁，使用 Image.FromStream
+                        using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                        {
+                            _mainForm.pictureBox2.Image = Image.FromStream(fs);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("找不到图片文件：" + imagePath);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    // 选中行但该单元格没选中：淡蓝背景，默认字体颜色
-                    e.Graphics.FillRectangle(Brushes.LightBlue, e.CellBounds);
-                    TextRenderer.DrawText(e.Graphics, e.FormattedValue?.ToString() ?? "",
-                        e.CellStyle.Font, e.CellBounds, dgv.DefaultCellStyle.ForeColor,
-                        TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
-                    e.Handled = true;
+                    MessageBox.Show("加载图片时出错：" + ex.Message);
                 }
             }
         }
 
+        // 解决一些问题
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                _mainForm.dataGridView1.CurrentCell = _mainForm.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                _mainForm.dataGridView1.BeginEdit(true); // 手动进入编辑
+            }
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+                if (_mainForm.dataGridView1.CurrentCell != null)
+                {
+                    Clipboard.SetText(_mainForm.dataGridView1.CurrentCell.Value?.ToString() ?? "");
+                    e.Handled = true;
+                }
+            }
+        }
+        
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -95,6 +130,7 @@ namespace GasFormsApp.TabControl
         [Serializable]
         public class UserData
         {
+            public string ID { get; set; }
             /// <summary>
             /// ///////////////////////////////
             /// </summary>
@@ -179,7 +215,7 @@ namespace GasFormsApp.TabControl
         /// <summary>
         /// 按钮1点击事件：复制图片并保存用户数据为二进制文件
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        public void SaveButton_Click(object sender, EventArgs e)
         {
             // 生成时间戳，用于命名文件
             string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
@@ -203,12 +239,17 @@ namespace GasFormsApp.TabControl
             File.Copy(imageSourcePath, imageTargetPath, true);
             Console.WriteLine($"图片已复制到：{imageTargetPath}");
 
+            // 生成文档
+            _mainForm.tab6_5_GenerateReportToDatabase(timestamp);
+
             // === 保存用户数据 ===
             try
             {
                 // 创建用户数据对象，这里是模拟数据，也可以从界面控件读取
                 var user = new UserData
                 {
+                    ID = timestamp.ToString(),
+
                     矿井名称 = _mainForm.MineNameTextBox.Text,
                     取样地点 = _mainForm.SamplingSpotTextBox.Text,
                     取样时间 = _mainForm.SamplingTimeDateTimePicker.Text,
@@ -280,20 +321,22 @@ namespace GasFormsApp.TabControl
                 }
 
                 Console.WriteLine($"二进制保存成功，文件路径：{dataFilePath}");
+                MessageBox.Show("保存成功！", "提示：");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("保存失败：" + ex.Message);
+                MessageBox.Show("保存失败：" + ex.Message, "提示：");
             }
         }
 
         /// <summary>
         /// 按钮2点击事件：读取所有保存的用户数据并绑定到 DataGridView
         /// </summary>
-        private void button2_Click(object sender, EventArgs e)
+        public void ReloadDataButton_Click(object sender, EventArgs e)
         {
             // 设置筛选关键字
-            string Keyword = _mainForm.textBox1.Text;
+            string Keyword = _mainForm.FindTextBox.Text;
             if (string.IsNullOrEmpty(Keyword))
             {
                 全部显示();
@@ -304,8 +347,93 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        private void ReloadTableData()
+        {
+            // 解绑事件，避免触发 SelectionChanged
+            _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
+
+            try
+            {
+                List<UserData> filteredUsers = LoadAllUsers();
+                var sortableList = new SortableBindingList<UserData>(filteredUsers);
+
+                _mainForm.dataGridView1.DataSource = null;
+                _mainForm.dataGridView1.DataSource = sortableList;
+                _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            finally
+            {
+                // 绑定事件
+                _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            }
+        }
+
+
+        // 删除数据
+        public void DeleteDataButton_Click(object sender, EventArgs e)
+        {
+            string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("请选择要处理的行。");
+                return;
+            }
+
+            string sourceFolder = "SystemData";
+            string recycleFolder = "DataReclamation";
+
+            // 确保回收目录存在
+            if (!Directory.Exists(recycleFolder))
+            {
+                Directory.CreateDirectory(recycleFolder);
+            }
+
+            string imagePath = Path.Combine(sourceFolder, $"{name}_Image.png");
+            string binPath = Path.Combine(sourceFolder, $"{name}_BinData.bin");
+            string docPath = Path.Combine(sourceFolder, $"{name}_Doc.docx");  // 添加 Word 文件路径
+
+            try
+            {
+                // 移动文件方法
+                void MoveFileToRecycle(string sourceFile)
+                {
+                    if (File.Exists(sourceFile))
+                    {
+                        string destFile = Path.Combine(recycleFolder, Path.GetFileName(sourceFile));
+
+                        // 如果目标文件已存在，可以选择覆盖或者改名，这里用覆盖
+                        if (File.Exists(destFile))
+                            File.Delete(destFile);
+
+                        File.Move(sourceFile, destFile);
+                        Console.WriteLine($"已移动文件：{sourceFile} -> {destFile}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"文件不存在：{sourceFile}");
+                    }
+                }
+
+                MoveFileToRecycle(imagePath);
+                MoveFileToRecycle(binPath);
+                MoveFileToRecycle(docPath);  // 处理 Word 文件
+
+                ReloadTableData();
+
+                //MessageBox.Show("文件已移动到回收目录！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"移动文件时发生错误：{ex.Message}");
+            }
+        }
+
+
+        private string _currentKeyword = "";
         void 全部显示()
         {
+            _currentKeyword = "";
             try
             {
                 // 如果 SystemData 文件夹不存在，则提示并退出
@@ -351,7 +479,7 @@ namespace GasFormsApp.TabControl
                 Console.WriteLine("读取失败：" + ex.Message);
             }
         }
-        private string _currentKeyword = "";
+        
         private List<UserData> LoadAllUsers()
         {
             if (!Directory.Exists(SystemDataPath))
@@ -461,7 +589,7 @@ namespace GasFormsApp.TabControl
                 string after = cellText.Substring(matchIndex + _currentKeyword.Length);
 
                 float x = bounds.X;
-                float y = bounds.Y + (bounds.Height - font.Height) / 2;
+                float y = bounds.Y + (bounds.Height - font.Height) / 2 + 1;
 
                 Size sizeBefore = TextRenderer.MeasureText(before, font);
                 Size sizeMatch = TextRenderer.MeasureText(match, boldFont);
