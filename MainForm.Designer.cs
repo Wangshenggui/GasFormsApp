@@ -353,6 +353,7 @@ namespace GasFormsApp
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1443, 734);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabStop = false;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabControl_KeyDown);
             // 
@@ -414,7 +415,7 @@ namespace GasFormsApp
             this.SamplingDepthTextBox.Location = new System.Drawing.Point(237, 453);
             this.SamplingDepthTextBox.Name = "SamplingDepthTextBox";
             this.SamplingDepthTextBox.Size = new System.Drawing.Size(240, 26);
-            this.SamplingDepthTextBox.TabIndex = 33;
+            this.SamplingDepthTextBox.TabIndex = 15;
             // 
             // label4
             // 
@@ -525,7 +526,7 @@ namespace GasFormsApp
             this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(695, 452);
             this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
             this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(240, 29);
-            this.SamplingTimeDateTimePicker.TabIndex = 15;
+            this.SamplingTimeDateTimePicker.TabIndex = 16;
             // 
             // RawCoalMoistureTextBox
             // 
@@ -990,7 +991,7 @@ namespace GasFormsApp
             this.DataNumTextBox60.Name = "DataNumTextBox60";
             this.DataNumTextBox60.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox60.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox60.TabIndex = 141;
+            this.DataNumTextBox60.TabIndex = 90;
             this.DataNumTextBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox59
@@ -1002,7 +1003,7 @@ namespace GasFormsApp
             this.DataNumTextBox59.Name = "DataNumTextBox59";
             this.DataNumTextBox59.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox59.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox59.TabIndex = 140;
+            this.DataNumTextBox59.TabIndex = 88;
             this.DataNumTextBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox58
@@ -1014,7 +1015,7 @@ namespace GasFormsApp
             this.DataNumTextBox58.Name = "DataNumTextBox58";
             this.DataNumTextBox58.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox58.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox58.TabIndex = 139;
+            this.DataNumTextBox58.TabIndex = 86;
             this.DataNumTextBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox57
@@ -1026,7 +1027,7 @@ namespace GasFormsApp
             this.DataNumTextBox57.Name = "DataNumTextBox57";
             this.DataNumTextBox57.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox57.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox57.TabIndex = 138;
+            this.DataNumTextBox57.TabIndex = 84;
             this.DataNumTextBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox56
@@ -1038,7 +1039,7 @@ namespace GasFormsApp
             this.DataNumTextBox56.Name = "DataNumTextBox56";
             this.DataNumTextBox56.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox56.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox56.TabIndex = 137;
+            this.DataNumTextBox56.TabIndex = 82;
             this.DataNumTextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox55
@@ -1050,7 +1051,7 @@ namespace GasFormsApp
             this.DataNumTextBox55.Name = "DataNumTextBox55";
             this.DataNumTextBox55.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox55.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox55.TabIndex = 136;
+            this.DataNumTextBox55.TabIndex = 80;
             this.DataNumTextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox54
@@ -1062,7 +1063,7 @@ namespace GasFormsApp
             this.DataNumTextBox54.Name = "DataNumTextBox54";
             this.DataNumTextBox54.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox54.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox54.TabIndex = 135;
+            this.DataNumTextBox54.TabIndex = 78;
             this.DataNumTextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox53
@@ -1074,7 +1075,7 @@ namespace GasFormsApp
             this.DataNumTextBox53.Name = "DataNumTextBox53";
             this.DataNumTextBox53.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox53.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox53.TabIndex = 134;
+            this.DataNumTextBox53.TabIndex = 76;
             this.DataNumTextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox52
@@ -1086,7 +1087,7 @@ namespace GasFormsApp
             this.DataNumTextBox52.Name = "DataNumTextBox52";
             this.DataNumTextBox52.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox52.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox52.TabIndex = 133;
+            this.DataNumTextBox52.TabIndex = 74;
             this.DataNumTextBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox51
@@ -1098,7 +1099,7 @@ namespace GasFormsApp
             this.DataNumTextBox51.Name = "DataNumTextBox51";
             this.DataNumTextBox51.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox51.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox51.TabIndex = 132;
+            this.DataNumTextBox51.TabIndex = 72;
             this.DataNumTextBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox50
@@ -1110,7 +1111,7 @@ namespace GasFormsApp
             this.DataNumTextBox50.Name = "DataNumTextBox50";
             this.DataNumTextBox50.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox50.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox50.TabIndex = 131;
+            this.DataNumTextBox50.TabIndex = 70;
             this.DataNumTextBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox49
@@ -1122,7 +1123,7 @@ namespace GasFormsApp
             this.DataNumTextBox49.Name = "DataNumTextBox49";
             this.DataNumTextBox49.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox49.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox49.TabIndex = 130;
+            this.DataNumTextBox49.TabIndex = 68;
             this.DataNumTextBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox48
@@ -1134,7 +1135,7 @@ namespace GasFormsApp
             this.DataNumTextBox48.Name = "DataNumTextBox48";
             this.DataNumTextBox48.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox48.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox48.TabIndex = 129;
+            this.DataNumTextBox48.TabIndex = 66;
             this.DataNumTextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox47
@@ -1146,7 +1147,7 @@ namespace GasFormsApp
             this.DataNumTextBox47.Name = "DataNumTextBox47";
             this.DataNumTextBox47.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox47.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox47.TabIndex = 128;
+            this.DataNumTextBox47.TabIndex = 64;
             this.DataNumTextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox46
@@ -1158,7 +1159,7 @@ namespace GasFormsApp
             this.DataNumTextBox46.Name = "DataNumTextBox46";
             this.DataNumTextBox46.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox46.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox46.TabIndex = 127;
+            this.DataNumTextBox46.TabIndex = 62;
             this.DataNumTextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox45
@@ -1170,7 +1171,7 @@ namespace GasFormsApp
             this.DataNumTextBox45.Name = "DataNumTextBox45";
             this.DataNumTextBox45.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox45.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox45.TabIndex = 126;
+            this.DataNumTextBox45.TabIndex = 60;
             this.DataNumTextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox44
@@ -1182,7 +1183,7 @@ namespace GasFormsApp
             this.DataNumTextBox44.Name = "DataNumTextBox44";
             this.DataNumTextBox44.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox44.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox44.TabIndex = 125;
+            this.DataNumTextBox44.TabIndex = 58;
             this.DataNumTextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox43
@@ -1194,7 +1195,7 @@ namespace GasFormsApp
             this.DataNumTextBox43.Name = "DataNumTextBox43";
             this.DataNumTextBox43.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox43.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox43.TabIndex = 124;
+            this.DataNumTextBox43.TabIndex = 56;
             this.DataNumTextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox42
@@ -1206,7 +1207,7 @@ namespace GasFormsApp
             this.DataNumTextBox42.Name = "DataNumTextBox42";
             this.DataNumTextBox42.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox42.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox42.TabIndex = 123;
+            this.DataNumTextBox42.TabIndex = 54;
             this.DataNumTextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox41
@@ -1218,7 +1219,7 @@ namespace GasFormsApp
             this.DataNumTextBox41.Name = "DataNumTextBox41";
             this.DataNumTextBox41.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox41.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox41.TabIndex = 122;
+            this.DataNumTextBox41.TabIndex = 52;
             this.DataNumTextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox40
@@ -1230,7 +1231,7 @@ namespace GasFormsApp
             this.DataNumTextBox40.Name = "DataNumTextBox40";
             this.DataNumTextBox40.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox40.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox40.TabIndex = 121;
+            this.DataNumTextBox40.TabIndex = 50;
             this.DataNumTextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox39
@@ -1242,7 +1243,7 @@ namespace GasFormsApp
             this.DataNumTextBox39.Name = "DataNumTextBox39";
             this.DataNumTextBox39.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox39.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox39.TabIndex = 120;
+            this.DataNumTextBox39.TabIndex = 48;
             this.DataNumTextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox38
@@ -1254,7 +1255,7 @@ namespace GasFormsApp
             this.DataNumTextBox38.Name = "DataNumTextBox38";
             this.DataNumTextBox38.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox38.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox38.TabIndex = 119;
+            this.DataNumTextBox38.TabIndex = 46;
             this.DataNumTextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox37
@@ -1266,7 +1267,7 @@ namespace GasFormsApp
             this.DataNumTextBox37.Name = "DataNumTextBox37";
             this.DataNumTextBox37.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox37.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox37.TabIndex = 118;
+            this.DataNumTextBox37.TabIndex = 44;
             this.DataNumTextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox36
@@ -1278,7 +1279,7 @@ namespace GasFormsApp
             this.DataNumTextBox36.Name = "DataNumTextBox36";
             this.DataNumTextBox36.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox36.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox36.TabIndex = 117;
+            this.DataNumTextBox36.TabIndex = 42;
             this.DataNumTextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox35
@@ -1290,7 +1291,7 @@ namespace GasFormsApp
             this.DataNumTextBox35.Name = "DataNumTextBox35";
             this.DataNumTextBox35.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox35.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox35.TabIndex = 116;
+            this.DataNumTextBox35.TabIndex = 40;
             this.DataNumTextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox34
@@ -1302,7 +1303,7 @@ namespace GasFormsApp
             this.DataNumTextBox34.Name = "DataNumTextBox34";
             this.DataNumTextBox34.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox34.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox34.TabIndex = 115;
+            this.DataNumTextBox34.TabIndex = 38;
             this.DataNumTextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox33
@@ -1314,7 +1315,7 @@ namespace GasFormsApp
             this.DataNumTextBox33.Name = "DataNumTextBox33";
             this.DataNumTextBox33.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox33.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox33.TabIndex = 114;
+            this.DataNumTextBox33.TabIndex = 36;
             this.DataNumTextBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox32
@@ -1326,7 +1327,7 @@ namespace GasFormsApp
             this.DataNumTextBox32.Name = "DataNumTextBox32";
             this.DataNumTextBox32.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox32.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox32.TabIndex = 113;
+            this.DataNumTextBox32.TabIndex = 34;
             this.DataNumTextBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox31
@@ -1338,7 +1339,7 @@ namespace GasFormsApp
             this.DataNumTextBox31.Name = "DataNumTextBox31";
             this.DataNumTextBox31.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataNumTextBox31.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox31.TabIndex = 112;
+            this.DataNumTextBox31.TabIndex = 32;
             this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UndDesorpCalTextBox
@@ -1382,8 +1383,7 @@ namespace GasFormsApp
             this.DesorbTextBox60.Location = new System.Drawing.Point(815, 368);
             this.DesorbTextBox60.Name = "DesorbTextBox60";
             this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox60.TabIndex = 103;
-            this.DesorbTextBox60.TabStop = false;
+            this.DesorbTextBox60.TabIndex = 91;
             // 
             // DesVolUndTextBox
             // 
@@ -1404,8 +1404,7 @@ namespace GasFormsApp
             this.DesorbTextBox31.Location = new System.Drawing.Point(542, 80);
             this.DesorbTextBox31.Name = "DesorbTextBox31";
             this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox31.TabIndex = 44;
-            this.DesorbTextBox31.TabStop = false;
+            this.DesorbTextBox31.TabIndex = 33;
             // 
             // label53
             // 
@@ -1424,8 +1423,7 @@ namespace GasFormsApp
             this.DesorbTextBox41.Location = new System.Drawing.Point(681, 80);
             this.DesorbTextBox41.Name = "DesorbTextBox41";
             this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox41.TabIndex = 84;
-            this.DesorbTextBox41.TabStop = false;
+            this.DesorbTextBox41.TabIndex = 53;
             // 
             // label54
             // 
@@ -1444,8 +1442,7 @@ namespace GasFormsApp
             this.DesorbTextBox50.Location = new System.Drawing.Point(681, 368);
             this.DesorbTextBox50.Name = "DesorbTextBox50";
             this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox50.TabIndex = 93;
-            this.DesorbTextBox50.TabStop = false;
+            this.DesorbTextBox50.TabIndex = 71;
             // 
             // SampLossVolTextBox
             // 
@@ -1466,8 +1463,7 @@ namespace GasFormsApp
             this.DesorbTextBox40.Location = new System.Drawing.Point(542, 368);
             this.DesorbTextBox40.Name = "DesorbTextBox40";
             this.DesorbTextBox40.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox40.TabIndex = 83;
-            this.DesorbTextBox40.TabStop = false;
+            this.DesorbTextBox40.TabIndex = 51;
             // 
             // DesorbTextBox51
             // 
@@ -1476,8 +1472,7 @@ namespace GasFormsApp
             this.DesorbTextBox51.Location = new System.Drawing.Point(815, 80);
             this.DesorbTextBox51.Name = "DesorbTextBox51";
             this.DesorbTextBox51.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox51.TabIndex = 94;
-            this.DesorbTextBox51.TabStop = false;
+            this.DesorbTextBox51.TabIndex = 73;
             // 
             // DesorbTextBox32
             // 
@@ -1486,8 +1481,7 @@ namespace GasFormsApp
             this.DesorbTextBox32.Location = new System.Drawing.Point(542, 112);
             this.DesorbTextBox32.Name = "DesorbTextBox32";
             this.DesorbTextBox32.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox32.TabIndex = 66;
-            this.DesorbTextBox32.TabStop = false;
+            this.DesorbTextBox32.TabIndex = 35;
             // 
             // DesorbTextBox42
             // 
@@ -1496,8 +1490,7 @@ namespace GasFormsApp
             this.DesorbTextBox42.Location = new System.Drawing.Point(681, 112);
             this.DesorbTextBox42.Name = "DesorbTextBox42";
             this.DesorbTextBox42.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox42.TabIndex = 85;
-            this.DesorbTextBox42.TabStop = false;
+            this.DesorbTextBox42.TabIndex = 55;
             // 
             // DesorbTextBox59
             // 
@@ -1506,8 +1499,7 @@ namespace GasFormsApp
             this.DesorbTextBox59.Location = new System.Drawing.Point(815, 336);
             this.DesorbTextBox59.Name = "DesorbTextBox59";
             this.DesorbTextBox59.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox59.TabIndex = 102;
-            this.DesorbTextBox59.TabStop = false;
+            this.DesorbTextBox59.TabIndex = 89;
             // 
             // DesorbTextBox52
             // 
@@ -1516,8 +1508,7 @@ namespace GasFormsApp
             this.DesorbTextBox52.Location = new System.Drawing.Point(815, 112);
             this.DesorbTextBox52.Name = "DesorbTextBox52";
             this.DesorbTextBox52.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox52.TabIndex = 95;
-            this.DesorbTextBox52.TabStop = false;
+            this.DesorbTextBox52.TabIndex = 75;
             // 
             // DesorbTextBox49
             // 
@@ -1526,8 +1517,7 @@ namespace GasFormsApp
             this.DesorbTextBox49.Location = new System.Drawing.Point(681, 336);
             this.DesorbTextBox49.Name = "DesorbTextBox49";
             this.DesorbTextBox49.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox49.TabIndex = 92;
-            this.DesorbTextBox49.TabStop = false;
+            this.DesorbTextBox49.TabIndex = 69;
             // 
             // DesorbTextBox39
             // 
@@ -1536,8 +1526,7 @@ namespace GasFormsApp
             this.DesorbTextBox39.Location = new System.Drawing.Point(542, 336);
             this.DesorbTextBox39.Name = "DesorbTextBox39";
             this.DesorbTextBox39.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox39.TabIndex = 82;
-            this.DesorbTextBox39.TabStop = false;
+            this.DesorbTextBox39.TabIndex = 49;
             // 
             // DesorbTextBox33
             // 
@@ -1546,8 +1535,7 @@ namespace GasFormsApp
             this.DesorbTextBox33.Location = new System.Drawing.Point(542, 144);
             this.DesorbTextBox33.Name = "DesorbTextBox33";
             this.DesorbTextBox33.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox33.TabIndex = 76;
-            this.DesorbTextBox33.TabStop = false;
+            this.DesorbTextBox33.TabIndex = 37;
             // 
             // DesorbTextBox43
             // 
@@ -1556,8 +1544,7 @@ namespace GasFormsApp
             this.DesorbTextBox43.Location = new System.Drawing.Point(681, 144);
             this.DesorbTextBox43.Name = "DesorbTextBox43";
             this.DesorbTextBox43.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox43.TabIndex = 86;
-            this.DesorbTextBox43.TabStop = false;
+            this.DesorbTextBox43.TabIndex = 57;
             // 
             // DesorbTextBox58
             // 
@@ -1566,8 +1553,7 @@ namespace GasFormsApp
             this.DesorbTextBox58.Location = new System.Drawing.Point(815, 304);
             this.DesorbTextBox58.Name = "DesorbTextBox58";
             this.DesorbTextBox58.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox58.TabIndex = 101;
-            this.DesorbTextBox58.TabStop = false;
+            this.DesorbTextBox58.TabIndex = 87;
             // 
             // DesorbTextBox53
             // 
@@ -1576,8 +1562,7 @@ namespace GasFormsApp
             this.DesorbTextBox53.Location = new System.Drawing.Point(815, 144);
             this.DesorbTextBox53.Name = "DesorbTextBox53";
             this.DesorbTextBox53.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox53.TabIndex = 96;
-            this.DesorbTextBox53.TabStop = false;
+            this.DesorbTextBox53.TabIndex = 77;
             // 
             // DesorbTextBox48
             // 
@@ -1586,8 +1571,7 @@ namespace GasFormsApp
             this.DesorbTextBox48.Location = new System.Drawing.Point(681, 304);
             this.DesorbTextBox48.Name = "DesorbTextBox48";
             this.DesorbTextBox48.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox48.TabIndex = 91;
-            this.DesorbTextBox48.TabStop = false;
+            this.DesorbTextBox48.TabIndex = 67;
             // 
             // DesorbTextBox38
             // 
@@ -1596,8 +1580,7 @@ namespace GasFormsApp
             this.DesorbTextBox38.Location = new System.Drawing.Point(542, 304);
             this.DesorbTextBox38.Name = "DesorbTextBox38";
             this.DesorbTextBox38.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox38.TabIndex = 81;
-            this.DesorbTextBox38.TabStop = false;
+            this.DesorbTextBox38.TabIndex = 47;
             // 
             // DesorbTextBox34
             // 
@@ -1606,8 +1589,7 @@ namespace GasFormsApp
             this.DesorbTextBox34.Location = new System.Drawing.Point(542, 176);
             this.DesorbTextBox34.Name = "DesorbTextBox34";
             this.DesorbTextBox34.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox34.TabIndex = 77;
-            this.DesorbTextBox34.TabStop = false;
+            this.DesorbTextBox34.TabIndex = 39;
             // 
             // DesorbTextBox44
             // 
@@ -1616,8 +1598,7 @@ namespace GasFormsApp
             this.DesorbTextBox44.Location = new System.Drawing.Point(681, 176);
             this.DesorbTextBox44.Name = "DesorbTextBox44";
             this.DesorbTextBox44.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox44.TabIndex = 87;
-            this.DesorbTextBox44.TabStop = false;
+            this.DesorbTextBox44.TabIndex = 59;
             // 
             // DesorbTextBox57
             // 
@@ -1626,8 +1607,7 @@ namespace GasFormsApp
             this.DesorbTextBox57.Location = new System.Drawing.Point(815, 272);
             this.DesorbTextBox57.Name = "DesorbTextBox57";
             this.DesorbTextBox57.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox57.TabIndex = 100;
-            this.DesorbTextBox57.TabStop = false;
+            this.DesorbTextBox57.TabIndex = 85;
             // 
             // DesorbTextBox54
             // 
@@ -1636,8 +1616,7 @@ namespace GasFormsApp
             this.DesorbTextBox54.Location = new System.Drawing.Point(815, 176);
             this.DesorbTextBox54.Name = "DesorbTextBox54";
             this.DesorbTextBox54.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox54.TabIndex = 97;
-            this.DesorbTextBox54.TabStop = false;
+            this.DesorbTextBox54.TabIndex = 79;
             // 
             // DesorbTextBox47
             // 
@@ -1646,8 +1625,7 @@ namespace GasFormsApp
             this.DesorbTextBox47.Location = new System.Drawing.Point(681, 272);
             this.DesorbTextBox47.Name = "DesorbTextBox47";
             this.DesorbTextBox47.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox47.TabIndex = 90;
-            this.DesorbTextBox47.TabStop = false;
+            this.DesorbTextBox47.TabIndex = 65;
             // 
             // DesorbTextBox37
             // 
@@ -1656,8 +1634,7 @@ namespace GasFormsApp
             this.DesorbTextBox37.Location = new System.Drawing.Point(542, 272);
             this.DesorbTextBox37.Name = "DesorbTextBox37";
             this.DesorbTextBox37.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox37.TabIndex = 80;
-            this.DesorbTextBox37.TabStop = false;
+            this.DesorbTextBox37.TabIndex = 45;
             // 
             // DesorbTextBox35
             // 
@@ -1666,8 +1643,7 @@ namespace GasFormsApp
             this.DesorbTextBox35.Location = new System.Drawing.Point(542, 208);
             this.DesorbTextBox35.Name = "DesorbTextBox35";
             this.DesorbTextBox35.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox35.TabIndex = 78;
-            this.DesorbTextBox35.TabStop = false;
+            this.DesorbTextBox35.TabIndex = 41;
             // 
             // DesorbTextBox45
             // 
@@ -1676,8 +1652,7 @@ namespace GasFormsApp
             this.DesorbTextBox45.Location = new System.Drawing.Point(681, 208);
             this.DesorbTextBox45.Name = "DesorbTextBox45";
             this.DesorbTextBox45.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox45.TabIndex = 88;
-            this.DesorbTextBox45.TabStop = false;
+            this.DesorbTextBox45.TabIndex = 61;
             // 
             // DesorbTextBox56
             // 
@@ -1686,8 +1661,7 @@ namespace GasFormsApp
             this.DesorbTextBox56.Location = new System.Drawing.Point(815, 240);
             this.DesorbTextBox56.Name = "DesorbTextBox56";
             this.DesorbTextBox56.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox56.TabIndex = 99;
-            this.DesorbTextBox56.TabStop = false;
+            this.DesorbTextBox56.TabIndex = 83;
             // 
             // DesorbTextBox55
             // 
@@ -1696,8 +1670,7 @@ namespace GasFormsApp
             this.DesorbTextBox55.Location = new System.Drawing.Point(815, 208);
             this.DesorbTextBox55.Name = "DesorbTextBox55";
             this.DesorbTextBox55.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox55.TabIndex = 98;
-            this.DesorbTextBox55.TabStop = false;
+            this.DesorbTextBox55.TabIndex = 81;
             // 
             // DesorbTextBox46
             // 
@@ -1706,8 +1679,7 @@ namespace GasFormsApp
             this.DesorbTextBox46.Location = new System.Drawing.Point(681, 240);
             this.DesorbTextBox46.Name = "DesorbTextBox46";
             this.DesorbTextBox46.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox46.TabIndex = 89;
-            this.DesorbTextBox46.TabStop = false;
+            this.DesorbTextBox46.TabIndex = 63;
             // 
             // DesorbTextBox36
             // 
@@ -1716,8 +1688,7 @@ namespace GasFormsApp
             this.DesorbTextBox36.Location = new System.Drawing.Point(542, 240);
             this.DesorbTextBox36.Name = "DesorbTextBox36";
             this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox36.TabIndex = 79;
-            this.DesorbTextBox36.TabStop = false;
+            this.DesorbTextBox36.TabIndex = 43;
             // 
             // DrawCurvesButton
             // 
@@ -1727,7 +1698,7 @@ namespace GasFormsApp
             this.DrawCurvesButton.Location = new System.Drawing.Point(1006, 466);
             this.DrawCurvesButton.Name = "DrawCurvesButton";
             this.DrawCurvesButton.Size = new System.Drawing.Size(130, 41);
-            this.DrawCurvesButton.TabIndex = 33;
+            this.DrawCurvesButton.TabIndex = 100;
             this.DrawCurvesButton.Text = "计    算";
             this.DrawCurvesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DrawCurvesButton.UseVisualStyleBackColor = true;

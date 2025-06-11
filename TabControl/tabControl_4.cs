@@ -103,36 +103,36 @@ namespace GasFormsApp.TabControl
         {
             //计算Wc
             MainForm.Wc = getWc();
-            _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString();
+            _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString("F2");
 
             // 计算W1
             float SampleWeight = (float)Convert.ToDecimal(_mainForm.SampleWeightTextBox.Text);// 煤样重量
             float SampLossVol = (float)Convert.ToDecimal(_mainForm.SampLossVolTextBox.Text);// 取样损失体积
             float UndDesorpCal = (float)Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text);// 井下解吸校准
             MainForm.W1 = (UndDesorpCal + Math.Abs(SampLossVol)) / SampleWeight;
-            _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F4");
+            _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F2");
 
             // 计算W2
             float DesorpVolNormal = (float)Convert.ToDecimal(_mainForm.DesorpVolNormalCalTextBox.Text);// 实验室解吸
             MainForm.W2 = DesorpVolNormal / SampleWeight;
-            _mainForm.W2_TextBox.Text = MainForm.W2.ToString("F4");
+            _mainForm.W2_TextBox.Text = MainForm.W2.ToString("F2");
 
             // 计算W3
             float CrushDesorp = (float)Convert.ToDecimal(_mainForm.CrushDesorpTextBox.Text);
             MainForm.W3 = CrushDesorp;
-            _mainForm.W3_TextBox.Text = MainForm.W3.ToString("F4");
+            _mainForm.W3_TextBox.Text = MainForm.W3.ToString("F2");
 
             // 计算Wa
             MainForm.Wa = MainForm.W1 + MainForm.W2 + MainForm.W3;
-            _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F4");
+            _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F2");
 
             // 计算Wc
             MainForm.Wc = (float)Convert.ToDecimal(_mainForm.NonDesorpGasQtyTextBox.Text);
-            _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F4");
+            _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F2");
 
             // 计算W
             MainForm.W = MainForm.Wa + MainForm.Wc;
-            _mainForm.W_TextBox.Text = MainForm.W.ToString("F4");
+            _mainForm.W_TextBox.Text = MainForm.W.ToString("F2");
 
             /* 
              * AdsorpConstBTextBox -> 吸附常数b 
@@ -173,7 +173,7 @@ namespace GasFormsApp.TabControl
                 * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
             double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
             MainForm.P = Pt;
-            _mainForm.P_TextBox.Text = MainForm.P.ToString("F4");
+            _mainForm.P_TextBox.Text = MainForm.P.ToString("F2");
         }
     }
 }

@@ -333,7 +333,7 @@ namespace GasFormsApp.TabControl
                         {
                             values[i] = accessor.ReadDouble(i * sizeof(double));
                         }
-                        InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F4"));
+                        InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F2"));
 
                         // 找出最大数据
                         double maxValue = double.MinValue;
@@ -361,7 +361,7 @@ namespace GasFormsApp.TabControl
                         {
                             // 计算井下解吸体积
                             MainForm.井下解吸体积 = maxValue - initialVolume;
-                            _mainForm.DesVolUndTextBox.Text = MainForm.井下解吸体积.ToString();
+                            _mainForm.DesVolUndTextBox.Text = MainForm.井下解吸体积.ToString("F2");
 
 
                             int temp1;
@@ -371,8 +371,8 @@ namespace GasFormsApp.TabControl
                                 if (float.TryParse(_mainForm.UndAtmPressureTextBox.Text, out temp2))
                                 {
                                     MainForm.井下解吸校准体积 = CalculateDesorptionCalibratedVolume(MainForm.井下解吸体积, temp2,temp1);
-                                    _mainForm.UndDesorpCalTextBox.Text = MainForm.井下解吸校准体积.ToString("F4");
-                                    _mainForm.SampLossVolTextBox.Text = Math.Abs(values[1]).ToString("F4");
+                                    _mainForm.UndDesorpCalTextBox.Text = MainForm.井下解吸校准体积.ToString("F2");
+                                    _mainForm.SampLossVolTextBox.Text = Math.Abs(values[1]).ToString("F2");
                                 }
                             }
 

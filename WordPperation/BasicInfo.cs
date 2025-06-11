@@ -57,7 +57,7 @@ namespace GasFormsApp.WordPperation
                 {"RawCoalMoisture", RawCoalMoistureText},//原煤水分（%）
                 {"InitialVolume", InitialVolumeText},//量管初始体积（ml）
                 {"SamplingDepth", _mainForm.SamplingDepthTextBox.Text},//取样深度（m）
-                {"UgDesorpVol", Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text).ToString("F4")},//井下解吸量W11(ml)
+                {"UgDesorpVol", Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text).ToString("F2")},//井下解吸量W11(ml)
                 {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
                 {"DesorpVolNormal", _mainForm.DesorpVolNormalCalTextBox.Text},//实验室常压解吸W2(ml)
                 {"Sample1WeightText", _mainForm.Sample1WeightTextBox.Text},//粉碎后第1份煤样重(g)
@@ -72,13 +72,13 @@ namespace GasFormsApp.WordPperation
                 {"AppDensityText", _mainForm.AppDensityTextBox.Text},//视密度
                 {"NonDesorpGasQtyText", _mainForm.NonDesorpGasQtyTextBox.Text},//不可解吸瓦斯量Wc
                 {"VadText", _mainForm.VadTextBox.Text},//挥发分Vad
-                {"W1Text", MainForm.W1.ToString("F4")},//W1
-                {"W2Text", MainForm.W2.ToString("F4")},//W2
-                {"W3Text", MainForm.W3.ToString("F4")},//W3
-                {"WaText", MainForm.Wa.ToString("F4")},//Wa
-                {"WcText", MainForm.Wc.ToString("F4")},//不可解吸瓦斯量Wc
-                {"WText", MainForm.W.ToString("F4")},//W
-                {"PText", MainForm.P.ToString("F4")},//P
+                {"W1Text", MainForm.W1.ToString("F2")},//W1
+                {"W2Text", MainForm.W2.ToString("F2")},//W2
+                {"W3Text", MainForm.W3.ToString("F2")},//W3
+                {"WaText", MainForm.Wa.ToString("F2")},//Wa
+                {"WcText", MainForm.Wc.ToString("F2")},//不可解吸瓦斯量Wc
+                {"WText", MainForm.W.ToString("F2")},//W
+                {"PText", MainForm.P.ToString("F2")},//P
                 {"CH4Text", _mainForm.CH4TextBox.Text},//CH4
                 {"CO2Text", _mainForm.CO2TextBox.Text},//CO2
                 {"N2Text", _mainForm.N2TextBox.Text},//N2

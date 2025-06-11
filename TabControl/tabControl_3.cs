@@ -73,7 +73,7 @@ namespace GasFormsApp.TabControl
                 decimal two = Convert.ToDecimal(_mainForm.S2DesorpVolCalTextBox.Text.Trim());
                 if (one > 0 && two > 0 && one1 > 0 && two1 > 0)
                 {
-                    _mainForm.CrushDesorpTextBox.Text = (Math.Round(one / one1 > two / two1 ? one / one1 : two / two1, 4)).ToString();
+                    _mainForm.CrushDesorpTextBox.Text = (Math.Round(one / one1 > two / two1 ? one / one1 : two / two1, 4)).ToString("F2");
                 }
             }
             catch { }
@@ -116,7 +116,7 @@ namespace GasFormsApp.TabControl
                             5.886,
                             1000
                             );
-            _mainForm.DesorpVolNormalCalTextBox.Text = temp.ToString("F4");
+            _mainForm.DesorpVolNormalCalTextBox.Text = temp.ToString("F2");
 
             temp = CalcStandardVolume(
                             (double)Convert.ToDecimal(_mainForm.S1DesorpVolTextBox.Text),
@@ -125,7 +125,7 @@ namespace GasFormsApp.TabControl
                             5.886,
                             1000
                             );
-            _mainForm.S1DesorpVolCalTextBox.Text = temp.ToString("F4");
+            _mainForm.S1DesorpVolCalTextBox.Text = temp.ToString("F2");
 
             temp = CalcStandardVolume(
                             (double)Convert.ToDecimal(_mainForm.S2DesorpVolTextBox.Text),
@@ -134,7 +134,7 @@ namespace GasFormsApp.TabControl
                             5.886,
                             1000
                             );
-            _mainForm.S2DesorpVolCalTextBox.Text = temp.ToString("F4");
+            _mainForm.S2DesorpVolCalTextBox.Text = temp.ToString("F2");
             getMaxVal();
         }
     }
