@@ -347,6 +347,10 @@ namespace GasFormsApp
                 {
                     myTabLogic5.GenReportButton_Click(sender, e);
                 }
+                else if (currentTab.Name == "tabPage6")
+                {
+                    myTabLogic6.ExportTheDocumentButton_Click(sender, e);
+                }
 
                 e.Handled = true;
             }

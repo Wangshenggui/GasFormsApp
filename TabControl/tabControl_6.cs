@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.Presentation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -29,23 +30,33 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.ReloadDataButton, "刷 新(Ctrl + R)");
             _mainForm.toolTip1.SetToolTip(_mainForm.DeleteDataButton, "删 除(Ctrl + D)");
             _mainForm.toolTip1.SetToolTip(_mainForm.ExportTheDocumentButton, "导出报告(Ctrl + G)");
-            
 
-            //注册回调函数
+
+            // 注册“重新加载数据”按钮的点击事件处理器
             _mainForm.ReloadDataButton.Click += ReloadDataButton_Click;
+
+            // 注册“删除数据”按钮的点击事件处理器
             _mainForm.DeleteDataButton.Click += DeleteDataButton_Click;
+
+            // 注册“导出文档”按钮的点击事件处理器
             _mainForm.ExportTheDocumentButton.Click += ExportTheDocumentButton_Click;
 
-
+            // 为 DataGridView 的 RowPostPaint 事件注册回调，用于自定义行的绘制（如绘制行号）
             _mainForm.dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
 
-            //禁用默认复制模式
+            // 禁用 DataGridView 的默认剪贴板复制功能（防止用户 Ctrl+C 复制内容）
             _mainForm.dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+
+            // 注册键盘按下事件（如拦截 Ctrl+C、Delete 等操作）
             _mainForm.dataGridView1.KeyDown += dataGridView1_KeyDown;
 
+            // 注册单元格双击事件（通常用于打开编辑窗口或详情视图）
             _mainForm.dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+
+            // 注册选中单元格变化事件（可以用于同步其他 UI 状态）
             _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
+            // 注册单元格开始编辑事件的匿名函数，用于调试或日志记录编辑行为
             _mainForm.dataGridView1.CellBeginEdit += (s, e) => {
                 Console.WriteLine($"CellBeginEdit at row {e.RowIndex}, col {e.ColumnIndex}");
             };
@@ -355,21 +366,100 @@ namespace GasFormsApp.TabControl
             // 解绑事件，避免触发 SelectionChanged
             _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
 
+            string sortColumnName = null;
+            ListSortDirection sortDirection = ListSortDirection.Ascending;
+            string selectedUserId = null;
+
+            if (_mainForm.dataGridView1.CurrentRow != null)
+            {
+                int currentIndex = _mainForm.dataGridView1.CurrentRow.Index;
+                int nextIndex = currentIndex + 1;
+                int prevIndex = currentIndex - 1;
+
+                if (nextIndex < _mainForm.dataGridView1.Rows.Count)
+                {
+                    // 下一行存在，选下一行ID
+                    var nextRow = _mainForm.dataGridView1.Rows[nextIndex];
+                    if (nextRow.DataBoundItem is UserData nextUser)
+                    {
+                        selectedUserId = nextUser.ID;
+                    }
+                }
+                else if (prevIndex >= 0)
+                {
+                    // 下一行不存在，上一行存在，选上一行ID
+                    var prevRow = _mainForm.dataGridView1.Rows[prevIndex];
+                    if (prevRow.DataBoundItem is UserData prevUser)
+                    {
+                        selectedUserId = prevUser.ID;
+                    }
+                }
+                else
+                {
+                    // 只有当前行，没有下一行和上一行，不选中任何行
+                    selectedUserId = null;
+                }
+            }
+
+            if (_mainForm.dataGridView1.SortedColumn != null)
+            {
+                sortColumnName = _mainForm.dataGridView1.SortedColumn.DataPropertyName;
+                sortDirection = (_mainForm.dataGridView1.SortOrder == SortOrder.Descending)
+                    ? ListSortDirection.Descending
+                    : ListSortDirection.Ascending;
+            }
+
             try
             {
                 List<UserData> filteredUsers = LoadAllUsers();
-                var sortableList = new SortableBindingList<UserData>(filteredUsers);
+                Console.WriteLine($"刷新数据，条数：{filteredUsers.Count}, 尝试恢复选中ID：{selectedUserId}");
 
+                var sortableList = new SortableBindingList<UserData>(filteredUsers);
                 _mainForm.dataGridView1.DataSource = null;
                 _mainForm.dataGridView1.DataSource = sortableList;
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                // 恢复排序
+                if (sortColumnName != null)
+                {
+                    var sortColumn = _mainForm.dataGridView1.Columns
+                        .Cast<DataGridViewColumn>()
+                        .FirstOrDefault(c => c.DataPropertyName == sortColumnName);
+                    if (sortColumn != null)
+                    {
+                        _mainForm.dataGridView1.Sort(sortColumn, sortDirection);
+                    }
+                }
+
+                // 延迟恢复选中行，确保DataGridView刷新完成
+                if (!string.IsNullOrEmpty(selectedUserId))
+                {
+                    _mainForm.dataGridView1.BeginInvoke(new Action(() =>
+                    {
+                        bool found = false;
+                        foreach (DataGridViewRow row in _mainForm.dataGridView1.Rows)
+                        {
+                            if (row.DataBoundItem is UserData user && user.ID == selectedUserId)
+                            {
+                                row.Selected = true;
+                                _mainForm.dataGridView1.CurrentCell = row.Cells[0];
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (!found)
+                        {
+                            Console.WriteLine("没有找到之前选中的用户ID。");
+                        }
+                    }));
+                }
             }
             finally
             {
-                // 绑定事件
                 _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             }
         }
+
 
         // 导出word文档
         public void ExportTheDocumentButton_Click(object sender, EventArgs e)
@@ -497,16 +587,37 @@ namespace GasFormsApp.TabControl
         void 全部显示()
         {
             _currentKeyword = "";
+
+            // 记录当前排序列和方向
+            string sortColumnName = null;
+            ListSortDirection sortDirection = ListSortDirection.Ascending;
+
+            // 记录选中用户ID
+            string selectedUserId = null;
+
             try
             {
-                // 如果 SystemData 文件夹不存在，则提示并退出
+                // 先保存排序信息和选中行信息
+                if (_mainForm.dataGridView1.SortedColumn != null)
+                {
+                    sortColumnName = _mainForm.dataGridView1.SortedColumn.DataPropertyName;
+                    sortDirection = (_mainForm.dataGridView1.SortOrder == SortOrder.Descending)
+                        ? ListSortDirection.Descending
+                        : ListSortDirection.Ascending;
+                }
+
+                if (_mainForm.dataGridView1.CurrentRow != null &&
+                    _mainForm.dataGridView1.CurrentRow.DataBoundItem is UserData selectedUser)
+                {
+                    selectedUserId = selectedUser.ID;
+                }
+
                 if (!Directory.Exists(SystemDataPath))
                 {
                     Console.WriteLine("BinData 文件夹不存在！");
                     return;
                 }
 
-                // 获取所有以 .bin 结尾的用户数据文件
                 string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
                 if (files.Length == 0)
                 {
@@ -514,11 +625,9 @@ namespace GasFormsApp.TabControl
                     return;
                 }
 
-                // 用于保存所有反序列化后的用户数据
                 List<UserData> allUsers = new List<UserData>();
                 BinaryFormatter formatter = new BinaryFormatter();
 
-                // 遍历每个数据文件，反序列化并添加到列表中
                 foreach (var file in files)
                 {
                     using (FileStream fs = new FileStream(file, FileMode.Open))
@@ -528,21 +637,61 @@ namespace GasFormsApp.TabControl
                     }
                 }
 
-                // 将数据绑定到主窗体的 DataGridView 控件上
                 var sortableList = new SortableBindingList<UserData>(allUsers);
-                _mainForm.dataGridView1.DataSource = null;              // 先清空数据源
-                _mainForm.dataGridView1.DataSource = sortableList;      // 设置新数据源
-                //自动调节宽度
+
+                // 解绑事件，避免刷新时触发选中变化事件等
+                _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
+
+                _mainForm.dataGridView1.DataSource = null;
+                _mainForm.dataGridView1.DataSource = sortableList;
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                Console.WriteLine("数据加载完成，已绑定到dataGridView1。");
+                // 延迟恢复排序，避免排序没有立即生效
+                if (sortColumnName != null)
+                {
+                    _mainForm.dataGridView1.BeginInvoke(new Action(() =>
+                    {
+                        var sortColumn = _mainForm.dataGridView1.Columns
+                            .Cast<DataGridViewColumn>()
+                            .FirstOrDefault(c => c.DataPropertyName == sortColumnName);
+
+                        if (sortColumn != null)
+                        {
+                            _mainForm.dataGridView1.Sort(sortColumn, sortDirection);
+                        }
+                    }));
+                }
+
+                // 延迟恢复选中行
+                if (!string.IsNullOrEmpty(selectedUserId))
+                {
+                    _mainForm.dataGridView1.BeginInvoke(new Action(() =>
+                    {
+                        foreach (DataGridViewRow row in _mainForm.dataGridView1.Rows)
+                        {
+                            if (row.DataBoundItem is UserData user && user.ID == selectedUserId)
+                            {
+                                row.Selected = true;
+                                _mainForm.dataGridView1.CurrentCell = row.Cells[0];
+                                break;
+                            }
+                        }
+                    }));
+                }
+
+                // 重新绑定事件
+                _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+
+                Console.WriteLine("数据加载完成，已绑定到 dataGridView1。");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("读取失败：" + ex.Message);
             }
         }
-        
+
+
+
         private List<UserData> LoadAllUsers()
         {
             if (!Directory.Exists(SystemDataPath))
@@ -573,8 +722,30 @@ namespace GasFormsApp.TabControl
         }
         private void 查询显示(string filterKeyword)
         {
+            // 记录当前排序列和方向
+            string sortColumnName = null;
+            ListSortDirection sortDirection = ListSortDirection.Ascending;
+
+            // 记录选中用户ID（假设UserData有ID属性）
+            string selectedUserId = null;
+
             try
             {
+                // 先记录排序信息和选中行信息
+                if (_mainForm.dataGridView1.SortedColumn != null)
+                {
+                    sortColumnName = _mainForm.dataGridView1.SortedColumn.DataPropertyName;
+                    sortDirection = (_mainForm.dataGridView1.SortOrder == SortOrder.Descending)
+                        ? ListSortDirection.Descending
+                        : ListSortDirection.Ascending;
+                }
+
+                if (_mainForm.dataGridView1.CurrentRow != null &&
+                    _mainForm.dataGridView1.CurrentRow.DataBoundItem is UserData selectedUser)
+                {
+                    selectedUserId = selectedUser.ID;
+                }
+
                 List<UserData> allUsers = LoadAllUsers();
 
                 if (allUsers.Count == 0)
@@ -583,7 +754,6 @@ namespace GasFormsApp.TabControl
                     return;
                 }
 
-                
                 _currentKeyword = filterKeyword; // 保存当前关键字，用于高亮
 
                 List<UserData> filteredUsers;
@@ -606,13 +776,53 @@ namespace GasFormsApp.TabControl
                 }
 
                 var sortableList = new SortableBindingList<UserData>(filteredUsers);
+
+                // 解绑事件，防止刷新时触发 SelectionChanged 等事件
+                _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
+                _mainForm.dataGridView1.CellPainting -= DataGridView1_CellPainting;
+
                 _mainForm.dataGridView1.DataSource = null;
                 _mainForm.dataGridView1.DataSource = sortableList;
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                // 绑定高亮事件（防止重复绑定）
-                _mainForm.dataGridView1.CellPainting -= DataGridView1_CellPainting;
+                // 绑定高亮事件
                 _mainForm.dataGridView1.CellPainting += DataGridView1_CellPainting;
+
+                // 延迟恢复排序
+                if (sortColumnName != null)
+                {
+                    _mainForm.dataGridView1.BeginInvoke(new Action(() =>
+                    {
+                        var sortColumn = _mainForm.dataGridView1.Columns
+                            .Cast<DataGridViewColumn>()
+                            .FirstOrDefault(c => c.DataPropertyName == sortColumnName);
+
+                        if (sortColumn != null)
+                        {
+                            _mainForm.dataGridView1.Sort(sortColumn, sortDirection);
+                        }
+                    }));
+                }
+
+                // 延迟恢复选中行
+                if (!string.IsNullOrEmpty(selectedUserId))
+                {
+                    _mainForm.dataGridView1.BeginInvoke(new Action(() =>
+                    {
+                        foreach (DataGridViewRow row in _mainForm.dataGridView1.Rows)
+                        {
+                            if (row.DataBoundItem is UserData user && user.ID == selectedUserId)
+                            {
+                                row.Selected = true;
+                                _mainForm.dataGridView1.CurrentCell = row.Cells[0];
+                                break;
+                            }
+                        }
+                    }));
+                }
+
+                // 重新绑定事件
+                _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
                 Console.WriteLine($"数据加载完成，筛选关键字：'{filterKeyword}'，结果数：{filteredUsers.Count}");
             }
@@ -621,6 +831,7 @@ namespace GasFormsApp.TabControl
                 Console.WriteLine("读取失败：" + ex.Message);
             }
         }
+
         private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
