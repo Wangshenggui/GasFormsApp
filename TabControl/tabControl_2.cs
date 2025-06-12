@@ -86,9 +86,27 @@ namespace GasFormsApp.TabControl
         }
         public void TabControl_2_InputCheckTimer_Tick()
         {
-            ValidateNumericTextBox(_mainForm.t0TextBox);
+            //ValidateNumericTextBox(_mainForm.t0TextBox);
+            int minute1 = _mainForm.dateTimePicker4.Value.Minute;
+            int minute2 = _mainForm.dateTimePicker5.Value.Minute;
+            _mainForm.t0TextBox.Text = (minute1 - minute2).ToString();
+            string input = _mainForm.t0TextBox.Text;
+            // 重置颜色
+            _mainForm.t0TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            if (input.Contains(" "))
+            {
+                _mainForm.t0TextBox.BackColor = Color.Red;
+            }
+            else if (string.IsNullOrWhiteSpace(input))
+            {
+                _mainForm.t0TextBox.BackColor = _mainForm.t0TextBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+            else if (!double.TryParse(input, out double value) || value < 0 || value > 5)
+            {
+                _mainForm.t0TextBox.BackColor = Color.Red;
+            }
 
-            
+
             for (int i = 31; i <= 60; i++)
             {
                 string controlName = "DataNumTextBox" + i;
@@ -373,7 +391,15 @@ namespace GasFormsApp.TabControl
                                 {
                                     MainForm.井下解吸校准体积 = CalculateDesorptionCalibratedVolume(MainForm.井下解吸体积, temp2,temp1);
                                     _mainForm.UndDesorpCalTextBox.Text = MainForm.井下解吸校准体积.ToString("F2");
-                                    _mainForm.SampLossVolTextBox.Text = Math.Abs(values[1]).ToString("F2");
+
+
+                                    float temp3;
+                                    if (float.TryParse(Math.Abs(values[1]).ToString("F2"), out temp3))
+                                    {
+                                        MainForm.井下解吸校准体积 = CalculateDesorptionCalibratedVolume(temp3, temp2, temp1);
+                                        _mainForm.SampLossVolTextBox.Text = MainForm.井下解吸校准体积.ToString("F2");
+                                        InsertChart.SetGasLossVolText(MainForm.井下解吸校准体积.ToString("F2"));
+                                    }
                                 }
                             }
 
