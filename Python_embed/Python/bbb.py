@@ -138,8 +138,25 @@ clear_shared_memory()
 print("读取到的 int 值是：", val)
 
 from docx.enum.text import WD_ALIGN_PARAGRAPH  # 添加这一行
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Cm
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.text.paragraph import Paragraph
+from PIL import Image
+import uuid
+import os
+
 def insert_picture_after_bookmark(doc, bookmark_name, image_path):
-    # 找到bookmarkStart元素
+    """
+    在指定书签所在段落之后插入裁剪后的图片。
+
+    :param doc: python-docx 的 Document 对象
+    :param bookmark_name: Word 中书签的名称
+    :param image_path: 图片路径（将会被裁剪右边一部分）
+    :return: 修改后的 Document 对象
+    """
+    # 找到 bookmarkStart 元素
     bookmark_elem = None
     for child in doc.element.iter():
         if child.tag == qn('w:bookmarkStart') and child.get(qn('w:name')) == bookmark_name:
@@ -148,25 +165,45 @@ def insert_picture_after_bookmark(doc, bookmark_name, image_path):
     if bookmark_elem is None:
         raise ValueError(f"书签 '{bookmark_name}' 未找到")
 
-    # 获取书签所在段落节点（bookmarkElem的祖先w:p）
+    # 获取书签所在段落节点（w:p）
     para_elem = bookmark_elem
-    while para_elem.tag != qn('w:p'):
+    while para_elem is not None and para_elem.tag != qn('w:p'):
         para_elem = para_elem.getparent()
-        if para_elem is None:
-            raise RuntimeError("没找到对应段落")
+    if para_elem is None:
+        raise RuntimeError("找不到书签所在的段落")
 
-    # 在段落后插入一个新段落
+    # 创建一个新段落并插入到书签段落之后
     new_p = OxmlElement('w:p')
     para_elem.addnext(new_p)
 
-    # 用 python-docx 的 Document 对象包装该段落方便插入图片
-    from docx.text.paragraph import Paragraph
+    # 使用 python-docx 封装新段落
     new_para = Paragraph(new_p, doc)
-    new_para.alignment = WD_ALIGN_PARAGRAPH.RIGHT  # 添加这一行：设置右对齐
+    new_para.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
-    new_para.add_run().add_picture(image_path, width=Cm(6.77), height=Cm(6.77))
+    a = 0.08  # 右边裁剪比例（例如裁剪右边 8%）
+    b = 0.02  # 左边裁剪比例（例如裁剪左边 5%）
+
+    # 用 Pillow 打开并裁剪图片
+    with Image.open(image_path) as img:
+        width, height = img.size
+        left = int(width * b)
+        right = int(width * (1 - a))  # 裁掉右边 a 比例
+        cropped = img.crop((left, 0, right, height))  # (left, upper, right, lower)
+
+        # 保存为临时文件
+        temp_path = f"temp_{uuid.uuid4().hex}.png"
+        cropped.save(temp_path)
+
+    try:
+        # 插入裁剪后的图片
+        new_para.add_run().add_picture(temp_path, width=Cm(6.77 * (1-a)), height=Cm(6.77))
+    finally:
+        # 删除临时图片文件（确保无论是否出错都清理）
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
 
     return doc
+
 
 import os
 
