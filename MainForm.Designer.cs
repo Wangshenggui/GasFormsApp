@@ -32,9 +32,9 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -73,14 +73,24 @@ namespace GasFormsApp
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.label27 = new System.Windows.Forms.Label();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.t0TextBox = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label35 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.DataNumTextBox60 = new System.Windows.Forms.TextBox();
             this.DataNumTextBox59 = new System.Windows.Forms.TextBox();
@@ -318,16 +328,24 @@ namespace GasFormsApp
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label32 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label35 = new System.Windows.Forms.Label();
+            this.AdsorpConstACheckBox = new System.Windows.Forms.CheckBox();
+            this.AdsorpConstBCheckBox = new System.Windows.Forms.CheckBox();
+            this.MadCheckBox = new System.Windows.Forms.CheckBox();
+            this.AadCheckBox = new System.Windows.Forms.CheckBox();
+            this.PorosityCheckBox = new System.Windows.Forms.CheckBox();
+            this.AppDensityCheckBox = new System.Windows.Forms.CheckBox();
+            this.VadCheckBox = new System.Windows.Forms.CheckBox();
+            this.NonDesorpGasQtyCheckBox = new System.Windows.Forms.CheckBox();
+            this.CH4CheckBox = new System.Windows.Forms.CheckBox();
+            this.O2CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H6CheckBox = new System.Windows.Forms.CheckBox();
+            this.COCheckBox = new System.Windows.Forms.CheckBox();
+            this.C3H6CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H4CheckBox = new System.Windows.Forms.CheckBox();
+            this.CO2CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H2CheckBox = new System.Windows.Forms.CheckBox();
+            this.C3H8CheckBox = new System.Windows.Forms.CheckBox();
+            this.N2CheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -906,6 +924,22 @@ namespace GasFormsApp
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Ⅰ 类",
+            "Ⅱ 类",
+            "Ⅲ 类",
+            "Ⅳ 类",
+            "Ⅴ 类"});
+            this.comboBox3.Location = new System.Drawing.Point(306, 85);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(294, 27);
+            this.comboBox3.TabIndex = 53;
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -916,6 +950,16 @@ namespace GasFormsApp
             this.label29.Size = new System.Drawing.Size(119, 16);
             this.label29.TabIndex = 148;
             this.label29.Text = "时间   解吸量 ";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(197, 91);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(111, 16);
+            this.label31.TabIndex = 52;
+            this.label31.Text = "煤的破坏类型:";
             // 
             // label28
             // 
@@ -928,6 +972,17 @@ namespace GasFormsApp
             this.label28.TabIndex = 147;
             this.label28.Text = "时间   解吸量 ";
             // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker5.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker5.Location = new System.Drawing.Point(789, 15);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(266, 29);
+            this.dateTimePicker5.TabIndex = 47;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -938,6 +993,17 @@ namespace GasFormsApp
             this.label27.Size = new System.Drawing.Size(119, 16);
             this.label27.TabIndex = 146;
             this.label27.Text = "时间   解吸量 ";
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker4.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker4.Location = new System.Drawing.Point(789, 50);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(266, 29);
+            this.dateTimePicker4.TabIndex = 48;
             // 
             // label26
             // 
@@ -950,6 +1016,16 @@ namespace GasFormsApp
             this.label26.TabIndex = 145;
             this.label26.Text = "时间   解吸量 ";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(680, 56);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(111, 16);
+            this.label32.TabIndex = 51;
+            this.label32.Text = "解吸开始时间:";
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -960,6 +1036,17 @@ namespace GasFormsApp
             this.label25.Size = new System.Drawing.Size(119, 16);
             this.label25.TabIndex = 144;
             this.label25.Text = "时间   解吸量 ";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker3.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(306, 50);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(292, 29);
+            this.dateTimePicker3.TabIndex = 46;
             // 
             // label24
             // 
@@ -972,6 +1059,16 @@ namespace GasFormsApp
             this.label24.TabIndex = 143;
             this.label24.Text = "时间   解吸量 ";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label33.Location = new System.Drawing.Point(197, 57);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(111, 16);
+            this.label33.TabIndex = 50;
+            this.label33.Text = "取芯结束时间:";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -982,6 +1079,16 @@ namespace GasFormsApp
             this.label23.Size = new System.Drawing.Size(89, 19);
             this.label23.TabIndex = 142;
             this.label23.Text = "图像预览";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label34.Location = new System.Drawing.Point(680, 21);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(111, 16);
+            this.label34.TabIndex = 49;
+            this.label34.Text = "取芯开始时间:";
             // 
             // t0TextBox
             // 
@@ -994,6 +1101,27 @@ namespace GasFormsApp
             this.t0TextBox.TabIndex = 1;
             this.t0TextBox.TabStop = false;
             this.t0TextBox.Text = "0";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(306, 15);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(292, 29);
+            this.dateTimePicker2.TabIndex = 45;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label35.Location = new System.Drawing.Point(197, 21);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(111, 16);
+            this.label35.TabIndex = 44;
+            this.label35.Text = "打钻结束时间:";
             // 
             // pictureBox3
             // 
@@ -2598,6 +2726,14 @@ namespace GasFormsApp
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.NonDesorpGasQtyCheckBox);
+            this.groupBox3.Controls.Add(this.VadCheckBox);
+            this.groupBox3.Controls.Add(this.AppDensityCheckBox);
+            this.groupBox3.Controls.Add(this.PorosityCheckBox);
+            this.groupBox3.Controls.Add(this.AadCheckBox);
+            this.groupBox3.Controls.Add(this.MadCheckBox);
+            this.groupBox3.Controls.Add(this.AdsorpConstBCheckBox);
+            this.groupBox3.Controls.Add(this.AdsorpConstACheckBox);
             this.groupBox3.Controls.Add(this.AdsorpConstATextBox);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label110);
@@ -2636,11 +2772,11 @@ namespace GasFormsApp
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label17.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(6, 33);
+            this.label17.Location = new System.Drawing.Point(6, 21);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 19);
+            this.label17.Size = new System.Drawing.Size(100, 19);
             this.label17.TabIndex = 60;
-            this.label17.Text = "打印选择？";
+            this.label17.Text = "打印选择?";
             // 
             // label110
             // 
@@ -3116,6 +3252,16 @@ namespace GasFormsApp
             // GasCompGroupBox
             // 
             this.GasCompGroupBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.GasCompGroupBox.Controls.Add(this.C2H2CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.C3H8CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.N2CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.C3H6CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.C2H4CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.CO2CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.COCheckBox);
+            this.GasCompGroupBox.Controls.Add(this.C2H6CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.O2CheckBox);
+            this.GasCompGroupBox.Controls.Add(this.CH4CheckBox);
             this.GasCompGroupBox.Controls.Add(this.COTextBox);
             this.GasCompGroupBox.Controls.Add(this.C2H2TextBox);
             this.GasCompGroupBox.Controls.Add(this.C3H6TextBox);
@@ -3431,34 +3577,34 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(8, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1099, 617);
@@ -3520,115 +3666,195 @@ namespace GasFormsApp
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // comboBox3
+            // AdsorpConstACheckBox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Ⅰ 类",
-            "Ⅱ 类",
-            "Ⅲ 类",
-            "Ⅳ 类",
-            "Ⅴ 类"});
-            this.comboBox3.Location = new System.Drawing.Point(306, 85);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(294, 27);
-            this.comboBox3.TabIndex = 53;
+            this.AdsorpConstACheckBox.AutoSize = true;
+            this.AdsorpConstACheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AdsorpConstACheckBox.Location = new System.Drawing.Point(108, 43);
+            this.AdsorpConstACheckBox.Name = "AdsorpConstACheckBox";
+            this.AdsorpConstACheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AdsorpConstACheckBox.TabIndex = 10;
+            this.AdsorpConstACheckBox.UseVisualStyleBackColor = true;
             // 
-            // label31
+            // AdsorpConstBCheckBox
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label31.Location = new System.Drawing.Point(197, 91);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(111, 16);
-            this.label31.TabIndex = 52;
-            this.label31.Text = "煤的破坏类型:";
+            this.AdsorpConstBCheckBox.AutoSize = true;
+            this.AdsorpConstBCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AdsorpConstBCheckBox.Location = new System.Drawing.Point(108, 107);
+            this.AdsorpConstBCheckBox.Name = "AdsorpConstBCheckBox";
+            this.AdsorpConstBCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AdsorpConstBCheckBox.TabIndex = 61;
+            this.AdsorpConstBCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker5
+            // MadCheckBox
             // 
-            this.dateTimePicker5.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker5.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(789, 15);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(266, 29);
-            this.dateTimePicker5.TabIndex = 47;
+            this.MadCheckBox.AutoSize = true;
+            this.MadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MadCheckBox.Location = new System.Drawing.Point(108, 174);
+            this.MadCheckBox.Name = "MadCheckBox";
+            this.MadCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.MadCheckBox.TabIndex = 62;
+            this.MadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker4
+            // AadCheckBox
             // 
-            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker4.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(789, 50);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(266, 29);
-            this.dateTimePicker4.TabIndex = 48;
+            this.AadCheckBox.AutoSize = true;
+            this.AadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AadCheckBox.Location = new System.Drawing.Point(108, 237);
+            this.AadCheckBox.Name = "AadCheckBox";
+            this.AadCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AadCheckBox.TabIndex = 63;
+            this.AadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label32
+            // PorosityCheckBox
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.Location = new System.Drawing.Point(680, 56);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 16);
-            this.label32.TabIndex = 51;
-            this.label32.Text = "解吸开始时间:";
+            this.PorosityCheckBox.AutoSize = true;
+            this.PorosityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PorosityCheckBox.Location = new System.Drawing.Point(108, 303);
+            this.PorosityCheckBox.Name = "PorosityCheckBox";
+            this.PorosityCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.PorosityCheckBox.TabIndex = 64;
+            this.PorosityCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // AppDensityCheckBox
             // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker3.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(306, 50);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(292, 29);
-            this.dateTimePicker3.TabIndex = 46;
+            this.AppDensityCheckBox.AutoSize = true;
+            this.AppDensityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AppDensityCheckBox.Location = new System.Drawing.Point(108, 369);
+            this.AppDensityCheckBox.Name = "AppDensityCheckBox";
+            this.AppDensityCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.AppDensityCheckBox.TabIndex = 65;
+            this.AppDensityCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label33
+            // VadCheckBox
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label33.Location = new System.Drawing.Point(197, 57);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(111, 16);
-            this.label33.TabIndex = 50;
-            this.label33.Text = "取芯结束时间:";
+            this.VadCheckBox.AutoSize = true;
+            this.VadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.VadCheckBox.Location = new System.Drawing.Point(108, 436);
+            this.VadCheckBox.Name = "VadCheckBox";
+            this.VadCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.VadCheckBox.TabIndex = 66;
+            this.VadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label34
+            // NonDesorpGasQtyCheckBox
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(680, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(111, 16);
-            this.label34.TabIndex = 49;
-            this.label34.Text = "取芯开始时间:";
+            this.NonDesorpGasQtyCheckBox.AutoSize = true;
+            this.NonDesorpGasQtyCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.NonDesorpGasQtyCheckBox.Location = new System.Drawing.Point(108, 502);
+            this.NonDesorpGasQtyCheckBox.Name = "NonDesorpGasQtyCheckBox";
+            this.NonDesorpGasQtyCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.NonDesorpGasQtyCheckBox.TabIndex = 67;
+            this.NonDesorpGasQtyCheckBox.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // CH4CheckBox
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(306, 15);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(292, 29);
-            this.dateTimePicker2.TabIndex = 45;
+            this.CH4CheckBox.AutoSize = true;
+            this.CH4CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4CheckBox.Location = new System.Drawing.Point(127, 32);
+            this.CH4CheckBox.Name = "CH4CheckBox";
+            this.CH4CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.CH4CheckBox.TabIndex = 50;
+            this.CH4CheckBox.Text = "          ";
+            this.CH4CheckBox.UseVisualStyleBackColor = true;
             // 
-            // label35
+            // O2CheckBox
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label35.Location = new System.Drawing.Point(197, 21);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(111, 16);
-            this.label35.TabIndex = 44;
-            this.label35.Text = "打钻结束时间:";
+            this.O2CheckBox.AutoSize = true;
+            this.O2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2CheckBox.Location = new System.Drawing.Point(127, 109);
+            this.O2CheckBox.Name = "O2CheckBox";
+            this.O2CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.O2CheckBox.TabIndex = 51;
+            this.O2CheckBox.Text = "          ";
+            this.O2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C2H6CheckBox
+            // 
+            this.C2H6CheckBox.AutoSize = true;
+            this.C2H6CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H6CheckBox.Location = new System.Drawing.Point(127, 189);
+            this.C2H6CheckBox.Name = "C2H6CheckBox";
+            this.C2H6CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.C2H6CheckBox.TabIndex = 52;
+            this.C2H6CheckBox.Text = "          ";
+            this.C2H6CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // COCheckBox
+            // 
+            this.COCheckBox.AutoSize = true;
+            this.COCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.COCheckBox.Location = new System.Drawing.Point(127, 269);
+            this.COCheckBox.Name = "COCheckBox";
+            this.COCheckBox.Size = new System.Drawing.Size(106, 20);
+            this.COCheckBox.TabIndex = 53;
+            this.COCheckBox.Text = "          ";
+            this.COCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C3H6CheckBox
+            // 
+            this.C3H6CheckBox.AutoSize = true;
+            this.C3H6CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H6CheckBox.Location = new System.Drawing.Point(439, 187);
+            this.C3H6CheckBox.Name = "C3H6CheckBox";
+            this.C3H6CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.C3H6CheckBox.TabIndex = 56;
+            this.C3H6CheckBox.Text = "          ";
+            this.C3H6CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C2H4CheckBox
+            // 
+            this.C2H4CheckBox.AutoSize = true;
+            this.C2H4CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4CheckBox.Location = new System.Drawing.Point(439, 107);
+            this.C2H4CheckBox.Name = "C2H4CheckBox";
+            this.C2H4CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.C2H4CheckBox.TabIndex = 55;
+            this.C2H4CheckBox.Text = "          ";
+            this.C2H4CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CO2CheckBox
+            // 
+            this.CO2CheckBox.AutoSize = true;
+            this.CO2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2CheckBox.Location = new System.Drawing.Point(439, 30);
+            this.CO2CheckBox.Name = "CO2CheckBox";
+            this.CO2CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.CO2CheckBox.TabIndex = 54;
+            this.CO2CheckBox.Text = "          ";
+            this.CO2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C2H2CheckBox
+            // 
+            this.C2H2CheckBox.AutoSize = true;
+            this.C2H2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H2CheckBox.Location = new System.Drawing.Point(751, 189);
+            this.C2H2CheckBox.Name = "C2H2CheckBox";
+            this.C2H2CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.C2H2CheckBox.TabIndex = 60;
+            this.C2H2CheckBox.Text = "          ";
+            this.C2H2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C3H8CheckBox
+            // 
+            this.C3H8CheckBox.AutoSize = true;
+            this.C3H8CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8CheckBox.Location = new System.Drawing.Point(751, 109);
+            this.C3H8CheckBox.Name = "C3H8CheckBox";
+            this.C3H8CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.C3H8CheckBox.TabIndex = 59;
+            this.C3H8CheckBox.Text = "          ";
+            this.C3H8CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // N2CheckBox
+            // 
+            this.N2CheckBox.AutoSize = true;
+            this.N2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2CheckBox.Location = new System.Drawing.Point(751, 32);
+            this.N2CheckBox.Name = "N2CheckBox";
+            this.N2CheckBox.Size = new System.Drawing.Size(106, 20);
+            this.N2CheckBox.TabIndex = 58;
+            this.N2CheckBox.Text = "          ";
+            this.N2CheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -3967,5 +4193,23 @@ namespace GasFormsApp
         public Label label34;
         public DateTimePicker dateTimePicker2;
         public Label label35;
+        public CheckBox AdsorpConstACheckBox;
+        public CheckBox VadCheckBox;
+        public CheckBox AppDensityCheckBox;
+        public CheckBox PorosityCheckBox;
+        public CheckBox AadCheckBox;
+        public CheckBox MadCheckBox;
+        public CheckBox AdsorpConstBCheckBox;
+        public CheckBox NonDesorpGasQtyCheckBox;
+        public CheckBox C2H2CheckBox;
+        public CheckBox C3H8CheckBox;
+        public CheckBox N2CheckBox;
+        public CheckBox C3H6CheckBox;
+        public CheckBox C2H4CheckBox;
+        public CheckBox CO2CheckBox;
+        public CheckBox COCheckBox;
+        public CheckBox C2H6CheckBox;
+        public CheckBox O2CheckBox;
+        public CheckBox CH4CheckBox;
     }
 }

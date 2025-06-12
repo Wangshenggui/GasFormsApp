@@ -36,6 +36,29 @@ namespace GasFormsApp
         public static double W = 0.0;
         public static double P = 0.0;
 
+        public static string GasComp_Lab1 = "";
+        public static string GasComp_Lab2 = "";
+        public static string GasComp_Lab3 = "";
+        public static string GasComp_Lab4 = "";
+        public static string GasComp_Lab5 = "";
+        public static string GasComp_Lab6 = "";
+        public static string GasComp_Lab7 = "";
+        public static string GasComp_Lab8 = "";
+        public static string GasComp_Lab9 = "";
+        public static string GasComp_Lab10 = "";
+        public static string GasComp_Dat1 = "";
+        public static string GasComp_Dat2 = "";
+        public static string GasComp_Dat3 = "";
+        public static string GasComp_Dat4 = "";
+        public static string GasComp_Dat5 = "";
+        public static string GasComp_Dat6 = "";
+        public static string GasComp_Dat7 = "";
+        public static string GasComp_Dat8 = "";
+        public static string GasComp_Dat9 = "";
+        public static string GasComp_Dat10 = "";
+
+
+
         private tabControl_1 myTabLogic1;
         private tabControl_2 myTabLogic2;
         private tabControl_3 myTabLogic3;
@@ -53,6 +76,30 @@ namespace GasFormsApp
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+
+            GasComp_Lab1 = "H₂";      // 氢气
+            GasComp_Lab2 = "O₂";      // 氧气
+            GasComp_Lab3 = "N₂";      // 氮气
+            GasComp_Lab4 = "CO₂";     // 二氧化碳
+            GasComp_Lab5 = "CH₄";     // 甲烷
+            GasComp_Lab6 = "C₂H₆";    // 乙烷
+            GasComp_Lab7 = "C₃H₈";    // 丙烷
+            GasComp_Lab8 = "C₄H₁₀";   // 丁烷
+            GasComp_Lab9 = "NH₃";     // 氨气
+            GasComp_Lab10 = "H₂S";    // 硫化氢
+
+            GasComp_Dat1 = "0.50";   // H₂ 浓度（单位可为 %）
+            GasComp_Dat2 = "20.95";  // O₂（空气中含量约 21%）
+            GasComp_Dat3 = "78.08";  // N₂（空气中含量约 78%）
+            GasComp_Dat4 = "0.04";   // CO₂（空气中约 400 ppm ≈ 0.04%）
+            GasComp_Dat5 = "1.20";   // CH₄（例如沼气、天然气）
+            GasComp_Dat6 = "0.35";   // C₂H₆
+            GasComp_Dat7 = "0.25";   // C₃H₈
+            GasComp_Dat8 = "0.18";   // C₄H₁₀
+            GasComp_Dat9 = "0.10";   // NH₃
+            GasComp_Dat10 = "0.08";  // H₂S
+
+
 
             //this.UseWaitCursor = true;
             //this.UseWaitCursor = false;

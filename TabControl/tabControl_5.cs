@@ -121,8 +121,8 @@ namespace GasFormsApp.TabControl
 
                 // 尝试读取嵌入资源
                 string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag);
-                using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
-                //using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {
@@ -139,6 +139,63 @@ namespace GasFormsApp.TabControl
                         BasicInfo basicInfo = new BasicInfo(_mainForm);
 
                         string ReportTimeText = _mainForm.dateTimePicker1.Text;
+
+                        // 1. 收集所有选中的气体项
+                        List<(string Label, string Data)> selectedGases = new List<(string, string)>();
+
+                        if (_mainForm.CH4CheckBox.Checked)
+                            selectedGases.Add(("CH₄：", _mainForm.CH4TextBox.Text));
+
+                        if (_mainForm.CO2CheckBox.Checked)
+                            selectedGases.Add(("CO₂：", _mainForm.CO2TextBox.Text));
+
+                        if (_mainForm.N2CheckBox.Checked)
+                            selectedGases.Add(("N₂：", _mainForm.N2TextBox.Text));
+
+                        if (_mainForm.O2CheckBox.Checked)
+                            selectedGases.Add(("O₂：", _mainForm.O2TextBox.Text));
+
+                        if (_mainForm.C2H4CheckBox.Checked)
+                            selectedGases.Add(("C₂H₄：", _mainForm.C2H4TextBox.Text));
+
+                        if (_mainForm.C3H8CheckBox.Checked)
+                            selectedGases.Add(("C₃H₈：", _mainForm.C3H8TextBox.Text));
+
+                        if (_mainForm.C2H6CheckBox.Checked)
+                            selectedGases.Add(("C₂H₆：", _mainForm.C2H6TextBox.Text));
+
+                        if (_mainForm.C3H6CheckBox.Checked)
+                            selectedGases.Add(("C₃H₆：", _mainForm.C3H6TextBox.Text));
+
+                        if (_mainForm.C2H2CheckBox.Checked)
+                            selectedGases.Add(("C₂H₂：", _mainForm.C2H2TextBox.Text));
+
+                        if (_mainForm.COCheckBox.Checked)
+                            selectedGases.Add(("CO：", _mainForm.COTextBox.Text));
+
+                        // 2. 清空 10 组槽位
+                        for (int i = 1; i <= 10; i++)
+                        {
+                            typeof(MainForm).GetField($"GasComp_Lab{i}").SetValue(null, "");
+                            typeof(MainForm).GetField($"GasComp_Dat{i}").SetValue(null, "");
+                        }
+
+                        // 3. 将选中的数据依次写入槽位（最多10个）
+                        for (int i = 0; i < selectedGases.Count && i < 10; i++)
+                        {
+                            typeof(MainForm).GetField($"GasComp_Lab{i + 1}").SetValue(null, selectedGases[i].Item1);
+                            typeof(MainForm).GetField($"GasComp_Dat{i + 1}").SetValue(null, selectedGases[i].Item2);
+                        }
+
+                        // 4. 打印输出（调试用）
+                        for (int i = 0; i < selectedGases.Count && i < 10; i++)
+                        {
+                            Console.WriteLine($"{selectedGases[i].Item1}{selectedGases[i].Item2}");
+                        }
+
+
+
+
 
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
                             _mainForm.MineNameTextBox.Text,

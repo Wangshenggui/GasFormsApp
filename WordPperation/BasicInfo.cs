@@ -64,6 +64,7 @@ namespace GasFormsApp.WordPperation
                 {"Sample2WeightText", _mainForm.Sample2WeightTextBox.Text},//粉碎后第2份煤样重(g)
                 {"S1DesorpVolText", _mainForm.S1DesorpVolCalTextBox.Text},//第1份煤样解吸量-校准(ml)
                 {"S2DesorpVolText", _mainForm.S2DesorpVolCalTextBox.Text},//第2份煤样解吸量-校准(ml)
+
                 {"AdsorpConstAText", _mainForm.AdsorpConstATextBox.Text},//煤的吸附常数a值
                 {"AdsorpConstBText", _mainForm.AdsorpConstBTextBox.Text},//煤的吸附常数b值
                 {"MadText", _mainForm.MadTextBox.Text},//水分
@@ -72,6 +73,13 @@ namespace GasFormsApp.WordPperation
                 {"AppDensityText", _mainForm.AppDensityTextBox.Text},//视密度
                 {"NonDesorpGasQtyText", _mainForm.NonDesorpGasQtyTextBox.Text},//不可解吸瓦斯量Wc
                 {"VadText", _mainForm.VadTextBox.Text},//挥发分Vad
+
+
+
+                {"Wc_Lab1", "吸附常数a值(cm³/g)"},
+                
+
+
                 {"W1Text", MainForm.W1.ToString("F2")},//W1
                 {"W2Text", MainForm.W2.ToString("F2")},//W2
                 {"W3Text", MainForm.W3.ToString("F2")},//W3
@@ -79,16 +87,42 @@ namespace GasFormsApp.WordPperation
                 {"WcText", MainForm.Wc.ToString("F2")},//不可解吸瓦斯量Wc
                 {"WText", MainForm.W.ToString("F2")},//W
                 {"PText", MainForm.P.ToString("F2")},//P
-                {"CH4Text", _mainForm.CH4TextBox.Text},//CH4
-                {"CO2Text", _mainForm.CO2TextBox.Text},//CO2
-                {"N2Text", _mainForm.N2TextBox.Text},//N2
-                {"O2Text", _mainForm.O2TextBox.Text},//O2
-                {"C2H4Text", _mainForm.C2H4TextBox.Text},//C2H4
-                {"C3H8Text", _mainForm.C3H8TextBox.Text},//C3H8
-                {"C2H6Text", _mainForm.C2H6TextBox.Text},//C2H6
-                {"C3H6Text", _mainForm.C3H6TextBox.Text},//C3H6
-                {"C2H2Text", _mainForm.C2H2TextBox.Text},//C2H2
-                {"COText", _mainForm.COTextBox.Text},//CO
+
+                //{"CH4Text", _mainForm.CH4TextBox.Text},//CH4
+                //{"CO2Text", _mainForm.CO2TextBox.Text},//CO2
+                //{"N2Text", _mainForm.N2TextBox.Text},//N2
+                //{"O2Text", _mainForm.O2TextBox.Text},//O2
+                //{"C2H4Text", _mainForm.C2H4TextBox.Text},//C2H4
+                //{"C3H8Text", _mainForm.C3H8TextBox.Text},//C3H8
+                //{"C2H6Text", _mainForm.C2H6TextBox.Text},//C2H6
+                //{"C3H6Text", _mainForm.C3H6TextBox.Text},//C3H6
+                //{"C2H2Text", _mainForm.C2H2TextBox.Text},//C2H2
+                //{"COText", _mainForm.COTextBox.Text},//CO
+                { "GasComp_Lab01", MainForm.GasComp_Lab1 },
+                { "GasComp_Lab02", MainForm.GasComp_Lab2 },
+                { "GasComp_Lab03", MainForm.GasComp_Lab3 },
+                { "GasComp_Lab04", MainForm.GasComp_Lab4 },
+                { "GasComp_Lab05", MainForm.GasComp_Lab5 },
+                { "GasComp_Lab06", MainForm.GasComp_Lab6 },
+                { "GasComp_Lab07", MainForm.GasComp_Lab7 },
+                { "GasComp_Lab08", MainForm.GasComp_Lab8 },
+                { "GasComp_Lab09", MainForm.GasComp_Lab9 },
+                { "GasComp_Lab10", MainForm.GasComp_Lab10 },
+
+                { "GasComp_Dat01", MainForm.GasComp_Dat1 },
+                { "GasComp_Dat02", MainForm.GasComp_Dat2 },
+                { "GasComp_Dat03", MainForm.GasComp_Dat3 },
+                { "GasComp_Dat04", MainForm.GasComp_Dat4 },
+                { "GasComp_Dat05", MainForm.GasComp_Dat5 },
+                { "GasComp_Dat06", MainForm.GasComp_Dat6 },
+                { "GasComp_Dat07", MainForm.GasComp_Dat7 },
+                { "GasComp_Dat08", MainForm.GasComp_Dat8 },
+                { "GasComp_Dat09", MainForm.GasComp_Dat9 },
+                { "GasComp_Dat10", MainForm.GasComp_Dat10 },
+
+
+
+
                 {"LabTestersText", _mainForm.LabTestersTextBox.Text},//实验室测试人员
                 {"AuditorText", _mainForm.AuditorTextBox.Text},//审 核 人 员
                 {"ReportTimeText", ReportTimeText},//出报告时间
