@@ -35,6 +35,9 @@ namespace GasFormsApp
         public static double Wc = 0.0;
         public static double W = 0.0;
         public static double P = 0.0;
+        public static string P_Lable = "";
+        public static string P_Data = "";
+        public static string P_beizhu = "";
 
         public static string GasComp_Lab1 = "";
         public static string GasComp_Lab2 = "";
@@ -446,6 +449,12 @@ namespace GasFormsApp
         public void tab6_5_GenerateReportToDatabase(string doc_name)
         {
             myTabLogic5.GenerateReportToDatabase(doc_name);
+        }
+
+        // tab5调用tab4的函数
+        public void tab5_4_P瓦斯压力选择()
+        {
+            myTabLogic4.P瓦斯压力选择();
         }
     }
 }

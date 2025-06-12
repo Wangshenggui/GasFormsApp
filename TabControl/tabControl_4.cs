@@ -83,6 +83,22 @@ namespace GasFormsApp.TabControl
             ValidateNumericTextBox(_mainForm.VadTextBox);
         }
 
+        public void P瓦斯压力选择()
+        {
+            if (_mainForm.P_CheckBox.Checked)
+            {
+                MainForm.P_Lable = "P(MPa)：";
+                MainForm.P_Data = _mainForm.P_TextBox.Text;
+                MainForm.P_beizhu = "P-瓦斯压力";
+            }
+            else
+            {
+                MainForm.P_Lable = "";
+                MainForm.P_Data = "";
+                MainForm.P_beizhu = "";
+            }
+        }
+
         /// <summary>
         /// 计算Wc
         /// </summary>

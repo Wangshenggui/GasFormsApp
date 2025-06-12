@@ -192,6 +192,8 @@ namespace GasFormsApp.TabControl
                         {
                             Console.WriteLine($"{selectedGases[i].Item1}{selectedGases[i].Item2}");
                         }
+                        // 获取瓦斯压力
+                        _mainForm.tab5_4_P瓦斯压力选择();
 
 
 

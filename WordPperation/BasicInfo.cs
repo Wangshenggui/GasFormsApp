@@ -86,7 +86,11 @@ namespace GasFormsApp.WordPperation
                 {"WaText", MainForm.Wa.ToString("F2")},//Wa
                 {"WcText", MainForm.Wc.ToString("F2")},//不可解吸瓦斯量Wc
                 {"WText", MainForm.W.ToString("F2")},//W
-                {"PText", MainForm.P.ToString("F2")},//P
+
+                
+                {"PText", MainForm.P_Data},//P
+                {"P_Lable",MainForm.P_Lable},
+                {"P_beizhu",MainForm.P_beizhu},
 
                 //{"CH4Text", _mainForm.CH4TextBox.Text},//CH4
                 //{"CO2Text", _mainForm.CO2TextBox.Text},//CO2

@@ -346,6 +346,7 @@ namespace GasFormsApp
             this.C2H2CheckBox = new System.Windows.Forms.CheckBox();
             this.C3H8CheckBox = new System.Windows.Forms.CheckBox();
             this.N2CheckBox = new System.Windows.Forms.CheckBox();
+            this.P_CheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -2700,6 +2701,7 @@ namespace GasFormsApp
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage4.Controls.Add(this.P_CheckBox);
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.ExpCalcButton);
@@ -3856,6 +3858,16 @@ namespace GasFormsApp
             this.N2CheckBox.Text = "          ";
             this.N2CheckBox.UseVisualStyleBackColor = true;
             // 
+            // P_CheckBox
+            // 
+            this.P_CheckBox.AutoSize = true;
+            this.P_CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.P_CheckBox.Location = new System.Drawing.Point(787, 467);
+            this.P_CheckBox.Name = "P_CheckBox";
+            this.P_CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.P_CheckBox.TabIndex = 68;
+            this.P_CheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -4211,5 +4223,6 @@ namespace GasFormsApp
         public CheckBox C2H6CheckBox;
         public CheckBox O2CheckBox;
         public CheckBox CH4CheckBox;
+        public CheckBox P_CheckBox;
     }
 }
