@@ -211,7 +211,7 @@ namespace GasFormsApp
                     string interceptStr = interceptMatch.Groups[1].Value.Replace(" ", "");
                     double intercept = double.Parse(interceptStr);
                     // intercept 就是截距了
-                    SetGasLossVolText(Math.Abs(intercept).ToString());
+                    //SetGasLossVolText(Math.Abs(intercept).ToString());
                 }
                 
                 Console.WriteLine($"最大 R² 值: {bestFitLine.r2Value}");

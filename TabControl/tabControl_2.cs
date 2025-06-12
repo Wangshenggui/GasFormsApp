@@ -352,7 +352,7 @@ namespace GasFormsApp.TabControl
                         {
                             values[i] = accessor.ReadDouble(i * sizeof(double));
                         }
-                        InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F2"));
+                        //InsertChart.SetGasLossVolText(Math.Abs(values[1]).ToString("F2"));
 
                         // 找出最大数据
                         double maxValue = double.MinValue;
