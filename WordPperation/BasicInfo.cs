@@ -68,18 +68,34 @@ namespace GasFormsApp.WordPperation
                 {"S1DesorpVolText", _mainForm.S1DesorpVolCalTextBox.Text},//第1份煤样解吸量-校准(ml)
                 {"S2DesorpVolText", _mainForm.S2DesorpVolCalTextBox.Text},//第2份煤样解吸量-校准(ml)
 
-                {"AdsorpConstAText", _mainForm.AdsorpConstATextBox.Text},//煤的吸附常数a值
-                {"AdsorpConstBText", _mainForm.AdsorpConstBTextBox.Text},//煤的吸附常数b值
-                {"MadText", _mainForm.MadTextBox.Text},//水分
-                {"AadText", _mainForm.AadTextBox.Text},//灰分
-                {"PorosityText", _mainForm.PorosityTextBox.Text},//孔隙率
-                {"AppDensityText", _mainForm.AppDensityTextBox.Text},//视密度
-                {"NonDesorpGasQtyText", _mainForm.NonDesorpGasQtyTextBox.Text},//不可解吸瓦斯量Wc
-                {"VadText", _mainForm.VadTextBox.Text},//挥发分Vad
+                //{"AdsorpConstAText", _mainForm.AdsorpConstATextBox.Text},//煤的吸附常数a值
+                //{"AdsorpConstBText", _mainForm.AdsorpConstBTextBox.Text},//煤的吸附常数b值
+                //{"MadText", _mainForm.MadTextBox.Text},//水分
+                //{"AadText", _mainForm.AadTextBox.Text},//灰分
+                //{"PorosityText", _mainForm.PorosityTextBox.Text},//孔隙率
+                //{"AppDensityText", _mainForm.AppDensityTextBox.Text},//视密度
+                //{"NonDesorpGasQtyText", _mainForm.NonDesorpGasQtyTextBox.Text},//不可解吸瓦斯量Wc
+                //{"VadText", _mainForm.VadTextBox.Text},//挥发分Vad
 
+                // 使用特殊的填充方式，确保上下标正常显示
+                //{ "Wc_Lab01", MainForm.Wc_Lab1 },
+                //{ "Wc_Lab02", MainForm.Wc_Lab2 },
+                //{ "Wc_Lab03", MainForm.Wc_Lab3 },
+                //{ "Wc_Lab04", MainForm.Wc_Lab4 },
+                //{ "Wc_Lab05", MainForm.Wc_Lab5 },
+                //{ "Wc_Lab06", MainForm.Wc_Lab6 },
+                //{ "Wc_Lab07", MainForm.Wc_Lab7 },
+                //{ "Wc_Lab08", MainForm.Wc_Lab8 },
 
+                { "Wc_Dat01", MainForm.Wc_Dat1 },
+                { "Wc_Dat02", MainForm.Wc_Dat2 },
+                { "Wc_Dat03", MainForm.Wc_Dat3 },
+                { "Wc_Dat04", MainForm.Wc_Dat4 },
+                { "Wc_Dat05", MainForm.Wc_Dat5 },
+                { "Wc_Dat06", MainForm.Wc_Dat6 },
+                { "Wc_Dat07", MainForm.Wc_Dat7 },
+                { "Wc_Dat08", MainForm.Wc_Dat8 },
 
-                {"Wc_Lab1", "吸附常数a值(cm³/g)"},
 
 
 
@@ -171,7 +187,68 @@ namespace GasFormsApp.WordPperation
             ReplacePlaceholders(memoryStream, placeholders);
             //var subscriptPositions = new List<int> { 2 ,4 ,6};  // 让第3个字符 '6' 下标
             //ReplacePlaceholderWithCustomSubscripts(memoryStream, "RemarkText", "你好6你干嘛45", 11, subscriptPositions);
+            //if (string.Equals(MainForm.Wc_Lab1, "吸附常数a值(cm3/g)："))
+            //{
+            //    var subscriptPositions = new List<int> { 2, 4, 6 };
+            //    ReplacePlaceholderWithCustomSuperscripts(memoryStream, "Wc_Lab01", "吸附常数a值(cm3/g)：", 11, subscriptPositions);
+            //}
+            var superscriptMap = new Dictionary<string, List<int>>
+            {
+                ["吸附常数a值(cm3/g)："] = new List<int> { 9 },
+                ["吸附常数b值(MPa-1)："] = new List<int> { 10, 11 },
+                ["不可解吸瓦斯量Wc(m3/t)："] = new List<int> { 11 },
 
+                // 这些不需要上标
+                ["水分Mad/%："] = new List<int>(),
+                ["灰分Aad/%："] = new List<int>(),
+                ["孔隙率K/%："] = new List<int>(),
+                ["视密度γ："] = new List<int>(),
+                ["挥发分Vad/%："] = new List<int>()
+            };
+
+            for (int i = 1; i <= 8; i++)
+            {
+                string placeholderName = $"Wc_Lab0{i}";
+
+                // 用反射获取 MainForm.Wc_Lab{i} 的值
+                var prop = typeof(MainForm).GetField($"Wc_Lab{i}");
+                string labelText = prop?.GetValue(null)?.ToString() ?? "";
+
+                superscriptMap.TryGetValue(labelText, out var superscriptPositions);
+                if (superscriptPositions == null)
+                {
+                    superscriptPositions = new List<int>();
+                }
+
+                if(labelText == "不可解吸瓦斯量Wc(m3/t)：")
+                {
+                    _ReplacePlaceholderWithCustomSuperscripts(
+                        memoryStream,
+                        placeholderName,
+                        labelText,
+                        11,
+                        superscriptPositions
+                    );
+                }
+                else
+                ReplacePlaceholderWithCustomSuperscripts(
+                    memoryStream,
+                    placeholderName,
+                    labelText,
+                    11,
+                    superscriptPositions
+                );
+            }
+
+
+            //{ "Wc_Lab01", MainForm.Wc_Lab1 },
+            //{ "Wc_Lab02", MainForm.Wc_Lab2 },
+            //{ "Wc_Lab03", MainForm.Wc_Lab3 },
+            //{ "Wc_Lab04", MainForm.Wc_Lab4 },
+            //{ "Wc_Lab05", MainForm.Wc_Lab5 },
+            //{ "Wc_Lab06", MainForm.Wc_Lab6 },
+            //{ "Wc_Lab07", MainForm.Wc_Lab7 },
+            //{ "Wc_Lab08", MainForm.Wc_Lab8 },
 
             // 实验数据替换
             placeholders = new Dictionary<string, string>();
@@ -302,5 +379,121 @@ namespace GasFormsApp.WordPperation
                 wordDoc.MainDocumentPart.Document.Save();
             }
         }
+        public void ReplacePlaceholderWithCustomSuperscripts(
+            MemoryStream memoryStream, string placeholder, string newText, int fontSizePt, List<int> superscriptIndices)
+        {
+            memoryStream.Position = 0;
+
+            using (var wordDoc = WordprocessingDocument.Open(memoryStream, true))
+            {
+                var body = wordDoc.MainDocumentPart.Document.Body;
+
+                var runs = body.Descendants<Run>()
+                    .Where(r => r.InnerText.Contains(placeholder))
+                    .ToList();
+
+                foreach (var run in runs)
+                {
+                    run.RemoveAllChildren();
+
+                    for (int i = 0; i < newText.Length; i++)
+                    {
+                        char ch = newText[i];
+
+                        var newRun = new Run();
+                        var runProperties = new RunProperties();
+
+                        runProperties.FontSize = new FontSize() { Val = (fontSizePt * 2).ToString() };
+
+                        if (Regex.IsMatch(ch.ToString(), @"[\u4e00-\u9fa5]"))
+                        {
+                            runProperties.RunFonts = new RunFonts() { EastAsia = "宋体" };
+                        }
+                        else
+                        {
+                            runProperties.RunFonts = new RunFonts() { Ascii = "Times New Roman", HighAnsi = "Times New Roman" };
+                        }
+
+                        // 这里改成 Superscript
+                        if (superscriptIndices.Contains(i))
+                        {
+                            runProperties.VerticalTextAlignment = new VerticalTextAlignment() { Val = VerticalPositionValues.Superscript };
+                        }
+
+                        newRun.AppendChild(runProperties);
+                        newRun.AppendChild(new Text(ch.ToString()));
+
+                        run.Parent.InsertBefore(newRun, run);
+                    }
+
+                    run.Remove();
+                }
+
+                wordDoc.MainDocumentPart.Document.Save();
+            }
+        }
+
+        public void _ReplacePlaceholderWithCustomSuperscripts(
+    MemoryStream memoryStream, string placeholder, string newText, int fontSizePt, List<int> superscriptIndices)
+        {
+            memoryStream.Position = 0;
+
+            using (var wordDoc = WordprocessingDocument.Open(memoryStream, true))
+            {
+                var body = wordDoc.MainDocumentPart.Document.Body;
+
+                var runs = body.Descendants<Run>()
+                    .Where(r => r.InnerText.Contains(placeholder))
+                    .ToList();
+
+                foreach (var run in runs)
+                {
+                    run.RemoveAllChildren();
+
+                    for (int i = 0; i < newText.Length; i++)
+                    {
+                        char ch = newText[i];
+
+                        var newRun = new Run();
+                        var runProperties = new RunProperties();
+
+                        // 设置字体大小
+                        runProperties.FontSize = new FontSize() { Val = (fontSizePt * 2).ToString() };
+
+                        // 设置字符间距（单位是 1/20 磅，20 = 1 磅）
+                        runProperties.Spacing = new Spacing() { Val = -6 };
+
+                        // 设置字体（中文用宋体，其它用 Times New Roman）
+                        if (Regex.IsMatch(ch.ToString(), @"[\u4e00-\u9fa5]"))
+                        {
+                            runProperties.RunFonts = new RunFonts() { EastAsia = "宋体" };
+                        }
+                        else
+                        {
+                            runProperties.RunFonts = new RunFonts() { Ascii = "Times New Roman", HighAnsi = "Times New Roman" };
+                        }
+
+                        // 设置上标
+                        if (superscriptIndices.Contains(i))
+                        {
+                            runProperties.VerticalTextAlignment = new VerticalTextAlignment()
+                            {
+                                Val = VerticalPositionValues.Superscript
+                            };
+                        }
+
+                        newRun.AppendChild(runProperties);
+                        newRun.AppendChild(new Text(ch.ToString()));
+
+                        run.Parent.InsertBefore(newRun, run);
+                    }
+
+                    run.Remove();
+                }
+
+                wordDoc.MainDocumentPart.Document.Save();
+            }
+        }
+
     }
 }

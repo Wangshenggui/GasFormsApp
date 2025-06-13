@@ -60,6 +60,24 @@ namespace GasFormsApp
         public static string GasComp_Dat9 = "";
         public static string GasComp_Dat10 = "";
 
+        public static string Wc_Lab1 = "";
+        public static string Wc_Lab2 = "";
+        public static string Wc_Lab3 = "";
+        public static string Wc_Lab4 = "";
+        public static string Wc_Lab5 = "";
+        public static string Wc_Lab6 = "";
+        public static string Wc_Lab7 = "";
+        public static string Wc_Lab8 = "";
+        public static string Wc_Dat1 = "";
+        public static string Wc_Dat2 = "";
+        public static string Wc_Dat3 = "";
+        public static string Wc_Dat4 = "";
+        public static string Wc_Dat5 = "";
+        public static string Wc_Dat6 = "";
+        public static string Wc_Dat7 = "";
+        public static string Wc_Dat8 = "";
+
+
 
 
         private tabControl_1 myTabLogic1;

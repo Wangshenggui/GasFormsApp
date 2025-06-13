@@ -199,6 +199,60 @@ namespace GasFormsApp.TabControl
 
 
 
+
+
+
+                        // Wc
+                        List<(string Label, string Data)> selectedWc = new List<(string, string)>();
+
+                        if (_mainForm.AdsorpConstACheckBox.Checked)
+                            selectedWc.Add(("吸附常数a值(cm3/g)：", _mainForm.AdsorpConstATextBox.Text));
+
+                        if (_mainForm.AdsorpConstBCheckBox.Checked)
+                            selectedWc.Add(("吸附常数b值(MPa-1)：", _mainForm.AdsorpConstBTextBox.Text));
+
+                        if (_mainForm.MadCheckBox.Checked)
+                            selectedWc.Add(("水分Mad/%：", _mainForm.MadTextBox.Text));
+
+                        if (_mainForm.AadCheckBox.Checked)
+                            selectedWc.Add(("灰分Aad/%：", _mainForm.AadTextBox.Text));
+
+                        if (_mainForm.PorosityCheckBox.Checked)
+                            selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
+
+                        if (_mainForm.AppDensityCheckBox.Checked)
+                            selectedWc.Add(("视密度γ：", _mainForm.AppDensityTextBox.Text));
+
+                        if (_mainForm.VadCheckBox.Checked)
+                            selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
+
+                        if (_mainForm.NonDesorpGasQtyCheckBox.Checked)
+                            selectedWc.Add(("不可解吸瓦斯量Wc(m3/t)：", _mainForm.NonDesorpGasQtyTextBox.Text));
+
+                        // 2. 清空 8 组槽位
+                        for (int i = 1; i <= 8; i++)
+                        {
+                            typeof(MainForm).GetField($"Wc_Lab{i}").SetValue(null, "");
+                            typeof(MainForm).GetField($"Wc_Dat{i}").SetValue(null, "");
+                        }
+
+                        // 3. 将选中的数据依次写入槽位（最多8个）
+                        for (int i = 0; i < selectedWc.Count && i < 8; i++)
+                        {
+                            typeof(MainForm).GetField($"Wc_Lab{i + 1}").SetValue(null, selectedWc[i].Item1);
+                            typeof(MainForm).GetField($"Wc_Dat{i + 1}").SetValue(null, selectedWc[i].Item2);
+                        }
+
+                        // 4. 打印输出（调试用）
+                        for (int i = 0; i < selectedWc.Count && i < 8; i++)
+                        {
+                            Console.WriteLine($"{selectedWc[i].Item1}{selectedWc[i].Item2}");
+                        }
+
+
+
+
+
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
                             _mainForm.MineNameTextBox.Text,
                             _mainForm.SamplingSpotTextBox.Text,
