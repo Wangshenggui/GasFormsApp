@@ -121,16 +121,18 @@ namespace GasFormsApp.WordPperation
                 //{"C3H6Text", _mainForm.C3H6TextBox.Text},//C3H6
                 //{"C2H2Text", _mainForm.C2H2TextBox.Text},//C2H2
                 //{"COText", _mainForm.COTextBox.Text},//CO
-                { "GasComp_Lab01", MainForm.GasComp_Lab1 },
-                { "GasComp_Lab02", MainForm.GasComp_Lab2 },
-                { "GasComp_Lab03", MainForm.GasComp_Lab3 },
-                { "GasComp_Lab04", MainForm.GasComp_Lab4 },
-                { "GasComp_Lab05", MainForm.GasComp_Lab5 },
-                { "GasComp_Lab06", MainForm.GasComp_Lab6 },
-                { "GasComp_Lab07", MainForm.GasComp_Lab7 },
-                { "GasComp_Lab08", MainForm.GasComp_Lab8 },
-                { "GasComp_Lab09", MainForm.GasComp_Lab9 },
-                { "GasComp_Lab10", MainForm.GasComp_Lab10 },
+
+                // 使用特殊的填充方式，确保上下标正常显示
+                //{ "GasComp_Lab01", MainForm.GasComp_Lab1 },
+                //{ "GasComp_Lab02", MainForm.GasComp_Lab2 },
+                //{ "GasComp_Lab03", MainForm.GasComp_Lab3 },
+                //{ "GasComp_Lab04", MainForm.GasComp_Lab4 },
+                //{ "GasComp_Lab05", MainForm.GasComp_Lab5 },
+                //{ "GasComp_Lab06", MainForm.GasComp_Lab6 },
+                //{ "GasComp_Lab07", MainForm.GasComp_Lab7 },
+                //{ "GasComp_Lab08", MainForm.GasComp_Lab8 },
+                //{ "GasComp_Lab09", MainForm.GasComp_Lab9 },
+                //{ "GasComp_Lab10", MainForm.GasComp_Lab10 },
 
                 { "GasComp_Dat01", MainForm.GasComp_Dat1 },
                 { "GasComp_Dat02", MainForm.GasComp_Dat2 },
@@ -192,6 +194,11 @@ namespace GasFormsApp.WordPperation
             //    var subscriptPositions = new List<int> { 2, 4, 6 };
             //    ReplacePlaceholderWithCustomSuperscripts(memoryStream, "Wc_Lab01", "吸附常数a值(cm3/g)：", 11, subscriptPositions);
             //}
+              void Log(string message)
+            {
+                Console.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] {message}");
+            }
+
             var superscriptMap = new Dictionary<string, List<int>>
             {
                 ["吸附常数a值(cm3/g)："] = new List<int> { 9 },
@@ -205,14 +212,14 @@ namespace GasFormsApp.WordPperation
                 ["视密度γ："] = new List<int>(),
                 ["挥发分Vad/%："] = new List<int>()
             };
-
             for (int i = 1; i <= 8; i++)
             {
                 string placeholderName = $"Wc_Lab0{i}";
 
-                // 用反射获取 MainForm.Wc_Lab{i} 的值
                 var prop = typeof(MainForm).GetField($"Wc_Lab{i}");
                 string labelText = prop?.GetValue(null)?.ToString() ?? "";
+
+                Log($"[Wc] Field: Wc_Lab{i}, Placeholder: {placeholderName}, Text: \"{labelText}\"");
 
                 superscriptMap.TryGetValue(labelText, out var superscriptPositions);
                 if (superscriptPositions == null)
@@ -220,7 +227,9 @@ namespace GasFormsApp.WordPperation
                     superscriptPositions = new List<int>();
                 }
 
-                if(labelText == "不可解吸瓦斯量Wc(m3/t)：")
+                Log($"[Wc] Superscript positions: {string.Join(",", superscriptPositions)}");
+
+                if (labelText == "不可解吸瓦斯量Wc(m3/t)：")
                 {
                     _ReplacePlaceholderWithCustomSuperscripts(
                         memoryStream,
@@ -231,6 +240,71 @@ namespace GasFormsApp.WordPperation
                     );
                 }
                 else
+                {
+                    ReplacePlaceholderWithCustomSuperscripts(
+                        memoryStream,
+                        placeholderName,
+                        labelText,
+                        11,
+                        superscriptPositions
+                    );
+                }
+            }
+
+
+            var GasCompsuperscriptMap = new Dictionary<string, List<int>>
+            {
+                ["CH4："] = new List<int> { 2 },
+                ["CO2："] = new List<int> { 2 },
+                ["N2："] = new List<int> { 1 },
+
+                ["O2："] = new List<int> { 1 },
+                ["C2H4："] = new List<int> { 1,3 },
+                ["C3H8："] = new List<int> { 1,3 },
+                ["C2H6："] = new List<int> { 1,3 },
+                ["C3H6："] = new List<int> { 1,3 },
+                ["C2H2："] = new List<int> { 1,3 },
+                ["CO："] = new List<int> {  },
+            };
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    string placeholderName = $"GasComp_Lab{i:D2}";
+
+            //    var prop = typeof(MainForm).GetField($"GasComp_Lab{i}");
+            //    string labelText = prop?.GetValue(null)?.ToString() ?? "";
+
+            //    Log($"[GasComp] Field: GasComp_Lab{i}, Placeholder: {placeholderName}, Text: \"{labelText}\"");
+
+            //    GasCompsuperscriptMap.TryGetValue(labelText, out var superscriptPositions);
+            //    if (superscriptPositions == null)
+            //    {
+            //        superscriptPositions = new List<int>();
+            //    }
+
+            //    Log($"[GasComp] Superscript positions: {string.Join(",", superscriptPositions)}");
+
+            //    ReplacePlaceholderWithCustomSuperscripts(
+            //        memoryStream,
+            //        placeholderName,
+            //        labelText,
+            //        11,
+            //        superscriptPositions
+            //    );
+            //}
+            for (int i = 1; i <= 10; i++)
+            {
+                string placeholderName = $"GasComp_Lab{i:D2}"; // 占位符名称
+
+                // 反射获取 MainForm 中的静态字段值
+                var prop = typeof(MainForm).GetField($"GasComp_Lab{i}");
+                string labelText = prop?.GetValue(null)?.ToString() ?? "";
+
+                GasCompsuperscriptMap.TryGetValue(labelText, out var superscriptPositions);
+                if (superscriptPositions == null)
+                {
+                    superscriptPositions = new List<int>();
+                }
+
                 ReplacePlaceholderWithCustomSuperscripts(
                     memoryStream,
                     placeholderName,
@@ -240,15 +314,6 @@ namespace GasFormsApp.WordPperation
                 );
             }
 
-
-            //{ "Wc_Lab01", MainForm.Wc_Lab1 },
-            //{ "Wc_Lab02", MainForm.Wc_Lab2 },
-            //{ "Wc_Lab03", MainForm.Wc_Lab3 },
-            //{ "Wc_Lab04", MainForm.Wc_Lab4 },
-            //{ "Wc_Lab05", MainForm.Wc_Lab5 },
-            //{ "Wc_Lab06", MainForm.Wc_Lab6 },
-            //{ "Wc_Lab07", MainForm.Wc_Lab7 },
-            //{ "Wc_Lab08", MainForm.Wc_Lab8 },
 
             // 实验数据替换
             placeholders = new Dictionary<string, string>();
