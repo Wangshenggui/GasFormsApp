@@ -1,9 +1,12 @@
-﻿using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,7 +80,7 @@ namespace GasFormsApp.WordPperation
 
 
                 {"Wc_Lab1", "吸附常数a值(cm³/g)"},
-                
+
 
 
                 {"W1Text", MainForm.W1.ToString("F2")},//W1
@@ -166,6 +169,9 @@ namespace GasFormsApp.WordPperation
 
             };
             ReplacePlaceholders(memoryStream, placeholders);
+            //var subscriptPositions = new List<int> { 2 ,4 ,6};  // 让第3个字符 '6' 下标
+            //ReplacePlaceholderWithCustomSubscripts(memoryStream, "RemarkText", "你好6你干嘛45", 11, subscriptPositions);
+
 
             // 实验数据替换
             placeholders = new Dictionary<string, string>();
@@ -230,6 +236,70 @@ namespace GasFormsApp.WordPperation
             catch (Exception ex)
             {
                 MessageBox.Show($"替换占位符时出错: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ReplacePlaceholderWithCustomSubscripts(
+            MemoryStream memoryStream, string placeholder, string newText, int fontSizePt, List<int> subscriptIndices)
+        {
+            memoryStream.Position = 0;
+
+            using (var wordDoc = WordprocessingDocument.Open(memoryStream, true))
+            {
+                var body = wordDoc.MainDocumentPart.Document.Body;
+
+                // 找到包含占位符文本的Run
+                var runs = body.Descendants<Run>()
+                    .Where(r => r.InnerText.Contains(placeholder))
+                    .ToList();
+
+                foreach (var run in runs)
+                {
+                    // 清空Run内容
+                    run.RemoveAllChildren();
+
+                    // 遍历newText的每个字符
+                    for (int i = 0; i < newText.Length; i++)
+                    {
+                        char ch = newText[i];
+
+                        // 新建Run和RunProperties
+                        var newRun = new Run();
+                        var runProperties = new RunProperties();
+
+                        // 字号，单位是半磅，11pt = 22
+                        runProperties.FontSize = new FontSize() { Val = (fontSizePt * 2).ToString() };
+
+                        // 判断是否中文
+                        if (Regex.IsMatch(ch.ToString(), @"[\u4e00-\u9fa5]"))
+                        {
+                            // 中文宋体
+                            runProperties.RunFonts = new RunFonts() { EastAsia = "宋体" };
+                        }
+                        else
+                        {
+                            // 非中文 Times New Roman
+                            runProperties.RunFonts = new RunFonts() { Ascii = "Times New Roman", HighAnsi = "Times New Roman" };
+                        }
+
+                        // 判断该字符索引是否在下标列表中
+                        if (subscriptIndices.Contains(i))
+                        {
+                            runProperties.VerticalTextAlignment = new VerticalTextAlignment() { Val = VerticalPositionValues.Subscript };
+                        }
+
+                        newRun.AppendChild(runProperties);
+                        newRun.AppendChild(new Text(ch.ToString()));
+
+                        // 添加新Run到原Run父元素（Run的父是 Paragraph或者其他）
+                        run.Parent.InsertBefore(newRun, run);
+                    }
+
+                    // 删除原占位符Run
+                    run.Remove();
+                }
+
+                wordDoc.MainDocumentPart.Document.Save();
             }
         }
     }

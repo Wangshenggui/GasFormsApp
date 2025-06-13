@@ -169,7 +169,7 @@ ax.plot(x_new, y_new, color='black', label=f'拟合线: y = {slope:.3f}x + {inte
 
 sign = '+' if intercept >= 0 else '-'
 abs_intercept = abs(intercept)
-ax.text(0.6, ax.get_ylim()[1]-ax.get_ylim()[1]/7, f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \n    $R^2$ = {best_r2:.5f}', fontsize=18, color='black')
+ax.text(0.6, ax.get_ylim()[1]-ax.get_ylim()[1]/7, f'y = {slope:.3f}x {sign} {abs_intercept:.3f} \n    $R^2$ = {best_r2:.5f}', fontsize=18, color='black',fontname='Times New Roman')
 
 # ax.text(
 #     0.95, ax.get_ylim()[1]-ax.get_ylim()[1],
@@ -254,11 +254,17 @@ print("yticks:", yticks)
 # 设置 y 轴刻度
 ax.set_yticks(yticks)
 # ax.set_yticks(np.arange(custom_round_up(intercept), _yyy+1, 50))  # Y轴-60到140，步长20
-ax.tick_params(axis='x', labelsize=20)  # 设置X轴刻度标签字体大小为12
-ax.tick_params(axis='y', labelsize=20)  # 设置Y轴刻度标签字体大小为12
+# ax.tick_params(axis='x', labelsize=20)  # 设置X轴刻度标签字体大小为12
+# ax.tick_params(axis='y', labelsize=20)  # 设置Y轴刻度标签字体大小为12
+
+plt.rcParams['font.family'] = 'Times New Roman'
+plt.rcParams['xtick.labelsize'] = 20
+plt.rcParams['ytick.labelsize'] = 20
+
 
 # ax.set_ylabel(r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$', fontsize=20)
-ax.set_xlabel(r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$    ', fontsize=18, loc='right')
+# ax.set_xlabel(r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$    ', fontsize=18, loc='right',fontname='Times New Roman')
+ax.set_xlabel(r'$\sqrt{t_0 + t}$' + "(min$^{0.5}$)       ", fontsize=18, loc='right',fontname='Times New Roman')
 
 
 # 设置坐标轴样式
