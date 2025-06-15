@@ -62,12 +62,12 @@ namespace GasFormsApp
             InitializeComponent();
             this.Load += LoginForm_Load;
 
-            MainForm main = new MainForm(false);
-            this.Hide();
+            //MainForm main = new MainForm(false);
+            //this.Hide();
 
-            main.ShowDialog();
+            //main.ShowDialog();
 
-            this.Close();
+            //this.Close();
         }
 
         //private int GetFailedLoginCount()
