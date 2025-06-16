@@ -21,8 +21,12 @@ namespace GasFormsApp
 
         //Wc选择标志
         public static bool WcOutCheckBoxFlag = false;
+        public static int Wc选项数量 = 0;
+
+
         //瓦斯含量选择标志
         public static bool GasCompCheckBoxFlag = false;
+        public static int Gas选项数量 = 0;
 
         public static double 井下解吸体积 = 0.0;
         public static double 井下解吸校准体积 = 0.0;

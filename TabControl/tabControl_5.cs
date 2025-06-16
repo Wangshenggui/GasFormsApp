@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GasFormsApp.TabControl
 {
@@ -55,12 +56,20 @@ namespace GasFormsApp.TabControl
             }
         }
 
-        private static readonly Dictionary<(bool, bool), string> resourceMap = new Dictionary<(bool, bool), string>
+        private static readonly Dictionary<(bool, bool, int, int), string> 
+            resourceMap = new Dictionary<(bool, bool, int, int), string>
         {
-            { ( true,  true), "GasFormsApp.WordTemplate.docx" },
-            { ( true, false), "GasFormsApp.WordTemplate_NoGasComponent.docx" },
-            { (false,  true), "GasFormsApp.WordTemplate_NoWc.docx" },
-            { (false, false), "GasFormsApp.WordTemplate_NoWcNoGasComponent.docx" }
+            { ( true,  true, 1, 1), "GasFormsApp.WordTemplate1_1.docx" },
+            { ( true,  true, 1, 2), "GasFormsApp.WordTemplate1_2.docx" },
+            { ( true,  true, 2, 1), "GasFormsApp.WordTemplate2_1.docx" },
+            { ( true,  true, 2, 2), "GasFormsApp.WordTemplate2_2.docx" },
+            { ( true,  true, 3, 1), "GasFormsApp.WordTemplate3_1.docx" },
+            { ( true,  true, 3, 2), "GasFormsApp.WordTemplate3_2.docx" },
+
+
+            //{ ( true, false), "GasFormsApp.WordTemplate_NoGasComponent.docx" },
+            //{ (false,  true), "GasFormsApp.WordTemplate_NoWc.docx" },
+            //{ (false, false), "GasFormsApp.WordTemplate_NoWcNoGasComponent.docx" }
         };
         //private static readonly Dictionary<(bool, bool), string> resourceMap = new Dictionary<(bool, bool), string>
         //{
@@ -70,9 +79,9 @@ namespace GasFormsApp.TabControl
         //    { (false, false), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoWcNoGasComponent.docx" }
         //};
 
-        private string Word_ResourceName(bool wcFlag, bool gasCompFlag)
+        private string Word_ResourceName(bool wcFlag, bool gasCompFlag, int Wc数量, int Gas数量)
         {
-            if (resourceMap.TryGetValue((wcFlag, gasCompFlag), out var resourceName))
+            if (resourceMap.TryGetValue((wcFlag, gasCompFlag, Wc数量, Gas数量), out var resourceName))
             {
                 return resourceName;
             }
@@ -83,7 +92,105 @@ namespace GasFormsApp.TabControl
             }
         }
 
-        
+        int 动态处理Wc选项()
+        {
+            // Wc
+            List<(string Label, string Data)> selectedWc = new List<(string, string)>();
+            if (_mainForm.AdsorpConstACheckBox.Checked)
+                selectedWc.Add(("吸附常数a值(cm3/g)：", _mainForm.AdsorpConstATextBox.Text));
+            if (_mainForm.AdsorpConstBCheckBox.Checked)
+                selectedWc.Add(("吸附常数b值(MPa-1)：", _mainForm.AdsorpConstBTextBox.Text));
+            if (_mainForm.MadCheckBox.Checked)
+                selectedWc.Add(("水分Mad/%：", _mainForm.MadTextBox.Text));
+            if (_mainForm.AadCheckBox.Checked)
+                selectedWc.Add(("灰分Aad/%：", _mainForm.AadTextBox.Text));
+            if (_mainForm.PorosityCheckBox.Checked)
+                selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
+            if (_mainForm.AppDensityCheckBox.Checked)
+                selectedWc.Add(("视密度γ：", _mainForm.AppDensityTextBox.Text));
+            if (_mainForm.VadCheckBox.Checked)
+                selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
+            if (_mainForm.NonDesorpGasQtyCheckBox.Checked)
+                selectedWc.Add(("不可解吸瓦斯量Wc(m3/t)：", _mainForm.NonDesorpGasQtyTextBox.Text));
+            // 2. 清空 8 组槽位
+            for (int i = 1; i <= 8; i++)
+            {
+                typeof(MainForm).GetField($"Wc_Lab{i}").SetValue(null, "");
+                typeof(MainForm).GetField($"Wc_Dat{i}").SetValue(null, "");
+            }
+            // 3. 将选中的数据依次写入槽位（最多8个）
+            for (int i = 0; i < selectedWc.Count && i < 8; i++)
+            {
+                typeof(MainForm).GetField($"Wc_Lab{i + 1}").SetValue(null, selectedWc[i].Item1);
+                typeof(MainForm).GetField($"Wc_Dat{i + 1}").SetValue(null, selectedWc[i].Item2);
+            }
+            // 4. 打印输出（调试用）
+            for (int i = 0; i < selectedWc.Count && i < 8; i++)
+            {
+                Console.WriteLine($"{selectedWc[i].Item1}{selectedWc[i].Item2}");
+            }
+            var validWc = selectedWc.Where(g => !string.IsNullOrWhiteSpace(g.Data)).ToList();
+            Console.WriteLine($"---------有效数据数量：{validWc.Count}");
+
+            if (validWc.Count <= 3)
+                return 1;
+            else if (validWc.Count <= 6)
+                return 2;
+            else
+                return 3;
+        }
+        int 动态处理Gas选项()
+        {
+            // 1. 收集所有选中的气体项
+            List<(string Label, string Data)> selectedGases = new List<(string, string)>();
+            if (_mainForm.CH4CheckBox.Checked)
+                selectedGases.Add(("CH₄：", _mainForm.CH4TextBox.Text));
+            if (_mainForm.CO2CheckBox.Checked)
+                selectedGases.Add(("CO₂：", _mainForm.CO2TextBox.Text));
+            if (_mainForm.N2CheckBox.Checked)
+                selectedGases.Add(("N₂：", _mainForm.N2TextBox.Text));
+            if (_mainForm.O2CheckBox.Checked)
+                selectedGases.Add(("O₂：", _mainForm.O2TextBox.Text));
+            if (_mainForm.C2H4CheckBox.Checked)
+                selectedGases.Add(("C₂H₄：", _mainForm.C2H4TextBox.Text));
+            if (_mainForm.C3H8CheckBox.Checked)
+                selectedGases.Add(("C₃H₈：", _mainForm.C3H8TextBox.Text));
+            if (_mainForm.C2H6CheckBox.Checked)
+                selectedGases.Add(("C₂H₆：", _mainForm.C2H6TextBox.Text));
+            if (_mainForm.C3H6CheckBox.Checked)
+                selectedGases.Add(("C₃H₆：", _mainForm.C3H6TextBox.Text));
+            if (_mainForm.C2H2CheckBox.Checked)
+                selectedGases.Add(("C₂H₂：", _mainForm.C2H2TextBox.Text));
+            if (_mainForm.COCheckBox.Checked)
+                selectedGases.Add(("CO：", _mainForm.COTextBox.Text));
+            // 2. 清空 10 组槽位
+            for (int i = 1; i <= 10; i++)
+            {
+                typeof(MainForm).GetField($"GasComp_Lab{i}").SetValue(null, "");
+                typeof(MainForm).GetField($"GasComp_Dat{i}").SetValue(null, "");
+            }
+            // 3. 将选中的数据依次写入槽位（最多10个）
+            for (int i = 0; i < selectedGases.Count && i < 10; i++)
+            {
+                typeof(MainForm).GetField($"GasComp_Lab{i + 1}").SetValue(null, selectedGases[i].Item1);
+                typeof(MainForm).GetField($"GasComp_Dat{i + 1}").SetValue(null, selectedGases[i].Item2);
+            }
+            // 4. 打印输出（调试用）
+            for (int i = 0; i < selectedGases.Count && i < 10; i++)
+            {
+                Console.WriteLine($"{selectedGases[i].Item1}{selectedGases[i].Item2}");
+            }
+            // 获取瓦斯压力
+            _mainForm.tab5_4_P瓦斯压力选择();
+
+            var validWc = selectedGases.Where(g => !string.IsNullOrWhiteSpace(g.Data)).ToList();
+            Console.WriteLine($"---------有效数据数量：{validWc.Count}");
+            if (validWc.Count <= 5)
+                return 1;
+            else
+                return 2;
+        }
+
 
         // 保存按钮
         public void _SaveButton_Click(object sender, EventArgs e)
@@ -116,11 +223,16 @@ namespace GasFormsApp.TabControl
 
                 outputPath = saveDialog.FileName;
 
+                
+                MainForm.Wc选项数量 = 动态处理Wc选项();
+                MainForm.Gas选项数量 = 动态处理Gas选项();
+
+
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
 
                 // 尝试读取嵌入资源
-                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag);
+                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
                 using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
@@ -139,119 +251,6 @@ namespace GasFormsApp.TabControl
                         BasicInfo basicInfo = new BasicInfo(_mainForm);
 
                         string ReportTimeText = _mainForm.dateTimePicker1.Text;
-
-                        // 1. 收集所有选中的气体项
-                        List<(string Label, string Data)> selectedGases = new List<(string, string)>();
-
-                        if (_mainForm.CH4CheckBox.Checked)
-                            selectedGases.Add(("CH₄：", _mainForm.CH4TextBox.Text));
-
-                        if (_mainForm.CO2CheckBox.Checked)
-                            selectedGases.Add(("CO₂：", _mainForm.CO2TextBox.Text));
-
-                        if (_mainForm.N2CheckBox.Checked)
-                            selectedGases.Add(("N₂：", _mainForm.N2TextBox.Text));
-
-                        if (_mainForm.O2CheckBox.Checked)
-                            selectedGases.Add(("O₂：", _mainForm.O2TextBox.Text));
-
-                        if (_mainForm.C2H4CheckBox.Checked)
-                            selectedGases.Add(("C₂H₄：", _mainForm.C2H4TextBox.Text));
-
-                        if (_mainForm.C3H8CheckBox.Checked)
-                            selectedGases.Add(("C₃H₈：", _mainForm.C3H8TextBox.Text));
-
-                        if (_mainForm.C2H6CheckBox.Checked)
-                            selectedGases.Add(("C₂H₆：", _mainForm.C2H6TextBox.Text));
-
-                        if (_mainForm.C3H6CheckBox.Checked)
-                            selectedGases.Add(("C₃H₆：", _mainForm.C3H6TextBox.Text));
-
-                        if (_mainForm.C2H2CheckBox.Checked)
-                            selectedGases.Add(("C₂H₂：", _mainForm.C2H2TextBox.Text));
-
-                        if (_mainForm.COCheckBox.Checked)
-                            selectedGases.Add(("CO：", _mainForm.COTextBox.Text));
-
-                        // 2. 清空 10 组槽位
-                        for (int i = 1; i <= 10; i++)
-                        {
-                            typeof(MainForm).GetField($"GasComp_Lab{i}").SetValue(null, "");
-                            typeof(MainForm).GetField($"GasComp_Dat{i}").SetValue(null, "");
-                        }
-
-                        // 3. 将选中的数据依次写入槽位（最多10个）
-                        for (int i = 0; i < selectedGases.Count && i < 10; i++)
-                        {
-                            typeof(MainForm).GetField($"GasComp_Lab{i + 1}").SetValue(null, selectedGases[i].Item1);
-                            typeof(MainForm).GetField($"GasComp_Dat{i + 1}").SetValue(null, selectedGases[i].Item2);
-                        }
-
-                        // 4. 打印输出（调试用）
-                        for (int i = 0; i < selectedGases.Count && i < 10; i++)
-                        {
-                            Console.WriteLine($"{selectedGases[i].Item1}{selectedGases[i].Item2}");
-                        }
-                        // 获取瓦斯压力
-                        _mainForm.tab5_4_P瓦斯压力选择();
-
-
-
-
-
-
-
-
-                        // Wc
-                        List<(string Label, string Data)> selectedWc = new List<(string, string)>();
-
-                        if (_mainForm.AdsorpConstACheckBox.Checked)
-                            selectedWc.Add(("吸附常数a值(cm3/g)：", _mainForm.AdsorpConstATextBox.Text));
-
-                        if (_mainForm.AdsorpConstBCheckBox.Checked)
-                            selectedWc.Add(("吸附常数b值(MPa-1)：", _mainForm.AdsorpConstBTextBox.Text));
-
-                        if (_mainForm.MadCheckBox.Checked)
-                            selectedWc.Add(("水分Mad/%：", _mainForm.MadTextBox.Text));
-
-                        if (_mainForm.AadCheckBox.Checked)
-                            selectedWc.Add(("灰分Aad/%：", _mainForm.AadTextBox.Text));
-
-                        if (_mainForm.PorosityCheckBox.Checked)
-                            selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
-
-                        if (_mainForm.AppDensityCheckBox.Checked)
-                            selectedWc.Add(("视密度γ：", _mainForm.AppDensityTextBox.Text));
-
-                        if (_mainForm.VadCheckBox.Checked)
-                            selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
-
-                        if (_mainForm.NonDesorpGasQtyCheckBox.Checked)
-                            selectedWc.Add(("不可解吸瓦斯量Wc(m3/t)：", _mainForm.NonDesorpGasQtyTextBox.Text));
-
-                        // 2. 清空 8 组槽位
-                        for (int i = 1; i <= 8; i++)
-                        {
-                            typeof(MainForm).GetField($"Wc_Lab{i}").SetValue(null, "");
-                            typeof(MainForm).GetField($"Wc_Dat{i}").SetValue(null, "");
-                        }
-
-                        // 3. 将选中的数据依次写入槽位（最多8个）
-                        for (int i = 0; i < selectedWc.Count && i < 8; i++)
-                        {
-                            typeof(MainForm).GetField($"Wc_Lab{i + 1}").SetValue(null, selectedWc[i].Item1);
-                            typeof(MainForm).GetField($"Wc_Dat{i + 1}").SetValue(null, selectedWc[i].Item2);
-                        }
-
-                        // 4. 打印输出（调试用）
-                        for (int i = 0; i < selectedWc.Count && i < 8; i++)
-                        {
-                            Console.WriteLine($"{selectedWc[i].Item1}{selectedWc[i].Item2}");
-                        }
-
-
-
-
 
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
                             _mainForm.MineNameTextBox.Text,
@@ -414,7 +413,7 @@ namespace GasFormsApp.TabControl
                 var assembly = Assembly.GetExecutingAssembly();
 
                 // 尝试读取嵌入资源
-                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag);
+                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
                 //using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {

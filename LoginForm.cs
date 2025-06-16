@@ -62,12 +62,12 @@ namespace GasFormsApp
             InitializeComponent();
             this.Load += LoginForm_Load;
 
-            //MainForm main = new MainForm(false);
-            //this.Hide();
+            MainForm main = new MainForm(false);
+            this.Hide();
 
-            //main.ShowDialog();
+            main.ShowDialog();
 
-            //this.Close();
+            this.Close();
         }
 
         //private int GetFailedLoginCount()
@@ -174,7 +174,7 @@ namespace GasFormsApp
                     int digit = c - '0';
                     return digit % 2 == 1 || digit == 0;  // 只取奇数数字
                 }).ToArray());
-                string key = GenerateAes256KeyFromTime(oddDigits);
+                string key = GenerateAes256KeyFromTime(keySource);
 
                 Console.WriteLine("用于AES-256的密钥: " + key);
 
