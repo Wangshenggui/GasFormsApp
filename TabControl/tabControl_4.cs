@@ -20,7 +20,14 @@ namespace GasFormsApp.TabControl
             // 注册回调函数
             _mainForm.ExpCalcButton.Click += ExpCalcButton_Click;
 
-            
+            _mainForm.AdsorpConstACheckBox.Enabled = false;
+            _mainForm.AdsorpConstBCheckBox.Enabled = false;
+            _mainForm.MadCheckBox.Enabled = false;
+            _mainForm.AadCheckBox.Enabled = false;
+            _mainForm.PorosityCheckBox.Enabled = false;
+            _mainForm.AppDensityCheckBox.Enabled = false;
+            _mainForm.VadCheckBox.Enabled = false;
+            _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
         }
 
@@ -30,11 +37,38 @@ namespace GasFormsApp.TabControl
             {
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打勾;
 
+                _mainForm.AdsorpConstACheckBox.Enabled = true;
+                _mainForm.AdsorpConstBCheckBox.Enabled = true;
+                _mainForm.MadCheckBox.Enabled = true;
+                _mainForm.AadCheckBox.Enabled = true;
+                _mainForm.PorosityCheckBox.Enabled = true;
+                _mainForm.AppDensityCheckBox.Enabled = true;
+                _mainForm.VadCheckBox.Enabled = true;
+                _mainForm.NonDesorpGasQtyCheckBox.Enabled = true;
+
                 MainForm.WcOutCheckBoxFlag = true;
             }
             else
             {
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打叉;
+
+                _mainForm.AdsorpConstACheckBox.Checked = false;
+                _mainForm.AdsorpConstBCheckBox.Checked = false;
+                _mainForm.MadCheckBox.Checked = false;
+                _mainForm.AadCheckBox.Checked = false;
+                _mainForm.PorosityCheckBox.Checked = false;
+                _mainForm.AppDensityCheckBox.Checked = false;
+                _mainForm.VadCheckBox.Checked = false;
+                _mainForm.NonDesorpGasQtyCheckBox.Checked = false;
+
+                _mainForm.AdsorpConstACheckBox.Enabled = false;
+                _mainForm.AdsorpConstBCheckBox.Enabled = false;
+                _mainForm.MadCheckBox.Enabled = false;
+                _mainForm.AadCheckBox.Enabled = false;
+                _mainForm.PorosityCheckBox.Enabled = false;
+                _mainForm.AppDensityCheckBox.Enabled = false;
+                _mainForm.VadCheckBox.Enabled = false;
+                _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
 
                 MainForm.WcOutCheckBoxFlag = false;
             }

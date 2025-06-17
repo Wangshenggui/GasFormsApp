@@ -50,6 +50,17 @@ namespace GasFormsApp.TabControl
                     {
                         _mainForm.GasCompGroupBox.Enabled = false;
 
+                        _mainForm.CH4CheckBox.Checked = false;
+                        _mainForm.CO2CheckBox.Checked = false;
+                        _mainForm.N2CheckBox.Checked = false;
+                        _mainForm.O2CheckBox.Checked = false;
+                        _mainForm.C2H4CheckBox.Checked = false;
+                        _mainForm.C3H8CheckBox.Checked = false;
+                        _mainForm.C2H6CheckBox.Checked = false;
+                        _mainForm.C3H6CheckBox.Checked = false;
+                        _mainForm.C2H2CheckBox.Checked = false;
+                        _mainForm.COCheckBox.Checked = false;
+
                         MainForm.GasCompCheckBoxFlag = false;
                     }
                 }
@@ -59,17 +70,25 @@ namespace GasFormsApp.TabControl
         private static readonly Dictionary<(bool, bool, int, int), string> 
             resourceMap = new Dictionary<(bool, bool, int, int), string>
         {
-            { ( true,  true, 1, 1), "GasFormsApp.WordTemplate1_1.docx" },
-            { ( true,  true, 1, 2), "GasFormsApp.WordTemplate1_2.docx" },
-            { ( true,  true, 2, 1), "GasFormsApp.WordTemplate2_1.docx" },
-            { ( true,  true, 2, 2), "GasFormsApp.WordTemplate2_2.docx" },
-            { ( true,  true, 3, 1), "GasFormsApp.WordTemplate3_1.docx" },
-            { ( true,  true, 3, 2), "GasFormsApp.WordTemplate3_2.docx" },
+                // 无缺失数据
+            { ( true,  true, 1, 1), "GasFormsApp.GasFormsApp.WordTemplate1_1.docx" },
+            { ( true,  true, 1, 2), "GasFormsApp.GasFormsApp.WordTemplate1_2.docx" },
+            { ( true,  true, 2, 1), "GasFormsApp.GasFormsApp.WordTemplate2_1.docx" },
+            { ( true,  true, 2, 2), "GasFormsApp.GasFormsApp.WordTemplate2_2.docx" },
+            { ( true,  true, 3, 1), "GasFormsApp.GasFormsApp.WordTemplate3_1.docx" },
+            { ( true,  true, 3, 2), "GasFormsApp.GasFormsApp.WordTemplate3_2.docx" },
 
+            // 缺失Gas
+            { ( true,  false, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas1.docx" },
+            { ( true,  false, 2, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas2.docx" },
+            { ( true,  false, 3, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas3.docx" },
 
-            //{ ( true, false), "GasFormsApp.WordTemplate_NoGasComponent.docx" },
-            //{ (false,  true), "GasFormsApp.WordTemplate_NoWc.docx" },
-            //{ (false, false), "GasFormsApp.WordTemplate_NoWcNoGasComponent.docx" }
+            // 缺失Wc
+            { ( false,  true, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoWc1.docx" },
+            { ( false,  true, 1, 2), "GasFormsApp.GasFormsApp.WordTemplateNoWc2.docx" },
+
+            // 缺失Gas和Wc
+            { ( false,  false, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoWcNoGas.docx" },
         };
         //private static readonly Dictionary<(bool, bool), string> resourceMap = new Dictionary<(bool, bool), string>
         //{
@@ -88,7 +107,7 @@ namespace GasFormsApp.TabControl
             else
             {
                 // 万一有意外组合，返回默认值
-                return "GasFormsApp.WordTemplate.docx";
+                return "GasFormsApp.GasFormsApp.WordTemplate3_2.docx";
             }
         }
 
@@ -231,10 +250,34 @@ namespace GasFormsApp.TabControl
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
 
+                assembly = Assembly.GetExecutingAssembly(); // 或者用 Assembly.Load(...) 加载其他程序集
+                string[] resourceNames = assembly.GetManifestResourceNames();
+
+                Console.WriteLine("嵌入的资源列表：");
+                foreach (string name in resourceNames)
+                {
+                    Console.WriteLine(name);
+                }
+                //GasFormsApp.WordTemplate.docx
+                //GasFormsApp.GasFormsApp.WordTemplate1_1.docx
+                //GasFormsApp.GasFormsApp.WordTemplate1_2.docx
+                //GasFormsApp.GasFormsApp.WordTemplate2_1.docx
+                //GasFormsApp.GasFormsApp.WordTemplate2_2.docx
+                //GasFormsApp.GasFormsApp.WordTemplate3_1.docx
+                //GasFormsApp.GasFormsApp.WordTemplate3_2.docx
+                //GasFormsApp.GasFormsApp.WordTemplateNoGas1.docx
+                //GasFormsApp.GasFormsApp.WordTemplateNoGas2.docx
+                //GasFormsApp.GasFormsApp.WordTemplateNoGas3.docx
+                //GasFormsApp.GasFormsApp.WordTemplateNoWc1.docx
+                //GasFormsApp.GasFormsApp.WordTemplateNoWc2.docx
+
                 // 尝试读取嵌入资源
                 string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
-                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
-                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+
+                // GasFormsApp.WordTemplate1_1.docx
+                Console.WriteLine($"---------：{Word_resourceName}");
+                using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+                //using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {
@@ -318,8 +361,8 @@ namespace GasFormsApp.TabControl
                         try
                         {
                             var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                            //var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";           // 你实际的 .py 文件路径
-                            var scriptPath = @"Python_embed\Python\bbb.py";
+                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";           // 你实际的 .py 文件路径
+                            //var scriptPath = @"Python_embed\Python\bbb.py";
 
                             ProcessStartInfo psi = new ProcessStartInfo
                             {

@@ -328,7 +328,7 @@ namespace GasFormsApp.WordPperation
                 if (textBox != null)
                 {
                     string text = textBox.Text.Trim();
-                    Console.WriteLine($"获取：{text}");
+                    //Console.WriteLine($"获取：{text}");
                     placeholders[key] = text;
 
                     if (double.TryParse(text, out double val))
