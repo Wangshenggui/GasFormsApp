@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace GasFormsApp.WordPperation
 {
@@ -186,6 +188,18 @@ namespace GasFormsApp.WordPperation
                 { "T59", _mainForm.DataNumTextBox59.Text },
                 { "T60", _mainForm.DataNumTextBox60.Text },
 
+                // 记录表添加的部分内容
+                { "DrillInclination", _mainForm.DrillInclinationTextBox.Text },// 钻孔倾角
+                { "Azimuth", _mainForm.AzimuthTextBox.Text },// 方位角
+                { "DrillingEndTime", _mainForm.dateTimePicker2.Text },// 打钻结束时间
+                { "CoringEndTime", _mainForm.dateTimePicker3.Text },// 取芯结束时间
+                { "CoringStartTime", _mainForm.dateTimePicker5.Text },// 取芯开始时间
+                { "DesorptionStartTime", _mainForm.dateTimePicker4.Text },// 解吸开始时间
+                { "SamplingPersonnel", _mainForm.SamplingPersonnelTextBox.Text },// 取样人员
+
+                { "DownholeTesters", _mainForm.DownholeTestersTextBox.Text },// 井下测试人员
+                { "TestTime", _mainForm.dateTimePicker6.Text },// 测试时间
+                
             };
             ReplacePlaceholders(memoryStream, placeholders);
             //var subscriptPositions = new List<int> { 2 ,4 ,6};  // 让第3个字符 '6' 下标

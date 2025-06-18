@@ -160,7 +160,7 @@ data = read_shared_memory()[:DataExtentEnd]
 # 先筛选出满足条件的点
 x = np.array([row[0] for row in data if row[0] != 0 and row[1] != 0])
 y = np.array([row[1] for row in data if row[0] != 0 and row[1] != 0])
-ax.scatter(x, y, s=12, color='red', marker='s',label='原始数据')
+ax.scatter(x, y, s=14, color='red', marker='D',label='原始数据')
 slope = best_coefficients[0]
 intercept = best_coefficients[1]
 x_new = np.linspace(0, np.max(x)+0.5, 100)
@@ -254,12 +254,12 @@ print("yticks:", yticks)
 # 设置 y 轴刻度
 ax.set_yticks(yticks)
 # ax.set_yticks(np.arange(custom_round_up(intercept), _yyy+1, 50))  # Y轴-60到140，步长20
-# ax.tick_params(axis='x', labelsize=20)  # 设置X轴刻度标签字体大小为12
-# ax.tick_params(axis='y', labelsize=20)  # 设置Y轴刻度标签字体大小为12
+ax.tick_params(axis='x', labelsize=18,direction='in')  # 设置X轴刻度标签字体大小为12
+ax.tick_params(axis='y', labelsize=18,direction='in')  # 设置Y轴刻度标签字体大小为12
 
 plt.rcParams['font.family'] = 'Times New Roman'
-plt.rcParams['xtick.labelsize'] = 20
-plt.rcParams['ytick.labelsize'] = 20
+plt.rcParams['xtick.labelsize'] = 18
+plt.rcParams['ytick.labelsize'] = 18
 
 
 # ax.set_ylabel(r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$', fontsize=20)
@@ -286,9 +286,26 @@ ax.annotate('', xy=(_xxx-1+0.5, 0), xytext=(0-0.03, 0),
 max_tick = max(ax.get_yticks())
 min_tick_shown = min(ax.get_yticks())
 ax.set_ylim(custom_round_up(intercept) - step, max_tick + step)  # 多留一格
-ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, min_tick_shown-step/1.5),
-            arrowprops=dict(arrowstyle='->', lw=1.0, color='#000000',antialiased=False))  # Y轴箭头
+ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, min_tick_shown-0/19.1),
+# ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, 0),
+            arrowprops=dict(arrowstyle='->', lw=1.0, color='#000000',antialiased=False,
+                            shrinkA=0, shrinkB=0))  # Y轴箭头
 
+# import matplotlib.patches as patches
+# x0 = 0
+# y_top = 0
+# width = 0
+# height = 90
+# # 转换为左下角坐标
+# rect = patches.Rectangle(
+#     (x0, y_top - height),  # 左下角坐标 = (x, y_top - height)
+#     width,
+#     height,
+#     facecolor='black',
+#     edgecolor='black'
+# )
+# # 添加到坐标轴中
+# ax.add_patch(rect)
 # 显示横坐标单位
 # ax.text(_xxx-1+0.5-3.3, -80, r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$', fontsize=18, color='black')
 
