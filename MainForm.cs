@@ -72,6 +72,7 @@ namespace GasFormsApp
         public static string Wc_Lab6 = "";
         public static string Wc_Lab7 = "";
         public static string Wc_Lab8 = "";
+        public static string Wc_Lab9 = "";
         public static string Wc_Dat1 = "";
         public static string Wc_Dat2 = "";
         public static string Wc_Dat3 = "";
@@ -80,6 +81,7 @@ namespace GasFormsApp
         public static string Wc_Dat6 = "";
         public static string Wc_Dat7 = "";
         public static string Wc_Dat8 = "";
+        public static string Wc_Dat9 = "";
 
 
 

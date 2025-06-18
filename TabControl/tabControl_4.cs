@@ -26,6 +26,7 @@ namespace GasFormsApp.TabControl
             _mainForm.AadCheckBox.Enabled = false;
             _mainForm.PorosityCheckBox.Enabled = false;
             _mainForm.AppDensityCheckBox.Enabled = false;
+            _mainForm.TrueDensityCheckBox.Enabled = false;
             _mainForm.VadCheckBox.Enabled = false;
             _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
@@ -43,6 +44,7 @@ namespace GasFormsApp.TabControl
                 _mainForm.AadCheckBox.Enabled = true;
                 _mainForm.PorosityCheckBox.Enabled = true;
                 _mainForm.AppDensityCheckBox.Enabled = true;
+                _mainForm.TrueDensityCheckBox.Enabled = true;
                 _mainForm.VadCheckBox.Enabled = true;
                 _mainForm.NonDesorpGasQtyCheckBox.Enabled = true;
 
@@ -58,6 +60,7 @@ namespace GasFormsApp.TabControl
                 _mainForm.AadCheckBox.Checked = false;
                 _mainForm.PorosityCheckBox.Checked = false;
                 _mainForm.AppDensityCheckBox.Checked = false;
+                _mainForm.TrueDensityCheckBox.Checked = false;
                 _mainForm.VadCheckBox.Checked = false;
                 _mainForm.NonDesorpGasQtyCheckBox.Checked = false;
 
@@ -67,6 +70,7 @@ namespace GasFormsApp.TabControl
                 _mainForm.AadCheckBox.Enabled = false;
                 _mainForm.PorosityCheckBox.Enabled = false;
                 _mainForm.AppDensityCheckBox.Enabled = false;
+                _mainForm.TrueDensityCheckBox.Enabled = false;
                 _mainForm.VadCheckBox.Enabled = false;
                 _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
 
@@ -114,6 +118,7 @@ namespace GasFormsApp.TabControl
             ValidateNumericTextBox(_mainForm.AadTextBox);
             ValidateNumericTextBox(_mainForm.PorosityTextBox);
             ValidateNumericTextBox(_mainForm.AppDensityTextBox);
+            ValidateNumericTextBox(_mainForm.TrueDensityTextBox);
             ValidateNumericTextBox(_mainForm.VadTextBox);
         }
 

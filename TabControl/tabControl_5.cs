@@ -67,36 +67,52 @@ namespace GasFormsApp.TabControl
             }
         }
 
-        private static readonly Dictionary<(bool, bool, int, int), string> 
+        //private static readonly Dictionary<(bool, bool, int, int), string> 
+        //    resourceMap = new Dictionary<(bool, bool, int, int), string>
+        //{
+        //        // 无缺失数据
+        //    { ( true,  true, 1, 1), "GasFormsApp.GasFormsApp.WordTemplate1_1.docx" },
+        //    { ( true,  true, 1, 2), "GasFormsApp.GasFormsApp.WordTemplate1_2.docx" },
+        //    { ( true,  true, 2, 1), "GasFormsApp.GasFormsApp.WordTemplate2_1.docx" },
+        //    { ( true,  true, 2, 2), "GasFormsApp.GasFormsApp.WordTemplate2_2.docx" },
+        //    { ( true,  true, 3, 1), "GasFormsApp.GasFormsApp.WordTemplate3_1.docx" },
+        //    { ( true,  true, 3, 2), "GasFormsApp.GasFormsApp.WordTemplate3_2.docx" },
+
+        //    // 缺失Gas
+        //    { ( true,  false, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas1.docx" },
+        //    { ( true,  false, 2, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas2.docx" },
+        //    { ( true,  false, 3, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas3.docx" },
+
+        //    // 缺失Wc
+        //    { ( false,  true, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoWc1.docx" },
+        //    { ( false,  true, 1, 2), "GasFormsApp.GasFormsApp.WordTemplateNoWc2.docx" },
+
+        //    // 缺失Gas和Wc
+        //    { ( false,  false, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoWcNoGas.docx" },
+        //};
+        private static readonly Dictionary<(bool, bool, int, int), string>
             resourceMap = new Dictionary<(bool, bool, int, int), string>
         {
                 // 无缺失数据
-            { ( true,  true, 1, 1), "GasFormsApp.GasFormsApp.WordTemplate1_1.docx" },
-            { ( true,  true, 1, 2), "GasFormsApp.GasFormsApp.WordTemplate1_2.docx" },
-            { ( true,  true, 2, 1), "GasFormsApp.GasFormsApp.WordTemplate2_1.docx" },
-            { ( true,  true, 2, 2), "GasFormsApp.GasFormsApp.WordTemplate2_2.docx" },
-            { ( true,  true, 3, 1), "GasFormsApp.GasFormsApp.WordTemplate3_1.docx" },
-            { ( true,  true, 3, 2), "GasFormsApp.GasFormsApp.WordTemplate3_2.docx" },
+            { ( true,  true, 1, 1), "WPSGasFormsApp.WordTemplate1_1.docx" },
+            { ( true,  true, 1, 2), "WPSGasFormsApp.WordTemplate1_2.docx" },
+            { ( true,  true, 2, 1), "WPSGasFormsApp.WordTemplate2_1.docx" },
+            { ( true,  true, 2, 2), "WPSGasFormsApp.WordTemplate2_2.docx" },
+            { ( true,  true, 3, 1), "WPSGasFormsApp.WordTemplate3_1.docx" },
+            { ( true,  true, 3, 2), "WPSGasFormsApp.WordTemplate3_2.docx" },
 
             // 缺失Gas
-            { ( true,  false, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas1.docx" },
-            { ( true,  false, 2, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas2.docx" },
-            { ( true,  false, 3, 1), "GasFormsApp.GasFormsApp.WordTemplateNoGas3.docx" },
+            { ( true,  false, 1, 1), "WPSGasFormsApp.WordTemplateNoGas1.docx" },
+            { ( true,  false, 2, 1), "WPSGasFormsApp.WordTemplateNoGas2.docx" },
+            { ( true,  false, 3, 1), "WPSGasFormsApp.WordTemplateNoGas3.docx" },
 
             // 缺失Wc
-            { ( false,  true, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoWc1.docx" },
-            { ( false,  true, 1, 2), "GasFormsApp.GasFormsApp.WordTemplateNoWc2.docx" },
+            { ( false,  true, 1, 1), "WPSGasFormsApp.WordTemplateNoWc1.docx" },
+            { ( false,  true, 1, 2), "WPSGasFormsApp.WordTemplateNoWc2.docx" },
 
             // 缺失Gas和Wc
-            { ( false,  false, 1, 1), "GasFormsApp.GasFormsApp.WordTemplateNoWcNoGas.docx" },
+            { ( false,  false, 1, 1), "WPSGasFormsApp.WordTemplateNoWcNoGas.docx" },
         };
-        //private static readonly Dictionary<(bool, bool), string> resourceMap = new Dictionary<(bool, bool), string>
-        //{
-        //    { ( true,  true), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate.docx" },
-        //    { ( true, false), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoGasComponent.docx" },
-        //    { (false,  true), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoWc.docx" },
-        //    { (false, false), @"E:\E-Desktop\GitHub\GasFormsApp\WordTemplate_NoWcNoGasComponent.docx" }
-        //};
 
         private string Word_ResourceName(bool wcFlag, bool gasCompFlag, int Wc数量, int Gas数量)
         {
@@ -107,7 +123,7 @@ namespace GasFormsApp.TabControl
             else
             {
                 // 万一有意外组合，返回默认值
-                return "GasFormsApp.GasFormsApp.WordTemplate3_2.docx";
+                return "WPSGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
             }
         }
 
@@ -126,25 +142,27 @@ namespace GasFormsApp.TabControl
             if (_mainForm.PorosityCheckBox.Checked)
                 selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
             if (_mainForm.AppDensityCheckBox.Checked)
-                selectedWc.Add(("视密度γ：", _mainForm.AppDensityTextBox.Text));
+                selectedWc.Add(("相对视密度γ：", _mainForm.AppDensityTextBox.Text));
+            if (_mainForm.TrueDensityCheckBox.Checked)
+                selectedWc.Add(("真密度(g/cm3)：", _mainForm.TrueDensityTextBox.Text));
             if (_mainForm.VadCheckBox.Checked)
                 selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
             if (_mainForm.NonDesorpGasQtyCheckBox.Checked)
                 selectedWc.Add(("不可解吸瓦斯量Wc(m3/t)：", _mainForm.NonDesorpGasQtyTextBox.Text));
-            // 2. 清空 8 组槽位
-            for (int i = 1; i <= 8; i++)
+            // 2. 清空 9 组槽位
+            for (int i = 1; i <= 9; i++)
             {
                 typeof(MainForm).GetField($"Wc_Lab{i}").SetValue(null, "");
                 typeof(MainForm).GetField($"Wc_Dat{i}").SetValue(null, "");
             }
-            // 3. 将选中的数据依次写入槽位（最多8个）
-            for (int i = 0; i < selectedWc.Count && i < 8; i++)
+            // 3. 将选中的数据依次写入槽位（最多9个）
+            for (int i = 0; i < selectedWc.Count && i < 9; i++)
             {
                 typeof(MainForm).GetField($"Wc_Lab{i + 1}").SetValue(null, selectedWc[i].Item1);
                 typeof(MainForm).GetField($"Wc_Dat{i + 1}").SetValue(null, selectedWc[i].Item2);
             }
             // 4. 打印输出（调试用）
-            for (int i = 0; i < selectedWc.Count && i < 8; i++)
+            for (int i = 0; i < selectedWc.Count && i < 9; i++)
             {
                 Console.WriteLine($"{selectedWc[i].Item1}{selectedWc[i].Item2}");
             }
@@ -276,8 +294,8 @@ namespace GasFormsApp.TabControl
 
                 // GasFormsApp.WordTemplate1_1.docx
                 Console.WriteLine($"---------：{Word_resourceName}");
-                using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
-                //using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {
@@ -394,15 +412,15 @@ namespace GasFormsApp.TabControl
                     }
                 }
                 SetWaitCursor(_mainForm, Cursors.Default);
-                //打开生成的 Word 文件
-                try
-                {
-                    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("无法打开文件: " + ex.Message);
-                }
+                ////打开生成的 Word 文件
+                //try
+                //{
+                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("无法打开文件: " + ex.Message);
+                //}
                 //this.Close();
             }
             else

@@ -95,6 +95,7 @@ namespace GasFormsApp.WordPperation
                 { "Wc_Dat06", MainForm.Wc_Dat6 },
                 { "Wc_Dat07", MainForm.Wc_Dat7 },
                 { "Wc_Dat08", MainForm.Wc_Dat8 },
+                { "Wc_Dat09", MainForm.Wc_Dat9 },
 
 
 
@@ -204,15 +205,16 @@ namespace GasFormsApp.WordPperation
                 ["吸附常数a值(cm3/g)："] = new List<int> { 9 },
                 ["吸附常数b值(MPa-1)："] = new List<int> { 10, 11 },
                 ["不可解吸瓦斯量Wc(m3/t)："] = new List<int> { 11 },
-
+                ["真密度(g/cm3)："] = new List<int> { 8 },
+                
                 // 这些不需要上标
                 ["水分Mad/%："] = new List<int>(),
                 ["灰分Aad/%："] = new List<int>(),
                 ["孔隙率K/%："] = new List<int>(),
-                ["视密度γ："] = new List<int>(),
+                ["相对视密度γ："] = new List<int>(),
                 ["挥发分Vad/%："] = new List<int>()
             };
-            for (int i = 1; i <= 8; i++)
+            for (int i = 1; i <= 9; i++)
             {
                 string placeholderName = $"Wc_Lab0{i}";
 
