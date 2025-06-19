@@ -366,7 +366,7 @@ namespace GasFormsApp
             myTabLogic4.TabControl_4_InputCheckTimer_Tick();
 
             // 动态加载log
-            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.jpg");
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.png");
             Image img = Image.FromFile(imagePath);
             int fixedHeight = 40;
             // 等比例缩放计算新宽度
@@ -497,5 +497,22 @@ namespace GasFormsApp
         {
             myTabLogic4.P瓦斯压力选择();
         }
+
+        private void tabPage1panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // 设置宽高为 panel 的 50%
+            int newWidth = tabPage1panel1.ClientSize.Width / 2;
+            int newHeight = tabPage1panel1.ClientSize.Height / 1 - tabPage1panel1.ClientSize.Height / 8;
+
+            tabPage1FlowLayoutPanel1.Width = newWidth;
+            tabPage1FlowLayoutPanel1.Height = newHeight;
+
+            // 居中定位
+            tabPage1FlowLayoutPanel1.Left = (tabPage1panel1.ClientSize.Width - newWidth) / 2;
+            tabPage1FlowLayoutPanel1.Top = (tabPage1panel1.ClientSize.Height - newHeight) / 2;
+
+            Console.WriteLine($"FlowLayoutPanel 宽度: {tabPage1FlowLayoutPanel1.Width}, 高度: {tabPage1FlowLayoutPanel1.Height}");
+        }
+
     }
 }

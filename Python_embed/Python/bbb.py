@@ -180,7 +180,7 @@ def insert_picture_after_bookmark(doc, bookmark_name, image_path):
     new_para = Paragraph(new_p, doc)
     new_para.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
-    a = 0.08  # 右边裁剪比例（例如裁剪右边 8%）
+    a = 0.05  # 右边裁剪比例（例如裁剪右边 8%）
     b = 0.02  # 左边裁剪比例（例如裁剪左边 5%）
 
     # 用 Pillow 打开并裁剪图片
