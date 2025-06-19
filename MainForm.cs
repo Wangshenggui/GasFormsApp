@@ -43,6 +43,9 @@ namespace GasFormsApp
         public static string P_Data = "";
         public static string P_beizhu = "";
 
+        public static string DownholeTestersLab = "";
+        public static string DownholeTestersData = "";
+
         public static string GasComp_Lab1 = "";
         public static string GasComp_Lab2 = "";
         public static string GasComp_Lab3 = "";

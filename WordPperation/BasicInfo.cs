@@ -114,6 +114,9 @@ namespace GasFormsApp.WordPperation
                 {"P_Lable",MainForm.P_Lable},
                 {"P_beizhu",MainForm.P_beizhu},
 
+                {"DownholeTestersLab",MainForm.DownholeTestersLab},
+                {"DownholeTestersData",MainForm.DownholeTestersData},
+
                 //{"CH4Text", _mainForm.CH4TextBox.Text},//CH4
                 //{"CO2Text", _mainForm.CO2TextBox.Text},//CO2
                 //{"N2Text", _mainForm.N2TextBox.Text},//N2
@@ -225,7 +228,7 @@ namespace GasFormsApp.WordPperation
                 ["水分Mad/%："] = new List<int>(),
                 ["灰分Aad/%："] = new List<int>(),
                 ["孔隙率K/%："] = new List<int>(),
-                ["相对视密度γ："] = new List<int>(),
+                ["视相对密度γ："] = new List<int>(),
                 ["挥发分Vad/%："] = new List<int>()
             };
             for (int i = 1; i <= 9; i++)

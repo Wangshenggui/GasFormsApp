@@ -157,7 +157,7 @@ namespace GasFormsApp.TabControl
             if (_mainForm.PorosityCheckBox.Checked)
                 selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
             if (_mainForm.AppDensityCheckBox.Checked)
-                selectedWc.Add(("相对视密度γ：", _mainForm.AppDensityTextBox.Text));
+                selectedWc.Add(("视相对密度γ：", _mainForm.AppDensityTextBox.Text));
             if (_mainForm.TrueDensityCheckBox.Checked)
                 selectedWc.Add(("真密度(g/cm3)：", _mainForm.TrueDensityTextBox.Text));
             if (_mainForm.VadCheckBox.Checked)
@@ -279,8 +279,7 @@ namespace GasFormsApp.TabControl
 
                 MainForm.Wc选项数量 = 动态处理Wc选项();
                 MainForm.Gas选项数量 = 动态处理Gas选项();
-
-
+                
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
 
@@ -453,7 +452,19 @@ namespace GasFormsApp.TabControl
                 
                 MainForm.Wc选项数量 = 动态处理Wc选项();
                 MainForm.Gas选项数量 = 动态处理Gas选项();
-
+                // 井下测试人员
+                if (_mainForm.DownholeTestersCheckBox.Checked)
+                {
+                    MainForm.DownholeTestersLab = "井下测试人员：";
+                    MainForm.DownholeTestersData = _mainForm.DownholeTestersTextBox.Text;
+                }
+                else
+                {
+                    MainForm.DownholeTestersLab = "";
+                    MainForm.DownholeTestersData = "";
+                }
+                Console.WriteLine($"井下测试数据：{MainForm.DownholeTestersLab},{MainForm.DownholeTestersData}");
+                
 
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();

@@ -38,6 +38,8 @@ namespace GasFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SamplingPersonnelTextBox = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.AzimuthTextBox = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.DrillInclinationTextBox = new System.Windows.Forms.TextBox();
@@ -359,8 +361,7 @@ namespace GasFormsApp
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.SamplingPersonnelTextBox = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
+            this.DownholeTestersCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -457,6 +458,25 @@ namespace GasFormsApp
             this.groupBox1.Size = new System.Drawing.Size(1035, 591);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // SamplingPersonnelTextBox
+            // 
+            this.SamplingPersonnelTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingPersonnelTextBox.Location = new System.Drawing.Point(695, 460);
+            this.SamplingPersonnelTextBox.Name = "SamplingPersonnelTextBox";
+            this.SamplingPersonnelTextBox.Size = new System.Drawing.Size(240, 26);
+            this.SamplingPersonnelTextBox.TabIndex = 37;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label41.Location = new System.Drawing.Point(531, 465);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(159, 16);
+            this.label41.TabIndex = 38;
+            this.label41.Text = "取   样   人   员 :";
             // 
             // AzimuthTextBox
             // 
@@ -3337,6 +3357,7 @@ namespace GasFormsApp
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5.Controls.Add(this.DownholeTestersCheckBox);
             this.tabPage5.Controls.Add(this.dateTimePicker6);
             this.tabPage5.Controls.Add(this.label40);
             this.tabPage5.Controls.Add(this.DownholeTestersTextBox);
@@ -4039,24 +4060,16 @@ namespace GasFormsApp
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // SamplingPersonnelTextBox
+            // DownholeTestersCheckBox
             // 
-            this.SamplingPersonnelTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingPersonnelTextBox.Location = new System.Drawing.Point(695, 460);
-            this.SamplingPersonnelTextBox.Name = "SamplingPersonnelTextBox";
-            this.SamplingPersonnelTextBox.Size = new System.Drawing.Size(240, 26);
-            this.SamplingPersonnelTextBox.TabIndex = 37;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(531, 465);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(159, 16);
-            this.label41.TabIndex = 38;
-            this.label41.Text = "取   样   人   员 :";
+            this.DownholeTestersCheckBox.AutoSize = true;
+            this.DownholeTestersCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DownholeTestersCheckBox.Location = new System.Drawing.Point(1052, 335);
+            this.DownholeTestersCheckBox.Name = "DownholeTestersCheckBox";
+            this.DownholeTestersCheckBox.Size = new System.Drawing.Size(138, 20);
+            this.DownholeTestersCheckBox.TabIndex = 61;
+            this.DownholeTestersCheckBox.Text = "井下测试人员：";
+            this.DownholeTestersCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -4426,5 +4439,6 @@ namespace GasFormsApp
         public DateTimePicker dateTimePicker1;
         public TextBox SamplingPersonnelTextBox;
         private Label label41;
+        public CheckBox DownholeTestersCheckBox;
     }
 }
