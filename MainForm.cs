@@ -364,6 +364,20 @@ namespace GasFormsApp
             myTabLogic2.TabControl_2_InputCheckTimer_Tick();
             myTabLogic3.TabControl_3_InputCheckTimer_Tick();
             myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+
+            // 动态加载log
+            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.jpg");
+            Image img = Image.FromFile(imagePath);
+            int fixedHeight = 40;
+            // 等比例缩放计算新宽度
+            int newWidth = (int)(img.Width * (fixedHeight / (float)img.Height));
+            // 设置 PictureBox 大小
+            pictureBox1.Height = fixedHeight;
+            pictureBox1.Width = newWidth;
+            // 设置图片和显示模式
+            pictureBox1.Image = img;
+            // 强制拉满填充
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         //文本检测100ms定时器

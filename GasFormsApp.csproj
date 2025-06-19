@@ -55,7 +55,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Image\lg.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -109,6 +110,7 @@
     <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Drawing.Common.9.0.4\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -135,6 +137,12 @@
     <Compile Include="TabControl\tabControl_4.cs" />
     <Compile Include="TabControl\tabControl_5.cs" />
     <Compile Include="TabControl\tabControl_6.cs" />
+    <Compile Include="UI\UCTextBoxClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCButtonClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WordPperation\BasicInfo.cs" />
     <Compile Include="InsertChart.cs" />
     <Compile Include="LoginForm.cs">
@@ -227,6 +235,9 @@
     <None Include="Image\打勾.png" />
     <None Include="Image\打叉.png" />
     <None Include="Image\打印.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

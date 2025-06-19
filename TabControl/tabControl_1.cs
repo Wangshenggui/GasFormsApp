@@ -61,11 +61,15 @@ namespace GasFormsApp.TabControl
             ValidateNumericTextBox(_mainForm.SampleWeightTextBox);
             ValidateNumericTextBox(_mainForm.InitialVolumeTextBox);
             ValidateNumericTextBox(_mainForm.SamplingDepthTextBox);
+            ValidateNumericTextBox(_mainForm.DrillInclinationTextBox);
+            ValidateNumericTextBox(_mainForm.AzimuthTextBox);
+
 
             ValidateEmptyTextBox(_mainForm.MineNameTextBox);
             ValidateEmptyTextBox(_mainForm.SamplingSpotTextBox);
             ValidateEmptyTextBox(_mainForm.CoalSeamTextBox);
             ValidateEmptyTextBox(_mainForm.SampleNumTextBox);
+            ValidateEmptyTextBox(_mainForm.SamplingPersonnelTextBox);
         }
     }
 }
