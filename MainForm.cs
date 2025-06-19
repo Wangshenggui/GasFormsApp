@@ -145,7 +145,7 @@ namespace GasFormsApp
 
             // 创建并绑定图像列表到 TabControl
             imageList1 = new ImageList();
-            imageList1.ImageSize = new System.Drawing.Size(64, 64);
+            imageList1.ImageSize = new System.Drawing.Size(32, 32);
             tabControl1.ImageList = imageList1;
 
             // 加载嵌入资源图标
@@ -358,8 +358,39 @@ namespace GasFormsApp
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
         }
 
+        private float xRatio;
+        private float yRatio;
+        private void ResizeControls(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                ctrl.Left = (int)(ctrl.Left * xRatio);
+                ctrl.Top = (int)(ctrl.Top * yRatio);
+                ctrl.Width = (int)(ctrl.Width * xRatio);
+                ctrl.Height = (int)(ctrl.Height * yRatio);
+
+                if (ctrl.HasChildren)
+                {
+                    ResizeControls(ctrl);
+                }
+            }
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+            this.Width = (int)(screenWidth * 0.8);
+            this.Height = (int)(screenHeight * 0.8);
+            // 居中设置
+            this.Left = (screenWidth - this.Width) / 2;
+            this.Top = (screenHeight - this.Height) / 2;
+
+            xRatio = screenWidth / 1920f; // 假设设计时是 1920x1080
+            yRatio = screenHeight / 1080f;
+
+            //ResizeControls(this);
+
             myTabLogic1.TabControl_1_InputCheckTimer_Tick();
             myTabLogic2.TabControl_2_InputCheckTimer_Tick();
             myTabLogic3.TabControl_3_InputCheckTimer_Tick();
@@ -500,10 +531,22 @@ namespace GasFormsApp
 
         private void tabPage1panel1_Paint(object sender, PaintEventArgs e)
         {
-            // 设置宽高为 panel 的 50%
-            int newWidth = tabPage1panel1.ClientSize.Width / 2;
+            int newWidth = tabPage1panel1.ClientSize.Width / 1 - tabPage1panel1.ClientSize.Width / 9;
             int newHeight = tabPage1panel1.ClientSize.Height / 1 - tabPage1panel1.ClientSize.Height / 8;
 
+            // 370-705
+            if(newWidth>=370 && newWidth<=705)
+            {
+                newWidth = 370;
+            }
+            else if (newWidth > 705 && newWidth <= 1055)
+            {
+                newWidth = 720;
+            }
+            else if (newWidth > 1055)
+            {
+                newWidth = 1055 + 10;
+            }
             tabPage1FlowLayoutPanel1.Width = newWidth;
             tabPage1FlowLayoutPanel1.Height = newHeight;
 
@@ -514,5 +557,11 @@ namespace GasFormsApp
             Console.WriteLine($"FlowLayoutPanel 宽度: {tabPage1FlowLayoutPanel1.Width}, 高度: {tabPage1FlowLayoutPanel1.Height}");
         }
 
+        private void tabPage3panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // 居中定位
+            //tabPage3panel2.Left = (tabPage3panel1.ClientSize.Width - tabPage3panel2.ClientSize.Width) / 2;
+            //tabPage3panel2.Top = (tabPage3panel1.ClientSize.Height - tabPage3panel2.ClientSize.Width) / 2;
+        }
     }
 }
