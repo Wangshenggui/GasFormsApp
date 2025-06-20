@@ -118,6 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BulkImportButton.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAZtJREFUWEft
+        V8tNw0AQdQMoYCggEjeqoAuuNII4U4CdcCB2JA50QSkpISXAvvHMsruedRx7fCJPepK9szPv7Vd2Ibje
+        NOty0zZl3f4Y8YB6qMsSebhOj/3k/ett1TzPJWqzTB4kyOKjEqwh4hg1N3lgCmHKglwyBgJigJsIrn19
+        U7ff3pwNaWlZooMYgBg3kXiSaEu3OVlKN2B8GlRCl8RUA8GmXIyyFBkDepIlLwYuBv6DAbr1UJ803HMU
+        X9RAeNMFcFq4Ybs7ZjEDGXEBm1jIQCKO2qjrxRj4TrA3oIiHcYycQwT/bmLghHhYuwcDAwdOI5wlDsw1
+        gHxOQ62XMOZq0lFUud09SNIsA5xSrN7bey0+xLu3j6u5Bvz0r6rdkxIfpBigc2mxBGW9/4riVXtUpx/c
+        fnZLAEB8qgHHaBNS8YG4ClwMMwz83WqM1ERYOwuY4MfzDYAnTGCpOURI3yPAcZg8mroJ+kfkJgLawwH3
+        gIRe8bFMTKSQUzc4Awi6TtM/zTMmuG50crKgzq7Q5OVwA5C/Y1A2eixeFL8LV3M5IS1RuAAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <data name="SaveButton.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6

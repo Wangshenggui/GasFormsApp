@@ -399,6 +399,7 @@ namespace GasFormsApp
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage2panel6 = new System.Windows.Forms.Panel();
+            this.BulkImportButton = new GasFormsApp.UI.UCButton();
             this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
             this.DesVolUndTextBox = new System.Windows.Forms.TextBox();
             this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
@@ -2948,7 +2949,6 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedPanel2.Name = "tabPage2DoubleBufferedPanel2";
             this.tabPage2DoubleBufferedPanel2.Size = new System.Drawing.Size(1435, 671);
             this.tabPage2DoubleBufferedPanel2.TabIndex = 1002;
-            this.tabPage2DoubleBufferedPanel2.SizeChanged += new System.EventHandler(this.tabPage2DoubleBufferedPanel2_SizeChanged);
             // 
             // tabPage2DoubleBufferedFlowLayoutPanel1
             // 
@@ -4592,6 +4592,7 @@ namespace GasFormsApp
             // tabPage2panel6
             // 
             this.tabPage2panel6.BackColor = System.Drawing.Color.RosyBrown;
+            this.tabPage2panel6.Controls.Add(this.BulkImportButton);
             this.tabPage2panel6.Controls.Add(this.SampLossVolTextBox);
             this.tabPage2panel6.Controls.Add(this.DesVolUndTextBox);
             this.tabPage2panel6.Controls.Add(this.UndDesorpCalTextBox);
@@ -4601,8 +4602,28 @@ namespace GasFormsApp
             this.tabPage2panel6.Controls.Add(this.label18);
             this.tabPage2panel6.Location = new System.Drawing.Point(330, 464);
             this.tabPage2panel6.Name = "tabPage2panel6";
-            this.tabPage2panel6.Size = new System.Drawing.Size(485, 340);
+            this.tabPage2panel6.Size = new System.Drawing.Size(485, 218);
             this.tabPage2panel6.TabIndex = 1000;
+            // 
+            // BulkImportButton
+            // 
+            this.BulkImportButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BulkImportButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BulkImportButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("BulkImportButton.ButtonImage")));
+            this.BulkImportButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.BulkImportButton.FlatAppearance.BorderSize = 0;
+            this.BulkImportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BulkImportButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BulkImportButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.BulkImportButton.Location = new System.Drawing.Point(19, 156);
+            this.BulkImportButton.Name = "BulkImportButton";
+            this.BulkImportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BulkImportButton.Radius = 15;
+            this.BulkImportButton.Size = new System.Drawing.Size(130, 42);
+            this.BulkImportButton.TabIndex = 1001;
+            this.BulkImportButton.Text = "     批量导入";
+            this.BulkImportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BulkImportButton.UseVisualStyleBackColor = false;
             // 
             // SampLossVolTextBox
             // 
@@ -4610,7 +4631,7 @@ namespace GasFormsApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SampLossVolTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.SampLossVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampLossVolTextBox.Location = new System.Drawing.Point(144, 71);
+            this.SampLossVolTextBox.Location = new System.Drawing.Point(127, 18);
             this.SampLossVolTextBox.Name = "SampLossVolTextBox";
             this.SampLossVolTextBox.ReadOnly = true;
             this.SampLossVolTextBox.Size = new System.Drawing.Size(278, 26);
@@ -4624,7 +4645,7 @@ namespace GasFormsApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.DesVolUndTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.DesVolUndTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesVolUndTextBox.Location = new System.Drawing.Point(143, 113);
+            this.DesVolUndTextBox.Location = new System.Drawing.Point(126, 60);
             this.DesVolUndTextBox.Name = "DesVolUndTextBox";
             this.DesVolUndTextBox.ReadOnly = true;
             this.DesVolUndTextBox.Size = new System.Drawing.Size(279, 26);
@@ -4638,7 +4659,7 @@ namespace GasFormsApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.UndDesorpCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.UndDesorpCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndDesorpCalTextBox.Location = new System.Drawing.Point(142, 154);
+            this.UndDesorpCalTextBox.Location = new System.Drawing.Point(125, 101);
             this.UndDesorpCalTextBox.Name = "UndDesorpCalTextBox";
             this.UndDesorpCalTextBox.ReadOnly = true;
             this.UndDesorpCalTextBox.Size = new System.Drawing.Size(279, 26);
@@ -4650,7 +4671,7 @@ namespace GasFormsApp
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label53.Location = new System.Drawing.Point(33, 80);
+            this.label53.Location = new System.Drawing.Point(16, 27);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(111, 16);
             this.label53.TabIndex = 3;
@@ -4660,7 +4681,7 @@ namespace GasFormsApp
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(33, 118);
+            this.label54.Location = new System.Drawing.Point(16, 65);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(111, 16);
             this.label54.TabIndex = 3;
@@ -4668,7 +4689,7 @@ namespace GasFormsApp
             // 
             // DrawCurvesButton
             // 
-            this.DrawCurvesButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.DrawCurvesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DrawCurvesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.DrawCurvesButton.ButtonImage = global::GasFormsApp.Properties.Resources.打勾;
             this.DrawCurvesButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
@@ -4676,7 +4697,7 @@ namespace GasFormsApp
             this.DrawCurvesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrawCurvesButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DrawCurvesButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.DrawCurvesButton.Location = new System.Drawing.Point(179, 233);
+            this.DrawCurvesButton.Location = new System.Drawing.Point(179, 156);
             this.DrawCurvesButton.Name = "DrawCurvesButton";
             this.DrawCurvesButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.DrawCurvesButton.Radius = 35;
@@ -4691,7 +4712,7 @@ namespace GasFormsApp
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(33, 157);
+            this.label18.Location = new System.Drawing.Point(16, 104);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 16);
             this.label18.TabIndex = 111;
@@ -4859,7 +4880,6 @@ namespace GasFormsApp
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label2;
         private TabPage tabPage3;
         private TabPage tabPage4;
         private Label label20;
@@ -5078,9 +5098,6 @@ namespace GasFormsApp
         public TextBox textBox17;
         public UI.DoubleBufferedFlowLayoutPanel tabPage1DoubleBufferedFlowLayoutPanel1;
         public Panel tabPage1panel1;
-        private UI.DoubleBufferedPanel tabPage2DoubleBufferedPanel2;
-        private UI.DoubleBufferedFlowLayoutPanel tabPage2DoubleBufferedFlowLayoutPanel1;
-        private UI.DoubleBufferedPanel tabPage2DoubleBufferedPanel1;
         public DateTimePicker dateTimePicker3;
         public DateTimePicker dateTimePicker2;
         public ComboBox comboBox3;
@@ -5224,7 +5241,6 @@ namespace GasFormsApp
         private Panel tabPage2panel5;
         private Label label23;
         public PictureBox pictureBox3;
-        private Panel tabPage2panel6;
         public TextBox SampLossVolTextBox;
         public TextBox DesVolUndTextBox;
         public TextBox UndDesorpCalTextBox;
@@ -5232,5 +5248,11 @@ namespace GasFormsApp
         private Label label54;
         public UI.UCButton DrawCurvesButton;
         private Label label18;
+        public UI.DoubleBufferedPanel tabPage2DoubleBufferedPanel2;
+        public UI.DoubleBufferedFlowLayoutPanel tabPage2DoubleBufferedFlowLayoutPanel1;
+        public Panel tabPage2panel6;
+        public UI.DoubleBufferedPanel tabPage2DoubleBufferedPanel1;
+        private Label label2;
+        public UI.UCButton BulkImportButton;
     }
 }

@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Color = System.Drawing.Color;
 using Control = System.Windows.Forms.Control;
+using Font = System.Drawing.Font;
 using TextBox = System.Windows.Forms.TextBox;
 
 namespace GasFormsApp.TabControl
@@ -27,11 +29,53 @@ namespace GasFormsApp.TabControl
 
 
             _mainForm.toolTip1.SetToolTip(_mainForm.DrawCurvesButton, "计算(Ctrl + D)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.BulkImportButton, "批量导入(Ctrl + I)");
 
             // 注册回调函数
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
+            _mainForm.BulkImportButton.Click += BulkImportButton_Click;
+            _mainForm.tabPage2DoubleBufferedPanel2.SizeChanged += tabPage2DoubleBufferedPanel2_SizeChanged;
         }
 
+        private void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
+        {
+            int newWidth;
+            int newHeight;
+            if (_mainForm.Width > 970)
+            {
+                newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 9;
+            }
+            else
+            {
+                newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1;
+            }
+            newHeight = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 8;
+
+
+            // 840-1165
+            if (newWidth <= 1165)
+            {
+                newWidth = 840;
+                //tabPage2panel6.Height = tabPage2panel5.Height;
+                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
+            }
+            else if (newWidth > 1165)
+            {
+                newWidth = 1165;
+                //tabPage2panel6.Height = tabPage2DoubleBufferedPanel1.Height;
+                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
+            }
+            _mainForm.tabPage2DoubleBufferedPanel1.Width = newWidth - 30;
+
+
+            _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
+            _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Height = newHeight;
+
+            // 居中定位
+            _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width - newWidth) / 2;
+            _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height - newHeight) / 2;
+
+        }
         private void ValidateNumericDataNumTextBox31_60(TextBox textBox)
         {
             string input = textBox.Text;
@@ -84,6 +128,7 @@ namespace GasFormsApp.TabControl
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
         }
+        
         public void TabControl_2_InputCheckTimer_Tick()
         {
             //ValidateNumericTextBox(_mainForm.t0TextBox);
@@ -128,7 +173,76 @@ namespace GasFormsApp.TabControl
                     ValidateNumericTextBox(tb);
                 }
             }
+
+            DigitalLegitimacyVerification_Tick();
         }
+        // 数据合法性校验
+        public void DigitalLegitimacyVerification_Tick()
+        {
+            List<TextBox> boxes = new List<TextBox>();
+
+            for (int i = 1; i <= 60; i++)
+            {
+                var tb = _mainForm.Controls.Find("DesorbTextBox" + i, true).FirstOrDefault() as TextBox;
+                if (tb != null)
+                {
+                    boxes.Add(tb);
+                    // 恢复默认颜色与样式
+                    tb.ForeColor = Color.Black;
+                    tb.Font = new Font(tb.Font, FontStyle.Regular);
+                }
+                else
+                {
+                    Console.WriteLine($"未找到 DesorbTextBox{i}");
+                }
+            }
+
+            double lastValue = double.MinValue;
+            bool hasLastValue = false;
+            bool isValid = true;
+
+            for (int i = 0; i < boxes.Count; i++)
+            {
+                string text = boxes[i].Text.Trim();
+
+                if (string.IsNullOrEmpty(text))
+                    continue;
+
+                if (!double.TryParse(text, out double currentValue))
+                {
+                    boxes[i].ForeColor = Color.Blue;
+                    boxes[i].Font = new Font(boxes[i].Font.FontFamily, boxes[i].Font.Size, FontStyle.Bold | FontStyle.Italic);
+                    isValid = false;
+                    continue;
+                }
+
+                if (hasLastValue && currentValue < lastValue)
+                {
+                    var errorFont = new Font(boxes[i].Font.FontFamily, boxes[i].Font.Size, FontStyle.Bold | FontStyle.Italic);
+
+                    boxes[i].ForeColor = Color.Blue;
+                    boxes[i].Font = errorFont;
+
+                    if (i - 1 >= 0)
+                    {
+                        boxes[i - 1].ForeColor = Color.Red;
+                        boxes[i - 1].Font = errorFont;
+                    }
+
+                    if (i + 1 < boxes.Count)
+                    {
+                        boxes[i + 1].ForeColor = Color.Red;
+                        boxes[i + 1].Font = errorFont;
+                    }
+
+                    isValid = false;
+                }
+
+                lastValue = currentValue;
+                hasLastValue = true;
+            }
+        }
+
         /// <summary>
         /// 计算井下解吸校准体积（Desorption Calibrated Volume）
         /// </summary>
@@ -147,6 +261,113 @@ namespace GasFormsApp.TabControl
         }
 
 
+        // 读取excel数据
+        public void ReadExcel(string filePath)
+        {
+            using (var workbook = new XLWorkbook(filePath))
+            {
+                var worksheet = workbook.Worksheets.First(); // 读取第一个 sheet
+                var rows = worksheet.RangeUsed().RowsUsed();
+
+                foreach (var row in rows)
+                {
+                    foreach (var cell in row.Cells())
+                    {
+                        Console.Write(cell.Value.ToString() + "\t");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+        public void ImportExcelToTextBoxes(string excelPath)
+        {
+            var workbook = new XLWorkbook(excelPath);
+            var worksheet = workbook.Worksheet(1);
+
+            int desorbIndex = 31; // 解吸量填充起始控件编号
+            int dataNumIndex = 31; // 时间填充起始控件编号
+
+            for (int row = 2; row <= worksheet.LastRowUsed().RowNumber(); row++)
+            {
+                var timeCell = worksheet.Cell(row, 1);
+                var valueCell = worksheet.Cell(row, 2);
+
+                if (int.TryParse(timeCell.GetValue<string>(), out int time))
+                {
+                    string desorbValue = valueCell.GetValue<string>();
+
+                    // 1~30 按时间值匹配控件填充解吸量
+                    if (time >= 1 && time <= 30)
+                    {
+                        string textBoxName = $"DesorbTextBox{time}";
+                        var tb = _mainForm.Controls.Find(textBoxName, true).FirstOrDefault() as TextBox;
+                        if (tb != null)
+                            tb.Text = desorbValue;
+                    }
+
+                    // 31及以上，按顺序填充 DesorbTextBox 和 DataNumTextBox
+                    if (time >= 31)
+                    {
+                        // 解吸量填充 DesorbTextBox{desorbIndex}
+                        string desorbBoxName = $"DesorbTextBox{desorbIndex}";
+                        var desorbTb = _mainForm.Controls.Find(desorbBoxName, true).FirstOrDefault() as TextBox;
+                        if (desorbTb != null)
+                            desorbTb.Text = desorbValue;
+
+                        // 时间填充 DataNumTextBox{dataNumIndex}
+                        string dataNumBoxName = $"DataNumTextBox{dataNumIndex}";
+                        var dataTb = _mainForm.Controls.Find(dataNumBoxName, true).FirstOrDefault() as TextBox;
+                        if (dataTb != null)
+                            dataTb.Text = time.ToString();
+
+                        desorbIndex++;
+                        dataNumIndex++;
+                    }
+                }
+            }
+        }
+
+
+        // 弹出对话框让用户选择 Excel 文件
+        public string SelectExcelFile()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                var lastFolder = GasFormsApp.Settings.Default.LastFolder;
+                openFileDialog.InitialDirectory = string.IsNullOrEmpty(lastFolder)
+                    ? Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    : lastFolder;
+
+                openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+                openFileDialog.Title = "请选择Excel文件";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    GasFormsApp.Settings.Default.LastFolder = Path.GetDirectoryName(openFileDialog.FileName);
+                    GasFormsApp.Settings.Default.Save();  // 这里改成和赋值一致的类
+                    return openFileDialog.FileName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+
+        public void BulkImportButton_Click(object sender, EventArgs e)
+        {
+            string excelPath = SelectExcelFile();
+            if (!string.IsNullOrEmpty(excelPath))
+            {
+                ImportExcelToTextBoxes(excelPath);
+            }
+            else
+            {
+                MessageBox.Show("未选择文件");
+                return;
+            }
+        }
         public void DrawCurvesButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("你干么：" + 45);

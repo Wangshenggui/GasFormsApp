@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Windows.Forms;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using GasFormsApp.TabControl;
@@ -429,6 +430,22 @@ namespace GasFormsApp
             pictureBox1.Image = img;
             // 强制拉满填充
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // 动态修改软件标题（非App上端）
+            string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "CompanyName.ini");
+            string companyName = ReadValue("CompanyName", "CompanyName", iniPath);
+            label2.Text = companyName;
+        }
+        // 动态修改软件标题（非App上端）
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        static extern int GetPrivateProfileString(
+            string section, string key, string defaultValue,
+            StringBuilder returnValue, int size, string filePath);
+        public string ReadValue(string section, string key, string _filePath)
+        {
+            StringBuilder result = new StringBuilder(1024);
+            GetPrivateProfileString(section, key, "", result, result.Capacity, _filePath);
+            return result.ToString();
         }
 
         //文本检测100ms定时器
@@ -530,6 +547,16 @@ namespace GasFormsApp
 
                 e.Handled = true;
             }
+            // 批量导入数据
+            else if(e.Control && e.KeyCode == Keys.I)
+            {
+                if (currentTab.Name == "tabPage2")
+                {
+                    myTabLogic2.BulkImportButton_Click(sender, e);
+                }
+
+                e.Handled = true;
+            }
         }
         // tab5调用tab6的函数
         public void tab5_6_SaveButton(object sender, EventArgs e)
@@ -549,48 +576,7 @@ namespace GasFormsApp
             myTabLogic4.P瓦斯压力选择();
         }
 
-
-        private void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
-        {
-            int newWidth;
-            int newHeight;
-            if (this.Width > 970)
-            {
-                newWidth = tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - tabPage2DoubleBufferedPanel2.ClientSize.Width / 9;
-            }
-            else
-            {
-                newWidth = tabPage2DoubleBufferedPanel2.ClientSize.Width / 1;
-            }
-            newHeight = tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - tabPage2DoubleBufferedPanel2.ClientSize.Height / 8;
-
-
-            // 840-1165
-            if (newWidth <= 1165)
-            {
-                newWidth = 840;
-                //tabPage2panel6.Height = tabPage2panel5.Height;
-                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
-            }
-            else if (newWidth > 1165)
-            {
-                newWidth = 1165;
-                //tabPage2panel6.Height = tabPage2DoubleBufferedPanel1.Height;
-                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
-            }
-            tabPage2DoubleBufferedPanel1.Width = newWidth - 30;
-
-
-            tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
-            tabPage2DoubleBufferedFlowLayoutPanel1.Height = newHeight;
-
-            // 居中定位
-            tabPage2DoubleBufferedFlowLayoutPanel1.Left = (tabPage2DoubleBufferedPanel2.ClientSize.Width - newWidth) / 2;
-            tabPage2DoubleBufferedFlowLayoutPanel1.Top = (tabPage2DoubleBufferedPanel2.ClientSize.Height - newHeight) / 2;
-
-            Console.WriteLine($"宽度: {newWidth}, 高度: {newHeight}");
-        }
-
+        // 系统窗口重绘机制
         private bool _suspendDrawing = false;
         protected override void WndProc(ref Message m)
         {

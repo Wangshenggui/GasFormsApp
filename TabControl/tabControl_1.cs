@@ -42,8 +42,8 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage1panel1.ClientSize.Height - newHeight) / 2;
 
 
-            Console.WriteLine($"FlowLayoutPanel 宽度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width}, 高度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height}");
-            Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
+            //Console.WriteLine($"FlowLayoutPanel 宽度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width}, 高度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height}");
+            //Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
         }
 
         private void ValidateEmptyTextBox(TextBox textBox)
