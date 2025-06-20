@@ -13,6 +13,37 @@ namespace GasFormsApp.TabControl
         public tabControl_1(MainForm form)
         {
             _mainForm = form;
+
+            _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Paint += tabPage1DoubleBufferedFlowLayoutPanel1_Paint;
+        }
+        private void tabPage1DoubleBufferedFlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            int newWidth = _mainForm.tabPage1panel1.ClientSize.Width / 1 - _mainForm.tabPage1panel1.ClientSize.Width / 9;
+            int newHeight = _mainForm.tabPage1panel1.ClientSize.Height / 1 - _mainForm.tabPage1panel1.ClientSize.Height / 8;
+
+            // 370-705
+            if (newWidth >= 370 && newWidth <= 705)
+            {
+                newWidth = 370;
+            }
+            else if (newWidth > 705 && newWidth <= 1055)
+            {
+                newWidth = 720;
+            }
+            else if (newWidth > 1055)
+            {
+                newWidth = 1055 + 10;
+            }
+            _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width = newWidth;
+            _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height = newHeight;
+
+            // 居中定位
+            _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage1panel1.ClientSize.Width - newWidth) / 2;
+            _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage1panel1.ClientSize.Height - newHeight) / 2;
+
+
+            Console.WriteLine($"FlowLayoutPanel 宽度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width}, 高度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height}");
+            Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
         }
 
         private void ValidateEmptyTextBox(TextBox textBox)

@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
@@ -106,6 +107,11 @@ namespace GasFormsApp
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
+              ControlStyles.AllPaintingInWmPaint |
+              ControlStyles.UserPaint, true);
+            this.UpdateStyles();
 
             GasComp_Lab1 = "H₂";      // 氢气
             GasComp_Lab2 = "O₂";      // 氧气
@@ -375,6 +381,17 @@ namespace GasFormsApp
                 }
             }
         }
+        private void EnableDoubleBuffering(Control control)
+        {
+            typeof(Control).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty |
+                System.Reflection.BindingFlags.Instance |
+                System.Reflection.BindingFlags.NonPublic,
+                null,
+                control,
+                new object[] { true });
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -388,6 +405,9 @@ namespace GasFormsApp
 
             xRatio = screenWidth / 1920f; // 假设设计时是 1920x1080
             yRatio = screenHeight / 1080f;
+
+            EnableDoubleBuffering(this.tabControl1);
+
 
             //ResizeControls(this);
 
@@ -529,39 +549,107 @@ namespace GasFormsApp
             myTabLogic4.P瓦斯压力选择();
         }
 
-        private void tabPage1panel1_Paint(object sender, PaintEventArgs e)
-        {
-            int newWidth = tabPage1panel1.ClientSize.Width / 1 - tabPage1panel1.ClientSize.Width / 9;
-            int newHeight = tabPage1panel1.ClientSize.Height / 1 - tabPage1panel1.ClientSize.Height / 8;
 
-            // 370-705
-            if(newWidth>=370 && newWidth<=705)
+        private void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
+        {
+            int newWidth;
+            int newHeight;
+            if (this.Width > 970)
             {
-                newWidth = 370;
+                newWidth = tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - tabPage2DoubleBufferedPanel2.ClientSize.Width / 9;
             }
-            else if (newWidth > 705 && newWidth <= 1055)
+            else
             {
-                newWidth = 720;
+                newWidth = tabPage2DoubleBufferedPanel2.ClientSize.Width / 1;
             }
-            else if (newWidth > 1055)
+            newHeight = tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - tabPage2DoubleBufferedPanel2.ClientSize.Height / 8;
+
+
+            // 840-1165
+            if (newWidth <= 1165)
             {
-                newWidth = 1055 + 10;
+                newWidth = 840;
+                //tabPage2panel6.Height = tabPage2panel5.Height;
+                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
             }
-            tabPage1FlowLayoutPanel1.Width = newWidth;
-            tabPage1FlowLayoutPanel1.Height = newHeight;
+            else if (newWidth > 1165)
+            {
+                newWidth = 1165;
+                //tabPage2panel6.Height = tabPage2DoubleBufferedPanel1.Height;
+                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
+            }
+            tabPage2DoubleBufferedPanel1.Width = newWidth - 30;
+
+
+            tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
+            tabPage2DoubleBufferedFlowLayoutPanel1.Height = newHeight;
 
             // 居中定位
-            tabPage1FlowLayoutPanel1.Left = (tabPage1panel1.ClientSize.Width - newWidth) / 2;
-            tabPage1FlowLayoutPanel1.Top = (tabPage1panel1.ClientSize.Height - newHeight) / 2;
+            tabPage2DoubleBufferedFlowLayoutPanel1.Left = (tabPage2DoubleBufferedPanel2.ClientSize.Width - newWidth) / 2;
+            tabPage2DoubleBufferedFlowLayoutPanel1.Top = (tabPage2DoubleBufferedPanel2.ClientSize.Height - newHeight) / 2;
 
-            Console.WriteLine($"FlowLayoutPanel 宽度: {tabPage1FlowLayoutPanel1.Width}, 高度: {tabPage1FlowLayoutPanel1.Height}");
+            Console.WriteLine($"宽度: {newWidth}, 高度: {newHeight}");
         }
 
-        private void tabPage3panel1_Paint(object sender, PaintEventArgs e)
+        private bool _suspendDrawing = false;
+        protected override void WndProc(ref Message m)
         {
-            // 居中定位
-            //tabPage3panel2.Left = (tabPage3panel1.ClientSize.Width - tabPage3panel2.ClientSize.Width) / 2;
-            //tabPage3panel2.Top = (tabPage3panel1.ClientSize.Height - tabPage3panel2.ClientSize.Width) / 2;
+            const int WM_ENTERSIZEMOVE = 0x0231;
+            const int WM_EXITSIZEMOVE = 0x0232;
+            const int WM_SIZE = 0x0005;
+
+            const int SIZE_MAXIMIZED = 2;
+            const int SIZE_RESTORED = 1;
+
+            switch (m.Msg)
+            {
+                case WM_ENTERSIZEMOVE:
+                    _suspendDrawing = true;
+                    SuspendDrawing(this);
+                    break;
+
+                case WM_EXITSIZEMOVE:
+                    _suspendDrawing = false;
+                    ResumeDrawing(this);
+                    this.Invalidate();  // 触发重绘
+                    break;
+
+                case WM_SIZE:
+                    int wParam = m.WParam.ToInt32();
+                    if (wParam == SIZE_MAXIMIZED || wParam == SIZE_RESTORED)
+                    {
+                        // 暂停绘制
+                        SuspendDrawing(this);
+                        _suspendDrawing = true;
+
+                        // 这里可以延迟一点点再重绘
+                        BeginInvoke(new Action(() =>
+                        {
+                            _suspendDrawing = false;
+                            ResumeDrawing(this);
+                            this.Invalidate();
+                        }));
+                    }
+                    break;
+            }
+
+            base.WndProc(ref m);
         }
+
+        public static void SuspendDrawing(Control parent)
+        {
+            SendMessage(parent.Handle, WM_SETREDRAW, false, 0);
+        }
+
+        public static void ResumeDrawing(Control parent)
+        {
+            SendMessage(parent.Handle, WM_SETREDRAW, true, 0);
+            parent.Refresh();
+        }
+
+        private const int WM_SETREDRAW = 0x000B;
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, bool wParam, int lParam);
     }
 }

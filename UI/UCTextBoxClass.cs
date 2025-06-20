@@ -72,6 +72,23 @@ namespace GasFormsApp.UI
         }
 
         public TextBox InnerTextBox => _textBox; // 方便直接访问内部TextBox
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // UCTextBoxClass
+            // 
+            this.Name = "UCTextBoxClass";
+            this.Load += new System.EventHandler(this.UCTextBoxClass_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void UCTextBoxClass_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -7,6 +7,72 @@ using System.Windows.Forms;
 
 namespace GasFormsApp.UI
 {
+    public class DoubleBufferedFlowLayoutPanel : FlowLayoutPanel
+    {
+        private FlowLayoutPanel flowLayoutPanel1;
+
+        public DoubleBufferedFlowLayoutPanel()
+        {
+            this.DoubleBuffered = true;
+            this.ResizeRedraw = true;
+        }
+
+        private void InitializeComponent()
+        {
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.ResumeLayout(false);
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+    public class DoubleBufferedPanel : Panel
+    {
+        private Panel panel1;
+
+        public DoubleBufferedPanel()
+        {
+            this.DoubleBuffered = true;
+            this.ResizeRedraw = true;
+            //InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.Controls.Add(this.panel1); // ← 加入子控件
+            this.ResumeLayout(false);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // 可以在这里进行自定义绘图
+        }
+    }
+
+
+
     // 定义按钮上图片的对齐方式枚举
     public enum ImageAlign
     {

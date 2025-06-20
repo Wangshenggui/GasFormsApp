@@ -170,6 +170,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\UCButtonClass.resx">
+      <DependentUpon>UCButtonClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCTextBoxClass.resx">
+      <DependentUpon>UCTextBoxClass.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <EmbeddedResource Include="GasFormsApp.WordTemplate1_1.docx" />
     <EmbeddedResource Include="GasFormsApp.WordTemplate1_2.docx" />
@@ -230,8 +236,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Image\6.ico" />
-    <EmbeddedResource Include="Image\1_round_solid_数字1_by_climei_64x64.ico" />
-    <EmbeddedResource Include="Image\1_round_solid_数字1_by_climei.ico" />
     <Content Include="Image\log.jpg" />
     <Content Include="Image\保存.png" />
     <None Include="Image\打勾.png" />

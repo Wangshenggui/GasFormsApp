@@ -38,194 +38,7 @@ namespace GasFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tabPage1FlowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.MineNameTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.SamplingSpotTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.BurialDepthTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CoalSeamTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.UndAtmPressureTextBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.LabAtmPressureTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.UndTempTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.LabTempTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.MoistureSampleTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.SampleModeComboBox = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.SampleNumTextBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.RawCoalMoistureTextBox = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.InitialVolumeTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.SampleWeightTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SamplingDepthTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.SamplingTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label37 = new System.Windows.Forms.Label();
-            this.DrillInclinationTextBox = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.SamplingPersonnelTextBox = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.AzimuthTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.t0TextBox = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label35 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.DataNumTextBox60 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox59 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox58 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox57 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox56 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox55 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox54 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox53 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox52 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox51 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox50 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox49 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox48 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox47 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox46 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox45 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox44 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox43 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox42 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox41 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox40 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox39 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox38 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox37 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox36 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox35 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox34 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox33 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox32 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox31 = new System.Windows.Forms.TextBox();
-            this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.DesorbTextBox60 = new System.Windows.Forms.TextBox();
-            this.DesVolUndTextBox = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox31 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.DesorbTextBox41 = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.DesorbTextBox50 = new System.Windows.Forms.TextBox();
-            this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox40 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox51 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox32 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox42 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox59 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox52 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox49 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox39 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox33 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox43 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox58 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox53 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox48 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox38 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox34 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox44 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox57 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox54 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox47 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox37 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox35 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox45 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox56 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox55 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox46 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox36 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox11 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox20 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox10 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox21 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox2 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox12 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox29 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox22 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox19 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox9 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox3 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox13 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox28 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox23 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox18 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox8 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox4 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox14 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox27 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox24 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox17 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox7 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox5 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox15 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox26 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox25 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox16 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox6 = new System.Windows.Forms.TextBox();
-            this.DataNumLabel1 = new System.Windows.Forms.Label();
-            this.DataNumLabel11 = new System.Windows.Forms.Label();
-            this.DataNumLabel21 = new System.Windows.Forms.Label();
-            this.DataNumLabel2 = new System.Windows.Forms.Label();
-            this.DataNumLabel30 = new System.Windows.Forms.Label();
-            this.DataNumLabel12 = new System.Windows.Forms.Label();
-            this.DataNumLabel22 = new System.Windows.Forms.Label();
-            this.DataNumLabel20 = new System.Windows.Forms.Label();
-            this.DataNumLabel10 = new System.Windows.Forms.Label();
-            this.DataNumLabel3 = new System.Windows.Forms.Label();
-            this.DataNumLabel13 = new System.Windows.Forms.Label();
-            this.DataNumLabel29 = new System.Windows.Forms.Label();
-            this.DataNumLabel23 = new System.Windows.Forms.Label();
-            this.DataNumLabel19 = new System.Windows.Forms.Label();
-            this.DataNumLabel9 = new System.Windows.Forms.Label();
-            this.DataNumLabel4 = new System.Windows.Forms.Label();
-            this.DataNumLabel14 = new System.Windows.Forms.Label();
-            this.DataNumLabel28 = new System.Windows.Forms.Label();
-            this.DataNumLabel24 = new System.Windows.Forms.Label();
-            this.DataNumLabel18 = new System.Windows.Forms.Label();
-            this.DataNumLabel8 = new System.Windows.Forms.Label();
-            this.DataNumLabel5 = new System.Windows.Forms.Label();
-            this.DataNumLabel15 = new System.Windows.Forms.Label();
-            this.DataNumLabel27 = new System.Windows.Forms.Label();
-            this.DataNumLabel25 = new System.Windows.Forms.Label();
-            this.DataNumLabel17 = new System.Windows.Forms.Label();
-            this.DataNumLabel7 = new System.Windows.Forms.Label();
-            this.DataNumLabel6 = new System.Windows.Forms.Label();
-            this.DataNumLabel16 = new System.Windows.Forms.Label();
-            this.DataNumLabel26 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage3panel1 = new System.Windows.Forms.Panel();
             this.tabPage3panel2 = new System.Windows.Forms.Panel();
@@ -347,6 +160,45 @@ namespace GasFormsApp
             this.CH4_Lable = new System.Windows.Forms.Label();
             this.GasCompCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label61 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ExportTheDocumentButton = new System.Windows.Forms.Button();
             this.DeleteDataButton = new System.Windows.Forms.Button();
             this.FindTextBox = new System.Windows.Forms.TextBox();
@@ -361,7 +213,199 @@ namespace GasFormsApp
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabPage1DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MineNameTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SamplingSpotTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.BurialDepthTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CoalSeamTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.UndAtmPressureTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.LabAtmPressureTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.UndTempTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.LabTempTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.MoistureSampleTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.SampleModeComboBox = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.SampleNumTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.RawCoalMoistureTextBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.InitialVolumeTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.SampleWeightTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SamplingDepthTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SamplingTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label37 = new System.Windows.Forms.Label();
+            this.DrillInclinationTextBox = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.AzimuthTextBox = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.SamplingPersonnelTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage2DoubleBufferedPanel2 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.tabPage2DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
+            this.tabPage2DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.t0TextBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.tabPage2panel3 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.DataNumLabel26 = new System.Windows.Forms.Label();
+            this.DataNumLabel16 = new System.Windows.Forms.Label();
+            this.DataNumLabel6 = new System.Windows.Forms.Label();
+            this.DataNumLabel7 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.DataNumLabel17 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.DataNumLabel25 = new System.Windows.Forms.Label();
+            this.DataNumLabel27 = new System.Windows.Forms.Label();
+            this.DataNumLabel15 = new System.Windows.Forms.Label();
+            this.DataNumLabel5 = new System.Windows.Forms.Label();
+            this.DataNumLabel8 = new System.Windows.Forms.Label();
+            this.DataNumLabel18 = new System.Windows.Forms.Label();
+            this.DataNumLabel24 = new System.Windows.Forms.Label();
+            this.DataNumLabel28 = new System.Windows.Forms.Label();
+            this.DataNumLabel14 = new System.Windows.Forms.Label();
+            this.DataNumLabel4 = new System.Windows.Forms.Label();
+            this.DataNumLabel9 = new System.Windows.Forms.Label();
+            this.DataNumLabel19 = new System.Windows.Forms.Label();
+            this.DataNumLabel23 = new System.Windows.Forms.Label();
+            this.DataNumLabel29 = new System.Windows.Forms.Label();
+            this.DataNumLabel13 = new System.Windows.Forms.Label();
+            this.DataNumLabel3 = new System.Windows.Forms.Label();
+            this.DataNumLabel10 = new System.Windows.Forms.Label();
+            this.DataNumLabel20 = new System.Windows.Forms.Label();
+            this.DataNumLabel22 = new System.Windows.Forms.Label();
+            this.DataNumLabel12 = new System.Windows.Forms.Label();
+            this.DataNumLabel30 = new System.Windows.Forms.Label();
+            this.DataNumLabel2 = new System.Windows.Forms.Label();
+            this.DataNumLabel21 = new System.Windows.Forms.Label();
+            this.DataNumLabel11 = new System.Windows.Forms.Label();
+            this.DataNumLabel1 = new System.Windows.Forms.Label();
+            this.DesorbTextBox6 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox16 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox25 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox26 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox15 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox5 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox7 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox17 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox24 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox27 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox14 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox4 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox8 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox18 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox23 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox28 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox13 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox3 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox9 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox19 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox22 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox29 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox12 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox2 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox21 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox10 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox20 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox11 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
+            this.tabPage2panel4 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.DesorbTextBox36 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.DesorbTextBox46 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox55 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox56 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox45 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox60 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox35 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox59 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox37 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox58 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox47 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox57 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox54 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox56 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox57 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox55 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox44 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox54 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox34 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox53 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox38 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox52 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox48 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox51 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox53 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox50 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox58 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox49 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox43 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox48 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox33 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox47 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox39 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox46 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox49 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox45 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox52 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox44 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox59 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox43 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox42 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox42 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox32 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox41 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox51 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox40 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox40 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox39 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox50 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox38 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox41 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox37 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox31 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox36 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox60 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox35 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox31 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox34 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox32 = new System.Windows.Forms.TextBox();
+            this.DataNumTextBox33 = new System.Windows.Forms.TextBox();
+            this.tabPage2panel5 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tabPage2panel6 = new System.Windows.Forms.Panel();
+            this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
+            this.DesVolUndTextBox = new System.Windows.Forms.TextBox();
+            this.UndDesorpCalTextBox = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
             this.DrawCurvesButton = new GasFormsApp.UI.UCButton();
+            this.label18 = new System.Windows.Forms.Label();
             this.LabDesorbButton = new GasFormsApp.UI.UCButton();
             this.ExpCalcButton = new GasFormsApp.UI.UCButton();
             this.SaveButton = new GasFormsApp.UI.UCButton();
@@ -370,11 +414,7 @@ namespace GasFormsApp
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tabPage1FlowLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage3panel1.SuspendLayout();
             this.tabPage3panel2.SuspendLayout();
@@ -383,9 +423,19 @@ namespace GasFormsApp
             this.tabPage5.SuspendLayout();
             this.GasCompGroupBox.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.SuspendLayout();
+            this.tabPage2DoubleBufferedPanel2.SuspendLayout();
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.SuspendLayout();
+            this.tabPage2DoubleBufferedPanel1.SuspendLayout();
+            this.tabPage2panel3.SuspendLayout();
+            this.tabPage2panel4.SuspendLayout();
+            this.tabPage2panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabPage2panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -429,2122 +479,22 @@ namespace GasFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage1panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.tabPage1panel1.Controls.Add(this.pictureBox4);
-            this.tabPage1panel1.Controls.Add(this.tabPage1FlowLayoutPanel1);
+            this.tabPage1panel1.Controls.Add(this.tabPage1DoubleBufferedFlowLayoutPanel1);
             this.tabPage1panel1.Location = new System.Drawing.Point(0, 0);
             this.tabPage1panel1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1panel1.Name = "tabPage1panel1";
             this.tabPage1panel1.Size = new System.Drawing.Size(1435, 671);
             this.tabPage1panel1.TabIndex = 2;
-            this.tabPage1panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1panel1_Paint);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(112, 104);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(134, 104);
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // tabPage1FlowLayoutPanel1
-            // 
-            this.tabPage1FlowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tabPage1FlowLayoutPanel1.AutoScroll = true;
-            this.tabPage1FlowLayoutPanel1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label1);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.MineNameTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label6);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SamplingSpotTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label7);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.BurialDepthTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label3);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.CoalSeamTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label9);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.UndAtmPressureTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label11);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.LabAtmPressureTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label10);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.UndTempTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label12);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.LabTempTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label14);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.MoistureSampleTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label15);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SampleModeComboBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label20);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SampleNumTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label16);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.RawCoalMoistureTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label19);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.InitialVolumeTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label13);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SampleWeightTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label4);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SamplingDepthTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label8);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SamplingTimeDateTimePicker);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label37);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.DrillInclinationTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label41);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.SamplingPersonnelTextBox);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.label38);
-            this.tabPage1FlowLayoutPanel1.Controls.Add(this.AzimuthTextBox);
-            this.tabPage1FlowLayoutPanel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage1FlowLayoutPanel1.Location = new System.Drawing.Point(314, 38);
-            this.tabPage1FlowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPage1FlowLayoutPanel1.Name = "tabPage1FlowLayoutPanel1";
-            this.tabPage1FlowLayoutPanel1.Size = new System.Drawing.Size(718, 598);
-            this.tabPage1FlowLayoutPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 16);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "矿   井    名   称 :";
-            // 
-            // MineNameTextBox
-            // 
-            this.MineNameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.MineNameTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MineNameTextBox.Location = new System.Drawing.Point(180, 3);
-            this.MineNameTextBox.Name = "MineNameTextBox";
-            this.MineNameTextBox.Size = new System.Drawing.Size(167, 26);
-            this.MineNameTextBox.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(360, 10);
-            this.label6.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "取   样    地   点 :";
-            // 
-            // SamplingSpotTextBox
-            // 
-            this.SamplingSpotTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingSpotTextBox.Location = new System.Drawing.Point(530, 3);
-            this.SamplingSpotTextBox.Name = "SamplingSpotTextBox";
-            this.SamplingSpotTextBox.Size = new System.Drawing.Size(167, 26);
-            this.SamplingSpotTextBox.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(10, 46);
-            this.label7.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "埋           深 (m):";
-            // 
-            // BurialDepthTextBox
-            // 
-            this.BurialDepthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BurialDepthTextBox.Location = new System.Drawing.Point(180, 39);
-            this.BurialDepthTextBox.Name = "BurialDepthTextBox";
-            this.BurialDepthTextBox.Size = new System.Drawing.Size(167, 26);
-            this.BurialDepthTextBox.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(360, 46);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 16);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "煤               层:";
-            // 
-            // CoalSeamTextBox
-            // 
-            this.CoalSeamTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CoalSeamTextBox.Location = new System.Drawing.Point(530, 39);
-            this.CoalSeamTextBox.Name = "CoalSeamTextBox";
-            this.CoalSeamTextBox.Size = new System.Drawing.Size(167, 26);
-            this.CoalSeamTextBox.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(10, 82);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "井下大气压力 (Kpa) :";
-            // 
-            // UndAtmPressureTextBox
-            // 
-            this.UndAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndAtmPressureTextBox.Location = new System.Drawing.Point(180, 75);
-            this.UndAtmPressureTextBox.Name = "UndAtmPressureTextBox";
-            this.UndAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
-            this.UndAtmPressureTextBox.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(360, 82);
-            this.label11.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(167, 16);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "实验室大气压力(Kpa):";
-            // 
-            // LabAtmPressureTextBox
-            // 
-            this.LabAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabAtmPressureTextBox.Location = new System.Drawing.Point(530, 75);
-            this.LabAtmPressureTextBox.Name = "LabAtmPressureTextBox";
-            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
-            this.LabAtmPressureTextBox.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(10, 118);
-            this.label10.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "井下环境温度 (℃ ) :";
-            // 
-            // UndTempTextBox
-            // 
-            this.UndTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndTempTextBox.Location = new System.Drawing.Point(180, 111);
-            this.UndTempTextBox.Name = "UndTempTextBox";
-            this.UndTempTextBox.Size = new System.Drawing.Size(167, 26);
-            this.UndTempTextBox.TabIndex = 7;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(360, 118);
-            this.label12.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(167, 16);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "实 验 室 温 度 (℃):";
-            // 
-            // LabTempTextBox
-            // 
-            this.LabTempTextBox.BackColor = System.Drawing.Color.White;
-            this.LabTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabTempTextBox.Location = new System.Drawing.Point(530, 111);
-            this.LabTempTextBox.Name = "LabTempTextBox";
-            this.LabTempTextBox.Size = new System.Drawing.Size(167, 26);
-            this.LabTempTextBox.TabIndex = 8;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(10, 154);
-            this.label14.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(167, 16);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "煤  样  水  分 (%) :";
-            // 
-            // MoistureSampleTextBox
-            // 
-            this.MoistureSampleTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MoistureSampleTextBox.Location = new System.Drawing.Point(180, 147);
-            this.MoistureSampleTextBox.Name = "MoistureSampleTextBox";
-            this.MoistureSampleTextBox.Size = new System.Drawing.Size(167, 26);
-            this.MoistureSampleTextBox.TabIndex = 9;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(360, 154);
-            this.label15.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(167, 16);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "取    样    方   式:";
-            // 
-            // SampleModeComboBox
-            // 
-            this.SampleModeComboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampleModeComboBox.FormattingEnabled = true;
-            this.SampleModeComboBox.Items.AddRange(new object[] {
-            "定点风排渣",
-            "风排渣",
-            "水排渣",
-            "取芯钻杆"});
-            this.SampleModeComboBox.Location = new System.Drawing.Point(530, 147);
-            this.SampleModeComboBox.Name = "SampleModeComboBox";
-            this.SampleModeComboBox.Size = new System.Drawing.Size(167, 24);
-            this.SampleModeComboBox.TabIndex = 10;
-            this.SampleModeComboBox.Text = "定点风排渣";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(10, 190);
-            this.label20.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(167, 16);
-            this.label20.TabIndex = 20;
-            this.label20.Text = "煤   样    编   号 :";
-            // 
-            // SampleNumTextBox
-            // 
-            this.SampleNumTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampleNumTextBox.Location = new System.Drawing.Point(180, 183);
-            this.SampleNumTextBox.Name = "SampleNumTextBox";
-            this.SampleNumTextBox.Size = new System.Drawing.Size(167, 26);
-            this.SampleNumTextBox.TabIndex = 11;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label16.Location = new System.Drawing.Point(360, 190);
-            this.label16.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(167, 16);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "原   煤   水  分(%):";
-            // 
-            // RawCoalMoistureTextBox
-            // 
-            this.RawCoalMoistureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RawCoalMoistureTextBox.Location = new System.Drawing.Point(530, 183);
-            this.RawCoalMoistureTextBox.Name = "RawCoalMoistureTextBox";
-            this.RawCoalMoistureTextBox.Size = new System.Drawing.Size(167, 26);
-            this.RawCoalMoistureTextBox.TabIndex = 12;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(10, 226);
-            this.label19.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(167, 16);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "量管初始体积  (ml) :";
-            // 
-            // InitialVolumeTextBox
-            // 
-            this.InitialVolumeTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.InitialVolumeTextBox.Location = new System.Drawing.Point(180, 219);
-            this.InitialVolumeTextBox.Name = "InitialVolumeTextBox";
-            this.InitialVolumeTextBox.Size = new System.Drawing.Size(167, 26);
-            this.InitialVolumeTextBox.TabIndex = 13;
-            this.InitialVolumeTextBox.Text = "0";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(360, 226);
-            this.label13.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(167, 16);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "样  品  重  量  (g):";
-            // 
-            // SampleWeightTextBox
-            // 
-            this.SampleWeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampleWeightTextBox.Location = new System.Drawing.Point(530, 219);
-            this.SampleWeightTextBox.Name = "SampleWeightTextBox";
-            this.SampleWeightTextBox.Size = new System.Drawing.Size(167, 26);
-            this.SampleWeightTextBox.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(10, 262);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 16);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "取  样  深  度 (m) :";
-            // 
-            // SamplingDepthTextBox
-            // 
-            this.SamplingDepthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingDepthTextBox.Location = new System.Drawing.Point(180, 255);
-            this.SamplingDepthTextBox.Name = "SamplingDepthTextBox";
-            this.SamplingDepthTextBox.Size = new System.Drawing.Size(167, 26);
-            this.SamplingDepthTextBox.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(360, 262);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 16);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "取   样    时   间 :";
-            // 
-            // SamplingTimeDateTimePicker
-            // 
-            this.SamplingTimeDateTimePicker.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingTimeDateTimePicker.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(530, 255);
-            this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
-            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(167, 26);
-            this.SamplingTimeDateTimePicker.TabIndex = 16;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label37.Location = new System.Drawing.Point(10, 298);
-            this.label37.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(167, 16);
-            this.label37.TabIndex = 34;
-            this.label37.Text = "钻 孔 倾 角  (°) ：";
-            // 
-            // DrillInclinationTextBox
-            // 
-            this.DrillInclinationTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DrillInclinationTextBox.Location = new System.Drawing.Point(180, 291);
-            this.DrillInclinationTextBox.Name = "DrillInclinationTextBox";
-            this.DrillInclinationTextBox.Size = new System.Drawing.Size(167, 26);
-            this.DrillInclinationTextBox.TabIndex = 33;
-            this.DrillInclinationTextBox.Text = "360度";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(360, 298);
-            this.label41.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(167, 16);
-            this.label41.TabIndex = 38;
-            this.label41.Text = "取   样    人   员 :";
-            // 
-            // SamplingPersonnelTextBox
-            // 
-            this.SamplingPersonnelTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingPersonnelTextBox.Location = new System.Drawing.Point(530, 291);
-            this.SamplingPersonnelTextBox.Name = "SamplingPersonnelTextBox";
-            this.SamplingPersonnelTextBox.Size = new System.Drawing.Size(167, 26);
-            this.SamplingPersonnelTextBox.TabIndex = 37;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label38.Location = new System.Drawing.Point(10, 334);
-            this.label38.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(167, 16);
-            this.label38.TabIndex = 36;
-            this.label38.Text = "  方  位  角 (°) ：";
-            // 
-            // AzimuthTextBox
-            // 
-            this.AzimuthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AzimuthTextBox.Location = new System.Drawing.Point(180, 327);
-            this.AzimuthTextBox.Name = "AzimuthTextBox";
-            this.AzimuthTextBox.Size = new System.Drawing.Size(167, 26);
-            this.AzimuthTextBox.TabIndex = 35;
-            this.AzimuthTextBox.Text = "180度";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.tabPage2DoubleBufferedPanel2);
             this.tabPage2.Location = new System.Drawing.Point(4, 104);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1435, 671);
             this.tabPage2.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.DrawCurvesButton);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.label29);
-            this.groupBox2.Controls.Add(this.label31);
-            this.groupBox2.Controls.Add(this.label28);
-            this.groupBox2.Controls.Add(this.dateTimePicker5);
-            this.groupBox2.Controls.Add(this.label27);
-            this.groupBox2.Controls.Add(this.dateTimePicker4);
-            this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.label32);
-            this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label33);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label34);
-            this.groupBox2.Controls.Add(this.t0TextBox);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.label35);
-            this.groupBox2.Controls.Add(this.pictureBox3);
-            this.groupBox2.Controls.Add(this.DataNumTextBox60);
-            this.groupBox2.Controls.Add(this.DataNumTextBox59);
-            this.groupBox2.Controls.Add(this.DataNumTextBox58);
-            this.groupBox2.Controls.Add(this.DataNumTextBox57);
-            this.groupBox2.Controls.Add(this.DataNumTextBox56);
-            this.groupBox2.Controls.Add(this.DataNumTextBox55);
-            this.groupBox2.Controls.Add(this.DataNumTextBox54);
-            this.groupBox2.Controls.Add(this.DataNumTextBox53);
-            this.groupBox2.Controls.Add(this.DataNumTextBox52);
-            this.groupBox2.Controls.Add(this.DataNumTextBox51);
-            this.groupBox2.Controls.Add(this.DataNumTextBox50);
-            this.groupBox2.Controls.Add(this.DataNumTextBox49);
-            this.groupBox2.Controls.Add(this.DataNumTextBox48);
-            this.groupBox2.Controls.Add(this.DataNumTextBox47);
-            this.groupBox2.Controls.Add(this.DataNumTextBox46);
-            this.groupBox2.Controls.Add(this.DataNumTextBox45);
-            this.groupBox2.Controls.Add(this.DataNumTextBox44);
-            this.groupBox2.Controls.Add(this.DataNumTextBox43);
-            this.groupBox2.Controls.Add(this.DataNumTextBox42);
-            this.groupBox2.Controls.Add(this.DataNumTextBox41);
-            this.groupBox2.Controls.Add(this.DataNumTextBox40);
-            this.groupBox2.Controls.Add(this.DataNumTextBox39);
-            this.groupBox2.Controls.Add(this.DataNumTextBox38);
-            this.groupBox2.Controls.Add(this.DataNumTextBox37);
-            this.groupBox2.Controls.Add(this.DataNumTextBox36);
-            this.groupBox2.Controls.Add(this.DataNumTextBox35);
-            this.groupBox2.Controls.Add(this.DataNumTextBox34);
-            this.groupBox2.Controls.Add(this.DataNumTextBox33);
-            this.groupBox2.Controls.Add(this.DataNumTextBox32);
-            this.groupBox2.Controls.Add(this.DataNumTextBox31);
-            this.groupBox2.Controls.Add(this.UndDesorpCalTextBox);
-            this.groupBox2.Controls.Add(this.label90);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.DesorbTextBox60);
-            this.groupBox2.Controls.Add(this.DesVolUndTextBox);
-            this.groupBox2.Controls.Add(this.DesorbTextBox31);
-            this.groupBox2.Controls.Add(this.label53);
-            this.groupBox2.Controls.Add(this.DesorbTextBox41);
-            this.groupBox2.Controls.Add(this.label54);
-            this.groupBox2.Controls.Add(this.DesorbTextBox50);
-            this.groupBox2.Controls.Add(this.SampLossVolTextBox);
-            this.groupBox2.Controls.Add(this.DesorbTextBox40);
-            this.groupBox2.Controls.Add(this.DesorbTextBox51);
-            this.groupBox2.Controls.Add(this.DesorbTextBox32);
-            this.groupBox2.Controls.Add(this.DesorbTextBox42);
-            this.groupBox2.Controls.Add(this.DesorbTextBox59);
-            this.groupBox2.Controls.Add(this.DesorbTextBox52);
-            this.groupBox2.Controls.Add(this.DesorbTextBox49);
-            this.groupBox2.Controls.Add(this.DesorbTextBox39);
-            this.groupBox2.Controls.Add(this.DesorbTextBox33);
-            this.groupBox2.Controls.Add(this.DesorbTextBox43);
-            this.groupBox2.Controls.Add(this.DesorbTextBox58);
-            this.groupBox2.Controls.Add(this.DesorbTextBox53);
-            this.groupBox2.Controls.Add(this.DesorbTextBox48);
-            this.groupBox2.Controls.Add(this.DesorbTextBox38);
-            this.groupBox2.Controls.Add(this.DesorbTextBox34);
-            this.groupBox2.Controls.Add(this.DesorbTextBox44);
-            this.groupBox2.Controls.Add(this.DesorbTextBox57);
-            this.groupBox2.Controls.Add(this.DesorbTextBox54);
-            this.groupBox2.Controls.Add(this.DesorbTextBox47);
-            this.groupBox2.Controls.Add(this.DesorbTextBox37);
-            this.groupBox2.Controls.Add(this.DesorbTextBox35);
-            this.groupBox2.Controls.Add(this.DesorbTextBox45);
-            this.groupBox2.Controls.Add(this.DesorbTextBox56);
-            this.groupBox2.Controls.Add(this.DesorbTextBox55);
-            this.groupBox2.Controls.Add(this.DesorbTextBox46);
-            this.groupBox2.Controls.Add(this.DesorbTextBox36);
-            this.groupBox2.Controls.Add(this.DesorbTextBox30);
-            this.groupBox2.Controls.Add(this.DesorbTextBox1);
-            this.groupBox2.Controls.Add(this.DesorbTextBox11);
-            this.groupBox2.Controls.Add(this.DesorbTextBox20);
-            this.groupBox2.Controls.Add(this.DesorbTextBox10);
-            this.groupBox2.Controls.Add(this.DesorbTextBox21);
-            this.groupBox2.Controls.Add(this.DesorbTextBox2);
-            this.groupBox2.Controls.Add(this.DesorbTextBox12);
-            this.groupBox2.Controls.Add(this.DesorbTextBox29);
-            this.groupBox2.Controls.Add(this.DesorbTextBox22);
-            this.groupBox2.Controls.Add(this.DesorbTextBox19);
-            this.groupBox2.Controls.Add(this.DesorbTextBox9);
-            this.groupBox2.Controls.Add(this.DesorbTextBox3);
-            this.groupBox2.Controls.Add(this.DesorbTextBox13);
-            this.groupBox2.Controls.Add(this.DesorbTextBox28);
-            this.groupBox2.Controls.Add(this.DesorbTextBox23);
-            this.groupBox2.Controls.Add(this.DesorbTextBox18);
-            this.groupBox2.Controls.Add(this.DesorbTextBox8);
-            this.groupBox2.Controls.Add(this.DesorbTextBox4);
-            this.groupBox2.Controls.Add(this.DesorbTextBox14);
-            this.groupBox2.Controls.Add(this.DesorbTextBox27);
-            this.groupBox2.Controls.Add(this.DesorbTextBox24);
-            this.groupBox2.Controls.Add(this.DesorbTextBox17);
-            this.groupBox2.Controls.Add(this.DesorbTextBox7);
-            this.groupBox2.Controls.Add(this.DesorbTextBox5);
-            this.groupBox2.Controls.Add(this.DesorbTextBox15);
-            this.groupBox2.Controls.Add(this.DesorbTextBox26);
-            this.groupBox2.Controls.Add(this.DesorbTextBox25);
-            this.groupBox2.Controls.Add(this.DesorbTextBox16);
-            this.groupBox2.Controls.Add(this.DesorbTextBox6);
-            this.groupBox2.Controls.Add(this.DataNumLabel1);
-            this.groupBox2.Controls.Add(this.DataNumLabel11);
-            this.groupBox2.Controls.Add(this.DataNumLabel21);
-            this.groupBox2.Controls.Add(this.DataNumLabel2);
-            this.groupBox2.Controls.Add(this.DataNumLabel30);
-            this.groupBox2.Controls.Add(this.DataNumLabel12);
-            this.groupBox2.Controls.Add(this.DataNumLabel22);
-            this.groupBox2.Controls.Add(this.DataNumLabel20);
-            this.groupBox2.Controls.Add(this.DataNumLabel10);
-            this.groupBox2.Controls.Add(this.DataNumLabel3);
-            this.groupBox2.Controls.Add(this.DataNumLabel13);
-            this.groupBox2.Controls.Add(this.DataNumLabel29);
-            this.groupBox2.Controls.Add(this.DataNumLabel23);
-            this.groupBox2.Controls.Add(this.DataNumLabel19);
-            this.groupBox2.Controls.Add(this.DataNumLabel9);
-            this.groupBox2.Controls.Add(this.DataNumLabel4);
-            this.groupBox2.Controls.Add(this.DataNumLabel14);
-            this.groupBox2.Controls.Add(this.DataNumLabel28);
-            this.groupBox2.Controls.Add(this.DataNumLabel24);
-            this.groupBox2.Controls.Add(this.DataNumLabel18);
-            this.groupBox2.Controls.Add(this.DataNumLabel8);
-            this.groupBox2.Controls.Add(this.DataNumLabel5);
-            this.groupBox2.Controls.Add(this.DataNumLabel15);
-            this.groupBox2.Controls.Add(this.DataNumLabel27);
-            this.groupBox2.Controls.Add(this.DataNumLabel25);
-            this.groupBox2.Controls.Add(this.DataNumLabel17);
-            this.groupBox2.Controls.Add(this.DataNumLabel7);
-            this.groupBox2.Controls.Add(this.DataNumLabel6);
-            this.groupBox2.Controls.Add(this.DataNumLabel16);
-            this.groupBox2.Controls.Add(this.DataNumLabel26);
-            this.groupBox2.Location = new System.Drawing.Point(60, 9);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1324, 612);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Ⅰ 类",
-            "Ⅱ 类",
-            "Ⅲ 类",
-            "Ⅳ 类",
-            "Ⅴ 类"});
-            this.comboBox3.Location = new System.Drawing.Point(306, 85);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(294, 27);
-            this.comboBox3.TabIndex = 999;
-            this.comboBox3.TabStop = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.Location = new System.Drawing.Point(774, 143);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(119, 16);
-            this.label29.TabIndex = 148;
-            this.label29.Text = "时间   解吸量 ";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label31.Location = new System.Drawing.Point(197, 91);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(111, 16);
-            this.label31.TabIndex = 52;
-            this.label31.Text = "煤的破坏类型:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.Location = new System.Drawing.Point(640, 143);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(119, 16);
-            this.label28.TabIndex = 147;
-            this.label28.Text = "时间   解吸量 ";
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker5.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(789, 15);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(266, 29);
-            this.dateTimePicker5.TabIndex = 999;
-            this.dateTimePicker5.TabStop = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(501, 143);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(119, 16);
-            this.label27.TabIndex = 146;
-            this.label27.Text = "时间   解吸量 ";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker4.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(789, 50);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(266, 29);
-            this.dateTimePicker4.TabIndex = 999;
-            this.dateTimePicker4.TabStop = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label26.Location = new System.Drawing.Point(369, 143);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(119, 16);
-            this.label26.TabIndex = 145;
-            this.label26.Text = "时间   解吸量 ";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.Location = new System.Drawing.Point(680, 56);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 16);
-            this.label32.TabIndex = 51;
-            this.label32.Text = "解吸开始时间:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(233, 143);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(119, 16);
-            this.label25.TabIndex = 144;
-            this.label25.Text = "时间   解吸量 ";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker3.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(306, 50);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(292, 29);
-            this.dateTimePicker3.TabIndex = 999;
-            this.dateTimePicker3.TabStop = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(94, 145);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(119, 16);
-            this.label24.TabIndex = 143;
-            this.label24.Text = "时间   解吸量 ";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label33.Location = new System.Drawing.Point(197, 57);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(111, 16);
-            this.label33.TabIndex = 50;
-            this.label33.Text = "取芯结束时间:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label23.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(932, 143);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(89, 19);
-            this.label23.TabIndex = 142;
-            this.label23.Text = "图像预览";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(680, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(111, 16);
-            this.label34.TabIndex = 49;
-            this.label34.Text = "取芯开始时间:";
-            // 
-            // t0TextBox
-            // 
-            this.t0TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.t0TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.t0TextBox.Location = new System.Drawing.Point(789, 86);
-            this.t0TextBox.Name = "t0TextBox";
-            this.t0TextBox.ReadOnly = true;
-            this.t0TextBox.Size = new System.Drawing.Size(266, 26);
-            this.t0TextBox.TabIndex = 1;
-            this.t0TextBox.TabStop = false;
-            this.t0TextBox.Text = "0";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dateTimePicker2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(306, 15);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(292, 29);
-            this.dateTimePicker2.TabIndex = 999;
-            this.dateTimePicker2.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label35.Location = new System.Drawing.Point(197, 21);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(111, 16);
-            this.label35.TabIndex = 44;
-            this.label35.Text = "打钻结束时间:";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(936, 165);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(314, 314);
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
-            // 
-            // DataNumTextBox60
-            // 
-            this.DataNumTextBox60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox60.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox60.Location = new System.Drawing.Point(775, 456);
-            this.DataNumTextBox60.Name = "DataNumTextBox60";
-            this.DataNumTextBox60.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox60.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox60.TabIndex = 90;
-            this.DataNumTextBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox59
-            // 
-            this.DataNumTextBox59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox59.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox59.Location = new System.Drawing.Point(775, 424);
-            this.DataNumTextBox59.Name = "DataNumTextBox59";
-            this.DataNumTextBox59.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox59.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox59.TabIndex = 88;
-            this.DataNumTextBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox58
-            // 
-            this.DataNumTextBox58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox58.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox58.Location = new System.Drawing.Point(775, 392);
-            this.DataNumTextBox58.Name = "DataNumTextBox58";
-            this.DataNumTextBox58.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox58.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox58.TabIndex = 86;
-            this.DataNumTextBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox57
-            // 
-            this.DataNumTextBox57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox57.Location = new System.Drawing.Point(775, 360);
-            this.DataNumTextBox57.Name = "DataNumTextBox57";
-            this.DataNumTextBox57.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox57.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox57.TabIndex = 84;
-            this.DataNumTextBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox56
-            // 
-            this.DataNumTextBox56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox56.Location = new System.Drawing.Point(775, 328);
-            this.DataNumTextBox56.Name = "DataNumTextBox56";
-            this.DataNumTextBox56.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox56.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox56.TabIndex = 82;
-            this.DataNumTextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox55
-            // 
-            this.DataNumTextBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox55.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox55.Location = new System.Drawing.Point(775, 296);
-            this.DataNumTextBox55.Name = "DataNumTextBox55";
-            this.DataNumTextBox55.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox55.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox55.TabIndex = 80;
-            this.DataNumTextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox54
-            // 
-            this.DataNumTextBox54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox54.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox54.Location = new System.Drawing.Point(775, 264);
-            this.DataNumTextBox54.Name = "DataNumTextBox54";
-            this.DataNumTextBox54.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox54.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox54.TabIndex = 78;
-            this.DataNumTextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox53
-            // 
-            this.DataNumTextBox53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox53.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox53.Location = new System.Drawing.Point(775, 232);
-            this.DataNumTextBox53.Name = "DataNumTextBox53";
-            this.DataNumTextBox53.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox53.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox53.TabIndex = 76;
-            this.DataNumTextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox52
-            // 
-            this.DataNumTextBox52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox52.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox52.Location = new System.Drawing.Point(775, 200);
-            this.DataNumTextBox52.Name = "DataNumTextBox52";
-            this.DataNumTextBox52.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox52.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox52.TabIndex = 74;
-            this.DataNumTextBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox51
-            // 
-            this.DataNumTextBox51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox51.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox51.Location = new System.Drawing.Point(775, 168);
-            this.DataNumTextBox51.Name = "DataNumTextBox51";
-            this.DataNumTextBox51.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox51.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox51.TabIndex = 72;
-            this.DataNumTextBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox50
-            // 
-            this.DataNumTextBox50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox50.Location = new System.Drawing.Point(641, 456);
-            this.DataNumTextBox50.Name = "DataNumTextBox50";
-            this.DataNumTextBox50.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox50.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox50.TabIndex = 70;
-            this.DataNumTextBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox49
-            // 
-            this.DataNumTextBox49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox49.Location = new System.Drawing.Point(641, 424);
-            this.DataNumTextBox49.Name = "DataNumTextBox49";
-            this.DataNumTextBox49.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox49.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox49.TabIndex = 68;
-            this.DataNumTextBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox48
-            // 
-            this.DataNumTextBox48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox48.Location = new System.Drawing.Point(641, 392);
-            this.DataNumTextBox48.Name = "DataNumTextBox48";
-            this.DataNumTextBox48.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox48.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox48.TabIndex = 66;
-            this.DataNumTextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox47
-            // 
-            this.DataNumTextBox47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox47.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox47.Location = new System.Drawing.Point(641, 360);
-            this.DataNumTextBox47.Name = "DataNumTextBox47";
-            this.DataNumTextBox47.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox47.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox47.TabIndex = 64;
-            this.DataNumTextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox46
-            // 
-            this.DataNumTextBox46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox46.Location = new System.Drawing.Point(641, 328);
-            this.DataNumTextBox46.Name = "DataNumTextBox46";
-            this.DataNumTextBox46.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox46.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox46.TabIndex = 62;
-            this.DataNumTextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox45
-            // 
-            this.DataNumTextBox45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox45.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox45.Location = new System.Drawing.Point(641, 296);
-            this.DataNumTextBox45.Name = "DataNumTextBox45";
-            this.DataNumTextBox45.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox45.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox45.TabIndex = 60;
-            this.DataNumTextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox44
-            // 
-            this.DataNumTextBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox44.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox44.Location = new System.Drawing.Point(641, 264);
-            this.DataNumTextBox44.Name = "DataNumTextBox44";
-            this.DataNumTextBox44.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox44.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox44.TabIndex = 58;
-            this.DataNumTextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox43
-            // 
-            this.DataNumTextBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox43.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox43.Location = new System.Drawing.Point(641, 232);
-            this.DataNumTextBox43.Name = "DataNumTextBox43";
-            this.DataNumTextBox43.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox43.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox43.TabIndex = 56;
-            this.DataNumTextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox42
-            // 
-            this.DataNumTextBox42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox42.Location = new System.Drawing.Point(641, 200);
-            this.DataNumTextBox42.Name = "DataNumTextBox42";
-            this.DataNumTextBox42.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox42.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox42.TabIndex = 54;
-            this.DataNumTextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox41
-            // 
-            this.DataNumTextBox41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox41.Location = new System.Drawing.Point(641, 168);
-            this.DataNumTextBox41.Name = "DataNumTextBox41";
-            this.DataNumTextBox41.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox41.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox41.TabIndex = 52;
-            this.DataNumTextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox40
-            // 
-            this.DataNumTextBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox40.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox40.Location = new System.Drawing.Point(502, 456);
-            this.DataNumTextBox40.Name = "DataNumTextBox40";
-            this.DataNumTextBox40.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox40.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox40.TabIndex = 50;
-            this.DataNumTextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox39
-            // 
-            this.DataNumTextBox39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox39.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox39.Location = new System.Drawing.Point(502, 424);
-            this.DataNumTextBox39.Name = "DataNumTextBox39";
-            this.DataNumTextBox39.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox39.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox39.TabIndex = 48;
-            this.DataNumTextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox38
-            // 
-            this.DataNumTextBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox38.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox38.Location = new System.Drawing.Point(502, 392);
-            this.DataNumTextBox38.Name = "DataNumTextBox38";
-            this.DataNumTextBox38.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox38.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox38.TabIndex = 46;
-            this.DataNumTextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox37
-            // 
-            this.DataNumTextBox37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox37.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox37.Location = new System.Drawing.Point(502, 360);
-            this.DataNumTextBox37.Name = "DataNumTextBox37";
-            this.DataNumTextBox37.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox37.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox37.TabIndex = 44;
-            this.DataNumTextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox36
-            // 
-            this.DataNumTextBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox36.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox36.Location = new System.Drawing.Point(502, 328);
-            this.DataNumTextBox36.Name = "DataNumTextBox36";
-            this.DataNumTextBox36.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox36.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox36.TabIndex = 42;
-            this.DataNumTextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox35
-            // 
-            this.DataNumTextBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox35.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox35.Location = new System.Drawing.Point(502, 296);
-            this.DataNumTextBox35.Name = "DataNumTextBox35";
-            this.DataNumTextBox35.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox35.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox35.TabIndex = 40;
-            this.DataNumTextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox34
-            // 
-            this.DataNumTextBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox34.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox34.Location = new System.Drawing.Point(502, 264);
-            this.DataNumTextBox34.Name = "DataNumTextBox34";
-            this.DataNumTextBox34.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox34.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox34.TabIndex = 38;
-            this.DataNumTextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox33
-            // 
-            this.DataNumTextBox33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox33.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox33.Location = new System.Drawing.Point(502, 232);
-            this.DataNumTextBox33.Name = "DataNumTextBox33";
-            this.DataNumTextBox33.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox33.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox33.TabIndex = 36;
-            this.DataNumTextBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox32
-            // 
-            this.DataNumTextBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox32.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox32.Location = new System.Drawing.Point(502, 200);
-            this.DataNumTextBox32.Name = "DataNumTextBox32";
-            this.DataNumTextBox32.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox32.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox32.TabIndex = 34;
-            this.DataNumTextBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox31
-            // 
-            this.DataNumTextBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DataNumTextBox31.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox31.Location = new System.Drawing.Point(502, 168);
-            this.DataNumTextBox31.Name = "DataNumTextBox31";
-            this.DataNumTextBox31.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox31.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox31.TabIndex = 32;
-            this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // UndDesorpCalTextBox
-            // 
-            this.UndDesorpCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.UndDesorpCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndDesorpCalTextBox.Location = new System.Drawing.Point(628, 517);
-            this.UndDesorpCalTextBox.Name = "UndDesorpCalTextBox";
-            this.UndDesorpCalTextBox.ReadOnly = true;
-            this.UndDesorpCalTextBox.Size = new System.Drawing.Size(265, 26);
-            this.UndDesorpCalTextBox.TabIndex = 110;
-            this.UndDesorpCalTextBox.TabStop = false;
-            this.UndDesorpCalTextBox.Text = "0";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label90.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label90.Location = new System.Drawing.Point(760, 90);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(31, 16);
-            this.label90.TabIndex = 109;
-            this.label90.Text = "t0:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(517, 522);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 16);
-            this.label18.TabIndex = 111;
-            this.label18.Text = "井下解吸校准:";
-            // 
-            // DesorbTextBox60
-            // 
-            this.DesorbTextBox60.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox60.Location = new System.Drawing.Point(815, 453);
-            this.DesorbTextBox60.Name = "DesorbTextBox60";
-            this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox60.TabIndex = 91;
-            // 
-            // DesVolUndTextBox
-            // 
-            this.DesVolUndTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.DesVolUndTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesVolUndTextBox.Location = new System.Drawing.Point(628, 485);
-            this.DesVolUndTextBox.Name = "DesVolUndTextBox";
-            this.DesVolUndTextBox.ReadOnly = true;
-            this.DesVolUndTextBox.Size = new System.Drawing.Size(265, 26);
-            this.DesVolUndTextBox.TabIndex = 0;
-            this.DesVolUndTextBox.TabStop = false;
-            this.DesVolUndTextBox.Text = "0";
-            // 
-            // DesorbTextBox31
-            // 
-            this.DesorbTextBox31.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox31.Location = new System.Drawing.Point(542, 165);
-            this.DesorbTextBox31.Name = "DesorbTextBox31";
-            this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox31.TabIndex = 33;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label53.Location = new System.Drawing.Point(517, 490);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(111, 16);
-            this.label53.TabIndex = 3;
-            this.label53.Text = "井下解吸体积:";
-            // 
-            // DesorbTextBox41
-            // 
-            this.DesorbTextBox41.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox41.Location = new System.Drawing.Point(681, 165);
-            this.DesorbTextBox41.Name = "DesorbTextBox41";
-            this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox41.TabIndex = 53;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(518, 552);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(111, 16);
-            this.label54.TabIndex = 3;
-            this.label54.Text = "取样损失体积:";
-            // 
-            // DesorbTextBox50
-            // 
-            this.DesorbTextBox50.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox50.Location = new System.Drawing.Point(681, 453);
-            this.DesorbTextBox50.Name = "DesorbTextBox50";
-            this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox50.TabIndex = 71;
-            // 
-            // SampLossVolTextBox
-            // 
-            this.SampLossVolTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.SampLossVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SampLossVolTextBox.Location = new System.Drawing.Point(629, 549);
-            this.SampLossVolTextBox.Name = "SampLossVolTextBox";
-            this.SampLossVolTextBox.ReadOnly = true;
-            this.SampLossVolTextBox.Size = new System.Drawing.Size(264, 26);
-            this.SampLossVolTextBox.TabIndex = 0;
-            this.SampLossVolTextBox.TabStop = false;
-            this.SampLossVolTextBox.Text = "0";
-            // 
-            // DesorbTextBox40
-            // 
-            this.DesorbTextBox40.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox40.Location = new System.Drawing.Point(542, 453);
-            this.DesorbTextBox40.Name = "DesorbTextBox40";
-            this.DesorbTextBox40.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox40.TabIndex = 51;
-            // 
-            // DesorbTextBox51
-            // 
-            this.DesorbTextBox51.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox51.Location = new System.Drawing.Point(815, 165);
-            this.DesorbTextBox51.Name = "DesorbTextBox51";
-            this.DesorbTextBox51.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox51.TabIndex = 73;
-            // 
-            // DesorbTextBox32
-            // 
-            this.DesorbTextBox32.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox32.Location = new System.Drawing.Point(542, 197);
-            this.DesorbTextBox32.Name = "DesorbTextBox32";
-            this.DesorbTextBox32.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox32.TabIndex = 35;
-            // 
-            // DesorbTextBox42
-            // 
-            this.DesorbTextBox42.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox42.Location = new System.Drawing.Point(681, 197);
-            this.DesorbTextBox42.Name = "DesorbTextBox42";
-            this.DesorbTextBox42.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox42.TabIndex = 55;
-            // 
-            // DesorbTextBox59
-            // 
-            this.DesorbTextBox59.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox59.Location = new System.Drawing.Point(815, 421);
-            this.DesorbTextBox59.Name = "DesorbTextBox59";
-            this.DesorbTextBox59.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox59.TabIndex = 89;
-            // 
-            // DesorbTextBox52
-            // 
-            this.DesorbTextBox52.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox52.Location = new System.Drawing.Point(815, 197);
-            this.DesorbTextBox52.Name = "DesorbTextBox52";
-            this.DesorbTextBox52.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox52.TabIndex = 75;
-            // 
-            // DesorbTextBox49
-            // 
-            this.DesorbTextBox49.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox49.Location = new System.Drawing.Point(681, 421);
-            this.DesorbTextBox49.Name = "DesorbTextBox49";
-            this.DesorbTextBox49.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox49.TabIndex = 69;
-            // 
-            // DesorbTextBox39
-            // 
-            this.DesorbTextBox39.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox39.Location = new System.Drawing.Point(542, 421);
-            this.DesorbTextBox39.Name = "DesorbTextBox39";
-            this.DesorbTextBox39.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox39.TabIndex = 49;
-            // 
-            // DesorbTextBox33
-            // 
-            this.DesorbTextBox33.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox33.Location = new System.Drawing.Point(542, 229);
-            this.DesorbTextBox33.Name = "DesorbTextBox33";
-            this.DesorbTextBox33.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox33.TabIndex = 37;
-            // 
-            // DesorbTextBox43
-            // 
-            this.DesorbTextBox43.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox43.Location = new System.Drawing.Point(681, 229);
-            this.DesorbTextBox43.Name = "DesorbTextBox43";
-            this.DesorbTextBox43.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox43.TabIndex = 57;
-            // 
-            // DesorbTextBox58
-            // 
-            this.DesorbTextBox58.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox58.Location = new System.Drawing.Point(815, 389);
-            this.DesorbTextBox58.Name = "DesorbTextBox58";
-            this.DesorbTextBox58.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox58.TabIndex = 87;
-            // 
-            // DesorbTextBox53
-            // 
-            this.DesorbTextBox53.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox53.Location = new System.Drawing.Point(815, 229);
-            this.DesorbTextBox53.Name = "DesorbTextBox53";
-            this.DesorbTextBox53.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox53.TabIndex = 77;
-            // 
-            // DesorbTextBox48
-            // 
-            this.DesorbTextBox48.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox48.Location = new System.Drawing.Point(681, 389);
-            this.DesorbTextBox48.Name = "DesorbTextBox48";
-            this.DesorbTextBox48.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox48.TabIndex = 67;
-            // 
-            // DesorbTextBox38
-            // 
-            this.DesorbTextBox38.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox38.Location = new System.Drawing.Point(542, 389);
-            this.DesorbTextBox38.Name = "DesorbTextBox38";
-            this.DesorbTextBox38.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox38.TabIndex = 47;
-            // 
-            // DesorbTextBox34
-            // 
-            this.DesorbTextBox34.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox34.Location = new System.Drawing.Point(542, 261);
-            this.DesorbTextBox34.Name = "DesorbTextBox34";
-            this.DesorbTextBox34.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox34.TabIndex = 39;
-            // 
-            // DesorbTextBox44
-            // 
-            this.DesorbTextBox44.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox44.Location = new System.Drawing.Point(681, 261);
-            this.DesorbTextBox44.Name = "DesorbTextBox44";
-            this.DesorbTextBox44.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox44.TabIndex = 59;
-            // 
-            // DesorbTextBox57
-            // 
-            this.DesorbTextBox57.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox57.Location = new System.Drawing.Point(815, 357);
-            this.DesorbTextBox57.Name = "DesorbTextBox57";
-            this.DesorbTextBox57.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox57.TabIndex = 85;
-            // 
-            // DesorbTextBox54
-            // 
-            this.DesorbTextBox54.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox54.Location = new System.Drawing.Point(815, 261);
-            this.DesorbTextBox54.Name = "DesorbTextBox54";
-            this.DesorbTextBox54.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox54.TabIndex = 79;
-            // 
-            // DesorbTextBox47
-            // 
-            this.DesorbTextBox47.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox47.Location = new System.Drawing.Point(681, 357);
-            this.DesorbTextBox47.Name = "DesorbTextBox47";
-            this.DesorbTextBox47.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox47.TabIndex = 65;
-            // 
-            // DesorbTextBox37
-            // 
-            this.DesorbTextBox37.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox37.Location = new System.Drawing.Point(542, 357);
-            this.DesorbTextBox37.Name = "DesorbTextBox37";
-            this.DesorbTextBox37.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox37.TabIndex = 45;
-            // 
-            // DesorbTextBox35
-            // 
-            this.DesorbTextBox35.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox35.Location = new System.Drawing.Point(542, 293);
-            this.DesorbTextBox35.Name = "DesorbTextBox35";
-            this.DesorbTextBox35.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox35.TabIndex = 41;
-            // 
-            // DesorbTextBox45
-            // 
-            this.DesorbTextBox45.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox45.Location = new System.Drawing.Point(681, 293);
-            this.DesorbTextBox45.Name = "DesorbTextBox45";
-            this.DesorbTextBox45.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox45.TabIndex = 61;
-            // 
-            // DesorbTextBox56
-            // 
-            this.DesorbTextBox56.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox56.Location = new System.Drawing.Point(815, 325);
-            this.DesorbTextBox56.Name = "DesorbTextBox56";
-            this.DesorbTextBox56.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox56.TabIndex = 83;
-            // 
-            // DesorbTextBox55
-            // 
-            this.DesorbTextBox55.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox55.Location = new System.Drawing.Point(815, 293);
-            this.DesorbTextBox55.Name = "DesorbTextBox55";
-            this.DesorbTextBox55.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox55.TabIndex = 81;
-            // 
-            // DesorbTextBox46
-            // 
-            this.DesorbTextBox46.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox46.Location = new System.Drawing.Point(681, 325);
-            this.DesorbTextBox46.Name = "DesorbTextBox46";
-            this.DesorbTextBox46.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox46.TabIndex = 63;
-            // 
-            // DesorbTextBox36
-            // 
-            this.DesorbTextBox36.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox36.Location = new System.Drawing.Point(542, 325);
-            this.DesorbTextBox36.Name = "DesorbTextBox36";
-            this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox36.TabIndex = 43;
-            // 
-            // DesorbTextBox30
-            // 
-            this.DesorbTextBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox30.Location = new System.Drawing.Point(408, 453);
-            this.DesorbTextBox30.Name = "DesorbTextBox30";
-            this.DesorbTextBox30.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox30.TabIndex = 31;
-            // 
-            // DesorbTextBox1
-            // 
-            this.DesorbTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox1.Location = new System.Drawing.Point(135, 165);
-            this.DesorbTextBox1.Name = "DesorbTextBox1";
-            this.DesorbTextBox1.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox1.TabIndex = 2;
-            // 
-            // DesorbTextBox11
-            // 
-            this.DesorbTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox11.Location = new System.Drawing.Point(274, 165);
-            this.DesorbTextBox11.Name = "DesorbTextBox11";
-            this.DesorbTextBox11.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox11.TabIndex = 12;
-            // 
-            // DesorbTextBox20
-            // 
-            this.DesorbTextBox20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox20.Location = new System.Drawing.Point(274, 453);
-            this.DesorbTextBox20.Name = "DesorbTextBox20";
-            this.DesorbTextBox20.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox20.TabIndex = 21;
-            // 
-            // DesorbTextBox10
-            // 
-            this.DesorbTextBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox10.Location = new System.Drawing.Point(135, 453);
-            this.DesorbTextBox10.Name = "DesorbTextBox10";
-            this.DesorbTextBox10.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox10.TabIndex = 11;
-            // 
-            // DesorbTextBox21
-            // 
-            this.DesorbTextBox21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox21.Location = new System.Drawing.Point(408, 165);
-            this.DesorbTextBox21.Name = "DesorbTextBox21";
-            this.DesorbTextBox21.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox21.TabIndex = 22;
-            // 
-            // DesorbTextBox2
-            // 
-            this.DesorbTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox2.Location = new System.Drawing.Point(135, 197);
-            this.DesorbTextBox2.Name = "DesorbTextBox2";
-            this.DesorbTextBox2.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox2.TabIndex = 3;
-            // 
-            // DesorbTextBox12
-            // 
-            this.DesorbTextBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox12.Location = new System.Drawing.Point(274, 197);
-            this.DesorbTextBox12.Name = "DesorbTextBox12";
-            this.DesorbTextBox12.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox12.TabIndex = 13;
-            // 
-            // DesorbTextBox29
-            // 
-            this.DesorbTextBox29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox29.Location = new System.Drawing.Point(408, 421);
-            this.DesorbTextBox29.Name = "DesorbTextBox29";
-            this.DesorbTextBox29.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox29.TabIndex = 30;
-            // 
-            // DesorbTextBox22
-            // 
-            this.DesorbTextBox22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox22.Location = new System.Drawing.Point(408, 197);
-            this.DesorbTextBox22.Name = "DesorbTextBox22";
-            this.DesorbTextBox22.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox22.TabIndex = 23;
-            // 
-            // DesorbTextBox19
-            // 
-            this.DesorbTextBox19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox19.Location = new System.Drawing.Point(274, 421);
-            this.DesorbTextBox19.Name = "DesorbTextBox19";
-            this.DesorbTextBox19.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox19.TabIndex = 20;
-            // 
-            // DesorbTextBox9
-            // 
-            this.DesorbTextBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox9.Location = new System.Drawing.Point(135, 421);
-            this.DesorbTextBox9.Name = "DesorbTextBox9";
-            this.DesorbTextBox9.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox9.TabIndex = 10;
-            // 
-            // DesorbTextBox3
-            // 
-            this.DesorbTextBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox3.Location = new System.Drawing.Point(135, 229);
-            this.DesorbTextBox3.Name = "DesorbTextBox3";
-            this.DesorbTextBox3.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox3.TabIndex = 4;
-            // 
-            // DesorbTextBox13
-            // 
-            this.DesorbTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox13.Location = new System.Drawing.Point(274, 229);
-            this.DesorbTextBox13.Name = "DesorbTextBox13";
-            this.DesorbTextBox13.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox13.TabIndex = 14;
-            // 
-            // DesorbTextBox28
-            // 
-            this.DesorbTextBox28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox28.Location = new System.Drawing.Point(408, 389);
-            this.DesorbTextBox28.Name = "DesorbTextBox28";
-            this.DesorbTextBox28.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox28.TabIndex = 29;
-            // 
-            // DesorbTextBox23
-            // 
-            this.DesorbTextBox23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox23.Location = new System.Drawing.Point(408, 229);
-            this.DesorbTextBox23.Name = "DesorbTextBox23";
-            this.DesorbTextBox23.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox23.TabIndex = 24;
-            // 
-            // DesorbTextBox18
-            // 
-            this.DesorbTextBox18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox18.Location = new System.Drawing.Point(274, 389);
-            this.DesorbTextBox18.Name = "DesorbTextBox18";
-            this.DesorbTextBox18.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox18.TabIndex = 19;
-            // 
-            // DesorbTextBox8
-            // 
-            this.DesorbTextBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox8.Location = new System.Drawing.Point(135, 389);
-            this.DesorbTextBox8.Name = "DesorbTextBox8";
-            this.DesorbTextBox8.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox8.TabIndex = 9;
-            // 
-            // DesorbTextBox4
-            // 
-            this.DesorbTextBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox4.Location = new System.Drawing.Point(135, 261);
-            this.DesorbTextBox4.Name = "DesorbTextBox4";
-            this.DesorbTextBox4.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox4.TabIndex = 5;
-            // 
-            // DesorbTextBox14
-            // 
-            this.DesorbTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox14.Location = new System.Drawing.Point(274, 261);
-            this.DesorbTextBox14.Name = "DesorbTextBox14";
-            this.DesorbTextBox14.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox14.TabIndex = 15;
-            // 
-            // DesorbTextBox27
-            // 
-            this.DesorbTextBox27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox27.Location = new System.Drawing.Point(408, 357);
-            this.DesorbTextBox27.Name = "DesorbTextBox27";
-            this.DesorbTextBox27.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox27.TabIndex = 28;
-            // 
-            // DesorbTextBox24
-            // 
-            this.DesorbTextBox24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox24.Location = new System.Drawing.Point(408, 261);
-            this.DesorbTextBox24.Name = "DesorbTextBox24";
-            this.DesorbTextBox24.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox24.TabIndex = 25;
-            // 
-            // DesorbTextBox17
-            // 
-            this.DesorbTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox17.Location = new System.Drawing.Point(274, 357);
-            this.DesorbTextBox17.Name = "DesorbTextBox17";
-            this.DesorbTextBox17.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox17.TabIndex = 18;
-            // 
-            // DesorbTextBox7
-            // 
-            this.DesorbTextBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox7.Location = new System.Drawing.Point(135, 357);
-            this.DesorbTextBox7.Name = "DesorbTextBox7";
-            this.DesorbTextBox7.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox7.TabIndex = 8;
-            // 
-            // DesorbTextBox5
-            // 
-            this.DesorbTextBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox5.Location = new System.Drawing.Point(135, 293);
-            this.DesorbTextBox5.Name = "DesorbTextBox5";
-            this.DesorbTextBox5.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox5.TabIndex = 6;
-            // 
-            // DesorbTextBox15
-            // 
-            this.DesorbTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox15.Location = new System.Drawing.Point(274, 293);
-            this.DesorbTextBox15.Name = "DesorbTextBox15";
-            this.DesorbTextBox15.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox15.TabIndex = 16;
-            // 
-            // DesorbTextBox26
-            // 
-            this.DesorbTextBox26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox26.Location = new System.Drawing.Point(408, 325);
-            this.DesorbTextBox26.Name = "DesorbTextBox26";
-            this.DesorbTextBox26.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox26.TabIndex = 27;
-            // 
-            // DesorbTextBox25
-            // 
-            this.DesorbTextBox25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox25.Location = new System.Drawing.Point(408, 293);
-            this.DesorbTextBox25.Name = "DesorbTextBox25";
-            this.DesorbTextBox25.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox25.TabIndex = 26;
-            // 
-            // DesorbTextBox16
-            // 
-            this.DesorbTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox16.Location = new System.Drawing.Point(274, 325);
-            this.DesorbTextBox16.Name = "DesorbTextBox16";
-            this.DesorbTextBox16.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox16.TabIndex = 17;
-            // 
-            // DesorbTextBox6
-            // 
-            this.DesorbTextBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox6.Location = new System.Drawing.Point(135, 325);
-            this.DesorbTextBox6.Name = "DesorbTextBox6";
-            this.DesorbTextBox6.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox6.TabIndex = 7;
-            // 
-            // DataNumLabel1
-            // 
-            this.DataNumLabel1.AutoSize = true;
-            this.DataNumLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel1.Location = new System.Drawing.Point(115, 168);
-            this.DataNumLabel1.Name = "DataNumLabel1";
-            this.DataNumLabel1.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel1.TabIndex = 3;
-            this.DataNumLabel1.Text = "1";
-            // 
-            // DataNumLabel11
-            // 
-            this.DataNumLabel11.AutoSize = true;
-            this.DataNumLabel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel11.Location = new System.Drawing.Point(246, 168);
-            this.DataNumLabel11.Name = "DataNumLabel11";
-            this.DataNumLabel11.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel11.TabIndex = 3;
-            this.DataNumLabel11.Text = "11";
-            // 
-            // DataNumLabel21
-            // 
-            this.DataNumLabel21.AutoSize = true;
-            this.DataNumLabel21.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel21.Location = new System.Drawing.Point(380, 168);
-            this.DataNumLabel21.Name = "DataNumLabel21";
-            this.DataNumLabel21.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel21.TabIndex = 3;
-            this.DataNumLabel21.Text = "21";
-            // 
-            // DataNumLabel2
-            // 
-            this.DataNumLabel2.AutoSize = true;
-            this.DataNumLabel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel2.Location = new System.Drawing.Point(115, 200);
-            this.DataNumLabel2.Name = "DataNumLabel2";
-            this.DataNumLabel2.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel2.TabIndex = 3;
-            this.DataNumLabel2.Text = "2";
-            // 
-            // DataNumLabel30
-            // 
-            this.DataNumLabel30.AutoSize = true;
-            this.DataNumLabel30.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel30.Location = new System.Drawing.Point(380, 456);
-            this.DataNumLabel30.Name = "DataNumLabel30";
-            this.DataNumLabel30.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel30.TabIndex = 3;
-            this.DataNumLabel30.Text = "30";
-            // 
-            // DataNumLabel12
-            // 
-            this.DataNumLabel12.AutoSize = true;
-            this.DataNumLabel12.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel12.Location = new System.Drawing.Point(246, 200);
-            this.DataNumLabel12.Name = "DataNumLabel12";
-            this.DataNumLabel12.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel12.TabIndex = 3;
-            this.DataNumLabel12.Text = "12";
-            // 
-            // DataNumLabel22
-            // 
-            this.DataNumLabel22.AutoSize = true;
-            this.DataNumLabel22.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel22.Location = new System.Drawing.Point(380, 200);
-            this.DataNumLabel22.Name = "DataNumLabel22";
-            this.DataNumLabel22.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel22.TabIndex = 3;
-            this.DataNumLabel22.Text = "22";
-            // 
-            // DataNumLabel20
-            // 
-            this.DataNumLabel20.AutoSize = true;
-            this.DataNumLabel20.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel20.Location = new System.Drawing.Point(246, 456);
-            this.DataNumLabel20.Name = "DataNumLabel20";
-            this.DataNumLabel20.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel20.TabIndex = 3;
-            this.DataNumLabel20.Text = "20";
-            // 
-            // DataNumLabel10
-            // 
-            this.DataNumLabel10.AutoSize = true;
-            this.DataNumLabel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel10.Location = new System.Drawing.Point(107, 456);
-            this.DataNumLabel10.Name = "DataNumLabel10";
-            this.DataNumLabel10.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel10.TabIndex = 3;
-            this.DataNumLabel10.Text = "10";
-            // 
-            // DataNumLabel3
-            // 
-            this.DataNumLabel3.AutoSize = true;
-            this.DataNumLabel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel3.Location = new System.Drawing.Point(115, 232);
-            this.DataNumLabel3.Name = "DataNumLabel3";
-            this.DataNumLabel3.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel3.TabIndex = 3;
-            this.DataNumLabel3.Text = "3";
-            // 
-            // DataNumLabel13
-            // 
-            this.DataNumLabel13.AutoSize = true;
-            this.DataNumLabel13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel13.Location = new System.Drawing.Point(246, 232);
-            this.DataNumLabel13.Name = "DataNumLabel13";
-            this.DataNumLabel13.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel13.TabIndex = 3;
-            this.DataNumLabel13.Text = "13";
-            // 
-            // DataNumLabel29
-            // 
-            this.DataNumLabel29.AutoSize = true;
-            this.DataNumLabel29.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel29.Location = new System.Drawing.Point(380, 424);
-            this.DataNumLabel29.Name = "DataNumLabel29";
-            this.DataNumLabel29.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel29.TabIndex = 3;
-            this.DataNumLabel29.Text = "29";
-            // 
-            // DataNumLabel23
-            // 
-            this.DataNumLabel23.AutoSize = true;
-            this.DataNumLabel23.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel23.Location = new System.Drawing.Point(380, 232);
-            this.DataNumLabel23.Name = "DataNumLabel23";
-            this.DataNumLabel23.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel23.TabIndex = 3;
-            this.DataNumLabel23.Text = "23";
-            // 
-            // DataNumLabel19
-            // 
-            this.DataNumLabel19.AutoSize = true;
-            this.DataNumLabel19.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel19.Location = new System.Drawing.Point(246, 424);
-            this.DataNumLabel19.Name = "DataNumLabel19";
-            this.DataNumLabel19.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel19.TabIndex = 3;
-            this.DataNumLabel19.Text = "19";
-            // 
-            // DataNumLabel9
-            // 
-            this.DataNumLabel9.AutoSize = true;
-            this.DataNumLabel9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel9.Location = new System.Drawing.Point(115, 424);
-            this.DataNumLabel9.Name = "DataNumLabel9";
-            this.DataNumLabel9.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel9.TabIndex = 3;
-            this.DataNumLabel9.Text = "9";
-            // 
-            // DataNumLabel4
-            // 
-            this.DataNumLabel4.AutoSize = true;
-            this.DataNumLabel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel4.Location = new System.Drawing.Point(115, 264);
-            this.DataNumLabel4.Name = "DataNumLabel4";
-            this.DataNumLabel4.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel4.TabIndex = 3;
-            this.DataNumLabel4.Text = "4";
-            // 
-            // DataNumLabel14
-            // 
-            this.DataNumLabel14.AutoSize = true;
-            this.DataNumLabel14.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel14.Location = new System.Drawing.Point(246, 264);
-            this.DataNumLabel14.Name = "DataNumLabel14";
-            this.DataNumLabel14.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel14.TabIndex = 3;
-            this.DataNumLabel14.Text = "14";
-            // 
-            // DataNumLabel28
-            // 
-            this.DataNumLabel28.AutoSize = true;
-            this.DataNumLabel28.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel28.Location = new System.Drawing.Point(380, 392);
-            this.DataNumLabel28.Name = "DataNumLabel28";
-            this.DataNumLabel28.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel28.TabIndex = 3;
-            this.DataNumLabel28.Text = "28";
-            // 
-            // DataNumLabel24
-            // 
-            this.DataNumLabel24.AutoSize = true;
-            this.DataNumLabel24.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel24.Location = new System.Drawing.Point(380, 264);
-            this.DataNumLabel24.Name = "DataNumLabel24";
-            this.DataNumLabel24.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel24.TabIndex = 3;
-            this.DataNumLabel24.Text = "24";
-            // 
-            // DataNumLabel18
-            // 
-            this.DataNumLabel18.AutoSize = true;
-            this.DataNumLabel18.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel18.Location = new System.Drawing.Point(246, 392);
-            this.DataNumLabel18.Name = "DataNumLabel18";
-            this.DataNumLabel18.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel18.TabIndex = 3;
-            this.DataNumLabel18.Text = "18";
-            // 
-            // DataNumLabel8
-            // 
-            this.DataNumLabel8.AutoSize = true;
-            this.DataNumLabel8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel8.Location = new System.Drawing.Point(115, 392);
-            this.DataNumLabel8.Name = "DataNumLabel8";
-            this.DataNumLabel8.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel8.TabIndex = 3;
-            this.DataNumLabel8.Text = "8";
-            // 
-            // DataNumLabel5
-            // 
-            this.DataNumLabel5.AutoSize = true;
-            this.DataNumLabel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel5.Location = new System.Drawing.Point(115, 296);
-            this.DataNumLabel5.Name = "DataNumLabel5";
-            this.DataNumLabel5.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel5.TabIndex = 3;
-            this.DataNumLabel5.Text = "5";
-            // 
-            // DataNumLabel15
-            // 
-            this.DataNumLabel15.AutoSize = true;
-            this.DataNumLabel15.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel15.Location = new System.Drawing.Point(246, 296);
-            this.DataNumLabel15.Name = "DataNumLabel15";
-            this.DataNumLabel15.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel15.TabIndex = 3;
-            this.DataNumLabel15.Text = "15";
-            // 
-            // DataNumLabel27
-            // 
-            this.DataNumLabel27.AutoSize = true;
-            this.DataNumLabel27.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel27.Location = new System.Drawing.Point(380, 360);
-            this.DataNumLabel27.Name = "DataNumLabel27";
-            this.DataNumLabel27.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel27.TabIndex = 3;
-            this.DataNumLabel27.Text = "27";
-            // 
-            // DataNumLabel25
-            // 
-            this.DataNumLabel25.AutoSize = true;
-            this.DataNumLabel25.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel25.Location = new System.Drawing.Point(380, 296);
-            this.DataNumLabel25.Name = "DataNumLabel25";
-            this.DataNumLabel25.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel25.TabIndex = 3;
-            this.DataNumLabel25.Text = "25";
-            // 
-            // DataNumLabel17
-            // 
-            this.DataNumLabel17.AutoSize = true;
-            this.DataNumLabel17.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel17.Location = new System.Drawing.Point(246, 360);
-            this.DataNumLabel17.Name = "DataNumLabel17";
-            this.DataNumLabel17.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel17.TabIndex = 3;
-            this.DataNumLabel17.Text = "17";
-            // 
-            // DataNumLabel7
-            // 
-            this.DataNumLabel7.AutoSize = true;
-            this.DataNumLabel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel7.Location = new System.Drawing.Point(115, 360);
-            this.DataNumLabel7.Name = "DataNumLabel7";
-            this.DataNumLabel7.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel7.TabIndex = 3;
-            this.DataNumLabel7.Text = "7";
-            // 
-            // DataNumLabel6
-            // 
-            this.DataNumLabel6.AutoSize = true;
-            this.DataNumLabel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel6.Location = new System.Drawing.Point(115, 328);
-            this.DataNumLabel6.Name = "DataNumLabel6";
-            this.DataNumLabel6.Size = new System.Drawing.Size(15, 16);
-            this.DataNumLabel6.TabIndex = 3;
-            this.DataNumLabel6.Text = "6";
-            // 
-            // DataNumLabel16
-            // 
-            this.DataNumLabel16.AutoSize = true;
-            this.DataNumLabel16.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel16.Location = new System.Drawing.Point(246, 328);
-            this.DataNumLabel16.Name = "DataNumLabel16";
-            this.DataNumLabel16.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel16.TabIndex = 3;
-            this.DataNumLabel16.Text = "16";
-            // 
-            // DataNumLabel26
-            // 
-            this.DataNumLabel26.AutoSize = true;
-            this.DataNumLabel26.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DataNumLabel26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumLabel26.Location = new System.Drawing.Point(380, 328);
-            this.DataNumLabel26.Name = "DataNumLabel26";
-            this.DataNumLabel26.Size = new System.Drawing.Size(23, 16);
-            this.DataNumLabel26.TabIndex = 3;
-            this.DataNumLabel26.Text = "26";
             // 
             // tabPage3
             // 
@@ -3931,6 +1881,7 @@ namespace GasFormsApp
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage6.Controls.Add(this.flowLayoutPanel1);
             this.tabPage6.Controls.Add(this.ExportTheDocumentButton);
             this.tabPage6.Controls.Add(this.DeleteDataButton);
             this.tabPage6.Controls.Add(this.FindTextBox);
@@ -3944,6 +1895,448 @@ namespace GasFormsApp
             this.tabPage6.Size = new System.Drawing.Size(1435, 671);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.label44);
+            this.flowLayoutPanel1.Controls.Add(this.textBox17);
+            this.flowLayoutPanel1.Controls.Add(this.label64);
+            this.flowLayoutPanel1.Controls.Add(this.textBox16);
+            this.flowLayoutPanel1.Controls.Add(this.label63);
+            this.flowLayoutPanel1.Controls.Add(this.textBox15);
+            this.flowLayoutPanel1.Controls.Add(this.label62);
+            this.flowLayoutPanel1.Controls.Add(this.dateTimePicker7);
+            this.flowLayoutPanel1.Controls.Add(this.label61);
+            this.flowLayoutPanel1.Controls.Add(this.textBox14);
+            this.flowLayoutPanel1.Controls.Add(this.label60);
+            this.flowLayoutPanel1.Controls.Add(this.textBox13);
+            this.flowLayoutPanel1.Controls.Add(this.label59);
+            this.flowLayoutPanel1.Controls.Add(this.textBox12);
+            this.flowLayoutPanel1.Controls.Add(this.label58);
+            this.flowLayoutPanel1.Controls.Add(this.textBox11);
+            this.flowLayoutPanel1.Controls.Add(this.label57);
+            this.flowLayoutPanel1.Controls.Add(this.textBox10);
+            this.flowLayoutPanel1.Controls.Add(this.label56);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.label55);
+            this.flowLayoutPanel1.Controls.Add(this.textBox9);
+            this.flowLayoutPanel1.Controls.Add(this.label52);
+            this.flowLayoutPanel1.Controls.Add(this.textBox8);
+            this.flowLayoutPanel1.Controls.Add(this.label51);
+            this.flowLayoutPanel1.Controls.Add(this.textBox7);
+            this.flowLayoutPanel1.Controls.Add(this.label50);
+            this.flowLayoutPanel1.Controls.Add(this.textBox6);
+            this.flowLayoutPanel1.Controls.Add(this.label49);
+            this.flowLayoutPanel1.Controls.Add(this.textBox5);
+            this.flowLayoutPanel1.Controls.Add(this.label48);
+            this.flowLayoutPanel1.Controls.Add(this.textBox4);
+            this.flowLayoutPanel1.Controls.Add(this.label47);
+            this.flowLayoutPanel1.Controls.Add(this.textBox3);
+            this.flowLayoutPanel1.Controls.Add(this.label46);
+            this.flowLayoutPanel1.Controls.Add(this.textBox2);
+            this.flowLayoutPanel1.Controls.Add(this.label45);
+            this.flowLayoutPanel1.Controls.Add(this.textBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(268, 71);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(502, 393);
+            this.flowLayoutPanel1.TabIndex = 37;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label44.Location = new System.Drawing.Point(10, 10);
+            this.label44.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(167, 16);
+            this.label44.TabIndex = 29;
+            this.label44.Text = "矿   井    名   称 :";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox17.Location = new System.Drawing.Point(180, 3);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(167, 26);
+            this.textBox17.TabIndex = 35;
+            this.textBox17.Text = "180度";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label64.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label64.Location = new System.Drawing.Point(10, 46);
+            this.label64.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(167, 16);
+            this.label64.TabIndex = 36;
+            this.label64.Text = "  方  位  角 (°) ：";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox16.Location = new System.Drawing.Point(180, 39);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(167, 26);
+            this.textBox16.TabIndex = 37;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label63.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label63.Location = new System.Drawing.Point(10, 82);
+            this.label63.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(167, 16);
+            this.label63.TabIndex = 38;
+            this.label63.Text = "取   样    人   员 :";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox15.Location = new System.Drawing.Point(180, 75);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(167, 26);
+            this.textBox15.TabIndex = 33;
+            this.textBox15.Text = "360度";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label62.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label62.Location = new System.Drawing.Point(10, 118);
+            this.label62.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(167, 16);
+            this.label62.TabIndex = 34;
+            this.label62.Text = "钻 孔 倾 角  (°) ：";
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker7.Location = new System.Drawing.Point(180, 111);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(167, 26);
+            this.dateTimePicker7.TabIndex = 16;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label61.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label61.Location = new System.Drawing.Point(10, 154);
+            this.label61.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(167, 16);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "取   样    时   间 :";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox14.Location = new System.Drawing.Point(180, 147);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(167, 26);
+            this.textBox14.TabIndex = 15;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label60.Location = new System.Drawing.Point(10, 190);
+            this.label60.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(167, 16);
+            this.label60.TabIndex = 32;
+            this.label60.Text = "取  样  深  度 (m) :";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox13.Location = new System.Drawing.Point(180, 183);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(167, 26);
+            this.textBox13.TabIndex = 14;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label59.Location = new System.Drawing.Point(10, 226);
+            this.label59.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(167, 16);
+            this.label59.TabIndex = 0;
+            this.label59.Text = "样  品  重  量  (g):";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox12.Location = new System.Drawing.Point(180, 219);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(167, 26);
+            this.textBox12.TabIndex = 13;
+            this.textBox12.Text = "0";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label58.Location = new System.Drawing.Point(10, 262);
+            this.label58.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(167, 16);
+            this.label58.TabIndex = 4;
+            this.label58.Text = "量管初始体积  (ml) :";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox11.Location = new System.Drawing.Point(180, 255);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(167, 26);
+            this.textBox11.TabIndex = 12;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label57.Location = new System.Drawing.Point(10, 298);
+            this.label57.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(167, 16);
+            this.label57.TabIndex = 2;
+            this.label57.Text = "原   煤   水  分(%):";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox10.Location = new System.Drawing.Point(180, 291);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(167, 26);
+            this.textBox10.TabIndex = 11;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label56.Location = new System.Drawing.Point(10, 334);
+            this.label56.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(167, 16);
+            this.label56.TabIndex = 20;
+            this.label56.Text = "煤   样    编   号 :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "定点风排渣",
+            "风排渣",
+            "水排渣",
+            "取芯钻杆"});
+            this.comboBox1.Location = new System.Drawing.Point(180, 327);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(167, 24);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.Text = "定点风排渣";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label55.Location = new System.Drawing.Point(10, 370);
+            this.label55.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(167, 16);
+            this.label55.TabIndex = 2;
+            this.label55.Text = "取    样    方   式:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox9.Location = new System.Drawing.Point(180, 363);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(167, 26);
+            this.textBox9.TabIndex = 9;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label52.Location = new System.Drawing.Point(10, 406);
+            this.label52.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(167, 16);
+            this.label52.TabIndex = 0;
+            this.label52.Text = "煤  样  水  分 (%) :";
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.White;
+            this.textBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox8.Location = new System.Drawing.Point(180, 399);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(167, 26);
+            this.textBox8.TabIndex = 8;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label51.Location = new System.Drawing.Point(10, 442);
+            this.label51.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(167, 16);
+            this.label51.TabIndex = 2;
+            this.label51.Text = "实 验 室 温 度 (℃):";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox7.Location = new System.Drawing.Point(180, 435);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(167, 26);
+            this.textBox7.TabIndex = 7;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label50.Location = new System.Drawing.Point(10, 478);
+            this.label50.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(167, 16);
+            this.label50.TabIndex = 0;
+            this.label50.Text = "井下环境温度 (℃ ) :";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox6.Location = new System.Drawing.Point(180, 471);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(167, 26);
+            this.textBox6.TabIndex = 6;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label49.Location = new System.Drawing.Point(10, 514);
+            this.label49.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(167, 16);
+            this.label49.TabIndex = 2;
+            this.label49.Text = "实验室大气压力(Kpa):";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox5.Location = new System.Drawing.Point(180, 507);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(167, 26);
+            this.textBox5.TabIndex = 5;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label48.Location = new System.Drawing.Point(10, 550);
+            this.label48.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(167, 16);
+            this.label48.TabIndex = 0;
+            this.label48.Text = "井下大气压力 (Kpa) :";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox4.Location = new System.Drawing.Point(180, 543);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(167, 26);
+            this.textBox4.TabIndex = 4;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label47.Location = new System.Drawing.Point(10, 586);
+            this.label47.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(167, 16);
+            this.label47.TabIndex = 31;
+            this.label47.Text = "煤               层:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox3.Location = new System.Drawing.Point(180, 579);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(167, 26);
+            this.textBox3.TabIndex = 3;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label46.Location = new System.Drawing.Point(10, 622);
+            this.label46.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(167, 16);
+            this.label46.TabIndex = 0;
+            this.label46.Text = "埋           深 (m):";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(180, 615);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(167, 26);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label45.Location = new System.Drawing.Point(10, 658);
+            this.label45.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(167, 16);
+            this.label45.TabIndex = 2;
+            this.label45.Text = "取   样    地   点 :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(180, 651);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(167, 26);
+            this.textBox1.TabIndex = 1;
             // 
             // ExportTheDocumentButton
             // 
@@ -4105,8 +2498,2177 @@ namespace GasFormsApp
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // tabPage1DoubleBufferedFlowLayoutPanel1
+            // 
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.AutoScroll = true;
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label1);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.MineNameTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label6);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingSpotTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label7);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.BurialDepthTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label3);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.CoalSeamTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label9);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.UndAtmPressureTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label11);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.LabAtmPressureTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label10);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.UndTempTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label12);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.LabTempTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label14);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.MoistureSampleTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label15);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SampleModeComboBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label20);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SampleNumTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label16);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.RawCoalMoistureTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label19);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.InitialVolumeTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label13);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SampleWeightTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label4);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingDepthTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label8);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingTimeDateTimePicker);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label37);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.DrillInclinationTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label38);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.AzimuthTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label41);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingPersonnelTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(288, 65);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Name = "tabPage1DoubleBufferedFlowLayoutPanel1";
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(833, 573);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 16);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "矿   井    名   称 :";
+            // 
+            // MineNameTextBox
+            // 
+            this.MineNameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.MineNameTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MineNameTextBox.Location = new System.Drawing.Point(180, 3);
+            this.MineNameTextBox.Name = "MineNameTextBox";
+            this.MineNameTextBox.Size = new System.Drawing.Size(167, 26);
+            this.MineNameTextBox.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(360, 10);
+            this.label6.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "取   样    地   点 :";
+            // 
+            // SamplingSpotTextBox
+            // 
+            this.SamplingSpotTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingSpotTextBox.Location = new System.Drawing.Point(530, 3);
+            this.SamplingSpotTextBox.Name = "SamplingSpotTextBox";
+            this.SamplingSpotTextBox.Size = new System.Drawing.Size(167, 26);
+            this.SamplingSpotTextBox.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(10, 46);
+            this.label7.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(167, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "埋           深 (m):";
+            // 
+            // BurialDepthTextBox
+            // 
+            this.BurialDepthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BurialDepthTextBox.Location = new System.Drawing.Point(180, 39);
+            this.BurialDepthTextBox.Name = "BurialDepthTextBox";
+            this.BurialDepthTextBox.Size = new System.Drawing.Size(167, 26);
+            this.BurialDepthTextBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(360, 46);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 16);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "煤               层:";
+            // 
+            // CoalSeamTextBox
+            // 
+            this.CoalSeamTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CoalSeamTextBox.Location = new System.Drawing.Point(530, 39);
+            this.CoalSeamTextBox.Name = "CoalSeamTextBox";
+            this.CoalSeamTextBox.Size = new System.Drawing.Size(167, 26);
+            this.CoalSeamTextBox.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(10, 82);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(167, 16);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "井下大气压力 (Kpa) :";
+            // 
+            // UndAtmPressureTextBox
+            // 
+            this.UndAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndAtmPressureTextBox.Location = new System.Drawing.Point(180, 75);
+            this.UndAtmPressureTextBox.Name = "UndAtmPressureTextBox";
+            this.UndAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
+            this.UndAtmPressureTextBox.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(360, 82);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(167, 16);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "实验室大气压力(Kpa):";
+            // 
+            // LabAtmPressureTextBox
+            // 
+            this.LabAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabAtmPressureTextBox.Location = new System.Drawing.Point(530, 75);
+            this.LabAtmPressureTextBox.Name = "LabAtmPressureTextBox";
+            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
+            this.LabAtmPressureTextBox.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(10, 118);
+            this.label10.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "井下环境温度 (℃ ) :";
+            // 
+            // UndTempTextBox
+            // 
+            this.UndTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndTempTextBox.Location = new System.Drawing.Point(180, 111);
+            this.UndTempTextBox.Name = "UndTempTextBox";
+            this.UndTempTextBox.Size = new System.Drawing.Size(167, 26);
+            this.UndTempTextBox.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(360, 118);
+            this.label12.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(167, 16);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "实 验 室 温 度 (℃):";
+            // 
+            // LabTempTextBox
+            // 
+            this.LabTempTextBox.BackColor = System.Drawing.Color.White;
+            this.LabTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabTempTextBox.Location = new System.Drawing.Point(530, 111);
+            this.LabTempTextBox.Name = "LabTempTextBox";
+            this.LabTempTextBox.Size = new System.Drawing.Size(167, 26);
+            this.LabTempTextBox.TabIndex = 8;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(10, 154);
+            this.label14.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(167, 16);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "煤  样  水  分 (%) :";
+            // 
+            // MoistureSampleTextBox
+            // 
+            this.MoistureSampleTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MoistureSampleTextBox.Location = new System.Drawing.Point(180, 147);
+            this.MoistureSampleTextBox.Name = "MoistureSampleTextBox";
+            this.MoistureSampleTextBox.Size = new System.Drawing.Size(167, 26);
+            this.MoistureSampleTextBox.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(360, 154);
+            this.label15.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(167, 16);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "取    样    方   式:";
+            // 
+            // SampleModeComboBox
+            // 
+            this.SampleModeComboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampleModeComboBox.FormattingEnabled = true;
+            this.SampleModeComboBox.Items.AddRange(new object[] {
+            "定点风排渣",
+            "风排渣",
+            "水排渣",
+            "取芯钻杆"});
+            this.SampleModeComboBox.Location = new System.Drawing.Point(530, 147);
+            this.SampleModeComboBox.Name = "SampleModeComboBox";
+            this.SampleModeComboBox.Size = new System.Drawing.Size(167, 24);
+            this.SampleModeComboBox.TabIndex = 10;
+            this.SampleModeComboBox.Text = "定点风排渣";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Location = new System.Drawing.Point(10, 190);
+            this.label20.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(167, 16);
+            this.label20.TabIndex = 20;
+            this.label20.Text = "煤   样    编   号 :";
+            // 
+            // SampleNumTextBox
+            // 
+            this.SampleNumTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampleNumTextBox.Location = new System.Drawing.Point(180, 183);
+            this.SampleNumTextBox.Name = "SampleNumTextBox";
+            this.SampleNumTextBox.Size = new System.Drawing.Size(167, 26);
+            this.SampleNumTextBox.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(360, 190);
+            this.label16.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(167, 16);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "原   煤   水  分(%):";
+            // 
+            // RawCoalMoistureTextBox
+            // 
+            this.RawCoalMoistureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RawCoalMoistureTextBox.Location = new System.Drawing.Point(530, 183);
+            this.RawCoalMoistureTextBox.Name = "RawCoalMoistureTextBox";
+            this.RawCoalMoistureTextBox.Size = new System.Drawing.Size(167, 26);
+            this.RawCoalMoistureTextBox.TabIndex = 12;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(10, 226);
+            this.label19.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(167, 16);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "量管初始体积  (ml) :";
+            // 
+            // InitialVolumeTextBox
+            // 
+            this.InitialVolumeTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.InitialVolumeTextBox.Location = new System.Drawing.Point(180, 219);
+            this.InitialVolumeTextBox.Name = "InitialVolumeTextBox";
+            this.InitialVolumeTextBox.Size = new System.Drawing.Size(167, 26);
+            this.InitialVolumeTextBox.TabIndex = 13;
+            this.InitialVolumeTextBox.Text = "0";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(360, 226);
+            this.label13.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(167, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "样  品  重  量  (g):";
+            // 
+            // SampleWeightTextBox
+            // 
+            this.SampleWeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampleWeightTextBox.Location = new System.Drawing.Point(530, 219);
+            this.SampleWeightTextBox.Name = "SampleWeightTextBox";
+            this.SampleWeightTextBox.Size = new System.Drawing.Size(167, 26);
+            this.SampleWeightTextBox.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(10, 262);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 16);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "取  样  深  度 (m) :";
+            // 
+            // SamplingDepthTextBox
+            // 
+            this.SamplingDepthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingDepthTextBox.Location = new System.Drawing.Point(180, 255);
+            this.SamplingDepthTextBox.Name = "SamplingDepthTextBox";
+            this.SamplingDepthTextBox.Size = new System.Drawing.Size(167, 26);
+            this.SamplingDepthTextBox.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(360, 262);
+            this.label8.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(167, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "取   样    时   间 :";
+            // 
+            // SamplingTimeDateTimePicker
+            // 
+            this.SamplingTimeDateTimePicker.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingTimeDateTimePicker.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(530, 255);
+            this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
+            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(167, 26);
+            this.SamplingTimeDateTimePicker.TabIndex = 16;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label37.Location = new System.Drawing.Point(10, 298);
+            this.label37.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(167, 16);
+            this.label37.TabIndex = 34;
+            this.label37.Text = "钻 孔 倾 角  (°) ：";
+            // 
+            // DrillInclinationTextBox
+            // 
+            this.DrillInclinationTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DrillInclinationTextBox.Location = new System.Drawing.Point(180, 291);
+            this.DrillInclinationTextBox.Name = "DrillInclinationTextBox";
+            this.DrillInclinationTextBox.Size = new System.Drawing.Size(167, 26);
+            this.DrillInclinationTextBox.TabIndex = 33;
+            this.DrillInclinationTextBox.Text = "360度";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label38.Location = new System.Drawing.Point(360, 298);
+            this.label38.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(167, 16);
+            this.label38.TabIndex = 36;
+            this.label38.Text = "  方  位  角 (°) ：";
+            // 
+            // AzimuthTextBox
+            // 
+            this.AzimuthTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AzimuthTextBox.Location = new System.Drawing.Point(530, 291);
+            this.AzimuthTextBox.Name = "AzimuthTextBox";
+            this.AzimuthTextBox.Size = new System.Drawing.Size(167, 26);
+            this.AzimuthTextBox.TabIndex = 35;
+            this.AzimuthTextBox.Text = "180度";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label41.Location = new System.Drawing.Point(10, 334);
+            this.label41.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(167, 16);
+            this.label41.TabIndex = 38;
+            this.label41.Text = "取   样    人   员 :";
+            // 
+            // SamplingPersonnelTextBox
+            // 
+            this.SamplingPersonnelTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingPersonnelTextBox.Location = new System.Drawing.Point(180, 327);
+            this.SamplingPersonnelTextBox.Name = "SamplingPersonnelTextBox";
+            this.SamplingPersonnelTextBox.Size = new System.Drawing.Size(167, 26);
+            this.SamplingPersonnelTextBox.TabIndex = 37;
+            // 
+            // tabPage2DoubleBufferedPanel2
+            // 
+            this.tabPage2DoubleBufferedPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPage2DoubleBufferedPanel2.Controls.Add(this.tabPage2DoubleBufferedFlowLayoutPanel1);
+            this.tabPage2DoubleBufferedPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tabPage2DoubleBufferedPanel2.Name = "tabPage2DoubleBufferedPanel2";
+            this.tabPage2DoubleBufferedPanel2.Size = new System.Drawing.Size(1435, 671);
+            this.tabPage2DoubleBufferedPanel2.TabIndex = 1002;
+            this.tabPage2DoubleBufferedPanel2.SizeChanged += new System.EventHandler(this.tabPage2DoubleBufferedPanel2_SizeChanged);
+            // 
+            // tabPage2DoubleBufferedFlowLayoutPanel1
+            // 
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.AutoScroll = true;
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2DoubleBufferedPanel1);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel3);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel4);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel5);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel6);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(182, 38);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Name = "tabPage2DoubleBufferedFlowLayoutPanel1";
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(840, 598);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.TabIndex = 1002;
+            // 
+            // tabPage2DoubleBufferedPanel1
+            // 
+            this.tabPage2DoubleBufferedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker3);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker2);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.comboBox3);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label35);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.t0TextBox);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label32);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker5);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label33);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label34);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker4);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label31);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label90);
+            this.tabPage2DoubleBufferedPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tabPage2DoubleBufferedPanel1.Name = "tabPage2DoubleBufferedPanel1";
+            this.tabPage2DoubleBufferedPanel1.Size = new System.Drawing.Size(812, 103);
+            this.tabPage2DoubleBufferedPanel1.TabIndex = 1002;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker3.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(112, 38);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(230, 29);
+            this.dateTimePicker3.TabIndex = 999;
+            this.dateTimePicker3.TabStop = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(112, 3);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(230, 29);
+            this.dateTimePicker2.TabIndex = 999;
+            this.dateTimePicker2.TabStop = false;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Ⅰ 类",
+            "Ⅱ 类",
+            "Ⅲ 类",
+            "Ⅳ 类",
+            "Ⅴ 类"});
+            this.comboBox3.Location = new System.Drawing.Point(112, 73);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(230, 27);
+            this.comboBox3.TabIndex = 999;
+            this.comboBox3.TabStop = false;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label35.Location = new System.Drawing.Point(3, 9);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(111, 16);
+            this.label35.TabIndex = 44;
+            this.label35.Text = "打钻结束时间:";
+            // 
+            // t0TextBox
+            // 
+            this.t0TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.t0TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.t0TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t0TextBox.Location = new System.Drawing.Point(556, 74);
+            this.t0TextBox.Name = "t0TextBox";
+            this.t0TextBox.ReadOnly = true;
+            this.t0TextBox.Size = new System.Drawing.Size(230, 26);
+            this.t0TextBox.TabIndex = 1;
+            this.t0TextBox.TabStop = false;
+            this.t0TextBox.Text = "0";
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(447, 44);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(111, 16);
+            this.label32.TabIndex = 51;
+            this.label32.Text = "解吸开始时间:";
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker5.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker5.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker5.Location = new System.Drawing.Point(556, 3);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(230, 29);
+            this.dateTimePicker5.TabIndex = 999;
+            this.dateTimePicker5.TabStop = false;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label33.Location = new System.Drawing.Point(3, 45);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(111, 16);
+            this.label33.TabIndex = 50;
+            this.label33.Text = "取芯结束时间:";
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label34.Location = new System.Drawing.Point(447, 9);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(111, 16);
+            this.label34.TabIndex = 49;
+            this.label34.Text = "取芯开始时间:";
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker4.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker4.Location = new System.Drawing.Point(556, 38);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(230, 29);
+            this.dateTimePicker4.TabIndex = 999;
+            this.dateTimePicker4.TabStop = false;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(3, 79);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(111, 16);
+            this.label31.TabIndex = 52;
+            this.label31.Text = "煤的破坏类型:";
+            // 
+            // label90
+            // 
+            this.label90.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label90.AutoSize = true;
+            this.label90.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label90.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label90.Location = new System.Drawing.Point(527, 78);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(31, 16);
+            this.label90.TabIndex = 109;
+            this.label90.Text = "t0:";
+            // 
+            // tabPage2panel3
+            // 
+            this.tabPage2panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage2panel3.Controls.Add(this.label24);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel26);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel16);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel6);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel7);
+            this.tabPage2panel3.Controls.Add(this.label26);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel17);
+            this.tabPage2panel3.Controls.Add(this.label25);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel25);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel27);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel15);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel5);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel8);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel18);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel24);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel28);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel14);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel4);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel9);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel19);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel23);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel29);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel13);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel3);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel10);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel20);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel22);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel12);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel30);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel2);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel21);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel11);
+            this.tabPage2panel3.Controls.Add(this.DataNumLabel1);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox6);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox16);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox25);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox26);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox15);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox5);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox7);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox17);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox24);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox27);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox14);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox4);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox8);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox18);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox23);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox28);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox13);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox3);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox9);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox19);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox22);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox29);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox12);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox2);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox21);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox10);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox20);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox11);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox1);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox30);
+            this.tabPage2panel3.Location = new System.Drawing.Point(3, 112);
+            this.tabPage2panel3.Name = "tabPage2panel3";
+            this.tabPage2panel3.Size = new System.Drawing.Size(403, 346);
+            this.tabPage2panel3.TabIndex = 1001;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label24.Location = new System.Drawing.Point(3, 5);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(119, 16);
+            this.label24.TabIndex = 143;
+            this.label24.Text = "时间   解吸量 ";
+            // 
+            // DataNumLabel26
+            // 
+            this.DataNumLabel26.AutoSize = true;
+            this.DataNumLabel26.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel26.Location = new System.Drawing.Point(289, 188);
+            this.DataNumLabel26.Name = "DataNumLabel26";
+            this.DataNumLabel26.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel26.TabIndex = 3;
+            this.DataNumLabel26.Text = "26";
+            // 
+            // DataNumLabel16
+            // 
+            this.DataNumLabel16.AutoSize = true;
+            this.DataNumLabel16.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel16.Location = new System.Drawing.Point(155, 188);
+            this.DataNumLabel16.Name = "DataNumLabel16";
+            this.DataNumLabel16.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel16.TabIndex = 3;
+            this.DataNumLabel16.Text = "16";
+            // 
+            // DataNumLabel6
+            // 
+            this.DataNumLabel6.AutoSize = true;
+            this.DataNumLabel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel6.Location = new System.Drawing.Point(24, 188);
+            this.DataNumLabel6.Name = "DataNumLabel6";
+            this.DataNumLabel6.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel6.TabIndex = 3;
+            this.DataNumLabel6.Text = "6";
+            // 
+            // DataNumLabel7
+            // 
+            this.DataNumLabel7.AutoSize = true;
+            this.DataNumLabel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel7.Location = new System.Drawing.Point(24, 220);
+            this.DataNumLabel7.Name = "DataNumLabel7";
+            this.DataNumLabel7.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel7.TabIndex = 3;
+            this.DataNumLabel7.Text = "7";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label26.Location = new System.Drawing.Point(278, 3);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(119, 16);
+            this.label26.TabIndex = 145;
+            this.label26.Text = "时间   解吸量 ";
+            // 
+            // DataNumLabel17
+            // 
+            this.DataNumLabel17.AutoSize = true;
+            this.DataNumLabel17.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel17.Location = new System.Drawing.Point(155, 220);
+            this.DataNumLabel17.Name = "DataNumLabel17";
+            this.DataNumLabel17.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel17.TabIndex = 3;
+            this.DataNumLabel17.Text = "17";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label25.Location = new System.Drawing.Point(142, 3);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(119, 16);
+            this.label25.TabIndex = 144;
+            this.label25.Text = "时间   解吸量 ";
+            // 
+            // DataNumLabel25
+            // 
+            this.DataNumLabel25.AutoSize = true;
+            this.DataNumLabel25.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel25.Location = new System.Drawing.Point(289, 156);
+            this.DataNumLabel25.Name = "DataNumLabel25";
+            this.DataNumLabel25.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel25.TabIndex = 3;
+            this.DataNumLabel25.Text = "25";
+            // 
+            // DataNumLabel27
+            // 
+            this.DataNumLabel27.AutoSize = true;
+            this.DataNumLabel27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel27.Location = new System.Drawing.Point(289, 220);
+            this.DataNumLabel27.Name = "DataNumLabel27";
+            this.DataNumLabel27.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel27.TabIndex = 3;
+            this.DataNumLabel27.Text = "27";
+            // 
+            // DataNumLabel15
+            // 
+            this.DataNumLabel15.AutoSize = true;
+            this.DataNumLabel15.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel15.Location = new System.Drawing.Point(155, 156);
+            this.DataNumLabel15.Name = "DataNumLabel15";
+            this.DataNumLabel15.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel15.TabIndex = 3;
+            this.DataNumLabel15.Text = "15";
+            // 
+            // DataNumLabel5
+            // 
+            this.DataNumLabel5.AutoSize = true;
+            this.DataNumLabel5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel5.Location = new System.Drawing.Point(24, 156);
+            this.DataNumLabel5.Name = "DataNumLabel5";
+            this.DataNumLabel5.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel5.TabIndex = 3;
+            this.DataNumLabel5.Text = "5";
+            // 
+            // DataNumLabel8
+            // 
+            this.DataNumLabel8.AutoSize = true;
+            this.DataNumLabel8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel8.Location = new System.Drawing.Point(24, 252);
+            this.DataNumLabel8.Name = "DataNumLabel8";
+            this.DataNumLabel8.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel8.TabIndex = 3;
+            this.DataNumLabel8.Text = "8";
+            // 
+            // DataNumLabel18
+            // 
+            this.DataNumLabel18.AutoSize = true;
+            this.DataNumLabel18.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel18.Location = new System.Drawing.Point(155, 252);
+            this.DataNumLabel18.Name = "DataNumLabel18";
+            this.DataNumLabel18.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel18.TabIndex = 3;
+            this.DataNumLabel18.Text = "18";
+            // 
+            // DataNumLabel24
+            // 
+            this.DataNumLabel24.AutoSize = true;
+            this.DataNumLabel24.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel24.Location = new System.Drawing.Point(289, 124);
+            this.DataNumLabel24.Name = "DataNumLabel24";
+            this.DataNumLabel24.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel24.TabIndex = 3;
+            this.DataNumLabel24.Text = "24";
+            // 
+            // DataNumLabel28
+            // 
+            this.DataNumLabel28.AutoSize = true;
+            this.DataNumLabel28.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel28.Location = new System.Drawing.Point(289, 252);
+            this.DataNumLabel28.Name = "DataNumLabel28";
+            this.DataNumLabel28.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel28.TabIndex = 3;
+            this.DataNumLabel28.Text = "28";
+            // 
+            // DataNumLabel14
+            // 
+            this.DataNumLabel14.AutoSize = true;
+            this.DataNumLabel14.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel14.Location = new System.Drawing.Point(155, 124);
+            this.DataNumLabel14.Name = "DataNumLabel14";
+            this.DataNumLabel14.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel14.TabIndex = 3;
+            this.DataNumLabel14.Text = "14";
+            // 
+            // DataNumLabel4
+            // 
+            this.DataNumLabel4.AutoSize = true;
+            this.DataNumLabel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel4.Location = new System.Drawing.Point(24, 124);
+            this.DataNumLabel4.Name = "DataNumLabel4";
+            this.DataNumLabel4.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel4.TabIndex = 3;
+            this.DataNumLabel4.Text = "4";
+            // 
+            // DataNumLabel9
+            // 
+            this.DataNumLabel9.AutoSize = true;
+            this.DataNumLabel9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel9.Location = new System.Drawing.Point(24, 284);
+            this.DataNumLabel9.Name = "DataNumLabel9";
+            this.DataNumLabel9.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel9.TabIndex = 3;
+            this.DataNumLabel9.Text = "9";
+            // 
+            // DataNumLabel19
+            // 
+            this.DataNumLabel19.AutoSize = true;
+            this.DataNumLabel19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel19.Location = new System.Drawing.Point(155, 284);
+            this.DataNumLabel19.Name = "DataNumLabel19";
+            this.DataNumLabel19.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel19.TabIndex = 3;
+            this.DataNumLabel19.Text = "19";
+            // 
+            // DataNumLabel23
+            // 
+            this.DataNumLabel23.AutoSize = true;
+            this.DataNumLabel23.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel23.Location = new System.Drawing.Point(289, 92);
+            this.DataNumLabel23.Name = "DataNumLabel23";
+            this.DataNumLabel23.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel23.TabIndex = 3;
+            this.DataNumLabel23.Text = "23";
+            // 
+            // DataNumLabel29
+            // 
+            this.DataNumLabel29.AutoSize = true;
+            this.DataNumLabel29.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel29.Location = new System.Drawing.Point(289, 284);
+            this.DataNumLabel29.Name = "DataNumLabel29";
+            this.DataNumLabel29.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel29.TabIndex = 3;
+            this.DataNumLabel29.Text = "29";
+            // 
+            // DataNumLabel13
+            // 
+            this.DataNumLabel13.AutoSize = true;
+            this.DataNumLabel13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel13.Location = new System.Drawing.Point(155, 92);
+            this.DataNumLabel13.Name = "DataNumLabel13";
+            this.DataNumLabel13.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel13.TabIndex = 3;
+            this.DataNumLabel13.Text = "13";
+            // 
+            // DataNumLabel3
+            // 
+            this.DataNumLabel3.AutoSize = true;
+            this.DataNumLabel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel3.Location = new System.Drawing.Point(24, 92);
+            this.DataNumLabel3.Name = "DataNumLabel3";
+            this.DataNumLabel3.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel3.TabIndex = 3;
+            this.DataNumLabel3.Text = "3";
+            // 
+            // DataNumLabel10
+            // 
+            this.DataNumLabel10.AutoSize = true;
+            this.DataNumLabel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel10.Location = new System.Drawing.Point(16, 316);
+            this.DataNumLabel10.Name = "DataNumLabel10";
+            this.DataNumLabel10.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel10.TabIndex = 3;
+            this.DataNumLabel10.Text = "10";
+            // 
+            // DataNumLabel20
+            // 
+            this.DataNumLabel20.AutoSize = true;
+            this.DataNumLabel20.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel20.Location = new System.Drawing.Point(155, 316);
+            this.DataNumLabel20.Name = "DataNumLabel20";
+            this.DataNumLabel20.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel20.TabIndex = 3;
+            this.DataNumLabel20.Text = "20";
+            // 
+            // DataNumLabel22
+            // 
+            this.DataNumLabel22.AutoSize = true;
+            this.DataNumLabel22.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel22.Location = new System.Drawing.Point(289, 60);
+            this.DataNumLabel22.Name = "DataNumLabel22";
+            this.DataNumLabel22.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel22.TabIndex = 3;
+            this.DataNumLabel22.Text = "22";
+            // 
+            // DataNumLabel12
+            // 
+            this.DataNumLabel12.AutoSize = true;
+            this.DataNumLabel12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel12.Location = new System.Drawing.Point(155, 60);
+            this.DataNumLabel12.Name = "DataNumLabel12";
+            this.DataNumLabel12.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel12.TabIndex = 3;
+            this.DataNumLabel12.Text = "12";
+            // 
+            // DataNumLabel30
+            // 
+            this.DataNumLabel30.AutoSize = true;
+            this.DataNumLabel30.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel30.Location = new System.Drawing.Point(289, 316);
+            this.DataNumLabel30.Name = "DataNumLabel30";
+            this.DataNumLabel30.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel30.TabIndex = 3;
+            this.DataNumLabel30.Text = "30";
+            // 
+            // DataNumLabel2
+            // 
+            this.DataNumLabel2.AutoSize = true;
+            this.DataNumLabel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel2.Location = new System.Drawing.Point(24, 60);
+            this.DataNumLabel2.Name = "DataNumLabel2";
+            this.DataNumLabel2.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel2.TabIndex = 3;
+            this.DataNumLabel2.Text = "2";
+            // 
+            // DataNumLabel21
+            // 
+            this.DataNumLabel21.AutoSize = true;
+            this.DataNumLabel21.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel21.Location = new System.Drawing.Point(289, 28);
+            this.DataNumLabel21.Name = "DataNumLabel21";
+            this.DataNumLabel21.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel21.TabIndex = 3;
+            this.DataNumLabel21.Text = "21";
+            // 
+            // DataNumLabel11
+            // 
+            this.DataNumLabel11.AutoSize = true;
+            this.DataNumLabel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel11.Location = new System.Drawing.Point(155, 28);
+            this.DataNumLabel11.Name = "DataNumLabel11";
+            this.DataNumLabel11.Size = new System.Drawing.Size(23, 16);
+            this.DataNumLabel11.TabIndex = 3;
+            this.DataNumLabel11.Text = "11";
+            // 
+            // DataNumLabel1
+            // 
+            this.DataNumLabel1.AutoSize = true;
+            this.DataNumLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataNumLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumLabel1.Location = new System.Drawing.Point(24, 28);
+            this.DataNumLabel1.Name = "DataNumLabel1";
+            this.DataNumLabel1.Size = new System.Drawing.Size(15, 16);
+            this.DataNumLabel1.TabIndex = 3;
+            this.DataNumLabel1.Text = "1";
+            // 
+            // DesorbTextBox6
+            // 
+            this.DesorbTextBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox6.Location = new System.Drawing.Point(44, 185);
+            this.DesorbTextBox6.Name = "DesorbTextBox6";
+            this.DesorbTextBox6.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox6.TabIndex = 7;
+            // 
+            // DesorbTextBox16
+            // 
+            this.DesorbTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox16.Location = new System.Drawing.Point(183, 185);
+            this.DesorbTextBox16.Name = "DesorbTextBox16";
+            this.DesorbTextBox16.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox16.TabIndex = 17;
+            // 
+            // DesorbTextBox25
+            // 
+            this.DesorbTextBox25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox25.Location = new System.Drawing.Point(317, 153);
+            this.DesorbTextBox25.Name = "DesorbTextBox25";
+            this.DesorbTextBox25.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox25.TabIndex = 26;
+            // 
+            // DesorbTextBox26
+            // 
+            this.DesorbTextBox26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox26.Location = new System.Drawing.Point(317, 185);
+            this.DesorbTextBox26.Name = "DesorbTextBox26";
+            this.DesorbTextBox26.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox26.TabIndex = 27;
+            // 
+            // DesorbTextBox15
+            // 
+            this.DesorbTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox15.Location = new System.Drawing.Point(183, 153);
+            this.DesorbTextBox15.Name = "DesorbTextBox15";
+            this.DesorbTextBox15.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox15.TabIndex = 16;
+            // 
+            // DesorbTextBox5
+            // 
+            this.DesorbTextBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox5.Location = new System.Drawing.Point(44, 153);
+            this.DesorbTextBox5.Name = "DesorbTextBox5";
+            this.DesorbTextBox5.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox5.TabIndex = 6;
+            // 
+            // DesorbTextBox7
+            // 
+            this.DesorbTextBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox7.Location = new System.Drawing.Point(44, 217);
+            this.DesorbTextBox7.Name = "DesorbTextBox7";
+            this.DesorbTextBox7.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox7.TabIndex = 8;
+            // 
+            // DesorbTextBox17
+            // 
+            this.DesorbTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox17.Location = new System.Drawing.Point(183, 217);
+            this.DesorbTextBox17.Name = "DesorbTextBox17";
+            this.DesorbTextBox17.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox17.TabIndex = 18;
+            // 
+            // DesorbTextBox24
+            // 
+            this.DesorbTextBox24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox24.Location = new System.Drawing.Point(317, 121);
+            this.DesorbTextBox24.Name = "DesorbTextBox24";
+            this.DesorbTextBox24.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox24.TabIndex = 25;
+            // 
+            // DesorbTextBox27
+            // 
+            this.DesorbTextBox27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox27.Location = new System.Drawing.Point(317, 217);
+            this.DesorbTextBox27.Name = "DesorbTextBox27";
+            this.DesorbTextBox27.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox27.TabIndex = 28;
+            // 
+            // DesorbTextBox14
+            // 
+            this.DesorbTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox14.Location = new System.Drawing.Point(183, 121);
+            this.DesorbTextBox14.Name = "DesorbTextBox14";
+            this.DesorbTextBox14.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox14.TabIndex = 15;
+            // 
+            // DesorbTextBox4
+            // 
+            this.DesorbTextBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox4.Location = new System.Drawing.Point(44, 121);
+            this.DesorbTextBox4.Name = "DesorbTextBox4";
+            this.DesorbTextBox4.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox4.TabIndex = 5;
+            // 
+            // DesorbTextBox8
+            // 
+            this.DesorbTextBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox8.Location = new System.Drawing.Point(44, 249);
+            this.DesorbTextBox8.Name = "DesorbTextBox8";
+            this.DesorbTextBox8.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox8.TabIndex = 9;
+            // 
+            // DesorbTextBox18
+            // 
+            this.DesorbTextBox18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox18.Location = new System.Drawing.Point(183, 249);
+            this.DesorbTextBox18.Name = "DesorbTextBox18";
+            this.DesorbTextBox18.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox18.TabIndex = 19;
+            // 
+            // DesorbTextBox23
+            // 
+            this.DesorbTextBox23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox23.Location = new System.Drawing.Point(317, 89);
+            this.DesorbTextBox23.Name = "DesorbTextBox23";
+            this.DesorbTextBox23.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox23.TabIndex = 24;
+            // 
+            // DesorbTextBox28
+            // 
+            this.DesorbTextBox28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox28.Location = new System.Drawing.Point(317, 249);
+            this.DesorbTextBox28.Name = "DesorbTextBox28";
+            this.DesorbTextBox28.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox28.TabIndex = 29;
+            // 
+            // DesorbTextBox13
+            // 
+            this.DesorbTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox13.Location = new System.Drawing.Point(183, 89);
+            this.DesorbTextBox13.Name = "DesorbTextBox13";
+            this.DesorbTextBox13.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox13.TabIndex = 14;
+            // 
+            // DesorbTextBox3
+            // 
+            this.DesorbTextBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox3.Location = new System.Drawing.Point(44, 89);
+            this.DesorbTextBox3.Name = "DesorbTextBox3";
+            this.DesorbTextBox3.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox3.TabIndex = 4;
+            // 
+            // DesorbTextBox9
+            // 
+            this.DesorbTextBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox9.Location = new System.Drawing.Point(44, 281);
+            this.DesorbTextBox9.Name = "DesorbTextBox9";
+            this.DesorbTextBox9.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox9.TabIndex = 10;
+            // 
+            // DesorbTextBox19
+            // 
+            this.DesorbTextBox19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox19.Location = new System.Drawing.Point(183, 281);
+            this.DesorbTextBox19.Name = "DesorbTextBox19";
+            this.DesorbTextBox19.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox19.TabIndex = 20;
+            // 
+            // DesorbTextBox22
+            // 
+            this.DesorbTextBox22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox22.Location = new System.Drawing.Point(317, 57);
+            this.DesorbTextBox22.Name = "DesorbTextBox22";
+            this.DesorbTextBox22.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox22.TabIndex = 23;
+            // 
+            // DesorbTextBox29
+            // 
+            this.DesorbTextBox29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox29.Location = new System.Drawing.Point(317, 281);
+            this.DesorbTextBox29.Name = "DesorbTextBox29";
+            this.DesorbTextBox29.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox29.TabIndex = 30;
+            // 
+            // DesorbTextBox12
+            // 
+            this.DesorbTextBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox12.Location = new System.Drawing.Point(183, 57);
+            this.DesorbTextBox12.Name = "DesorbTextBox12";
+            this.DesorbTextBox12.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox12.TabIndex = 13;
+            // 
+            // DesorbTextBox2
+            // 
+            this.DesorbTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox2.Location = new System.Drawing.Point(44, 57);
+            this.DesorbTextBox2.Name = "DesorbTextBox2";
+            this.DesorbTextBox2.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox2.TabIndex = 3;
+            // 
+            // DesorbTextBox21
+            // 
+            this.DesorbTextBox21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox21.Location = new System.Drawing.Point(317, 25);
+            this.DesorbTextBox21.Name = "DesorbTextBox21";
+            this.DesorbTextBox21.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox21.TabIndex = 22;
+            // 
+            // DesorbTextBox10
+            // 
+            this.DesorbTextBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox10.Location = new System.Drawing.Point(44, 313);
+            this.DesorbTextBox10.Name = "DesorbTextBox10";
+            this.DesorbTextBox10.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox10.TabIndex = 11;
+            // 
+            // DesorbTextBox20
+            // 
+            this.DesorbTextBox20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox20.Location = new System.Drawing.Point(183, 313);
+            this.DesorbTextBox20.Name = "DesorbTextBox20";
+            this.DesorbTextBox20.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox20.TabIndex = 21;
+            // 
+            // DesorbTextBox11
+            // 
+            this.DesorbTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox11.Location = new System.Drawing.Point(183, 25);
+            this.DesorbTextBox11.Name = "DesorbTextBox11";
+            this.DesorbTextBox11.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox11.TabIndex = 12;
+            // 
+            // DesorbTextBox1
+            // 
+            this.DesorbTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox1.Location = new System.Drawing.Point(44, 25);
+            this.DesorbTextBox1.Name = "DesorbTextBox1";
+            this.DesorbTextBox1.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox1.TabIndex = 2;
+            // 
+            // DesorbTextBox30
+            // 
+            this.DesorbTextBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox30.Location = new System.Drawing.Point(317, 313);
+            this.DesorbTextBox30.Name = "DesorbTextBox30";
+            this.DesorbTextBox30.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox30.TabIndex = 31;
+            // 
+            // tabPage2panel4
+            // 
+            this.tabPage2panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage2panel4.Controls.Add(this.label27);
+            this.tabPage2panel4.Controls.Add(this.label29);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox36);
+            this.tabPage2panel4.Controls.Add(this.label28);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox46);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox55);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox56);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox45);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox60);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox35);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox59);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox37);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox58);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox47);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox57);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox54);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox56);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox57);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox55);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox44);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox54);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox34);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox53);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox38);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox52);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox48);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox51);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox53);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox50);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox58);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox49);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox43);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox48);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox33);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox47);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox39);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox46);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox49);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox45);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox52);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox44);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox59);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox43);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox42);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox42);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox32);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox41);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox51);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox40);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox40);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox39);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox50);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox38);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox41);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox37);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox31);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox36);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox60);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox35);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox31);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox34);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox32);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox33);
+            this.tabPage2panel4.Location = new System.Drawing.Point(412, 112);
+            this.tabPage2panel4.Name = "tabPage2panel4";
+            this.tabPage2panel4.Size = new System.Drawing.Size(403, 346);
+            this.tabPage2panel4.TabIndex = 2;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(3, 5);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(119, 16);
+            this.label27.TabIndex = 146;
+            this.label27.Text = "时间   解吸量 ";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(276, 5);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(119, 16);
+            this.label29.TabIndex = 148;
+            this.label29.Text = "时间   解吸量 ";
+            // 
+            // DesorbTextBox36
+            // 
+            this.DesorbTextBox36.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox36.Location = new System.Drawing.Point(44, 187);
+            this.DesorbTextBox36.Name = "DesorbTextBox36";
+            this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox36.TabIndex = 43;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(142, 5);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(119, 16);
+            this.label28.TabIndex = 147;
+            this.label28.Text = "时间   解吸量 ";
+            // 
+            // DesorbTextBox46
+            // 
+            this.DesorbTextBox46.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox46.Location = new System.Drawing.Point(183, 187);
+            this.DesorbTextBox46.Name = "DesorbTextBox46";
+            this.DesorbTextBox46.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox46.TabIndex = 63;
+            // 
+            // DesorbTextBox55
+            // 
+            this.DesorbTextBox55.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox55.Location = new System.Drawing.Point(317, 155);
+            this.DesorbTextBox55.Name = "DesorbTextBox55";
+            this.DesorbTextBox55.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox55.TabIndex = 81;
+            // 
+            // DesorbTextBox56
+            // 
+            this.DesorbTextBox56.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox56.Location = new System.Drawing.Point(317, 187);
+            this.DesorbTextBox56.Name = "DesorbTextBox56";
+            this.DesorbTextBox56.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox56.TabIndex = 83;
+            // 
+            // DesorbTextBox45
+            // 
+            this.DesorbTextBox45.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox45.Location = new System.Drawing.Point(183, 155);
+            this.DesorbTextBox45.Name = "DesorbTextBox45";
+            this.DesorbTextBox45.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox45.TabIndex = 61;
+            // 
+            // DataNumTextBox60
+            // 
+            this.DataNumTextBox60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox60.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox60.Location = new System.Drawing.Point(277, 318);
+            this.DataNumTextBox60.Name = "DataNumTextBox60";
+            this.DataNumTextBox60.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox60.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox60.TabIndex = 90;
+            this.DataNumTextBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox35
+            // 
+            this.DesorbTextBox35.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox35.Location = new System.Drawing.Point(44, 155);
+            this.DesorbTextBox35.Name = "DesorbTextBox35";
+            this.DesorbTextBox35.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox35.TabIndex = 41;
+            // 
+            // DataNumTextBox59
+            // 
+            this.DataNumTextBox59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox59.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox59.Location = new System.Drawing.Point(277, 286);
+            this.DataNumTextBox59.Name = "DataNumTextBox59";
+            this.DataNumTextBox59.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox59.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox59.TabIndex = 88;
+            this.DataNumTextBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox37
+            // 
+            this.DesorbTextBox37.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox37.Location = new System.Drawing.Point(44, 219);
+            this.DesorbTextBox37.Name = "DesorbTextBox37";
+            this.DesorbTextBox37.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox37.TabIndex = 45;
+            // 
+            // DataNumTextBox58
+            // 
+            this.DataNumTextBox58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox58.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox58.Location = new System.Drawing.Point(277, 254);
+            this.DataNumTextBox58.Name = "DataNumTextBox58";
+            this.DataNumTextBox58.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox58.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox58.TabIndex = 86;
+            this.DataNumTextBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox47
+            // 
+            this.DesorbTextBox47.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox47.Location = new System.Drawing.Point(183, 219);
+            this.DesorbTextBox47.Name = "DesorbTextBox47";
+            this.DesorbTextBox47.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox47.TabIndex = 65;
+            // 
+            // DataNumTextBox57
+            // 
+            this.DataNumTextBox57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox57.Location = new System.Drawing.Point(277, 222);
+            this.DataNumTextBox57.Name = "DataNumTextBox57";
+            this.DataNumTextBox57.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox57.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox57.TabIndex = 84;
+            this.DataNumTextBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox54
+            // 
+            this.DesorbTextBox54.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox54.Location = new System.Drawing.Point(317, 123);
+            this.DesorbTextBox54.Name = "DesorbTextBox54";
+            this.DesorbTextBox54.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox54.TabIndex = 79;
+            // 
+            // DataNumTextBox56
+            // 
+            this.DataNumTextBox56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox56.Location = new System.Drawing.Point(277, 190);
+            this.DataNumTextBox56.Name = "DataNumTextBox56";
+            this.DataNumTextBox56.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox56.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox56.TabIndex = 82;
+            this.DataNumTextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox57
+            // 
+            this.DesorbTextBox57.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox57.Location = new System.Drawing.Point(317, 219);
+            this.DesorbTextBox57.Name = "DesorbTextBox57";
+            this.DesorbTextBox57.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox57.TabIndex = 85;
+            // 
+            // DataNumTextBox55
+            // 
+            this.DataNumTextBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox55.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox55.Location = new System.Drawing.Point(277, 158);
+            this.DataNumTextBox55.Name = "DataNumTextBox55";
+            this.DataNumTextBox55.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox55.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox55.TabIndex = 80;
+            this.DataNumTextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox44
+            // 
+            this.DesorbTextBox44.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox44.Location = new System.Drawing.Point(183, 123);
+            this.DesorbTextBox44.Name = "DesorbTextBox44";
+            this.DesorbTextBox44.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox44.TabIndex = 59;
+            // 
+            // DataNumTextBox54
+            // 
+            this.DataNumTextBox54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox54.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox54.Location = new System.Drawing.Point(277, 126);
+            this.DataNumTextBox54.Name = "DataNumTextBox54";
+            this.DataNumTextBox54.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox54.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox54.TabIndex = 78;
+            this.DataNumTextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox34
+            // 
+            this.DesorbTextBox34.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox34.Location = new System.Drawing.Point(44, 123);
+            this.DesorbTextBox34.Name = "DesorbTextBox34";
+            this.DesorbTextBox34.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox34.TabIndex = 39;
+            // 
+            // DataNumTextBox53
+            // 
+            this.DataNumTextBox53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox53.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox53.Location = new System.Drawing.Point(277, 94);
+            this.DataNumTextBox53.Name = "DataNumTextBox53";
+            this.DataNumTextBox53.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox53.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox53.TabIndex = 76;
+            this.DataNumTextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox38
+            // 
+            this.DesorbTextBox38.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox38.Location = new System.Drawing.Point(44, 251);
+            this.DesorbTextBox38.Name = "DesorbTextBox38";
+            this.DesorbTextBox38.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox38.TabIndex = 47;
+            // 
+            // DataNumTextBox52
+            // 
+            this.DataNumTextBox52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox52.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox52.Location = new System.Drawing.Point(277, 62);
+            this.DataNumTextBox52.Name = "DataNumTextBox52";
+            this.DataNumTextBox52.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox52.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox52.TabIndex = 74;
+            this.DataNumTextBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox48
+            // 
+            this.DesorbTextBox48.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox48.Location = new System.Drawing.Point(183, 251);
+            this.DesorbTextBox48.Name = "DesorbTextBox48";
+            this.DesorbTextBox48.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox48.TabIndex = 67;
+            // 
+            // DataNumTextBox51
+            // 
+            this.DataNumTextBox51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox51.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox51.Location = new System.Drawing.Point(277, 30);
+            this.DataNumTextBox51.Name = "DataNumTextBox51";
+            this.DataNumTextBox51.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox51.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox51.TabIndex = 72;
+            this.DataNumTextBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox53
+            // 
+            this.DesorbTextBox53.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox53.Location = new System.Drawing.Point(317, 91);
+            this.DesorbTextBox53.Name = "DesorbTextBox53";
+            this.DesorbTextBox53.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox53.TabIndex = 77;
+            // 
+            // DataNumTextBox50
+            // 
+            this.DataNumTextBox50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox50.Location = new System.Drawing.Point(143, 318);
+            this.DataNumTextBox50.Name = "DataNumTextBox50";
+            this.DataNumTextBox50.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox50.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox50.TabIndex = 70;
+            this.DataNumTextBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox58
+            // 
+            this.DesorbTextBox58.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox58.Location = new System.Drawing.Point(317, 251);
+            this.DesorbTextBox58.Name = "DesorbTextBox58";
+            this.DesorbTextBox58.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox58.TabIndex = 87;
+            // 
+            // DataNumTextBox49
+            // 
+            this.DataNumTextBox49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox49.Location = new System.Drawing.Point(143, 286);
+            this.DataNumTextBox49.Name = "DataNumTextBox49";
+            this.DataNumTextBox49.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox49.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox49.TabIndex = 68;
+            this.DataNumTextBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox43
+            // 
+            this.DesorbTextBox43.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox43.Location = new System.Drawing.Point(183, 91);
+            this.DesorbTextBox43.Name = "DesorbTextBox43";
+            this.DesorbTextBox43.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox43.TabIndex = 57;
+            // 
+            // DataNumTextBox48
+            // 
+            this.DataNumTextBox48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox48.Location = new System.Drawing.Point(143, 254);
+            this.DataNumTextBox48.Name = "DataNumTextBox48";
+            this.DataNumTextBox48.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox48.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox48.TabIndex = 66;
+            this.DataNumTextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox33
+            // 
+            this.DesorbTextBox33.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox33.Location = new System.Drawing.Point(44, 91);
+            this.DesorbTextBox33.Name = "DesorbTextBox33";
+            this.DesorbTextBox33.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox33.TabIndex = 37;
+            // 
+            // DataNumTextBox47
+            // 
+            this.DataNumTextBox47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox47.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox47.Location = new System.Drawing.Point(143, 222);
+            this.DataNumTextBox47.Name = "DataNumTextBox47";
+            this.DataNumTextBox47.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox47.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox47.TabIndex = 64;
+            this.DataNumTextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox39
+            // 
+            this.DesorbTextBox39.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox39.Location = new System.Drawing.Point(44, 283);
+            this.DesorbTextBox39.Name = "DesorbTextBox39";
+            this.DesorbTextBox39.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox39.TabIndex = 49;
+            // 
+            // DataNumTextBox46
+            // 
+            this.DataNumTextBox46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox46.Location = new System.Drawing.Point(143, 190);
+            this.DataNumTextBox46.Name = "DataNumTextBox46";
+            this.DataNumTextBox46.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox46.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox46.TabIndex = 62;
+            this.DataNumTextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox49
+            // 
+            this.DesorbTextBox49.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox49.Location = new System.Drawing.Point(183, 283);
+            this.DesorbTextBox49.Name = "DesorbTextBox49";
+            this.DesorbTextBox49.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox49.TabIndex = 69;
+            // 
+            // DataNumTextBox45
+            // 
+            this.DataNumTextBox45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox45.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox45.Location = new System.Drawing.Point(143, 158);
+            this.DataNumTextBox45.Name = "DataNumTextBox45";
+            this.DataNumTextBox45.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox45.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox45.TabIndex = 60;
+            this.DataNumTextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox52
+            // 
+            this.DesorbTextBox52.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox52.Location = new System.Drawing.Point(317, 59);
+            this.DesorbTextBox52.Name = "DesorbTextBox52";
+            this.DesorbTextBox52.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox52.TabIndex = 75;
+            // 
+            // DataNumTextBox44
+            // 
+            this.DataNumTextBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox44.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox44.Location = new System.Drawing.Point(143, 126);
+            this.DataNumTextBox44.Name = "DataNumTextBox44";
+            this.DataNumTextBox44.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox44.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox44.TabIndex = 58;
+            this.DataNumTextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox59
+            // 
+            this.DesorbTextBox59.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox59.Location = new System.Drawing.Point(317, 283);
+            this.DesorbTextBox59.Name = "DesorbTextBox59";
+            this.DesorbTextBox59.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox59.TabIndex = 89;
+            // 
+            // DataNumTextBox43
+            // 
+            this.DataNumTextBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox43.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox43.Location = new System.Drawing.Point(143, 94);
+            this.DataNumTextBox43.Name = "DataNumTextBox43";
+            this.DataNumTextBox43.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox43.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox43.TabIndex = 56;
+            this.DataNumTextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox42
+            // 
+            this.DesorbTextBox42.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox42.Location = new System.Drawing.Point(183, 59);
+            this.DesorbTextBox42.Name = "DesorbTextBox42";
+            this.DesorbTextBox42.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox42.TabIndex = 55;
+            // 
+            // DataNumTextBox42
+            // 
+            this.DataNumTextBox42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox42.Location = new System.Drawing.Point(143, 62);
+            this.DataNumTextBox42.Name = "DataNumTextBox42";
+            this.DataNumTextBox42.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox42.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox42.TabIndex = 54;
+            this.DataNumTextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox32
+            // 
+            this.DesorbTextBox32.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox32.Location = new System.Drawing.Point(44, 59);
+            this.DesorbTextBox32.Name = "DesorbTextBox32";
+            this.DesorbTextBox32.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox32.TabIndex = 35;
+            // 
+            // DataNumTextBox41
+            // 
+            this.DataNumTextBox41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox41.Location = new System.Drawing.Point(143, 30);
+            this.DataNumTextBox41.Name = "DataNumTextBox41";
+            this.DataNumTextBox41.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox41.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox41.TabIndex = 52;
+            this.DataNumTextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox51
+            // 
+            this.DesorbTextBox51.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox51.Location = new System.Drawing.Point(317, 27);
+            this.DesorbTextBox51.Name = "DesorbTextBox51";
+            this.DesorbTextBox51.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox51.TabIndex = 73;
+            // 
+            // DataNumTextBox40
+            // 
+            this.DataNumTextBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox40.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox40.Location = new System.Drawing.Point(4, 318);
+            this.DataNumTextBox40.Name = "DataNumTextBox40";
+            this.DataNumTextBox40.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox40.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox40.TabIndex = 50;
+            this.DataNumTextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox40
+            // 
+            this.DesorbTextBox40.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox40.Location = new System.Drawing.Point(44, 315);
+            this.DesorbTextBox40.Name = "DesorbTextBox40";
+            this.DesorbTextBox40.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox40.TabIndex = 51;
+            // 
+            // DataNumTextBox39
+            // 
+            this.DataNumTextBox39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox39.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox39.Location = new System.Drawing.Point(4, 286);
+            this.DataNumTextBox39.Name = "DataNumTextBox39";
+            this.DataNumTextBox39.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox39.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox39.TabIndex = 48;
+            this.DataNumTextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox50
+            // 
+            this.DesorbTextBox50.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox50.Location = new System.Drawing.Point(183, 315);
+            this.DesorbTextBox50.Name = "DesorbTextBox50";
+            this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox50.TabIndex = 71;
+            // 
+            // DataNumTextBox38
+            // 
+            this.DataNumTextBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox38.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox38.Location = new System.Drawing.Point(4, 254);
+            this.DataNumTextBox38.Name = "DataNumTextBox38";
+            this.DataNumTextBox38.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox38.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox38.TabIndex = 46;
+            this.DataNumTextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox41
+            // 
+            this.DesorbTextBox41.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox41.Location = new System.Drawing.Point(183, 27);
+            this.DesorbTextBox41.Name = "DesorbTextBox41";
+            this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox41.TabIndex = 53;
+            // 
+            // DataNumTextBox37
+            // 
+            this.DataNumTextBox37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox37.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox37.Location = new System.Drawing.Point(4, 222);
+            this.DataNumTextBox37.Name = "DataNumTextBox37";
+            this.DataNumTextBox37.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox37.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox37.TabIndex = 44;
+            this.DataNumTextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox31
+            // 
+            this.DesorbTextBox31.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox31.Location = new System.Drawing.Point(44, 27);
+            this.DesorbTextBox31.Name = "DesorbTextBox31";
+            this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox31.TabIndex = 33;
+            // 
+            // DataNumTextBox36
+            // 
+            this.DataNumTextBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox36.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox36.Location = new System.Drawing.Point(4, 190);
+            this.DataNumTextBox36.Name = "DataNumTextBox36";
+            this.DataNumTextBox36.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox36.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox36.TabIndex = 42;
+            this.DataNumTextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DesorbTextBox60
+            // 
+            this.DesorbTextBox60.BackColor = System.Drawing.SystemColors.Window;
+            this.DesorbTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox60.Location = new System.Drawing.Point(317, 315);
+            this.DesorbTextBox60.Name = "DesorbTextBox60";
+            this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
+            this.DesorbTextBox60.TabIndex = 91;
+            // 
+            // DataNumTextBox35
+            // 
+            this.DataNumTextBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox35.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox35.Location = new System.Drawing.Point(4, 158);
+            this.DataNumTextBox35.Name = "DataNumTextBox35";
+            this.DataNumTextBox35.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox35.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox35.TabIndex = 40;
+            this.DataNumTextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox31
+            // 
+            this.DataNumTextBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox31.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox31.Location = new System.Drawing.Point(4, 30);
+            this.DataNumTextBox31.Name = "DataNumTextBox31";
+            this.DataNumTextBox31.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox31.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox31.TabIndex = 32;
+            this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox34
+            // 
+            this.DataNumTextBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox34.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox34.Location = new System.Drawing.Point(4, 126);
+            this.DataNumTextBox34.Name = "DataNumTextBox34";
+            this.DataNumTextBox34.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox34.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox34.TabIndex = 38;
+            this.DataNumTextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox32
+            // 
+            this.DataNumTextBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox32.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox32.Location = new System.Drawing.Point(4, 62);
+            this.DataNumTextBox32.Name = "DataNumTextBox32";
+            this.DataNumTextBox32.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox32.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox32.TabIndex = 34;
+            this.DataNumTextBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DataNumTextBox33
+            // 
+            this.DataNumTextBox33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataNumTextBox33.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataNumTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox33.Location = new System.Drawing.Point(4, 94);
+            this.DataNumTextBox33.Name = "DataNumTextBox33";
+            this.DataNumTextBox33.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataNumTextBox33.Size = new System.Drawing.Size(39, 19);
+            this.DataNumTextBox33.TabIndex = 36;
+            this.DataNumTextBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tabPage2panel5
+            // 
+            this.tabPage2panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPage2panel5.Controls.Add(this.label23);
+            this.tabPage2panel5.Controls.Add(this.pictureBox3);
+            this.tabPage2panel5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage2panel5.Location = new System.Drawing.Point(3, 464);
+            this.tabPage2panel5.Name = "tabPage2panel5";
+            this.tabPage2panel5.Size = new System.Drawing.Size(321, 345);
+            this.tabPage2panel5.TabIndex = 1001;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label23.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label23.Location = new System.Drawing.Point(3, 5);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(89, 19);
+            this.label23.TabIndex = 142;
+            this.label23.Text = "图像预览";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 26);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(314, 314);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
+            // tabPage2panel6
+            // 
+            this.tabPage2panel6.BackColor = System.Drawing.Color.RosyBrown;
+            this.tabPage2panel6.Controls.Add(this.SampLossVolTextBox);
+            this.tabPage2panel6.Controls.Add(this.DesVolUndTextBox);
+            this.tabPage2panel6.Controls.Add(this.UndDesorpCalTextBox);
+            this.tabPage2panel6.Controls.Add(this.label53);
+            this.tabPage2panel6.Controls.Add(this.label54);
+            this.tabPage2panel6.Controls.Add(this.DrawCurvesButton);
+            this.tabPage2panel6.Controls.Add(this.label18);
+            this.tabPage2panel6.Location = new System.Drawing.Point(330, 464);
+            this.tabPage2panel6.Name = "tabPage2panel6";
+            this.tabPage2panel6.Size = new System.Drawing.Size(485, 340);
+            this.tabPage2panel6.TabIndex = 1000;
+            // 
+            // SampLossVolTextBox
+            // 
+            this.SampLossVolTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.SampLossVolTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.SampLossVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SampLossVolTextBox.Location = new System.Drawing.Point(144, 71);
+            this.SampLossVolTextBox.Name = "SampLossVolTextBox";
+            this.SampLossVolTextBox.ReadOnly = true;
+            this.SampLossVolTextBox.Size = new System.Drawing.Size(278, 26);
+            this.SampLossVolTextBox.TabIndex = 0;
+            this.SampLossVolTextBox.TabStop = false;
+            this.SampLossVolTextBox.Text = "0";
+            // 
+            // DesVolUndTextBox
+            // 
+            this.DesVolUndTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DesVolUndTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.DesVolUndTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesVolUndTextBox.Location = new System.Drawing.Point(143, 113);
+            this.DesVolUndTextBox.Name = "DesVolUndTextBox";
+            this.DesVolUndTextBox.ReadOnly = true;
+            this.DesVolUndTextBox.Size = new System.Drawing.Size(279, 26);
+            this.DesVolUndTextBox.TabIndex = 0;
+            this.DesVolUndTextBox.TabStop = false;
+            this.DesVolUndTextBox.Text = "0";
+            // 
+            // UndDesorpCalTextBox
+            // 
+            this.UndDesorpCalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.UndDesorpCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.UndDesorpCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UndDesorpCalTextBox.Location = new System.Drawing.Point(142, 154);
+            this.UndDesorpCalTextBox.Name = "UndDesorpCalTextBox";
+            this.UndDesorpCalTextBox.ReadOnly = true;
+            this.UndDesorpCalTextBox.Size = new System.Drawing.Size(279, 26);
+            this.UndDesorpCalTextBox.TabIndex = 110;
+            this.UndDesorpCalTextBox.TabStop = false;
+            this.UndDesorpCalTextBox.Text = "0";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label53.Location = new System.Drawing.Point(33, 80);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(111, 16);
+            this.label53.TabIndex = 3;
+            this.label53.Text = "井下解吸体积:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label54.Location = new System.Drawing.Point(33, 118);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(111, 16);
+            this.label54.TabIndex = 3;
+            this.label54.Text = "取样损失体积:";
+            // 
             // DrawCurvesButton
             // 
+            this.DrawCurvesButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DrawCurvesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.DrawCurvesButton.ButtonImage = global::GasFormsApp.Properties.Resources.打勾;
             this.DrawCurvesButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
@@ -4114,15 +4676,26 @@ namespace GasFormsApp
             this.DrawCurvesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrawCurvesButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DrawCurvesButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.DrawCurvesButton.Location = new System.Drawing.Point(974, 522);
+            this.DrawCurvesButton.Location = new System.Drawing.Point(179, 233);
             this.DrawCurvesButton.Name = "DrawCurvesButton";
             this.DrawCurvesButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.DrawCurvesButton.Radius = 35;
-            this.DrawCurvesButton.Size = new System.Drawing.Size(130, 42);
+            this.DrawCurvesButton.Size = new System.Drawing.Size(280, 42);
             this.DrawCurvesButton.TabIndex = 1000;
             this.DrawCurvesButton.Text = "      计    算";
             this.DrawCurvesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DrawCurvesButton.UseVisualStyleBackColor = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(33, 157);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 16);
+            this.label18.TabIndex = 111;
+            this.label18.Text = "井下解吸校准:";
             // 
             // LabDesorbButton
             // 
@@ -4230,7 +4803,9 @@ namespace GasFormsApp
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(625, 625);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -4239,13 +4814,7 @@ namespace GasFormsApp
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.tabPage1FlowLayoutPanel1.ResumeLayout(false);
-            this.tabPage1FlowLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3panel1.ResumeLayout(false);
             this.tabPage3panel1.PerformLayout();
@@ -4261,9 +4830,26 @@ namespace GasFormsApp
             this.GasCompGroupBox.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.ResumeLayout(false);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.PerformLayout();
+            this.tabPage2DoubleBufferedPanel2.ResumeLayout(false);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.ResumeLayout(false);
+            this.tabPage2DoubleBufferedPanel1.ResumeLayout(false);
+            this.tabPage2DoubleBufferedPanel1.PerformLayout();
+            this.tabPage2panel3.ResumeLayout(false);
+            this.tabPage2panel3.PerformLayout();
+            this.tabPage2panel4.ResumeLayout(false);
+            this.tabPage2panel4.PerformLayout();
+            this.tabPage2panel5.ResumeLayout(false);
+            this.tabPage2panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tabPage2panel6.ResumeLayout(false);
+            this.tabPage2panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4291,68 +4877,6 @@ namespace GasFormsApp
         private Label label1;
         private Label label3;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Label DataNumLabel1;
-        private Label DataNumLabel11;
-        private Label DataNumLabel21;
-        private Label label54;
-        private Label DataNumLabel2;
-        private Label DataNumLabel30;
-        private Label DataNumLabel12;
-        private Label label53;
-        private Label DataNumLabel22;
-        private Label DataNumLabel20;
-        private Label DataNumLabel10;
-        private Label DataNumLabel3;
-        private Label DataNumLabel13;
-        private Label DataNumLabel29;
-        private Label DataNumLabel23;
-        private Label DataNumLabel19;
-        private Label DataNumLabel9;
-        private Label DataNumLabel4;
-        private Label DataNumLabel14;
-        private Label DataNumLabel28;
-        private Label DataNumLabel24;
-        private Label DataNumLabel18;
-        private Label DataNumLabel8;
-        private Label DataNumLabel5;
-        private Label DataNumLabel15;
-        private Label DataNumLabel27;
-        private Label DataNumLabel25;
-        private Label DataNumLabel17;
-        private Label DataNumLabel7;
-        private Label DataNumLabel6;
-        private Label DataNumLabel16;
-        private Label DataNumLabel26;
-        private TextBox DesorbTextBox60;
-        private TextBox DesorbTextBox31;
-        private TextBox DesorbTextBox41;
-        private TextBox DesorbTextBox50;
-        private TextBox DesorbTextBox40;
-        private TextBox DesorbTextBox51;
-        private TextBox DesorbTextBox32;
-        private TextBox DesorbTextBox42;
-        private TextBox DesorbTextBox59;
-        private TextBox DesorbTextBox52;
-        private TextBox DesorbTextBox49;
-        private TextBox DesorbTextBox39;
-        private TextBox DesorbTextBox33;
-        private TextBox DesorbTextBox43;
-        private TextBox DesorbTextBox58;
-        private TextBox DesorbTextBox53;
-        private TextBox DesorbTextBox48;
-        private TextBox DesorbTextBox38;
-        private TextBox DesorbTextBox34;
-        private TextBox DesorbTextBox44;
-        private TextBox DesorbTextBox57;
-        private TextBox DesorbTextBox54;
-        private TextBox DesorbTextBox47;
-        private TextBox DesorbTextBox37;
-        private TextBox DesorbTextBox35;
-        private TextBox DesorbTextBox45;
-        private TextBox DesorbTextBox56;
-        private TextBox DesorbTextBox55;
-        private TextBox DesorbTextBox46;
-        private TextBox DesorbTextBox36;
         private Label label101;
         private Label label96;
         private Label label82;
@@ -4381,7 +4905,6 @@ namespace GasFormsApp
         private Label label111;
         private Label label21;
         private TabPage tabPage5;
-        private Label label90;
         private Label label115;
         private Label label114;
         private Label label113;
@@ -4396,12 +4919,10 @@ namespace GasFormsApp
         private Label label118;
         private Label label117;
         private Label label120;
-        private Label label18;
         private Label label19;
         private Label label22;
         private Label label121;
         private Label label122;
-        public TextBox DesorbTextBox1;
         public TextBox RawCoalMoistureTextBox;
         public TextBox LabTempTextBox;
         public TextBox LabAtmPressureTextBox;
@@ -4415,39 +4936,6 @@ namespace GasFormsApp
         public TextBox SamplingSpotTextBox;
         public TextBox MineNameTextBox;
         public TextBox CoalSeamTextBox;
-        public TextBox DesorbTextBox30;
-        public TextBox DesorbTextBox11;
-        public TextBox DesorbTextBox20;
-        public TextBox DesorbTextBox10;
-        public TextBox DesorbTextBox21;
-        public TextBox DesorbTextBox2;
-        public TextBox DesorbTextBox12;
-        public TextBox DesorbTextBox29;
-        public TextBox DesorbTextBox22;
-        public TextBox DesorbTextBox19;
-        public TextBox DesorbTextBox9;
-        public TextBox DesorbTextBox3;
-        public TextBox DesorbTextBox13;
-        public TextBox DesorbTextBox28;
-        public TextBox DesorbTextBox23;
-        public TextBox DesorbTextBox18;
-        public TextBox DesorbTextBox8;
-        public TextBox DesorbTextBox4;
-        public TextBox DesorbTextBox14;
-        public TextBox DesorbTextBox27;
-        public TextBox DesorbTextBox24;
-        public TextBox DesorbTextBox17;
-        public TextBox DesorbTextBox7;
-        public TextBox DesorbTextBox5;
-        public TextBox DesorbTextBox15;
-        public TextBox DesorbTextBox26;
-        public TextBox DesorbTextBox25;
-        public TextBox DesorbTextBox16;
-        public TextBox DesorbTextBox6;
-        public TextBox SampLossVolTextBox;
-        public TextBox DesVolUndTextBox;
-        public TextBox UndDesorpCalTextBox;
-        public TextBox t0TextBox;
         public TextBox DesorpVolNormalTextBox;
         public TextBox Sample2WeightTextBox;
         public TextBox S2DesorpVolTextBox;
@@ -4489,53 +4977,14 @@ namespace GasFormsApp
         public TextBox Wc_TextBox;
         public TextBox W_TextBox;
         public TextBox P_TextBox;
-        public PictureBox pictureBox3;
         private Timer InputCheckTimer;
-        public GroupBox groupBox2;
         public ToolTip toolTip1;
-        public TextBox DataNumTextBox31;
-        public TextBox DataNumTextBox40;
-        public TextBox DataNumTextBox39;
-        public TextBox DataNumTextBox38;
-        public TextBox DataNumTextBox37;
-        public TextBox DataNumTextBox36;
-        public TextBox DataNumTextBox35;
-        public TextBox DataNumTextBox34;
-        public TextBox DataNumTextBox33;
-        public TextBox DataNumTextBox32;
-        public TextBox DataNumTextBox60;
-        public TextBox DataNumTextBox59;
-        public TextBox DataNumTextBox58;
-        public TextBox DataNumTextBox57;
-        public TextBox DataNumTextBox56;
-        public TextBox DataNumTextBox55;
-        public TextBox DataNumTextBox54;
-        public TextBox DataNumTextBox53;
-        public TextBox DataNumTextBox52;
-        public TextBox DataNumTextBox51;
-        public TextBox DataNumTextBox50;
-        public TextBox DataNumTextBox49;
-        public TextBox DataNumTextBox48;
-        public TextBox DataNumTextBox47;
-        public TextBox DataNumTextBox46;
-        public TextBox DataNumTextBox45;
-        public TextBox DataNumTextBox44;
-        public TextBox DataNumTextBox43;
-        public TextBox DataNumTextBox42;
-        public TextBox DataNumTextBox41;
         public TextBox SamplingDepthTextBox;
         private Label label4;
         public CheckBox WcOutCheckBox;
         private GroupBox groupBox3;
         private Label label17;
         private Label label5;
-        private Label label23;
-        private Label label24;
-        private Label label29;
-        private Label label28;
-        private Label label27;
-        private Label label26;
-        private Label label25;
         private TabPage tabPage6;
         public DataGridView dataGridView1;
         public Button ReloadDataButton;
@@ -4544,16 +4993,6 @@ namespace GasFormsApp
         public Button DeleteDataButton;
         public Label label30;
         public Button ExportTheDocumentButton;
-        public ComboBox comboBox3;
-        public Label label31;
-        public DateTimePicker dateTimePicker5;
-        public DateTimePicker dateTimePicker4;
-        public Label label32;
-        public DateTimePicker dateTimePicker3;
-        public Label label33;
-        public Label label34;
-        public DateTimePicker dateTimePicker2;
-        public Label label35;
         public CheckBox AdsorpConstACheckBox;
         public CheckBox VadCheckBox;
         public CheckBox AppDensityCheckBox;
@@ -4588,7 +5027,6 @@ namespace GasFormsApp
         public TextBox SamplingPersonnelTextBox;
         private Label label41;
         public CheckBox DownholeTestersCheckBox;
-        public UI.UCButton DrawCurvesButton;
         public UI.UCButton LabDesorbButton;
         public UI.UCButton ExpCalcButton;
         public UI.UCButton GenReportButton;
@@ -4599,8 +5037,200 @@ namespace GasFormsApp
         private Panel tabPage3panel2;
         private Label label42;
         private Label label43;
-        private Panel tabPage1panel1;
-        private FlowLayoutPanel tabPage1FlowLayoutPanel1;
-        private PictureBox pictureBox4;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label44;
+        public TextBox textBox1;
+        private Label label45;
+        public TextBox textBox2;
+        private Label label46;
+        public TextBox textBox3;
+        private Label label47;
+        public TextBox textBox4;
+        private Label label48;
+        public TextBox textBox5;
+        private Label label49;
+        public TextBox textBox6;
+        private Label label50;
+        public TextBox textBox7;
+        private Label label51;
+        public TextBox textBox8;
+        private Label label52;
+        public TextBox textBox9;
+        private Label label55;
+        public ComboBox comboBox1;
+        private Label label56;
+        public TextBox textBox10;
+        private Label label57;
+        public TextBox textBox11;
+        private Label label58;
+        public TextBox textBox12;
+        private Label label59;
+        public TextBox textBox13;
+        private Label label60;
+        public TextBox textBox14;
+        private Label label61;
+        public DateTimePicker dateTimePicker7;
+        private Label label62;
+        public TextBox textBox15;
+        private Label label63;
+        public TextBox textBox16;
+        private Label label64;
+        public TextBox textBox17;
+        public UI.DoubleBufferedFlowLayoutPanel tabPage1DoubleBufferedFlowLayoutPanel1;
+        public Panel tabPage1panel1;
+        private UI.DoubleBufferedPanel tabPage2DoubleBufferedPanel2;
+        private UI.DoubleBufferedFlowLayoutPanel tabPage2DoubleBufferedFlowLayoutPanel1;
+        private UI.DoubleBufferedPanel tabPage2DoubleBufferedPanel1;
+        public DateTimePicker dateTimePicker3;
+        public DateTimePicker dateTimePicker2;
+        public ComboBox comboBox3;
+        public Label label35;
+        public TextBox t0TextBox;
+        public Label label32;
+        public DateTimePicker dateTimePicker5;
+        public Label label33;
+        public Label label34;
+        public DateTimePicker dateTimePicker4;
+        public Label label31;
+        private Label label90;
+        private Panel tabPage2panel4;
+        private Label label27;
+        private Label label29;
+        private TextBox DesorbTextBox36;
+        private Label label28;
+        private TextBox DesorbTextBox46;
+        private TextBox DesorbTextBox55;
+        private TextBox DesorbTextBox56;
+        private TextBox DesorbTextBox45;
+        public TextBox DataNumTextBox60;
+        private TextBox DesorbTextBox35;
+        public TextBox DataNumTextBox59;
+        private TextBox DesorbTextBox37;
+        public TextBox DataNumTextBox58;
+        private TextBox DesorbTextBox47;
+        public TextBox DataNumTextBox57;
+        private TextBox DesorbTextBox54;
+        public TextBox DataNumTextBox56;
+        private TextBox DesorbTextBox57;
+        public TextBox DataNumTextBox55;
+        private TextBox DesorbTextBox44;
+        public TextBox DataNumTextBox54;
+        private TextBox DesorbTextBox34;
+        public TextBox DataNumTextBox53;
+        private TextBox DesorbTextBox38;
+        public TextBox DataNumTextBox52;
+        private TextBox DesorbTextBox48;
+        public TextBox DataNumTextBox51;
+        private TextBox DesorbTextBox53;
+        public TextBox DataNumTextBox50;
+        private TextBox DesorbTextBox58;
+        public TextBox DataNumTextBox49;
+        private TextBox DesorbTextBox43;
+        public TextBox DataNumTextBox48;
+        private TextBox DesorbTextBox33;
+        public TextBox DataNumTextBox47;
+        private TextBox DesorbTextBox39;
+        public TextBox DataNumTextBox46;
+        private TextBox DesorbTextBox49;
+        public TextBox DataNumTextBox45;
+        private TextBox DesorbTextBox52;
+        public TextBox DataNumTextBox44;
+        private TextBox DesorbTextBox59;
+        public TextBox DataNumTextBox43;
+        private TextBox DesorbTextBox42;
+        public TextBox DataNumTextBox42;
+        private TextBox DesorbTextBox32;
+        public TextBox DataNumTextBox41;
+        private TextBox DesorbTextBox51;
+        public TextBox DataNumTextBox40;
+        private TextBox DesorbTextBox40;
+        public TextBox DataNumTextBox39;
+        private TextBox DesorbTextBox50;
+        public TextBox DataNumTextBox38;
+        private TextBox DesorbTextBox41;
+        public TextBox DataNumTextBox37;
+        private TextBox DesorbTextBox31;
+        public TextBox DataNumTextBox36;
+        private TextBox DesorbTextBox60;
+        public TextBox DataNumTextBox35;
+        public TextBox DataNumTextBox31;
+        public TextBox DataNumTextBox34;
+        public TextBox DataNumTextBox32;
+        public TextBox DataNumTextBox33;
+        private Panel tabPage2panel3;
+        private Label label24;
+        private Label DataNumLabel26;
+        private Label DataNumLabel16;
+        private Label DataNumLabel6;
+        private Label DataNumLabel7;
+        private Label label26;
+        private Label DataNumLabel17;
+        private Label label25;
+        private Label DataNumLabel25;
+        private Label DataNumLabel27;
+        private Label DataNumLabel15;
+        private Label DataNumLabel5;
+        private Label DataNumLabel8;
+        private Label DataNumLabel18;
+        private Label DataNumLabel24;
+        private Label DataNumLabel28;
+        private Label DataNumLabel14;
+        private Label DataNumLabel4;
+        private Label DataNumLabel9;
+        private Label DataNumLabel19;
+        private Label DataNumLabel23;
+        private Label DataNumLabel29;
+        private Label DataNumLabel13;
+        private Label DataNumLabel3;
+        private Label DataNumLabel10;
+        private Label DataNumLabel20;
+        private Label DataNumLabel22;
+        private Label DataNumLabel12;
+        private Label DataNumLabel30;
+        private Label DataNumLabel2;
+        private Label DataNumLabel21;
+        private Label DataNumLabel11;
+        private Label DataNumLabel1;
+        public TextBox DesorbTextBox6;
+        public TextBox DesorbTextBox16;
+        public TextBox DesorbTextBox25;
+        public TextBox DesorbTextBox26;
+        public TextBox DesorbTextBox15;
+        public TextBox DesorbTextBox5;
+        public TextBox DesorbTextBox7;
+        public TextBox DesorbTextBox17;
+        public TextBox DesorbTextBox24;
+        public TextBox DesorbTextBox27;
+        public TextBox DesorbTextBox14;
+        public TextBox DesorbTextBox4;
+        public TextBox DesorbTextBox8;
+        public TextBox DesorbTextBox18;
+        public TextBox DesorbTextBox23;
+        public TextBox DesorbTextBox28;
+        public TextBox DesorbTextBox13;
+        public TextBox DesorbTextBox3;
+        public TextBox DesorbTextBox9;
+        public TextBox DesorbTextBox19;
+        public TextBox DesorbTextBox22;
+        public TextBox DesorbTextBox29;
+        public TextBox DesorbTextBox12;
+        public TextBox DesorbTextBox2;
+        public TextBox DesorbTextBox21;
+        public TextBox DesorbTextBox10;
+        public TextBox DesorbTextBox20;
+        public TextBox DesorbTextBox11;
+        public TextBox DesorbTextBox1;
+        public TextBox DesorbTextBox30;
+        private Panel tabPage2panel5;
+        private Label label23;
+        public PictureBox pictureBox3;
+        private Panel tabPage2panel6;
+        public TextBox SampLossVolTextBox;
+        public TextBox DesVolUndTextBox;
+        public TextBox UndDesorpCalTextBox;
+        private Label label53;
+        private Label label54;
+        public UI.UCButton DrawCurvesButton;
+        private Label label18;
     }
 }
