@@ -213,18 +213,6 @@
       <DependentUpon>UCTextBoxClass.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplate1_1.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplate1_2.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplate2_1.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplate2_2.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplate3_1.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplate3_2.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplateNoGas1.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplateNoGas2.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplateNoGas3.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplateNoWc1.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplateNoWc2.docx" />
-    <EmbeddedResource Include="GasFormsApp.WordTemplateNoWcNoGas.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
