@@ -178,6 +178,7 @@ namespace GasFormsApp
             tabPage5.ImageIndex = 4;
             tabPage6.ImageIndex = 5;
 
+            tabControl1.SelectedIndex = 4;
             #endregion
 
 
@@ -307,7 +308,7 @@ namespace GasFormsApp
             );
 
 
-            GasCompGroupBox.Enabled = false;
+            tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
         }

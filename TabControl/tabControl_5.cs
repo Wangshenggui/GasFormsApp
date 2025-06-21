@@ -29,8 +29,92 @@ namespace GasFormsApp.TabControl
             _mainForm.GenRecordButton.Click += GenRecordButton_Click;
             _mainForm.GasCompCheckBox.Click += CheckBox_Click;
             _mainForm.SaveButton.Click += _SaveButton_Click;
+            _mainForm.tabPage5DoubleBufferedPanel1.SizeChanged += tabPage5DoubleBufferedPanel1_SizeChanged;
         }
 
+        private void tabPage5DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
+        {
+            int newWidth;
+            int newHeight;
+            //if (_mainForm.Width > 980)
+            //{
+            //    newWidth = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 1 - 0;
+            //}
+            //else
+            {
+                newWidth = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width/7;
+            }
+            newHeight = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 10;
+
+
+            //625 - 515 - 380
+            //685 - 566 - 566
+            //900 - 750 - 750
+            //1120 - 939 - 939
+            //if (newWidth <= 515)
+            //{
+            //    newWidth = 380;
+            //}
+            if (newWidth >= 515 && newWidth <= 566)
+            {
+                newWidth = 415;
+                _mainForm.tabPage5panel11.Width = newWidth - 23;
+                _mainForm.tabPage5panel12.Width = newWidth - 23;
+                _mainForm.tabPage5panel13.Width = newWidth - 23;
+                _mainForm.tabPage5panel14.Width = newWidth - 23;
+                _mainForm.tabPage5panel15.Width = newWidth - 23;
+                _mainForm.tabPage5panel16.Width = newWidth - 23;
+                _mainForm.tabPage5panel17.Width = newWidth - 23;
+            }
+            else if (newWidth > 566 && newWidth <= 750)
+            {
+                newWidth = 600 + 15;
+                _mainForm.tabPage5panel11.Width = newWidth - 28;
+                _mainForm.tabPage5panel12.Width = newWidth - 28;
+                _mainForm.tabPage5panel13.Width = newWidth - 28;
+                _mainForm.tabPage5panel14.Width = newWidth - 28;
+                _mainForm.tabPage5panel15.Width = newWidth - 28;
+                _mainForm.tabPage5panel16.Width = newWidth - 28;
+                _mainForm.tabPage5panel17.Width = newWidth - 28;
+            }
+            else if (newWidth > 750 && newWidth <= 939)
+            {
+                newWidth = 800;
+                _mainForm.tabPage5panel11.Width = 415 - 26;
+                _mainForm.tabPage5panel12.Width = 415 - 26;
+                _mainForm.tabPage5panel13.Width = 415 - 26;
+                _mainForm.tabPage5panel14.Width = 415 - 26;
+                _mainForm.tabPage5panel15.Width = 415 - 26;
+                _mainForm.tabPage5panel16.Width = 415 - 26;
+                _mainForm.tabPage5panel17.Width = 415 - 26;
+            }
+            else if (newWidth > 939)
+            {
+                newWidth = 1000;
+                int a = 28;
+                _mainForm.tabPage5panel11.Width = 500 + 15 - a;
+                _mainForm.tabPage5panel12.Width = 500 + 15 - a;
+                _mainForm.tabPage5panel13.Width = 500 + 15 - a;
+                _mainForm.tabPage5panel14.Width = 500 + 15 - a;
+                _mainForm.tabPage5panel15.Width = 500 + 15 - a;
+                _mainForm.tabPage5panel16.Width = 500 + 15 - a;
+                _mainForm.tabPage5panel17.Width = 500 + 15 - a;
+            }
+
+            Console.WriteLine($"------{newWidth}--{newHeight}");
+            Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");
+
+            _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
+            _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
+
+            //_mainForm.tabPage5panel11.Width = _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width;
+            //_mainForm.tabPage5partition_panel.Width = newWidth-20;
+
+
+            // 居中定位
+            _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Left = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
+            _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Top = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
+        }
         private void CheckBox_Click(object sender, EventArgs e)
         {
             if (sender is CheckBox checkBox)
@@ -44,13 +128,13 @@ namespace GasFormsApp.TabControl
                 {
                     if (isChecked)
                     {
-                        _mainForm.GasCompGroupBox.Enabled = true;
+                        _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = true;
 
                         MainForm.GasCompCheckBoxFlag = true;
                     }
                     else
                     {
-                        _mainForm.GasCompGroupBox.Enabled = false;
+                        _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
 
                         _mainForm.CH4CheckBox.Checked = false;
                         _mainForm.CO2CheckBox.Checked = false;

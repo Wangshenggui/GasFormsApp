@@ -31,9 +31,9 @@ namespace GasFormsApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -67,51 +67,6 @@ namespace GasFormsApp
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.DownholeTestersCheckBox = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.label40 = new System.Windows.Forms.Label();
-            this.DownholeTestersTextBox = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.RemarkTextBox = new System.Windows.Forms.TextBox();
-            this.label120 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label119 = new System.Windows.Forms.Label();
-            this.AuditorTextBox = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.LabTestersTextBox = new System.Windows.Forms.TextBox();
-            this.label117 = new System.Windows.Forms.Label();
-            this.GasCompGroupBox = new System.Windows.Forms.GroupBox();
-            this.C2H2CheckBox = new System.Windows.Forms.CheckBox();
-            this.C3H8CheckBox = new System.Windows.Forms.CheckBox();
-            this.N2CheckBox = new System.Windows.Forms.CheckBox();
-            this.C3H6CheckBox = new System.Windows.Forms.CheckBox();
-            this.C2H4CheckBox = new System.Windows.Forms.CheckBox();
-            this.CO2CheckBox = new System.Windows.Forms.CheckBox();
-            this.COCheckBox = new System.Windows.Forms.CheckBox();
-            this.C2H6CheckBox = new System.Windows.Forms.CheckBox();
-            this.O2CheckBox = new System.Windows.Forms.CheckBox();
-            this.CH4CheckBox = new System.Windows.Forms.CheckBox();
-            this.COTextBox = new System.Windows.Forms.TextBox();
-            this.C2H2TextBox = new System.Windows.Forms.TextBox();
-            this.C3H6TextBox = new System.Windows.Forms.TextBox();
-            this.C2H6TextBox = new System.Windows.Forms.TextBox();
-            this.C3H8TextBox = new System.Windows.Forms.TextBox();
-            this.C2H4TextBox = new System.Windows.Forms.TextBox();
-            this.O2TextBox = new System.Windows.Forms.TextBox();
-            this.N2TextBox = new System.Windows.Forms.TextBox();
-            this.CO2TextBox = new System.Windows.Forms.TextBox();
-            this.CH4TextBox = new System.Windows.Forms.TextBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.label114 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
-            this.CH4_Lable = new System.Windows.Forms.Label();
-            this.GasCompCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.ExportTheDocumentButton = new System.Windows.Forms.Button();
             this.DeleteDataButton = new System.Windows.Forms.Button();
@@ -360,9 +315,62 @@ namespace GasFormsApp
             this.label91 = new System.Windows.Forms.Label();
             this.W2_TextBox = new System.Windows.Forms.TextBox();
             this.Wa_TextBox = new System.Windows.Forms.TextBox();
-            this.SaveButton = new GasFormsApp.UI.UCButton();
-            this.GenRecordButton = new GasFormsApp.UI.UCButton();
+            this.tabPage5DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.tabPage5DoubleBufferedFlowLayoutPanel2 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
+            this.tabPage5DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
+            this.tabPage5panel1 = new System.Windows.Forms.Panel();
+            this.CH4CheckBox = new System.Windows.Forms.CheckBox();
+            this.CH4TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel2 = new System.Windows.Forms.Panel();
+            this.CO2CheckBox = new System.Windows.Forms.CheckBox();
+            this.CO2TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel3 = new System.Windows.Forms.Panel();
+            this.N2CheckBox = new System.Windows.Forms.CheckBox();
+            this.N2TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel4 = new System.Windows.Forms.Panel();
+            this.O2CheckBox = new System.Windows.Forms.CheckBox();
+            this.O2TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel5 = new System.Windows.Forms.Panel();
+            this.C2H4CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H4TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel6 = new System.Windows.Forms.Panel();
+            this.C3H8CheckBox = new System.Windows.Forms.CheckBox();
+            this.C3H8TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel7 = new System.Windows.Forms.Panel();
+            this.C2H6CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H6TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel8 = new System.Windows.Forms.Panel();
+            this.C3H6CheckBox = new System.Windows.Forms.CheckBox();
+            this.C3H6TextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel9 = new System.Windows.Forms.Panel();
+            this.C2H2TextBox = new System.Windows.Forms.TextBox();
+            this.C2H2CheckBox = new System.Windows.Forms.CheckBox();
+            this.tabPage5panel10 = new System.Windows.Forms.Panel();
+            this.COCheckBox = new System.Windows.Forms.CheckBox();
+            this.COTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel11 = new System.Windows.Forms.Panel();
+            this.label119 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tabPage5panel12 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.tabPage5panel14 = new System.Windows.Forms.Panel();
+            this.label117 = new System.Windows.Forms.Label();
+            this.LabTestersTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel13 = new System.Windows.Forms.Panel();
+            this.DownholeTestersCheckBox = new System.Windows.Forms.CheckBox();
+            this.DownholeTestersTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel16 = new System.Windows.Forms.Panel();
+            this.label120 = new System.Windows.Forms.Label();
+            this.RemarkTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel15 = new System.Windows.Forms.Panel();
+            this.label118 = new System.Windows.Forms.Label();
+            this.AuditorTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage5panel17 = new System.Windows.Forms.Panel();
             this.GenReportButton = new GasFormsApp.UI.UCButton();
+            this.GenRecordButton = new GasFormsApp.UI.UCButton();
+            this.SaveButton = new GasFormsApp.UI.UCButton();
+            this.GasCompCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -372,7 +380,6 @@ namespace GasFormsApp
             this.tabPage3panel2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.GasCompGroupBox.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -390,6 +397,26 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedFlowLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage5DoubleBufferedPanel1.SuspendLayout();
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.SuspendLayout();
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.SuspendLayout();
+            this.tabPage5panel1.SuspendLayout();
+            this.tabPage5panel2.SuspendLayout();
+            this.tabPage5panel3.SuspendLayout();
+            this.tabPage5panel4.SuspendLayout();
+            this.tabPage5panel5.SuspendLayout();
+            this.tabPage5panel6.SuspendLayout();
+            this.tabPage5panel7.SuspendLayout();
+            this.tabPage5panel8.SuspendLayout();
+            this.tabPage5panel9.SuspendLayout();
+            this.tabPage5panel10.SuspendLayout();
+            this.tabPage5panel11.SuspendLayout();
+            this.tabPage5panel12.SuspendLayout();
+            this.tabPage5panel14.SuspendLayout();
+            this.tabPage5panel13.SuspendLayout();
+            this.tabPage5panel16.SuspendLayout();
+            this.tabPage5panel15.SuspendLayout();
+            this.tabPage5panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -774,504 +801,13 @@ namespace GasFormsApp
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage5.Controls.Add(this.SaveButton);
-            this.tabPage5.Controls.Add(this.GenRecordButton);
-            this.tabPage5.Controls.Add(this.GenReportButton);
-            this.tabPage5.Controls.Add(this.DownholeTestersCheckBox);
-            this.tabPage5.Controls.Add(this.dateTimePicker6);
-            this.tabPage5.Controls.Add(this.label40);
-            this.tabPage5.Controls.Add(this.DownholeTestersTextBox);
-            this.tabPage5.Controls.Add(this.label39);
-            this.tabPage5.Controls.Add(this.RemarkTextBox);
-            this.tabPage5.Controls.Add(this.label120);
-            this.tabPage5.Controls.Add(this.dateTimePicker1);
-            this.tabPage5.Controls.Add(this.label119);
-            this.tabPage5.Controls.Add(this.AuditorTextBox);
-            this.tabPage5.Controls.Add(this.label118);
-            this.tabPage5.Controls.Add(this.LabTestersTextBox);
-            this.tabPage5.Controls.Add(this.label117);
-            this.tabPage5.Controls.Add(this.GasCompGroupBox);
-            this.tabPage5.Controls.Add(this.GasCompCheckBox);
+            this.tabPage5.Controls.Add(this.tabPage5DoubleBufferedPanel1);
             this.tabPage5.Location = new System.Drawing.Point(4, 104);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1435, 671);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
-            // 
-            // DownholeTestersCheckBox
-            // 
-            this.DownholeTestersCheckBox.AutoSize = true;
-            this.DownholeTestersCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DownholeTestersCheckBox.Location = new System.Drawing.Point(1052, 335);
-            this.DownholeTestersCheckBox.Name = "DownholeTestersCheckBox";
-            this.DownholeTestersCheckBox.Size = new System.Drawing.Size(138, 20);
-            this.DownholeTestersCheckBox.TabIndex = 61;
-            this.DownholeTestersCheckBox.Text = "井下测试人员：";
-            this.DownholeTestersCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker6.Location = new System.Drawing.Point(1107, 286);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(260, 26);
-            this.dateTimePicker6.TabIndex = 53;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label40.Location = new System.Drawing.Point(1049, 266);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(87, 16);
-            this.label40.TabIndex = 54;
-            this.label40.Text = "测试时间：";
-            // 
-            // DownholeTestersTextBox
-            // 
-            this.DownholeTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DownholeTestersTextBox.Location = new System.Drawing.Point(1107, 355);
-            this.DownholeTestersTextBox.Name = "DownholeTestersTextBox";
-            this.DownholeTestersTextBox.Size = new System.Drawing.Size(260, 26);
-            this.DownholeTestersTextBox.TabIndex = 51;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label39.Location = new System.Drawing.Point(1049, 335);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(119, 16);
-            this.label39.TabIndex = 52;
-            this.label39.Text = "井下测试人员：";
-            // 
-            // RemarkTextBox
-            // 
-            this.RemarkTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RemarkTextBox.Location = new System.Drawing.Point(1107, 417);
-            this.RemarkTextBox.Multiline = true;
-            this.RemarkTextBox.Name = "RemarkTextBox";
-            this.RemarkTextBox.Size = new System.Drawing.Size(260, 57);
-            this.RemarkTextBox.TabIndex = 47;
-            this.RemarkTextBox.Text = "测试煤样由贵州省煤安技术服务有限公司技术人员现场采集并送达，实验室基于来样进行测试。";
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label120.Location = new System.Drawing.Point(1049, 399);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(79, 16);
-            this.label120.TabIndex = 48;
-            this.label120.Text = "备   注：";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(1107, 216);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label119.Location = new System.Drawing.Point(1049, 196);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(103, 16);
-            this.label119.TabIndex = 46;
-            this.label119.Text = "出报告时间：";
-            // 
-            // AuditorTextBox
-            // 
-            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AuditorTextBox.Location = new System.Drawing.Point(1107, 151);
-            this.AuditorTextBox.Name = "AuditorTextBox";
-            this.AuditorTextBox.Size = new System.Drawing.Size(260, 26);
-            this.AuditorTextBox.TabIndex = 43;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label118.Location = new System.Drawing.Point(1049, 131);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(87, 16);
-            this.label118.TabIndex = 44;
-            this.label118.Text = "审核人员：";
-            // 
-            // LabTestersTextBox
-            // 
-            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabTestersTextBox.Location = new System.Drawing.Point(1107, 85);
-            this.LabTestersTextBox.Name = "LabTestersTextBox";
-            this.LabTestersTextBox.Size = new System.Drawing.Size(260, 26);
-            this.LabTestersTextBox.TabIndex = 41;
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label117.Location = new System.Drawing.Point(1049, 65);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(135, 16);
-            this.label117.TabIndex = 42;
-            this.label117.Text = "实验室测试人员：";
-            // 
-            // GasCompGroupBox
-            // 
-            this.GasCompGroupBox.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.GasCompGroupBox.Controls.Add(this.C2H2CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.C3H8CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.N2CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.C3H6CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.C2H4CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.CO2CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.COCheckBox);
-            this.GasCompGroupBox.Controls.Add(this.C2H6CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.O2CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.CH4CheckBox);
-            this.GasCompGroupBox.Controls.Add(this.COTextBox);
-            this.GasCompGroupBox.Controls.Add(this.C2H2TextBox);
-            this.GasCompGroupBox.Controls.Add(this.C3H6TextBox);
-            this.GasCompGroupBox.Controls.Add(this.C2H6TextBox);
-            this.GasCompGroupBox.Controls.Add(this.C3H8TextBox);
-            this.GasCompGroupBox.Controls.Add(this.C2H4TextBox);
-            this.GasCompGroupBox.Controls.Add(this.O2TextBox);
-            this.GasCompGroupBox.Controls.Add(this.N2TextBox);
-            this.GasCompGroupBox.Controls.Add(this.CO2TextBox);
-            this.GasCompGroupBox.Controls.Add(this.CH4TextBox);
-            this.GasCompGroupBox.Controls.Add(this.label115);
-            this.GasCompGroupBox.Controls.Add(this.label114);
-            this.GasCompGroupBox.Controls.Add(this.label113);
-            this.GasCompGroupBox.Controls.Add(this.label112);
-            this.GasCompGroupBox.Controls.Add(this.label107);
-            this.GasCompGroupBox.Controls.Add(this.label106);
-            this.GasCompGroupBox.Controls.Add(this.label105);
-            this.GasCompGroupBox.Controls.Add(this.label104);
-            this.GasCompGroupBox.Controls.Add(this.label103);
-            this.GasCompGroupBox.Controls.Add(this.CH4_Lable);
-            this.GasCompGroupBox.Location = new System.Drawing.Point(61, 59);
-            this.GasCompGroupBox.Name = "GasCompGroupBox";
-            this.GasCompGroupBox.Size = new System.Drawing.Size(909, 355);
-            this.GasCompGroupBox.TabIndex = 10;
-            this.GasCompGroupBox.TabStop = false;
-            this.GasCompGroupBox.Text = "自然瓦斯成分";
-            // 
-            // C2H2CheckBox
-            // 
-            this.C2H2CheckBox.AutoSize = true;
-            this.C2H2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H2CheckBox.Location = new System.Drawing.Point(751, 189);
-            this.C2H2CheckBox.Name = "C2H2CheckBox";
-            this.C2H2CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.C2H2CheckBox.TabIndex = 60;
-            this.C2H2CheckBox.Text = "          ";
-            this.C2H2CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // C3H8CheckBox
-            // 
-            this.C3H8CheckBox.AutoSize = true;
-            this.C3H8CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H8CheckBox.Location = new System.Drawing.Point(751, 109);
-            this.C3H8CheckBox.Name = "C3H8CheckBox";
-            this.C3H8CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.C3H8CheckBox.TabIndex = 59;
-            this.C3H8CheckBox.Text = "          ";
-            this.C3H8CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // N2CheckBox
-            // 
-            this.N2CheckBox.AutoSize = true;
-            this.N2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.N2CheckBox.Location = new System.Drawing.Point(751, 32);
-            this.N2CheckBox.Name = "N2CheckBox";
-            this.N2CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.N2CheckBox.TabIndex = 58;
-            this.N2CheckBox.Text = "          ";
-            this.N2CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // C3H6CheckBox
-            // 
-            this.C3H6CheckBox.AutoSize = true;
-            this.C3H6CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H6CheckBox.Location = new System.Drawing.Point(439, 187);
-            this.C3H6CheckBox.Name = "C3H6CheckBox";
-            this.C3H6CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.C3H6CheckBox.TabIndex = 56;
-            this.C3H6CheckBox.Text = "          ";
-            this.C3H6CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // C2H4CheckBox
-            // 
-            this.C2H4CheckBox.AutoSize = true;
-            this.C2H4CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H4CheckBox.Location = new System.Drawing.Point(439, 107);
-            this.C2H4CheckBox.Name = "C2H4CheckBox";
-            this.C2H4CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.C2H4CheckBox.TabIndex = 55;
-            this.C2H4CheckBox.Text = "          ";
-            this.C2H4CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // CO2CheckBox
-            // 
-            this.CO2CheckBox.AutoSize = true;
-            this.CO2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO2CheckBox.Location = new System.Drawing.Point(439, 30);
-            this.CO2CheckBox.Name = "CO2CheckBox";
-            this.CO2CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.CO2CheckBox.TabIndex = 54;
-            this.CO2CheckBox.Text = "          ";
-            this.CO2CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // COCheckBox
-            // 
-            this.COCheckBox.AutoSize = true;
-            this.COCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.COCheckBox.Location = new System.Drawing.Point(127, 269);
-            this.COCheckBox.Name = "COCheckBox";
-            this.COCheckBox.Size = new System.Drawing.Size(106, 20);
-            this.COCheckBox.TabIndex = 53;
-            this.COCheckBox.Text = "          ";
-            this.COCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // C2H6CheckBox
-            // 
-            this.C2H6CheckBox.AutoSize = true;
-            this.C2H6CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H6CheckBox.Location = new System.Drawing.Point(127, 189);
-            this.C2H6CheckBox.Name = "C2H6CheckBox";
-            this.C2H6CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.C2H6CheckBox.TabIndex = 52;
-            this.C2H6CheckBox.Text = "          ";
-            this.C2H6CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // O2CheckBox
-            // 
-            this.O2CheckBox.AutoSize = true;
-            this.O2CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.O2CheckBox.Location = new System.Drawing.Point(127, 109);
-            this.O2CheckBox.Name = "O2CheckBox";
-            this.O2CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.O2CheckBox.TabIndex = 51;
-            this.O2CheckBox.Text = "          ";
-            this.O2CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // CH4CheckBox
-            // 
-            this.CH4CheckBox.AutoSize = true;
-            this.CH4CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CH4CheckBox.Location = new System.Drawing.Point(127, 32);
-            this.CH4CheckBox.Name = "CH4CheckBox";
-            this.CH4CheckBox.Size = new System.Drawing.Size(106, 20);
-            this.CH4CheckBox.TabIndex = 50;
-            this.CH4CheckBox.Text = "          ";
-            this.CH4CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // COTextBox
-            // 
-            this.COTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.COTextBox.Location = new System.Drawing.Point(54, 296);
-            this.COTextBox.Name = "COTextBox";
-            this.COTextBox.Size = new System.Drawing.Size(179, 26);
-            this.COTextBox.TabIndex = 39;
-            this.COTextBox.Text = "0";
-            // 
-            // C2H2TextBox
-            // 
-            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H2TextBox.Location = new System.Drawing.Point(678, 216);
-            this.C2H2TextBox.Name = "C2H2TextBox";
-            this.C2H2TextBox.Size = new System.Drawing.Size(179, 26);
-            this.C2H2TextBox.TabIndex = 38;
-            this.C2H2TextBox.Text = "0";
-            // 
-            // C3H6TextBox
-            // 
-            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H6TextBox.Location = new System.Drawing.Point(366, 216);
-            this.C3H6TextBox.Name = "C3H6TextBox";
-            this.C3H6TextBox.Size = new System.Drawing.Size(179, 26);
-            this.C3H6TextBox.TabIndex = 37;
-            this.C3H6TextBox.Text = "0";
-            // 
-            // C2H6TextBox
-            // 
-            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H6TextBox.Location = new System.Drawing.Point(54, 216);
-            this.C2H6TextBox.Name = "C2H6TextBox";
-            this.C2H6TextBox.Size = new System.Drawing.Size(179, 26);
-            this.C2H6TextBox.TabIndex = 36;
-            this.C2H6TextBox.Text = "0";
-            // 
-            // C3H8TextBox
-            // 
-            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H8TextBox.Location = new System.Drawing.Point(678, 136);
-            this.C3H8TextBox.Name = "C3H8TextBox";
-            this.C3H8TextBox.Size = new System.Drawing.Size(179, 26);
-            this.C3H8TextBox.TabIndex = 35;
-            this.C3H8TextBox.Text = "0";
-            // 
-            // C2H4TextBox
-            // 
-            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H4TextBox.Location = new System.Drawing.Point(366, 136);
-            this.C2H4TextBox.Name = "C2H4TextBox";
-            this.C2H4TextBox.Size = new System.Drawing.Size(179, 26);
-            this.C2H4TextBox.TabIndex = 34;
-            this.C2H4TextBox.Text = "0";
-            // 
-            // O2TextBox
-            // 
-            this.O2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.O2TextBox.Location = new System.Drawing.Point(54, 136);
-            this.O2TextBox.Name = "O2TextBox";
-            this.O2TextBox.Size = new System.Drawing.Size(179, 26);
-            this.O2TextBox.TabIndex = 33;
-            this.O2TextBox.Text = "0";
-            // 
-            // N2TextBox
-            // 
-            this.N2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.N2TextBox.Location = new System.Drawing.Point(678, 56);
-            this.N2TextBox.Name = "N2TextBox";
-            this.N2TextBox.Size = new System.Drawing.Size(179, 26);
-            this.N2TextBox.TabIndex = 32;
-            this.N2TextBox.Text = "0";
-            // 
-            // CO2TextBox
-            // 
-            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO2TextBox.Location = new System.Drawing.Point(366, 56);
-            this.CO2TextBox.Name = "CO2TextBox";
-            this.CO2TextBox.Size = new System.Drawing.Size(179, 26);
-            this.CO2TextBox.TabIndex = 31;
-            this.CO2TextBox.Text = "0";
-            // 
-            // CH4TextBox
-            // 
-            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CH4TextBox.Location = new System.Drawing.Point(54, 56);
-            this.CH4TextBox.Name = "CH4TextBox";
-            this.CH4TextBox.Size = new System.Drawing.Size(179, 26);
-            this.CH4TextBox.TabIndex = 30;
-            this.CH4TextBox.Text = "0";
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label115.Location = new System.Drawing.Point(49, 266);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(65, 21);
-            this.label115.TabIndex = 29;
-            this.label115.Text = "CO(%)";
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label114.Location = new System.Drawing.Point(673, 186);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(75, 21);
-            this.label114.TabIndex = 28;
-            this.label114.Text = "C₂H₂(%)";
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label113.Location = new System.Drawing.Point(361, 186);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(75, 21);
-            this.label113.TabIndex = 27;
-            this.label113.Text = "C₃H₆(%)";
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label112.Location = new System.Drawing.Point(49, 186);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(75, 21);
-            this.label112.TabIndex = 26;
-            this.label112.Text = "C₂H₆(%)";
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label107.Location = new System.Drawing.Point(673, 106);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(75, 21);
-            this.label107.TabIndex = 25;
-            this.label107.Text = "C₃H₈(%)";
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label106.Location = new System.Drawing.Point(361, 106);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(75, 21);
-            this.label106.TabIndex = 24;
-            this.label106.Text = "C₂H₄(%)";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label105.Location = new System.Drawing.Point(49, 106);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(59, 21);
-            this.label105.TabIndex = 23;
-            this.label105.Text = "O₂(%)";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label104.Location = new System.Drawing.Point(673, 26);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(59, 21);
-            this.label104.TabIndex = 22;
-            this.label104.Text = "N₂(%)";
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label103.Location = new System.Drawing.Point(361, 26);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(70, 21);
-            this.label103.TabIndex = 21;
-            this.label103.Text = "CO₂(%)";
-            // 
-            // CH4_Lable
-            // 
-            this.CH4_Lable.AutoSize = true;
-            this.CH4_Lable.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CH4_Lable.Location = new System.Drawing.Point(49, 26);
-            this.CH4_Lable.Name = "CH4_Lable";
-            this.CH4_Lable.Size = new System.Drawing.Size(70, 21);
-            this.CH4_Lable.TabIndex = 11;
-            this.CH4_Lable.Text = "CH₄(%)";
-            // 
-            // GasCompCheckBox
-            // 
-            this.GasCompCheckBox.AutoSize = true;
-            this.GasCompCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.GasCompCheckBox.Location = new System.Drawing.Point(61, 29);
-            this.GasCompCheckBox.Name = "GasCompCheckBox";
-            this.GasCompCheckBox.Size = new System.Drawing.Size(146, 20);
-            this.GasCompCheckBox.TabIndex = 9;
-            this.GasCompCheckBox.Text = "自然瓦斯成分(%)";
-            this.GasCompCheckBox.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
@@ -1351,34 +887,34 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(8, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1099, 617);
@@ -4151,43 +3687,576 @@ namespace GasFormsApp
             this.Wa_TextBox.TabStop = false;
             this.Wa_TextBox.Text = "0";
             // 
-            // SaveButton
+            // tabPage5DoubleBufferedPanel1
             // 
-            this.SaveButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.SaveButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("SaveButton.ButtonImage")));
-            this.SaveButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
-            this.SaveButton.FlatAppearance.BorderSize = 0;
-            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SaveButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.SaveButton.Location = new System.Drawing.Point(1251, 547);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.SaveButton.Radius = 35;
-            this.SaveButton.Size = new System.Drawing.Size(145, 50);
-            this.SaveButton.TabIndex = 1005;
-            this.SaveButton.Text = "     保 存 数 据";
-            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveButton.UseVisualStyleBackColor = false;
+            this.tabPage5DoubleBufferedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPage5DoubleBufferedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.tabPage5DoubleBufferedPanel1.Controls.Add(this.tabPage5DoubleBufferedFlowLayoutPanel2);
+            this.tabPage5DoubleBufferedPanel1.Controls.Add(this.GasCompCheckBox);
+            this.tabPage5DoubleBufferedPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tabPage5DoubleBufferedPanel1.Name = "tabPage5DoubleBufferedPanel1";
+            this.tabPage5DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 671);
+            this.tabPage5DoubleBufferedPanel1.TabIndex = 1006;
             // 
-            // GenRecordButton
+            // tabPage5DoubleBufferedFlowLayoutPanel2
             // 
-            this.GenRecordButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.GenRecordButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("GenRecordButton.ButtonImage")));
-            this.GenRecordButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
-            this.GenRecordButton.FlatAppearance.BorderSize = 0;
-            this.GenRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GenRecordButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.GenRecordButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.GenRecordButton.Location = new System.Drawing.Point(984, 547);
-            this.GenRecordButton.Name = "GenRecordButton";
-            this.GenRecordButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.GenRecordButton.Radius = 35;
-            this.GenRecordButton.Size = new System.Drawing.Size(145, 50);
-            this.GenRecordButton.TabIndex = 1004;
-            this.GenRecordButton.Text = "     生成记录表";
-            this.GenRecordButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GenRecordButton.UseVisualStyleBackColor = false;
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.AutoScroll = true;
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.BackColor = System.Drawing.Color.DarkRed;
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5DoubleBufferedFlowLayoutPanel1);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel11);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel12);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel14);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel13);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel16);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel15);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel17);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(59, 55);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Name = "tabPage5DoubleBufferedFlowLayoutPanel2";
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(822, 536);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.TabIndex = 1006;
+            // 
+            // tabPage5DoubleBufferedFlowLayoutPanel1
+            // 
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.AutoScroll = true;
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.AutoSize = true;
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.Cyan;
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel1);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel2);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel3);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel4);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel5);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel6);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel7);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel8);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel9);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel10);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(35, 3);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Name = "tabPage5DoubleBufferedFlowLayoutPanel1";
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(784, 138);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.TabIndex = 71;
+            // 
+            // tabPage5panel1
+            // 
+            this.tabPage5panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tabPage5panel1.Controls.Add(this.CH4CheckBox);
+            this.tabPage5panel1.Controls.Add(this.CH4TextBox);
+            this.tabPage5panel1.Location = new System.Drawing.Point(8, 8);
+            this.tabPage5panel1.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel1.Name = "tabPage5panel1";
+            this.tabPage5panel1.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel1.TabIndex = 61;
+            // 
+            // CH4CheckBox
+            // 
+            this.CH4CheckBox.AutoSize = true;
+            this.CH4CheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CH4CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.CH4CheckBox.Name = "CH4CheckBox";
+            this.CH4CheckBox.Size = new System.Drawing.Size(93, 24);
+            this.CH4CheckBox.TabIndex = 50;
+            this.CH4CheckBox.Text = "CH₄(%):";
+            this.CH4CheckBox.UseVisualStyleBackColor = false;
+            // 
+            // CH4TextBox
+            // 
+            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4TextBox.Location = new System.Drawing.Point(99, 2);
+            this.CH4TextBox.Name = "CH4TextBox";
+            this.CH4TextBox.Size = new System.Drawing.Size(79, 26);
+            this.CH4TextBox.TabIndex = 30;
+            this.CH4TextBox.Text = "0";
+            // 
+            // tabPage5panel2
+            // 
+            this.tabPage5panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tabPage5panel2.Controls.Add(this.CO2CheckBox);
+            this.tabPage5panel2.Controls.Add(this.CO2TextBox);
+            this.tabPage5panel2.Location = new System.Drawing.Point(204, 8);
+            this.tabPage5panel2.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel2.Name = "tabPage5panel2";
+            this.tabPage5panel2.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel2.TabIndex = 62;
+            // 
+            // CO2CheckBox
+            // 
+            this.CO2CheckBox.AutoSize = true;
+            this.CO2CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.CO2CheckBox.Name = "CO2CheckBox";
+            this.CO2CheckBox.Size = new System.Drawing.Size(93, 24);
+            this.CO2CheckBox.TabIndex = 54;
+            this.CO2CheckBox.Text = "CO₂(%):";
+            this.CO2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CO2TextBox
+            // 
+            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2TextBox.Location = new System.Drawing.Point(99, 2);
+            this.CO2TextBox.Name = "CO2TextBox";
+            this.CO2TextBox.Size = new System.Drawing.Size(79, 26);
+            this.CO2TextBox.TabIndex = 31;
+            this.CO2TextBox.Text = "0";
+            // 
+            // tabPage5panel3
+            // 
+            this.tabPage5panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.tabPage5panel3.Controls.Add(this.N2CheckBox);
+            this.tabPage5panel3.Controls.Add(this.N2TextBox);
+            this.tabPage5panel3.Location = new System.Drawing.Point(400, 8);
+            this.tabPage5panel3.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel3.Name = "tabPage5panel3";
+            this.tabPage5panel3.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel3.TabIndex = 63;
+            // 
+            // N2CheckBox
+            // 
+            this.N2CheckBox.AutoSize = true;
+            this.N2CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.N2CheckBox.Name = "N2CheckBox";
+            this.N2CheckBox.Size = new System.Drawing.Size(83, 24);
+            this.N2CheckBox.TabIndex = 58;
+            this.N2CheckBox.Text = "N₂(%):";
+            this.N2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // N2TextBox
+            // 
+            this.N2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2TextBox.Location = new System.Drawing.Point(99, 2);
+            this.N2TextBox.Name = "N2TextBox";
+            this.N2TextBox.Size = new System.Drawing.Size(79, 26);
+            this.N2TextBox.TabIndex = 32;
+            this.N2TextBox.Text = "0";
+            // 
+            // tabPage5panel4
+            // 
+            this.tabPage5panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.tabPage5panel4.Controls.Add(this.O2CheckBox);
+            this.tabPage5panel4.Controls.Add(this.O2TextBox);
+            this.tabPage5panel4.Location = new System.Drawing.Point(596, 8);
+            this.tabPage5panel4.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel4.Name = "tabPage5panel4";
+            this.tabPage5panel4.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel4.TabIndex = 64;
+            // 
+            // O2CheckBox
+            // 
+            this.O2CheckBox.AutoSize = true;
+            this.O2CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.O2CheckBox.Name = "O2CheckBox";
+            this.O2CheckBox.Size = new System.Drawing.Size(83, 24);
+            this.O2CheckBox.TabIndex = 51;
+            this.O2CheckBox.Text = "O₂(%):";
+            this.O2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // O2TextBox
+            // 
+            this.O2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2TextBox.Location = new System.Drawing.Point(99, 2);
+            this.O2TextBox.Name = "O2TextBox";
+            this.O2TextBox.Size = new System.Drawing.Size(79, 26);
+            this.O2TextBox.TabIndex = 33;
+            this.O2TextBox.Text = "0";
+            // 
+            // tabPage5panel5
+            // 
+            this.tabPage5panel5.BackColor = System.Drawing.Color.Green;
+            this.tabPage5panel5.Controls.Add(this.C2H4CheckBox);
+            this.tabPage5panel5.Controls.Add(this.C2H4TextBox);
+            this.tabPage5panel5.Location = new System.Drawing.Point(8, 54);
+            this.tabPage5panel5.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel5.Name = "tabPage5panel5";
+            this.tabPage5panel5.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel5.TabIndex = 65;
+            // 
+            // C2H4CheckBox
+            // 
+            this.C2H4CheckBox.AutoSize = true;
+            this.C2H4CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.C2H4CheckBox.Name = "C2H4CheckBox";
+            this.C2H4CheckBox.Size = new System.Drawing.Size(98, 24);
+            this.C2H4CheckBox.TabIndex = 55;
+            this.C2H4CheckBox.Text = "C₂H₄(%):";
+            this.C2H4CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C2H4TextBox
+            // 
+            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4TextBox.Location = new System.Drawing.Point(99, 2);
+            this.C2H4TextBox.Name = "C2H4TextBox";
+            this.C2H4TextBox.Size = new System.Drawing.Size(79, 26);
+            this.C2H4TextBox.TabIndex = 34;
+            this.C2H4TextBox.Text = "0";
+            // 
+            // tabPage5panel6
+            // 
+            this.tabPage5panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tabPage5panel6.Controls.Add(this.C3H8CheckBox);
+            this.tabPage5panel6.Controls.Add(this.C3H8TextBox);
+            this.tabPage5panel6.Location = new System.Drawing.Point(204, 54);
+            this.tabPage5panel6.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel6.Name = "tabPage5panel6";
+            this.tabPage5panel6.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel6.TabIndex = 66;
+            // 
+            // C3H8CheckBox
+            // 
+            this.C3H8CheckBox.AutoSize = true;
+            this.C3H8CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.C3H8CheckBox.Name = "C3H8CheckBox";
+            this.C3H8CheckBox.Size = new System.Drawing.Size(98, 24);
+            this.C3H8CheckBox.TabIndex = 59;
+            this.C3H8CheckBox.Text = "C₃H₈(%):";
+            this.C3H8CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C3H8TextBox
+            // 
+            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8TextBox.Location = new System.Drawing.Point(99, 2);
+            this.C3H8TextBox.Name = "C3H8TextBox";
+            this.C3H8TextBox.Size = new System.Drawing.Size(79, 26);
+            this.C3H8TextBox.TabIndex = 35;
+            this.C3H8TextBox.Text = "0";
+            // 
+            // tabPage5panel7
+            // 
+            this.tabPage5panel7.BackColor = System.Drawing.Color.Fuchsia;
+            this.tabPage5panel7.Controls.Add(this.C2H6CheckBox);
+            this.tabPage5panel7.Controls.Add(this.C2H6TextBox);
+            this.tabPage5panel7.Location = new System.Drawing.Point(400, 54);
+            this.tabPage5panel7.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel7.Name = "tabPage5panel7";
+            this.tabPage5panel7.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel7.TabIndex = 67;
+            // 
+            // C2H6CheckBox
+            // 
+            this.C2H6CheckBox.AutoSize = true;
+            this.C2H6CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H6CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.C2H6CheckBox.Name = "C2H6CheckBox";
+            this.C2H6CheckBox.Size = new System.Drawing.Size(98, 24);
+            this.C2H6CheckBox.TabIndex = 52;
+            this.C2H6CheckBox.Text = "C₂H₆(%):";
+            this.C2H6CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C2H6TextBox
+            // 
+            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H6TextBox.Location = new System.Drawing.Point(99, 2);
+            this.C2H6TextBox.Name = "C2H6TextBox";
+            this.C2H6TextBox.Size = new System.Drawing.Size(79, 26);
+            this.C2H6TextBox.TabIndex = 36;
+            this.C2H6TextBox.Text = "0";
+            // 
+            // tabPage5panel8
+            // 
+            this.tabPage5panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tabPage5panel8.Controls.Add(this.C3H6CheckBox);
+            this.tabPage5panel8.Controls.Add(this.C3H6TextBox);
+            this.tabPage5panel8.Location = new System.Drawing.Point(596, 54);
+            this.tabPage5panel8.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel8.Name = "tabPage5panel8";
+            this.tabPage5panel8.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel8.TabIndex = 68;
+            // 
+            // C3H6CheckBox
+            // 
+            this.C3H6CheckBox.AutoSize = true;
+            this.C3H6CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H6CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.C3H6CheckBox.Name = "C3H6CheckBox";
+            this.C3H6CheckBox.Size = new System.Drawing.Size(98, 24);
+            this.C3H6CheckBox.TabIndex = 56;
+            this.C3H6CheckBox.Text = "C₃H₆(%):";
+            this.C3H6CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C3H6TextBox
+            // 
+            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H6TextBox.Location = new System.Drawing.Point(99, 2);
+            this.C3H6TextBox.Name = "C3H6TextBox";
+            this.C3H6TextBox.Size = new System.Drawing.Size(79, 26);
+            this.C3H6TextBox.TabIndex = 37;
+            this.C3H6TextBox.Text = "0";
+            // 
+            // tabPage5panel9
+            // 
+            this.tabPage5panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage5panel9.Controls.Add(this.C2H2TextBox);
+            this.tabPage5panel9.Controls.Add(this.C2H2CheckBox);
+            this.tabPage5panel9.Location = new System.Drawing.Point(8, 100);
+            this.tabPage5panel9.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel9.Name = "tabPage5panel9";
+            this.tabPage5panel9.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel9.TabIndex = 69;
+            // 
+            // C2H2TextBox
+            // 
+            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H2TextBox.Location = new System.Drawing.Point(99, 2);
+            this.C2H2TextBox.Name = "C2H2TextBox";
+            this.C2H2TextBox.Size = new System.Drawing.Size(79, 26);
+            this.C2H2TextBox.TabIndex = 38;
+            this.C2H2TextBox.Text = "0";
+            // 
+            // C2H2CheckBox
+            // 
+            this.C2H2CheckBox.AutoSize = true;
+            this.C2H2CheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H2CheckBox.Location = new System.Drawing.Point(3, 3);
+            this.C2H2CheckBox.Name = "C2H2CheckBox";
+            this.C2H2CheckBox.Size = new System.Drawing.Size(98, 24);
+            this.C2H2CheckBox.TabIndex = 60;
+            this.C2H2CheckBox.Text = "C₂H₂(%):";
+            this.C2H2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5panel10
+            // 
+            this.tabPage5panel10.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel10.Controls.Add(this.COCheckBox);
+            this.tabPage5panel10.Controls.Add(this.COTextBox);
+            this.tabPage5panel10.Location = new System.Drawing.Point(204, 100);
+            this.tabPage5panel10.Margin = new System.Windows.Forms.Padding(8);
+            this.tabPage5panel10.Name = "tabPage5panel10";
+            this.tabPage5panel10.Size = new System.Drawing.Size(180, 30);
+            this.tabPage5panel10.TabIndex = 70;
+            // 
+            // COCheckBox
+            // 
+            this.COCheckBox.AutoSize = true;
+            this.COCheckBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.COCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.COCheckBox.Name = "COCheckBox";
+            this.COCheckBox.Size = new System.Drawing.Size(88, 24);
+            this.COCheckBox.TabIndex = 53;
+            this.COCheckBox.Text = "CO(%):";
+            this.COCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // COTextBox
+            // 
+            this.COTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.COTextBox.Location = new System.Drawing.Point(99, 2);
+            this.COTextBox.Name = "COTextBox";
+            this.COTextBox.Size = new System.Drawing.Size(79, 26);
+            this.COTextBox.TabIndex = 39;
+            this.COTextBox.Text = "0";
+            // 
+            // tabPage5panel11
+            // 
+            this.tabPage5panel11.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel11.Controls.Add(this.label119);
+            this.tabPage5panel11.Controls.Add(this.dateTimePicker1);
+            this.tabPage5panel11.Location = new System.Drawing.Point(452, 154);
+            this.tabPage5panel11.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.tabPage5panel11.Name = "tabPage5panel11";
+            this.tabPage5panel11.Size = new System.Drawing.Size(367, 32);
+            this.tabPage5panel11.TabIndex = 71;
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label119.Location = new System.Drawing.Point(3, 8);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(95, 16);
+            this.label119.TabIndex = 46;
+            this.label119.Text = "出报告时间:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(104, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // tabPage5panel12
+            // 
+            this.tabPage5panel12.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel12.Controls.Add(this.label5);
+            this.tabPage5panel12.Controls.Add(this.dateTimePicker6);
+            this.tabPage5panel12.Location = new System.Drawing.Point(79, 154);
+            this.tabPage5panel12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.tabPage5panel12.Name = "tabPage5panel12";
+            this.tabPage5panel12.Size = new System.Drawing.Size(367, 32);
+            this.tabPage5panel12.TabIndex = 72;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(3, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 16);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "测试时间:";
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker6.CalendarFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker6.Location = new System.Drawing.Point(104, 3);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(260, 26);
+            this.dateTimePicker6.TabIndex = 53;
+            // 
+            // tabPage5panel14
+            // 
+            this.tabPage5panel14.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel14.Controls.Add(this.label117);
+            this.tabPage5panel14.Controls.Add(this.LabTestersTextBox);
+            this.tabPage5panel14.Location = new System.Drawing.Point(452, 206);
+            this.tabPage5panel14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.tabPage5panel14.Name = "tabPage5panel14";
+            this.tabPage5panel14.Size = new System.Drawing.Size(367, 32);
+            this.tabPage5panel14.TabIndex = 73;
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label117.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label117.Location = new System.Drawing.Point(3, 8);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(127, 16);
+            this.label117.TabIndex = 42;
+            this.label117.Text = "实验室测试人员:";
+            // 
+            // LabTestersTextBox
+            // 
+            this.LabTestersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabTestersTextBox.Location = new System.Drawing.Point(133, 3);
+            this.LabTestersTextBox.Name = "LabTestersTextBox";
+            this.LabTestersTextBox.Size = new System.Drawing.Size(231, 26);
+            this.LabTestersTextBox.TabIndex = 41;
+            // 
+            // tabPage5panel13
+            // 
+            this.tabPage5panel13.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel13.Controls.Add(this.DownholeTestersCheckBox);
+            this.tabPage5panel13.Controls.Add(this.DownholeTestersTextBox);
+            this.tabPage5panel13.Location = new System.Drawing.Point(79, 206);
+            this.tabPage5panel13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.tabPage5panel13.Name = "tabPage5panel13";
+            this.tabPage5panel13.Size = new System.Drawing.Size(367, 32);
+            this.tabPage5panel13.TabIndex = 72;
+            // 
+            // DownholeTestersCheckBox
+            // 
+            this.DownholeTestersCheckBox.AutoSize = true;
+            this.DownholeTestersCheckBox.BackColor = System.Drawing.Color.Goldenrod;
+            this.DownholeTestersCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DownholeTestersCheckBox.Location = new System.Drawing.Point(3, 6);
+            this.DownholeTestersCheckBox.Name = "DownholeTestersCheckBox";
+            this.DownholeTestersCheckBox.Size = new System.Drawing.Size(130, 20);
+            this.DownholeTestersCheckBox.TabIndex = 61;
+            this.DownholeTestersCheckBox.Text = "井下测试人员:";
+            this.DownholeTestersCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // DownholeTestersTextBox
+            // 
+            this.DownholeTestersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DownholeTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DownholeTestersTextBox.Location = new System.Drawing.Point(133, 3);
+            this.DownholeTestersTextBox.Name = "DownholeTestersTextBox";
+            this.DownholeTestersTextBox.Size = new System.Drawing.Size(231, 26);
+            this.DownholeTestersTextBox.TabIndex = 51;
+            // 
+            // tabPage5panel16
+            // 
+            this.tabPage5panel16.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel16.Controls.Add(this.label120);
+            this.tabPage5panel16.Controls.Add(this.RemarkTextBox);
+            this.tabPage5panel16.Location = new System.Drawing.Point(452, 258);
+            this.tabPage5panel16.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.tabPage5panel16.Name = "tabPage5panel16";
+            this.tabPage5panel16.Size = new System.Drawing.Size(367, 64);
+            this.tabPage5panel16.TabIndex = 75;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label120.Location = new System.Drawing.Point(3, 6);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(79, 16);
+            this.label120.TabIndex = 48;
+            this.label120.Text = "备   注：";
+            // 
+            // RemarkTextBox
+            // 
+            this.RemarkTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RemarkTextBox.Location = new System.Drawing.Point(104, 3);
+            this.RemarkTextBox.Multiline = true;
+            this.RemarkTextBox.Name = "RemarkTextBox";
+            this.RemarkTextBox.Size = new System.Drawing.Size(260, 57);
+            this.RemarkTextBox.TabIndex = 47;
+            this.RemarkTextBox.Text = "测试煤样由贵州省煤安技术服务有限公司技术人员现场采集并送达，实验室基于来样进行测试。";
+            // 
+            // tabPage5panel15
+            // 
+            this.tabPage5panel15.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel15.Controls.Add(this.label118);
+            this.tabPage5panel15.Controls.Add(this.AuditorTextBox);
+            this.tabPage5panel15.Location = new System.Drawing.Point(79, 258);
+            this.tabPage5panel15.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.tabPage5panel15.Name = "tabPage5panel15";
+            this.tabPage5panel15.Size = new System.Drawing.Size(367, 32);
+            this.tabPage5panel15.TabIndex = 74;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.BackColor = System.Drawing.Color.Gold;
+            this.label118.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label118.Location = new System.Drawing.Point(3, 8);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(79, 16);
+            this.label118.TabIndex = 44;
+            this.label118.Text = "审核人员:";
+            // 
+            // AuditorTextBox
+            // 
+            this.AuditorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AuditorTextBox.Location = new System.Drawing.Point(88, 3);
+            this.AuditorTextBox.Name = "AuditorTextBox";
+            this.AuditorTextBox.Size = new System.Drawing.Size(276, 26);
+            this.AuditorTextBox.TabIndex = 43;
+            // 
+            // tabPage5panel17
+            // 
+            this.tabPage5panel17.BackColor = System.Drawing.Color.Olive;
+            this.tabPage5panel17.Controls.Add(this.GenReportButton);
+            this.tabPage5panel17.Controls.Add(this.GenRecordButton);
+            this.tabPage5panel17.Controls.Add(this.SaveButton);
+            this.tabPage5panel17.Location = new System.Drawing.Point(452, 335);
+            this.tabPage5panel17.Name = "tabPage5panel17";
+            this.tabPage5panel17.Size = new System.Drawing.Size(367, 58);
+            this.tabPage5panel17.TabIndex = 76;
             // 
             // GenReportButton
             // 
@@ -4198,16 +4267,65 @@ namespace GasFormsApp
             this.GenReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GenReportButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GenReportButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.GenReportButton.Location = new System.Drawing.Point(750, 547);
+            this.GenReportButton.Location = new System.Drawing.Point(3, 4);
             this.GenReportButton.Name = "GenReportButton";
             this.GenReportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.GenReportButton.Radius = 35;
-            this.GenReportButton.Size = new System.Drawing.Size(145, 50);
+            this.GenReportButton.Size = new System.Drawing.Size(117, 50);
             this.GenReportButton.TabIndex = 1003;
             this.GenReportButton.Tag = "";
-            this.GenReportButton.Text = "     生 成 报 告";
+            this.GenReportButton.Text = "    生成报告";
             this.GenReportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GenReportButton.UseVisualStyleBackColor = false;
+            // 
+            // GenRecordButton
+            // 
+            this.GenRecordButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.GenRecordButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("GenRecordButton.ButtonImage")));
+            this.GenRecordButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.GenRecordButton.FlatAppearance.BorderSize = 0;
+            this.GenRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GenRecordButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GenRecordButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.GenRecordButton.Location = new System.Drawing.Point(125, 4);
+            this.GenRecordButton.Name = "GenRecordButton";
+            this.GenRecordButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.GenRecordButton.Radius = 35;
+            this.GenRecordButton.Size = new System.Drawing.Size(117, 50);
+            this.GenRecordButton.TabIndex = 1004;
+            this.GenRecordButton.Text = "    生成记录表";
+            this.GenRecordButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GenRecordButton.UseVisualStyleBackColor = false;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SaveButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("SaveButton.ButtonImage")));
+            this.SaveButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.SaveButton.Location = new System.Drawing.Point(248, 4);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.SaveButton.Radius = 35;
+            this.SaveButton.Size = new System.Drawing.Size(117, 50);
+            this.SaveButton.TabIndex = 1005;
+            this.SaveButton.Text = "    保存数据";
+            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SaveButton.UseVisualStyleBackColor = false;
+            // 
+            // GasCompCheckBox
+            // 
+            this.GasCompCheckBox.AutoSize = true;
+            this.GasCompCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GasCompCheckBox.Location = new System.Drawing.Point(59, 28);
+            this.GasCompCheckBox.Name = "GasCompCheckBox";
+            this.GasCompCheckBox.Size = new System.Drawing.Size(146, 20);
+            this.GasCompCheckBox.TabIndex = 9;
+            this.GasCompCheckBox.Text = "自然瓦斯成分(%)";
+            this.GasCompCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -4236,9 +4354,6 @@ namespace GasFormsApp
             this.tabPage3panel2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.GasCompGroupBox.ResumeLayout(false);
-            this.GasCompGroupBox.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -4265,6 +4380,44 @@ namespace GasFormsApp
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage5DoubleBufferedPanel1.ResumeLayout(false);
+            this.tabPage5DoubleBufferedPanel1.PerformLayout();
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.ResumeLayout(false);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.PerformLayout();
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.ResumeLayout(false);
+            this.tabPage5panel1.ResumeLayout(false);
+            this.tabPage5panel1.PerformLayout();
+            this.tabPage5panel2.ResumeLayout(false);
+            this.tabPage5panel2.PerformLayout();
+            this.tabPage5panel3.ResumeLayout(false);
+            this.tabPage5panel3.PerformLayout();
+            this.tabPage5panel4.ResumeLayout(false);
+            this.tabPage5panel4.PerformLayout();
+            this.tabPage5panel5.ResumeLayout(false);
+            this.tabPage5panel5.PerformLayout();
+            this.tabPage5panel6.ResumeLayout(false);
+            this.tabPage5panel6.PerformLayout();
+            this.tabPage5panel7.ResumeLayout(false);
+            this.tabPage5panel7.PerformLayout();
+            this.tabPage5panel8.ResumeLayout(false);
+            this.tabPage5panel8.PerformLayout();
+            this.tabPage5panel9.ResumeLayout(false);
+            this.tabPage5panel9.PerformLayout();
+            this.tabPage5panel10.ResumeLayout(false);
+            this.tabPage5panel10.PerformLayout();
+            this.tabPage5panel11.ResumeLayout(false);
+            this.tabPage5panel11.PerformLayout();
+            this.tabPage5panel12.ResumeLayout(false);
+            this.tabPage5panel12.PerformLayout();
+            this.tabPage5panel14.ResumeLayout(false);
+            this.tabPage5panel14.PerformLayout();
+            this.tabPage5panel13.ResumeLayout(false);
+            this.tabPage5panel13.PerformLayout();
+            this.tabPage5panel16.ResumeLayout(false);
+            this.tabPage5panel16.PerformLayout();
+            this.tabPage5panel15.ResumeLayout(false);
+            this.tabPage5panel15.PerformLayout();
+            this.tabPage5panel17.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4310,16 +4463,6 @@ namespace GasFormsApp
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer4;
         private Label label21;
         private TabPage tabPage5;
-        private Label label115;
-        private Label label114;
-        private Label label113;
-        private Label label112;
-        private Label label107;
-        private Label label106;
-        private Label label105;
-        private Label label104;
-        private Label label103;
-        private Label CH4_Lable;
         private Label label119;
         private Label label118;
         private Label label117;
@@ -4360,7 +4503,6 @@ namespace GasFormsApp
         public TextBox NonDesorpGasQtyTextBox;
         public TextBox W1_TextBox;
         public CheckBox GasCompCheckBox;
-        public GroupBox GasCompGroupBox;
         public ComboBox SampleModeComboBox;
         public DateTimePicker SamplingTimeDateTimePicker;
         public TextBox RemarkTextBox;
@@ -4422,9 +4564,7 @@ namespace GasFormsApp
         public TextBox AzimuthTextBox;
         private Label label38;
         public TextBox DownholeTestersTextBox;
-        private Label label39;
         public DateTimePicker dateTimePicker6;
-        private Label label40;
         public DateTimePicker dateTimePicker1;
         public TextBox SamplingPersonnelTextBox;
         private Label label41;
@@ -4599,5 +4739,26 @@ namespace GasFormsApp
         private GroupBox groupBox1;
         public UI.DoubleBufferedPanel tabPage4DoubleBufferedPanel1;
         public UI.DoubleBufferedFlowLayoutPanel tabPage4DoubleBufferedFlowLayoutPanel1;
+        private Panel tabPage5panel1;
+        private Panel tabPage5panel3;
+        private Panel tabPage5panel2;
+        private Panel tabPage5panel5;
+        private Panel tabPage5panel4;
+        private Panel tabPage5panel7;
+        private Panel tabPage5panel6;
+        private Panel tabPage5panel9;
+        private Panel tabPage5panel8;
+        private Panel tabPage5panel10;
+        public UI.DoubleBufferedFlowLayoutPanel tabPage5DoubleBufferedFlowLayoutPanel1;
+        public UI.DoubleBufferedFlowLayoutPanel tabPage5DoubleBufferedFlowLayoutPanel2;
+        public UI.DoubleBufferedPanel tabPage5DoubleBufferedPanel1;
+        private Label label5;
+        public Panel tabPage5panel11;
+        public Panel tabPage5panel12;
+        public Panel tabPage5panel13;
+        public Panel tabPage5panel16;
+        public Panel tabPage5panel14;
+        public Panel tabPage5panel15;
+        public Panel tabPage5panel17;
     }
 }
