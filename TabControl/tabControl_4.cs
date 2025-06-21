@@ -30,8 +30,44 @@ namespace GasFormsApp.TabControl
             _mainForm.VadCheckBox.Enabled = false;
             _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
+
+            _mainForm.tabPage4DoubleBufferedPanel1.SizeChanged += tabPage4DoubleBufferedPanel1_SizeChanged;
         }
 
+        private void tabPage4DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
+        {
+            int newWidth;
+            int newHeight;
+            if (_mainForm.Width > 980)
+            {
+                newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width / 1 - 0;
+            }
+            else
+            {
+                newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width / 1;
+            }
+            newHeight = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height / 1 - _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height / 10;
+
+
+            // 840-1165
+            if (newWidth <= 940)
+            {
+                newWidth = 940/2 + 10;
+            }
+            else if (newWidth > 940)
+            {
+                newWidth = 940;
+            }
+
+            Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");
+
+            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Width = newWidth;
+            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Height = newHeight;
+
+            // 居中定位
+            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
+            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
+        }
         private void WcOutCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (_mainForm.WcOutCheckBox.Checked)
