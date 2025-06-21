@@ -49,7 +49,7 @@ namespace GasFormsApp.TabControl
             {
                 newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1;
             }
-            newHeight = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 8;
+            newHeight = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 50;
 
 
             // 840-1165
@@ -66,6 +66,7 @@ namespace GasFormsApp.TabControl
                 //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
             }
             _mainForm.tabPage2DoubleBufferedPanel1.Width = newWidth - 30;
+            _mainForm.tabPage2panel6.Width = newWidth - 50;
 
 
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
@@ -131,10 +132,17 @@ namespace GasFormsApp.TabControl
         
         public void TabControl_2_InputCheckTimer_Tick()
         {
-            //ValidateNumericTextBox(_mainForm.t0TextBox);
-            int minute1 = _mainForm.dateTimePicker4.Value.Minute;
-            int minute2 = _mainForm.dateTimePicker5.Value.Minute;
-            _mainForm.t0TextBox.Text = (minute1 - minute2).ToString();
+            DateTime time1 = _mainForm.dateTimePicker4.Value;
+            DateTime time2 = _mainForm.dateTimePicker5.Value;
+
+            // 去除秒和毫秒，只保留到分钟
+            time1 = new DateTime(time1.Year, time1.Month, time1.Day, time1.Hour, time1.Minute, 0);
+            time2 = new DateTime(time2.Year, time2.Month, time2.Day, time2.Hour, time2.Minute, 0);
+
+            TimeSpan diff = time1 - time2;
+            int minutes = (int)diff.TotalMinutes;
+            _mainForm.t0TextBox.Text = minutes.ToString();
+
             string input = _mainForm.t0TextBox.Text;
             // 重置颜色
             _mainForm.t0TextBox.BackColor = System.Drawing.Color.PeachPuff;
