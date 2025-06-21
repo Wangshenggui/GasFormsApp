@@ -20,19 +20,53 @@ namespace GasFormsApp.TabControl
             // 注册回调函数
             _mainForm.ExpCalcButton.Click += ExpCalcButton_Click;
 
-            _mainForm.AdsorpConstACheckBox.Enabled = false;
-            _mainForm.AdsorpConstBCheckBox.Enabled = false;
-            _mainForm.MadCheckBox.Enabled = false;
-            _mainForm.AadCheckBox.Enabled = false;
-            _mainForm.PorosityCheckBox.Enabled = false;
-            _mainForm.AppDensityCheckBox.Enabled = false;
-            _mainForm.TrueDensityCheckBox.Enabled = false;
-            _mainForm.VadCheckBox.Enabled = false;
-            _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
+            MakeCheckBoxesReadOnly(
+                _mainForm.AdsorpConstACheckBox,
+                _mainForm.AdsorpConstBCheckBox,
+                _mainForm.MadCheckBox,
+                _mainForm.AadCheckBox,
+                _mainForm.PorosityCheckBox,
+                _mainForm.AppDensityCheckBox,
+                _mainForm.TrueDensityCheckBox,
+                _mainForm.VadCheckBox,
+                _mainForm.NonDesorpGasQtyCheckBox
+            );
+
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
 
             _mainForm.tabPage4DoubleBufferedPanel1.SizeChanged += tabPage4DoubleBufferedPanel1_SizeChanged;
         }
+        private void MakeCheckBoxesReadOnly(params CheckBox[] boxes)
+        {
+            foreach (var box in boxes)
+            {
+                // 保存事件处理器引用
+                EventHandler clickHandler = (s, e) => box.Checked = !box.Checked;
+
+                // 存储到 Tag 中方便以后移除
+                box.Tag = clickHandler;
+                box.Click += clickHandler;
+
+                box.Cursor = Cursors.Default;
+                box.TabStop = false;
+            }
+        }
+        private void MakeCheckBoxesEditable(params CheckBox[] boxes)
+        {
+            foreach (var box in boxes)
+            {
+                if (box.Tag is EventHandler handler)
+                {
+                    box.Click -= handler;  // 移除之前的处理器
+                    box.Tag = null;
+                }
+
+                box.Cursor = Cursors.Hand;   // 或你默认的鼠标样式
+                box.TabStop = true;
+            }
+        }
+
+
 
         private void tabPage4DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
         {
@@ -74,15 +108,17 @@ namespace GasFormsApp.TabControl
             {
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打勾;
 
-                _mainForm.AdsorpConstACheckBox.Enabled = true;
-                _mainForm.AdsorpConstBCheckBox.Enabled = true;
-                _mainForm.MadCheckBox.Enabled = true;
-                _mainForm.AadCheckBox.Enabled = true;
-                _mainForm.PorosityCheckBox.Enabled = true;
-                _mainForm.AppDensityCheckBox.Enabled = true;
-                _mainForm.TrueDensityCheckBox.Enabled = true;
-                _mainForm.VadCheckBox.Enabled = true;
-                _mainForm.NonDesorpGasQtyCheckBox.Enabled = true;
+                MakeCheckBoxesEditable(
+                    _mainForm.AdsorpConstACheckBox,
+                    _mainForm.AdsorpConstBCheckBox,
+                    _mainForm.MadCheckBox,
+                    _mainForm.AadCheckBox,
+                    _mainForm.PorosityCheckBox,
+                    _mainForm.AppDensityCheckBox,
+                    _mainForm.TrueDensityCheckBox,
+                    _mainForm.VadCheckBox,
+                    _mainForm.NonDesorpGasQtyCheckBox
+                );
 
                 MainForm.WcOutCheckBoxFlag = true;
             }
@@ -100,15 +136,17 @@ namespace GasFormsApp.TabControl
                 _mainForm.VadCheckBox.Checked = false;
                 _mainForm.NonDesorpGasQtyCheckBox.Checked = false;
 
-                _mainForm.AdsorpConstACheckBox.Enabled = false;
-                _mainForm.AdsorpConstBCheckBox.Enabled = false;
-                _mainForm.MadCheckBox.Enabled = false;
-                _mainForm.AadCheckBox.Enabled = false;
-                _mainForm.PorosityCheckBox.Enabled = false;
-                _mainForm.AppDensityCheckBox.Enabled = false;
-                _mainForm.TrueDensityCheckBox.Enabled = false;
-                _mainForm.VadCheckBox.Enabled = false;
-                _mainForm.NonDesorpGasQtyCheckBox.Enabled = false;
+                MakeCheckBoxesReadOnly(
+                    _mainForm.AdsorpConstACheckBox,
+                    _mainForm.AdsorpConstBCheckBox,
+                    _mainForm.MadCheckBox,
+                    _mainForm.AadCheckBox,
+                    _mainForm.PorosityCheckBox,
+                    _mainForm.AppDensityCheckBox,
+                    _mainForm.TrueDensityCheckBox,
+                    _mainForm.VadCheckBox,
+                    _mainForm.NonDesorpGasQtyCheckBox
+                );
 
                 MainForm.WcOutCheckBoxFlag = false;
             }

@@ -178,7 +178,9 @@ namespace GasFormsApp
             tabPage5.ImageIndex = 4;
             tabPage6.ImageIndex = 5;
 
-            tabControl1.SelectedIndex = 4;
+            //tabControl1.SelectedIndex = 4;
+
+
             #endregion
 
 
