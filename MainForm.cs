@@ -178,7 +178,7 @@ namespace GasFormsApp
             tabPage5.ImageIndex = 4;
             tabPage6.ImageIndex = 5;
 
-            //tabControl1.SelectedIndex = 4;
+            tabControl1.SelectedIndex = 1;
 
 
             #endregion
@@ -640,5 +640,15 @@ namespace GasFormsApp
 
         [DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, bool wParam, int lParam);
+
+        private void doubleBufferedPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage2DoubleBufferedPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

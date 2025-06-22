@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace GasFormsApp.UI
 {
+    
     public class DoubleBufferedFlowLayoutPanel : FlowLayoutPanel
     {
         private FlowLayoutPanel flowLayoutPanel1;

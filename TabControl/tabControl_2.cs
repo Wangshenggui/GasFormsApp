@@ -41,32 +41,52 @@ namespace GasFormsApp.TabControl
         {
             int newWidth;
             int newHeight;
-            if (_mainForm.Width > 970)
-            {
-                newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 9;
-            }
-            else
-            {
-                newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1;
-            }
-            newHeight = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 50;
 
+            newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 100;
+            newHeight = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 10;
 
+            Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
+            Console.WriteLine($"宽度: {newWidth}, 高度: {newHeight}");
+
+            _mainForm.tabPage2panel7.Width = 1;
+            _mainForm.tabPage2panel8.Width = 1;
+            _mainForm.tabPage2panel9.Width = 1;
+            _mainForm.tabPage2panel10.Width = 1;
             // 840-1165
-            if (newWidth <= 1165)
+            if (newWidth <= 840)
+            {
+                newWidth = 428;
+            }
+            else if (newWidth > 840 && newWidth <=1165)
             {
                 newWidth = 840;
-                //tabPage2panel6.Height = tabPage2panel5.Height;
-                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
             }
             else if (newWidth > 1165)
             {
                 newWidth = 1165;
-                //tabPage2panel6.Height = tabPage2DoubleBufferedPanel1.Height;
-                //tabPage2panel6.Width = tabPage2DoubleBufferedPanel1.Width - tabPage2panel5.Width;
+
+                int a = 161;
+                _mainForm.tabPage2panel7.Width = a;
+                _mainForm.tabPage2panel8.Width = a;
+
+                _mainForm.tabPage2panel9.Width = 1;
+                _mainForm.tabPage2panel10.Width = a;
             }
-            _mainForm.tabPage2DoubleBufferedPanel1.Width = newWidth - 30;
-            _mainForm.tabPage2panel6.Width = newWidth - 50;
+            //// 假设遮罩宽高
+            //int maskWidth = 100;
+            //int maskHeight = 24; // 通常 TabControl 的标签高度
+
+            //// 计算 tabControl 标签区域右上角
+            //int tabRight = _mainForm.tabControl1.Left + _mainForm.tabControl1.Width;
+            //int tabTop = _mainForm.tabControl1.Top;
+
+            //// 设置遮罩 panel 属性
+            //_mainForm.panel1.Size = new Size(maskWidth, maskHeight);
+            //_mainForm.panel1.BackColor = Color.FromArgb(150, Color.Gray);
+            //_mainForm.panel1.Location = new Point(tabRight - maskWidth, tabTop + 2); // 微调 +2 让它对齐标签区域
+            //_mainForm.panel1.BringToFront();
+
+
 
 
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
