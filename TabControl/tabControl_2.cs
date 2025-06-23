@@ -398,7 +398,34 @@ namespace GasFormsApp.TabControl
         }
         public void ExportImageButton_Click(object sender, EventArgs e)
         {
+            // 选择保存位置
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "PNG 文件 (*.png)|*.png",
+                Title = "保存生成的 PNG 文件"
+            };
 
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                // 当前程序目录
+                string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
+                // 用于存放系统数据的文件夹路径
+                string SystemDataPath = Path.Combine(CurrentDir, "Python_embed\\Python\\images\\output_image.png");
+
+                string outputPath = saveDialog.FileName;
+                string sourcePath = SystemDataPath;  // 你的固定图片路径
+
+                try
+                {
+                    // 复制文件，若目标文件已存在则覆盖
+                    System.IO.File.Copy(sourcePath, outputPath, true);
+                    MessageBox.Show("图片复制成功！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("复制图片出错: " + ex.Message);
+                }
+            }
         }
         public void DrawCurvesButton_Click(object sender, EventArgs e)
         {

@@ -91,7 +91,7 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 940)
             {
                 newWidth = 940;
-                newHeight = 610;
+                //newHeight = 610;
             }
 
             Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");

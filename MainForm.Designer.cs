@@ -2882,14 +2882,13 @@ namespace GasFormsApp
             this.tabPage3panel1.Controls.Add(this.label96);
             this.tabPage3panel1.Location = new System.Drawing.Point(419, 6);
             this.tabPage3panel1.Name = "tabPage3panel1";
-            this.tabPage3panel1.Size = new System.Drawing.Size(531, 627);
+            this.tabPage3panel1.Size = new System.Drawing.Size(647, 627);
             this.tabPage3panel1.TabIndex = 1002;
             // 
             // tabPage3panel2
             // 
-            this.tabPage3panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPage3panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabPage3panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage3panel2.Controls.Add(this.DesorpVolNormalCalTextBox);
             this.tabPage3panel2.Controls.Add(this.DesorpVolNormalTextBox);
@@ -2915,53 +2914,45 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(221, 595);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 597);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // DesorpVolNormalCalTextBox
             // 
-            this.DesorpVolNormalCalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DesorpVolNormalCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.DesorpVolNormalCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(216, 56);
             this.DesorpVolNormalCalTextBox.Name = "DesorpVolNormalCalTextBox";
             this.DesorpVolNormalCalTextBox.ReadOnly = true;
-            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(0, 26);
+            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(173, 26);
             this.DesorpVolNormalCalTextBox.TabIndex = 31;
             this.DesorpVolNormalCalTextBox.TabStop = false;
             this.DesorpVolNormalCalTextBox.Text = "0";
             // 
             // DesorpVolNormalTextBox
             // 
-            this.DesorpVolNormalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DesorpVolNormalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(216, 24);
             this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
-            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(0, 26);
+            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(173, 26);
             this.DesorpVolNormalTextBox.TabIndex = 1;
             // 
             // Sample2WeightTextBox
             // 
-            this.Sample2WeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Sample2WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Sample2WeightTextBox.Location = new System.Drawing.Point(216, 183);
             this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
-            this.Sample2WeightTextBox.Size = new System.Drawing.Size(0, 26);
+            this.Sample2WeightTextBox.Size = new System.Drawing.Size(173, 26);
             this.Sample2WeightTextBox.TabIndex = 3;
             // 
             // CrushDesorpTextBox
             // 
-            this.CrushDesorpTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.CrushDesorpTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.CrushDesorpTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CrushDesorpTextBox.Location = new System.Drawing.Point(216, 393);
             this.CrushDesorpTextBox.Name = "CrushDesorpTextBox";
             this.CrushDesorpTextBox.ReadOnly = true;
-            this.CrushDesorpTextBox.Size = new System.Drawing.Size(0, 26);
+            this.CrushDesorpTextBox.Size = new System.Drawing.Size(173, 26);
             this.CrushDesorpTextBox.TabIndex = 24;
             this.CrushDesorpTextBox.TabStop = false;
             this.CrushDesorpTextBox.Text = "0";
@@ -2979,12 +2970,10 @@ namespace GasFormsApp
             // 
             // S2DesorpVolTextBox
             // 
-            this.S2DesorpVolTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.S2DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S2DesorpVolTextBox.Location = new System.Drawing.Point(216, 267);
             this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
-            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(0, 26);
+            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(173, 26);
             this.S2DesorpVolTextBox.TabIndex = 5;
             // 
             // label87
@@ -3044,24 +3033,20 @@ namespace GasFormsApp
             // 
             // S1DesorpVolTextBox
             // 
-            this.S1DesorpVolTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S1DesorpVolTextBox.Location = new System.Drawing.Point(216, 225);
             this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
-            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(0, 26);
+            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(173, 26);
             this.S1DesorpVolTextBox.TabIndex = 4;
             // 
             // S2DesorpVolCalTextBox
             // 
-            this.S2DesorpVolCalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.S2DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.S2DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 351);
             this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
             this.S2DesorpVolCalTextBox.ReadOnly = true;
-            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(0, 26);
+            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(173, 26);
             this.S2DesorpVolCalTextBox.TabIndex = 36;
             this.S2DesorpVolCalTextBox.TabStop = false;
             this.S2DesorpVolCalTextBox.Text = "0";
@@ -3104,24 +3089,20 @@ namespace GasFormsApp
             // 
             // Sample1WeightTextBox
             // 
-            this.Sample1WeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Sample1WeightTextBox.Location = new System.Drawing.Point(216, 141);
             this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
-            this.Sample1WeightTextBox.Size = new System.Drawing.Size(0, 26);
+            this.Sample1WeightTextBox.Size = new System.Drawing.Size(173, 26);
             this.Sample1WeightTextBox.TabIndex = 2;
             // 
             // S1DesorpVolCalTextBox
             // 
-            this.S1DesorpVolCalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.S1DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.S1DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 309);
             this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
             this.S1DesorpVolCalTextBox.ReadOnly = true;
-            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(0, 26);
+            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(173, 26);
             this.S1DesorpVolCalTextBox.TabIndex = 34;
             this.S1DesorpVolCalTextBox.TabStop = false;
             this.S1DesorpVolCalTextBox.Text = "0";
