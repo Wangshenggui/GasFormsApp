@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -19,8 +20,107 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.LabDesorbButton, "计算(Ctrl + D)");
 
             _mainForm.LabDesorbButton.Click += LabDesorbButton_Click;
+            _mainForm.tabPage3TemporarySavingButton.Click += tabPage3TemporarySavingButton_Click;
+            _mainForm.tabPage3RecoverDataButton.Click += tabPage3RecoverDataButton_Click;
         }
 
+        [Serializable]
+        public class tab3TempData
+        {
+            public string DesorpVolNormalText { get; set; }
+            public string DesorpVolNormalCalText { get; set; }
+            public string Sample1WeightText { get; set; }
+            public string Sample2WeightText { get; set; }
+            public string S1DesorpVolText { get; set; }
+            public string S2DesorpVolText { get; set; }
+            public string S1DesorpVolCalText { get; set; }
+            public string S2DesorpVolCalText { get; set; }
+            public string CrushDesorpTextBox { get; set; }
+        }
+
+        // 临时保存按钮
+        public void tabPage3TemporarySavingButton_Click(object sender, EventArgs e)
+        {
+            // 构造 TempData 对象并从控件中读取数据
+            tab3TempData data = new tab3TempData
+            {
+                DesorpVolNormalText = _mainForm.DesorpVolNormalTextBox.Text,
+                DesorpVolNormalCalText = _mainForm.DesorpVolNormalCalTextBox.Text,
+                Sample1WeightText = _mainForm.Sample1WeightTextBox.Text,
+                Sample2WeightText = _mainForm.Sample2WeightTextBox.Text,
+                S1DesorpVolText = _mainForm.S1DesorpVolTextBox.Text,
+                S2DesorpVolText = _mainForm.S2DesorpVolTextBox.Text,
+                S1DesorpVolCalText = _mainForm.S1DesorpVolCalTextBox.Text,
+                S2DesorpVolCalText = _mainForm.S2DesorpVolCalTextBox.Text,
+                CrushDesorpTextBox = _mainForm.CrushDesorpTextBox.Text
+            };
+
+            // 获取当前程序目录
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string tempFolder = Path.Combine(currentDir, "TempData");
+
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
+            string savePath = Path.Combine(tempFolder, "tabPage3_temp.bin");
+
+            try
+            {
+                using (FileStream fs = new FileStream(savePath, FileMode.Create))
+                {
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+#pragma warning disable SYSLIB0011 // 忽略BinaryFormatter过时警告
+                    formatter.Serialize(fs, data);
+#pragma warning restore SYSLIB0011
+                }
+
+                MessageBox.Show("以二进制格式保存成功！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void tabPage3RecoverDataButton_Click(object sender, EventArgs e)
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string loadPath = Path.Combine(currentDir, "TempData", "tabPage3_temp.bin");
+
+            if (!File.Exists(loadPath))
+            {
+                MessageBox.Show("找不到临时保存的数据！");
+                return;
+            }
+
+            try
+            {
+                using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                {
+#pragma warning disable SYSLIB0011
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    tab3TempData data = (tab3TempData)formatter.Deserialize(fs);
+#pragma warning restore SYSLIB0011
+
+                    _mainForm.DesorpVolNormalTextBox.Text = data.DesorpVolNormalText;
+                    _mainForm.DesorpVolNormalCalTextBox.Text = data.DesorpVolNormalCalText;
+                    _mainForm.Sample1WeightTextBox.Text = data.Sample1WeightText;
+                    _mainForm.Sample2WeightTextBox.Text = data.Sample2WeightText;
+                    _mainForm.S1DesorpVolTextBox.Text = data.S1DesorpVolText;
+                    _mainForm.S2DesorpVolTextBox.Text = data.S2DesorpVolText;
+                    _mainForm.S1DesorpVolCalTextBox.Text = data.S1DesorpVolCalText;
+                    _mainForm.S2DesorpVolCalTextBox.Text = data.S2DesorpVolCalText;
+                    _mainForm.CrushDesorpTextBox.Text = data.CrushDesorpTextBox;
+
+                    MessageBox.Show("数据已恢复！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void ValidateNumericTextBox(TextBox textBox)
         {
             string input = textBox.Text;
