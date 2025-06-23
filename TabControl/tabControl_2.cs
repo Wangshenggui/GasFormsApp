@@ -76,6 +76,7 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 1165)
             {
                 newWidth = 1165;
+                newHeight = 630;
 
                 int a = 161;
                 _mainForm.tabPage2panel7.Width = a;

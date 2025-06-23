@@ -85,6 +85,9 @@ namespace GasFormsApp.UI
         private Panel borderRight;
         private Panel borderTop;
 
+        // 工具栏按钮
+        private Button 账户管理Button;
+
         private void InitializeBorder()
         {
             int borderWidth = 2;
@@ -121,16 +124,35 @@ namespace GasFormsApp.UI
             borderLeft.BringToFront();
             borderRight.BringToFront();
             borderTop.BringToFront();
+
+            
+        }
+        private void TitleBar_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                maximizeButton.Text = "❐";
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                maximizeButton.Text = "▢";
+            }
         }
 
         public CustomForm()
         {
+            this.SetStyle(ControlStyles.StandardDoubleClick, true); // 👈 关键行
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(200, 200);
             this.Padding = new Padding(2);
+
             InitializeCustomTitleBar();
+            InitializeBorder();
         }
+
 
         private void InitializeCustomTitleBar()
         {
@@ -178,12 +200,48 @@ namespace GasFormsApp.UI
                 Text = this.Text,
                 ForeColor = Color.LightGray,
                 AutoSize = false,
-                Dock = DockStyle.Fill,
+                Dock = DockStyle.None,  // 取消填充
+                Width = 200,            // 根据需求调整宽度
+                Height = 30,
                 TextAlign = ContentAlignment.MiddleLeft,
                 Padding = new Padding(10, 0, 0, 0),
                 Font = new Font("Segoe UI", 9, FontStyle.Regular)
             };
+            titleLabel.Location = new Point(0, 0);
             titleBar.Controls.Add(titleLabel);
+
+            //账户管理Button
+            // 添加标签
+            titleBar.Controls.Add(titleLabel);
+
+            // 账户管理按钮
+            账户管理Button = new CustomBorderButton
+            {
+                Text = " 账户管理 ",
+                BackColor = Color.FromArgb(17, 45, 78),
+                FlatStyle = FlatStyle.Flat,
+                Width = 85,
+                Borders = BorderSides.Left | 0,
+                HoverBackColor = Color.FromArgb(80, 80, 80),
+                //Dock = DockStyle.Right,
+                ForeColor = Color.LightGray,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BorderColor = Color.White,
+                BorderWidth = 2,
+                TabStop = false
+            };
+            账户管理Button.FlatAppearance.BorderSize = 0;
+
+            // 这里计算按钮的位置，紧跟标签后面
+            账户管理Button.Location = new Point(titleLabel.Location.X + titleLabel.Width, 3);
+
+            // 添加点击事件
+            账户管理Button.Click += (s, e) =>
+            {
+                MessageBox.Show("你点击了标题栏上的按钮！");
+            };
+
+            titleBar.Controls.Add(账户管理Button);
 
 
             // 最小化按钮，纯黑背景，悬停变暗灰
@@ -194,6 +252,7 @@ namespace GasFormsApp.UI
                 FlatStyle = FlatStyle.Flat,
                 Width = 45,
                 Borders = 0,
+                HoverBackColor = Color.FromArgb(80, 80, 80),
                 Dock = DockStyle.Right,
                 ForeColor = Color.LightGray,
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
@@ -247,31 +306,27 @@ namespace GasFormsApp.UI
             titleBar.Controls.Add(closeButton);
 
 
-            // 拖动窗体
-            titleLabel.MouseDown += TitleBar_MouseDown;
+            // 拖动
+            titleLabel.MouseDown += TitleLabel_MouseDown;
+            titleBar.MouseDown += TitleLabel_MouseDown;
         }
-
-        private Button CreateTitleBarButton(string text, Color backColor, Color hoverColor)
+        private void TitleLabel_MouseDown(object sender, MouseEventArgs e)
         {
-            var btn = new Button
+            if (e.Button == MouseButtons.Left)
             {
-                Text = text,
-                ForeColor = Color.LightGray,
-                BackColor = backColor,
-                FlatStyle = FlatStyle.Flat,
-                Width = 45,
-                Dock = DockStyle.Right,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                TabStop = false
-            };
-            btn.FlatAppearance.BorderSize = 0;
-
-            btn.MouseEnter += (s, e) => btn.BackColor = hoverColor;
-            btn.MouseLeave += (s, e) => btn.BackColor = backColor;
-
-            return btn;
+                if (e.Clicks == 2)
+                {
+                    // 处理双击最大化/还原
+                    TitleBar_DoubleClick(sender, e);
+                }
+                else
+                {
+                    // 单击拖动
+                    ReleaseCapture();
+                    SendMessage(this.Handle, 0xA1, 0x2, 0);
+                }
+            }
         }
-
         private void MaximizeButton_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)

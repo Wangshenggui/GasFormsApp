@@ -29,10 +29,12 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 705 && newWidth <= 1055)
             {
                 newWidth = 720;
+                newHeight = 480;
             }
             else if (newWidth > 1055)
             {
                 newWidth = 1055 + 10;
+                newHeight = 370;
             }
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width = newWidth;
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height = newHeight;

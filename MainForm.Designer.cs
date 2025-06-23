@@ -516,9 +516,9 @@ namespace GasFormsApp
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.AzimuthTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label41);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingPersonnelTextBox);
-            this.tabPage1DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(288, 65);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(148, 22);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Name = "tabPage1DoubleBufferedFlowLayoutPanel1";
-            this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(833, 573);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(739, 468);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -994,7 +994,7 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel6);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(57, 32);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Name = "tabPage2DoubleBufferedFlowLayoutPanel1";
-            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(859, 598);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(1167, 598);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.TabIndex = 1002;
             // 
             // tabPage2panel7
@@ -2671,7 +2671,7 @@ namespace GasFormsApp
             this.tabPage2panel5.Controls.Add(this.label23);
             this.tabPage2panel5.Controls.Add(this.pictureBox3);
             this.tabPage2panel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabPage2panel5.Location = new System.Drawing.Point(3, 464);
+            this.tabPage2panel5.Location = new System.Drawing.Point(822, 112);
             this.tabPage2panel5.Name = "tabPage2panel5";
             this.tabPage2panel5.Size = new System.Drawing.Size(321, 345);
             this.tabPage2panel5.TabIndex = 1001;
@@ -2701,7 +2701,7 @@ namespace GasFormsApp
             // tabPage2panel10
             // 
             this.tabPage2panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage2panel10.Location = new System.Drawing.Point(327, 464);
+            this.tabPage2panel10.Location = new System.Drawing.Point(1146, 112);
             this.tabPage2panel10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tabPage2panel10.Name = "tabPage2panel10";
             this.tabPage2panel10.Size = new System.Drawing.Size(1, 103);
@@ -2718,7 +2718,7 @@ namespace GasFormsApp
             this.tabPage2panel6.Controls.Add(this.label54);
             this.tabPage2panel6.Controls.Add(this.DrawCurvesButton);
             this.tabPage2panel6.Controls.Add(this.label18);
-            this.tabPage2panel6.Location = new System.Drawing.Point(3, 815);
+            this.tabPage2panel6.Location = new System.Drawing.Point(3, 464);
             this.tabPage2panel6.Name = "tabPage2panel6";
             this.tabPage2panel6.Size = new System.Drawing.Size(806, 130);
             this.tabPage2panel6.TabIndex = 1000;
@@ -2858,14 +2858,16 @@ namespace GasFormsApp
             this.tabPage3panel1.Controls.Add(this.tabPage3panel2);
             this.tabPage3panel1.Controls.Add(this.label42);
             this.tabPage3panel1.Controls.Add(this.label96);
-            this.tabPage3panel1.Location = new System.Drawing.Point(419, 0);
+            this.tabPage3panel1.Location = new System.Drawing.Point(419, 6);
             this.tabPage3panel1.Name = "tabPage3panel1";
-            this.tabPage3panel1.Size = new System.Drawing.Size(577, 668);
+            this.tabPage3panel1.Size = new System.Drawing.Size(531, 627);
             this.tabPage3panel1.TabIndex = 1002;
             // 
             // tabPage3panel2
             // 
-            this.tabPage3panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tabPage3panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage3panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage3panel2.Controls.Add(this.DesorpVolNormalCalTextBox);
             this.tabPage3panel2.Controls.Add(this.DesorpVolNormalTextBox);
@@ -2889,9 +2891,9 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label121);
             this.tabPage3panel2.Controls.Add(this.label82);
             this.tabPage3panel2.Controls.Add(this.label101);
-            this.tabPage3panel2.Location = new System.Drawing.Point(41, 82);
+            this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(496, 564);
+            this.tabPage3panel2.Size = new System.Drawing.Size(391, 575);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // DesorpVolNormalCalTextBox
@@ -2903,7 +2905,7 @@ namespace GasFormsApp
             this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(216, 56);
             this.DesorpVolNormalCalTextBox.Name = "DesorpVolNormalCalTextBox";
             this.DesorpVolNormalCalTextBox.ReadOnly = true;
-            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(274, 26);
+            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(169, 26);
             this.DesorpVolNormalCalTextBox.TabIndex = 31;
             this.DesorpVolNormalCalTextBox.TabStop = false;
             this.DesorpVolNormalCalTextBox.Text = "0";
@@ -2915,7 +2917,7 @@ namespace GasFormsApp
             this.DesorpVolNormalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(216, 24);
             this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
-            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(274, 26);
+            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(169, 26);
             this.DesorpVolNormalTextBox.TabIndex = 1;
             // 
             // Sample2WeightTextBox
@@ -2925,7 +2927,7 @@ namespace GasFormsApp
             this.Sample2WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Sample2WeightTextBox.Location = new System.Drawing.Point(216, 183);
             this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
-            this.Sample2WeightTextBox.Size = new System.Drawing.Size(274, 26);
+            this.Sample2WeightTextBox.Size = new System.Drawing.Size(169, 26);
             this.Sample2WeightTextBox.TabIndex = 3;
             // 
             // CrushDesorpTextBox
@@ -2937,7 +2939,7 @@ namespace GasFormsApp
             this.CrushDesorpTextBox.Location = new System.Drawing.Point(216, 393);
             this.CrushDesorpTextBox.Name = "CrushDesorpTextBox";
             this.CrushDesorpTextBox.ReadOnly = true;
-            this.CrushDesorpTextBox.Size = new System.Drawing.Size(274, 26);
+            this.CrushDesorpTextBox.Size = new System.Drawing.Size(169, 26);
             this.CrushDesorpTextBox.TabIndex = 24;
             this.CrushDesorpTextBox.TabStop = false;
             this.CrushDesorpTextBox.Text = "0";
@@ -2960,7 +2962,7 @@ namespace GasFormsApp
             this.S2DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S2DesorpVolTextBox.Location = new System.Drawing.Point(216, 267);
             this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
-            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(274, 26);
+            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(169, 26);
             this.S2DesorpVolTextBox.TabIndex = 5;
             // 
             // label87
@@ -2977,8 +2979,6 @@ namespace GasFormsApp
             // 
             // LabDesorbButton
             // 
-            this.LabDesorbButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LabDesorbButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.LabDesorbButton.ButtonImage = global::GasFormsApp.Properties.Resources.打勾;
             this.LabDesorbButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
@@ -2986,11 +2986,11 @@ namespace GasFormsApp
             this.LabDesorbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabDesorbButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LabDesorbButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.LabDesorbButton.Location = new System.Drawing.Point(344, 425);
+            this.LabDesorbButton.Location = new System.Drawing.Point(112, 454);
             this.LabDesorbButton.Name = "LabDesorbButton";
             this.LabDesorbButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.LabDesorbButton.Radius = 35;
-            this.LabDesorbButton.Size = new System.Drawing.Size(146, 42);
+            this.LabDesorbButton.Size = new System.Drawing.Size(172, 42);
             this.LabDesorbButton.TabIndex = 1001;
             this.LabDesorbButton.Text = "      计    算";
             this.LabDesorbButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3027,7 +3027,7 @@ namespace GasFormsApp
             this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S1DesorpVolTextBox.Location = new System.Drawing.Point(216, 225);
             this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
-            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(274, 26);
+            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(169, 26);
             this.S1DesorpVolTextBox.TabIndex = 4;
             // 
             // S2DesorpVolCalTextBox
@@ -3039,7 +3039,7 @@ namespace GasFormsApp
             this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 351);
             this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
             this.S2DesorpVolCalTextBox.ReadOnly = true;
-            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(274, 26);
+            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(169, 26);
             this.S2DesorpVolCalTextBox.TabIndex = 36;
             this.S2DesorpVolCalTextBox.TabStop = false;
             this.S2DesorpVolCalTextBox.Text = "0";
@@ -3087,7 +3087,7 @@ namespace GasFormsApp
             this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Sample1WeightTextBox.Location = new System.Drawing.Point(216, 141);
             this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
-            this.Sample1WeightTextBox.Size = new System.Drawing.Size(274, 26);
+            this.Sample1WeightTextBox.Size = new System.Drawing.Size(169, 26);
             this.Sample1WeightTextBox.TabIndex = 2;
             // 
             // S1DesorpVolCalTextBox
@@ -3099,7 +3099,7 @@ namespace GasFormsApp
             this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 309);
             this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
             this.S1DesorpVolCalTextBox.ReadOnly = true;
-            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(274, 26);
+            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(169, 26);
             this.S1DesorpVolCalTextBox.TabIndex = 34;
             this.S1DesorpVolCalTextBox.TabStop = false;
             this.S1DesorpVolCalTextBox.Text = "0";
@@ -3213,7 +3213,7 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox1);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(133, 14);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Name = "tabPage4DoubleBufferedFlowLayoutPanel1";
-            this.tabPage4DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(948, 623);
+            this.tabPage4DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(948, 610);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.TabIndex = 0;
             // 
             // groupBox3
@@ -3703,7 +3703,7 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(59, 55);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Name = "tabPage5DoubleBufferedFlowLayoutPanel2";
-            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(822, 536);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(824, 411);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.TabIndex = 1006;
             // 
             // tabPage5DoubleBufferedFlowLayoutPanel1
@@ -3722,7 +3722,7 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel8);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel9);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel10);
-            this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(35, 3);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(37, 3);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Name = "tabPage5DoubleBufferedFlowLayoutPanel1";
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(784, 138);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.TabIndex = 71;
@@ -4053,7 +4053,7 @@ namespace GasFormsApp
             this.tabPage5panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel11.Controls.Add(this.label119);
             this.tabPage5panel11.Controls.Add(this.dateTimePicker1);
-            this.tabPage5panel11.Location = new System.Drawing.Point(452, 154);
+            this.tabPage5panel11.Location = new System.Drawing.Point(454, 154);
             this.tabPage5panel11.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel11.Name = "tabPage5panel11";
             this.tabPage5panel11.Size = new System.Drawing.Size(367, 32);
@@ -4087,7 +4087,7 @@ namespace GasFormsApp
             this.tabPage5panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel12.Controls.Add(this.label5);
             this.tabPage5panel12.Controls.Add(this.dateTimePicker6);
-            this.tabPage5panel12.Location = new System.Drawing.Point(79, 154);
+            this.tabPage5panel12.Location = new System.Drawing.Point(81, 154);
             this.tabPage5panel12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel12.Name = "tabPage5panel12";
             this.tabPage5panel12.Size = new System.Drawing.Size(367, 32);
@@ -4121,7 +4121,7 @@ namespace GasFormsApp
             this.tabPage5panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel14.Controls.Add(this.label117);
             this.tabPage5panel14.Controls.Add(this.LabTestersTextBox);
-            this.tabPage5panel14.Location = new System.Drawing.Point(452, 206);
+            this.tabPage5panel14.Location = new System.Drawing.Point(454, 206);
             this.tabPage5panel14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel14.Name = "tabPage5panel14";
             this.tabPage5panel14.Size = new System.Drawing.Size(367, 32);
@@ -4155,7 +4155,7 @@ namespace GasFormsApp
             this.tabPage5panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel13.Controls.Add(this.DownholeTestersCheckBox);
             this.tabPage5panel13.Controls.Add(this.DownholeTestersTextBox);
-            this.tabPage5panel13.Location = new System.Drawing.Point(79, 206);
+            this.tabPage5panel13.Location = new System.Drawing.Point(81, 206);
             this.tabPage5panel13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel13.Name = "tabPage5panel13";
             this.tabPage5panel13.Size = new System.Drawing.Size(367, 32);
@@ -4190,7 +4190,7 @@ namespace GasFormsApp
             this.tabPage5panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel16.Controls.Add(this.label120);
             this.tabPage5panel16.Controls.Add(this.RemarkTextBox);
-            this.tabPage5panel16.Location = new System.Drawing.Point(452, 258);
+            this.tabPage5panel16.Location = new System.Drawing.Point(454, 258);
             this.tabPage5panel16.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel16.Name = "tabPage5panel16";
             this.tabPage5panel16.Size = new System.Drawing.Size(367, 64);
@@ -4222,7 +4222,7 @@ namespace GasFormsApp
             this.tabPage5panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel15.Controls.Add(this.label118);
             this.tabPage5panel15.Controls.Add(this.AuditorTextBox);
-            this.tabPage5panel15.Location = new System.Drawing.Point(79, 258);
+            this.tabPage5panel15.Location = new System.Drawing.Point(81, 258);
             this.tabPage5panel15.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel15.Name = "tabPage5panel15";
             this.tabPage5panel15.Size = new System.Drawing.Size(367, 32);
@@ -4257,7 +4257,7 @@ namespace GasFormsApp
             this.tabPage5panel17.Controls.Add(this.GenReportButton);
             this.tabPage5panel17.Controls.Add(this.GenRecordButton);
             this.tabPage5panel17.Controls.Add(this.SaveButton);
-            this.tabPage5panel17.Location = new System.Drawing.Point(452, 335);
+            this.tabPage5panel17.Location = new System.Drawing.Point(454, 335);
             this.tabPage5panel17.Name = "tabPage5panel17";
             this.tabPage5panel17.Size = new System.Drawing.Size(367, 58);
             this.tabPage5panel17.TabIndex = 76;

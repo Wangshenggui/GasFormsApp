@@ -55,6 +55,9 @@ namespace GasFormsApp.TabControl
             //{
             //    newWidth = 380;
             //}
+
+            //_mainForm.tabPage5panel11.Margin = new Padding(3, 10, 3, 10);
+            //_mainForm.tabPage5panel12.Margin = new Padding(3, 10, 3, 10);
             if (newWidth >= 515 && newWidth <= 566)
             {
                 newWidth = 415;
@@ -99,6 +102,10 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage5panel15.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel16.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel17.Width = 500 + 15 - a;
+
+                //_mainForm.tabPage5panel11.Margin = new Padding(3, 100, 3, 10);
+                //_mainForm.tabPage5panel12.Margin = new Padding(3, 100, 3, 10);
+                newHeight = 460;
             }
 
             Console.WriteLine($"------{newWidth}--{newHeight}");
