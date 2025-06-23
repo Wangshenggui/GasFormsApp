@@ -18,12 +18,12 @@ namespace GasFormsApp.TabControl
             _mainForm = form;
 
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Paint += tabPage1DoubleBufferedFlowLayoutPanel1_Paint;
-            _mainForm.TemporarySavingButton.Click += TemporarySavingButton_Click;
-            _mainForm.RecoverDataButton.Click += RecoverDataButton_Click;
+            _mainForm.tabPage1TemporarySavingButton.Click += tabPage1TemporarySavingButton_Click;
+            _mainForm.tabPage1RecoverDataButton.Click += tabPage1RecoverDataButton_Click;
         }
 
         [Serializable]
-        public class TempData
+        public class tab1TempData
         {
             public string MineNameText { get; set; }
             public string SamplingSpotText { get; set; }
@@ -47,10 +47,10 @@ namespace GasFormsApp.TabControl
         }
 
         // 临时保存按钮
-        public void TemporarySavingButton_Click(object sender, EventArgs e)
+        public void tabPage1TemporarySavingButton_Click(object sender, EventArgs e)
         {
             // 构造 TempData 对象并从控件中读取数据
-            TempData data = new TempData
+            tab1TempData data = new tab1TempData
             {
                 MineNameText = _mainForm.MineNameTextBox.Text,
                 SamplingSpotText = _mainForm.SamplingSpotTextBox.Text,
@@ -101,7 +101,7 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void RecoverDataButton_Click(object sender, EventArgs e)
+        public void tabPage1RecoverDataButton_Click(object sender, EventArgs e)
         {
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
             string loadPath = Path.Combine(currentDir, "TempData", "tabPage1_temp.bin");
@@ -118,7 +118,7 @@ namespace GasFormsApp.TabControl
                 {
 #pragma warning disable SYSLIB0011
                     var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                    TempData data = (TempData)formatter.Deserialize(fs);
+                    tab1TempData data = (tab1TempData)formatter.Deserialize(fs);
 #pragma warning restore SYSLIB0011
 
                     // 将值恢复到控件

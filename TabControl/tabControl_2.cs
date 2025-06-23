@@ -36,6 +36,169 @@ namespace GasFormsApp.TabControl
             _mainForm.BulkImportButton.Click += BulkImportButton_Click;
             _mainForm.tabPage2DoubleBufferedPanel2.SizeChanged += tabPage2DoubleBufferedPanel2_SizeChanged;
             _mainForm.ExportImageButton.Click += ExportImageButton_Click;
+
+            _mainForm.tabPage2TemporarySavingButton.Click += tabPage2TemporarySavingButton_Click;
+            _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
+        }
+
+        [Serializable]
+        public class tab2TempData
+        {
+            public string _dateTimePicker2 { get; set; }
+            public string _dateTimePicker5 { get; set; }
+            public string _dateTimePicker3 { get; set; }
+            public string _dateTimePicker4 { get; set; }
+            public string comboBox3 { get; set; }
+            public string t0TextBox { get; set; }
+
+            public List<string> DesorbTextList { get; set; } = new List<string>();
+            public List<string> DataNumTextList { get; set; } = new List<string>();
+            public string SampLossVolText { get; set; }
+            public string DesVolUndText { get; set; }
+            public string UndDesorpCalText { get; set; }
+
+            // 图片字段（序列化为 byte[]）
+            public byte[] ImageBytes { get; set; }
+        }
+
+        private byte[] ImageToBytes(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public List<string> GetTextBoxValues(Control parent, string baseName, int end, int start = 1)
+        {
+            var list = new List<string>();
+            for (int i = start; i <= end; i++)
+            {
+                var ctl = parent.Controls.Find($"{baseName}{i}", true).FirstOrDefault();
+                list.Add(ctl is TextBox tb ? tb.Text : "");
+            }
+            return list;
+        }
+
+
+        // 临时保存按钮
+        public void tabPage2TemporarySavingButton_Click(object sender, EventArgs e)
+        {
+            tab2TempData data = new tab2TempData
+            {
+                _dateTimePicker2 = _mainForm.dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss"),
+                _dateTimePicker3 = _mainForm.dateTimePicker3.Value.ToString("yyyy-MM-dd HH:mm:ss"),
+                _dateTimePicker4 = _mainForm.dateTimePicker4.Value.ToString("yyyy-MM-dd HH:mm:ss"),
+                _dateTimePicker5 = _mainForm.dateTimePicker5.Value.ToString("yyyy-MM-dd HH:mm:ss"),
+                comboBox3 = _mainForm.comboBox3.Text,
+                t0TextBox = _mainForm.t0TextBox.Text,
+                DesorbTextList = GetTextBoxValues(_mainForm, "DesorbTextBox", 60),
+                DataNumTextList = GetTextBoxValues(_mainForm, "DataNumTextBox", 60, 31),
+                SampLossVolText = _mainForm.SampLossVolTextBox.Text,
+                DesVolUndText = _mainForm.DesVolUndTextBox.Text,
+                UndDesorpCalText = _mainForm.UndDesorpCalTextBox.Text,
+            };
+            data.ImageBytes = _mainForm.pictureBox3.Image != null ? ImageToBytes(_mainForm.pictureBox3.Image) : null;
+
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string tempFolder = Path.Combine(currentDir, "TempData");
+
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
+            string savePath = Path.Combine(tempFolder, "tabPage2_temp.bin");
+
+            try
+            {
+                using (FileStream fs = new FileStream(savePath, FileMode.Create))
+                {
+#pragma warning disable SYSLIB0011
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    formatter.Serialize(fs, data);
+#pragma warning restore SYSLIB0011
+                }
+
+                MessageBox.Show("以二进制格式保存成功！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private Image BytesToImage(byte[] bytes)
+        {
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        public void tabPage2RecoverDataButton_Click(object sender, EventArgs e)
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string loadPath = Path.Combine(currentDir, "TempData", "tabPage2_temp.bin");
+
+            if (!File.Exists(loadPath))
+            {
+                MessageBox.Show("找不到临时保存的数据！");
+                return;
+            }
+
+            try
+            {
+                using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                {
+#pragma warning disable SYSLIB0011
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    tab2TempData data = (tab2TempData)formatter.Deserialize(fs);
+#pragma warning restore SYSLIB0011
+
+                    _mainForm.dateTimePicker2.Value = DateTime.Parse(data._dateTimePicker2);
+                    _mainForm.dateTimePicker3.Value = DateTime.Parse(data._dateTimePicker3);
+                    _mainForm.dateTimePicker4.Value = DateTime.Parse(data._dateTimePicker4);
+                    _mainForm.dateTimePicker5.Value = DateTime.Parse(data._dateTimePicker5);
+                    _mainForm.comboBox3.Text = data.comboBox3;
+                    _mainForm.t0TextBox.Text = data.t0TextBox;
+
+                    for (int i = 1; i <= 60; i++)
+                    {
+                        var ctl = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault();
+                        if (ctl is TextBox tb && data.DesorbTextList.Count >= i)
+                        {
+                            tb.Text = data.DesorbTextList[i - 1];
+                        }
+                    }
+                    // 恢复 DataNumTextBox31 ~ 60
+                    for (int i = 31; i <= 60; i++)
+                    {
+                        var ctl = _mainForm.Controls.Find($"DataNumTextBox{i}", true).FirstOrDefault();
+                        int index = i - 31;
+                        if (ctl is TextBox tb && data.DataNumTextList.Count > index)
+                        {
+                            tb.Text = data.DataNumTextList[index];
+                        }
+                    }
+                    _mainForm.SampLossVolTextBox.Text = data.SampLossVolText;
+                    _mainForm.DesVolUndTextBox.Text = data.DesVolUndText;
+                    _mainForm.UndDesorpCalTextBox.Text = data.UndDesorpCalText;
+
+                    if (data.ImageBytes != null)
+                    {
+                        _mainForm.pictureBox3.Image = BytesToImage(data.ImageBytes);
+                        //_mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                        _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+
+                    MessageBox.Show("数据已恢复！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
@@ -57,9 +220,11 @@ namespace GasFormsApp.TabControl
 
             _mainForm.tabPage2panel6.Width = 806;
             _mainForm.tabPage2panel6.Height = 130;
-            _mainForm.BulkImportButton.Location = new Point(423+40, 15);
-            _mainForm.DrawCurvesButton.Location = new Point(576 + 40, 77);
-            _mainForm.ExportImageButton.Location = new Point(582 + 40, 15);
+            _mainForm.BulkImportButton.Location = new Point(399, 13);
+            _mainForm.DrawCurvesButton.Location = new Point(671, 13);
+            _mainForm.ExportImageButton.Location = new Point(542, 13);
+            _mainForm.tabPage2TemporarySavingButton.Location = new Point(542, 78);
+            _mainForm.tabPage2RecoverDataButton.Location = new Point(671, 78);
             // 840-1165
             if (newWidth <= 840)
             {
@@ -67,9 +232,11 @@ namespace GasFormsApp.TabControl
 
                 _mainForm.tabPage2panel6.Width = 403;
                 _mainForm.tabPage2panel6.Height = 202;
-                _mainForm.BulkImportButton.Location = new Point(6, 139);
-                _mainForm.DrawCurvesButton.Location = new Point(275, 139);
-                _mainForm.ExportImageButton.Location = new Point(145, 139);
+                _mainForm.BulkImportButton.Location = new Point(7, 133);
+                _mainForm.DrawCurvesButton.Location = new Point(279, 133);
+                _mainForm.ExportImageButton.Location = new Point(150, 133);
+                _mainForm.tabPage2TemporarySavingButton.Location = new Point(150, 203);
+                _mainForm.tabPage2RecoverDataButton.Location = new Point(279, 203);
             }
             else if (newWidth > 840 && newWidth <=1165)
             {
