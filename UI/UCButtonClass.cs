@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace GasFormsApp.UI
@@ -244,71 +245,74 @@ namespace GasFormsApp.UI
             titleBar.Controls.Add(账户管理Button);
 
 
-            // 最小化按钮，纯黑背景，悬停变暗灰
-            minimizeButton = new CustomBorderButton
-            {
-                Text = "—",
-                BackColor = Color.FromArgb(17, 45, 78),
-                FlatStyle = FlatStyle.Flat,
-                Width = 45,
-                Borders = 0,
-                HoverBackColor = Color.FromArgb(80, 80, 80),
-                Dock = DockStyle.Right,
-                ForeColor = Color.LightGray,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                BorderColor = Color.White,
-                BorderWidth = 1,
-                TabStop = false
-            };
-            minimizeButton.FlatAppearance.BorderSize = 0; // 禁用默认边框
-            minimizeButton.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
-            titleBar.Controls.Add(minimizeButton);
+            //// 最小化按钮，纯黑背景，悬停变暗灰
+            //minimizeButton = new CustomBorderButton
+            //{
+            //    Text = "—",
+            //    BackColor = Color.FromArgb(17, 45, 78),
+            //    FlatStyle = FlatStyle.Flat,
+            //    Width = 45,
+            //    Borders = 0,
+            //    HoverBackColor = Color.FromArgb(80, 80, 80),
+            //    Dock = DockStyle.Right,
+            //    ForeColor = Color.LightGray,
+            //    Font = new Font("Segoe UI", 9, FontStyle.Bold),
+            //    BorderColor = Color.White,
+            //    BorderWidth = 1,
+            //    TabStop = false
+            //};
+            //minimizeButton.FlatAppearance.BorderSize = 0; // 禁用默认边框
+            //minimizeButton.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
+            //titleBar.Controls.Add(minimizeButton);
 
 
-            // 最大化按钮，纯黑背景，悬停变暗灰，带上边框
-            maximizeButton = new CustomBorderButton
-            {
-                Text = "▢",
-                BackColor = Color.FromArgb(17, 45, 78),
-                FlatStyle = FlatStyle.Flat,
-                Width = 45,
-                Borders = 0,
-                HoverBackColor = Color.FromArgb(80, 80, 80),
-                Dock = DockStyle.Right,
-                ForeColor = Color.LightGray,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                BorderColor = Color.White,
-                BorderWidth = 1,
-                TabStop = false
-            };
-            maximizeButton.FlatAppearance.BorderSize = 0;
-            maximizeButton.Click += MaximizeButton_Click;
-            titleBar.Controls.Add(maximizeButton);
+            //// 最大化按钮，纯黑背景，悬停变暗灰，带上边框
+            //maximizeButton = new CustomBorderButton
+            //{
+            //    Text = "▢",
+            //    BackColor = Color.FromArgb(17, 45, 78),
+            //    FlatStyle = FlatStyle.Flat,
+            //    Width = 45,
+            //    Borders = 0,
+            //    HoverBackColor = Color.FromArgb(80, 80, 80),
+            //    Dock = DockStyle.Right,
+            //    ForeColor = Color.LightGray,
+            //    Font = new Font("Segoe UI", 9, FontStyle.Bold),
+            //    BorderColor = Color.White,
+            //    BorderWidth = 1,
+            //    TabStop = false
+            //};
+            //maximizeButton.FlatAppearance.BorderSize = 0;
+            //maximizeButton.Click += MaximizeButton_Click;
+            //titleBar.Controls.Add(maximizeButton);
 
-            // 关闭按钮，纯黑背景，红色悬停，带上边框
-            closeButton = new CustomBorderButton
-            {
-                Text = "X",
-                BackColor = Color.FromArgb(17, 45, 78),
-                FlatStyle = FlatStyle.Flat,
-                Width = 45,
-                Borders = 0,
-                HoverBackColor = Color.FromArgb(232, 17, 35),
-                Dock = DockStyle.Right,
-                ForeColor = Color.LightGray,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                BorderColor = Color.White,
-                BorderWidth = 1,
-                TabStop = false
-            };
-            closeButton.FlatAppearance.BorderSize = 0;
-            closeButton.Click += (s, e) => this.Close();
-            titleBar.Controls.Add(closeButton);
+            //// 关闭按钮，纯黑背景，红色悬停，带上边框
+            //closeButton = new CustomBorderButton
+            //{
+            //    Text = "X",
+            //    BackColor = Color.FromArgb(17, 45, 78),
+            //    FlatStyle = FlatStyle.Flat,
+            //    Width = 45,
+            //    Borders = 0,
+            //    HoverBackColor = Color.FromArgb(232, 17, 35),
+            //    Dock = DockStyle.Right,
+            //    ForeColor = Color.LightGray,
+            //    Font = new Font("Segoe UI", 9, FontStyle.Bold),
+            //    BorderColor = Color.White,
+            //    BorderWidth = 1,
+            //    TabStop = false
+            //};
+            //closeButton.FlatAppearance.BorderSize = 0;
+            //closeButton.Click += (s, e) => this.Close();
+            //titleBar.Controls.Add(closeButton);
 
 
-            // 拖动
-            titleLabel.MouseDown += TitleLabel_MouseDown;
-            titleBar.MouseDown += TitleLabel_MouseDown;
+            //// 拖动
+            //titleLabel.MouseDown += TitleLabel_MouseDown;
+            //titleBar.MouseDown += TitleLabel_MouseDown;
+
+            //titleLabel.MouseDown += TitleBar_MouseDown;
+            //titleBar.MouseDown += TitleBar_MouseDown;
         }
         private void TitleLabel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -341,20 +345,24 @@ namespace GasFormsApp.UI
             }
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HTCAPTION = 0x2;
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
         private void TitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
-                SendMessage(this.Handle, 0xA1, 0x2, 0);
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
 
         protected override void OnTextChanged(EventArgs e)
         {

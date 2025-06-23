@@ -35,6 +35,7 @@ namespace GasFormsApp.TabControl
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
             _mainForm.BulkImportButton.Click += BulkImportButton_Click;
             _mainForm.tabPage2DoubleBufferedPanel2.SizeChanged += tabPage2DoubleBufferedPanel2_SizeChanged;
+            _mainForm.ExportImageButton.Click += ExportImageButton_Click;
         }
 
         private void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
@@ -56,8 +57,9 @@ namespace GasFormsApp.TabControl
 
             _mainForm.tabPage2panel6.Width = 806;
             _mainForm.tabPage2panel6.Height = 130;
-            _mainForm.BulkImportButton.Location = new Point(581, 15);
-            _mainForm.DrawCurvesButton.Location = new Point(565, 77);
+            _mainForm.BulkImportButton.Location = new Point(423+40, 15);
+            _mainForm.DrawCurvesButton.Location = new Point(576 + 40, 77);
+            _mainForm.ExportImageButton.Location = new Point(582 + 40, 15);
             // 840-1165
             if (newWidth <= 840)
             {
@@ -65,8 +67,9 @@ namespace GasFormsApp.TabControl
 
                 _mainForm.tabPage2panel6.Width = 403;
                 _mainForm.tabPage2panel6.Height = 202;
-                _mainForm.BulkImportButton.Location = new Point(43, 149);
-                _mainForm.DrawCurvesButton.Location = new Point(201, 149);
+                _mainForm.BulkImportButton.Location = new Point(6, 139);
+                _mainForm.DrawCurvesButton.Location = new Point(275, 139);
+                _mainForm.ExportImageButton.Location = new Point(145, 139);
             }
             else if (newWidth > 840 && newWidth <=1165)
             {
@@ -392,6 +395,10 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("未选择文件");
                 return;
             }
+        }
+        public void ExportImageButton_Click(object sender, EventArgs e)
+        {
+
         }
         public void DrawCurvesButton_Click(object sender, EventArgs e)
         {

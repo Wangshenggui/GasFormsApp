@@ -230,6 +230,7 @@ namespace GasFormsApp
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage2panel10 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage2panel6 = new System.Windows.Forms.Panel();
+            this.ExportImageButton = new GasFormsApp.UI.UCButton();
             this.BulkImportButton = new GasFormsApp.UI.UCButton();
             this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
             this.DesVolUndTextBox = new System.Windows.Forms.TextBox();
@@ -2710,6 +2711,7 @@ namespace GasFormsApp
             // tabPage2panel6
             // 
             this.tabPage2panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(109)))));
+            this.tabPage2panel6.Controls.Add(this.ExportImageButton);
             this.tabPage2panel6.Controls.Add(this.BulkImportButton);
             this.tabPage2panel6.Controls.Add(this.SampLossVolTextBox);
             this.tabPage2panel6.Controls.Add(this.DesVolUndTextBox);
@@ -2723,6 +2725,26 @@ namespace GasFormsApp
             this.tabPage2panel6.Size = new System.Drawing.Size(806, 130);
             this.tabPage2panel6.TabIndex = 1000;
             // 
+            // ExportImageButton
+            // 
+            this.ExportImageButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ExportImageButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ExportImageButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("ExportImageButton.ButtonImage")));
+            this.ExportImageButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.ExportImageButton.FlatAppearance.BorderSize = 0;
+            this.ExportImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportImageButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ExportImageButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.ExportImageButton.Location = new System.Drawing.Point(622, 15);
+            this.ExportImageButton.Name = "ExportImageButton";
+            this.ExportImageButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.ExportImageButton.Radius = 15;
+            this.ExportImageButton.Size = new System.Drawing.Size(116, 42);
+            this.ExportImageButton.TabIndex = 1002;
+            this.ExportImageButton.Text = "     导出图像";
+            this.ExportImageButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportImageButton.UseVisualStyleBackColor = false;
+            // 
             // BulkImportButton
             // 
             this.BulkImportButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -2733,11 +2755,11 @@ namespace GasFormsApp
             this.BulkImportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BulkImportButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.BulkImportButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.BulkImportButton.Location = new System.Drawing.Point(581, 15);
+            this.BulkImportButton.Location = new System.Drawing.Point(463, 15);
             this.BulkImportButton.Name = "BulkImportButton";
             this.BulkImportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BulkImportButton.Radius = 15;
-            this.BulkImportButton.Size = new System.Drawing.Size(130, 42);
+            this.BulkImportButton.Size = new System.Drawing.Size(132, 42);
             this.BulkImportButton.TabIndex = 1001;
             this.BulkImportButton.Text = "     批量导入";
             this.BulkImportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2817,11 +2839,11 @@ namespace GasFormsApp
             this.DrawCurvesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrawCurvesButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DrawCurvesButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.DrawCurvesButton.Location = new System.Drawing.Point(565, 77);
+            this.DrawCurvesButton.Location = new System.Drawing.Point(616, 77);
             this.DrawCurvesButton.Name = "DrawCurvesButton";
             this.DrawCurvesButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.DrawCurvesButton.Radius = 35;
-            this.DrawCurvesButton.Size = new System.Drawing.Size(160, 42);
+            this.DrawCurvesButton.Size = new System.Drawing.Size(122, 42);
             this.DrawCurvesButton.TabIndex = 1000;
             this.DrawCurvesButton.Text = "      计    算";
             this.DrawCurvesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2893,7 +2915,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(391, 575);
+            this.tabPage3panel2.Size = new System.Drawing.Size(221, 595);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // DesorpVolNormalCalTextBox
@@ -2905,7 +2927,7 @@ namespace GasFormsApp
             this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(216, 56);
             this.DesorpVolNormalCalTextBox.Name = "DesorpVolNormalCalTextBox";
             this.DesorpVolNormalCalTextBox.ReadOnly = true;
-            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(169, 26);
+            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(0, 26);
             this.DesorpVolNormalCalTextBox.TabIndex = 31;
             this.DesorpVolNormalCalTextBox.TabStop = false;
             this.DesorpVolNormalCalTextBox.Text = "0";
@@ -2917,7 +2939,7 @@ namespace GasFormsApp
             this.DesorpVolNormalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(216, 24);
             this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
-            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(169, 26);
+            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(0, 26);
             this.DesorpVolNormalTextBox.TabIndex = 1;
             // 
             // Sample2WeightTextBox
@@ -2927,7 +2949,7 @@ namespace GasFormsApp
             this.Sample2WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Sample2WeightTextBox.Location = new System.Drawing.Point(216, 183);
             this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
-            this.Sample2WeightTextBox.Size = new System.Drawing.Size(169, 26);
+            this.Sample2WeightTextBox.Size = new System.Drawing.Size(0, 26);
             this.Sample2WeightTextBox.TabIndex = 3;
             // 
             // CrushDesorpTextBox
@@ -2939,7 +2961,7 @@ namespace GasFormsApp
             this.CrushDesorpTextBox.Location = new System.Drawing.Point(216, 393);
             this.CrushDesorpTextBox.Name = "CrushDesorpTextBox";
             this.CrushDesorpTextBox.ReadOnly = true;
-            this.CrushDesorpTextBox.Size = new System.Drawing.Size(169, 26);
+            this.CrushDesorpTextBox.Size = new System.Drawing.Size(0, 26);
             this.CrushDesorpTextBox.TabIndex = 24;
             this.CrushDesorpTextBox.TabStop = false;
             this.CrushDesorpTextBox.Text = "0";
@@ -2962,7 +2984,7 @@ namespace GasFormsApp
             this.S2DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S2DesorpVolTextBox.Location = new System.Drawing.Point(216, 267);
             this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
-            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(169, 26);
+            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(0, 26);
             this.S2DesorpVolTextBox.TabIndex = 5;
             // 
             // label87
@@ -3027,7 +3049,7 @@ namespace GasFormsApp
             this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.S1DesorpVolTextBox.Location = new System.Drawing.Point(216, 225);
             this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
-            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(169, 26);
+            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(0, 26);
             this.S1DesorpVolTextBox.TabIndex = 4;
             // 
             // S2DesorpVolCalTextBox
@@ -3039,7 +3061,7 @@ namespace GasFormsApp
             this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 351);
             this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
             this.S2DesorpVolCalTextBox.ReadOnly = true;
-            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(169, 26);
+            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(0, 26);
             this.S2DesorpVolCalTextBox.TabIndex = 36;
             this.S2DesorpVolCalTextBox.TabStop = false;
             this.S2DesorpVolCalTextBox.Text = "0";
@@ -3087,7 +3109,7 @@ namespace GasFormsApp
             this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Sample1WeightTextBox.Location = new System.Drawing.Point(216, 141);
             this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
-            this.Sample1WeightTextBox.Size = new System.Drawing.Size(169, 26);
+            this.Sample1WeightTextBox.Size = new System.Drawing.Size(0, 26);
             this.Sample1WeightTextBox.TabIndex = 2;
             // 
             // S1DesorpVolCalTextBox
@@ -3099,7 +3121,7 @@ namespace GasFormsApp
             this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 309);
             this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
             this.S1DesorpVolCalTextBox.ReadOnly = true;
-            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(169, 26);
+            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(0, 26);
             this.S1DesorpVolCalTextBox.TabIndex = 34;
             this.S1DesorpVolCalTextBox.TabStop = false;
             this.S1DesorpVolCalTextBox.Text = "0";
@@ -4531,6 +4553,7 @@ namespace GasFormsApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 0);
             this.MinimumSize = new System.Drawing.Size(625, 625);
@@ -4967,5 +4990,6 @@ namespace GasFormsApp
         public System.Windows.Forms.TabControl tabControl1;
         public UI.DoubleBufferedPanel tabPage2panel9;
         public UI.DoubleBufferedPanel tabPage2panel10;
+        public UI.UCButton ExportImageButton;
     }
 }
