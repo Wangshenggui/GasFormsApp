@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -35,6 +36,128 @@ namespace GasFormsApp.TabControl
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
 
             _mainForm.tabPage4DoubleBufferedPanel1.SizeChanged += tabPage4DoubleBufferedPanel1_SizeChanged;
+            _mainForm.tabPage4TemporarySavingButton.Click += tabPage4TemporarySavingButton_Click;
+            _mainForm.tabPage4RecoverDataButton.Click += tabPage4RecoverDataButton_Click;
+        }
+
+        [Serializable]
+        public class tab4TempData
+        {
+            public string AdsorpConstATextBox { get; set; }
+            public string AdsorpConstBTextBox { get; set; }
+            public string MadTextBox { get; set; }
+            public string AadTextBox { get; set; }
+            public string PorosityTextBox { get; set; }
+            public string AppDensityTextBox { get; set; }
+            public string TrueDensityTextBox { get; set; }
+            public string VadTextBox { get; set; }
+            public string NonDesorpGasQtyTextBox { get; set; }
+            public string W1_TextBox { get; set; }
+            public string W2_TextBox { get; set; }
+            public string W3_TextBox { get; set; }
+            public string Wa_TextBox { get; set; }
+            public string Wc_TextBox { get; set; }
+            public string W_TextBox { get; set; }
+            public string P_TextBox { get; set; }
+        }
+
+        // 临时保存按钮
+        public void tabPage4TemporarySavingButton_Click(object sender, EventArgs e)
+        {
+            // 构造 TempData 对象并从控件中读取数据
+            tab4TempData data = new tab4TempData
+            {
+                AdsorpConstATextBox = _mainForm.AdsorpConstATextBox.Text,
+                AdsorpConstBTextBox = _mainForm.AdsorpConstBTextBox.Text,
+                MadTextBox = _mainForm.MadTextBox.Text,
+                AadTextBox = _mainForm.AadTextBox.Text,
+                PorosityTextBox = _mainForm.PorosityTextBox.Text,
+                AppDensityTextBox = _mainForm.AppDensityTextBox.Text,
+                TrueDensityTextBox = _mainForm.TrueDensityTextBox.Text,
+                VadTextBox = _mainForm.VadTextBox.Text,
+                NonDesorpGasQtyTextBox = _mainForm.NonDesorpGasQtyTextBox.Text,
+                W1_TextBox = _mainForm.W1_TextBox.Text,
+                W2_TextBox = _mainForm.W2_TextBox.Text,
+                W3_TextBox = _mainForm.W3_TextBox.Text,
+                Wa_TextBox = _mainForm.Wa_TextBox.Text,
+                Wc_TextBox = _mainForm.Wc_TextBox.Text,
+                W_TextBox = _mainForm.W_TextBox.Text,
+                P_TextBox = _mainForm.P_TextBox.Text
+            };
+
+            // 获取当前程序目录
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string tempFolder = Path.Combine(currentDir, "TempData");
+
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
+            string savePath = Path.Combine(tempFolder, "tabPage4_temp.bin");
+
+            try
+            {
+                using (FileStream fs = new FileStream(savePath, FileMode.Create))
+                {
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+#pragma warning disable SYSLIB0011 // 忽略BinaryFormatter过时警告
+                    formatter.Serialize(fs, data);
+#pragma warning restore SYSLIB0011
+                }
+
+                MessageBox.Show("以二进制格式保存成功！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void tabPage4RecoverDataButton_Click(object sender, EventArgs e)
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string loadPath = Path.Combine(currentDir, "TempData", "tabPage4_temp.bin");
+
+            if (!File.Exists(loadPath))
+            {
+                MessageBox.Show("找不到临时保存的数据！");
+                return;
+            }
+
+            try
+            {
+                using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                {
+#pragma warning disable SYSLIB0011
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    tab4TempData data = (tab4TempData)formatter.Deserialize(fs);
+#pragma warning restore SYSLIB0011
+
+                    // 将值恢复到控件
+                    _mainForm.AdsorpConstATextBox.Text = data.AdsorpConstATextBox;
+                    _mainForm.AdsorpConstBTextBox.Text = data.AdsorpConstBTextBox;
+                    _mainForm.MadTextBox.Text = data.MadTextBox;
+                    _mainForm.AadTextBox.Text = data.AadTextBox;
+                    _mainForm.PorosityTextBox.Text = data.PorosityTextBox;
+                    _mainForm.AppDensityTextBox.Text = data.AppDensityTextBox;
+                    _mainForm.TrueDensityTextBox.Text = data.TrueDensityTextBox;
+                    _mainForm.VadTextBox.Text = data.VadTextBox;
+                    _mainForm.NonDesorpGasQtyTextBox.Text = data.NonDesorpGasQtyTextBox;
+                    _mainForm.W1_TextBox.Text = data.W1_TextBox;
+                    _mainForm.W2_TextBox.Text = data.W2_TextBox;
+                    _mainForm.W3_TextBox.Text = data.W3_TextBox;
+                    _mainForm.Wa_TextBox.Text = data.Wa_TextBox;
+                    _mainForm.Wc_TextBox.Text = data.Wc_TextBox;
+                    _mainForm.W_TextBox.Text = data.W_TextBox;
+                    _mainForm.P_TextBox.Text = data.P_TextBox;
+
+                    MessageBox.Show("数据已恢复！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void MakeCheckBoxesReadOnly(params CheckBox[] boxes)
         {
