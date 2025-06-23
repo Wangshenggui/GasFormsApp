@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Reflection.Emit;
+using System.Text;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -15,7 +18,141 @@ namespace GasFormsApp.TabControl
             _mainForm = form;
 
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Paint += tabPage1DoubleBufferedFlowLayoutPanel1_Paint;
+            _mainForm.TemporarySavingButton.Click += TemporarySavingButton_Click;
+            _mainForm.RecoverDataButton.Click += RecoverDataButton_Click;
         }
+
+        [Serializable]
+        public class TempData
+        {
+            public string MineNameText { get; set; }
+            public string SamplingSpotText { get; set; }
+            public string BurialDepthText { get; set; }
+            public string CoalSeamText { get; set; }
+            public string UndAtmPressureText { get; set; }
+            public string LabAtmPressureText { get; set; }
+            public string UndTempText { get; set; }
+            public string LabTempText { get; set; }
+            public string MoistureSampleText { get; set; }
+            public string SampleModeCombo { get; set; }
+            public string SampleNumText { get; set; }
+            public string RawCoalMoistureText { get; set; }
+            public string InitialVolumeText { get; set; }
+            public string SampleWeightText { get; set; }
+            public string SamplingDepthText { get; set; }
+            public string _SamplingTimeDateTimePicker { get; set; }
+            public string DrillInclinationText { get; set; }
+            public string AzimuthText { get; set; }
+            public string SamplingPersonnelText { get; set; }
+        }
+
+        // 临时保存按钮
+        public void TemporarySavingButton_Click(object sender, EventArgs e)
+        {
+            // 构造 TempData 对象并从控件中读取数据
+            TempData data = new TempData
+            {
+                MineNameText = _mainForm.MineNameTextBox.Text,
+                SamplingSpotText = _mainForm.SamplingSpotTextBox.Text,
+                BurialDepthText = _mainForm.BurialDepthTextBox.Text,
+                CoalSeamText = _mainForm.CoalSeamTextBox.Text,
+                UndAtmPressureText = _mainForm.UndAtmPressureTextBox.Text,
+                LabAtmPressureText = _mainForm.LabAtmPressureTextBox.Text,
+                UndTempText = _mainForm.UndTempTextBox.Text,
+                LabTempText = _mainForm.LabTempTextBox.Text,
+                MoistureSampleText = _mainForm.MoistureSampleTextBox.Text,
+                SampleModeCombo = _mainForm.SampleModeComboBox.Text,
+                SampleNumText = _mainForm.SampleNumTextBox.Text,
+                RawCoalMoistureText = _mainForm.RawCoalMoistureTextBox.Text,
+                InitialVolumeText = _mainForm.InitialVolumeTextBox.Text,
+                SampleWeightText = _mainForm.SampleWeightTextBox.Text,
+                SamplingDepthText = _mainForm.SamplingDepthTextBox.Text,
+                _SamplingTimeDateTimePicker = _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd HH:mm:ss"),
+                DrillInclinationText = _mainForm.DrillInclinationTextBox.Text,
+                AzimuthText = _mainForm.AzimuthTextBox.Text,
+                SamplingPersonnelText = _mainForm.SamplingPersonnelTextBox.Text
+            };
+
+            // 获取当前程序目录
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string tempFolder = Path.Combine(currentDir, "TempData");
+
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
+            string savePath = Path.Combine(tempFolder, "tabPage1_temp.bin");
+
+            try
+            {
+                using (FileStream fs = new FileStream(savePath, FileMode.Create))
+                {
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+#pragma warning disable SYSLIB0011 // 忽略BinaryFormatter过时警告
+                    formatter.Serialize(fs, data);
+#pragma warning restore SYSLIB0011
+                }
+
+                MessageBox.Show("以二进制格式保存成功！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void RecoverDataButton_Click(object sender, EventArgs e)
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string loadPath = Path.Combine(currentDir, "TempData", "tabPage1_temp.bin");
+
+            if (!File.Exists(loadPath))
+            {
+                MessageBox.Show("找不到临时保存的数据！");
+                return;
+            }
+
+            try
+            {
+                using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                {
+#pragma warning disable SYSLIB0011
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    TempData data = (TempData)formatter.Deserialize(fs);
+#pragma warning restore SYSLIB0011
+
+                    // 将值恢复到控件
+                    _mainForm.MineNameTextBox.Text = data.MineNameText;
+                    _mainForm.SamplingSpotTextBox.Text = data.SamplingSpotText;
+                    _mainForm.BurialDepthTextBox.Text = data.BurialDepthText;
+                    _mainForm.CoalSeamTextBox.Text = data.CoalSeamText;
+                    _mainForm.UndAtmPressureTextBox.Text = data.UndAtmPressureText;
+                    _mainForm.LabAtmPressureTextBox.Text = data.LabAtmPressureText;
+                    _mainForm.UndTempTextBox.Text = data.UndTempText;
+                    _mainForm.LabTempTextBox.Text = data.LabTempText;
+                    _mainForm.MoistureSampleTextBox.Text = data.MoistureSampleText;
+                    _mainForm.SampleModeComboBox.Text = data.SampleModeCombo;
+                    _mainForm.SampleNumTextBox.Text = data.SampleNumText;
+                    _mainForm.RawCoalMoistureTextBox.Text = data.RawCoalMoistureText;
+                    _mainForm.InitialVolumeTextBox.Text = data.InitialVolumeText;
+                    _mainForm.SampleWeightTextBox.Text = data.SampleWeightText;
+                    _mainForm.SamplingDepthTextBox.Text = data.SamplingDepthText;
+                    _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data._SamplingTimeDateTimePicker);
+                    _mainForm.DrillInclinationTextBox.Text = data.DrillInclinationText;
+                    _mainForm.AzimuthTextBox.Text = data.AzimuthText;
+                    _mainForm.SamplingPersonnelTextBox.Text = data.SamplingPersonnelText;
+
+                    MessageBox.Show("数据已恢复！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
         private void tabPage1DoubleBufferedFlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             int newWidth = _mainForm.tabPage1panel1.ClientSize.Width / 1 - _mainForm.tabPage1panel1.ClientSize.Width / 9;
