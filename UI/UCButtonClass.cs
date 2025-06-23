@@ -7,7 +7,367 @@ using System.Windows.Forms;
 
 namespace GasFormsApp.UI
 {
-    
+    [Flags]
+    public enum BorderSides
+    {
+        None = 0,
+        Left = 1,
+        Top = 2,
+        Right = 4,
+        Bottom = 8,
+        All = Left | Top | Right | Bottom
+    }
+
+    public class CustomBorderButton : Button
+    {
+        private bool isHovered = false;
+
+        public Color BorderColor { get; set; } = Color.White;
+        public int BorderWidth { get; set; } = 1;
+
+        public Color HoverBackColor { get; set; } = Color.Red;  // 鼠标悬停背景色
+        public Color NormalBackColor { get; set; } = Color.FromArgb(17, 45, 78); // 正常背景色
+
+        public BorderSides Borders { get; set; } = BorderSides.Top;
+
+        public CustomBorderButton()
+        {
+            this.BackColor = NormalBackColor;
+            this.FlatStyle = FlatStyle.Flat;
+            this.FlatAppearance.BorderSize = 0;
+        }
+
+        protected override void OnPaint(PaintEventArgs pevent)
+        {
+            base.OnPaint(pevent);
+
+            using (Pen pen = new Pen(BorderColor, BorderWidth))
+            {
+                var g = pevent.Graphics;
+                int w = this.Width;
+                int h = this.Height;
+                int bw = BorderWidth;
+
+                if (Borders.HasFlag(BorderSides.Top))
+                    g.DrawLine(pen, 0, 0, w, 0);
+                if (Borders.HasFlag(BorderSides.Bottom))
+                    g.DrawLine(pen, 0, h - bw, w, h - bw);
+                if (Borders.HasFlag(BorderSides.Left))
+                    g.DrawLine(pen, 0, 0, 0, h);
+                if (Borders.HasFlag(BorderSides.Right))
+                    g.DrawLine(pen, w - bw+2, 0, w - bw+2, h);
+            }
+        }
+
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            base.OnMouseEnter(e);
+            this.BackColor = HoverBackColor;
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+            this.BackColor = NormalBackColor;
+        }
+    }
+
+
+    public class CustomForm : Form
+    {
+        private Panel titleBar;
+        private Label titleLabel;
+        private Button closeButton;
+        private Button minimizeButton;
+        private Button maximizeButton;
+
+        private Panel borderLeft;
+        private Panel borderRight;
+        private Panel borderTop;
+
+        private void InitializeBorder()
+        {
+            int borderWidth = 2;
+            Color borderColor = Color.White;
+
+            // 先加左边框
+            borderLeft = new Panel
+            {
+                BackColor = borderColor,
+                Dock = DockStyle.Left,
+                Width = borderWidth
+            };
+            this.Controls.Add(borderLeft);
+
+            // 再加右边框
+            borderRight = new Panel
+            {
+                BackColor = borderColor,
+                Dock = DockStyle.Right,
+                Width = borderWidth
+            };
+            this.Controls.Add(borderRight);
+
+            // 最后加上边框
+            borderTop = new Panel
+            {
+                BackColor = borderColor,
+                Dock = DockStyle.Top,
+                Height = borderWidth
+            };
+            this.Controls.Add(borderTop);
+
+            // 确保边框都在最顶层（不会被其它控件遮挡）
+            borderLeft.BringToFront();
+            borderRight.BringToFront();
+            borderTop.BringToFront();
+        }
+
+        public CustomForm()
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(200, 200);
+            this.Padding = new Padding(2);
+            InitializeCustomTitleBar();
+        }
+
+        private void InitializeCustomTitleBar()
+        {
+            // 标题栏背景色黑色
+            titleBar = new Panel
+            {
+                Height = 30,
+                Dock = DockStyle.Top,
+                BackColor = Color.FromArgb(17, 45, 78)
+            };
+            this.Controls.Add(titleBar);
+
+            // 左边白色边框
+            var borderLeft = new Panel
+            {
+                Width = 0,
+                Dock = DockStyle.Left,
+                BackColor = Color.White
+            };
+            titleBar.Controls.Add(borderLeft);
+            borderLeft.BringToFront();
+
+            // 右边白色边框
+            var borderRight = new Panel
+            {
+                Width = 0,
+                Dock = DockStyle.Right,
+                BackColor = Color.White
+            };
+            titleBar.Controls.Add(borderRight);
+            borderRight.BringToFront();
+
+            // 上边白色边框
+            var borderTop = new Panel
+            {
+                Height = 0,
+                Dock = DockStyle.Top,
+                BackColor = Color.White
+            };
+            titleBar.Controls.Add(borderTop);
+            borderTop.BringToFront();
+
+            titleLabel = new Label
+            {
+                Text = this.Text,
+                ForeColor = Color.LightGray,
+                AutoSize = false,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Padding = new Padding(10, 0, 0, 0),
+                Font = new Font("Segoe UI", 9, FontStyle.Regular)
+            };
+            titleBar.Controls.Add(titleLabel);
+
+
+            // 最小化按钮，纯黑背景，悬停变暗灰
+            minimizeButton = new CustomBorderButton
+            {
+                Text = "—",
+                BackColor = Color.FromArgb(17, 45, 78),
+                FlatStyle = FlatStyle.Flat,
+                Width = 45,
+                Borders = 0,
+                Dock = DockStyle.Right,
+                ForeColor = Color.LightGray,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BorderColor = Color.White,
+                BorderWidth = 1,
+                TabStop = false
+            };
+            minimizeButton.FlatAppearance.BorderSize = 0; // 禁用默认边框
+            minimizeButton.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
+            titleBar.Controls.Add(minimizeButton);
+
+
+            // 最大化按钮，纯黑背景，悬停变暗灰，带上边框
+            maximizeButton = new CustomBorderButton
+            {
+                Text = "▢",
+                BackColor = Color.FromArgb(17, 45, 78),
+                FlatStyle = FlatStyle.Flat,
+                Width = 45,
+                Borders = 0,
+                HoverBackColor = Color.FromArgb(80, 80, 80),
+                Dock = DockStyle.Right,
+                ForeColor = Color.LightGray,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BorderColor = Color.White,
+                BorderWidth = 1,
+                TabStop = false
+            };
+            maximizeButton.FlatAppearance.BorderSize = 0;
+            maximizeButton.Click += MaximizeButton_Click;
+            titleBar.Controls.Add(maximizeButton);
+
+            // 关闭按钮，纯黑背景，红色悬停，带上边框
+            closeButton = new CustomBorderButton
+            {
+                Text = "X",
+                BackColor = Color.FromArgb(17, 45, 78),
+                FlatStyle = FlatStyle.Flat,
+                Width = 45,
+                Borders = 0,
+                HoverBackColor = Color.FromArgb(232, 17, 35),
+                Dock = DockStyle.Right,
+                ForeColor = Color.LightGray,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BorderColor = Color.White,
+                BorderWidth = 1,
+                TabStop = false
+            };
+            closeButton.FlatAppearance.BorderSize = 0;
+            closeButton.Click += (s, e) => this.Close();
+            titleBar.Controls.Add(closeButton);
+
+
+            // 拖动窗体
+            titleLabel.MouseDown += TitleBar_MouseDown;
+        }
+
+        private Button CreateTitleBarButton(string text, Color backColor, Color hoverColor)
+        {
+            var btn = new Button
+            {
+                Text = text,
+                ForeColor = Color.LightGray,
+                BackColor = backColor,
+                FlatStyle = FlatStyle.Flat,
+                Width = 45,
+                Dock = DockStyle.Right,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                TabStop = false
+            };
+            btn.FlatAppearance.BorderSize = 0;
+
+            btn.MouseEnter += (s, e) => btn.BackColor = hoverColor;
+            btn.MouseLeave += (s, e) => btn.BackColor = backColor;
+
+            return btn;
+        }
+
+        private void MaximizeButton_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                maximizeButton.Text = "❐"; // 恢复图标
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                maximizeButton.Text = "▢";
+            }
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void TitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0xA1, 0x2, 0);
+            }
+        }
+
+        protected override void OnTextChanged(EventArgs e)
+        {
+            base.OnTextChanged(e);
+            if (titleLabel != null)
+            {
+                titleLabel.Text = this.Text;
+            }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCHITTEST = 0x84;
+            const int HTCLIENT = 1;
+            const int HTCAPTION = 2;
+            const int HTLEFT = 10;
+            const int HTRIGHT = 11;
+            const int HTTOP = 12;
+            const int HTTOPLEFT = 13;
+            const int HTTOPRIGHT = 14;
+            const int HTBOTTOM = 15;
+            const int HTBOTTOMLEFT = 16;
+            const int HTBOTTOMRIGHT = 17;
+
+            if (m.Msg == WM_NCHITTEST)
+            {
+                base.WndProc(ref m);
+
+                if ((int)m.Result == HTCLIENT)
+                {
+                    Point cursor = PointToClient(Cursor.Position);
+                    int gripSize = 5; // 边缘宽度
+
+                    if (cursor.Y <= gripSize)
+                    {
+                        if (cursor.X <= gripSize)
+                            m.Result = (IntPtr)HTTOPLEFT;
+                        else if (cursor.X >= this.ClientSize.Width - gripSize)
+                            m.Result = (IntPtr)HTTOPRIGHT;
+                        else
+                            m.Result = (IntPtr)HTTOP;
+                    }
+                    else if (cursor.Y >= this.ClientSize.Height - gripSize)
+                    {
+                        if (cursor.X <= gripSize)
+                            m.Result = (IntPtr)HTBOTTOMLEFT;
+                        else if (cursor.X >= this.ClientSize.Width - gripSize)
+                            m.Result = (IntPtr)HTBOTTOMRIGHT;
+                        else
+                            m.Result = (IntPtr)HTBOTTOM;
+                    }
+                    else if (cursor.X <= gripSize)
+                    {
+                        m.Result = (IntPtr)HTLEFT;
+                    }
+                    else if (cursor.X >= this.ClientSize.Width - gripSize)
+                    {
+                        m.Result = (IntPtr)HTRIGHT;
+                    }
+                }
+                return;
+            }
+            base.WndProc(ref m);
+        }
+
+    }
+
+
     public class DoubleBufferedFlowLayoutPanel : FlowLayoutPanel
     {
         private FlowLayoutPanel flowLayoutPanel1;

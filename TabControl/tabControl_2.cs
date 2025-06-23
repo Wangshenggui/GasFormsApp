@@ -52,14 +52,26 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage2panel8.Width = 1;
             _mainForm.tabPage2panel9.Width = 1;
             _mainForm.tabPage2panel10.Width = 1;
+
+
+            _mainForm.tabPage2panel6.Width = 806;
+            _mainForm.tabPage2panel6.Height = 130;
+            _mainForm.BulkImportButton.Location = new Point(581, 15);
+            _mainForm.DrawCurvesButton.Location = new Point(565, 77);
             // 840-1165
             if (newWidth <= 840)
             {
                 newWidth = 428;
+
+                _mainForm.tabPage2panel6.Width = 403;
+                _mainForm.tabPage2panel6.Height = 202;
+                _mainForm.BulkImportButton.Location = new Point(43, 149);
+                _mainForm.DrawCurvesButton.Location = new Point(201, 149);
             }
             else if (newWidth > 840 && newWidth <=1165)
             {
                 newWidth = 840;
+                _mainForm.tabPage2panel9.Width = 240;
             }
             else if (newWidth > 1165)
             {
@@ -72,22 +84,6 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage2panel9.Width = 1;
                 _mainForm.tabPage2panel10.Width = a;
             }
-            //// 假设遮罩宽高
-            //int maskWidth = 100;
-            //int maskHeight = 24; // 通常 TabControl 的标签高度
-
-            //// 计算 tabControl 标签区域右上角
-            //int tabRight = _mainForm.tabControl1.Left + _mainForm.tabControl1.Width;
-            //int tabTop = _mainForm.tabControl1.Top;
-
-            //// 设置遮罩 panel 属性
-            //_mainForm.panel1.Size = new Size(maskWidth, maskHeight);
-            //_mainForm.panel1.BackColor = Color.FromArgb(150, Color.Gray);
-            //_mainForm.panel1.Location = new Point(tabRight - maskWidth, tabTop + 2); // 微调 +2 让它对齐标签区域
-            //_mainForm.panel1.BringToFront();
-
-
-
 
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Height = newHeight;

@@ -10,10 +10,11 @@ using System.Text;
 using System.Windows.Forms;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using GasFormsApp.TabControl;
+using GasFormsApp.UI;
 
 namespace GasFormsApp
 {
-    public partial class MainForm : Form
+    public partial class MainForm : CustomForm
     {
         private bool v;
         private ImageList imageList1;
@@ -647,6 +648,11 @@ namespace GasFormsApp
         }
 
         private void tabPage2DoubleBufferedPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
