@@ -311,7 +311,7 @@ namespace GasFormsApp
             );
 
 
-            tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
+            //tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
         }
@@ -420,6 +420,7 @@ namespace GasFormsApp
             myTabLogic2.TabControl_2_InputCheckTimer_Tick();
             myTabLogic3.TabControl_3_InputCheckTimer_Tick();
             myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+            myTabLogic5.TabControl_5_InputCheckTimer_Tick();
 
             // 动态加载log
             string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.png");
@@ -474,6 +475,9 @@ namespace GasFormsApp
                         break;
                     case "tabPage4":
                         myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+                        break;
+                    case "tabPage5":
+                        myTabLogic5.TabControl_5_InputCheckTimer_Tick();
                         break;
                 }
             }

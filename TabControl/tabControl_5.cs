@@ -27,11 +27,31 @@ namespace GasFormsApp.TabControl
             // 注册回调函数
             _mainForm.GenReportButton.Click += GenReportButton_Click;
             _mainForm.GenRecordButton.Click += GenRecordButton_Click;
-            _mainForm.GasCompCheckBox.Click += CheckBox_Click;
+            //_mainForm.GasCompCheckBox.Click += CheckBox_Click;
             _mainForm.SaveButton.Click += _SaveButton_Click;
             _mainForm.tabPage5DoubleBufferedPanel1.SizeChanged += tabPage5DoubleBufferedPanel1_SizeChanged;
         }
 
+        public bool IsAnyGasChecked()
+        {
+            return _mainForm.CH4CheckBox.Checked ||
+                   _mainForm.CO2CheckBox.Checked ||
+                   _mainForm.N2CheckBox.Checked ||
+                   _mainForm.O2CheckBox.Checked ||
+                   _mainForm.C2H4CheckBox.Checked ||
+                   _mainForm.C3H8CheckBox.Checked ||
+                   _mainForm.C2H6CheckBox.Checked ||
+                   _mainForm.C3H6CheckBox.Checked ||
+                   _mainForm.C2H2CheckBox.Checked ||
+                   _mainForm.COCheckBox.Checked;
+        }
+
+        public void TabControl_5_InputCheckTimer_Tick()
+        {
+            MainForm.GasCompCheckBoxFlag = IsAnyGasChecked();
+            Console.WriteLine("GasCompCheckBoxFlag = " + MainForm.GasCompCheckBoxFlag);
+
+        }
         private void tabPage5DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
         {
             int newWidth;
@@ -122,43 +142,43 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Left = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
             _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Top = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
         }
-        private void CheckBox_Click(object sender, EventArgs e)
-        {
-            if (sender is CheckBox checkBox)
-            {
-                // 通过 Name 判断哪个被点击
-                string name = checkBox.Name;
-                string text = checkBox.Text;
-                bool isChecked = checkBox.Checked;
+        //private void CheckBox_Click(object sender, EventArgs e)
+        //{
+        //    if (sender is CheckBox checkBox)
+        //    {
+        //        // 通过 Name 判断哪个被点击
+        //        string name = checkBox.Name;
+        //        string text = checkBox.Text;
+        //        bool isChecked = checkBox.Checked;
 
-                if (name == "GasCompCheckBox")
-                {
-                    if (isChecked)
-                    {
-                        _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = true;
+        //        if (name == "GasCompCheckBox")
+        //        {
+        //            if (isChecked)
+        //            {
+        //                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = true;
 
-                        MainForm.GasCompCheckBoxFlag = true;
-                    }
-                    else
-                    {
-                        _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
+        //                MainForm.GasCompCheckBoxFlag = true;
+        //            }
+        //            else
+        //            {
+        //                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
 
-                        _mainForm.CH4CheckBox.Checked = false;
-                        _mainForm.CO2CheckBox.Checked = false;
-                        _mainForm.N2CheckBox.Checked = false;
-                        _mainForm.O2CheckBox.Checked = false;
-                        _mainForm.C2H4CheckBox.Checked = false;
-                        _mainForm.C3H8CheckBox.Checked = false;
-                        _mainForm.C2H6CheckBox.Checked = false;
-                        _mainForm.C3H6CheckBox.Checked = false;
-                        _mainForm.C2H2CheckBox.Checked = false;
-                        _mainForm.COCheckBox.Checked = false;
+        //                _mainForm.CH4CheckBox.Checked = false;
+        //                _mainForm.CO2CheckBox.Checked = false;
+        //                _mainForm.N2CheckBox.Checked = false;
+        //                _mainForm.O2CheckBox.Checked = false;
+        //                _mainForm.C2H4CheckBox.Checked = false;
+        //                _mainForm.C3H8CheckBox.Checked = false;
+        //                _mainForm.C2H6CheckBox.Checked = false;
+        //                _mainForm.C3H6CheckBox.Checked = false;
+        //                _mainForm.C2H2CheckBox.Checked = false;
+        //                _mainForm.COCheckBox.Checked = false;
 
-                        MainForm.GasCompCheckBoxFlag = false;
-                    }
-                }
-            }
-        }
+        //                MainForm.GasCompCheckBoxFlag = false;
+        //            }
+        //        }
+        //    }
+        //}
 
         private static readonly Dictionary<(bool, bool, int, int), string>
             resourceMap = new Dictionary<(bool, bool, int, int), string>
