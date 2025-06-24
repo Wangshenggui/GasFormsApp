@@ -32,9 +32,9 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -366,6 +366,8 @@ namespace GasFormsApp
             this.label118 = new System.Windows.Forms.Label();
             this.AuditorTextBox = new System.Windows.Forms.TextBox();
             this.tabPage5panel17 = new System.Windows.Forms.Panel();
+            this.tabPage5TemporarySavingButton = new GasFormsApp.UI.UCButton();
+            this.tabPage5RecoverDataButton = new GasFormsApp.UI.UCButton();
             this.GenReportButton = new GasFormsApp.UI.UCButton();
             this.GenRecordButton = new GasFormsApp.UI.UCButton();
             this.SaveButton = new GasFormsApp.UI.UCButton();
@@ -3011,7 +3013,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 625);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 639);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -3888,9 +3890,9 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel15);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel17);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(59, 55);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(210, 33);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Name = "tabPage5DoubleBufferedFlowLayoutPanel2";
-            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(824, 411);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(824, 540);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.TabIndex = 1006;
             // 
             // tabPage5DoubleBufferedFlowLayoutPanel1
@@ -4441,13 +4443,59 @@ namespace GasFormsApp
             // tabPage5panel17
             // 
             this.tabPage5panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.tabPage5panel17.Controls.Add(this.tabPage5TemporarySavingButton);
+            this.tabPage5panel17.Controls.Add(this.tabPage5RecoverDataButton);
             this.tabPage5panel17.Controls.Add(this.GenReportButton);
             this.tabPage5panel17.Controls.Add(this.GenRecordButton);
             this.tabPage5panel17.Controls.Add(this.SaveButton);
             this.tabPage5panel17.Location = new System.Drawing.Point(454, 335);
             this.tabPage5panel17.Name = "tabPage5panel17";
-            this.tabPage5panel17.Size = new System.Drawing.Size(367, 58);
+            this.tabPage5panel17.Size = new System.Drawing.Size(367, 134);
             this.tabPage5panel17.TabIndex = 76;
+            // 
+            // tabPage5TemporarySavingButton
+            // 
+            this.tabPage5TemporarySavingButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tabPage5TemporarySavingButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5TemporarySavingButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("tabPage5TemporarySavingButton.ButtonImage")));
+            this.tabPage5TemporarySavingButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.tabPage5TemporarySavingButton.FlatAppearance.BorderSize = 0;
+            this.tabPage5TemporarySavingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tabPage5TemporarySavingButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPage5TemporarySavingButton.ForeColor = System.Drawing.Color.Navy;
+            this.tabPage5TemporarySavingButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.tabPage5TemporarySavingButton.Location = new System.Drawing.Point(125, 68);
+            this.tabPage5TemporarySavingButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.tabPage5TemporarySavingButton.Name = "tabPage5TemporarySavingButton";
+            this.tabPage5TemporarySavingButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPage5TemporarySavingButton.Radius = 15;
+            this.tabPage5TemporarySavingButton.Size = new System.Drawing.Size(116, 42);
+            this.tabPage5TemporarySavingButton.TabIndex = 1011;
+            this.tabPage5TemporarySavingButton.Text = "     临时保存";
+            this.tabPage5TemporarySavingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tabPage5TemporarySavingButton.UseVisualStyleBackColor = false;
+            // 
+            // tabPage5RecoverDataButton
+            // 
+            this.tabPage5RecoverDataButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tabPage5RecoverDataButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5RecoverDataButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("tabPage5RecoverDataButton.ButtonImage")));
+            this.tabPage5RecoverDataButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.tabPage5RecoverDataButton.FlatAppearance.BorderSize = 0;
+            this.tabPage5RecoverDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tabPage5RecoverDataButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPage5RecoverDataButton.ForeColor = System.Drawing.Color.Navy;
+            this.tabPage5RecoverDataButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.tabPage5RecoverDataButton.Location = new System.Drawing.Point(249, 68);
+            this.tabPage5RecoverDataButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.tabPage5RecoverDataButton.Name = "tabPage5RecoverDataButton";
+            this.tabPage5RecoverDataButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPage5RecoverDataButton.Radius = 15;
+            this.tabPage5RecoverDataButton.Size = new System.Drawing.Size(116, 42);
+            this.tabPage5RecoverDataButton.TabIndex = 1012;
+            this.tabPage5RecoverDataButton.Text = "     恢复数据";
+            this.tabPage5RecoverDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tabPage5RecoverDataButton.UseVisualStyleBackColor = false;
             // 
             // GenReportButton
             // 
@@ -4588,34 +4636,34 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(8, 6);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1099, 617);
@@ -5151,5 +5199,7 @@ namespace GasFormsApp
         public UI.UCButton tabPage3RecoverDataButton;
         public UI.UCButton tabPage4TemporarySavingButton;
         public UI.UCButton tabPage4RecoverDataButton;
+        public UI.UCButton tabPage5TemporarySavingButton;
+        public UI.UCButton tabPage5RecoverDataButton;
     }
 }

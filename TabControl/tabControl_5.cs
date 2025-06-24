@@ -30,6 +30,136 @@ namespace GasFormsApp.TabControl
             //_mainForm.GasCompCheckBox.Click += CheckBox_Click;
             _mainForm.SaveButton.Click += _SaveButton_Click;
             _mainForm.tabPage5DoubleBufferedPanel1.SizeChanged += tabPage5DoubleBufferedPanel1_SizeChanged;
+
+            _mainForm.tabPage5TemporarySavingButton.Click += tabPage5TemporarySavingButton_Click;
+            _mainForm.tabPage5RecoverDataButton.Click += tabPage5RecoverDataButton_Click;
+        }
+
+        [Serializable]
+        public class tab5TempData
+        {
+            public string CH4Text { get; set; }
+            public string CO2Text { get; set; }
+            public string N2Text { get; set; }
+            public string O2Text { get; set; }
+            public string C2H4Text { get; set; }
+            public string C3H8Text { get; set; }
+            public string C2H6Text { get; set; }
+            public string C3H6Text { get; set; }
+            public string C2H2Text { get; set; }
+            public string COText { get; set; }
+
+            public string _dateTimePicker6 { get; set; }
+            public string _dateTimePicker1 { get; set; }
+            public string DownholeTestersText { get; set; }
+            public string LabTestersText { get; set; }
+            public string AuditorText { get; set; }
+            public string RemarkText { get; set; }
+        }
+
+        // 临时保存按钮
+        public void tabPage5TemporarySavingButton_Click(object sender, EventArgs e)
+        {
+            // 构造 TempData 对象并从控件中读取数据
+            tab5TempData data = new tab5TempData
+            {
+                CH4Text = _mainForm.CH4TextBox.Text,
+                CO2Text = _mainForm.CO2TextBox.Text,
+                N2Text = _mainForm.N2TextBox.Text,
+                O2Text = _mainForm.O2TextBox.Text,
+                C2H4Text = _mainForm.C2H4TextBox.Text,
+                C3H8Text = _mainForm.C3H8TextBox.Text,
+                C2H6Text = _mainForm.C2H6TextBox.Text,
+                C3H6Text = _mainForm.C3H6TextBox.Text,
+                C2H2Text = _mainForm.C2H2TextBox.Text,
+                COText = _mainForm.COTextBox.Text,
+
+                _dateTimePicker6 = _mainForm.dateTimePicker6.Value.ToString("yyyy-MM-dd"),
+                _dateTimePicker1 = _mainForm.dateTimePicker1.Value.ToString("yyyy-MM-dd"),
+
+                DownholeTestersText = _mainForm.DownholeTestersTextBox.Text,
+                LabTestersText = _mainForm.LabTestersTextBox.Text,
+                AuditorText = _mainForm.AuditorTextBox.Text,
+                RemarkText = _mainForm.RemarkTextBox.Text
+            };
+
+
+            // 获取当前程序目录
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string tempFolder = Path.Combine(currentDir, "TempData");
+
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
+            string savePath = Path.Combine(tempFolder, "tabPage5_temp.bin");
+
+            try
+            {
+                using (FileStream fs = new FileStream(savePath, FileMode.Create))
+                {
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+#pragma warning disable SYSLIB0011 // 忽略BinaryFormatter过时警告
+                    formatter.Serialize(fs, data);
+#pragma warning restore SYSLIB0011
+                }
+
+                MessageBox.Show("以二进制格式保存成功！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void tabPage5RecoverDataButton_Click(object sender, EventArgs e)
+        {
+            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string loadPath = Path.Combine(currentDir, "TempData", "tabPage5_temp.bin");
+
+            if (!File.Exists(loadPath))
+            {
+                MessageBox.Show("找不到临时保存的数据！");
+                return;
+            }
+
+            try
+            {
+                using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                {
+#pragma warning disable SYSLIB0011
+                    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    tab5TempData data = (tab5TempData)formatter.Deserialize(fs);
+#pragma warning restore SYSLIB0011
+
+                    // 将值恢复到控件
+                    _mainForm.CH4TextBox.Text = data.CH4Text;
+                    _mainForm.CO2TextBox.Text = data.CO2Text;
+                    _mainForm.N2TextBox.Text = data.N2Text;
+                    _mainForm.O2TextBox.Text = data.O2Text;
+                    _mainForm.C2H4TextBox.Text = data.C2H4Text;
+                    _mainForm.C3H8TextBox.Text = data.C3H8Text;
+                    _mainForm.C2H6TextBox.Text = data.C2H6Text;
+                    _mainForm.C3H6TextBox.Text = data.C3H6Text;
+                    _mainForm.C2H2TextBox.Text = data.C2H2Text;
+                    _mainForm.COTextBox.Text = data.COText;
+
+                    _mainForm.dateTimePicker6.Value = DateTime.TryParse(data._dateTimePicker6, out var dt6) ? dt6 : DateTime.Now;
+                    _mainForm.dateTimePicker1.Value = DateTime.TryParse(data._dateTimePicker1, out var dt1) ? dt1 : DateTime.Now;
+
+                    _mainForm.DownholeTestersTextBox.Text = data.DownholeTestersText;
+                    _mainForm.LabTestersTextBox.Text = data.LabTestersText;
+                    _mainForm.AuditorTextBox.Text = data.AuditorText;
+                    _mainForm.RemarkTextBox.Text = data.RemarkText;
+
+
+                    MessageBox.Show("数据已恢复！");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public bool IsAnyGasChecked()
@@ -49,7 +179,7 @@ namespace GasFormsApp.TabControl
         public void TabControl_5_InputCheckTimer_Tick()
         {
             MainForm.GasCompCheckBoxFlag = IsAnyGasChecked();
-            Console.WriteLine("GasCompCheckBoxFlag = " + MainForm.GasCompCheckBoxFlag);
+            //Console.WriteLine("GasCompCheckBoxFlag = " + MainForm.GasCompCheckBoxFlag);
 
         }
         private void tabPage5DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
@@ -81,6 +211,8 @@ namespace GasFormsApp.TabControl
             if (newWidth >= 515 && newWidth <= 566)
             {
                 newWidth = 415;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = newWidth - 23;
                 _mainForm.tabPage5panel12.Width = newWidth - 23;
                 _mainForm.tabPage5panel13.Width = newWidth - 23;
@@ -92,6 +224,8 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 566 && newWidth <= 750)
             {
                 newWidth = 600 + 15;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = newWidth - 28;
                 _mainForm.tabPage5panel12.Width = newWidth - 28;
                 _mainForm.tabPage5panel13.Width = newWidth - 28;
@@ -103,18 +237,23 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 750 && newWidth <= 939)
             {
                 newWidth = 800;
-                _mainForm.tabPage5panel11.Width = 415 - 26;
-                _mainForm.tabPage5panel12.Width = 415 - 26;
-                _mainForm.tabPage5panel13.Width = 415 - 26;
-                _mainForm.tabPage5panel14.Width = 415 - 26;
-                _mainForm.tabPage5panel15.Width = 415 - 26;
-                _mainForm.tabPage5panel16.Width = 415 - 26;
-                _mainForm.tabPage5panel17.Width = 415 - 26;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
+                _mainForm.tabPage5panel11.Width = 415 - 30;
+                _mainForm.tabPage5panel12.Width = 415 - 30;
+                _mainForm.tabPage5panel13.Width = 415 - 30;
+                _mainForm.tabPage5panel14.Width = 415 - 30;
+                _mainForm.tabPage5panel15.Width = 415 - 30;
+                _mainForm.tabPage5panel16.Width = 415 - 30;
+                _mainForm.tabPage5panel17.Width = 415 - 30;
             }
             else if (newWidth > 939)
             {
                 newWidth = 1000;
+                newHeight = 460;
                 int a = 28;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
+                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel12.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel13.Width = 500 + 15 - a;
@@ -131,8 +270,8 @@ namespace GasFormsApp.TabControl
             Console.WriteLine($"------{newWidth}--{newHeight}");
             Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");
 
-            _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
-            _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
+            //_mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
+            //_mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
 
             //_mainForm.tabPage5panel11.Width = _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width;
             //_mainForm.tabPage5partition_panel.Width = newWidth-20;
