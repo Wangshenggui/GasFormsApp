@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office.SpreadSheetML.Y2023.MsForms;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -87,7 +88,7 @@ namespace GasFormsApp.UI
         private Panel borderTop;
 
         // 工具栏按钮
-        private Button 账户管理Button;
+        private Button 数据管理Button;
 
         private void InitializeBorder()
         {
@@ -211,14 +212,14 @@ namespace GasFormsApp.UI
             titleLabel.Location = new Point(0, 0);
             titleBar.Controls.Add(titleLabel);
 
-            //账户管理Button
+            //数据管理Button
             // 添加标签
             titleBar.Controls.Add(titleLabel);
 
-            // 账户管理按钮
-            账户管理Button = new CustomBorderButton
+            // 数据管理按钮
+            数据管理Button = new CustomBorderButton
             {
-                Text = " 账户管理 ",
+                Text = " 数据管理 ",
                 BackColor = Color.FromArgb(17, 45, 78),
                 FlatStyle = FlatStyle.Flat,
                 Width = 85,
@@ -231,18 +232,20 @@ namespace GasFormsApp.UI
                 BorderWidth = 2,
                 TabStop = false
             };
-            账户管理Button.FlatAppearance.BorderSize = 0;
+            数据管理Button.FlatAppearance.BorderSize = 0;
 
             // 这里计算按钮的位置，紧跟标签后面
-            账户管理Button.Location = new Point(titleLabel.Location.X + titleLabel.Width, 3);
+            数据管理Button.Location = new Point(titleLabel.Location.X + titleLabel.Width, 3);
 
             // 添加点击事件
-            账户管理Button.Click += (s, e) =>
+            数据管理Button.Click += (s, e) =>
             {
-                MessageBox.Show("你点击了标题栏上的按钮！");
+                //MessageBox.Show("你点击了标题栏上的按钮！");
+                DataAdministrationForm newForm = new DataAdministrationForm();
+                newForm.Show();
             };
 
-            titleBar.Controls.Add(账户管理Button);
+            titleBar.Controls.Add(数据管理Button);
 
 
             //// 最小化按钮，纯黑背景，悬停变暗灰

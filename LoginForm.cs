@@ -16,6 +16,8 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Net;
+using System.Management;
+using System.IO;
 
 namespace GasFormsApp
 {
@@ -57,10 +59,103 @@ namespace GasFormsApp
             }
         }
 
+        public static string GetMotherboardAndCpuId()
+        {
+            string motherboardSN = GetMotherboardSerialNumber();
+            string cpuId = GetCpuId();
+
+            return $"{motherboardSN}-{cpuId}";
+        }
+        public static string GetMotherboardSerialNumber()
+        {
+            try
+            {
+                using (var searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard"))
+                {
+                    foreach (ManagementObject obj in searcher.Get())
+                    {
+                        return obj["SerialNumber"]?.ToString().Trim() ?? "UNKNOWN";
+                    }
+                }
+            }
+            catch { }
+            return "UNKNOWN";
+        }
+        public static string GetCpuId()
+        {
+            try
+            {
+                using (var searcher = new ManagementObjectSearcher("SELECT ProcessorId FROM Win32_Processor"))
+                {
+                    foreach (ManagementObject obj in searcher.Get())
+                    {
+                        return obj["ProcessorId"]?.ToString().Trim() ?? "UNKNOWN";
+                    }
+                }
+            }
+            catch { }
+            return "UNKNOWN";
+        }
+        // 用公钥验证签名
+        public static bool VerifyData(string data, byte[] signature, string publicKeyXml)
+        {
+            byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+            using (var rsa = new RSACryptoServiceProvider())
+            {
+                rsa.FromXmlString(publicKeyXml);
+                return rsa.VerifyData(dataBytes, CryptoConfig.MapNameToOID("SHA256"), signature);
+            }
+        }
         public LoginForm()
         {
             InitializeComponent();
+
+            string data = GetMotherboardAndCpuId();
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "RegistrationCode.dat");
+
+            if (!File.Exists(path))
+            {
+                // 写入文件，覆盖已有内容
+                File.WriteAllText(path, data, Encoding.UTF8);
+                MessageBox.Show($"未找到注册文件，请先注册使用该软件。{data}", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
+            try
+            {
+                string readBase64 = File.ReadAllText(path);
+                byte[] signature = Convert.FromBase64String(readBase64);
+
+                string publicKey = "<RSAKeyValue><Modulus>zMU2qMkOog2AhpAnI39JawR8ag5+u/vuNck17MOvdJoJo0ttI8e4HGIwRf/+lL4eytmdC1l2c+lgX0WpZ0Ggeg8sXB2i68wVpkLXxAGDTDbFGMj7CCJ2DbI1PKUtpcueKeEhOK7H02S9Ru4ssnomvfbf9TGlpb8bj4Diu33Y8f9ennuWy47Pbism350gE0W7btQ0DWYv1zK6u33mBn6InncEJdvkm8teQbQTE4krPCMmV1JGUBMEMTYtRfYTO59EoK1PU8S4xeeYdeNgRodS9pr/QMGJlUD/O4rVngV+09Q23C9BOs/9gRbGCAtaIYJKdJRTuoI5BweONB4BgXD6VQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+
+                bool verified = VerifyData(data, signature, publicKey);
+                Console.WriteLine("验证结果: " + verified);
+
+                if (!verified)
+                {
+                    File.WriteAllText(path, data, Encoding.UTF8);
+                    MessageBox.Show($"注册信息无效，请重新注册。{data}", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.Close();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                File.WriteAllText(path, data, Encoding.UTF8);
+                MessageBox.Show($"读取注册文件出错，请重新注册。{data}\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+
             this.Load += LoginForm_Load;
+
+            //DataAdministrationForm newForm = new DataAdministrationForm();
+            ////newForm.Show();
+            //this.Hide();
+            //newForm.ShowDialog();
+            //this.Close();
 
             MainForm main = new MainForm(false);
             this.Hide();
