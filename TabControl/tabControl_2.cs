@@ -231,7 +231,7 @@ namespace GasFormsApp.TabControl
                 newWidth = 428;
 
                 _mainForm.tabPage2panel6.Width = 403;
-                _mainForm.tabPage2panel6.Height = 202;
+                _mainForm.tabPage2panel6.Height = 262;
                 _mainForm.BulkImportButton.Location = new Point(7, 133);
                 _mainForm.DrawCurvesButton.Location = new Point(279, 133);
                 _mainForm.ExportImageButton.Location = new Point(150, 133);
