@@ -52,6 +52,14 @@ namespace GasFormsApp
         /// </summary>
         private void DataAdministrationForm_Load(object sender, EventArgs e)
         {
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            this.Width = (int)(screenWidth * 0.64);
+            this.Height = (int)(screenHeight * 0.64);
+            // 居中设置
+            this.Left = (screenWidth - this.Width) / 2;
+            this.Top = (screenHeight - this.Height) / 2;
+
             // 获取当前程序启动的目录路径
             string basePath = Application.StartupPath;
 
@@ -126,8 +134,15 @@ namespace GasFormsApp
             if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
             {
                 // 加载该目录下的文件到表格显示
-                //LoadFilesToGrid(selectedPath);
-                全部显示(selectedPath);
+                string str = FindTextBox.Text;
+                if (string.IsNullOrEmpty(str))
+                {
+                    全部显示(selectedPath);
+                }
+                else
+                {
+                    查询显示(selectedPath, FindTextBox.Text);
+                }
             }
             else
             {
@@ -136,20 +151,144 @@ namespace GasFormsApp
             }
         }
         private string _currentKeyword = "";
-        void 全部显示(string SystemDataPath)
+        private void 全部显示(string SystemDataPath)
         {
             _currentKeyword = "";
 
+            string sortColumnName = null;
+            ListSortDirection sortDirection = ListSortDirection.Ascending;
+            string selectedUserId = null;
+
+            if (dataGridView1.SortedColumn != null)
+            {
+                sortColumnName = dataGridView1.SortedColumn.DataPropertyName;
+                sortDirection = (dataGridView1.SortOrder == SortOrder.Descending)
+                    ? ListSortDirection.Descending
+                    : ListSortDirection.Ascending;
+            }
+
+            if (dataGridView1.CurrentRow != null &&
+                dataGridView1.CurrentRow.DataBoundItem is UserData selectedUser)
+            {
+                selectedUserId = selectedUser.ID;
+            }
+
+            if (!Directory.Exists(SystemDataPath))
+            {
+                Console.WriteLine("BinData 文件夹不存在！");
+                return;
+            }
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
+                    if (files.Length == 0)
+                    {
+                        Console.WriteLine("没有找到数据文件！");
+                        return;
+                    }
+
+                    List<UserData> allUsers = new List<UserData>();
+                    BinaryFormatter formatter = new BinaryFormatter();
+
+                    foreach (var file in files)
+                    {
+                        using (FileStream fs = new FileStream(file, FileMode.Open))
+                        {
+                            UserData user = (UserData)formatter.Deserialize(fs);
+                            allUsers.Add(user);
+                        }
+                    }
+
+                    var sortableList = new SortableBindingList<UserData>(allUsers);
+
+                    // 回到 UI 线程更新 DataGridView
+                    dataGridView1.Invoke(new Action(() =>
+                    {
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = sortableList;
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                        // 恢复排序
+                        if (sortColumnName != null)
+                        {
+                            var sortColumn = dataGridView1.Columns
+                                .Cast<DataGridViewColumn>()
+                                .FirstOrDefault(c => c.DataPropertyName == sortColumnName);
+
+                            if (sortColumn != null)
+                            {
+                                dataGridView1.Sort(sortColumn, sortDirection);
+                            }
+                        }
+
+                        // 恢复选中行
+                        if (!string.IsNullOrEmpty(selectedUserId))
+                        {
+                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                            {
+                                if (row.DataBoundItem is UserData user && user.ID == selectedUserId)
+                                {
+                                    row.Selected = true;
+                                    dataGridView1.CurrentCell = row.Cells[0];
+                                    break;
+                                }
+                            }
+                        }
+
+                        Console.WriteLine("数据加载完成。");
+                    }));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("读取失败：" + ex.Message);
+                }
+            });
+        }
+
+
+        private List<UserData> LoadAllUsers(string SystemDataPath)
+        {
+            if (!Directory.Exists(SystemDataPath))
+            {
+                Console.WriteLine("BinData 文件夹不存在！");
+                return new List<UserData>();
+            }
+
+            string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
+            if (files.Length == 0)
+            {
+                Console.WriteLine("没有找到数据文件！");
+                return new List<UserData>();
+            }
+
+            List<UserData> allUsers = new List<UserData>();
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            foreach (var file in files)
+            {
+                using (FileStream fs = new FileStream(file, FileMode.Open))
+                {
+                    UserData user = (UserData)formatter.Deserialize(fs);
+                    allUsers.Add(user);
+                }
+            }
+            return allUsers;
+        }
+        private void 查询显示(string SystemDataPath, string filterKeyword)
+        {
             // 记录当前排序列和方向
             string sortColumnName = null;
             ListSortDirection sortDirection = ListSortDirection.Ascending;
 
-            // 记录选中用户ID
+            // 记录选中用户ID（假设UserData有ID属性）
             string selectedUserId = null;
 
             try
             {
-                // 先保存排序信息和选中行信息
+                // 先记录排序信息和选中行信息
                 if (dataGridView1.SortedColumn != null)
                 {
                     sortColumnName = dataGridView1.SortedColumn.DataPropertyName;
@@ -164,38 +303,49 @@ namespace GasFormsApp
                     selectedUserId = selectedUser.ID;
                 }
 
-                if (!Directory.Exists(SystemDataPath))
+                List<UserData> allUsers = LoadAllUsers(SystemDataPath);
+
+                if (allUsers.Count == 0)
                 {
-                    Console.WriteLine("BinData 文件夹不存在！");
+                    Console.WriteLine("没有数据，无法筛选！");
                     return;
                 }
 
-                string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
-                if (files.Length == 0)
+                _currentKeyword = filterKeyword; // 保存当前关键字，用于高亮
+
+                List<UserData> filteredUsers;
+                if (string.IsNullOrEmpty(filterKeyword))
                 {
-                    Console.WriteLine("没有找到数据文件！");
-                    return;
+                    filteredUsers = allUsers;
+                }
+                else
+                {
+                    filteredUsers = allUsers
+                        .Where(u =>
+                            u.GetType()
+                             .GetProperties()
+                             .Where(p => p.PropertyType == typeof(string))
+                             .Select(p => p.GetValue(u) as string)
+                             .Any(val => !string.IsNullOrEmpty(val) &&
+                                         val.IndexOf(filterKeyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                        )
+                        .ToList();
                 }
 
-                List<UserData> allUsers = new List<UserData>();
-                BinaryFormatter formatter = new BinaryFormatter();
+                var sortableList = new SortableBindingList<UserData>(filteredUsers);
 
-                foreach (var file in files)
-                {
-                    using (FileStream fs = new FileStream(file, FileMode.Open))
-                    {
-                        UserData user = (UserData)formatter.Deserialize(fs);
-                        allUsers.Add(user);
-                    }
-                }
-
-                var sortableList = new SortableBindingList<UserData>(allUsers);
+                // 解绑事件，防止刷新时触发 SelectionChanged 等事件
+                //dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
+                //dataGridView1.CellPainting -= DataGridView1_CellPainting;
 
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = sortableList;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                // 延迟恢复排序，避免排序没有立即生效
+                // 绑定高亮事件
+                //dataGridView1.CellPainting += DataGridView1_CellPainting;
+
+                // 延迟恢复排序
                 if (sortColumnName != null)
                 {
                     dataGridView1.BeginInvoke(new Action(() =>
@@ -228,15 +378,16 @@ namespace GasFormsApp
                     }));
                 }
 
-                Console.WriteLine("数据加载完成，已绑定到 dataGridView1。");
+                // 重新绑定事件
+                //dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+
+                Console.WriteLine($"数据加载完成，筛选关键字：'{filterKeyword}'，结果数：{filteredUsers.Count}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("读取失败：" + ex.Message);
             }
         }
-
-
 
         /// <summary>
         /// 将指定目录下符合过滤条件的文件加载到 DataGridView 中显示
@@ -278,5 +429,32 @@ namespace GasFormsApp
                 dataGridView1.Columns["完整路径"].Visible = false;
         }
 
+        // 搜索框数据变化
+        private void FindTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //TreeNode selectedNode = treeView1.SelectedNode;
+
+            //if (selectedNode != null)
+            //{
+            //    TreeViewEventArgs args = new TreeViewEventArgs(selectedNode);
+            //    treeView1_AfterSelect(treeView1, args); // sender 改为 treeView1 更合理
+            //}
+        }
+
+        private void FindTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //e.Handled = true; // 阻止系统发出“叮”声（可选）
+                e.SuppressKeyPress = true;
+
+                TreeNode selectedNode = treeView1.SelectedNode;
+                if (selectedNode != null)
+                {
+                    TreeViewEventArgs args = new TreeViewEventArgs(selectedNode);
+                    treeView1_AfterSelect(treeView1, args); // sender 改为 treeView1 更合理
+                }
+            }
+        }
     }
 }

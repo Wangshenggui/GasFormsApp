@@ -240,9 +240,10 @@ namespace GasFormsApp.UI
             // 添加点击事件
             数据管理Button.Click += (s, e) =>
             {
-                //MessageBox.Show("你点击了标题栏上的按钮！");
-                DataAdministrationForm newForm = new DataAdministrationForm();
-                newForm.Show();
+                // 暂时不需要跳转
+                ////MessageBox.Show("你点击了标题栏上的按钮！");
+                //DataAdministrationForm newForm = new DataAdministrationForm();
+                //newForm.Show();
             };
 
             titleBar.Controls.Add(数据管理Button);

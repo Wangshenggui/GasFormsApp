@@ -32,6 +32,12 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点3");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点2", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -372,13 +378,16 @@ namespace GasFormsApp
             this.GenRecordButton = new GasFormsApp.UI.UCButton();
             this.SaveButton = new GasFormsApp.UI.UCButton();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tabPage6panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.FindTextBox = new System.Windows.Forms.TextBox();
             this.ExportTheDocumentButton = new System.Windows.Forms.Button();
             this.DeleteDataButton = new System.Windows.Forms.Button();
-            this.FindTextBox = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
             this.ReloadDataButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -387,6 +396,8 @@ namespace GasFormsApp
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -431,9 +442,15 @@ namespace GasFormsApp
             this.tabPage5panel15.SuspendLayout();
             this.tabPage5panel17.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.tabPage6panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage6contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1063,8 +1080,8 @@ namespace GasFormsApp
             // tabPage2DoubleBufferedPanel1
             // 
             this.tabPage2DoubleBufferedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker5);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker3);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker2);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.comboBox3);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label35);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label33);
@@ -1096,7 +1113,7 @@ namespace GasFormsApp
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(142, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(140, 3);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(230, 29);
             this.dateTimePicker2.TabIndex = 999;
@@ -1132,7 +1149,7 @@ namespace GasFormsApp
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(111, 16);
             this.label35.TabIndex = 44;
-            this.label35.Text = "打钻结束时间:";
+            this.label35.Text = "打钻开始时间:";
             // 
             // label33
             // 
@@ -1163,8 +1180,8 @@ namespace GasFormsApp
             // doubleBufferedPanel1
             // 
             this.doubleBufferedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.doubleBufferedPanel1.Controls.Add(this.dateTimePicker5);
             this.doubleBufferedPanel1.Controls.Add(this.dateTimePicker4);
-            this.doubleBufferedPanel1.Controls.Add(this.dateTimePicker2);
             this.doubleBufferedPanel1.Controls.Add(this.label34);
             this.doubleBufferedPanel1.Controls.Add(this.t0TextBox);
             this.doubleBufferedPanel1.Controls.Add(this.label90);
@@ -3013,7 +3030,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 641);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 675);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -4561,13 +4578,7 @@ namespace GasFormsApp
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage6.Controls.Add(this.ExportTheDocumentButton);
-            this.tabPage6.Controls.Add(this.DeleteDataButton);
-            this.tabPage6.Controls.Add(this.FindTextBox);
-            this.tabPage6.Controls.Add(this.label30);
-            this.tabPage6.Controls.Add(this.ReloadDataButton);
-            this.tabPage6.Controls.Add(this.dataGridView1);
-            this.tabPage6.Controls.Add(this.pictureBox2);
+            this.tabPage6.Controls.Add(this.splitContainer1);
             this.tabPage6.Location = new System.Drawing.Point(4, 104);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -4575,14 +4586,104 @@ namespace GasFormsApp
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.tabPage6panel1);
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Size = new System.Drawing.Size(1436, 639);
+            this.splitContainer1.SplitterDistance = 300;
+            this.splitContainer1.TabIndex = 37;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.treeView1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "节点1";
+            treeNode1.Text = "节点1";
+            treeNode2.Name = "节点0";
+            treeNode2.Text = "节点0";
+            treeNode3.Name = "节点3";
+            treeNode3.Text = "节点3";
+            treeNode4.Name = "节点2";
+            treeNode4.Text = "节点2";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode4});
+            this.treeView1.Size = new System.Drawing.Size(298, 637);
+            this.treeView1.TabIndex = 1;
+            // 
+            // tabPage6panel1
+            // 
+            this.tabPage6panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPage6panel1.AutoScroll = true;
+            this.tabPage6panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tabPage6panel1.Controls.Add(this.pictureBox2);
+            this.tabPage6panel1.Controls.Add(this.label30);
+            this.tabPage6panel1.Controls.Add(this.FindTextBox);
+            this.tabPage6panel1.Controls.Add(this.ExportTheDocumentButton);
+            this.tabPage6panel1.Controls.Add(this.DeleteDataButton);
+            this.tabPage6panel1.Controls.Add(this.ReloadDataButton);
+            this.tabPage6panel1.Location = new System.Drawing.Point(807, 0);
+            this.tabPage6panel1.Name = "tabPage6panel1";
+            this.tabPage6panel1.Size = new System.Drawing.Size(324, 639);
+            this.tabPage6panel1.TabIndex = 37;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox2.TabIndex = 35;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(29, 347);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(55, 16);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "查找：";
+            // 
+            // FindTextBox
+            // 
+            this.FindTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FindTextBox.Location = new System.Drawing.Point(32, 366);
+            this.FindTextBox.Name = "FindTextBox";
+            this.FindTextBox.Size = new System.Drawing.Size(266, 26);
+            this.FindTextBox.TabIndex = 6;
+            // 
             // ExportTheDocumentButton
             // 
             this.ExportTheDocumentButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ExportTheDocumentButton.Image = global::GasFormsApp.Properties.Resources.打印;
             this.ExportTheDocumentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportTheDocumentButton.Location = new System.Drawing.Point(1178, 441);
+            this.ExportTheDocumentButton.Location = new System.Drawing.Point(32, 482);
             this.ExportTheDocumentButton.Name = "ExportTheDocumentButton";
-            this.ExportTheDocumentButton.Size = new System.Drawing.Size(222, 40);
+            this.ExportTheDocumentButton.Size = new System.Drawing.Size(266, 46);
             this.ExportTheDocumentButton.TabIndex = 4;
             this.ExportTheDocumentButton.Text = "导 出 报 告      ";
             this.ExportTheDocumentButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4594,37 +4695,19 @@ namespace GasFormsApp
             this.DeleteDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteDataButton.Font = new System.Drawing.Font("宋体", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.DeleteDataButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteDataButton.Location = new System.Drawing.Point(1178, 531);
+            this.DeleteDataButton.Location = new System.Drawing.Point(32, 554);
             this.DeleteDataButton.Name = "DeleteDataButton";
-            this.DeleteDataButton.Size = new System.Drawing.Size(222, 37);
+            this.DeleteDataButton.Size = new System.Drawing.Size(266, 46);
             this.DeleteDataButton.TabIndex = 36;
             this.DeleteDataButton.Text = "删    除";
             this.DeleteDataButton.UseVisualStyleBackColor = false;
             // 
-            // FindTextBox
-            // 
-            this.FindTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FindTextBox.Location = new System.Drawing.Point(1178, 337);
-            this.FindTextBox.Name = "FindTextBox";
-            this.FindTextBox.Size = new System.Drawing.Size(222, 26);
-            this.FindTextBox.TabIndex = 6;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.Location = new System.Drawing.Point(1130, 341);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(55, 16);
-            this.label30.TabIndex = 7;
-            this.label30.Text = "查找：";
-            // 
             // ReloadDataButton
             // 
             this.ReloadDataButton.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ReloadDataButton.Location = new System.Drawing.Point(1178, 384);
+            this.ReloadDataButton.Location = new System.Drawing.Point(32, 421);
             this.ReloadDataButton.Name = "ReloadDataButton";
-            this.ReloadDataButton.Size = new System.Drawing.Size(222, 37);
+            this.ReloadDataButton.Size = new System.Drawing.Size(266, 46);
             this.ReloadDataButton.TabIndex = 2;
             this.ReloadDataButton.Text = "刷新列表";
             this.ReloadDataButton.UseVisualStyleBackColor = true;
@@ -4633,6 +4716,9 @@ namespace GasFormsApp
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
@@ -4653,7 +4739,7 @@ namespace GasFormsApp
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -4666,26 +4752,17 @@ namespace GasFormsApp
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1099, 617);
+            this.dataGridView1.Size = new System.Drawing.Size(801, 639);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox2.Location = new System.Drawing.Point(1113, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(314, 314);
-            this.pictureBox2.TabIndex = 35;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(130)))));
             this.label2.Font = new System.Drawing.Font("楷体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(0, 30);
             this.label2.Name = "label2";
@@ -4744,6 +4821,19 @@ namespace GasFormsApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(833, 105);
             this.panel1.TabIndex = 1003;
+            // 
+            // tabPage6contextMenuStrip1
+            // 
+            this.tabPage6contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.刷新ToolStripMenuItem});
+            this.tabPage6contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
+            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // 刷新ToolStripMenuItem
+            // 
+            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.刷新ToolStripMenuItem.Text = "刷新";
             // 
             // MainForm
             // 
@@ -4840,10 +4930,16 @@ namespace GasFormsApp
             this.tabPage5panel15.PerformLayout();
             this.tabPage5panel17.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.tabPage6panel1.ResumeLayout(false);
+            this.tabPage6panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage6contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5201,5 +5297,10 @@ namespace GasFormsApp
         public UI.UCButton tabPage4RecoverDataButton;
         public UI.UCButton tabPage5TemporarySavingButton;
         public UI.UCButton tabPage5RecoverDataButton;
+        private SplitContainer splitContainer1;
+        private Panel tabPage6panel1;
+        public TreeView treeView1;
+        public ContextMenuStrip tabPage6contextMenuStrip1;
+        public ToolStripMenuItem 刷新ToolStripMenuItem;
     }
 }

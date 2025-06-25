@@ -926,8 +926,8 @@ namespace GasFormsApp.TabControl
 
                 // 尝试读取嵌入资源
                 string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
-                using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
-                //using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {

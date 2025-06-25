@@ -12,6 +12,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Font = System.Drawing.Font;
 
 namespace GasFormsApp.TabControl
@@ -60,8 +61,111 @@ namespace GasFormsApp.TabControl
             _mainForm.dataGridView1.CellBeginEdit += (s, e) => {
                 Console.WriteLine($"CellBeginEdit at row {e.RowIndex}, col {e.ColumnIndex}");
             };
-        }
 
+
+
+            // 获取当前程序启动的目录路径
+            string basePath = Application.StartupPath;
+            // 构建目标文件夹路径（相对于启动目录的 SystemData\DataAdministrationForm）
+            string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+            // 加载该路径下的文件夹结构到树控件
+            LoadFoldersToTree(rootPath);
+            // 绑定树控件节点选中事件
+            _mainForm.treeView1.AfterSelect += treeView1_AfterSelect;
+            _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
+            _mainForm.treeView1.MouseDown += treeView1_MouseDown;
+            _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
+        }
+        private void FindTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //e.Handled = true; // 阻止系统发出“叮”声（可选）
+                e.SuppressKeyPress = true;
+
+                TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+                if (selectedNode != null)
+                {
+                    TreeViewEventArgs args = new TreeViewEventArgs(selectedNode);
+                    treeView1_AfterSelect(_mainForm.treeView1, args); // sender 改为 treeView1 更合理
+                }
+            }
+        }
+        /// <summary>
+        /// 当树控件节点被选中时触发，加载该节点对应目录的文件到 DataGridView
+        /// </summary>
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode selectedNode = e.Node;
+            string selectedPath = selectedNode.Tag?.ToString();
+
+            // 只对“叶子节点”处理（即没有子节点的节点）
+            // 并且该节点对应的路径是有效目录
+            if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
+            {
+                // 加载该目录下的文件到表格显示
+                string str = _mainForm.FindTextBox.Text;
+                if (string.IsNullOrEmpty(str))
+                {
+                    全部显示(selectedPath);
+                }
+                else
+                {
+                    查询显示(selectedPath, _mainForm.FindTextBox.Text);
+                }
+            }
+            else
+            {
+                // 非叶子节点或目录不存在，清空表格数据
+                _mainForm.dataGridView1.DataSource = null;
+            }
+        }
+        /// <summary>
+        /// 将指定根目录及其子目录加载到 TreeView 控件中显示
+        /// </summary>
+        /// <param name="rootPath">根目录路径</param>
+        private void LoadFoldersToTree(string rootPath)
+        {
+            DirectoryInfo rootDir = new DirectoryInfo(rootPath);
+
+            // 如果目录不存在，则不进行加载
+            if (!rootDir.Exists) return;
+
+            // 清空树控件节点
+            _mainForm.treeView1.Nodes.Clear();
+
+            // 创建根节点，显示根目录名，Tag属性存储目录完整路径
+            TreeNode rootNode = new TreeNode(rootDir.Name) { Tag = rootDir.FullName };
+
+            // 添加根节点到树控件
+            _mainForm.treeView1.Nodes.Add(rootNode);
+
+            // 递归添加子目录节点
+            AddSubDirectories(rootDir, rootNode);
+
+            // 展开所有节点，方便查看
+            _mainForm.treeView1.ExpandAll();
+        }
+        /// <summary>
+        /// 递归添加指定目录的所有子目录到指定父节点下
+        /// </summary>
+        /// <param name="dir">当前目录</param>
+        /// <param name="parentNode">父节点</param>
+        private void AddSubDirectories(DirectoryInfo dir, TreeNode parentNode)
+        {
+            // 遍历当前目录所有子目录
+            foreach (var subDir in dir.GetDirectories())
+            {
+                // 创建子节点，显示子目录名，Tag存储完整路径
+                TreeNode childNode = new TreeNode(subDir.Name) { Tag = subDir.FullName };
+
+                // 添加子节点到父节点
+                parentNode.Nodes.Add(childNode);
+
+                // 递归调用，添加更深层的子目录
+                AddSubDirectories(subDir, childNode);
+            }
+        }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (_mainForm.dataGridView1.CurrentRow != null)
@@ -70,9 +174,26 @@ namespace GasFormsApp.TabControl
                 Console.WriteLine("当前选中名称：" + name);
 
                 // E:\E-Desktop\GitHub\GasFormsApp\bin\Release\SystemData
-                
+
+                TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+                if (selectedNode == null)
+                {
+                    MessageBox.Show("请先选择一个节点！");
+                    return;
+                }
+                string selectedPath = selectedNode.Tag?.ToString();
                 string newImageName = $"{name}_Image.png";
-                string imagePath = Path.Combine("SystemData", newImageName);
+                string imagePath = Path.Combine("", newImageName);
+                if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
+                {
+                    newImageName = $"{name}_Image.png";
+                    imagePath = Path.Combine(selectedPath, newImageName);
+                }
+                else
+                {
+                    return;
+                }
+                
                 // 设置 PictureBox 的显示模式
                 _mainForm.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                 try
@@ -220,41 +341,63 @@ namespace GasFormsApp.TabControl
             public string 备注 { get; set; }
         }
 
-        // 当前程序目录
-        static string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
+        //// 当前程序目录
+        //static string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
 
-        // 用于存放系统数据的文件夹路径
-        string SystemDataPath = Path.Combine(CurrentDir, "SystemData");
+        //// 用于存放系统数据的文件夹路径
+        //string SystemDataPath = Path.Combine(CurrentDir, "SystemData");
 
         /// <summary>
         /// 按钮1点击事件：复制图片并保存用户数据为二进制文件
         /// </summary>
         public void SaveButton_Click(object sender, EventArgs e)
         {
+            ProjectGroupsForm newForm = new ProjectGroupsForm();
+            newForm.ResultData = null;
+            DialogResult result = newForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string data = newForm.ResultData;
+            }
+            else
+            {
+                MessageBox.Show($"无效：");
+                return;
+            }
+            string selectedPath = newForm.ResultData;
+            if (Directory.Exists(selectedPath))
+            {
+                // 如果 SystemData 文件夹不存在，则创建
+                if (!Directory.Exists(selectedPath))
+                {
+                    MessageBox.Show($"创建路径：{selectedPath}");
+                    Directory.CreateDirectory(selectedPath);
+                    Console.WriteLine($"{selectedPath} 文件夹不存在，已创建");
+                }
+            }
+            else
+            {
+                return;
+            }
+            //MessageBox.Show($"窗口已关闭！{selectedPath}");
+
             // 生成时间戳，用于命名文件
             string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-
-            // 如果 SystemData 文件夹不存在，则创建
-            if (!Directory.Exists(SystemDataPath))
-            {
-                Directory.CreateDirectory(SystemDataPath);
-                Console.WriteLine("SystemData 文件夹不存在，已创建");
-            }
-
             // === 复制图片 ===
             // 定义原始图片路径
-            string imageSourcePath = Path.Combine(CurrentDir, "Python_embed", "Python", "images", "output_image.png");
+            string imageSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Python_embed", "Python", "images", "output_image.png");
 
             // 定义新的图片名称和路径
             string newImageName = $"{timestamp}_Image.png";
-            string imageTargetPath = Path.Combine(SystemDataPath, newImageName);
+            string imageTargetPath = Path.Combine(selectedPath, newImageName);
 
             // 将图片复制到目标路径，若已存在则覆盖
             File.Copy(imageSourcePath, imageTargetPath, true);
             Console.WriteLine($"图片已复制到：{imageTargetPath}");
 
-            // 生成文档
-            _mainForm.tab6_5_GenerateReportToDatabase(timestamp);
+            //// 生成文档
+            //_mainForm.tab6_5_GenerateReportToDatabase(timestamp);
 
             // === 保存用户数据 ===
             try
@@ -325,7 +468,7 @@ namespace GasFormsApp.TabControl
 
 
                 // 定义要保存的二进制数据文件路径
-                string dataFilePath = Path.Combine(SystemDataPath, $"{timestamp}_BinData.bin");
+                string dataFilePath = Path.Combine(selectedPath, $"{timestamp}_BinData.bin");
 
                 // 使用二进制格式化器将对象序列化保存到文件中
                 using (FileStream fs = new FileStream(dataFilePath, FileMode.Create))
@@ -353,15 +496,25 @@ namespace GasFormsApp.TabControl
             string Keyword = _mainForm.FindTextBox.Text;
             if (string.IsNullOrEmpty(Keyword))
             {
-                全部显示();
+                TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+                if (selectedNode != null)
+                {
+                    TreeViewEventArgs args = new TreeViewEventArgs(selectedNode);
+                    treeView1_AfterSelect(_mainForm.treeView1, args); // sender 改为 treeView1 更合理
+                }
             }
             else
             {
-                查询显示(Keyword);
+                TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+                if (selectedNode != null)
+                {
+                    TreeViewEventArgs args = new TreeViewEventArgs(selectedNode);
+                    treeView1_AfterSelect(_mainForm.treeView1, args); // sender 改为 treeView1 更合理
+                }
             }
         }
 
-        private void ReloadTableData()
+        private void ReloadTableData(string path)
         {
             // 解绑事件，避免触发 SelectionChanged
             _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
@@ -411,7 +564,7 @@ namespace GasFormsApp.TabControl
 
             try
             {
-                List<UserData> filteredUsers = LoadAllUsers();
+                List<UserData> filteredUsers = LoadAllUsers(path);
                 Console.WriteLine($"刷新数据，条数：{filteredUsers.Count}, 尝试恢复选中ID：{selectedUserId}");
 
                 var sortableList = new SortableBindingList<UserData>(filteredUsers);
@@ -473,16 +626,31 @@ namespace GasFormsApp.TabControl
             }
 
             // 构建系统内部文件路径
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            string systemDataPath = Path.Combine(currentDir, "SystemData");
+            //string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            //string systemDataPath = Path.Combine(currentDir, "SystemData");
 
-            if (!Directory.Exists(systemDataPath))
+            TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+            if (selectedNode == null)
             {
-                Directory.CreateDirectory(systemDataPath);
-                Console.WriteLine("[Log] SystemData 文件夹不存在，已创建。");
+                MessageBox.Show("请先选择一个节点！");
+                return;
             }
+            string selectedPath = selectedNode.Tag?.ToString();
+            if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
+            {
+                if (!Directory.Exists(selectedPath))
+                {
+                    Directory.CreateDirectory(selectedPath);
+                    Console.WriteLine("[Log] SystemData 文件夹不存在，已创建。");
+                }
+            }
+            else
+            {
+                return;
+            }
+                
 
-            string outputPath = Path.Combine(systemDataPath, $"{name}_Doc.docx");
+            string outputPath = Path.Combine(selectedPath, $"{name}_Doc.docx");
             Console.WriteLine($"[Log] 原始文档路径：{outputPath}");
 
             // 弹出保存对话框让用户选择目标路径
@@ -546,6 +714,22 @@ namespace GasFormsApp.TabControl
             string binPath = Path.Combine(sourceFolder, $"{name}_BinData.bin");
             string docPath = Path.Combine(sourceFolder, $"{name}_Doc.docx");  // 添加 Word 文件路径
 
+            TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+            if (selectedNode == null)
+            {
+                MessageBox.Show("请先选择一个节点！");
+                return;
+            }
+            string selectedPath = selectedNode.Tag?.ToString();
+            if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
+            {
+                //ReloadTableData(selectedPath);
+                //MessageBox.Show($"所选节点路径：{selectedPath}");
+                imagePath = Path.Combine(selectedPath, $"{name}_Image.png");
+                binPath = Path.Combine(selectedPath, $"{name}_BinData.bin");
+                docPath = Path.Combine(selectedPath, $"{name}_Doc.docx");
+            }
+
             try
             {
                 // 移动文件方法
@@ -572,7 +756,17 @@ namespace GasFormsApp.TabControl
                 MoveFileToRecycle(binPath);
                 MoveFileToRecycle(docPath);  // 处理 Word 文件
 
-                ReloadTableData();
+                selectedNode = _mainForm.treeView1.SelectedNode;
+                if (selectedNode == null)
+                {
+                    MessageBox.Show("请先选择一个节点！");
+                    return;
+                }
+                selectedPath = selectedNode.Tag?.ToString();
+                if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
+                {
+                    ReloadTableData(selectedPath);
+                }
 
                 //MessageBox.Show("文件已移动到回收目录！");
             }
@@ -584,7 +778,7 @@ namespace GasFormsApp.TabControl
 
 
         private string _currentKeyword = "";
-        void 全部显示()
+        void 全部显示(string path)
         {
             _currentKeyword = "";
 
@@ -612,13 +806,13 @@ namespace GasFormsApp.TabControl
                     selectedUserId = selectedUser.ID;
                 }
 
-                if (!Directory.Exists(SystemDataPath))
+                if (!Directory.Exists(path))
                 {
                     Console.WriteLine("BinData 文件夹不存在！");
                     return;
                 }
 
-                string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
+                string[] files = Directory.GetFiles(path, "*.bin");
                 if (files.Length == 0)
                 {
                     Console.WriteLine("没有找到数据文件！");
@@ -692,15 +886,15 @@ namespace GasFormsApp.TabControl
 
 
 
-        private List<UserData> LoadAllUsers()
+        private List<UserData> LoadAllUsers(string path)
         {
-            if (!Directory.Exists(SystemDataPath))
+            if (!Directory.Exists(path))
             {
                 Console.WriteLine("BinData 文件夹不存在！");
                 return new List<UserData>();
             }
 
-            string[] files = Directory.GetFiles(SystemDataPath, "*.bin");
+            string[] files = Directory.GetFiles(path, "*.bin");
             if (files.Length == 0)
             {
                 Console.WriteLine("没有找到数据文件！");
@@ -720,7 +914,7 @@ namespace GasFormsApp.TabControl
             }
             return allUsers;
         }
-        private void 查询显示(string filterKeyword)
+        private void 查询显示(string path,string filterKeyword)
         {
             // 记录当前排序列和方向
             string sortColumnName = null;
@@ -746,7 +940,7 @@ namespace GasFormsApp.TabControl
                     selectedUserId = selectedUser.ID;
                 }
 
-                List<UserData> allUsers = LoadAllUsers();
+                List<UserData> allUsers = LoadAllUsers(path);
 
                 if (allUsers.Count == 0)
                 {
@@ -882,6 +1076,21 @@ namespace GasFormsApp.TabControl
         }
 
 
-
+        private void treeView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                _mainForm.tabPage6contextMenuStrip1.Show(_mainForm.treeView1, e.Location); // 弹出菜单
+            }
+        }
+        private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 获取当前程序启动的目录路径
+            string basePath = Application.StartupPath;
+            // 构建目标文件夹路径（相对于启动目录的 SystemData\DataAdministrationForm）
+            string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+            // 加载该路径下的文件夹结构到树控件
+            LoadFoldersToTree(rootPath);
+        }
     }
 }
