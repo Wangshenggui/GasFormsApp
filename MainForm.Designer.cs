@@ -399,6 +399,8 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -453,6 +455,7 @@ namespace GasFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabPage6contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2880,7 +2883,6 @@ namespace GasFormsApp
             this.UndDesorpCalTextBox.TabIndex = 110;
             this.UndDesorpCalTextBox.TabStop = false;
             this.UndDesorpCalTextBox.Text = "0";
-            this.UndDesorpCalTextBox.TextChanged += new System.EventHandler(this.UndDesorpCalTextBox_TextChanged);
             // 
             // label53
             // 
@@ -2935,7 +2937,6 @@ namespace GasFormsApp
             this.label18.Size = new System.Drawing.Size(143, 16);
             this.label18.TabIndex = 111;
             this.label18.Text = "井下解吸校准(ml):";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // tabPage2TemporarySavingButton
             // 
@@ -3034,7 +3035,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 687);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 699);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -4535,7 +4536,7 @@ namespace GasFormsApp
             this.GenReportButton.Size = new System.Drawing.Size(117, 50);
             this.GenReportButton.TabIndex = 1003;
             this.GenReportButton.Tag = "";
-            this.GenReportButton.Text = "    生成报告";
+            this.GenReportButton.Text = "    生成报告单";
             this.GenReportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GenReportButton.UseVisualStyleBackColor = false;
             // 
@@ -4638,7 +4639,7 @@ namespace GasFormsApp
             this.tabPage6panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage6panel1.AutoScroll = true;
-            this.tabPage6panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tabPage6panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage6panel1.Controls.Add(this.pictureBox2);
             this.tabPage6panel1.Controls.Add(this.label30);
             this.tabPage6panel1.Controls.Add(this.FindTextBox);
@@ -4770,7 +4771,7 @@ namespace GasFormsApp
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(0, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1443, 40);
+            this.label2.Size = new System.Drawing.Size(1442, 40);
             this.label2.TabIndex = 2;
             this.label2.Text = "瓦斯含量测定实验报告生成系统";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4842,6 +4843,19 @@ namespace GasFormsApp
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // tabPage6contextMenuStrip2
+            // 
+            this.tabPage6contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.恢复历史记录ToolStripMenuItem});
+            this.tabPage6contextMenuStrip2.Name = "tabPage6contextMenuStrip1";
+            this.tabPage6contextMenuStrip2.Size = new System.Drawing.Size(149, 26);
+            // 
+            // 恢复历史记录ToolStripMenuItem
+            // 
+            this.恢复历史记录ToolStripMenuItem.Name = "恢复历史记录ToolStripMenuItem";
+            this.恢复历史记录ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.恢复历史记录ToolStripMenuItem.Text = "恢复历史记录";
             // 
             // MainForm
             // 
@@ -4949,6 +4963,7 @@ namespace GasFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabPage6contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5312,5 +5327,7 @@ namespace GasFormsApp
         public ContextMenuStrip tabPage6contextMenuStrip1;
         public ToolStripMenuItem 刷新ToolStripMenuItem;
         public ErrorProvider errorProvider1;
+        public ContextMenuStrip tabPage6contextMenuStrip2;
+        public ToolStripMenuItem 恢复历史记录ToolStripMenuItem;
     }
 }

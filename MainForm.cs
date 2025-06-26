@@ -179,7 +179,7 @@ namespace GasFormsApp
             tabPage5.ImageIndex = 4;
             tabPage6.ImageIndex = 5;
 
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 0;
 
 
             #endregion
@@ -657,16 +657,6 @@ namespace GasFormsApp
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void UndDesorpCalTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
         {
 
         }

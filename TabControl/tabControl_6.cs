@@ -13,6 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GasFormsApp.TabControl.tabControl_2;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Control = System.Windows.Forms.Control;
 using Font = System.Drawing.Font;
@@ -64,7 +65,11 @@ namespace GasFormsApp.TabControl
             _mainForm.dataGridView1.CellBeginEdit += (s, e) => {
                 Console.WriteLine($"CellBeginEdit at row {e.RowIndex}, col {e.ColumnIndex}");
             };
+            _mainForm.dataGridView1.MouseDown += dataGridView1_MouseDown;
+            _mainForm.dataGridView1.CellClick += dataGridView1_CellClick;
 
+            _mainForm.恢复历史记录ToolStripMenuItem.Click += 恢复历史记录ToolStripMenuItem_Click;
+            
 
 
             // 获取当前程序启动的目录路径
@@ -78,6 +83,169 @@ namespace GasFormsApp.TabControl
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // 确保点击的是有效的行
+            {
+                DataGridViewRow row = _mainForm.dataGridView1.Rows[e.RowIndex];
+                string cellValue = row.Cells[e.ColumnIndex].Value?.ToString();
+                //MessageBox.Show($"你点击了第 {e.RowIndex} 行，第 {e.ColumnIndex} 列，值为：{cellValue}");
+
+                // 触发切换行以刷新图片
+                dataGridView1_SelectionChanged(sender, e);
+            }
+        }
+
+        private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                _mainForm.tabPage6contextMenuStrip2.Show(_mainForm.dataGridView1, e.Location); // 弹出菜单
+            }
+        }
+        void SetTextBoxValues(Form form, string baseName, List<string> values, int startIndex = 1)
+        {
+            for (int i = 0; i < values.Count; i++)
+            {
+                string name = $"{baseName}{i + startIndex}";
+                var ctl = form.Controls.Find(name, true).FirstOrDefault();
+                if (ctl is TextBox tb)
+                {
+                    tb.Text = values[i];
+                }
+            }
+        }
+        private void 恢复历史记录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+            if (selectedNode != null && selectedNode.Tag is string path)
+            {
+                string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
+                
+                // 你可以在这里使用 path 做后续操作，比如打开文件、修改、加载等
+                string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+                string loadPath = Path.Combine(currentDir, path, name + "_BinData.bin");
+                string imagePath = Path.Combine(currentDir, path, name + "_Image.png");  // 图片路径
+                //MessageBox.Show("选中节点的路径是：" + loadPath);
+                if (!File.Exists(loadPath))
+                {
+                    MessageBox.Show("找不到已保存的数据！");
+                    return;
+                }
+
+                try
+                {
+                    using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                    {
+#pragma warning disable SYSLIB0011
+                        var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                        UserData data = (UserData)formatter.Deserialize(fs);
+#pragma warning restore SYSLIB0011
+
+                        _mainForm.MineNameTextBox.Text = data.矿井名称;
+                        _mainForm.MineNameTextBox.Text = data.矿井名称;
+                        _mainForm.SamplingSpotTextBox.Text = data.取样地点;
+                        _mainForm.BurialDepthTextBox.Text = data.埋深;
+                        _mainForm.CoalSeamTextBox.Text = data.煤层;
+                        _mainForm.UndAtmPressureTextBox.Text = data.井下大气压力;
+                        _mainForm.LabAtmPressureTextBox.Text = data.实验室大气压力;
+                        _mainForm.UndTempTextBox.Text = data.井下环境温度;
+                        _mainForm.LabTempTextBox.Text = data.实验室温度;
+                        _mainForm.MoistureSampleTextBox.Text = data.煤样水分;
+                        _mainForm.SampleModeComboBox.Text = data.取样方式;
+                        _mainForm.SampleNumTextBox.Text = data.煤样编号;
+                        _mainForm.RawCoalMoistureTextBox.Text = data.原煤水分;
+                        _mainForm.InitialVolumeTextBox.Text = data.量管初始体积;
+                        _mainForm.SampleWeightTextBox.Text = data.煤样重量;
+                        _mainForm.SamplingDepthTextBox.Text = data.取样深度;
+                        _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data.取样时间);
+                        _mainForm.DrillInclinationTextBox.Text = data.钻孔倾角;
+                        _mainForm.AzimuthTextBox.Text = data.方位角;
+                        _mainForm.SamplingPersonnelTextBox.Text = data.取样人员;
+
+                        _mainForm.dateTimePicker2.Value = DateTime.Parse(data.打钻开始时间);
+                        _mainForm.dateTimePicker5.Value = DateTime.Parse(data.取芯开始时间);
+                        _mainForm.dateTimePicker3.Value = DateTime.Parse(data.取芯结束时间);
+                        _mainForm.dateTimePicker4.Value = DateTime.Parse(data.解吸开始时间);
+                        _mainForm.comboBox3.Text = data.煤的破坏类型;
+                        _mainForm.t0TextBox.Text = data.t0;
+
+                        SetTextBoxValues(_mainForm, "DesorbTextBox", data.DesorbTextList);
+                        SetTextBoxValues(_mainForm, "DataNumTextBox", data.DataNumTextList, 31);
+
+                        _mainForm.DesVolUndTextBox.Text = data.井下解吸量体积;
+                        _mainForm.UndDesorpCalTextBox.Text = data.井下解吸量校准W11;
+                        _mainForm.SampLossVolTextBox.Text = data.瓦斯损失量W12;
+
+                        _mainForm.DesorpVolNormalTextBox.Text = data.实验室常压解吸;
+                        _mainForm.DesorpVolNormalCalTextBox.Text = data.实验室常压解吸校准W2;
+                        _mainForm.Sample1WeightTextBox.Text = data.粉碎后第1份煤样重;
+                        _mainForm.Sample2WeightTextBox.Text = data.粉碎后第2份煤样重;
+                        _mainForm.S1DesorpVolCalTextBox.Text = data.第1份煤样解吸量校准;
+                        _mainForm.S2DesorpVolTextBox.Text = data.第2份煤样解吸量;
+                        _mainForm.S2DesorpVolCalTextBox.Text = data.第2份煤样解吸量校准;
+                        _mainForm.CrushDesorpTextBox.Text = data.最终粉碎解吸量;
+
+                        _mainForm.AdsorpConstATextBox.Text = data.吸附常数a;
+                        _mainForm.AdsorpConstBTextBox.Text = data.吸附常数b;
+                        _mainForm.MadTextBox.Text = data.水分;
+                        _mainForm.AadTextBox.Text = data.灰分;
+                        _mainForm.PorosityTextBox.Text = data.孔隙率;
+                        _mainForm.AppDensityTextBox.Text = data.视相对密度;
+                        _mainForm.TrueDensityTextBox.Text = data.真密度;
+                        _mainForm.VadTextBox.Text = data.挥发分;
+                        _mainForm.W1_TextBox.Text = data.W1;
+                        _mainForm.W2_TextBox.Text = data.W2;
+                        _mainForm.W3_TextBox.Text = data.W3;
+                        _mainForm.Wa_TextBox.Text = data.Wa;
+                        _mainForm.Wc_TextBox.Text = data.Wc;
+                        _mainForm.W_TextBox.Text = data.W;
+                        _mainForm.P_TextBox.Text = data.P;
+
+                        _mainForm.CH4TextBox.Text = data.CH4;
+                        _mainForm.CO2TextBox.Text = data.CO2;
+                        _mainForm.N2TextBox.Text = data.N2;
+                        _mainForm.O2TextBox.Text = data.O2;
+                        _mainForm.C2H4TextBox.Text = data.C2H4;
+                        _mainForm.C3H8TextBox.Text = data.C3H8;
+                        _mainForm.C2H6TextBox.Text = data.C2H6;
+                        _mainForm.C3H6TextBox.Text = data.C3H6;
+                        _mainForm.C2H2TextBox.Text = data.C2H2;
+                        _mainForm.COTextBox.Text = data.CO;
+
+                        _mainForm.dateTimePicker6.Value = DateTime.Parse(data.测试时间);
+                        _mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
+                        _mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
+                        _mainForm.LabTestersTextBox.Text = data.实验室测试人员;
+                        _mainForm.AuditorTextBox.Text = data.审核人员;
+                        _mainForm.RemarkTextBox.Text = data.备注;
+
+                        
+                        if (File.Exists(imagePath))
+                        {
+                            Image img = Image.FromFile(imagePath);
+                            _mainForm.pictureBox3.Image = img;
+                            _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage; // 可选：拉伸填满
+                        }
+                        else
+                        {
+                            MessageBox.Show("找不到图片文件：" + imagePath);
+                        }
+
+
+                        MessageBox.Show("已恢复历史记录！");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("未选中有效节点或节点没有路径信息！");
+            }
         }
         private void FindTextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -196,7 +364,7 @@ namespace GasFormsApp.TabControl
                 {
                     return;
                 }
-                
+
                 // 设置 PictureBox 的显示模式
                 _mainForm.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                 try
@@ -316,7 +484,13 @@ namespace GasFormsApp.TabControl
                     .Split(new[] { ',', '，' }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(s => s.Trim()).ToList() ?? new List<string>();
             }
-            public string 解吸时间 => string.Join(", ", DataNumTextList);
+            public string 解吸时间
+            {
+                get => string.Join(", ", DataNumTextList);
+                set => DataNumTextList = value?
+                    .Split(new[] { ',', '，' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(s => s.Trim()).ToList() ?? new List<string>();
+            }
 
             /// <summary>
             /// ///////////////////////////////
