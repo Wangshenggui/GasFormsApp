@@ -939,7 +939,6 @@ namespace GasFormsApp
             this.DrillInclinationTextBox.Name = "DrillInclinationTextBox";
             this.DrillInclinationTextBox.Size = new System.Drawing.Size(167, 26);
             this.DrillInclinationTextBox.TabIndex = 33;
-            this.DrillInclinationTextBox.Text = "360度";
             // 
             // label38
             // 
@@ -962,7 +961,6 @@ namespace GasFormsApp
             this.AzimuthTextBox.Name = "AzimuthTextBox";
             this.AzimuthTextBox.Size = new System.Drawing.Size(167, 26);
             this.AzimuthTextBox.TabIndex = 35;
-            this.AzimuthTextBox.Text = "180度";
             // 
             // label41
             // 
@@ -3035,7 +3033,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 699);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 701);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
