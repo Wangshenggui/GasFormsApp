@@ -398,6 +398,7 @@ namespace GasFormsApp
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -451,6 +452,7 @@ namespace GasFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -924,7 +926,7 @@ namespace GasFormsApp
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(167, 16);
             this.label37.TabIndex = 34;
-            this.label37.Text = "钻 孔 倾 角  (°) ：";
+            this.label37.Text = "钻  孔  倾  角 (°):";
             // 
             // DrillInclinationTextBox
             // 
@@ -947,7 +949,7 @@ namespace GasFormsApp
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(167, 16);
             this.label38.TabIndex = 36;
-            this.label38.Text = "  方  位  角 (°) ：";
+            this.label38.Text = "方    位    角 (°):";
             // 
             // AzimuthTextBox
             // 
@@ -3030,7 +3032,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 675);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 683);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -4678,7 +4680,7 @@ namespace GasFormsApp
             // 
             // ExportTheDocumentButton
             // 
-            this.ExportTheDocumentButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ExportTheDocumentButton.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ExportTheDocumentButton.Image = global::GasFormsApp.Properties.Resources.打印;
             this.ExportTheDocumentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportTheDocumentButton.Location = new System.Drawing.Point(32, 482);
@@ -4827,13 +4829,17 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.刷新ToolStripMenuItem});
             this.tabPage6contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
-            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
             // 
             // 刷新ToolStripMenuItem
             // 
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.刷新ToolStripMenuItem.Text = "刷新";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // MainForm
             // 
@@ -4940,6 +4946,7 @@ namespace GasFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5302,5 +5309,6 @@ namespace GasFormsApp
         public TreeView treeView1;
         public ContextMenuStrip tabPage6contextMenuStrip1;
         public ToolStripMenuItem 刷新ToolStripMenuItem;
+        public ErrorProvider errorProvider1;
     }
 }

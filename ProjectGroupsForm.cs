@@ -13,7 +13,7 @@ namespace GasFormsApp
 {
     public partial class ProjectGroupsForm : Form
     {
-        public string SelectedNodeText { get; private set; }
+        //public string SelectedNodeText { get; private set; }
 
 
         public ProjectGroupsForm()
@@ -108,6 +108,7 @@ namespace GasFormsApp
                 //{
                 //    查询显示(selectedPath, FindTextBox.Text);
                 //}
+                //this.DialogResult = DialogResult.OK; // 设置窗体的返回值
             }
             else
             {
@@ -249,11 +250,12 @@ namespace GasFormsApp
                 string path = selectedNode.Tag?.ToString();
                 //MessageBox.Show($"你双击了节点：{selectedNode.Text}\n路径：{path}");
 
-                ResultData = path;
-
-
-                this.DialogResult = DialogResult.OK; // 设置窗体的返回值
-                this.Close(); // 关闭窗口
+                if(selectedNode.Level==2)
+                {
+                    ResultData = path;
+                    this.DialogResult = DialogResult.OK; // 设置窗体的返回值
+                    this.Close(); // 关闭窗口
+                }
             }
         }
 
@@ -292,5 +294,39 @@ namespace GasFormsApp
         {
             新建矿井名称ToolStripMenuItem_Click(sender,e);
         }
+
+        private void DetermineButton_Click(object sender, EventArgs e)
+        {
+            TreeNode selectedNode = treeView1.SelectedNode;
+
+            if (selectedNode == null)
+            {
+                MessageBox.Show("请先选择一个项目节点！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (selectedNode.Level != 2)
+            {
+                MessageBox.Show("请选择有效的项目（第三级节点）！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string path = selectedNode.Tag?.ToString();
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                MessageBox.Show("所选项目无有效路径数据。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ResultData = path;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel; // 明确返回取消
+            this.Close();
+        }
+
     }
 }

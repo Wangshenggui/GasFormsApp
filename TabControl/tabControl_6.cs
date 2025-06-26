@@ -10,6 +10,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -362,7 +363,7 @@ namespace GasFormsApp.TabControl
             }
             else
             {
-                MessageBox.Show($"无效：");
+                MessageBox.Show($"已取消");
                 return;
             }
             string selectedPath = newForm.ResultData;
@@ -383,7 +384,13 @@ namespace GasFormsApp.TabControl
             //MessageBox.Show($"窗口已关闭！{selectedPath}");
 
             // 生成时间戳，用于命名文件
-            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            //string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
+            string input = _mainForm.SamplingSpotTextBox.Text;
+            // 匹配中英文括号内的内容
+            Match match = Regex.Match(input, @"[（(](.*?)[）)]");
+            string timestamp = match.Success ? match.Groups[1].Value : "";  // 没有括号就返回空字符串
+            timestamp = timestamp + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
             // === 复制图片 ===
             // 定义原始图片路径
             string imageSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Python_embed", "Python", "images", "output_image.png");

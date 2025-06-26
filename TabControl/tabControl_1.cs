@@ -187,14 +187,52 @@ namespace GasFormsApp.TabControl
 
         private void ValidateEmptyTextBox(TextBox textBox)
         {
-            string input = textBox.Text;
-
-            // 重置背景色
-            textBox.BackColor = SystemColors.Window;
-
-            if (string.IsNullOrWhiteSpace(input))
+            if(textBox == _mainForm.SamplingSpotTextBox)
             {
-                textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+                string input = textBox.Text;
+
+                // 括号检查
+                bool hasEnglishLeft = input.Contains("(");
+                bool hasEnglishRight = input.Contains(")");
+                bool hasChineseLeft = input.Contains("（");
+                bool hasChineseRight = input.Contains("）");
+
+                // 括号成对（英文或中文）
+                bool hasBracketPair =
+                    (hasEnglishLeft && hasEnglishRight) ||
+                    (hasChineseLeft && hasChineseRight);
+
+                // 空内容 -> 蓝/灰 提示
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+                    _mainForm.errorProvider1.SetError(textBox, "");
+                }
+                // 非空但括号不完整或缺失 -> 红色
+                else if (!hasBracketPair)
+                {
+                    textBox.BackColor = Color.Tomato;
+                    _mainForm.errorProvider1.SetError(textBox, "必须包含括号，例如：(孔号) 或 （孔号）");
+                }
+                // 括号成对 -> 恢复默认颜色
+                else
+                {
+                    textBox.BackColor = SystemColors.Window;
+                    _mainForm.errorProvider1.SetError(textBox, "");
+                }
+
+            }
+            else
+            {
+                string input = textBox.Text;
+
+                // 重置背景色
+                textBox.BackColor = SystemColors.Window;
+
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+                }
             }
         }
 
