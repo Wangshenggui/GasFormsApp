@@ -14,7 +14,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Control = System.Windows.Forms.Control;
 using Font = System.Drawing.Font;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace GasFormsApp.TabControl
 {
@@ -222,6 +224,7 @@ namespace GasFormsApp.TabControl
         // 解决一些问题
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //MessageBox.Show("双击：" + e.RowIndex + e.ColumnIndex);
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 _mainForm.dataGridView1.CurrentCell = _mainForm.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
@@ -272,44 +275,80 @@ namespace GasFormsApp.TabControl
             /// </summary>
             public string 矿井名称 { get; set; }
             public string 取样地点 { get; set; }
-            public string 取样时间 { get; set; }
             public string 埋深 { get; set; }
             public string 煤层 { get; set; }
-            public string 煤样编号 { get; set; }
-            public string 实验室大气压力 { get; set; }
-            public string 实验室温度 { get; set; }
-            public string 取样方式 { get; set; }
-            public string 原煤水分 { get; set; }
-            public string 取样深度 { get; set; }
             public string 井下大气压力 { get; set; }
+            public string 实验室大气压力 { get; set; }
             public string 井下环境温度 { get; set; }
-            public string 煤样重量 { get; set; }
+            public string 实验室温度 { get; set; }
             public string 煤样水分 { get; set; }
+            public string 取样方式 { get; set; }
+            public string 煤样编号 { get; set; }
+            public string 原煤水分 { get; set; }
             public string 量管初始体积 { get; set; }
+            public string 煤样重量 { get; set; }
+            public string 取样深度 { get; set; }
+            public string 取样时间 { get; set; }
+            // 新加++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            public string 钻孔倾角 { get; set; }
+            public string 方位角 { get; set; }
+            public string 取样人员 { get; set; }
+
             /// <summary>
             /// ///////////////////////////////
             /// </summary>
-            public string 井下解吸量W11 { get; set; }
+            public string 打钻开始时间 { get; set; }
+            public string 取芯开始时间 { get; set; }
+            public string 取芯结束时间 { get; set; }
+            public string 解吸开始时间 { get; set; }
+            public string 煤的破坏类型 { get; set; }
+            public string t0 { get; set; }
+            public List<string> DesorbTextList { get; set; } = new List<string>();
+            public List<string> DataNumTextList { get; set; } = new List<string>();
+            public string 井下解吸量体积 { get; set; }
+            public string 井下解吸量校准W11 { get; set; }
             public string 瓦斯损失量W12 { get; set; }
+
+            public string 解吸量
+            {
+                get => string.Join(", ", DesorbTextList);
+                        set => DesorbTextList = value?
+                    .Split(new[] { ',', '，' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(s => s.Trim()).ToList() ?? new List<string>();
+            }
+            public string 解吸时间 => string.Join(", ", DataNumTextList);
+
             /// <summary>
             /// ///////////////////////////////
             /// </summary>
-            public string 实验室常压解吸W2 { get; set; }
+            public string 实验室常压解吸 { get; set; }
+            public string 实验室常压解吸校准W2 { get; set; }
             public string 粉碎后第1份煤样重 { get; set; }
             public string 第1份煤样解吸量 { get; set; }
+            public string 第1份煤样解吸量校准 { get; set; }
             public string 粉碎后第2份煤样重 { get; set; }
             public string 第2份煤样解吸量 { get; set; }
+            public string 第2份煤样解吸量校准 { get; set; }
+            public string 最终粉碎解吸量 { get; set; }
             /// <summary>
             /// ///////////////////////////////
             /// </summary>
-            public string a { get; set; }
-            public string b { get; set; }
+            public string 吸附常数a { get; set; }
+            public string 吸附常数b { get; set; }
+            public string 水分 { get; set; }
+            public string 灰分 { get; set; }
+            public string 孔隙率 { get; set; }
+            public string 视相对密度 { get; set; }
+            public string 真密度 { get; set; }
+            public string 挥发分 { get; set; }
             //public string Wc { get; set; }    // 和下面的重复
-            public string Mad { get; set; }
-            public string Aad { get; set; }
-            public string Vad { get; set; }
-            public string K { get; set; }
-            public string r { get; set; }
+            public string W1 { get; set; }
+            public string W2 { get; set; }
+            public string W3 { get; set; }
+            public string Wa { get; set; }
+            public string Wc { get; set; }
+            public string W { get; set; }
+            public string P { get; set; }
             /// <summary>
             /// ///////////////////////////////
             /// </summary>
@@ -323,22 +362,12 @@ namespace GasFormsApp.TabControl
             public string C3H6 { get; set; }
             public string C2H2 { get; set; }
             public string CO { get; set; }
-            /// <summary>
-            /// ///////////////////////////////
-            /// </summary>
-            public string W1 { get; set; }
-            public string W2 { get; set; }
-            public string W3 { get; set; }
-            public string Wa { get; set; }
-            public string Wc { get; set; }
-            public string W { get; set; }
-            public string P { get; set; }
-            /// <summary>
-            /// ///////////////////////////////
-            /// </summary>
+
+            public string 测试时间 { get; set; }
+            public string 出报告时间 { get; set; }
+            public string 井下测试人员 { get; set; }
             public string 实验室测试人员 { get; set; }
             public string 审核人员 { get; set; }
-            public string 出报告时间 { get; set; }
             public string 备注 { get; set; }
         }
 
@@ -348,6 +377,16 @@ namespace GasFormsApp.TabControl
         //// 用于存放系统数据的文件夹路径
         //string SystemDataPath = Path.Combine(CurrentDir, "SystemData");
 
+        public List<string> GetTextBoxValues(Control parent, string baseName, int end, int start = 1)
+        {
+            var list = new List<string>();
+            for (int i = start; i <= end; i++)
+            {
+                var ctl = parent.Controls.Find($"{baseName}{i}", true).FirstOrDefault();
+                list.Add(ctl is TextBox tb ? tb.Text : "");
+            }
+            return list;
+        }
         /// <summary>
         /// 按钮1点击事件：复制图片并保存用户数据为二进制文件
         /// </summary>
@@ -414,40 +453,70 @@ namespace GasFormsApp.TabControl
                 {
                     ID = timestamp.ToString(),
 
+                    // tab1
                     矿井名称 = _mainForm.MineNameTextBox.Text,
                     取样地点 = _mainForm.SamplingSpotTextBox.Text,
-                    取样时间 = _mainForm.SamplingTimeDateTimePicker.Text,
                     埋深 = _mainForm.BurialDepthTextBox.Text,
                     煤层 = _mainForm.CoalSeamTextBox.Text,
-                    煤样编号 = _mainForm.SampleNumTextBox.Text,
-                    实验室大气压力 = _mainForm.LabAtmPressureTextBox.Text,
-                    实验室温度 = _mainForm.LabTempTextBox.Text,
-                    取样方式 = _mainForm.SampleModeComboBox.Text,
-                    原煤水分 = _mainForm.RawCoalMoistureTextBox.Text,
-                    取样深度 = _mainForm.SamplingDepthTextBox.Text,
                     井下大气压力 = _mainForm.UndAtmPressureTextBox.Text,
+                    实验室大气压力 = _mainForm.LabAtmPressureTextBox.Text,
                     井下环境温度 = _mainForm.UndTempTextBox.Text,
-                    煤样重量 = _mainForm.SampleWeightTextBox.Text,
+                    实验室温度 = _mainForm.LabTempTextBox.Text,
                     煤样水分 = _mainForm.MoistureSampleTextBox.Text,
+                    取样方式 = _mainForm.SampleModeComboBox.Text,
+                    煤样编号 = _mainForm.SampleNumTextBox.Text,
+                    原煤水分 = _mainForm.RawCoalMoistureTextBox.Text,
                     量管初始体积 = _mainForm.InitialVolumeTextBox.Text,
+                    煤样重量 = _mainForm.SampleWeightTextBox.Text,
+                    取样深度 = _mainForm.SamplingDepthTextBox.Text,
+                    取样时间 = _mainForm.SamplingTimeDateTimePicker.Text,
+                    // 新加++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    钻孔倾角 =_mainForm.DrillInclinationTextBox.Text,
+                    方位角 = _mainForm.AzimuthTextBox.Text,
+                    取样人员 =_mainForm.SamplingPersonnelTextBox.Text,
 
-                    井下解吸量W11 = _mainForm.UndDesorpCalTextBox.Text,
+                    // tab2
+                    打钻开始时间 = _mainForm.dateTimePicker2.Text,
+                    取芯开始时间 = _mainForm.dateTimePicker5.Text,
+                    取芯结束时间 = _mainForm.dateTimePicker3.Text,
+                    解吸开始时间 = _mainForm.dateTimePicker4.Text,
+                    煤的破坏类型 = _mainForm.comboBox3.Text,
+                    t0 = _mainForm.t0TextBox.Text,
+                    DesorbTextList = GetTextBoxValues(_mainForm, "DesorbTextBox", 60),
+                    DataNumTextList = GetTextBoxValues(_mainForm, "DataNumTextBox", 60, 31),
+                    井下解吸量体积 = _mainForm.DesVolUndTextBox.Text,
+                    井下解吸量校准W11 = _mainForm.UndDesorpCalTextBox.Text,
                     瓦斯损失量W12 = _mainForm.SampLossVolTextBox.Text,
 
-                    实验室常压解吸W2 = _mainForm.DesorpVolNormalCalTextBox.Text,
+                    // tab3
+                    实验室常压解吸 = _mainForm.DesorpVolNormalTextBox.Text,
+                    实验室常压解吸校准W2 = _mainForm.DesorpVolNormalCalTextBox.Text,
                     粉碎后第1份煤样重 = _mainForm.Sample1WeightTextBox.Text,
-                    第1份煤样解吸量 = _mainForm.S1DesorpVolCalTextBox.Text,
+                    第1份煤样解吸量 = _mainForm.Sample2WeightTextBox.Text,
+                    第1份煤样解吸量校准 = _mainForm.S1DesorpVolCalTextBox.Text,
                     粉碎后第2份煤样重 = _mainForm.Sample2WeightTextBox.Text,
-                    第2份煤样解吸量 = _mainForm.S2DesorpVolCalTextBox.Text,
+                    第2份煤样解吸量 = _mainForm.S2DesorpVolTextBox.Text,
+                    第2份煤样解吸量校准 = _mainForm.S2DesorpVolCalTextBox.Text,
+                    最终粉碎解吸量 = _mainForm.CrushDesorpTextBox.Text,
 
-                    a = _mainForm.AdsorpConstATextBox.Text,
-                    b = _mainForm.AdsorpConstBTextBox.Text,
-                    Mad = _mainForm.MadTextBox.Text,
-                    Aad = _mainForm.AadTextBox.Text,
-                    Vad = _mainForm.VadTextBox.Text,
-                    K = _mainForm.PorosityTextBox.Text,
-                    r = _mainForm.AppDensityTextBox.Text,
+                    // tab4
+                    吸附常数a =_mainForm.AdsorpConstATextBox.Text,
+                    吸附常数b =_mainForm.AdsorpConstBTextBox.Text,
+                    水分 =_mainForm.MadTextBox.Text,
+                    灰分 =_mainForm.AadTextBox.Text,
+                    孔隙率 =_mainForm.PorosityTextBox.Text,
+                    视相对密度 =_mainForm.AppDensityTextBox.Text,
+                    真密度 =_mainForm.TrueDensityTextBox.Text,
+                    挥发分 =_mainForm.VadTextBox.Text,
+                    W1 = _mainForm.W1_TextBox.Text,
+                    W2 = _mainForm.W2_TextBox.Text,
+                    W3 = _mainForm.W3_TextBox.Text,
+                    Wa = _mainForm.Wa_TextBox.Text,
+                    Wc = _mainForm.Wc_TextBox.Text,
+                    W = _mainForm.W_TextBox.Text,
+                    P = _mainForm.P_TextBox.Text,
 
+                    // tab5
                     CH4 = _mainForm.CH4TextBox.Text,
                     CO2 = _mainForm.CO2TextBox.Text,
                     N2 = _mainForm.N2TextBox.Text,
@@ -458,18 +527,11 @@ namespace GasFormsApp.TabControl
                     C3H6 = _mainForm.C3H6TextBox.Text,
                     C2H2 = _mainForm.C2H2TextBox.Text,
                     CO = _mainForm.COTextBox.Text,
-
-                    W1 = _mainForm.W1_TextBox.Text,
-                    W2 = _mainForm.W2_TextBox.Text,
-                    W3 = _mainForm.W3_TextBox.Text,
-                    Wa = _mainForm.Wa_TextBox.Text,
-                    Wc = _mainForm.Wc_TextBox.Text,
-                    W = _mainForm.W_TextBox.Text,
-                    P = _mainForm.P_TextBox.Text,
-
+                    测试时间 = _mainForm.dateTimePicker6.Text,
+                    出报告时间 = _mainForm.dateTimePicker1.Text,
+                    井下测试人员 = _mainForm.DownholeTestersTextBox.Text,
                     实验室测试人员 = _mainForm.LabTestersTextBox.Text,
                     审核人员 = _mainForm.AuditorTextBox.Text,
-                    出报告时间 = _mainForm.dateTimePicker1.Text,
                     备注 = _mainForm.RemarkTextBox.Text,
                 };
 
