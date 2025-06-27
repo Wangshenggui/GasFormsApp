@@ -89,7 +89,7 @@ namespace GasFormsApp
         public static string Wc_Dat8 = "";
         public static string Wc_Dat9 = "";
 
-
+        public static string 登录的用户名 = "";
 
 
         private tabControl_1 myTabLogic1;

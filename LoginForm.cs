@@ -137,122 +137,81 @@ namespace GasFormsApp
         // 登录按钮点击事件
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            string folder = "SystemData";
-            string dbFile = Path.Combine(folder, "Account_password.db");
+            //string folder = "SystemData";
+            //string dbFile = Path.Combine(folder, "Account_password.db");
 
-            // 创建目录（如果不存在）
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
+            //// 获取用户输入
+            //string inputUser = txtName.Text.Trim();
+            //MainForm.登录的用户名 = inputUser;
+            //string inputPwd = txtPwd.Text.Trim();
 
-            // 初始化数据库（如果不存在）
-            if (!File.Exists(dbFile))
-            {
-                try
-                {
-                    SQLiteConnection.CreateFile(dbFile);
+            //// 检查是否输入了用户名和密码
+            //if (string.IsNullOrEmpty(inputUser) || string.IsNullOrEmpty(inputPwd))
+            //{
+            //    MessageBox.Show("请输入用户名和密码！");
+            //    return;
+            //}
 
-                    using (var conn = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
-                    {
-                        conn.Open();
+            //string inputPwdHash = ComputeSha256Hash(inputPwd);
 
-                        // 创建用户表，用户名唯一
-                        string createTable = @"
-                            CREATE TABLE users (
-                                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                username TEXT UNIQUE NOT NULL,
-                                password TEXT NOT NULL
-                            );";
-                        var cmd = new SQLiteCommand(createTable, conn);
-                        cmd.ExecuteNonQuery();
+            //try
+            //{
+            //    using (var conn = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+            //    {
+            //        conn.Open();
 
-                        // 插入默认用户 admin / 1234
-                        string defaultUser = "admin";
-                        string defaultPwdHash = ComputeSha256Hash("1234");
+            //        string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password;";
+            //        var cmd = new SQLiteCommand(query, conn);
+            //        cmd.Parameters.AddWithValue("@username", inputUser);
+            //        cmd.Parameters.AddWithValue("@password", inputPwdHash);
 
-                        string insertUser = "INSERT INTO users (username, password) VALUES (@username, @password);";
-                        cmd = new SQLiteCommand(insertUser, conn);
-                        cmd.Parameters.AddWithValue("@username", defaultUser);
-                        cmd.Parameters.AddWithValue("@password", defaultPwdHash);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("数据库初始化失败：" + ex.Message);
-                    return;
-                }
-            }
+            //        int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-            // 获取用户输入
-            string inputUser = txtName.Text.Trim();
-            string inputPwd = txtPwd.Text.Trim();
-
-            // 检查是否输入了用户名和密码
-            if (string.IsNullOrEmpty(inputUser) || string.IsNullOrEmpty(inputPwd))
-            {
-                MessageBox.Show("请输入用户名和密码！");
-                return;
-            }
-
-            string inputPwdHash = ComputeSha256Hash(inputPwd);
-
-            try
-            {
-                using (var conn = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
-                {
-                    conn.Open();
-
-                    string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password;";
-                    var cmd = new SQLiteCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@username", inputUser);
-                    cmd.Parameters.AddWithValue("@password", inputPwdHash);
-
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (count > 0)
-                    {
-                        // 登录成功
-                        // 判断是否使用默认密码
-                        
-                        string defaultPwdHash = ComputeSha256Hash("1234");
-                        if (inputPwdHash == defaultPwdHash)
-                        {
-                            DialogResult result = MessageBox.Show(
-                                "当前使用的是默认密码，请及时修改密码以保障账户安全！\n是否立即修改密码？",
-                                "安全提示",
-                                MessageBoxButtons.OKCancel,
-                                MessageBoxIcon.Warning
-                            );
-                            if (result == DialogResult.OK)
-                            {
-                                // 用户点击“确定”，打开修改密码窗口
-                                ChangePasswordForm changePwdForm = new ChangePasswordForm(dbFile, inputUser);
-                                changePwdForm.ShowDialog();
-                            }
-                            else
-                            {
-                                // 用户点击“取消”
-                            }
-                        }
+            //        if (count > 0)
+            //        {
+            //            // 登录成功
+            //            // 判断是否使用默认密码
+            //            string defaultPwdHash = ComputeSha256Hash("1234");
+            //            if (inputPwdHash == defaultPwdHash)
+            //            {
+            //                DialogResult result = MessageBox.Show(
+            //                    "当前使用的是默认密码，请及时修改密码以保障账户安全！\n是否立即修改密码？",
+            //                    "安全提示",
+            //                    MessageBoxButtons.OKCancel,
+            //                    MessageBoxIcon.Warning
+            //                );
+            //                if (result == DialogResult.OK)
+            //                {
+            //                    // 用户点击“确定”，打开修改密码窗口
+            //                    ChangePasswordForm changePwdForm = new ChangePasswordForm(dbFile, inputUser);
+            //                    changePwdForm.ShowDialog();
+            //                }
+            //                else
+            //                {
+            //                    // 用户点击“取消”
+            //                }
+            //            }
+            //            else
+            //            {
+                            
+            //            }
 
 
                         MainForm main = new MainForm(false);
                         this.Hide();
                         main.ShowDialog();
                         this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("用户名或密码错误！");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("登录失败：" + ex.Message);
-            }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("用户名或密码错误！");
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("登录失败：" + ex.Message);
+            //}
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -32,25 +32,26 @@
             this.txtNewPwd = new System.Windows.Forms.TextBox();
             this.txtConfirmPwd = new System.Windows.Forms.TextBox();
             this.btnUpdatePwd = new System.Windows.Forms.Button();
+            this.txtNewUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtOldPwd
             // 
-            this.txtOldPwd.Location = new System.Drawing.Point(130, 38);
+            this.txtOldPwd.Location = new System.Drawing.Point(145, 39);
             this.txtOldPwd.Name = "txtOldPwd";
             this.txtOldPwd.Size = new System.Drawing.Size(100, 21);
             this.txtOldPwd.TabIndex = 0;
             // 
             // txtNewPwd
             // 
-            this.txtNewPwd.Location = new System.Drawing.Point(130, 100);
+            this.txtNewPwd.Location = new System.Drawing.Point(145, 100);
             this.txtNewPwd.Name = "txtNewPwd";
             this.txtNewPwd.Size = new System.Drawing.Size(100, 21);
             this.txtNewPwd.TabIndex = 1;
             // 
             // txtConfirmPwd
             // 
-            this.txtConfirmPwd.Location = new System.Drawing.Point(130, 127);
+            this.txtConfirmPwd.Location = new System.Drawing.Point(145, 127);
             this.txtConfirmPwd.Name = "txtConfirmPwd";
             this.txtConfirmPwd.Size = new System.Drawing.Size(100, 21);
             this.txtConfirmPwd.TabIndex = 2;
@@ -65,12 +66,20 @@
             this.btnUpdatePwd.UseVisualStyleBackColor = true;
             this.btnUpdatePwd.Click += new System.EventHandler(this.btnUpdatePwd_Click);
             // 
+            // txtNewUsername
+            // 
+            this.txtNewUsername.Location = new System.Drawing.Point(145, 12);
+            this.txtNewUsername.Name = "txtNewUsername";
+            this.txtNewUsername.Size = new System.Drawing.Size(100, 21);
+            this.txtNewUsername.TabIndex = 4;
+            // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(384, 261);
+            this.Controls.Add(this.txtNewUsername);
             this.Controls.Add(this.btnUpdatePwd);
             this.Controls.Add(this.txtConfirmPwd);
             this.Controls.Add(this.txtNewPwd);
@@ -88,5 +97,6 @@
         private System.Windows.Forms.TextBox txtNewPwd;
         private System.Windows.Forms.TextBox txtConfirmPwd;
         private System.Windows.Forms.Button btnUpdatePwd;
+        private System.Windows.Forms.TextBox txtNewUsername;
     }
 }

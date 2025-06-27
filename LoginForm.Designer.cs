@@ -36,8 +36,8 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label3
@@ -81,7 +81,6 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(114, 21);
             this.txtPwd.TabIndex = 21;
-            this.txtPwd.Text = "1234";
             // 
             // txtName
             // 
@@ -89,7 +88,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(114, 21);
             this.txtName.TabIndex = 20;
-            this.txtName.Text = "admin";
             // 
             // label2
             // 
@@ -111,15 +109,6 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "用户名：";
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Location = new System.Drawing.Point(13, 19);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(129, 134);
-            this.panel1.TabIndex = 17;
-            // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -130,6 +119,15 @@
             this.label4.TabIndex = 24;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Location = new System.Drawing.Point(13, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(129, 134);
+            this.panel1.TabIndex = 17;
             // 
             // LoginForm
             // 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -27,7 +28,7 @@ namespace GasFormsApp.UI
         private Panel borderTop;
 
         // 示例中的自定义工具栏按钮
-        private Button 数据管理Button;
+        private Button 信息管理Button;
 
         /// <summary>
         /// 初始化边框控件（三边：左、右、上），模拟原始窗口边框。
@@ -104,6 +105,17 @@ namespace GasFormsApp.UI
             InitializeBorder();         // 自定义边框
         }
 
+        private void 信息管理Button_Click(object sender, EventArgs e)
+        {
+            //string folder = "SystemData";
+            //string dbFile = Path.Combine(folder, "Account_password.db");
+
+            //MessageBox.Show("登录的用户名：" + MainForm.登录的用户名);
+
+            //ChangePasswordForm changePwdForm = new ChangePasswordForm(dbFile, MainForm.登录的用户名);
+            //changePwdForm.ShowDialog();
+        }
+
         /// <summary>
         /// 初始化自定义标题栏，包括：标题、按钮等。
         /// </summary>
@@ -138,8 +150,8 @@ namespace GasFormsApp.UI
             };
             titleBar.Controls.Add(titleLabel);
 
-            // 数据管理按钮（示例）
-            数据管理Button = new CustomBorderButton
+            // 信息管理Button（示例）
+            信息管理Button = new CustomBorderButton
             {
                 Text = " 数据管理 ",
                 BackColor = Color.FromArgb(17, 45, 78),
@@ -154,8 +166,10 @@ namespace GasFormsApp.UI
                 TabStop = false,
                 Location = new Point(titleLabel.Location.X + titleLabel.Width, 3)
             };
-            数据管理Button.FlatAppearance.BorderSize = 0;
-            titleBar.Controls.Add(数据管理Button);
+            信息管理Button.FlatAppearance.BorderSize = 0;
+            titleBar.Controls.Add(信息管理Button);
+            信息管理Button.Click += 信息管理Button_Click;
+
 
             // 你注释掉了最小化、最大化、关闭按钮部分，
             // 如果想恢复，解开注释即可

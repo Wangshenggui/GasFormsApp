@@ -3033,7 +3033,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 701);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 703);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
