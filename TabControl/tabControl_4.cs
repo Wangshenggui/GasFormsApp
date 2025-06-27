@@ -423,33 +423,40 @@ namespace GasFormsApp.TabControl
             /*
              * 以下是计算瓦斯压力 P 的复杂公式，变量含义见注释
              */
+            string a = _mainForm.AdsorpConstATextBox.Text.Trim();
+            string b = _mainForm.AdsorpConstBTextBox.Text.Trim();
+            string Porosity = _mainForm.PorosityTextBox.Text.Trim();// 孔隙率
+            string Mad = _mainForm.MadTextBox.Text.Trim();// 水分
+            string AppDensity = _mainForm.AppDensityTextBox.Text.Trim();// 相对视密度
+            string Aad = _mainForm.AadTextBox.Text.Trim();// 灰分
+            string W = _mainForm.W_TextBox.Text.Trim();// W
             double at =
-                1000 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
-                * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
-                + 310 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
-                * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100);
+                1000 * Convert.ToDouble(b)
+                * (Convert.ToDouble(Porosity) / 100)
+                + 310 * Convert.ToDouble(b)
+                * Convert.ToDouble(Mad)
+                * (Convert.ToDouble(Porosity) / 100);
             double bt =
-                Convert.ToDouble(_mainForm.AdsorpConstATextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim())
-                * (100 - Convert.ToDouble(_mainForm.AadTextBox.Text.Trim()) - Convert.ToDouble(_mainForm.MadTextBox.Text.Trim()))
-                + 1000 * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
-                - 100 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim())
-                + 310 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
-                * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
-                - 31 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
+                Convert.ToDouble(a)
+                * Convert.ToDouble(b)
+                * Convert.ToDouble(AppDensity)
+                * (100 - Convert.ToDouble(Aad) - Convert.ToDouble(Mad))
+                + 1000 * (Convert.ToDouble(Porosity) / 100)
+                - 100 * Convert.ToDouble(b)
+                * Convert.ToDouble(W)
+                * Convert.ToDouble(AppDensity)
+                + 310 * Convert.ToDouble(Mad)
+                * (Convert.ToDouble(Porosity) / 100)
+                - 31 * Convert.ToDouble(b)
+                * Convert.ToDouble(Mad)
+                * Convert.ToDouble(W)
+                * Convert.ToDouble(AppDensity);
             double ct =
-                -100 * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim())
-                - 31 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
-                * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
+                -100 * Convert.ToDouble(W)
+                * Convert.ToDouble(AppDensity)
+                - 31 * Convert.ToDouble(Mad)
+                * Convert.ToDouble(W)
+                * Convert.ToDouble(AppDensity);
 
             // 使用二次公式求根，并减去0.1作为最终瓦斯压力 P
             double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;

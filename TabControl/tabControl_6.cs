@@ -232,7 +232,8 @@ namespace GasFormsApp.TabControl
                         {
                             MessageBox.Show("找不到图片文件：" + imagePath);
                         }
-
+                        // 调用计算函数，防止tab4数据输出为0
+                        _mainForm.tab6_4_ExpCalcButton_Click(sender,e);
 
                         MessageBox.Show("已恢复历史记录！");
                     }

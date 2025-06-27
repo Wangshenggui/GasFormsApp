@@ -584,6 +584,12 @@ namespace GasFormsApp
             myTabLogic4.P瓦斯压力选择();
         }
 
+        // tab6调用tab4的函数
+        public void tab6_4_ExpCalcButton_Click(object sender, EventArgs e)
+        {
+            myTabLogic4.ExpCalcButton_Click(sender,e);
+        }
+
         // 系统窗口重绘机制
         private bool _suspendDrawing = false;
         protected override void WndProc(ref Message m)
