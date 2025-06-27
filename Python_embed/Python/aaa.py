@@ -257,6 +257,8 @@ ax.set_yticks(yticks)
 ax.tick_params(axis='x', labelsize=18,direction='in')  # 设置X轴刻度标签字体大小为12
 ax.tick_params(axis='y', labelsize=18,direction='in')  # 设置Y轴刻度标签字体大小为12
 
+
+
 plt.rcParams['font.family'] = 'Times New Roman'
 plt.rcParams['xtick.labelsize'] = 18
 plt.rcParams['ytick.labelsize'] = 18
@@ -311,6 +313,26 @@ ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, min_tick_shown-
 
 print("显示的最小刻度:", min_tick_shown)
 print((n_pos + 1) * step,custom_round_up(intercept)-20,"最大刻度：",max_tick)
+
+from matplotlib.ticker import FixedLocator
+# 限制次刻度线
+minor_ticks = np.arange(min_tick_shown, max_tick, step / 2)
+minor_ticks = [tick for tick in minor_ticks if tick not in yticks]  # 只保留非主刻度
+ax.yaxis.set_minor_locator(FixedLocator(minor_ticks))
+# 显示刻度线（可以根据需要设置样式）
+# ax.tick_params(axis='y', which='both', direction='in', right=True)
+ax.tick_params(axis='y', which='minor', length=3, color='black',direction='in')  # 小刻度样式
+ax.tick_params(axis='y', which='major', length=6, color='black')  # 主刻度样式
+
+# 限制次刻度线
+minor_ticks = np.arange(0, _xxx-1, 0.5)
+xticks = np.arange(0, _xxx-1, 1)
+minor_ticks = [tick for tick in minor_ticks if tick not in xticks]  # 只保留非主刻度
+ax.xaxis.set_minor_locator(FixedLocator(minor_ticks))
+# 显示刻度线（可以根据需要设置样式）
+# ax.tick_params(axis='y', which='both', direction='in', right=True)
+ax.tick_params(axis='x', which='minor', length=3, color='black',direction='in')  # 小刻度样式
+ax.tick_params(axis='x', which='major', length=6, color='black')  # 主刻度样式
 
 # 保存图像到内存字节流
 img_bytes = io.BytesIO()
