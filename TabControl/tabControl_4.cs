@@ -9,18 +9,18 @@ namespace GasFormsApp.TabControl
     {
         private MainForm _mainForm;
 
-        public tabControl_4(
-            MainForm form
-        )
+        // 构造函数，接收主窗体对象，绑定控件事件和初始化控件状态
+        public tabControl_4(MainForm form)
         {
             _mainForm = form;
 
-            
+            // 设置 ExpCalcButton 的悬浮提示文本
             _mainForm.toolTip1.SetToolTip(_mainForm.ExpCalcButton, "计算(Ctrl + D)");
 
-            // 注册回调函数
+            // 绑定计算按钮点击事件
             _mainForm.ExpCalcButton.Click += ExpCalcButton_Click;
 
+            // 设置指定的复选框为只读状态（不可交互）
             MakeCheckBoxesReadOnly(
                 _mainForm.AdsorpConstACheckBox,
                 _mainForm.AdsorpConstBCheckBox,
@@ -33,13 +33,18 @@ namespace GasFormsApp.TabControl
                 _mainForm.NonDesorpGasQtyCheckBox
             );
 
+            // 绑定 WcOutCheckBox 选中状态变化事件
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
 
+            // 绑定面板大小改变事件，用于动态调整控件大小和位置
             _mainForm.tabPage4DoubleBufferedPanel1.SizeChanged += tabPage4DoubleBufferedPanel1_SizeChanged;
+
+            // 绑定临时保存和数据恢复按钮事件
             _mainForm.tabPage4TemporarySavingButton.Click += tabPage4TemporarySavingButton_Click;
             _mainForm.tabPage4RecoverDataButton.Click += tabPage4RecoverDataButton_Click;
         }
 
+        // 用于临时保存界面数据的类，标记为可序列化
         [Serializable]
         public class tab4TempData
         {
@@ -61,10 +66,9 @@ namespace GasFormsApp.TabControl
             public string P_TextBox { get; set; }
         }
 
-        // 临时保存按钮
+        // 点击“临时保存”按钮时调用，序列化界面输入的数据并保存到文件
         public void tabPage4TemporarySavingButton_Click(object sender, EventArgs e)
         {
-            // 构造 TempData 对象并从控件中读取数据
             tab4TempData data = new tab4TempData
             {
                 AdsorpConstATextBox = _mainForm.AdsorpConstATextBox.Text,
@@ -85,10 +89,10 @@ namespace GasFormsApp.TabControl
                 P_TextBox = _mainForm.P_TextBox.Text
             };
 
-            // 获取当前程序目录
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
             string tempFolder = Path.Combine(currentDir, "TempData");
 
+            // 如果不存在临时数据目录则创建
             if (!Directory.Exists(tempFolder))
             {
                 Directory.CreateDirectory(tempFolder);
@@ -101,11 +105,10 @@ namespace GasFormsApp.TabControl
                 using (FileStream fs = new FileStream(savePath, FileMode.Create))
                 {
                     var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-#pragma warning disable SYSLIB0011 // 忽略BinaryFormatter过时警告
+#pragma warning disable SYSLIB0011 // 忽略 BinaryFormatter 过时警告
                     formatter.Serialize(fs, data);
 #pragma warning restore SYSLIB0011
                 }
-
                 MessageBox.Show("以二进制格式保存成功！");
             }
             catch (Exception ex)
@@ -113,6 +116,8 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // 点击“恢复数据”按钮时调用，从文件反序列化数据并恢复到控件
         public void tabPage4RecoverDataButton_Click(object sender, EventArgs e)
         {
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
@@ -133,7 +138,7 @@ namespace GasFormsApp.TabControl
                     tab4TempData data = (tab4TempData)formatter.Deserialize(fs);
 #pragma warning restore SYSLIB0011
 
-                    // 将值恢复到控件
+                    // 恢复数据到对应控件
                     _mainForm.AdsorpConstATextBox.Text = data.AdsorpConstATextBox;
                     _mainForm.AdsorpConstBTextBox.Text = data.AdsorpConstBTextBox;
                     _mainForm.MadTextBox.Text = data.MadTextBox;
@@ -159,66 +164,77 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// 将指定的复选框设置为只读（禁止用户点击更改）
+        /// 实现方式是给复选框绑定点击事件，自动反向取消选中，达到只读效果
+        /// </summary>
         private void MakeCheckBoxesReadOnly(params CheckBox[] boxes)
         {
             foreach (var box in boxes)
             {
-                // 保存事件处理器引用
+                // 事件处理器：点击后自动撤销选中状态，防止变更
                 EventHandler clickHandler = (s, e) => box.Checked = !box.Checked;
 
-                // 存储到 Tag 中方便以后移除
-                box.Tag = clickHandler;
+                box.Tag = clickHandler;  // 保存事件处理器以备后续移除
                 box.Click += clickHandler;
 
-                box.Cursor = Cursors.Default;
-                box.TabStop = false;
+                box.Cursor = Cursors.Default; // 鼠标形状设为默认，表示不可点击
+                box.TabStop = false;          // 取消Tab键焦点
             }
         }
+
+        /// <summary>
+        /// 恢复指定复选框的可编辑状态（允许用户点击更改）
+        /// </summary>
         private void MakeCheckBoxesEditable(params CheckBox[] boxes)
         {
             foreach (var box in boxes)
             {
                 if (box.Tag is EventHandler handler)
                 {
-                    box.Click -= handler;  // 移除之前的处理器
+                    box.Click -= handler;  // 移除只读时绑定的事件处理器
                     box.Tag = null;
                 }
 
-                box.Cursor = Cursors.Hand;   // 或你默认的鼠标样式
-                box.TabStop = true;
+                box.Cursor = Cursors.Hand; // 鼠标变为手型，表示可点击
+                box.TabStop = true;        // 恢复Tab键焦点
             }
         }
 
-
-
+        // 面板大小变化时调整内部控件大小和居中
         private void tabPage4DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
         {
             int newWidth;
             int newHeight;
+
+            // 主窗体宽度大于980时调整宽度，否则使用全宽
             if (_mainForm.Width > 980)
             {
-                newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width / 1 - 0;
+                newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width;
             }
             else
             {
-                newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width / 1;
+                newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width;
             }
-            newHeight = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height / 1 - _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height / 10;
 
+            // 高度为面板高度减去十分之一高度
+            newHeight = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height / 10;
 
-            // 840-1165
+            // 限制宽度范围，保证最小宽度约为 465 + 10 (即 475)，最大宽度 940
             if (newWidth <= 940)
             {
-                newWidth = 940/2 + 10;
+                newWidth = 470;
             }
             else if (newWidth > 940)
             {
                 newWidth = 940;
-                //newHeight = 610;
+                //newHeight = 610; // 可选固定高度注释掉
             }
 
             Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");
 
+            // 设置内部 FlowLayoutPanel 宽高
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Width = newWidth;
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Height = newHeight;
 
@@ -226,12 +242,15 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
         }
+
+        // 当 WcOutCheckBox 选中状态改变时调用
         private void WcOutCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (_mainForm.WcOutCheckBox.Checked)
             {
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打勾;
 
+                // 使相关复选框可编辑
                 MakeCheckBoxesEditable(
                     _mainForm.AdsorpConstACheckBox,
                     _mainForm.AdsorpConstBCheckBox,
@@ -250,6 +269,7 @@ namespace GasFormsApp.TabControl
             {
                 _mainForm.WcOutCheckBox.Image = Properties.Resources.打叉;
 
+                // 取消所有相关复选框的选中状态
                 _mainForm.AdsorpConstACheckBox.Checked = false;
                 _mainForm.AdsorpConstBCheckBox.Checked = false;
                 _mainForm.MadCheckBox.Checked = false;
@@ -260,6 +280,7 @@ namespace GasFormsApp.TabControl
                 _mainForm.VadCheckBox.Checked = false;
                 _mainForm.NonDesorpGasQtyCheckBox.Checked = false;
 
+                // 设置为只读，禁止用户更改
                 MakeCheckBoxesReadOnly(
                     _mainForm.AdsorpConstACheckBox,
                     _mainForm.AdsorpConstBCheckBox,
@@ -276,31 +297,35 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        // 验证数值型文本框，检查非空、无空格、有效数字且非负，否则标红
         private void ValidateNumericTextBox(TextBox textBox)
         {
             string input = textBox.Text;
 
-            // 重置颜色
+            // 重置背景色为默认白色
             textBox.BackColor = SystemColors.Window;
 
             if (input.Contains(" "))
             {
-                textBox.BackColor = Color.Red;
+                textBox.BackColor = Color.Red; // 含空格标红
             }
             else if (string.IsNullOrWhiteSpace(input))
             {
+                // 空白时，若文本框有焦点，变蓝，否则灰色
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
             else if (!double.TryParse(input, out double value) || value < 0)
             {
+                // 不是有效非负数字标红
                 textBox.BackColor = Color.Red;
             }
         }
+
+        // 验证非空文本框，空时改变背景色提示
         private void ValidateEmptyTextBox(TextBox textBox)
         {
             string input = textBox.Text;
 
-            // 重置背景色
             textBox.BackColor = SystemColors.Window;
 
             if (string.IsNullOrWhiteSpace(input))
@@ -308,6 +333,8 @@ namespace GasFormsApp.TabControl
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
         }
+
+        // 定时器触发时调用，对多个关键输入框执行校验
         public void TabControl_4_InputCheckTimer_Tick()
         {
             ValidateNumericTextBox(_mainForm.AdsorpConstATextBox);
@@ -320,6 +347,7 @@ namespace GasFormsApp.TabControl
             ValidateNumericTextBox(_mainForm.VadTextBox);
         }
 
+        // 处理“P瓦斯压力”复选框选中状态，更新对应的主窗体静态字段
         public void P瓦斯压力选择()
         {
             if (_mainForm.P_CheckBox.Checked)
@@ -337,31 +365,36 @@ namespace GasFormsApp.TabControl
         }
 
         /// <summary>
-        /// 计算Wc
+        /// 计算 Wc 值，基于多个参数和公式
         /// </summary>
-        /// <returns></returns>
+        /// <returns>计算得到的 Wc，保留4位小数</returns>
         private double getWc()
         {
-            float p = 0.1f;//0.103f
-            float AD = Convert.ToSingle(_mainForm.AadTextBox.Text.Trim());//灰分
-            float Md = Convert.ToSingle(_mainForm.MadTextBox.Text.Trim());//水分
-            float F = Convert.ToSingle(_mainForm.PorosityTextBox.Text.Trim());//孔隙率
-            float r = Convert.ToSingle(_mainForm.AppDensityTextBox.Text.Trim());//视密度
+            float p = 0.1f; // 常数，瓦斯压力参数
+            float AD = Convert.ToSingle(_mainForm.AadTextBox.Text.Trim());        // 灰分
+            float Md = Convert.ToSingle(_mainForm.MadTextBox.Text.Trim());       // 水分
+            float F = Convert.ToSingle(_mainForm.PorosityTextBox.Text.Trim());   // 孔隙率
+            float r = Convert.ToSingle(_mainForm.AppDensityTextBox.Text.Trim()); // 视密度
             float a = Convert.ToSingle(_mainForm.AdsorpConstATextBox.Text.Trim());// 吸附常数a
             float b = Convert.ToSingle(_mainForm.AdsorpConstBTextBox.Text.Trim());// 吸附常数b
+
+            // 计算公式：见业务逻辑
             double x = a * b * p * (100 - AD - Md) / ((1 + b * p) * 100 * (1 + 0.31 * Md)) + F / (100 * r);
+
             return Math.Round(x, 4);
         }
+
+        // 计算按钮点击事件处理函数，执行全部相关计算并显示结果
         public void ExpCalcButton_Click(object sender, EventArgs e)
         {
-            //计算Wc
+            // 计算Wc
             MainForm.Wc = getWc();
             _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString("F2");
 
             // 计算W1
-            float SampleWeight = (float)Convert.ToDecimal(_mainForm.SampleWeightTextBox.Text);// 煤样重量
-            float SampLossVol = (float)Convert.ToDecimal(_mainForm.SampLossVolTextBox.Text);// 取样损失体积
-            float UndDesorpCal = (float)Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text);// 井下解吸校准
+            float SampleWeight = (float)Convert.ToDecimal(_mainForm.SampleWeightTextBox.Text);       // 煤样重量
+            float SampLossVol = (float)Convert.ToDecimal(_mainForm.SampLossVolTextBox.Text);         // 取样损失体积
+            float UndDesorpCal = (float)Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text);       // 井下解吸校准
             MainForm.W1 = (UndDesorpCal + Math.Abs(SampLossVol)) / SampleWeight;
             _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F2");
 
@@ -379,24 +412,17 @@ namespace GasFormsApp.TabControl
             MainForm.Wa = MainForm.W1 + MainForm.W2 + MainForm.W3;
             _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F2");
 
-            // 计算Wc
+            // 重新读取 Wc 并显示
             MainForm.Wc = (float)Convert.ToDecimal(_mainForm.NonDesorpGasQtyTextBox.Text);
             _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F2");
 
-            // 计算W
+            // 计算 W 总量
             MainForm.W = MainForm.Wa + MainForm.Wc;
             _mainForm.W_TextBox.Text = MainForm.W.ToString("F2");
 
-            /* 
-             * AdsorpConstBTextBox -> 吸附常数b 
-             * PorosityTextBox -> 孔隙率
-             * MadTextBox -> 水分
-             * AdsorpConstATextBox -> 吸附常数a
-             * AppDensityTextBox -> 视密度
-             * AadTextBox -> 灰分
-             * W_TextBox -> W
+            /*
+             * 以下是计算瓦斯压力 P 的复杂公式，变量含义见注释
              */
-            // 计算P
             double at =
                 1000 * Convert.ToDouble(_mainForm.AdsorpConstBTextBox.Text.Trim())
                 * (Convert.ToDouble(_mainForm.PorosityTextBox.Text.Trim()) / 100)
@@ -424,6 +450,8 @@ namespace GasFormsApp.TabControl
                 - 31 * Convert.ToDouble(_mainForm.MadTextBox.Text.Trim())
                 * Convert.ToDouble(_mainForm.W_TextBox.Text.Trim())
                 * Convert.ToDouble(_mainForm.AppDensityTextBox.Text.Trim());
+
+            // 使用二次公式求根，并减去0.1作为最终瓦斯压力 P
             double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
             MainForm.P = Pt;
             _mainForm.P_TextBox.Text = MainForm.P.ToString("F2");

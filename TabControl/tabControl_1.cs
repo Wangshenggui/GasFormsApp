@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Reflection.Emit;
-using System.Text;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
 {
+    // tabControl_1 类，用于管理主窗体中 tabPage1 页面的逻辑
     internal class tabControl_1
     {
-        private MainForm _mainForm;
+        private MainForm _mainForm;  // 持有主窗体引用，访问控件
 
-
-        // 构造函数接收 TextBox 控件
+        // 构造函数，传入主窗体对象，绑定相关事件
         public tabControl_1(MainForm form)
         {
             _mainForm = form;
 
+            // 绑定 FlowLayoutPanel 的 Paint 事件，用于动态调整大小和位置
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Paint += tabPage1DoubleBufferedFlowLayoutPanel1_Paint;
+
+            // 绑定“临时保存”按钮点击事件
             _mainForm.tabPage1TemporarySavingButton.Click += tabPage1TemporarySavingButton_Click;
+
+            // 绑定“恢复数据”按钮点击事件
             _mainForm.tabPage1RecoverDataButton.Click += tabPage1RecoverDataButton_Click;
         }
 
+        // 定义序列化保存的临时数据结构，存储 tabPage1 中各控件的数据
         [Serializable]
         public class tab1TempData
         {
@@ -46,10 +50,10 @@ namespace GasFormsApp.TabControl
             public string SamplingPersonnelText { get; set; }
         }
 
-        // 临时保存按钮
+        // “临时保存”按钮点击事件处理函数
         public void tabPage1TemporarySavingButton_Click(object sender, EventArgs e)
         {
-            // 构造 TempData 对象并从控件中读取数据
+            // 从主窗体的控件中读取当前数据，封装到 tab1TempData 实例中
             tab1TempData data = new tab1TempData
             {
                 MineNameText = _mainForm.MineNameTextBox.Text,
@@ -73,23 +77,28 @@ namespace GasFormsApp.TabControl
                 SamplingPersonnelText = _mainForm.SamplingPersonnelTextBox.Text
             };
 
-            // 获取当前程序目录
+            // 获取当前程序运行目录
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+
+            // 拼接临时数据存储文件夹路径
             string tempFolder = Path.Combine(currentDir, "TempData");
 
+            // 如果文件夹不存在则创建
             if (!Directory.Exists(tempFolder))
             {
                 Directory.CreateDirectory(tempFolder);
             }
 
+            // 定义保存文件路径
             string savePath = Path.Combine(tempFolder, "tabPage1_temp.bin");
 
             try
             {
+                // 使用 FileStream 和 BinaryFormatter 进行二进制序列化保存数据
                 using (FileStream fs = new FileStream(savePath, FileMode.Create))
                 {
                     var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-#pragma warning disable SYSLIB0011 // 忽略BinaryFormatter过时警告
+#pragma warning disable SYSLIB0011 // 忽略 BinaryFormatter 过时警告
                     formatter.Serialize(fs, data);
 #pragma warning restore SYSLIB0011
                 }
@@ -98,14 +107,18 @@ namespace GasFormsApp.TabControl
             }
             catch (Exception ex)
             {
+                // 异常处理，弹出错误提示
                 MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // “恢复数据”按钮点击事件处理函数
         public void tabPage1RecoverDataButton_Click(object sender, EventArgs e)
         {
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
             string loadPath = Path.Combine(currentDir, "TempData", "tabPage1_temp.bin");
 
+            // 如果保存文件不存在，提示找不到数据
             if (!File.Exists(loadPath))
             {
                 MessageBox.Show("找不到临时保存的数据！");
@@ -114,6 +127,7 @@ namespace GasFormsApp.TabControl
 
             try
             {
+                // 打开文件并进行反序列化恢复数据
                 using (FileStream fs = new FileStream(loadPath, FileMode.Open))
                 {
 #pragma warning disable SYSLIB0011
@@ -121,7 +135,7 @@ namespace GasFormsApp.TabControl
                     tab1TempData data = (tab1TempData)formatter.Deserialize(fs);
 #pragma warning restore SYSLIB0011
 
-                    // 将值恢复到控件
+                    // 恢复数据到对应的控件上
                     _mainForm.MineNameTextBox.Text = data.MineNameText;
                     _mainForm.SamplingSpotTextBox.Text = data.SamplingSpotText;
                     _mainForm.BurialDepthTextBox.Text = data.BurialDepthText;
@@ -151,14 +165,14 @@ namespace GasFormsApp.TabControl
             }
         }
 
-
-
+        // tabPage1DoubleBufferedFlowLayoutPanel1 的 Paint 事件处理，用于动态调整其大小和位置，实现居中显示
         private void tabPage1DoubleBufferedFlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            int newWidth = _mainForm.tabPage1panel1.ClientSize.Width / 1 - _mainForm.tabPage1panel1.ClientSize.Width / 9;
-            int newHeight = _mainForm.tabPage1panel1.ClientSize.Height / 1 - _mainForm.tabPage1panel1.ClientSize.Height / 8;
+            // 计算新的宽高，参考主面板尺寸，带一定比例缩放
+            int newWidth = _mainForm.tabPage1panel1.ClientSize.Width - _mainForm.tabPage1panel1.ClientSize.Width / 9;
+            int newHeight = _mainForm.tabPage1panel1.ClientSize.Height - _mainForm.tabPage1panel1.ClientSize.Height / 8;
 
-            // 370-705
+            // 限定宽度范围，避免过大或过小
             if (newWidth >= 370 && newWidth <= 705)
             {
                 newWidth = 370;
@@ -170,63 +184,60 @@ namespace GasFormsApp.TabControl
             }
             else if (newWidth > 1055)
             {
-                newWidth = 1055 + 10;
+                newWidth = 1065;
                 newHeight = 370;
             }
+
+            // 应用计算得到的宽高
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width = newWidth;
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height = newHeight;
 
-            // 居中定位
+            // 居中控件
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage1panel1.ClientSize.Width - newWidth) / 2;
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage1panel1.ClientSize.Height - newHeight) / 2;
-
-
-            //Console.WriteLine($"FlowLayoutPanel 宽度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width}, 高度: {_mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Height}");
-            //Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
         }
 
+        // 验证文本框非空及特定格式的辅助方法
         private void ValidateEmptyTextBox(TextBox textBox)
         {
-            if(textBox == _mainForm.SamplingSpotTextBox)
+            if (textBox == _mainForm.SamplingSpotTextBox)
             {
                 string input = textBox.Text;
 
-                // 括号检查
+                // 检查是否包含括号（英文和中文）
                 bool hasEnglishLeft = input.Contains("(");
                 bool hasEnglishRight = input.Contains(")");
                 bool hasChineseLeft = input.Contains("（");
                 bool hasChineseRight = input.Contains("）");
 
-                // 括号成对（英文或中文）
+                // 判断括号是否成对出现
                 bool hasBracketPair =
                     (hasEnglishLeft && hasEnglishRight) ||
                     (hasChineseLeft && hasChineseRight);
 
-                // 空内容 -> 蓝/灰 提示
+                // 空内容时，设置背景为蓝色或灰色提示
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
                     _mainForm.errorProvider1.SetError(textBox, "");
                 }
-                // 非空但括号不完整或缺失 -> 红色
+                // 非空但括号不完整时，背景变红色提示错误
                 else if (!hasBracketPair)
                 {
                     textBox.BackColor = Color.Tomato;
                     _mainForm.errorProvider1.SetError(textBox, "必须包含括号，例如：(孔号) 或 （孔号）");
                 }
-                // 括号成对 -> 恢复默认颜色
+                // 括号成对时恢复默认颜色，清除错误提示
                 else
                 {
                     textBox.BackColor = SystemColors.Window;
                     _mainForm.errorProvider1.SetError(textBox, "");
                 }
-
             }
             else
             {
+                // 其他文本框，空时设置提示色，非空时恢复默认颜色
                 string input = textBox.Text;
-
-                // 重置背景色
                 textBox.BackColor = SystemColors.Window;
 
                 if (string.IsNullOrWhiteSpace(input))
@@ -236,29 +247,33 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        // 验证文本框内容是否为非负数字的辅助方法
         private void ValidateNumericTextBox(TextBox textBox)
         {
             string input = textBox.Text;
-
-            // 重置颜色
             textBox.BackColor = SystemColors.Window;
 
+            // 含有空格视为错误，背景红色
             if (input.Contains(" "))
             {
                 textBox.BackColor = Color.Red;
             }
+            // 空文本显示蓝色或灰色提示
             else if (string.IsNullOrWhiteSpace(input))
             {
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
             }
+            // 不是有效数字或小于0，背景红色提示
             else if (!double.TryParse(input, out double value) || value < 0)
             {
                 textBox.BackColor = Color.Red;
             }
         }
 
+        // 定时器触发的输入校验方法，周期性检查所有相关控件的内容合法性
         public void TabControl_1_InputCheckTimer_Tick()
         {
+            // 数值型控件校验
             ValidateNumericTextBox(_mainForm.BurialDepthTextBox);
             ValidateNumericTextBox(_mainForm.LabAtmPressureTextBox);
             ValidateNumericTextBox(_mainForm.UndAtmPressureTextBox);
@@ -272,7 +287,7 @@ namespace GasFormsApp.TabControl
             ValidateNumericTextBox(_mainForm.DrillInclinationTextBox);
             ValidateNumericTextBox(_mainForm.AzimuthTextBox);
 
-
+            // 文本非空校验
             ValidateEmptyTextBox(_mainForm.MineNameTextBox);
             ValidateEmptyTextBox(_mainForm.SamplingSpotTextBox);
             ValidateEmptyTextBox(_mainForm.CoalSeamTextBox);

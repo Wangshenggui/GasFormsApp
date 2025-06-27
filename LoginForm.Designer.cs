@@ -61,6 +61,7 @@
             this.btnClose.TabIndex = 23;
             this.btnClose.Text = "取  消";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnLogin
             // 
@@ -149,7 +150,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "瓦斯含量测定数据分析系统";
-            this.Load += new System.EventHandler(this.LoginForm_Load_1);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

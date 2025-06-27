@@ -23,23 +23,32 @@ namespace GasFormsApp
 
         private void ProjectGroupsForm_Load(object sender, EventArgs e)
         {
+            // 获取屏幕宽高并设置窗体大小为屏幕的54%
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
             this.Width = (int)(screenWidth * 0.54);
             this.Height = (int)(screenHeight * 0.54);
-            // 居中设置
+
+            // 窗体居中显示
             this.Left = (screenWidth - this.Width) / 2;
             this.Top = (screenHeight - this.Height) / 2;
 
-            // 获取当前程序启动的目录路径
+            // 获取程序启动目录
             string basePath = Application.StartupPath;
 
-            // 构建目标文件夹路径（相对于启动目录的 SystemData\DataAdministrationForm）
+            // 构建目标文件夹路径：SystemData\DataAdministrationForm
             string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
 
-            // 加载该路径下的文件夹结构到树控件
+            // 如果路径不存在则创建
+            if (!Directory.Exists(rootPath))
+            {
+                Directory.CreateDirectory(rootPath);
+            }
+
+            // 加载目录到树控件
             LoadFoldersToTree(rootPath);
         }
+
         /// <summary>
         /// 将指定根目录及其子目录加载到 TreeView 控件中显示
         /// </summary>

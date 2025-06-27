@@ -11,23 +11,29 @@ using System.Linq;
 
 namespace GasFormsApp.TabControl
 {
+    /// <summary>
+    /// 处理主窗体中第五个标签页(tabPage5)的所有功能
+    /// 包括报告生成、数据保存、临时数据恢复等
+    /// </summary>
     internal class tabControl_5
     {
-        private MainForm _mainForm;
+        private MainForm _mainForm; // 主窗体引用
 
-        // 构造函数接收 TextBox 控件
+        /// <summary>
+        /// 构造函数，初始化与主窗体的关联
+        /// </summary>
+        /// <param name="form">主窗体实例</param>
         public tabControl_5(MainForm form)
         {
             _mainForm = form;
 
+            // 设置工具提示
             _mainForm.toolTip1.SetToolTip(_mainForm.GenReportButton, "生成报告(Ctrl + G)");
             _mainForm.toolTip1.SetToolTip(_mainForm.SaveButton, "保存数据(Ctrl + S)");
-            //_mainForm.toolTip1.SetToolTip(_mainForm.GenRecordButton,"生成记录表(Ctrl + G)");
 
-            // 注册回调函数
+            // 注册事件处理程序
             _mainForm.GenReportButton.Click += GenReportButton_Click;
             _mainForm.GenRecordButton.Click += GenRecordButton_Click;
-            //_mainForm.GasCompCheckBox.Click += CheckBox_Click;
             _mainForm.SaveButton.Click += _SaveButton_Click;
             _mainForm.tabPage5DoubleBufferedPanel1.SizeChanged += tabPage5DoubleBufferedPanel1_SizeChanged;
 
@@ -35,32 +41,37 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage5RecoverDataButton.Click += tabPage5RecoverDataButton_Click;
         }
 
+        /// <summary>
+        /// 临时数据序列化类，保存tabPage5的所有相关数据
+        /// </summary>
         [Serializable]
         public class tab5TempData
         {
-            public string CH4Text { get; set; }
-            public string CO2Text { get; set; }
-            public string N2Text { get; set; }
-            public string O2Text { get; set; }
-            public string C2H4Text { get; set; }
-            public string C3H8Text { get; set; }
-            public string C2H6Text { get; set; }
-            public string C3H6Text { get; set; }
-            public string C2H2Text { get; set; }
-            public string COText { get; set; }
+            public string CH4Text { get; set; }       // CH4含量
+            public string CO2Text { get; set; }      // CO2含量
+            public string N2Text { get; set; }       // N2含量
+            public string O2Text { get; set; }       // O2含量
+            public string C2H4Text { get; set; }     // C2H4含量
+            public string C3H8Text { get; set; }     // C3H8含量
+            public string C2H6Text { get; set; }     // C2H6含量
+            public string C3H6Text { get; set; }     // C3H6含量
+            public string C2H2Text { get; set; }     // C2H2含量
+            public string COText { get; set; }       // CO含量
 
-            public string _dateTimePicker6 { get; set; }
-            public string _dateTimePicker1 { get; set; }
-            public string DownholeTestersText { get; set; }
-            public string LabTestersText { get; set; }
-            public string AuditorText { get; set; }
-            public string RemarkText { get; set; }
+            public string _dateTimePicker6 { get; set; }          // 日期时间控件6的值
+            public string _dateTimePicker1 { get; set; }          // 日期时间控件1的值
+            public string DownholeTestersText { get; set; }       // 井下测试人员
+            public string LabTestersText { get; set; }            // 实验室测试人员
+            public string AuditorText { get; set; }                // 审核人
+            public string RemarkText { get; set; }                // 备注
         }
 
-        // 临时保存按钮
+        /// <summary>
+        /// 临时保存按钮点击事件处理
+        /// </summary>
         public void tabPage5TemporarySavingButton_Click(object sender, EventArgs e)
         {
-            // 构造 TempData 对象并从控件中读取数据
+            // 构造TempData对象并从控件中读取数据
             tab5TempData data = new tab5TempData
             {
                 CH4Text = _mainForm.CH4TextBox.Text,
@@ -83,11 +94,9 @@ namespace GasFormsApp.TabControl
                 RemarkText = _mainForm.RemarkTextBox.Text
             };
 
-
-            // 获取当前程序目录
+            // 确保临时数据目录存在
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
             string tempFolder = Path.Combine(currentDir, "TempData");
-
             if (!Directory.Exists(tempFolder))
             {
                 Directory.CreateDirectory(tempFolder);
@@ -97,6 +106,7 @@ namespace GasFormsApp.TabControl
 
             try
             {
+                // 使用二进制格式化器序列化数据
                 using (FileStream fs = new FileStream(savePath, FileMode.Create))
                 {
                     var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
@@ -112,6 +122,10 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// 恢复数据按钮点击事件处理
+        /// </summary>
         public void tabPage5RecoverDataButton_Click(object sender, EventArgs e)
         {
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
@@ -125,6 +139,7 @@ namespace GasFormsApp.TabControl
 
             try
             {
+                // 从二进制文件反序列化数据
                 using (FileStream fs = new FileStream(loadPath, FileMode.Open))
                 {
 #pragma warning disable SYSLIB0011
@@ -132,7 +147,7 @@ namespace GasFormsApp.TabControl
                     tab5TempData data = (tab5TempData)formatter.Deserialize(fs);
 #pragma warning restore SYSLIB0011
 
-                    // 将值恢复到控件
+                    // 恢复控件值
                     _mainForm.CH4TextBox.Text = data.CH4Text;
                     _mainForm.CO2TextBox.Text = data.CO2Text;
                     _mainForm.N2TextBox.Text = data.N2Text;
@@ -152,7 +167,6 @@ namespace GasFormsApp.TabControl
                     _mainForm.AuditorTextBox.Text = data.AuditorText;
                     _mainForm.RemarkTextBox.Text = data.RemarkText;
 
-
                     MessageBox.Show("数据已恢复！");
                 }
             }
@@ -162,6 +176,10 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        /// <summary>
+        /// 检查是否有任何气体成分被选中
+        /// </summary>
+        /// <returns>如果有选中则返回true，否则false</returns>
         public bool IsAnyGasChecked()
         {
             return _mainForm.CH4CheckBox.Checked ||
@@ -176,38 +194,24 @@ namespace GasFormsApp.TabControl
                    _mainForm.COCheckBox.Checked;
         }
 
+        /// <summary>
+        /// 定时检查输入数据
+        /// </summary>
         public void TabControl_5_InputCheckTimer_Tick()
         {
             MainForm.GasCompCheckBoxFlag = IsAnyGasChecked();
-            //Console.WriteLine("GasCompCheckBoxFlag = " + MainForm.GasCompCheckBoxFlag);
-
         }
+
+        /// <summary>
+        /// 面板大小改变事件处理
+        /// </summary>
         private void tabPage5DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
         {
-            int newWidth;
-            int newHeight;
-            //if (_mainForm.Width > 980)
-            //{
-            //    newWidth = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 1 - 0;
-            //}
-            //else
-            {
-                newWidth = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width/7;
-            }
-            newHeight = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 10;
+            // 计算新宽度和高度
+            int newWidth = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 7;
+            int newHeight = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 10;
 
-
-            //625 - 515 - 380
-            //685 - 566 - 566
-            //900 - 750 - 750
-            //1120 - 939 - 939
-            //if (newWidth <= 515)
-            //{
-            //    newWidth = 380;
-            //}
-
-            //_mainForm.tabPage5panel11.Margin = new Padding(3, 10, 3, 10);
-            //_mainForm.tabPage5panel12.Margin = new Padding(3, 10, 3, 10);
+            // 根据宽度调整布局
             if (newWidth >= 515 && newWidth <= 566)
             {
                 newWidth = 415;
@@ -261,68 +265,23 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage5panel15.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel16.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel17.Width = 500 + 15 - a;
-
-                //_mainForm.tabPage5panel11.Margin = new Padding(3, 100, 3, 10);
-                //_mainForm.tabPage5panel12.Margin = new Padding(3, 100, 3, 10);
                 newHeight = 460;
             }
-
-            Console.WriteLine($"------{newWidth}--{newHeight}");
-            Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");
-
-            //_mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
-            //_mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
-
-            //_mainForm.tabPage5panel11.Width = _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width;
-            //_mainForm.tabPage5partition_panel.Width = newWidth-20;
-
 
             // 居中定位
             _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Left = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
             _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Top = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
         }
-        //private void CheckBox_Click(object sender, EventArgs e)
-        //{
-        //    if (sender is CheckBox checkBox)
-        //    {
-        //        // 通过 Name 判断哪个被点击
-        //        string name = checkBox.Name;
-        //        string text = checkBox.Text;
-        //        bool isChecked = checkBox.Checked;
 
-        //        if (name == "GasCompCheckBox")
-        //        {
-        //            if (isChecked)
-        //            {
-        //                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = true;
-
-        //                MainForm.GasCompCheckBoxFlag = true;
-        //            }
-        //            else
-        //            {
-        //                _mainForm.tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
-
-        //                _mainForm.CH4CheckBox.Checked = false;
-        //                _mainForm.CO2CheckBox.Checked = false;
-        //                _mainForm.N2CheckBox.Checked = false;
-        //                _mainForm.O2CheckBox.Checked = false;
-        //                _mainForm.C2H4CheckBox.Checked = false;
-        //                _mainForm.C3H8CheckBox.Checked = false;
-        //                _mainForm.C2H6CheckBox.Checked = false;
-        //                _mainForm.C3H6CheckBox.Checked = false;
-        //                _mainForm.C2H2CheckBox.Checked = false;
-        //                _mainForm.COCheckBox.Checked = false;
-
-        //                MainForm.GasCompCheckBoxFlag = false;
-        //            }
-        //        }
-        //    }
-        //}
-
+        /// <summary>
+        /// 模板资源映射字典
+        /// 键: (是否有Wc数据, 是否有气体成分数据, Wc选项数量, Gas选项数量)
+        /// 值: 对应的Word模板资源名称
+        /// </summary>
         private static readonly Dictionary<(bool, bool, int, int), string>
             resourceMap = new Dictionary<(bool, bool, int, int), string>
         {
-                // 无缺失数据
+            // 无缺失数据
             { ( true,  true, 1, 1), "WPSGasFormsApp.WordTemplate1_1.docx" },
             { ( true,  true, 1, 2), "WPSGasFormsApp.WordTemplate1_2.docx" },
             { ( true,  true, 2, 1), "WPSGasFormsApp.WordTemplate2_1.docx" },
@@ -343,6 +302,9 @@ namespace GasFormsApp.TabControl
             { ( false,  false, 1, 1), "WPSGasFormsApp.WordTemplateNoWcNoGas.docx" },
         };
 
+        /// <summary>
+        /// 根据条件获取Word模板资源名称
+        /// </summary>
         private string Word_ResourceName(bool wcFlag, bool gasCompFlag, int Wc数量, int Gas数量)
         {
             if (resourceMap.TryGetValue((wcFlag, gasCompFlag, Wc数量, Gas数量), out var resourceName))
@@ -351,21 +313,24 @@ namespace GasFormsApp.TabControl
             }
             else
             {
-                // 万一有意外组合，返回默认值
+                // 默认返回一个模板
                 return "WPSGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
             }
         }
 
+        /// <summary>
+        /// 记录表模板资源映射字典
+        /// </summary>
         private static readonly Dictionary<(bool, bool, int, int), string>
             RecordMap = new Dictionary<(bool, bool, int, int), string>
         {
-                // 无缺失数据
+            // 无缺失数据
             { ( true,  true, 1, 1), "WPSGasFormsApp.RecordSheets1_1.docx" },
             { ( true,  true, 1, 2), "WPSGasFormsApp.RecordSheets1_2.docx" },
             { ( true,  true, 2, 1), "WPSGasFormsApp.RecordSheets2_1.docx" },
             { ( true,  true, 2, 2), "WPSGasFormsApp.RecordSheets2_2.docx" },
             { ( true,  true, 3, 1), "WPSGasFormsApp.RecordSheets3_1.docx" },
-            { ( true,  true, 3, 2), "WPSGasFormsApp.RecordSheets3_2.docx" },//
+            { ( true,  true, 3, 2), "WPSGasFormsApp.RecordSheets3_2.docx" },
 
             // 缺失Gas
             { ( true,  false, 1, 1), "WPSGasFormsApp.RecordSheetsNoGas1.docx" },
@@ -379,6 +344,10 @@ namespace GasFormsApp.TabControl
             // 缺失Gas和Wc
             { ( false,  false, 1, 1), "WPSGasFormsApp.RecordSheetsNoWcNoGas.docx" },
         };
+
+        /// <summary>
+        /// 根据条件获取记录表模板资源名称
+        /// </summary>
         private string Word_RecordName(bool wcFlag, bool gasCompFlag, int Wc数量, int Gas数量)
         {
             if (RecordMap.TryGetValue((wcFlag, gasCompFlag, Wc数量, Gas数量), out var resourceName))
@@ -387,14 +356,17 @@ namespace GasFormsApp.TabControl
             }
             else
             {
-                // 万一有意外组合，返回默认值
+                // 默认返回一个模板
                 return "WPSGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
             }
         }
 
+        /// <summary>
+        /// 动态处理Wc选项并返回选项数量分类(1-3)
+        /// </summary>
         int 动态处理Wc选项()
         {
-            // Wc
+            // 收集选中的Wc选项
             List<(string Label, string Data)> selectedWc = new List<(string, string)>();
             if (_mainForm.AdsorpConstACheckBox.Checked)
                 selectedWc.Add(("吸附常数a值(cm3/g)：", _mainForm.AdsorpConstATextBox.Text));
@@ -414,26 +386,25 @@ namespace GasFormsApp.TabControl
                 selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
             if (_mainForm.NonDesorpGasQtyCheckBox.Checked)
                 selectedWc.Add(("不可解吸瓦斯量Wc(m3/t)：", _mainForm.NonDesorpGasQtyTextBox.Text));
-            // 2. 清空 9 组槽位
+
+            // 清空9组槽位
             for (int i = 1; i <= 9; i++)
             {
                 typeof(MainForm).GetField($"Wc_Lab{i}").SetValue(null, "");
                 typeof(MainForm).GetField($"Wc_Dat{i}").SetValue(null, "");
             }
-            // 3. 将选中的数据依次写入槽位（最多9个）
+
+            // 将选中的数据写入槽位
             for (int i = 0; i < selectedWc.Count && i < 9; i++)
             {
                 typeof(MainForm).GetField($"Wc_Lab{i + 1}").SetValue(null, selectedWc[i].Item1);
                 typeof(MainForm).GetField($"Wc_Dat{i + 1}").SetValue(null, selectedWc[i].Item2);
             }
-            // 4. 打印输出（调试用）
-            for (int i = 0; i < selectedWc.Count && i < 9; i++)
-            {
-                Console.WriteLine($"{selectedWc[i].Item1}{selectedWc[i].Item2}");
-            }
-            var validWc = selectedWc.Where(g => !string.IsNullOrWhiteSpace(g.Data)).ToList();
-            Console.WriteLine($"---------有效数据数量：{validWc.Count}");
 
+            // 统计有效数据数量
+            var validWc = selectedWc.Where(g => !string.IsNullOrWhiteSpace(g.Data)).ToList();
+
+            // 根据数量返回分类
             if (validWc.Count <= 3)
                 return 1;
             else if (validWc.Count <= 6)
@@ -441,9 +412,13 @@ namespace GasFormsApp.TabControl
             else
                 return 3;
         }
+
+        /// <summary>
+        /// 动态处理Gas选项并返回选项数量分类(1-2)
+        /// </summary>
         int 动态处理Gas选项()
         {
-            // 1. 收集所有选中的气体项
+            // 收集选中的气体成分选项
             List<(string Label, string Data)> selectedGases = new List<(string, string)>();
             if (_mainForm.CH4CheckBox.Checked)
                 selectedGases.Add(("CH₄：", _mainForm.CH4TextBox.Text));
@@ -465,41 +440,45 @@ namespace GasFormsApp.TabControl
                 selectedGases.Add(("C₂H₂：", _mainForm.C2H2TextBox.Text));
             if (_mainForm.COCheckBox.Checked)
                 selectedGases.Add(("CO：", _mainForm.COTextBox.Text));
-            // 2. 清空 10 组槽位
+
+            // 清空10组槽位
             for (int i = 1; i <= 10; i++)
             {
                 typeof(MainForm).GetField($"GasComp_Lab{i}").SetValue(null, "");
                 typeof(MainForm).GetField($"GasComp_Dat{i}").SetValue(null, "");
             }
-            // 3. 将选中的数据依次写入槽位（最多10个）
+
+            // 将选中的数据写入槽位
             for (int i = 0; i < selectedGases.Count && i < 10; i++)
             {
                 typeof(MainForm).GetField($"GasComp_Lab{i + 1}").SetValue(null, selectedGases[i].Item1);
                 typeof(MainForm).GetField($"GasComp_Dat{i + 1}").SetValue(null, selectedGases[i].Item2);
             }
-            // 4. 打印输出（调试用）
-            for (int i = 0; i < selectedGases.Count && i < 10; i++)
-            {
-                Console.WriteLine($"{selectedGases[i].Item1}{selectedGases[i].Item2}");
-            }
+
             // 获取瓦斯压力
             _mainForm.tab5_4_P瓦斯压力选择();
 
+            // 统计有效数据数量
             var validWc = selectedGases.Where(g => !string.IsNullOrWhiteSpace(g.Data)).ToList();
-            Console.WriteLine($"---------有效数据数量：{validWc.Count}");
+
+            // 根据数量返回分类
             if (validWc.Count <= 5)
                 return 1;
             else
                 return 2;
         }
 
-
-        // 保存按钮
+        /// <summary>
+        /// 保存按钮点击事件
+        /// </summary>
         public void _SaveButton_Click(object sender, EventArgs e)
         {
             _mainForm.tab5_6_SaveButton(sender, e);
         }
-        // 生成记录表
+
+        /// <summary>
+        /// 生成记录表按钮点击事件
+        /// </summary>
         public void GenRecordButton_Click(object sender, EventArgs e)
         {
             // 选择保存位置
@@ -512,7 +491,7 @@ namespace GasFormsApp.TabControl
             string outputPath = "";
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                // 设置等待状态
+                // 设置等待光标
                 void SetWaitCursor(System.Windows.Forms.Control control, Cursor cursor)
                 {
                     control.Cursor = cursor;
@@ -521,34 +500,30 @@ namespace GasFormsApp.TabControl
                         SetWaitCursor(child, cursor);
                     }
                 }
-                // 等待
                 SetWaitCursor(_mainForm, Cursors.WaitCursor);
 
                 outputPath = saveDialog.FileName;
 
-
+                // 处理Wc和Gas选项
                 MainForm.Wc选项数量 = 动态处理Wc选项();
                 MainForm.Gas选项数量 = 动态处理Gas选项();
-                
+
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
 
-                assembly = Assembly.GetExecutingAssembly(); // 或者用 Assembly.Load(...) 加载其他程序集
+                // 调试输出嵌入资源列表
                 string[] resourceNames = assembly.GetManifestResourceNames();
-
                 Console.WriteLine("嵌入的资源列表：");
                 foreach (string name in resourceNames)
                 {
                     Console.WriteLine(name);
                 }
 
-                // 尝试读取嵌入资源
+                // 获取记录表模板资源名称
                 string Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
-
-                // WPSGasFormsApp.RecordSheets3_2
                 Console.WriteLine($"寻找的记录表文件：{Word_resourceName}");
 
-                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+                // 使用文件流读取模板
                 using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
@@ -557,14 +532,13 @@ namespace GasFormsApp.TabControl
                         return;
                     }
 
-                    // 将嵌入资源复制到内存流以便修改
+                    // 将模板复制到内存流以便修改
                     using (MemoryStream memoryStream = new MemoryStream())
                     {
                         resourceStream.CopyTo(memoryStream);
 
                         // 替换占位符
                         BasicInfo basicInfo = new BasicInfo(_mainForm);
-
                         string ReportTimeText = _mainForm.dateTimePicker1.Text;
 
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
@@ -588,9 +562,11 @@ namespace GasFormsApp.TabControl
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
 
+                        // 使用共享内存传递文件路径给Python处理
                         const string MapName = "Local\\IllustrateMemory";
-                        const int Size = 256;  // 固定大小内存，单位字节
+                        const int Size = 256;  // 共享内存大小
 
+                        // 写入字符串到共享内存
                         void WriteString(string value)
                         {
                             var mmf = MemoryMappedFile.CreateOrOpen(MapName, Size);
@@ -601,15 +577,15 @@ namespace GasFormsApp.TabControl
                             if (bytes.Length > Size)
                                 throw new ArgumentException($"字符串太长，最大支持 {Size} 字节");
 
-                            // 先写入长度（int，4字节）
+                            // 先写入长度
                             accessor.Write(0, bytes.Length);
-
-                            // 再写入字符串字节，紧跟长度后面写
+                            // 再写入字符串
                             accessor.WriteArray(4, bytes, 0, bytes.Length);
 
                             Console.WriteLine($"写入字符串：{value}");
                         }
 
+                        // 从共享内存读取字符串
                         string ReadString()
                         {
                             var mmf = MemoryMappedFile.OpenExisting(MapName);
@@ -622,24 +598,24 @@ namespace GasFormsApp.TabControl
                             byte[] bytes = new byte[length];
                             accessor.ReadArray(4, bytes, 0, length);
 
-                            string value = Encoding.UTF8.GetString(bytes);
-                            return value;
+                            return Encoding.UTF8.GetString(bytes);
                         }
-                        // 写入一个 int 值
+
+                        // 传递文件路径给Python
                         WriteString(outputPath);
                         string val = ReadString();
                         Console.WriteLine("读取的值：" + val);
 
+                        // 启动Python处理
                         try
                         {
-                            var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";           // 你实际的 .py 文件路径
-                            //var scriptPath = @"Python_embed\Python\bbb.py";
+                            var pythonPath = @"Python_embed\python.exe"; // Python解释器路径
+                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc"; // Python脚本路径
 
                             ProcessStartInfo psi = new ProcessStartInfo
                             {
                                 FileName = pythonPath,
-                                Arguments = $"\"{scriptPath}\"",         // 加上引号，防止路径带空格
+                                Arguments = $"\"{scriptPath}\"", // 加上引号防止路径带空格
                                 UseShellExecute = false,
                                 RedirectStandardOutput = true,
                                 RedirectStandardError = true,
@@ -667,12 +643,11 @@ namespace GasFormsApp.TabControl
                 }
                 SetWaitCursor(_mainForm, Cursors.Default);
             }
-            else
-            {
-                return;
-            }
         }
-        // 生成报告单
+
+        /// <summary>
+        /// 生成报告按钮点击事件
+        /// </summary>
         public void GenReportButton_Click(object sender, EventArgs e)
         {
             // 选择保存位置
@@ -685,7 +660,7 @@ namespace GasFormsApp.TabControl
             string outputPath = "";
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                // 设置等待状态
+                // 设置等待光标
                 void SetWaitCursor(System.Windows.Forms.Control control, Cursor cursor)
                 {
                     control.Cursor = cursor;
@@ -694,15 +669,15 @@ namespace GasFormsApp.TabControl
                         SetWaitCursor(child, cursor);
                     }
                 }
-                // 等待
                 SetWaitCursor(_mainForm, Cursors.WaitCursor);
 
                 outputPath = saveDialog.FileName;
 
-                
+                // 处理Wc和Gas选项
                 MainForm.Wc选项数量 = 动态处理Wc选项();
                 MainForm.Gas选项数量 = 动态处理Gas选项();
-                // 井下测试人员
+
+                // 处理井下测试人员信息
                 if (_mainForm.DownholeTestersCheckBox.Checked)
                 {
                     MainForm.DownholeTestersLab = "井下测试人员：";
@@ -714,38 +689,23 @@ namespace GasFormsApp.TabControl
                     MainForm.DownholeTestersData = "";
                 }
                 Console.WriteLine($"井下测试数据：{MainForm.DownholeTestersLab},{MainForm.DownholeTestersData}");
-                
 
                 // 获取程序集
                 var assembly = Assembly.GetExecutingAssembly();
 
-                assembly = Assembly.GetExecutingAssembly(); // 或者用 Assembly.Load(...) 加载其他程序集
+                // 调试输出嵌入资源列表
                 string[] resourceNames = assembly.GetManifestResourceNames();
-
                 Console.WriteLine("嵌入的资源列表：");
                 foreach (string name in resourceNames)
                 {
                     Console.WriteLine(name);
                 }
-                //GasFormsApp.WordTemplate.docx
-                //GasFormsApp.GasFormsApp.WordTemplate1_1.docx
-                //GasFormsApp.GasFormsApp.WordTemplate1_2.docx
-                //GasFormsApp.GasFormsApp.WordTemplate2_1.docx
-                //GasFormsApp.GasFormsApp.WordTemplate2_2.docx
-                //GasFormsApp.GasFormsApp.WordTemplate3_1.docx
-                //GasFormsApp.GasFormsApp.WordTemplate3_2.docx
-                //GasFormsApp.GasFormsApp.WordTemplateNoGas1.docx
-                //GasFormsApp.GasFormsApp.WordTemplateNoGas2.docx
-                //GasFormsApp.GasFormsApp.WordTemplateNoGas3.docx
-                //GasFormsApp.GasFormsApp.WordTemplateNoWc1.docx
-                //GasFormsApp.GasFormsApp.WordTemplateNoWc2.docx
 
-                // 尝试读取嵌入资源
-                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag,MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
-
-                // GasFormsApp.WordTemplate1_1.docx
+                // 获取报告模板资源名称
+                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 Console.WriteLine($"---------：{Word_resourceName}");
-                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
+
+                // 使用文件流读取模板
                 using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
                 {
                     if (resourceStream == null)
@@ -754,14 +714,13 @@ namespace GasFormsApp.TabControl
                         return;
                     }
 
-                    // 将嵌入资源复制到内存流以便修改
+                    // 将模板复制到内存流以便修改
                     using (MemoryStream memoryStream = new MemoryStream())
                     {
                         resourceStream.CopyTo(memoryStream);
 
                         // 替换占位符
                         BasicInfo basicInfo = new BasicInfo(_mainForm);
-
                         string ReportTimeText = _mainForm.dateTimePicker1.Text;
 
                         basicInfo.ReplaceWordPlaceholders(memoryStream,
@@ -785,9 +744,11 @@ namespace GasFormsApp.TabControl
                         // 保存到用户指定路径
                         File.WriteAllBytes(outputPath, memoryStream.ToArray());
 
+                        // 使用共享内存传递文件路径给Python处理
                         const string MapName = "Local\\IllustrateMemory";
-                        const int Size = 256;  // 固定大小内存，单位字节
+                        const int Size = 256;
 
+                        // 写入字符串到共享内存
                         void WriteString(string value)
                         {
                             var mmf = MemoryMappedFile.CreateOrOpen(MapName, Size);
@@ -798,15 +759,13 @@ namespace GasFormsApp.TabControl
                             if (bytes.Length > Size)
                                 throw new ArgumentException($"字符串太长，最大支持 {Size} 字节");
 
-                            // 先写入长度（int，4字节）
                             accessor.Write(0, bytes.Length);
-
-                            // 再写入字符串字节，紧跟长度后面写
                             accessor.WriteArray(4, bytes, 0, bytes.Length);
 
                             Console.WriteLine($"写入字符串：{value}");
                         }
 
+                        // 从共享内存读取字符串
                         string ReadString()
                         {
                             var mmf = MemoryMappedFile.OpenExisting(MapName);
@@ -819,24 +778,24 @@ namespace GasFormsApp.TabControl
                             byte[] bytes = new byte[length];
                             accessor.ReadArray(4, bytes, 0, length);
 
-                            string value = Encoding.UTF8.GetString(bytes);
-                            return value;
+                            return Encoding.UTF8.GetString(bytes);
                         }
-                        // 写入一个 int 值
+
+                        // 传递文件路径给Python
                         WriteString(outputPath);
                         string val = ReadString();
                         Console.WriteLine("读取的值：" + val);
 
+                        // 启动Python处理
                         try
                         {
-                            var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";           // 你实际的 .py 文件路径
-                            //var scriptPath = @"Python_embed\Python\bbb.py";
+                            var pythonPath = @"Python_embed\python.exe";
+                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";
 
                             ProcessStartInfo psi = new ProcessStartInfo
                             {
                                 FileName = pythonPath,
-                                Arguments = $"\"{scriptPath}\"",         // 加上引号，防止路径带空格
+                                Arguments = $"\"{scriptPath}\"",
                                 UseShellExecute = false,
                                 RedirectStandardOutput = true,
                                 RedirectStandardError = true,
@@ -863,201 +822,161 @@ namespace GasFormsApp.TabControl
                     }
                 }
                 SetWaitCursor(_mainForm, Cursors.Default);
-                ////打开生成的 Word 文件
-                //try
-                //{
-                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine("无法打开文件: " + ex.Message);
-                //}
-                //this.Close();
-            }
-            else
-            {
-                return;
             }
         }
-        // 生成报告到数据库
+
+        /// <summary>
+        /// 生成报告到数据库
+        /// </summary>
+        /// <param name="doc_name">文档名称</param>
         public void GenerateReportToDatabase(string doc_name)
         {
-            //// 选择保存位置
-            //SaveFileDialog saveDialog = new SaveFileDialog
-            //{
-            //    Filter = "Word 文件 (*.docx)|*.docx",
-            //    Title = "保存生成的 Word 文件"
-            //};
-
-            //string outputPath = "";
-            //if (saveDialog.ShowDialog() == DialogResult.OK)
+            // 设置等待光标
+            void SetWaitCursor(System.Windows.Forms.Control control, Cursor cursor)
             {
-                // 设置等待状态
-                void SetWaitCursor(System.Windows.Forms.Control control, Cursor cursor)
+                control.Cursor = cursor;
+                foreach (System.Windows.Forms.Control child in control.Controls)
                 {
-                    control.Cursor = cursor;
-                    foreach (System.Windows.Forms.Control child in control.Controls)
-                    {
-                        SetWaitCursor(child, cursor);
-                    }
+                    SetWaitCursor(child, cursor);
                 }
-                // 等待
-                SetWaitCursor(_mainForm, Cursors.WaitCursor);
+            }
+            SetWaitCursor(_mainForm, Cursors.WaitCursor);
 
-                // 当前程序目录
-                string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
+            // 确定保存路径
+            string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
+            string SystemDataPath = Path.Combine(CurrentDir, "SystemData");
 
-                // 用于存放系统数据的文件夹路径
-                string SystemDataPath = Path.Combine(CurrentDir, "SystemData");
+            if (!Directory.Exists(SystemDataPath))
+            {
+                Directory.CreateDirectory(SystemDataPath);
+                Console.WriteLine("SystemData 文件夹不存在，已创建");
+            }
 
-                if (!Directory.Exists(SystemDataPath))
+            string outputPath = Path.Combine(SystemDataPath, $"{doc_name}_Doc.docx");
+
+            // 获取程序集
+            var assembly = Assembly.GetExecutingAssembly();
+
+            // 获取报告模板资源名称
+            string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+
+            // 使用文件流读取模板
+            using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+            {
+                if (resourceStream == null)
                 {
-                    Directory.CreateDirectory(SystemDataPath);
-                    Console.WriteLine("SystemData 文件夹不存在，已创建");
+                    MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-                // 指定最终文件路径
-                string outputPath = Path.Combine(SystemDataPath, $"{doc_name}_Doc.docx");
-
-
-
-                // 获取程序集
-                var assembly = Assembly.GetExecutingAssembly();
-
-                // 尝试读取嵌入资源
-                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
-                //using (Stream resourceStream = assembly.GetManifestResourceStream(Word_resourceName))
-                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+                // 将模板复制到内存流以便修改
+                using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    if (resourceStream == null)
+                    resourceStream.CopyTo(memoryStream);
+
+                    // 替换占位符
+                    BasicInfo basicInfo = new BasicInfo(_mainForm);
+                    string ReportTimeText = _mainForm.dateTimePicker1.Text;
+
+                    basicInfo.ReplaceWordPlaceholders(memoryStream,
+                        _mainForm.MineNameTextBox.Text,
+                        _mainForm.SamplingSpotTextBox.Text,
+                        _mainForm.BurialDepthTextBox.Text,
+                        _mainForm.CoalSeamTextBox.Text,
+                        _mainForm.SampleNumTextBox.Text,
+                        _mainForm.UndAtmPressureTextBox.Text,
+                        _mainForm.LabAtmPressureTextBox.Text,
+                        _mainForm.UndTempTextBox.Text,
+                        _mainForm.LabTempTextBox.Text,
+                        _mainForm.SampleWeightTextBox.Text,
+                        _mainForm.SampleModeComboBox.Text,
+                        _mainForm.MoistureSampleTextBox.Text,
+                        _mainForm.RawCoalMoistureTextBox.Text,
+                        _mainForm.InitialVolumeTextBox.Text,
+                        _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                        ReportTimeText);
+
+                    // 保存到指定路径
+                    File.WriteAllBytes(outputPath, memoryStream.ToArray());
+
+                    // 使用共享内存传递文件路径给Python处理
+                    const string MapName = "Local\\IllustrateMemory";
+                    const int Size = 256;
+
+                    // 写入字符串到共享内存
+                    void WriteString(string value)
                     {
-                        MessageBox.Show("模板资源未找到，请检查资源名称是否正确。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        var mmf = MemoryMappedFile.CreateOrOpen(MapName, Size);
+                        var accessor = mmf.CreateViewAccessor(0, Size);
+
+                        byte[] bytes = Encoding.UTF8.GetBytes(value);
+
+                        if (bytes.Length > Size)
+                            throw new ArgumentException($"字符串太长，最大支持 {Size} 字节");
+
+                        accessor.Write(0, bytes.Length);
+                        accessor.WriteArray(4, bytes, 0, bytes.Length);
+
+                        Console.WriteLine($"写入字符串：{value}");
                     }
 
-                    // 将嵌入资源复制到内存流以便修改
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    // 从共享内存读取字符串
+                    string ReadString()
                     {
-                        resourceStream.CopyTo(memoryStream);
+                        var mmf = MemoryMappedFile.OpenExisting(MapName);
+                        var accessor = mmf.CreateViewAccessor(0, Size);
 
-                        // 替换占位符
-                        BasicInfo basicInfo = new BasicInfo(_mainForm);
+                        int length = accessor.ReadInt32(0);
+                        if (length > Size - 4 || length < 0)
+                            throw new InvalidOperationException("读取长度不合理");
 
-                        string ReportTimeText = _mainForm.dateTimePicker1.Text;
+                        byte[] bytes = new byte[length];
+                        accessor.ReadArray(4, bytes, 0, length);
 
-                        basicInfo.ReplaceWordPlaceholders(memoryStream,
-                            _mainForm.MineNameTextBox.Text,
-                            _mainForm.SamplingSpotTextBox.Text,
-                            _mainForm.BurialDepthTextBox.Text,
-                            _mainForm.CoalSeamTextBox.Text,
-                            _mainForm.SampleNumTextBox.Text,
-                            _mainForm.UndAtmPressureTextBox.Text,
-                            _mainForm.LabAtmPressureTextBox.Text,
-                            _mainForm.UndTempTextBox.Text,
-                            _mainForm.LabTempTextBox.Text,
-                            _mainForm.SampleWeightTextBox.Text,
-                            _mainForm.SampleModeComboBox.Text,
-                            _mainForm.MoistureSampleTextBox.Text,
-                            _mainForm.RawCoalMoistureTextBox.Text,
-                            _mainForm.InitialVolumeTextBox.Text,
-                            _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
-                            ReportTimeText);
+                        return Encoding.UTF8.GetString(bytes);
+                    }
 
-                        // 保存到用户指定路径
-                        File.WriteAllBytes(outputPath, memoryStream.ToArray());
+                    // 传递文件路径给Python
+                    WriteString(outputPath);
+                    string val = ReadString();
+                    Console.WriteLine("读取的值：" + val);
 
-                        const string MapName = "Local\\IllustrateMemory";
-                        const int Size = 256;  // 固定大小内存，单位字节
+                    // 启动Python处理
+                    try
+                    {
+                        var pythonPath = @"Python_embed\python.exe";
+                        var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";
 
-                        void WriteString(string value)
+                        ProcessStartInfo psi = new ProcessStartInfo
                         {
-                            var mmf = MemoryMappedFile.CreateOrOpen(MapName, Size);
-                            var accessor = mmf.CreateViewAccessor(0, Size);
+                            FileName = pythonPath,
+                            Arguments = $"\"{scriptPath}\"",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true,
+                            CreateNoWindow = true
+                        };
 
-                            byte[] bytes = Encoding.UTF8.GetBytes(value);
-
-                            if (bytes.Length > Size)
-                                throw new ArgumentException($"字符串太长，最大支持 {Size} 字节");
-
-                            // 先写入长度（int，4字节）
-                            accessor.Write(0, bytes.Length);
-
-                            // 再写入字符串字节，紧跟长度后面写
-                            accessor.WriteArray(4, bytes, 0, bytes.Length);
-
-                            Console.WriteLine($"写入字符串：{value}");
-                        }
-
-                        string ReadString()
+                        using (Process process = Process.Start(psi))
                         {
-                            var mmf = MemoryMappedFile.OpenExisting(MapName);
-                            var accessor = mmf.CreateViewAccessor(0, Size);
+                            string output = process.StandardOutput.ReadToEnd();
+                            string error = process.StandardError.ReadToEnd();
+                            process.WaitForExit();
 
-                            int length = accessor.ReadInt32(0);
-                            if (length > Size - 4 || length < 0)
-                                throw new InvalidOperationException("读取长度不合理");
-
-                            byte[] bytes = new byte[length];
-                            accessor.ReadArray(4, bytes, 0, length);
-
-                            string value = Encoding.UTF8.GetString(bytes);
-                            return value;
-                        }
-                        // 写入一个 int 值
-                        WriteString(outputPath);
-                        string val = ReadString();
-                        Console.WriteLine("读取的值：" + val);
-
-                        try
-                        {
-                            var pythonPath = @"Python_embed\python.exe"; // 嵌入式解释器路径
-                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";           // 你实际的 .py 文件路径
-
-                            ProcessStartInfo psi = new ProcessStartInfo
+                            Console.WriteLine("Python output:\n" + output);
+                            if (!string.IsNullOrEmpty(error))
                             {
-                                FileName = pythonPath,
-                                Arguments = $"\"{scriptPath}\"",         // 加上引号，防止路径带空格
-                                UseShellExecute = false,
-                                RedirectStandardOutput = true,
-                                RedirectStandardError = true,
-                                CreateNoWindow = true
-                            };
-
-                            using (Process process = Process.Start(psi))
-                            {
-                                string output = process.StandardOutput.ReadToEnd();
-                                string error = process.StandardError.ReadToEnd();
-                                process.WaitForExit();
-
-                                Console.WriteLine("Python output:\n" + output);
-                                if (!string.IsNullOrEmpty(error))
-                                {
-                                    Console.WriteLine("Python error:\n" + error);
-                                }
+                                Console.WriteLine("Python error:\n" + error);
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"执行程序时发生错误：{ex.Message}");
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"执行程序时发生错误：{ex.Message}");
                     }
                 }
-                SetWaitCursor(_mainForm, Cursors.Default);
-                ////打开生成的 Word 文件
-                //try
-                //{
-                //    Process.Start("WINWORD.EXE", $"\"{outputPath}\"");
-                //}
-                //catch (Exception ex)
-                //{
-                //    Console.WriteLine("无法打开文件: " + ex.Message);
-                //}
-                //this.Close();
             }
-            //else
-            //{
-            //    return;
-            //}
+            SetWaitCursor(_mainForm, Cursors.Default);
         }
     }
 }

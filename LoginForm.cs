@@ -1,4 +1,5 @@
-﻿using System;
+﻿// 所需命名空间
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,64 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Microsoft.Win32;  // 需要引用此命名空间
-
-using System;
-using System.Security.Cryptography;
-using System.Text;
-using System.Net.Http;
-using System.Net.Sockets;
-using System.Net;
-using System.Management;
-using System.IO;
+using System.Security.Cryptography; // 加密库
+using System.Net.Http;              // 网络请求
+using System.Net.Sockets;           // Socket通信
+using System.Net;                   // 网络类
+using System.Management;           // 获取硬件信息
+using System.IO;                   // 文件操作
+using System.Data.SQLite;
 
 namespace GasFormsApp
 {
     public partial class LoginForm : Form
     {
-        //private const string RegistryKeyPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\SysConfigData";
-        //private const string FailedLoginValueName = "FailedLoginCount";
-        //private const int MaxFailedAttempts = 3;
-
-
-        private static readonly HttpClient client = new HttpClient
-        {
-            Timeout = TimeSpan.FromSeconds(5)
-        };
-
-        static async Task<bool> CheckInternetConnection()
-        {
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync("https://www.baidu.com");
-                return response.IsSuccessStatusCode;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private async void LoginForm_Load(object sender, EventArgs e)
-        {
-            bool isOnline = await CheckInternetConnection();
-
-            if (!isOnline)
-            {
-                MessageBox.Show("未检测到网络，程序无法登录。", "网络错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                Application.Exit();  // 确保程序彻底退出
-                return;
-            }
-        }
-
+        // 获取主板+CPU序列号（组合唯一识别码）
         public static string GetMotherboardAndCpuId()
         {
             string motherboardSN = GetMotherboardSerialNumber();
             string cpuId = GetCpuId();
-
             return $"{motherboardSN}-{cpuId}";
         }
+
+        // 获取主板序列号
         public static string GetMotherboardSerialNumber()
         {
             try
@@ -73,14 +37,14 @@ namespace GasFormsApp
                 using (var searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard"))
                 {
                     foreach (ManagementObject obj in searcher.Get())
-                    {
                         return obj["SerialNumber"]?.ToString().Trim() ?? "UNKNOWN";
-                    }
                 }
             }
             catch { }
             return "UNKNOWN";
         }
+
+        // 获取 CPU ID
         public static string GetCpuId()
         {
             try
@@ -88,15 +52,14 @@ namespace GasFormsApp
                 using (var searcher = new ManagementObjectSearcher("SELECT ProcessorId FROM Win32_Processor"))
                 {
                     foreach (ManagementObject obj in searcher.Get())
-                    {
                         return obj["ProcessorId"]?.ToString().Trim() ?? "UNKNOWN";
-                    }
                 }
             }
             catch { }
             return "UNKNOWN";
         }
-        // 用公钥验证签名
+
+        // 使用 RSA 公钥验证签名合法性
         public static bool VerifyData(string data, byte[] signature, string publicKeyXml)
         {
             byte[] dataBytes = Encoding.UTF8.GetBytes(data);
@@ -106,6 +69,8 @@ namespace GasFormsApp
                 return rsa.VerifyData(dataBytes, CryptoConfig.MapNameToOID("SHA256"), signature);
             }
         }
+
+        // 构造函数：执行注册校验逻辑
         public LoginForm()
         {
             InitializeComponent();
@@ -115,7 +80,7 @@ namespace GasFormsApp
 
             if (!File.Exists(path))
             {
-                // 写入文件，覆盖已有内容
+                // 如果注册文件不存在，则创建并提示注册
                 File.WriteAllText(path, data, Encoding.UTF8);
                 MessageBox.Show($"未找到注册文件，请先注册使用该软件。{data}", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
@@ -124,16 +89,18 @@ namespace GasFormsApp
 
             try
             {
+                // 读取注册文件中的签名
                 string readBase64 = File.ReadAllText(path);
                 byte[] signature = Convert.FromBase64String(readBase64);
 
+                // 公钥（硬编码）
                 string publicKey = "<RSAKeyValue><Modulus>zMU2qMkOog2AhpAnI39JawR8ag5+u/vuNck17MOvdJoJo0ttI8e4HGIwRf/+lL4eytmdC1l2c+lgX0WpZ0Ggeg8sXB2i68wVpkLXxAGDTDbFGMj7CCJ2DbI1PKUtpcueKeEhOK7H02S9Ru4ssnomvfbf9TGlpb8bj4Diu33Y8f9ennuWy47Pbism350gE0W7btQ0DWYv1zK6u33mBn6InncEJdvkm8teQbQTE4krPCMmV1JGUBMEMTYtRfYTO59EoK1PU8S4xeeYdeNgRodS9pr/QMGJlUD/O4rVngV+09Q23C9BOs/9gRbGCAtaIYJKdJRTuoI5BweONB4BgXD6VQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
 
                 bool verified = VerifyData(data, signature, publicKey);
-                Console.WriteLine("验证结果: " + verified);
 
                 if (!verified)
                 {
+                    // 如果验证失败，写入当前机器码，并提示重新注册
                     File.WriteAllText(path, data, Encoding.UTF8);
                     MessageBox.Show($"注册信息无效，请重新注册。{data}", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Close();
@@ -142,192 +109,158 @@ namespace GasFormsApp
             }
             catch (Exception ex)
             {
+                // 读取失败异常处理
                 File.WriteAllText(path, data, Encoding.UTF8);
                 MessageBox.Show($"读取注册文件出错，请重新注册。{data}\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;
             }
-
-
-            this.Load += LoginForm_Load;
-
-            //DataAdministrationForm newForm = new DataAdministrationForm();
-            ////newForm.Show();
-            //this.Hide();
-            //newForm.ShowDialog();
-            //this.Close();
-
-            MainForm main = new MainForm(false);
-            this.Hide();
-            main.ShowDialog();
-            this.Close();
         }
 
-        //private int GetFailedLoginCount()
-        //{
-        //    using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath, false))
-        //    {
-        //        if (key == null)
-        //        {
-        //            SetFailedLoginCount(0);
-        //            return 0;
-        //        }
-        //        object val = key.GetValue(FailedLoginValueName);
-        //        if (val == null)
-        //        {
-        //            return 0;
-        //        }
-        //        if (int.TryParse(val.ToString(), out int count))
-        //        {
-        //            return count;
-        //        }
-        //        else
-        //        {
-        //            return 0;
-        //        }
-        //    }
-        //}
 
-        //private void SetFailedLoginCount(int count)
-        //{
-        //    using (RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath))
-        //    {
-        //        key.SetValue(FailedLoginValueName, count, RegistryValueKind.DWord);
-        //    }
-        //}
-
-        static uint SwapEndianness(ulong x)
+        public static string ComputeSha256Hash(string rawData)
         {
-            return (uint)(((x & 0x000000ff) << 24) +
-                          ((x & 0x0000ff00) << 8) +
-                          ((x & 0x00ff0000) >> 8) +
-                          ((x & 0xff000000) >> 24));
-        }
-        public static Task<DateTime> GetNetworkTimeAsync()
-        {
-            return Task.Run(() =>
+            using (SHA256 sha256Hash = SHA256.Create())
             {
-                const string ntpServer = "pool.ntp.org";
-                var ntpData = new byte[48];
-                ntpData[0] = 0x1B;
+                // 计算哈希字节数组
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
-                var addresses = Dns.GetHostEntry(ntpServer).AddressList;
-                var ipEndPoint = new IPEndPoint(addresses[0], 123);
-
-                using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp))
+                // 转换成十六进制字符串
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
                 {
-                    socket.Connect(ipEndPoint);
-                    socket.Send(ntpData);
-                    socket.Receive(ntpData);
+                    builder.Append(bytes[i].ToString("x2"));
                 }
-
-                const byte serverReplyTime = 40;
-                ulong intPart = BitConverter.ToUInt32(ntpData, serverReplyTime);
-                ulong fractPart = BitConverter.ToUInt32(ntpData, serverReplyTime + 4);
-
-                intPart = SwapEndianness(intPart);
-                fractPart = SwapEndianness(fractPart);
-
-                var milliseconds = (intPart * 1000) + ((fractPart * 1000) / 0x100000000L);
-                var networkDateTime = new DateTime(1900, 1, 1).AddMilliseconds((long)milliseconds);
-
-                return networkDateTime.ToLocalTime();
-            });
+                return builder.ToString();
+            }
         }
-        private async void BtnLogin_Click(object sender, EventArgs e)
+        // 登录按钮点击事件
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim().Equals("admin"))
+            string folder = "SystemData";
+            string dbFile = Path.Combine(folder, "Account_password.db");
+
+            // 创建目录（如果不存在）
+            if (!Directory.Exists(folder))
             {
-                DateTime now = await GetNetworkTimeAsync();  // 异步调用，不阻塞UI
+                Directory.CreateDirectory(folder);
+            }
 
-                int minute = now.Minute;
-                int roundedMinute;
-
-                if (minute < 15)
-                    roundedMinute = 0;
-                else if (minute < 30)
-                    roundedMinute = 15;
-                else if (minute < 45)
-                    roundedMinute = 30;
-                else
-                    roundedMinute = 45;
-
-                int hour = now.Hour;
-                int year = now.Year;
-                int month = now.Month;
-                int day = now.Day;
-
-                DateTime roundedTime = new DateTime(year, month, day, hour, roundedMinute, 0);
-
-                //Console.WriteLine($"当前时间: {now}");
-                //Console.WriteLine($"区间取整后的时间节点: {roundedTime}");
-
-                string keySource = now.ToString("yyyyMMdd"); // 只精确到天
-                string oddDigits = new string(keySource.Where(c => {
-                    int digit = c - '0';
-                    return digit % 2 == 1 || digit == 0;  // 只取奇数数字
-                }).ToArray());
-                string key = GenerateAes256KeyFromTime(keySource);
-
-                Console.WriteLine("用于AES-256的密钥: " + key);
-
-                string repeated2 = new string(key.Reverse().ToArray());
-                Console.WriteLine("加密的明文: " + repeated2);
-                string encrypted = EncryptECB(repeated2, key);
-
-                Console.WriteLine("AES-256 ECB 加密结果: " + encrypted);
-
-                // 1. Base64解码成字节数组
-                byte[] bytes = Convert.FromBase64String(encrypted);
-                // 2. 字节数组转16进制字符串
-                string hexString = BitConverter.ToString(bytes).Replace("-", "");
-                Console.WriteLine($"校验：{hexString}\r\n输入：{txtPwd.Text}");
-
-                if (txtPwd.Text.Trim().Equals(hexString))
+            // 初始化数据库（如果不存在）
+            if (!File.Exists(dbFile))
+            {
+                try
                 {
-                    MainForm main = new MainForm(false);
-                    this.Hide();
+                    SQLiteConnection.CreateFile(dbFile);
 
-                    main.ShowDialog();
+                    using (var conn = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+                    {
+                        conn.Open();
 
-                    this.Close();
+                        // 创建用户表，用户名唯一
+                        string createTable = @"
+                            CREATE TABLE users (
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                username TEXT UNIQUE NOT NULL,
+                                password TEXT NOT NULL
+                            );";
+                        var cmd = new SQLiteCommand(createTable, conn);
+                        cmd.ExecuteNonQuery();
+
+                        // 插入默认用户 admin / 1234
+                        string defaultUser = "admin";
+                        string defaultPwdHash = ComputeSha256Hash("1234");
+
+                        string insertUser = "INSERT INTO users (username, password) VALUES (@username, @password);";
+                        cmd = new SQLiteCommand(insertUser, conn);
+                        cmd.Parameters.AddWithValue("@username", defaultUser);
+                        cmd.Parameters.AddWithValue("@password", defaultPwdHash);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show($"密码已过期，请联系开发者。", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("数据库初始化失败：" + ex.Message);
                     return;
                 }
             }
-        }
 
-        static string GenerateAes256KeyFromTime(string timeString)
-        {
-            // 这里简单做法：重复拼接时间字符串，截取32字符
-            StringBuilder sb = new StringBuilder();
-            while (sb.Length < 32)
+            // 获取用户输入
+            string inputUser = txtName.Text.Trim();
+            string inputPwd = txtPwd.Text.Trim();
+
+            // 检查是否输入了用户名和密码
+            if (string.IsNullOrEmpty(inputUser) || string.IsNullOrEmpty(inputPwd))
             {
-                sb.Append(timeString);
+                MessageBox.Show("请输入用户名和密码！");
+                return;
             }
-            return sb.ToString(0, 32);
-        }
-        static string EncryptECB(string plainText, string key)
-        {
-            using (Aes aes = Aes.Create())
-            {
-                aes.Key = Encoding.UTF8.GetBytes(key);
-                aes.Mode = CipherMode.ECB;   // 电子密码本模式
-                aes.Padding = PaddingMode.PKCS7;
 
-                using (ICryptoTransform encryptor = aes.CreateEncryptor())
+            string inputPwdHash = ComputeSha256Hash(inputPwd);
+
+            try
+            {
+                using (var conn = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
                 {
-                    byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
-                    byte[] encryptedBytes = encryptor.TransformFinalBlock(plainBytes, 0, plainBytes.Length);
-                    return Convert.ToBase64String(encryptedBytes);
+                    conn.Open();
+
+                    string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password;";
+                    var cmd = new SQLiteCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@username", inputUser);
+                    cmd.Parameters.AddWithValue("@password", inputPwdHash);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        // 登录成功
+                        // 判断是否使用默认密码
+                        
+                        string defaultPwdHash = ComputeSha256Hash("1234");
+                        if (inputPwdHash == defaultPwdHash)
+                        {
+                            DialogResult result = MessageBox.Show(
+                                "当前使用的是默认密码，请及时修改密码以保障账户安全！\n是否立即修改密码？",
+                                "安全提示",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Warning
+                            );
+                            if (result == DialogResult.OK)
+                            {
+                                // 用户点击“确定”，打开修改密码窗口
+                                ChangePasswordForm changePwdForm = new ChangePasswordForm(dbFile, inputUser);
+                                changePwdForm.ShowDialog();
+                            }
+                            else
+                            {
+                                // 用户点击“取消”
+                            }
+                        }
+
+
+                        MainForm main = new MainForm(false);
+                        this.Hide();
+                        main.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("用户名或密码错误！");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("登录失败：" + ex.Message);
+            }
         }
 
-        private void LoginForm_Load_1(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }
