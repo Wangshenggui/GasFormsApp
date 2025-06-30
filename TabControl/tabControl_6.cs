@@ -86,14 +86,22 @@ namespace GasFormsApp.TabControl
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // 确保点击的是有效的行
+            // 确保点击的是有效的数据单元格（非表头或无效列）
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = _mainForm.dataGridView1.Rows[e.RowIndex];
-                string cellValue = row.Cells[e.ColumnIndex].Value?.ToString();
-                //MessageBox.Show($"你点击了第 {e.RowIndex} 行，第 {e.ColumnIndex} 列，值为：{cellValue}");
 
-                // 触发切换行以刷新图片
-                dataGridView1_SelectionChanged(sender, e);
+                // 确保列索引没有超出单元格数量（防御性写法）
+                if (e.ColumnIndex < row.Cells.Count)
+                {
+                    string cellValue = row.Cells[e.ColumnIndex].Value?.ToString();
+
+                    // 可选：显示点击信息
+                    // MessageBox.Show($"你点击了第 {e.RowIndex} 行，第 {e.ColumnIndex} 列，值为：{cellValue}");
+
+                    // 触发切换行刷新图片
+                    dataGridView1_SelectionChanged(sender, e);
+                }
             }
         }
 
@@ -309,12 +317,14 @@ namespace GasFormsApp.TabControl
 
             // 创建根节点，显示根目录名，Tag属性存储目录完整路径
             TreeNode rootNode = new TreeNode(rootDir.Name) { Tag = rootDir.FullName };
+            rootNode.ImageKey = "根目录";
+            rootNode.SelectedImageKey = "根目录";
 
             // 添加根节点到树控件
             _mainForm.treeView1.Nodes.Add(rootNode);
 
             // 递归添加子目录节点
-            AddSubDirectories(rootDir, rootNode);
+            AddSubDirectories(rootDir, rootNode, 1);
 
             // 展开所有节点，方便查看
             _mainForm.treeView1.ExpandAll();
@@ -324,21 +334,39 @@ namespace GasFormsApp.TabControl
         /// </summary>
         /// <param name="dir">当前目录</param>
         /// <param name="parentNode">父节点</param>
-        private void AddSubDirectories(DirectoryInfo dir, TreeNode parentNode)
+        private void AddSubDirectories(DirectoryInfo dir, TreeNode parentNode, int level)
         {
-            // 遍历当前目录所有子目录
             foreach (var subDir in dir.GetDirectories())
             {
-                // 创建子节点，显示子目录名，Tag存储完整路径
-                TreeNode childNode = new TreeNode(subDir.Name) { Tag = subDir.FullName };
+                TreeNode childNode = new TreeNode(subDir.Name)
+                {
+                    Tag = subDir.FullName
+                };
 
-                // 添加子节点到父节点
+                // 根据层级设置不同图标（示例）
+                if (level == 1)
+                {
+                    childNode.ImageKey = "矿井";
+                    childNode.SelectedImageKey = "矿井";
+                }
+                else if (level == 2)
+                {
+                    childNode.ImageKey = "项目";
+                    childNode.SelectedImageKey = "项目";
+                }
+                else
+                {
+                    childNode.ImageKey = "根目录";
+                    childNode.SelectedImageKey = "根目录";
+                }
+
                 parentNode.Nodes.Add(childNode);
 
-                // 递归调用，添加更深层的子目录
-                AddSubDirectories(subDir, childNode);
+                // 递归调用，层级 +1
+                AddSubDirectories(subDir, childNode, level + 1);
             }
         }
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (_mainForm.dataGridView1.CurrentRow != null)

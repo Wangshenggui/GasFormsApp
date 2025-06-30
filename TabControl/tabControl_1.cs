@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GasFormsApp.TabControl
@@ -103,7 +104,7 @@ namespace GasFormsApp.TabControl
 #pragma warning restore SYSLIB0011
                 }
 
-                MessageBox.Show("以二进制格式保存成功！");
+                MessageBox.Show("保存成功！");
             }
             catch (Exception ex)
             {
@@ -253,22 +254,59 @@ namespace GasFormsApp.TabControl
             string input = textBox.Text;
             textBox.BackColor = SystemColors.Window;
 
-            // 含有空格视为错误，背景红色
+            // 含空格 → 错
             if (input.Contains(" "))
             {
                 textBox.BackColor = Color.Red;
+                return;
             }
-            // 空文本显示蓝色或灰色提示
-            else if (string.IsNullOrWhiteSpace(input))
+
+            // 空文本 → 蓝或灰提示
+            if (string.IsNullOrWhiteSpace(input))
             {
                 textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+                return;
             }
-            // 不是有效数字或小于0，背景红色提示
-            else if (!double.TryParse(input, out double value) || value < 0)
+
+            // 判断是否允许负号的控件
+            bool allowNegative = (textBox == _mainForm.DrillInclinationTextBox);
+            // === 允许负号的校验 ===
+            if (allowNegative)
             {
-                textBox.BackColor = Color.Red;
+                int minusCount = input.Count(c => c == '-');
+                if (minusCount > 1 || (minusCount == 1 && !input.StartsWith("-")))
+                {
+                    textBox.BackColor = Color.Red;
+                    return;
+                }
+
+                if (!double.TryParse(input, out _))
+                {
+                    textBox.BackColor = Color.Red;
+                    return;
+                }
             }
+            // === 不允许负号的校验 ===
+            else
+            {
+                // 开头是负号 → 错
+                if (input.StartsWith("-"))
+                {
+                    textBox.BackColor = Color.Red;
+                    return;
+                }
+
+                if (!double.TryParse(input, out double value) || value < 0)
+                {
+                    textBox.BackColor = Color.Red;
+                    return;
+                }
+            }
+
+            // 一切正常
+            textBox.BackColor = SystemColors.Window;
         }
+
 
         // 定时器触发的输入校验方法，周期性检查所有相关控件的内容合法性
         public void TabControl_1_InputCheckTimer_Tick()

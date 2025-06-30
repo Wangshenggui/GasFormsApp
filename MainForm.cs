@@ -21,7 +21,6 @@ namespace GasFormsApp
         private Control lastRightClickedControl;
 
         private bool v;
-        private ImageList imageList1;
 
         //python执行标志
         public static bool python执行标志 = false;
@@ -156,25 +155,20 @@ namespace GasFormsApp
             tabPage5.Text = "归档设置";
             tabPage6.Text = "历史记录";
 
-            // 创建并绑定图像列表到 TabControl
-            imageList1 = new ImageList();
-            imageList1.ImageSize = new System.Drawing.Size(32, 32);
-            tabControl1.ImageList = imageList1;
-
-            // 加载嵌入资源图标
-            try
-            {
-                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.1.ico").ToBitmap());
-                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.2.ico").ToBitmap());
-                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.3.ico").ToBitmap());
-                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.4.ico").ToBitmap());
-                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.5.ico").ToBitmap());
-                imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.6.ico").ToBitmap());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("加载图标失败: " + ex.Message);
-            }
+            //// 加载嵌入资源图标
+            //try
+            //{
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.1.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.2.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.3.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.4.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.5.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.6.ico").ToBitmap());
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("加载图标失败: " + ex.Message);
+            //}
 
             // 设置表头图标
             tabPage1.ImageIndex = 0;
