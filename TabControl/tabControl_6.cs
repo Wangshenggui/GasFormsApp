@@ -80,10 +80,66 @@ namespace GasFormsApp.TabControl
             LoadFoldersToTree(rootPath);
             // 绑定树控件节点选中事件
             _mainForm.treeView1.AfterSelect += treeView1_AfterSelect;
+            _mainForm.treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
+            _mainForm.treeView1.DrawNode += treeView1_DrawNode;
+            _mainForm.FindMineTextBox.KeyDown += FindMineTextBox_KeyDown;
+
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
         }
+        private void treeView1_DrawNode(object sender, DrawTreeNodeEventArgs e)
+        {
+            string text = e.Node.Text;
+            string keyword = _mainForm.FindMineTextBox.Text ?? "";
+            Font font = _mainForm.treeView1.Font;
+            int margin = 0;
+            int verticalMargin = 8;
+
+            Color textColor = Color.White;
+
+            int matchIndex = -1;
+            if (!string.IsNullOrEmpty(keyword))
+                matchIndex = text.ToLower().IndexOf(keyword.ToLower());
+
+            // **先用 TreeView 的背景色清理整行区域，避免遗留旧的绘制痕迹**
+            e.Graphics.FillRectangle(new SolidBrush(_mainForm.treeView1.BackColor), e.Bounds);
+
+            // 如果选中则绘制高亮背景并设置文字颜色
+            if ((e.State & TreeNodeStates.Selected) != 0)
+            {
+                e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
+                textColor = SystemColors.HighlightText;
+            }
+
+            float x = e.Bounds.Left + margin;
+            float y = e.Bounds.Top + verticalMargin;
+
+            if (string.IsNullOrEmpty(keyword) || matchIndex < 0)
+            {
+                TextRenderer.DrawText(e.Graphics, text, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+                return;
+            }
+
+            string before = text.Substring(0, matchIndex);
+            string matchText = text.Substring(matchIndex, keyword.Length);
+            string after = text.Substring(matchIndex + keyword.Length);
+
+            Size beforeSize = TextRenderer.MeasureText(e.Graphics, before, font, e.Bounds.Size, TextFormatFlags.NoPadding);
+            TextRenderer.DrawText(e.Graphics, before, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+            x += beforeSize.Width;
+
+            Size matchSize = TextRenderer.MeasureText(e.Graphics, matchText, font, e.Bounds.Size, TextFormatFlags.NoPadding);
+            TextRenderer.DrawText(e.Graphics, matchText, font, new Point((int)x, (int)y),
+                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
+                TextFormatFlags.NoPadding);
+            x += matchSize.Width;
+
+            TextRenderer.DrawText(e.Graphics, after, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+        }
+
+
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // 确保点击的是有效的数据单元格（非表头或无效列）
@@ -257,6 +313,24 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("未选中有效节点或节点没有路径信息！");
             }
         }
+        // 矿井搜索
+        private void FindMineTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)  // 判断是否按下了回车键（Enter）
+            {
+                // e.Handled = true;  // （可选）告诉系统事件已经处理，阻止系统发出“叮”声
+                e.SuppressKeyPress = true; // 阻止回车键被进一步处理，避免输入框响铃或换行
+
+                // 获取当前程序启动的目录路径
+                string basePath = Application.StartupPath;
+                // 构建目标文件夹路径（相对于启动目录的 SystemData\DataAdministrationForm）
+                string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+                // 加载该路径下的文件夹结构到树控件
+                LoadFoldersToTree(rootPath);
+            }
+        }
+
+        // 信息搜索
         private void FindTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -338,6 +412,9 @@ namespace GasFormsApp.TabControl
         {
             foreach (var subDir in dir.GetDirectories())
             {
+                if (level == 1 && !subDir.Name.ToLower().Contains(_mainForm.FindMineTextBox.Text.ToLower()))
+                    continue;
+
                 TreeNode childNode = new TreeNode(subDir.Name)
                 {
                     Tag = subDir.FullName
