@@ -75,6 +75,15 @@ namespace GasFormsApp
         {
             InitializeComponent();
 
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
+              ControlStyles.AllPaintingInWmPaint |
+              ControlStyles.UserPaint, true);
+            this.UpdateStyles();
+
             string data = GetMotherboardAndCpuId();
             string path = Path.Combine(Directory.GetCurrentDirectory(), "RegistrationCode.dat");
 
@@ -115,6 +124,11 @@ namespace GasFormsApp
                 this.Close();
                 return;
             }
+
+            MainForm main = new MainForm(false);
+            this.Hide();
+            main.ShowDialog();
+            this.Close();
         }
 
 

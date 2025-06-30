@@ -401,6 +401,10 @@ namespace GasFormsApp
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.更改背景色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更改字体颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -456,6 +460,7 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage6contextMenuStrip2.SuspendLayout();
+            this.ChangeColorContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1047,7 +1052,6 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedPanel2.Name = "tabPage2DoubleBufferedPanel2";
             this.tabPage2DoubleBufferedPanel2.Size = new System.Drawing.Size(1435, 639);
             this.tabPage2DoubleBufferedPanel2.TabIndex = 1002;
-            this.tabPage2DoubleBufferedPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage2DoubleBufferedPanel2_Paint);
             // 
             // tabPage2DoubleBufferedFlowLayoutPanel1
             // 
@@ -1193,7 +1197,6 @@ namespace GasFormsApp
             this.doubleBufferedPanel1.Name = "doubleBufferedPanel1";
             this.doubleBufferedPanel1.Size = new System.Drawing.Size(403, 103);
             this.doubleBufferedPanel1.TabIndex = 1003;
-            this.doubleBufferedPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.doubleBufferedPanel1_Paint);
             // 
             // dateTimePicker5
             // 
@@ -3033,7 +3036,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 703);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 721);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -4773,6 +4776,7 @@ namespace GasFormsApp
             this.label2.TabIndex = 2;
             this.label2.Text = "瓦斯含量测定实验报告生成系统";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // shapeContainer2
             // 
@@ -4807,7 +4811,7 @@ namespace GasFormsApp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(130)))));
             this.pictureBox1.Location = new System.Drawing.Point(0, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(358, 40);
@@ -4854,6 +4858,28 @@ namespace GasFormsApp
             this.恢复历史记录ToolStripMenuItem.Name = "恢复历史记录ToolStripMenuItem";
             this.恢复历史记录ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.恢复历史记录ToolStripMenuItem.Text = "恢复历史记录";
+            // 
+            // ChangeColorContextMenuStrip
+            // 
+            this.ChangeColorContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.更改背景色ToolStripMenuItem,
+            this.更改字体颜色ToolStripMenuItem});
+            this.ChangeColorContextMenuStrip.Name = "contextMenuStrip1";
+            this.ChangeColorContextMenuStrip.Size = new System.Drawing.Size(149, 48);
+            // 
+            // 更改背景色ToolStripMenuItem
+            // 
+            this.更改背景色ToolStripMenuItem.Name = "更改背景色ToolStripMenuItem";
+            this.更改背景色ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.更改背景色ToolStripMenuItem.Text = "更改背景色";
+            this.更改背景色ToolStripMenuItem.Click += new System.EventHandler(this.更改背景色ToolStripMenuItem_Click);
+            // 
+            // 更改字体颜色ToolStripMenuItem
+            // 
+            this.更改字体颜色ToolStripMenuItem.Name = "更改字体颜色ToolStripMenuItem";
+            this.更改字体颜色ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.更改字体颜色ToolStripMenuItem.Text = "更改字体颜色";
+            this.更改字体颜色ToolStripMenuItem.Click += new System.EventHandler(this.更改字体颜色ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -4962,6 +4988,7 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabPage6contextMenuStrip2.ResumeLayout(false);
+            this.ChangeColorContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -5327,5 +5354,9 @@ namespace GasFormsApp
         public ErrorProvider errorProvider1;
         public ContextMenuStrip tabPage6contextMenuStrip2;
         public ToolStripMenuItem 恢复历史记录ToolStripMenuItem;
+        private ContextMenuStrip ChangeColorContextMenuStrip;
+        private ToolStripMenuItem 更改背景色ToolStripMenuItem;
+        private ToolStripMenuItem 更改字体颜色ToolStripMenuItem;
+        private ColorDialog colorDialog1;
     }
 }

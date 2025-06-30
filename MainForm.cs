@@ -16,6 +16,10 @@ namespace GasFormsApp
 {
     public partial class MainForm : CustomForm
     {
+        // 记录鼠标右键位置
+        private Point lastRightClickPosition;
+        private Control lastRightClickedControl;
+
         private bool v;
         private ImageList imageList1;
 
@@ -114,6 +118,7 @@ namespace GasFormsApp
               ControlStyles.AllPaintingInWmPaint |
               ControlStyles.UserPaint, true);
             this.UpdateStyles();
+
 
             GasComp_Lab1 = "H₂";      // 氢气
             GasComp_Lab2 = "O₂";      // 氧气
@@ -440,6 +445,40 @@ namespace GasFormsApp
             string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "CompanyName.ini");
             string companyName = ReadValue("CompanyName", "CompanyName", iniPath);
             label2.Text = companyName;
+
+            // 读取Log栏颜色
+            iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+
+            // 读取字体颜色
+            string LogForeColor = ReadValue("ColorConfig", "LogForeColor", iniPath);
+            if (LogForeColor.StartsWith("#") && LogForeColor.Length == 9)
+            {
+                byte a = Convert.ToByte(LogForeColor.Substring(1, 2), 16);
+                byte r = Convert.ToByte(LogForeColor.Substring(3, 2), 16);
+                byte g = Convert.ToByte(LogForeColor.Substring(5, 2), 16);
+                byte b = Convert.ToByte(LogForeColor.Substring(7, 2), 16);
+                label2.ForeColor = Color.FromArgb(a, r, g, b);
+            }
+            else
+            {
+                label2.ForeColor = Color.Black;
+            }
+
+            // 读取背景颜色
+            string LogBackColor = ReadValue("ColorConfig", "LogBackColor", iniPath);
+            if (LogBackColor.StartsWith("#") && LogBackColor.Length == 9)
+            {
+                byte a = Convert.ToByte(LogBackColor.Substring(1, 2), 16);
+                byte r = Convert.ToByte(LogBackColor.Substring(3, 2), 16);
+                byte g = Convert.ToByte(LogBackColor.Substring(5, 2), 16);
+                byte b = Convert.ToByte(LogBackColor.Substring(7, 2), 16);
+                label2.BackColor = Color.FromArgb(a, r, g, b);
+                pictureBox1.BackColor = Color.FromArgb(a, r, g, b);
+            }
+            else
+            {
+                label2.BackColor = Color.White;
+            }
         }
         // 动态修改软件标题（非App上端）
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
@@ -652,19 +691,109 @@ namespace GasFormsApp
         [DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, bool wParam, int lParam);
 
-        private void doubleBufferedPanel1_Paint(object sender, PaintEventArgs e)
+        private void label2_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Right)
+            {
+                lastRightClickPosition = e.Location;  // 相对于控件的坐标
+                lastRightClickedControl = sender as Control;
+                ChangeColorContextMenuStrip.Show(this, e.Location); // 弹出菜单
+            }
+        }
+        private Control GetDeepChildAtPoint(Control parent, Point point)
+        {
+            Control child = parent.GetChildAtPoint(point);
+            if (child == null)
+                return parent;
 
+            Point childPoint = child.PointToClient(parent.PointToScreen(point));
+            return GetDeepChildAtPoint(child, childPoint);
         }
 
-        private void tabPage2DoubleBufferedPanel2_Paint(object sender, PaintEventArgs e)
+        private void 更改背景色ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (lastRightClickedControl == null) return;
 
+            // 如果想获取最具体子控件，可以递归判断
+            Control preciseControl = GetDeepChildAtPoint(lastRightClickedControl, lastRightClickPosition);
+
+            // 特殊处理
+            if (preciseControl is Label)
+            {
+                using (ColorDialog colorDialog = new ColorDialog())
+                {
+                    // 设置初始颜色
+                    colorDialog.Color = preciseControl.BackColor;
+
+                    if (colorDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // 选好颜色后，同时应用到两个控件
+                        preciseControl.BackColor = colorDialog.Color;
+                        pictureBox1.BackColor = colorDialog.Color;
+                    }
+                }
+            }
+            else
+                ChooseBackColor(preciseControl);
+
+            string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            IniFile ini = new IniFile(iniPath);
+
+            // 保存背景色
+            Color backColor = preciseControl.BackColor;
+            string backColorStr = $"#{backColor.A:X2}{backColor.R:X2}{backColor.G:X2}{backColor.B:X2}";
+            ini.Write("ColorConfig", "LogBackColor", backColorStr);
+
+            // 保存字体色
+            Color foreColor = preciseControl.ForeColor;
+            string foreColorStr = $"#{foreColor.A:X2}{foreColor.R:X2}{foreColor.G:X2}{foreColor.B:X2}";
+            ini.Write("ColorConfig", "LogForeColor", foreColorStr);
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void 更改字体颜色ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (lastRightClickedControl == null) return;
 
+            // 如果想获取最具体子控件，可以递归判断
+            Control preciseControl = GetDeepChildAtPoint(lastRightClickedControl, lastRightClickPosition);
+
+            ChooseForeColor(preciseControl);
+
+            string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            IniFile ini = new IniFile(iniPath);
+
+            // 保存背景色
+            Color backColor = preciseControl.BackColor;
+            string backColorStr = $"#{backColor.A:X2}{backColor.R:X2}{backColor.G:X2}{backColor.B:X2}";
+            ini.Write("ColorConfig", "LogBackColor", backColorStr);
+
+            // 保存字体色
+            Color foreColor = preciseControl.ForeColor;
+            string foreColorStr = $"#{foreColor.A:X2}{foreColor.R:X2}{foreColor.G:X2}{foreColor.B:X2}";
+            ini.Write("ColorConfig", "LogForeColor", foreColorStr);
+        }
+
+        private void ChooseBackColor(Control control)
+        {
+            using (ColorDialog colorDialog = new ColorDialog())
+            {
+                colorDialog.Color = control.BackColor;
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    control.BackColor = colorDialog.Color;
+                }
+            }
+        }
+        private void ChooseForeColor(Control control)
+        {
+            using (ColorDialog colorDialog = new ColorDialog())
+            {
+                colorDialog.Color = control.ForeColor;
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    control.ForeColor = colorDialog.Color;
+                }
+            }
         }
     }
 }
