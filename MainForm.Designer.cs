@@ -30,7 +30,6 @@ namespace GasFormsApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
@@ -380,7 +379,7 @@ namespace GasFormsApp
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label17 = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList();
             this.FindMineTextBox = new System.Windows.Forms.TextBox();
             this.tabPage6panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -390,20 +389,20 @@ namespace GasFormsApp
             this.DeleteDataButton = new System.Windows.Forms.Button();
             this.ReloadDataButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.label2 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.InputCheckTimer = new System.Windows.Forms.Timer();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip();
             this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
             this.更改背景色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更改字体颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -2927,7 +2926,7 @@ namespace GasFormsApp
             // 
             this.DrawCurvesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DrawCurvesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DrawCurvesButton.ButtonImage = null;
+            this.DrawCurvesButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("DrawCurvesButton.ButtonImage")));
             this.DrawCurvesButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
             this.DrawCurvesButton.FlatAppearance.BorderSize = 0;
             this.DrawCurvesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3052,7 +3051,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 947);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 949);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -3171,7 +3170,7 @@ namespace GasFormsApp
             // LabDesorbButton
             // 
             this.LabDesorbButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LabDesorbButton.ButtonImage = null;
+            this.LabDesorbButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("LabDesorbButton.ButtonImage")));
             this.LabDesorbButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
             this.LabDesorbButton.FlatAppearance.BorderSize = 0;
             this.LabDesorbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3736,7 +3735,7 @@ namespace GasFormsApp
             // ExpCalcButton
             // 
             this.ExpCalcButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ExpCalcButton.ButtonImage = null;
+            this.ExpCalcButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("ExpCalcButton.ButtonImage")));
             this.ExpCalcButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
             this.ExpCalcButton.FlatAppearance.BorderSize = 0;
             this.ExpCalcButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
