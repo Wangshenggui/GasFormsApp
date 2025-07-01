@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace GasFormsApp.TabControl
     internal class tabControl_3
     {
         private MainForm _mainForm; // 主窗体引用
+
+        // 定义要监控的所有文本框
+        private List<Control> _trackedControls = new List<Control>();
 
         /// <summary>
         /// 构造函数，初始化与主窗体的关联
@@ -30,7 +34,56 @@ namespace GasFormsApp.TabControl
             _mainForm.LabDesorbButton.Click += LabDesorbButton_Click;
             _mainForm.tabPage3TemporarySavingButton.Click += tabPage3TemporarySavingButton_Click;
             _mainForm.tabPage3RecoverDataButton.Click += tabPage3RecoverDataButton_Click;
+
+            // 批量注册内容更改事件
+            InitializeTextMonitoring();
         }
+        private void InitializeTextMonitoring()
+        {
+            // 添加所有需要监控的文本框（可通过遍历容器控件自动发现）
+            _trackedControls.AddRange(
+                new Control[] {
+                    _mainForm.DesorpVolNormalTextBox,
+                    _mainForm.Sample1WeightTextBox,
+                    _mainForm.Sample2WeightTextBox,
+                    _mainForm.S1DesorpVolTextBox,
+                    _mainForm.S2DesorpVolTextBox,
+                }
+            );
+
+            // 批量绑定事件
+            foreach (var control in _trackedControls)
+            {
+                if (control is TextBox textBox)
+                    textBox.TextChanged += Control_TextChanged;
+                else if (control is ComboBox comboBox)
+                    comboBox.TextChanged += Control_TextChanged;
+                else if (control is DateTimePicker dateTimePicker)
+                    dateTimePicker.ValueChanged += Control_TextChanged; // 监控日期变化
+            }
+        }
+        // 统一事件处理
+        private void Control_TextChanged(object sender, EventArgs e)
+        {
+            var changedControl = (Control)sender;
+            string currentValue;
+
+            if (changedControl is TextBox textBox)
+                currentValue = textBox.Text;
+            else if (changedControl is ComboBox comboBox)
+                currentValue = comboBox.Text;
+            else if (changedControl is DateTimePicker dateTimePicker)
+                currentValue = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            else
+                currentValue = string.Empty;
+
+            Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
+
+            _mainForm.tabPage3.Text = "*常压解吸*";
+        }
+
+
+
 
         /// <summary>
         /// 临时数据序列化类，保存tabPage3的所有相关数据
@@ -89,7 +142,18 @@ namespace GasFormsApp.TabControl
 #pragma warning restore SYSLIB0011
                 }
 
-                MessageBox.Show("保存成功！");
+                //MessageBox.Show("保存成功！");
+
+                if (_mainForm.tabPage3.Text == "*常压解吸*")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage3.Text = "常压解吸*";
+                }
+                else if (_mainForm.tabPage3.Text == "*常压解吸")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage3.Text = "常压解吸";
+                }
             }
             catch (Exception ex)
             {
@@ -286,6 +350,17 @@ namespace GasFormsApp.TabControl
             
             // 计算并显示最大粉碎解吸值
             getMaxVal();
+
+            // 修改了数据，未保存直接计算
+            if (_mainForm.tabPage3.Text == "*常压解吸*")
+            {
+                _mainForm.tabPage3.Text = "*常压解吸";
+            }
+            // 保存未计算
+            else if (_mainForm.tabPage3.Text == "常压解吸*")
+            {
+                _mainForm.tabPage3.Text = "常压解吸";
+            }
         }
     }
 }

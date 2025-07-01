@@ -242,7 +242,11 @@ namespace GasFormsApp.TabControl
                     // 去掉前面一个“*”
                     _mainForm.tabPage2.Text = "井下解吸*";
                 }
-                
+                else if (_mainForm.tabPage2.Text == "*井下解吸")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage2.Text = "井下解吸";
+                }
             }
             catch (Exception ex)
             {
