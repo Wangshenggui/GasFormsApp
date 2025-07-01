@@ -133,6 +133,16 @@ namespace GasFormsApp.TabControl
             TextRenderer.DrawText(e.Graphics, matchText, font, new Point((int)x, (int)y),
                 (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
                 TextFormatFlags.NoPadding);
+            // 绘制文本
+            Font boldFont = new Font(font, FontStyle.Bold);
+            TextRenderer.DrawText(
+                e.Graphics,
+                matchText,
+                boldFont,
+                new Point((int)x, (int)y),
+                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
+                TextFormatFlags.NoPadding
+            );
             x += matchSize.Width;
 
             TextRenderer.DrawText(e.Graphics, after, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
@@ -232,7 +242,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.dateTimePicker5.Value = DateTime.Parse(data.取芯开始时间);
                         _mainForm.dateTimePicker3.Value = DateTime.Parse(data.取芯结束时间);
                         _mainForm.dateTimePicker4.Value = DateTime.Parse(data.解吸开始时间);
-                        _mainForm.comboBox3.Text = data.煤的破坏类型;
+                        _mainForm.TypeOfDestructionComboBox3.Text = data.煤的破坏类型;
                         _mainForm.t0TextBox.Text = data.t0;
 
                         SetTextBoxValues(_mainForm, "DesorbTextBox", data.DesorbTextList);
@@ -761,7 +771,7 @@ namespace GasFormsApp.TabControl
                     取芯开始时间 = _mainForm.dateTimePicker5.Text,
                     取芯结束时间 = _mainForm.dateTimePicker3.Text,
                     解吸开始时间 = _mainForm.dateTimePicker4.Text,
-                    煤的破坏类型 = _mainForm.comboBox3.Text,
+                    煤的破坏类型 = _mainForm.TypeOfDestructionComboBox3.Text,
                     t0 = _mainForm.t0TextBox.Text,
                     DesorbTextList = GetTextBoxValues(_mainForm, "DesorbTextBox", 60),
                     DataNumTextList = GetTextBoxValues(_mainForm, "DataNumTextBox", 60, 31),

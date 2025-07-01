@@ -16,6 +16,10 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
+            // 设置工具提示
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage1TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage1RecoverDataButton, "恢复数据(Ctrl + R)");
+
             // 绑定 FlowLayoutPanel 的 Paint 事件，用于动态调整大小和位置
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Paint += tabPage1DoubleBufferedFlowLayoutPanel1_Paint;
 
@@ -24,6 +28,13 @@ namespace GasFormsApp.TabControl
 
             // 绑定“恢复数据”按钮点击事件
             _mainForm.tabPage1RecoverDataButton.Click += tabPage1RecoverDataButton_Click;
+
+            _mainForm.SampleModeComboBox.MouseWheel += SampleModeComboBox_MouseWheel;
+        }
+        // 禁止滚轮选择取样方式
+        private void SampleModeComboBox_MouseWheel(object sender, MouseEventArgs e)
+        {
+            ((HandledMouseEventArgs)e).Handled = true;
         }
 
         // 定义序列化保存的临时数据结构，存储 tabPage1 中各控件的数据

@@ -521,82 +521,89 @@ namespace GasFormsApp
         {
             TabPage currentTab = tabControl1.SelectedTab;
 
-            // 计算
-            if (e.Control && e.KeyCode == Keys.D)
-            {
-                switch (currentTab.Name)
-                {
-                    case "tabPage2":
-                        myTabLogic2.DrawCurvesButton_Click(sender, e);
-                        break;
-                    case "tabPage3":
-                        myTabLogic3.LabDesorbButton_Click(sender, e);
-                        break;
-                    case "tabPage4":
-                        myTabLogic4.ExpCalcButton_Click(sender, e);
-                        break;
-                    case "tabPage6":
-                        myTabLogic6.DeleteDataButton_Click(sender, e);
-                        break;
-                }
+            if (!e.Control) return;
 
-                e.Handled = true;
-            }
-            // 生成
-            else if (e.Control && e.KeyCode == Keys.G)
+            switch (e.KeyCode)
             {
-                if (currentTab.Name == "tabPage5")
-                {
-                    myTabLogic5.GenReportButton_Click(sender, e);
-                }
-                else if (currentTab.Name == "tabPage6")
-                {
-                    myTabLogic6.ExportTheDocumentButton_Click(sender, e);
-                }
+                case Keys.D: // 计算
+                    switch (currentTab.Name)
+                    {
+                        case "tabPage2":
+                            myTabLogic2.DrawCurvesButton_Click(sender, e);
+                            break;
+                        case "tabPage3":
+                            myTabLogic3.LabDesorbButton_Click(sender, e);
+                            break;
+                        case "tabPage4":
+                            myTabLogic4.ExpCalcButton_Click(sender, e);
+                            break;
+                        case "tabPage6":
+                            myTabLogic6.DeleteDataButton_Click(sender, e);
+                            break;
+                    }
+                    e.Handled = true;
+                    break;
 
-                e.Handled = true;
-            }
-            // 保存
-            else if (e.Control && e.KeyCode == Keys.S)
-            {
-                if (currentTab.Name == "tabPage5")
-                {
-                    myTabLogic5._SaveButton_Click(sender, e);
-                }
+                case Keys.G: // 生成
+                    switch (currentTab.Name)
+                    {
+                        case "tabPage5":
+                            myTabLogic5.GenReportButton_Click(sender, e);
+                            break;
+                        case "tabPage6":
+                            myTabLogic6.ExportTheDocumentButton_Click(sender, e);
+                            break;
+                    }
+                    e.Handled = true;
+                    break;
 
-                e.Handled = true;
-            }
-            // 刷新
-            else if (e.Control && e.KeyCode == Keys.R)
-            {
-                if (currentTab.Name == "tabPage6")
-                {
-                    myTabLogic6.ReloadDataButton_Click(sender, e);
-                }
+                case Keys.S: // 保存
+                    if (e.Shift)
+                    {
+                        if (currentTab.Name == "tabPage1")
+                        {
+                            myTabLogic1.tabPage1TemporarySavingButton_Click(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        if (currentTab.Name == "tabPage5")
+                        {
+                            myTabLogic5._SaveButton_Click(sender, e);
+                        }
+                    }
+                    
+                    e.Handled = true;
+                    break;
 
-                e.Handled = true;
-            }
-            // 查找
-            else if (e.Control && e.KeyCode == Keys.F)
-            {
-                if (currentTab.Name == "tabPage6")
-                {
-                    //搜索框进入编辑模式
-                    FindTextBox.Focus();
-                    FindTextBox.SelectAll();
-                }
+                case Keys.R: // 刷新
+                    if (currentTab.Name == "tabPage1")
+                    {
+                        myTabLogic1.tabPage1RecoverDataButton_Click(sender, e);
+                    }
+                    else if (currentTab.Name == "tabPage6")
+                    {
+                        myTabLogic6.ReloadDataButton_Click(sender, e);
+                    }
+                    e.Handled = true;
+                    break;
 
-                e.Handled = true;
-            }
-            // 批量导入数据
-            else if(e.Control && e.KeyCode == Keys.I)
-            {
-                if (currentTab.Name == "tabPage2")
-                {
-                    myTabLogic2.BulkImportButton_Click(sender, e);
-                }
+                case Keys.F: // 查找
+                    if (currentTab.Name == "tabPage6")
+                    {
+                        FindTextBox.Focus();
+                        FindTextBox.SelectAll();
+                    }
+                    e.Handled = true;
+                    break;
 
-                e.Handled = true;
+                case Keys.I: // 批量导入数据
+                    if (currentTab.Name == "tabPage2")
+                    {
+                        myTabLogic2.BulkImportButton_Click(sender, e);
+                    }
+                    e.Handled = true;
+                    break;
             }
         }
         // tab5调用tab6的函数

@@ -376,14 +376,14 @@ namespace GasFormsApp.TabControl
                 selectedWc.Add(("水分Mad/%：", _mainForm.MadTextBox.Text));
             if (_mainForm.AadCheckBox.Checked)
                 selectedWc.Add(("灰分Aad/%：", _mainForm.AadTextBox.Text));
-            if (_mainForm.PorosityCheckBox.Checked)
-                selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
+            if (_mainForm.VadCheckBox.Checked)
+                selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
             if (_mainForm.AppDensityCheckBox.Checked)
                 selectedWc.Add(("视相对密度γ：", _mainForm.AppDensityTextBox.Text));
             if (_mainForm.TrueDensityCheckBox.Checked)
                 selectedWc.Add(("真密度(g/cm3)：", _mainForm.TrueDensityTextBox.Text));
-            if (_mainForm.VadCheckBox.Checked)
-                selectedWc.Add(("挥发分Vad/%：", _mainForm.VadTextBox.Text));
+            if (_mainForm.PorosityCheckBox.Checked)
+                selectedWc.Add(("孔隙率K/%：", _mainForm.PorosityTextBox.Text));
             if (_mainForm.NonDesorpGasQtyCheckBox.Checked)
                 selectedWc.Add(("不可解吸瓦斯量Wc(m3/t)：", _mainForm.NonDesorpGasQtyTextBox.Text));
 

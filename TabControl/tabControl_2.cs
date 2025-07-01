@@ -44,8 +44,14 @@ namespace GasFormsApp.TabControl
             _mainForm.ExportImageButton.Click += ExportImageButton_Click;
             _mainForm.tabPage2TemporarySavingButton.Click += tabPage2TemporarySavingButton_Click;
             _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
-        }
 
+            _mainForm.TypeOfDestructionComboBox3.MouseWheel += TypeOfDestructionComboBox3_MouseWheel;
+        }
+        // 禁止滚轮选择破坏类型
+        private void TypeOfDestructionComboBox3_MouseWheel(object sender, MouseEventArgs e)
+        {
+            ((HandledMouseEventArgs)e).Handled = true;
+        }
         /// <summary>
         /// 临时数据序列化类，保存tabPage2的所有相关数据
         /// </summary>
@@ -113,7 +119,7 @@ namespace GasFormsApp.TabControl
                 _dateTimePicker3 = _mainForm.dateTimePicker3.Value.ToString("yyyy-MM-dd HH:mm:ss"),
                 _dateTimePicker4 = _mainForm.dateTimePicker4.Value.ToString("yyyy-MM-dd HH:mm:ss"),
                 _dateTimePicker5 = _mainForm.dateTimePicker5.Value.ToString("yyyy-MM-dd HH:mm:ss"),
-                comboBox3 = _mainForm.comboBox3.Text,
+                comboBox3 = _mainForm.TypeOfDestructionComboBox3.Text,
                 t0TextBox = _mainForm.t0TextBox.Text,
                 DesorbTextList = GetTextBoxValues(_mainForm, "DesorbTextBox", 60),
                 DataNumTextList = GetTextBoxValues(_mainForm, "DataNumTextBox", 60, 31),
@@ -196,7 +202,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.dateTimePicker5.Value = DateTime.Parse(data._dateTimePicker5);
                     
                     // 恢复下拉框和文本框值
-                    _mainForm.comboBox3.Text = data.comboBox3;
+                    _mainForm.TypeOfDestructionComboBox3.Text = data.comboBox3;
                     _mainForm.t0TextBox.Text = data.t0TextBox;
 
                     // 恢复解吸量文本框值

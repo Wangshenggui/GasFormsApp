@@ -326,14 +326,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\lg.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Image\1.ico" />
     <EmbeddedResource Include="Image\2.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\bt.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Image\3.ico" />
@@ -358,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Image\6.ico" />
-    <Content Include="Image\log.jpg" />
     <Content Include="Image\保存.png" />
     <None Include="Image\打勾.png" />
     <None Include="Image\打叉.png" />

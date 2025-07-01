@@ -54,10 +54,10 @@ namespace GasFormsApp
             this.CoalSeamTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.UndAtmPressureTextBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.LabAtmPressureTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.UndTempTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.LabAtmPressureTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.LabTempTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.TypeOfDestructionComboBox3 = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -281,20 +281,20 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage4DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.PorosityTextBox = new System.Windows.Forms.TextBox();
             this.AdsorpConstATextBox = new System.Windows.Forms.TextBox();
+            this.PorosityCheckBox = new System.Windows.Forms.CheckBox();
             this.NonDesorpGasQtyTextBox = new System.Windows.Forms.TextBox();
             this.AppDensityTextBox = new System.Windows.Forms.TextBox();
             this.TrueDensityTextBox = new System.Windows.Forms.TextBox();
             this.MadTextBox = new System.Windows.Forms.TextBox();
             this.VadTextBox = new System.Windows.Forms.TextBox();
             this.AdsorpConstBTextBox = new System.Windows.Forms.TextBox();
-            this.PorosityTextBox = new System.Windows.Forms.TextBox();
             this.AadTextBox = new System.Windows.Forms.TextBox();
             this.TrueDensityCheckBox = new System.Windows.Forms.CheckBox();
             this.NonDesorpGasQtyCheckBox = new System.Windows.Forms.CheckBox();
             this.VadCheckBox = new System.Windows.Forms.CheckBox();
             this.AppDensityCheckBox = new System.Windows.Forms.CheckBox();
-            this.PorosityCheckBox = new System.Windows.Forms.CheckBox();
             this.AadCheckBox = new System.Windows.Forms.CheckBox();
             this.MadCheckBox = new System.Windows.Forms.CheckBox();
             this.AdsorpConstBCheckBox = new System.Windows.Forms.CheckBox();
@@ -529,10 +529,10 @@ namespace GasFormsApp
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.CoalSeamTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label9);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.UndAtmPressureTextBox);
-            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label11);
-            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.LabAtmPressureTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label10);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.UndTempTextBox);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label11);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.LabAtmPressureTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label12);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.LabTempTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.label14);
@@ -675,35 +675,13 @@ namespace GasFormsApp
             this.UndAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
             this.UndAtmPressureTextBox.TabIndex = 5;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label11.Location = new System.Drawing.Point(360, 112);
-            this.label11.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(167, 16);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "实验室大气压力(Kpa):";
-            // 
-            // LabAtmPressureTextBox
-            // 
-            this.LabAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabAtmPressureTextBox.Location = new System.Drawing.Point(530, 107);
-            this.LabAtmPressureTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.LabAtmPressureTextBox.Name = "LabAtmPressureTextBox";
-            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
-            this.LabAtmPressureTextBox.TabIndex = 6;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label10.Location = new System.Drawing.Point(10, 158);
+            this.label10.Location = new System.Drawing.Point(360, 112);
             this.label10.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(167, 16);
@@ -713,11 +691,33 @@ namespace GasFormsApp
             // UndTempTextBox
             // 
             this.UndTempTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UndTempTextBox.Location = new System.Drawing.Point(180, 153);
+            this.UndTempTextBox.Location = new System.Drawing.Point(530, 107);
             this.UndTempTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.UndTempTextBox.Name = "UndTempTextBox";
             this.UndTempTextBox.Size = new System.Drawing.Size(167, 26);
-            this.UndTempTextBox.TabIndex = 7;
+            this.UndTempTextBox.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label11.Location = new System.Drawing.Point(10, 158);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(167, 16);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "实验室大气压力(Kpa):";
+            // 
+            // LabAtmPressureTextBox
+            // 
+            this.LabAtmPressureTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabAtmPressureTextBox.Location = new System.Drawing.Point(180, 153);
+            this.LabAtmPressureTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.LabAtmPressureTextBox.Name = "LabAtmPressureTextBox";
+            this.LabAtmPressureTextBox.Size = new System.Drawing.Size(167, 26);
+            this.LabAtmPressureTextBox.TabIndex = 7;
             // 
             // label12
             // 
@@ -1093,7 +1093,7 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker3);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.dateTimePicker2);
-            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.comboBox3);
+            this.tabPage2DoubleBufferedPanel1.Controls.Add(this.TypeOfDestructionComboBox3);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label35);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label33);
             this.tabPage2DoubleBufferedPanel1.Controls.Add(this.label31);
@@ -1130,24 +1130,24 @@ namespace GasFormsApp
             this.dateTimePicker2.TabIndex = 999;
             this.dateTimePicker2.TabStop = false;
             // 
-            // comboBox3
+            // TypeOfDestructionComboBox3
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TypeOfDestructionComboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.TypeOfDestructionComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeOfDestructionComboBox3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TypeOfDestructionComboBox3.FormattingEnabled = true;
+            this.TypeOfDestructionComboBox3.Items.AddRange(new object[] {
             "Ⅰ 类",
             "Ⅱ 类",
             "Ⅲ 类",
             "Ⅳ 类",
             "Ⅴ 类"});
-            this.comboBox3.Location = new System.Drawing.Point(141, 73);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(230, 27);
-            this.comboBox3.TabIndex = 999;
-            this.comboBox3.TabStop = false;
+            this.TypeOfDestructionComboBox3.Location = new System.Drawing.Point(141, 73);
+            this.TypeOfDestructionComboBox3.Name = "TypeOfDestructionComboBox3";
+            this.TypeOfDestructionComboBox3.Size = new System.Drawing.Size(230, 27);
+            this.TypeOfDestructionComboBox3.TabIndex = 999;
+            this.TypeOfDestructionComboBox3.TabStop = false;
             // 
             // label35
             // 
@@ -3040,7 +3040,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 815);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 865);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -3389,20 +3389,20 @@ namespace GasFormsApp
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.PorosityTextBox);
             this.groupBox3.Controls.Add(this.AdsorpConstATextBox);
+            this.groupBox3.Controls.Add(this.PorosityCheckBox);
             this.groupBox3.Controls.Add(this.NonDesorpGasQtyTextBox);
             this.groupBox3.Controls.Add(this.AppDensityTextBox);
             this.groupBox3.Controls.Add(this.TrueDensityTextBox);
             this.groupBox3.Controls.Add(this.MadTextBox);
             this.groupBox3.Controls.Add(this.VadTextBox);
             this.groupBox3.Controls.Add(this.AdsorpConstBTextBox);
-            this.groupBox3.Controls.Add(this.PorosityTextBox);
             this.groupBox3.Controls.Add(this.AadTextBox);
             this.groupBox3.Controls.Add(this.TrueDensityCheckBox);
             this.groupBox3.Controls.Add(this.NonDesorpGasQtyCheckBox);
             this.groupBox3.Controls.Add(this.VadCheckBox);
             this.groupBox3.Controls.Add(this.AppDensityCheckBox);
-            this.groupBox3.Controls.Add(this.PorosityCheckBox);
             this.groupBox3.Controls.Add(this.AadCheckBox);
             this.groupBox3.Controls.Add(this.MadCheckBox);
             this.groupBox3.Controls.Add(this.AdsorpConstBCheckBox);
@@ -3417,6 +3417,14 @@ namespace GasFormsApp
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "不可解吸瓦斯量";
             // 
+            // PorosityTextBox
+            // 
+            this.PorosityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PorosityTextBox.Location = new System.Drawing.Point(233, 500);
+            this.PorosityTextBox.Name = "PorosityTextBox";
+            this.PorosityTextBox.Size = new System.Drawing.Size(179, 26);
+            this.PorosityTextBox.TabIndex = 5;
+            // 
             // AdsorpConstATextBox
             // 
             this.AdsorpConstATextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -3424,6 +3432,19 @@ namespace GasFormsApp
             this.AdsorpConstATextBox.Name = "AdsorpConstATextBox";
             this.AdsorpConstATextBox.Size = new System.Drawing.Size(179, 26);
             this.AdsorpConstATextBox.TabIndex = 1;
+            // 
+            // PorosityCheckBox
+            // 
+            this.PorosityCheckBox.AutoSize = true;
+            this.PorosityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PorosityCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
+            this.PorosityCheckBox.Location = new System.Drawing.Point(76, 503);
+            this.PorosityCheckBox.Name = "PorosityCheckBox";
+            this.PorosityCheckBox.Size = new System.Drawing.Size(162, 20);
+            this.PorosityCheckBox.TabIndex = 64;
+            this.PorosityCheckBox.TabStop = false;
+            this.PorosityCheckBox.Text = "孔  隙  率 (K/%):";
+            this.PorosityCheckBox.UseVisualStyleBackColor = true;
             // 
             // NonDesorpGasQtyTextBox
             // 
@@ -3464,7 +3485,7 @@ namespace GasFormsApp
             // VadTextBox
             // 
             this.VadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.VadTextBox.Location = new System.Drawing.Point(233, 497);
+            this.VadTextBox.Location = new System.Drawing.Point(233, 300);
             this.VadTextBox.Name = "VadTextBox";
             this.VadTextBox.Size = new System.Drawing.Size(179, 26);
             this.VadTextBox.TabIndex = 8;
@@ -3476,14 +3497,6 @@ namespace GasFormsApp
             this.AdsorpConstBTextBox.Name = "AdsorpConstBTextBox";
             this.AdsorpConstBTextBox.Size = new System.Drawing.Size(179, 26);
             this.AdsorpConstBTextBox.TabIndex = 2;
-            // 
-            // PorosityTextBox
-            // 
-            this.PorosityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PorosityTextBox.Location = new System.Drawing.Point(233, 298);
-            this.PorosityTextBox.Name = "PorosityTextBox";
-            this.PorosityTextBox.Size = new System.Drawing.Size(179, 26);
-            this.PorosityTextBox.TabIndex = 5;
             // 
             // AadTextBox
             // 
@@ -3524,7 +3537,7 @@ namespace GasFormsApp
             this.VadCheckBox.AutoSize = true;
             this.VadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.VadCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
-            this.VadCheckBox.Location = new System.Drawing.Point(76, 500);
+            this.VadCheckBox.Location = new System.Drawing.Point(76, 303);
             this.VadCheckBox.Name = "VadCheckBox";
             this.VadCheckBox.Size = new System.Drawing.Size(162, 20);
             this.VadCheckBox.TabIndex = 66;
@@ -3544,19 +3557,6 @@ namespace GasFormsApp
             this.AppDensityCheckBox.TabStop = false;
             this.AppDensityCheckBox.Text = "视相对密度  (γ):";
             this.AppDensityCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // PorosityCheckBox
-            // 
-            this.PorosityCheckBox.AutoSize = true;
-            this.PorosityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PorosityCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
-            this.PorosityCheckBox.Location = new System.Drawing.Point(76, 301);
-            this.PorosityCheckBox.Name = "PorosityCheckBox";
-            this.PorosityCheckBox.Size = new System.Drawing.Size(162, 20);
-            this.PorosityCheckBox.TabIndex = 64;
-            this.PorosityCheckBox.TabStop = false;
-            this.PorosityCheckBox.Text = "孔  隙  率 (K/%):";
-            this.PorosityCheckBox.UseVisualStyleBackColor = true;
             // 
             // AadCheckBox
             // 
@@ -5206,7 +5206,7 @@ namespace GasFormsApp
         public Panel tabPage1panel1;
         public DateTimePicker dateTimePicker3;
         public DateTimePicker dateTimePicker2;
-        public ComboBox comboBox3;
+        public ComboBox TypeOfDestructionComboBox3;
         public Label label35;
         public TextBox t0TextBox;
         public Label label32;
@@ -5414,9 +5414,9 @@ namespace GasFormsApp
         private ToolStripMenuItem 更改背景色ToolStripMenuItem;
         private ToolStripMenuItem 更改字体颜色ToolStripMenuItem;
         private ColorDialog colorDialog1;
-        private ImageList imageList1;
         private ImageList imageList2;
         public Label label17;
         public TextBox FindMineTextBox;
+        private ImageList imageList1;
     }
 }

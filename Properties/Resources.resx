@@ -121,14 +121,8 @@
   <data name="打叉" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\打叉.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\bt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="打印" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\打印.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="log" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\log.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="保存" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\保存.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
