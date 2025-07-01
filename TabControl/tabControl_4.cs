@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -8,6 +9,9 @@ namespace GasFormsApp.TabControl
     internal class tabControl_4
     {
         private MainForm _mainForm;
+
+        // 定义要监控的所有文本框
+        private List<Control> _trackedControls = new List<Control>();
 
         // 构造函数，接收主窗体对象，绑定控件事件和初始化控件状态
         public tabControl_4(MainForm form)
@@ -42,6 +46,55 @@ namespace GasFormsApp.TabControl
             // 绑定临时保存和数据恢复按钮事件
             _mainForm.tabPage4TemporarySavingButton.Click += tabPage4TemporarySavingButton_Click;
             _mainForm.tabPage4RecoverDataButton.Click += tabPage4RecoverDataButton_Click;
+
+            // 批量注册内容更改事件
+            InitializeTextMonitoring();
+        }
+        private void InitializeTextMonitoring()
+        {
+            // 添加所有需要监控的文本框（可通过遍历容器控件自动发现）
+            _trackedControls.AddRange(
+                new Control[] {
+                    _mainForm.AdsorpConstATextBox,
+                    _mainForm.AdsorpConstBTextBox,
+                    _mainForm.MadTextBox,
+                    _mainForm.AadTextBox,
+                    _mainForm.VadTextBox,
+                    _mainForm.AppDensityTextBox,
+                    _mainForm.TrueDensityTextBox,
+                    _mainForm.PorosityTextBox,
+                }
+            );
+
+            // 批量绑定事件
+            foreach (var control in _trackedControls)
+            {
+                if (control is TextBox textBox)
+                    textBox.TextChanged += Control_TextChanged;
+                else if (control is ComboBox comboBox)
+                    comboBox.TextChanged += Control_TextChanged;
+                else if (control is DateTimePicker dateTimePicker)
+                    dateTimePicker.ValueChanged += Control_TextChanged; // 监控日期变化
+            }
+        }
+        // 统一事件处理
+        private void Control_TextChanged(object sender, EventArgs e)
+        {
+            var changedControl = (Control)sender;
+            string currentValue;
+
+            if (changedControl is TextBox textBox)
+                currentValue = textBox.Text;
+            else if (changedControl is ComboBox comboBox)
+                currentValue = comboBox.Text;
+            else if (changedControl is DateTimePicker dateTimePicker)
+                currentValue = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            else
+                currentValue = string.Empty;
+
+            Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
+
+            _mainForm.tabPage4.Text = "*实验结果*";
         }
 
         // 用于临时保存界面数据的类，标记为可序列化
@@ -109,7 +162,18 @@ namespace GasFormsApp.TabControl
                     formatter.Serialize(fs, data);
 #pragma warning restore SYSLIB0011
                 }
-                MessageBox.Show("保存成功！");
+                //MessageBox.Show("保存成功！");
+
+                if (_mainForm.tabPage4.Text == "*实验结果*")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage4.Text = "实验结果*";
+                }
+                else if (_mainForm.tabPage4.Text == "*实验结果")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage4.Text = "实验结果";
+                }
             }
             catch (Exception ex)
             {
@@ -462,6 +526,17 @@ namespace GasFormsApp.TabControl
             double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
             MainForm.P = Pt;
             _mainForm.P_TextBox.Text = MainForm.P.ToString("F2");
+
+            // 修改了数据，未保存直接计算
+            if (_mainForm.tabPage4.Text == "*实验结果*")
+            {
+                _mainForm.tabPage4.Text = "*实验结果";
+            }
+            // 保存未计算
+            else if (_mainForm.tabPage4.Text == "实验结果*")
+            {
+                _mainForm.tabPage4.Text = "实验结果";
+            }
         }
     }
 }
