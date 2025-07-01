@@ -322,6 +322,9 @@ namespace GasFormsApp
             this.tabControl4PictureBox.Click += tabControlxPictureBox_Click;
             this.tabControl5PictureBox.Click += tabControlxPictureBox_Click;
             this.tabControl6PictureBox.Click += tabControlxPictureBox_Click;
+
+            //tabControl1.ItemSize = new Size(98, 100);
+            //tabControl1.ItemSize = new Size(98, 92);
         }
         // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
         private void tabControlxPictureBox_Click(object sender, EventArgs e)
@@ -845,6 +848,22 @@ namespace GasFormsApp
                 {
                     control.ForeColor = colorDialog.Color;
                 }
+            }
+        }
+
+        // 关闭确认？防止误操作将软件关闭
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "确定要退出程序吗？",
+                "提示",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (result != DialogResult.Yes)
+            {
+                e.Cancel = true; // 取消关闭操作
             }
         }
     }

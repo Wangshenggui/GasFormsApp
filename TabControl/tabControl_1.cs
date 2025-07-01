@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,6 +12,10 @@ namespace GasFormsApp.TabControl
     internal class tabControl_1
     {
         private MainForm _mainForm;  // 持有主窗体引用，访问控件
+
+
+        // 定义要监控的所有文本框
+        private List<Control> _trackedControls = new List<Control>();
 
         // 构造函数，传入主窗体对象，绑定相关事件
         public tabControl_1(MainForm form)
@@ -30,7 +36,69 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage1RecoverDataButton.Click += tabPage1RecoverDataButton_Click;
 
             _mainForm.SampleModeComboBox.MouseWheel += SampleModeComboBox_MouseWheel;
+
+            // 批量注册内容更改事件
+            InitializeTextMonitoring();
         }
+        // 批量注册事件
+        private void InitializeTextMonitoring()
+        {
+            // 添加所有需要监控的文本框（可通过遍历容器控件自动发现）
+            _trackedControls.AddRange(
+                new Control[] {
+                    _mainForm.MineNameTextBox,
+                    _mainForm.SamplingSpotTextBox,
+                    _mainForm.BurialDepthTextBox,
+                    _mainForm.CoalSeamTextBox,
+                    _mainForm.UndAtmPressureTextBox,
+                    _mainForm.UndTempTextBox,
+                    _mainForm.LabAtmPressureTextBox,
+                    _mainForm.LabTempTextBox,
+                    _mainForm.MoistureSampleTextBox,
+                    _mainForm.SampleModeComboBox,
+                    _mainForm.SampleNumTextBox,
+                    _mainForm.RawCoalMoistureTextBox,
+                    _mainForm.InitialVolumeTextBox,
+                    _mainForm.SampleWeightTextBox,
+                    _mainForm.SamplingDepthTextBox,
+                    _mainForm.SamplingTimeDateTimePicker,
+                    _mainForm.DrillInclinationTextBox,
+                    _mainForm.AzimuthTextBox,
+                    _mainForm.SamplingPersonnelTextBox,
+                }
+            );
+
+            // 批量绑定事件
+            foreach (var control in _trackedControls)
+            {
+                if (control is TextBox textBox)
+                    textBox.TextChanged += Control_TextChanged;
+                else if (control is ComboBox comboBox)
+                    comboBox.TextChanged += Control_TextChanged;
+                else if (control is DateTimePicker dateTimePicker)
+                    dateTimePicker.ValueChanged += Control_TextChanged; // 监控日期变化
+            }
+        }
+        // 统一事件处理
+        private void Control_TextChanged(object sender, EventArgs e)
+        {
+            var changedControl = (Control)sender;
+            string currentValue;
+
+            if (changedControl is TextBox textBox)
+                currentValue = textBox.Text;
+            else if (changedControl is ComboBox comboBox)
+                currentValue = comboBox.Text;
+            else if (changedControl is DateTimePicker dateTimePicker)
+                currentValue = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            else
+                currentValue = string.Empty;
+
+            Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
+
+            _mainForm.tabPage1.Text = "*基本信息";
+        }
+
         // 禁止滚轮选择取样方式
         private void SampleModeComboBox_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -122,6 +190,9 @@ namespace GasFormsApp.TabControl
                 // 异常处理，弹出错误提示
                 MessageBox.Show("保存失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // 恢复成为未修改
+            _mainForm.tabPage1.Text = "基本信息";
         }
 
         // “恢复数据”按钮点击事件处理函数
