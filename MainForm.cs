@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -152,8 +153,8 @@ namespace GasFormsApp
             tabPage2.Text = "井下解吸";
             tabPage3.Text = "常压解吸";
             tabPage4.Text = "实验结果";
-            tabPage5.Text = "归档设置";
-            tabPage6.Text = "历史记录";
+            tabPage5.Text = "文档输出";
+            tabPage6.Text = "数据管理";
 
             //// 加载嵌入资源图标
             //try
@@ -313,9 +314,43 @@ namespace GasFormsApp
             //tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
-        }
 
-        
+            // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
+            this.tabControl1PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl2PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl3PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl4PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl5PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl6PictureBox.Click += tabControlxPictureBox_Click;
+        }
+        // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
+        private void tabControlxPictureBox_Click(object sender, EventArgs e)
+        {
+            switch (sender)
+            {
+                case PictureBox pic when pic == tabControl1PictureBox:
+                    tabControl1.SelectedIndex = 0;
+                    break;
+                case PictureBox pic when pic == tabControl2PictureBox:
+                    tabControl1.SelectedIndex = 1;
+                    break;
+                case PictureBox pic when pic == tabControl3PictureBox:
+                    tabControl1.SelectedIndex = 2;
+                    break;
+                case PictureBox pic when pic == tabControl4PictureBox:
+                    tabControl1.SelectedIndex = 3;
+                    break;
+                case PictureBox pic when pic == tabControl5PictureBox:
+                    tabControl1.SelectedIndex = 4;
+                    break;
+                case PictureBox pic when pic == tabControl6PictureBox:
+                    tabControl1.SelectedIndex = 5;
+                    break;
+                default:
+                    // 处理其他情况或未知控件
+                    break;
+            }
+        }
         // 从嵌入的资源中加载图标
         private Icon LoadIconFromResource(string resourceName)
         {
@@ -335,19 +370,22 @@ namespace GasFormsApp
             TabPage tabPage = tabControl1.TabPages[e.Index];
             string tabText = tabPage.Text;
             Image tabImage = imageList1.Images[e.Index];
-            System.Drawing.Rectangle bounds = e.Bounds;
+            Rectangle bounds = e.Bounds;
 
             // 判断是否是当前选中的标签页
             bool isSelected = (e.Index == tabControl1.SelectedIndex);
 
-            // 背景色
-            System.Drawing.Color backColor = isSelected ? System.Drawing.Color.LightBlue : SystemColors.Control;
-            System.Drawing.Color textColor = isSelected ? System.Drawing.Color.Black : System.Drawing.Color.Gray;
+            // 渐变背景色（选中：蓝黑渐变，未选中：黑灰渐变）
+            Color startColor = isSelected ? Color.Blue : Color.Black;
+            Color endColor = isSelected ? Color.Black : Color.DarkGray;
 
-            // 填充背景
-            using (SolidBrush backgroundBrush = new SolidBrush(backColor))
+            using (var gradientBrush = new LinearGradientBrush(
+                bounds,
+                startColor,
+                endColor,
+                LinearGradientMode.Vertical)) // 渐变方向：垂直
             {
-                e.Graphics.FillRectangle(backgroundBrush, bounds);
+                e.Graphics.FillRectangle(gradientBrush, bounds);
             }
 
             // 图标大小和位置
@@ -356,8 +394,12 @@ namespace GasFormsApp
             int iconX = bounds.X + (bounds.Width - iconWidth) / 2;
             int iconY = bounds.Y + 5;
 
-            // 绘制图标
-            e.Graphics.DrawImage(tabImage, iconX, iconY, iconWidth, iconHeight);
+            //// 绘制图标（添加白色边框增强对比度）
+            //e.Graphics.DrawRectangle(Pens.White, iconX, iconY, iconWidth, iconHeight);
+            //e.Graphics.DrawImage(tabImage, iconX, iconY, iconWidth, iconHeight);
+
+            // 文字颜色（白色确保在深色背景下可读）
+            Color textColor = Color.White;
 
             // 文字位置
             SizeF textSize = e.Graphics.MeasureString(tabText, e.Font);
@@ -366,6 +408,15 @@ namespace GasFormsApp
 
             // 绘制文字
             TextRenderer.DrawText(e.Graphics, tabText, e.Font, new System.Drawing.Point(textX, textY), textColor);
+
+            // 可选：选中时添加高亮边框
+            if (isSelected)
+            {
+                using (var highlightPen = new Pen(Color.Cyan, 2))
+                {
+                    e.Graphics.DrawRectangle(highlightPen, bounds);
+                }
+            }
         }
 
         private float xRatio;

@@ -397,7 +397,6 @@ namespace GasFormsApp
             this.shapeContainer4 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.InputCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -408,6 +407,13 @@ namespace GasFormsApp
             this.更改背景色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更改字体颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.tabControl6PictureBox = new System.Windows.Forms.PictureBox();
+            this.tabControl5PictureBox = new System.Windows.Forms.PictureBox();
+            this.tabControl4PictureBox = new System.Windows.Forms.PictureBox();
+            this.tabControl3PictureBox = new System.Windows.Forms.PictureBox();
+            this.tabControl2PictureBox = new System.Windows.Forms.PictureBox();
+            this.tabControl1PictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -459,11 +465,17 @@ namespace GasFormsApp
             this.tabPage6panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage6contextMenuStrip2.SuspendLayout();
             this.ChangeColorContextMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl6PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl5PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl4PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl3PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl2PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl1PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -512,7 +524,7 @@ namespace GasFormsApp
             this.tabPage1panel1.Location = new System.Drawing.Point(0, 0);
             this.tabPage1panel1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1panel1.Name = "tabPage1panel1";
-            this.tabPage1panel1.Size = new System.Drawing.Size(1435, 639);
+            this.tabPage1panel1.Size = new System.Drawing.Size(1436, 640);
             this.tabPage1panel1.TabIndex = 2;
             // 
             // tabPage1DoubleBufferedFlowLayoutPanel1
@@ -2915,7 +2927,7 @@ namespace GasFormsApp
             // 
             this.DrawCurvesButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DrawCurvesButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DrawCurvesButton.ButtonImage = global::GasFormsApp.Properties.Resources.打勾;
+            this.DrawCurvesButton.ButtonImage = null;
             this.DrawCurvesButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
             this.DrawCurvesButton.FlatAppearance.BorderSize = 0;
             this.DrawCurvesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3040,7 +3052,7 @@ namespace GasFormsApp
             this.tabPage3panel2.Controls.Add(this.label101);
             this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 865);
+            this.tabPage3panel2.Size = new System.Drawing.Size(449, 947);
             this.tabPage3panel2.TabIndex = 1003;
             // 
             // tabPage3TemporarySavingButton
@@ -3159,7 +3171,7 @@ namespace GasFormsApp
             // LabDesorbButton
             // 
             this.LabDesorbButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LabDesorbButton.ButtonImage = global::GasFormsApp.Properties.Resources.打勾;
+            this.LabDesorbButton.ButtonImage = null;
             this.LabDesorbButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
             this.LabDesorbButton.FlatAppearance.BorderSize = 0;
             this.LabDesorbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -3616,12 +3628,11 @@ namespace GasFormsApp
             this.WcOutCheckBox.AutoSize = true;
             this.WcOutCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WcOutCheckBox.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.WcOutCheckBox.Image = global::GasFormsApp.Properties.Resources.打叉;
             this.WcOutCheckBox.Location = new System.Drawing.Point(20, 28);
             this.WcOutCheckBox.Margin = new System.Windows.Forms.Padding(0);
             this.WcOutCheckBox.Name = "WcOutCheckBox";
             this.WcOutCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.WcOutCheckBox.Size = new System.Drawing.Size(38, 38);
+            this.WcOutCheckBox.Size = new System.Drawing.Size(6, 6);
             this.WcOutCheckBox.TabIndex = 10;
             this.WcOutCheckBox.TabStop = false;
             this.WcOutCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3725,7 +3736,7 @@ namespace GasFormsApp
             // ExpCalcButton
             // 
             this.ExpCalcButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ExpCalcButton.ButtonImage = global::GasFormsApp.Properties.Resources.打勾;
+            this.ExpCalcButton.ButtonImage = null;
             this.ExpCalcButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
             this.ExpCalcButton.FlatAppearance.BorderSize = 0;
             this.ExpCalcButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -4730,7 +4741,6 @@ namespace GasFormsApp
             // ExportTheDocumentButton
             // 
             this.ExportTheDocumentButton.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ExportTheDocumentButton.Image = global::GasFormsApp.Properties.Resources.打印;
             this.ExportTheDocumentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportTheDocumentButton.Location = new System.Drawing.Point(32, 482);
             this.ExportTheDocumentButton.Name = "ExportTheDocumentButton";
@@ -4810,12 +4820,12 @@ namespace GasFormsApp
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "1.ico");
-            this.imageList1.Images.SetKeyName(1, "2.ico");
-            this.imageList1.Images.SetKeyName(2, "3.ico");
-            this.imageList1.Images.SetKeyName(3, "4.ico");
-            this.imageList1.Images.SetKeyName(4, "5.ico");
-            this.imageList1.Images.SetKeyName(5, "6.ico");
+            this.imageList1.Images.SetKeyName(0, "常压解吸.jpg");
+            this.imageList1.Images.SetKeyName(1, "基本信息.png");
+            this.imageList1.Images.SetKeyName(2, "井下解吸.jpg");
+            this.imageList1.Images.SetKeyName(3, "实验结果.jpg");
+            this.imageList1.Images.SetKeyName(4, "数据管理.jpg");
+            this.imageList1.Images.SetKeyName(5, "数据归档.jpg");
             // 
             // label2
             // 
@@ -4825,9 +4835,9 @@ namespace GasFormsApp
             this.label2.Font = new System.Drawing.Font("楷体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(0, 30);
+            this.label2.Location = new System.Drawing.Point(2, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1442, 40);
+            this.label2.Size = new System.Drawing.Size(1440, 40);
             this.label2.TabIndex = 2;
             this.label2.Text = "瓦斯含量测定实验报告生成系统";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4863,16 +4873,6 @@ namespace GasFormsApp
             // InputCheckTimer
             // 
             this.InputCheckTimer.Tick += new System.EventHandler(this.InputCheckTimer_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(130)))));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(358, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -4936,11 +4936,87 @@ namespace GasFormsApp
             this.更改字体颜色ToolStripMenuItem.Text = "更改字体颜色";
             this.更改字体颜色ToolStripMenuItem.Click += new System.EventHandler(this.更改字体颜色ToolStripMenuItem_Click);
             // 
+            // tabControl6PictureBox
+            // 
+            this.tabControl6PictureBox.Image = global::GasFormsApp.Properties.Resources.数据管理;
+            this.tabControl6PictureBox.Location = new System.Drawing.Point(522, 84);
+            this.tabControl6PictureBox.Name = "tabControl6PictureBox";
+            this.tabControl6PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.tabControl6PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tabControl6PictureBox.TabIndex = 1009;
+            this.tabControl6PictureBox.TabStop = false;
+            // 
+            // tabControl5PictureBox
+            // 
+            this.tabControl5PictureBox.Image = global::GasFormsApp.Properties.Resources.数据归档;
+            this.tabControl5PictureBox.Location = new System.Drawing.Point(421, 84);
+            this.tabControl5PictureBox.Name = "tabControl5PictureBox";
+            this.tabControl5PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.tabControl5PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tabControl5PictureBox.TabIndex = 1008;
+            this.tabControl5PictureBox.TabStop = false;
+            // 
+            // tabControl4PictureBox
+            // 
+            this.tabControl4PictureBox.Image = global::GasFormsApp.Properties.Resources.实验结果;
+            this.tabControl4PictureBox.Location = new System.Drawing.Point(320, 84);
+            this.tabControl4PictureBox.Name = "tabControl4PictureBox";
+            this.tabControl4PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.tabControl4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tabControl4PictureBox.TabIndex = 1007;
+            this.tabControl4PictureBox.TabStop = false;
+            // 
+            // tabControl3PictureBox
+            // 
+            this.tabControl3PictureBox.Image = global::GasFormsApp.Properties.Resources.常压解吸;
+            this.tabControl3PictureBox.Location = new System.Drawing.Point(219, 84);
+            this.tabControl3PictureBox.Name = "tabControl3PictureBox";
+            this.tabControl3PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.tabControl3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tabControl3PictureBox.TabIndex = 1006;
+            this.tabControl3PictureBox.TabStop = false;
+            // 
+            // tabControl2PictureBox
+            // 
+            this.tabControl2PictureBox.Image = global::GasFormsApp.Properties.Resources.井下解吸;
+            this.tabControl2PictureBox.Location = new System.Drawing.Point(119, 84);
+            this.tabControl2PictureBox.Name = "tabControl2PictureBox";
+            this.tabControl2PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.tabControl2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tabControl2PictureBox.TabIndex = 1005;
+            this.tabControl2PictureBox.TabStop = false;
+            // 
+            // tabControl1PictureBox
+            // 
+            this.tabControl1PictureBox.Image = global::GasFormsApp.Properties.Resources.基本信息;
+            this.tabControl1PictureBox.Location = new System.Drawing.Point(18, 84);
+            this.tabControl1PictureBox.Name = "tabControl1PictureBox";
+            this.tabControl1PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.tabControl1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tabControl1PictureBox.TabIndex = 1004;
+            this.tabControl1PictureBox.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(130)))));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(356, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 822);
+            this.Controls.Add(this.tabControl6PictureBox);
+            this.Controls.Add(this.tabControl5PictureBox);
+            this.Controls.Add(this.tabControl4PictureBox);
+            this.Controls.Add(this.tabControl3PictureBox);
+            this.Controls.Add(this.tabControl2PictureBox);
+            this.Controls.Add(this.tabControl1PictureBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -4959,6 +5035,12 @@ namespace GasFormsApp
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tabControl1PictureBox, 0);
+            this.Controls.SetChildIndex(this.tabControl2PictureBox, 0);
+            this.Controls.SetChildIndex(this.tabControl3PictureBox, 0);
+            this.Controls.SetChildIndex(this.tabControl4PictureBox, 0);
+            this.Controls.SetChildIndex(this.tabControl5PictureBox, 0);
+            this.Controls.SetChildIndex(this.tabControl6PictureBox, 0);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1panel1.ResumeLayout(false);
@@ -5040,11 +5122,17 @@ namespace GasFormsApp
             this.tabPage6panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabPage6contextMenuStrip2.ResumeLayout(false);
             this.ChangeColorContextMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl6PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl5PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl4PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl3PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl2PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl1PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5418,5 +5506,11 @@ namespace GasFormsApp
         public Label label17;
         public TextBox FindMineTextBox;
         private ImageList imageList1;
+        private PictureBox tabControl2PictureBox;
+        private PictureBox tabControl3PictureBox;
+        private PictureBox tabControl4PictureBox;
+        private PictureBox tabControl5PictureBox;
+        private PictureBox tabControl6PictureBox;
+        private PictureBox tabControl1PictureBox;
     }
 }

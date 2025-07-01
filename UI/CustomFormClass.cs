@@ -150,25 +150,25 @@ namespace GasFormsApp.UI
             };
             titleBar.Controls.Add(titleLabel);
 
-            // 信息管理Button（示例）
-            信息管理Button = new CustomBorderButton
-            {
-                Text = " 数据管理 ",
-                BackColor = Color.FromArgb(17, 45, 78),
-                FlatStyle = FlatStyle.Flat,
-                Width = 85,
-                Borders = BorderSides.Left,
-                HoverBackColor = Color.FromArgb(80, 80, 80),
-                ForeColor = Color.LightGray,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                BorderColor = Color.White,
-                BorderWidth = 2,
-                TabStop = false,
-                Location = new Point(titleLabel.Location.X + titleLabel.Width, 3)
-            };
-            信息管理Button.FlatAppearance.BorderSize = 0;
-            titleBar.Controls.Add(信息管理Button);
-            信息管理Button.Click += 信息管理Button_Click;
+            //// 信息管理Button（示例）
+            //信息管理Button = new CustomBorderButton
+            //{
+            //    Text = " 数据管理 ",
+            //    BackColor = Color.FromArgb(17, 45, 78),
+            //    FlatStyle = FlatStyle.Flat,
+            //    Width = 85,
+            //    Borders = BorderSides.Left,
+            //    HoverBackColor = Color.FromArgb(80, 80, 80),
+            //    ForeColor = Color.LightGray,
+            //    Font = new Font("Segoe UI", 9, FontStyle.Bold),
+            //    BorderColor = Color.White,
+            //    BorderWidth = 2,
+            //    TabStop = false,
+            //    Location = new Point(titleLabel.Location.X + titleLabel.Width, 3)
+            //};
+            //信息管理Button.FlatAppearance.BorderSize = 0;
+            //titleBar.Controls.Add(信息管理Button);
+            //信息管理Button.Click += 信息管理Button_Click;
 
 
             // 你注释掉了最小化、最大化、关闭按钮部分，

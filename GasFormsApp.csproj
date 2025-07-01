@@ -326,19 +326,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\1.ico" />
-    <EmbeddedResource Include="Image\2.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\3.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\4.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Image\5.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
@@ -351,7 +338,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\6.ico" />
+    <None Include="Image\数据管理.jpg" />
+    <None Include="Image\数据归档.jpg" />
+    <None Include="Image\实验结果.jpg" />
+    <None Include="Image\常压解吸.jpg" />
+    <None Include="Image\基本信息.png" />
+    <None Include="Image\井下解吸.jpg" />
     <Content Include="Image\保存.png" />
     <None Include="Image\打勾.png" />
     <None Include="Image\打叉.png" />
