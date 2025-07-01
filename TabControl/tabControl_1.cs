@@ -183,7 +183,7 @@ namespace GasFormsApp.TabControl
 #pragma warning restore SYSLIB0011
                 }
 
-                MessageBox.Show("保存成功！");
+                //MessageBox.Show("保存成功！");
             }
             catch (Exception ex)
             {

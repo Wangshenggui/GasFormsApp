@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Color = System.Drawing.Color;
+using ComboBox = System.Windows.Forms.ComboBox;
 using Control = System.Windows.Forms.Control;
 using Font = System.Drawing.Font;
 using TextBox = System.Windows.Forms.TextBox;
@@ -24,6 +25,9 @@ namespace GasFormsApp.TabControl
     internal class tabControl_2
     {
         private MainForm _mainForm; // 主窗体引用
+
+        // 定义要监控的所有文本框
+        private List<Control> _trackedControls = new List<Control>();
 
         /// <summary>
         /// 构造函数，初始化与主窗体的关联
@@ -46,7 +50,87 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
 
             _mainForm.TypeOfDestructionComboBox3.MouseWheel += TypeOfDestructionComboBox3_MouseWheel;
+
+            // 批量注册内容更改事件
+            InitializeTextMonitoring();
         }
+        private void InitializeTextMonitoring()
+        {
+            // 添加所有需要监控的文本框（可通过遍历容器控件自动发现）
+            _trackedControls.AddRange(
+                new Control[] {
+                    _mainForm.dateTimePicker2,
+                    _mainForm.dateTimePicker3,
+                    _mainForm.TypeOfDestructionComboBox3,
+                    _mainForm.dateTimePicker5,
+                    _mainForm.dateTimePicker4,
+                    _mainForm.t0TextBox,
+                }
+            );
+            // 动态添加 DesorbTextBox1 ~ DesorbTextBox60
+            for (int i = 1; i <= 60; i++)
+            {
+                string controlName = $"DesorbTextBox{i}";
+                //Control? textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
+                Control textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
+                if (textBox != null) // 手动检查 null
+                {
+                    _trackedControls.Add(textBox);
+                }
+                else
+                {
+                    // 如果找不到控件，可以记录日志或抛出异常
+                    Debug.WriteLine($"未找到控件: {controlName}");
+                }
+            }
+            // 动态添加 DataNumTextBox31 ~ DataNumTextBox60
+            for (int i = 31; i <= 60; i++)
+            {
+                string controlName = $"DataNumTextBox{i}";
+                Control textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
+
+                if (textBox != null)
+                {
+                    _trackedControls.Add(textBox);
+                }
+                else
+                {
+                    Debug.WriteLine($"未找到控件: {controlName}");
+                }
+            }
+
+            // 批量绑定事件
+            foreach (var control in _trackedControls)
+            {
+                if (control is TextBox textBox)
+                    textBox.TextChanged += Control_TextChanged;
+                else if (control is ComboBox comboBox)
+                    comboBox.TextChanged += Control_TextChanged;
+                else if (control is DateTimePicker dateTimePicker)
+                    dateTimePicker.ValueChanged += Control_TextChanged; // 监控日期变化
+            }
+        }
+        // 统一事件处理
+        private void Control_TextChanged(object sender, EventArgs e)
+        {
+            var changedControl = (Control)sender;
+            string currentValue;
+
+            if (changedControl is TextBox textBox)
+                currentValue = textBox.Text;
+            else if (changedControl is ComboBox comboBox)
+                currentValue = comboBox.Text;
+            else if (changedControl is DateTimePicker dateTimePicker)
+                currentValue = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            else
+                currentValue = string.Empty;
+
+            Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
+
+            _mainForm.tabPage2.Text = "*井下解吸*";
+        }
+
+
         // 禁止滚轮选择破坏类型
         private void TypeOfDestructionComboBox3_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -150,7 +234,15 @@ namespace GasFormsApp.TabControl
 #pragma warning restore SYSLIB0011
                 }
 
-                MessageBox.Show("保存成功！");
+                //MessageBox.Show("保存成功！");
+
+                // 修改了数据，保存未计算
+                if(_mainForm.tabPage2.Text == "*井下解吸*")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage2.Text = "井下解吸*";
+                }
+                
             }
             catch (Exception ex)
             {
@@ -946,7 +1038,18 @@ namespace GasFormsApp.TabControl
                         
                         // 恢复默认光标
                         SetWaitCursor(_mainForm, Cursors.Default);
-                        
+
+                        // 修改了数据，未保存直接计算
+                        if (_mainForm.tabPage2.Text == "*井下解吸*")
+                        {
+                            _mainForm.tabPage2.Text = "*井下解吸";
+                        }
+                        // 保存未计算
+                        else if(_mainForm.tabPage2.Text == "井下解吸*")
+                        {
+                            _mainForm.tabPage2.Text = "井下解吸";
+                        }
+
                         // 显示计算完成提示
                         MessageBox.Show($"计算完成！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
