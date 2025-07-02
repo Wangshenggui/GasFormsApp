@@ -451,19 +451,47 @@ namespace GasFormsApp
                 new object[] { true });
         }
 
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            //int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            //int screenHeight = Screen.PrimaryScreen.Bounds.Height;
 
-            this.Width = (int)(screenWidth * 0.8);
-            this.Height = (int)(screenHeight * 0.8);
-            // 居中设置
-            this.Left = (screenWidth - this.Width) / 2;
-            this.Top = (screenHeight - this.Height) / 2;
+            //this.Width = (int)(screenWidth * 0.8);
+            //this.Height = (int)(screenHeight * 0.8);
+            //// 居中设置
+            //this.Left = (screenWidth - this.Width) / 2;
+            //this.Top = (screenHeight - this.Height) / 2;
 
-            xRatio = screenWidth / 1920f; // 假设设计时是 1920x1080
-            yRatio = screenHeight / 1080f;
+            //xRatio = screenWidth / 1920f; // 假设设计时是 1920x1080
+            //yRatio = screenHeight / 1080f;
+
+            var loc = GasFormsApp.Settings.Default.WindowLocation;
+            var size = GasFormsApp.Settings.Default.WindowSize;
+            var state = GasFormsApp.Settings.Default.WindowState;
+
+            bool isSizeValid = size.Width > 0 && size.Height > 0;
+            bool isLocValid = loc.X > 0 && loc.Y > 0; // 简单判断，必要时可以改成屏幕边界检测
+            if (isSizeValid && isLocValid)
+            {
+                this.StartPosition = FormStartPosition.Manual;
+                this.Location = loc;
+                this.Size = size;
+                this.WindowState = state;
+            }
+            else
+            {
+                // 没有保存过有效设置，使用默认设置
+                int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+                int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+
+                this.Width = (int)(screenWidth * .8);
+                this.Height = (int)(screenHeight * .8);
+                // 居中设置
+                this.Left = (screenWidth - this.Width) / 2;
+                this.Top = (screenHeight - this.Height) / 2;
+            }
+
 
             EnableDoubleBuffering(this.tabControl1);
 
@@ -877,6 +905,20 @@ namespace GasFormsApp
             {
                 Console.WriteLine("所有字符串都不包含 *");
             }
+
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                GasFormsApp.Settings.Default.WindowLocation = this.Location;
+                GasFormsApp.Settings.Default.WindowSize = this.Size;
+            }
+            else
+            {
+                // 如果窗口是最大化或最小化，保存正常状态时的位置和大小
+                GasFormsApp.Settings.Default.WindowLocation = this.RestoreBounds.Location;
+                GasFormsApp.Settings.Default.WindowSize = this.RestoreBounds.Size;
+            }
+            GasFormsApp.Settings.Default.WindowState = this.WindowState;
+            GasFormsApp.Settings.Default.Save();
         }
     }
 }
