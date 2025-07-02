@@ -33,6 +33,8 @@ namespace GasFormsApp.TabControl
             // 设置工具提示
             _mainForm.toolTip1.SetToolTip(_mainForm.GenReportButton, "生成报告(Ctrl + G)");
             _mainForm.toolTip1.SetToolTip(_mainForm.SaveButton, "保存数据(Ctrl + S)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage5TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage5RecoverDataButton, "恢复数据(Ctrl + R)");
 
             // 注册事件处理程序
             _mainForm.GenReportButton.Click += GenReportButton_Click;
@@ -231,8 +233,19 @@ namespace GasFormsApp.TabControl
                     _mainForm.C2H2TextBox.Text = data.C2H2Text;
                     _mainForm.COTextBox.Text = data.COText;
 
-                    _mainForm.dateTimePicker6.Value = DateTime.TryParse(data._dateTimePicker6, out var dt6) ? dt6 : DateTime.Now;
-                    _mainForm.dateTimePicker1.Value = DateTime.TryParse(data._dateTimePicker1, out var dt1) ? dt1 : DateTime.Now;
+                    //_mainForm.dateTimePicker6.Value = DateTime.TryParse(data._dateTimePicker6, out var dt6) ? dt6 : DateTime.Now;
+                    //_mainForm.dateTimePicker1.Value = DateTime.TryParse(data._dateTimePicker1, out var dt1) ? dt1 : DateTime.Now;
+                    // 安全赋值，只在值变化时才设置
+                    DateTime newValue6 = DateTime.Parse(data._dateTimePicker6);
+                    if (_mainForm.dateTimePicker6.Value.Date != newValue6.Date)
+                    {
+                        _mainForm.dateTimePicker6.Value = newValue6;
+                    }
+                    DateTime newValue1 = DateTime.Parse(data._dateTimePicker1);
+                    if (_mainForm.dateTimePicker1.Value.Date != newValue1.Date)
+                    {
+                        _mainForm.dateTimePicker1.Value = newValue1;
+                    }
 
                     _mainForm.DownholeTestersTextBox.Text = data.DownholeTestersText;
                     _mainForm.LabTestersTextBox.Text = data.LabTestersText;

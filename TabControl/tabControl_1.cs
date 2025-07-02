@@ -26,6 +26,8 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage1TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage1RecoverDataButton, "恢复数据(Ctrl + R)");
 
+            _mainForm.SamplingTimeDateTimePicker.Value = _mainForm.SamplingTimeDateTimePicker.Value;
+
             // 绑定 FlowLayoutPanel 的 Paint 事件，用于动态调整大小和位置
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Paint += tabPage1DoubleBufferedFlowLayoutPanel1_Paint;
 
@@ -151,11 +153,13 @@ namespace GasFormsApp.TabControl
                 InitialVolumeText = _mainForm.InitialVolumeTextBox.Text,
                 SampleWeightText = _mainForm.SampleWeightTextBox.Text,
                 SamplingDepthText = _mainForm.SamplingDepthTextBox.Text,
-                _SamplingTimeDateTimePicker = _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd HH:mm:ss"),
+                _SamplingTimeDateTimePicker = _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
                 DrillInclinationText = _mainForm.DrillInclinationTextBox.Text,
                 AzimuthText = _mainForm.AzimuthTextBox.Text,
                 SamplingPersonnelText = _mainForm.SamplingPersonnelTextBox.Text
             };
+
+            Console.WriteLine($"{_mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd")}");
 
             // 获取当前程序运行目录
             string currentDir = AppDomain.CurrentDomain.BaseDirectory;
@@ -234,7 +238,13 @@ namespace GasFormsApp.TabControl
                     _mainForm.InitialVolumeTextBox.Text = data.InitialVolumeText;
                     _mainForm.SampleWeightTextBox.Text = data.SampleWeightText;
                     _mainForm.SamplingDepthTextBox.Text = data.SamplingDepthText;
-                    _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data._SamplingTimeDateTimePicker);
+                    //_mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data._SamplingTimeDateTimePicker);
+                    // 安全赋值，只在值变化时才设置
+                    DateTime newValue = DateTime.Parse(data._SamplingTimeDateTimePicker);
+                    if (_mainForm.SamplingTimeDateTimePicker.Value.Date != newValue.Date)
+                    {
+                        _mainForm.SamplingTimeDateTimePicker.Value = newValue;
+                    }
                     _mainForm.DrillInclinationTextBox.Text = data.DrillInclinationText;
                     _mainForm.AzimuthTextBox.Text = data.AzimuthText;
                     _mainForm.SamplingPersonnelTextBox.Text = data.SamplingPersonnelText;

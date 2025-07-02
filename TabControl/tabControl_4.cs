@@ -20,6 +20,8 @@ namespace GasFormsApp.TabControl
 
             // 设置 ExpCalcButton 的悬浮提示文本
             _mainForm.toolTip1.SetToolTip(_mainForm.ExpCalcButton, "计算(Ctrl + D)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage4TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage4RecoverDataButton, "恢复数据(Ctrl + R)");
 
             // 绑定计算按钮点击事件
             _mainForm.ExpCalcButton.Click += ExpCalcButton_Click;

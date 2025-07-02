@@ -40,6 +40,8 @@ namespace GasFormsApp.TabControl
             // 设置工具提示
             _mainForm.toolTip1.SetToolTip(_mainForm.DrawCurvesButton, "计算(Ctrl + D)");
             _mainForm.toolTip1.SetToolTip(_mainForm.BulkImportButton, "批量导入(Ctrl + I)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage2TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage2RecoverDataButton, "恢复数据(Ctrl + R)");
 
             // 注册事件处理程序
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
@@ -292,11 +294,32 @@ namespace GasFormsApp.TabControl
 #pragma warning restore SYSLIB0011
 
                     // 恢复日期时间控件值
-                    _mainForm.dateTimePicker2.Value = DateTime.Parse(data._dateTimePicker2);
-                    _mainForm.dateTimePicker3.Value = DateTime.Parse(data._dateTimePicker3);
-                    _mainForm.dateTimePicker4.Value = DateTime.Parse(data._dateTimePicker4);
-                    _mainForm.dateTimePicker5.Value = DateTime.Parse(data._dateTimePicker5);
-                    
+                    // 安全赋值，只在值变化时才设置
+                    DateTime newValue2 = DateTime.Parse(data._dateTimePicker2);
+                    if (_mainForm.dateTimePicker2.Value.Date != newValue2.Date)
+                    {
+                        _mainForm.dateTimePicker2.Value = newValue2;
+                    }
+
+                    DateTime newValue3 = DateTime.Parse(data._dateTimePicker3);
+                    if (_mainForm.dateTimePicker3.Value.Date != newValue3.Date)
+                    {
+                        _mainForm.dateTimePicker3.Value = newValue3;
+                    }
+
+                    DateTime newValue4 = DateTime.Parse(data._dateTimePicker4);
+                    if (_mainForm.dateTimePicker4.Value.Date != newValue4.Date)
+                    {
+                        _mainForm.dateTimePicker4.Value = newValue4;
+                    }
+
+                    DateTime newValue5 = DateTime.Parse(data._dateTimePicker5);
+                    if (_mainForm.dateTimePicker5.Value.Date != newValue5.Date)
+                    {
+                        _mainForm.dateTimePicker5.Value = newValue5;
+                    }
+
+
                     // 恢复下拉框和文本框值
                     _mainForm.TypeOfDestructionComboBox3.Text = data.comboBox3;
                     _mainForm.t0TextBox.Text = data.t0TextBox;

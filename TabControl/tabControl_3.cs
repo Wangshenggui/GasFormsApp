@@ -29,6 +29,8 @@ namespace GasFormsApp.TabControl
 
             // 设置工具提示
             _mainForm.toolTip1.SetToolTip(_mainForm.LabDesorbButton, "计算(Ctrl + D)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage3TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.tabPage3RecoverDataButton, "恢复数据(Ctrl + R)");
 
             // 注册事件处理程序
             _mainForm.LabDesorbButton.Click += LabDesorbButton_Click;

@@ -2861,6 +2861,7 @@ namespace GasFormsApp
             this.BulkImportButton.Text = "     批量导入";
             this.BulkImportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BulkImportButton.UseVisualStyleBackColor = false;
+            this.BulkImportButton.Visible = false;
             // 
             // SampLossVolTextBox
             // 

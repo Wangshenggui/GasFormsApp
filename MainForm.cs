@@ -647,6 +647,22 @@ namespace GasFormsApp
                         {
                             myTabLogic1.tabPage1TemporarySavingButton_Click(sender, e);
                         }
+                        else if (currentTab.Name == "tabPage2")
+                        {
+                            myTabLogic2.tabPage2TemporarySavingButton_Click(sender, e);
+                        }
+                        else if (currentTab.Name == "tabPage3")
+                        {
+                            myTabLogic3.tabPage3TemporarySavingButton_Click(sender, e);
+                        }
+                        else if (currentTab.Name == "tabPage4")
+                        {
+                            myTabLogic4.tabPage4TemporarySavingButton_Click(sender, e);
+                        }
+                        else if (currentTab.Name == "tabPage5")
+                        {
+                            myTabLogic5.tabPage5TemporarySavingButton_Click(sender, e);
+                        }
                     }
                     else
                     {
@@ -663,6 +679,22 @@ namespace GasFormsApp
                     if (currentTab.Name == "tabPage1")
                     {
                         myTabLogic1.tabPage1RecoverDataButton_Click(sender, e);
+                    }
+                    else if (currentTab.Name == "tabPage2")
+                    {
+                        myTabLogic2.tabPage2RecoverDataButton_Click(sender, e);
+                    }
+                    else if (currentTab.Name == "tabPage3")
+                    {
+                        myTabLogic3.tabPage3RecoverDataButton_Click(sender, e);
+                    }
+                    else if (currentTab.Name == "tabPage4")
+                    {
+                        myTabLogic4.tabPage4RecoverDataButton_Click(sender, e);
+                    }
+                    else if (currentTab.Name == "tabPage5")
+                    {
+                        myTabLogic5.tabPage5RecoverDataButton_Click(sender, e);
                     }
                     else if (currentTab.Name == "tabPage6")
                     {
