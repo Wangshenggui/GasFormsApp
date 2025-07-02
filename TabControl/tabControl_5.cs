@@ -19,6 +19,9 @@ namespace GasFormsApp.TabControl
     {
         private MainForm _mainForm; // 主窗体引用
 
+        // 定义要监控的所有文本框
+        private List<Control> _trackedControls = new List<Control>();
+
         /// <summary>
         /// 构造函数，初始化与主窗体的关联
         /// </summary>
@@ -39,6 +42,64 @@ namespace GasFormsApp.TabControl
 
             _mainForm.tabPage5TemporarySavingButton.Click += tabPage5TemporarySavingButton_Click;
             _mainForm.tabPage5RecoverDataButton.Click += tabPage5RecoverDataButton_Click;
+
+
+            // 批量注册内容更改事件
+            InitializeTextMonitoring();
+        }
+        private void InitializeTextMonitoring()
+        {
+            // 添加所有需要监控的文本框（可通过遍历容器控件自动发现）
+            _trackedControls.AddRange(
+                new Control[] {
+                    _mainForm.CH4TextBox,
+                    _mainForm.CO2TextBox,
+                    _mainForm.N2TextBox,
+                    _mainForm.O2TextBox,
+                    _mainForm.C2H4TextBox,
+                    _mainForm.C3H8TextBox,
+                    _mainForm.C2H6TextBox,
+                    _mainForm.C3H6TextBox,
+                    _mainForm.C2H2TextBox,
+                    _mainForm.COTextBox,
+                    _mainForm.dateTimePicker6,
+                    _mainForm.dateTimePicker1,
+                    _mainForm.DownholeTestersTextBox,
+                    _mainForm.LabTestersTextBox,
+                    _mainForm.AuditorTextBox,
+                    _mainForm.RemarkTextBox,
+                }
+            );
+
+            // 批量绑定事件
+            foreach (var control in _trackedControls)
+            {
+                if (control is TextBox textBox)
+                    textBox.TextChanged += Control_TextChanged;
+                else if (control is ComboBox comboBox)
+                    comboBox.TextChanged += Control_TextChanged;
+                else if (control is DateTimePicker dateTimePicker)
+                    dateTimePicker.ValueChanged += Control_TextChanged; // 监控日期变化
+            }
+        }
+        // 统一事件处理
+        private void Control_TextChanged(object sender, EventArgs e)
+        {
+            var changedControl = (Control)sender;
+            string currentValue;
+
+            if (changedControl is TextBox textBox)
+                currentValue = textBox.Text;
+            else if (changedControl is ComboBox comboBox)
+                currentValue = comboBox.Text;
+            else if (changedControl is DateTimePicker dateTimePicker)
+                currentValue = dateTimePicker.Value.ToString("yyyy-MM-dd");
+            else
+                currentValue = string.Empty;
+
+            Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
+
+            _mainForm.tabPage5.Text = "*文档输出*";
         }
 
         /// <summary>
@@ -115,7 +176,18 @@ namespace GasFormsApp.TabControl
 #pragma warning restore SYSLIB0011
                 }
 
-                MessageBox.Show("保存成功！");
+                //MessageBox.Show("保存成功！");
+
+                if (_mainForm.tabPage5.Text == "*文档输出*")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage5.Text = "文档输出*";
+                }
+                else if (_mainForm.tabPage5.Text == "*文档输出")
+                {
+                    // 去掉前面一个“*”
+                    _mainForm.tabPage5.Text = "文档输出";
+                }
             }
             catch (Exception ex)
             {
@@ -473,7 +545,53 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void _SaveButton_Click(object sender, EventArgs e)
         {
-            _mainForm.tab5_6_SaveButton(sender, e);
+            string[] inputs = { 
+                _mainForm.tabPage1.Text, _mainForm.tabPage2.Text, 
+                _mainForm.tabPage3.Text, _mainForm.tabPage4.Text 
+            };
+            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            if (hasAsterisk)
+            {
+                Console.WriteLine("至少有一个字符串包含 *");
+
+                DialogResult result = MessageBox.Show(
+                "有未保存步骤，是否忽略？",
+                "提示",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+                if (result != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("所有字符串都不包含 *");
+            }
+
+            bool flag;
+            flag = _mainForm.tab5_6_SaveButton(sender, e);
+            if (flag)
+            {
+                // 修改了数据，未保存直接计算
+                if (_mainForm.tabPage5.Text == "*文档输出*")
+                {
+                    _mainForm.tabPage5.Text = "*文档输出";
+                }
+                // 保存未计算
+                else if (_mainForm.tabPage5.Text == "文档输出*")
+                {
+                    _mainForm.tabPage5.Text = "文档输出";
+                }
+
+                MessageBox.Show("保存成功！", "提示：");
+            }
+            else
+            {
+                
+            }
         }
 
         /// <summary>
@@ -481,6 +599,32 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void GenRecordButton_Click(object sender, EventArgs e)
         {
+            string[] inputs = {
+                _mainForm.tabPage1.Text, _mainForm.tabPage2.Text,
+                _mainForm.tabPage3.Text, _mainForm.tabPage4.Text
+            };
+            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            if (hasAsterisk)
+            {
+                Console.WriteLine("至少有一个字符串包含 *");
+
+                DialogResult result = MessageBox.Show(
+                "有未保存步骤，是否忽略？",
+                "提示",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+                if (result != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("所有字符串都不包含 *");
+            }
+
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
             {
@@ -650,6 +794,32 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void GenReportButton_Click(object sender, EventArgs e)
         {
+            string[] inputs = {
+                _mainForm.tabPage1.Text, _mainForm.tabPage2.Text,
+                _mainForm.tabPage3.Text, _mainForm.tabPage4.Text
+            };
+            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            if (hasAsterisk)
+            {
+                Console.WriteLine("至少有一个字符串包含 *");
+
+                DialogResult result = MessageBox.Show(
+                "有未保存步骤，是否忽略？",
+                "提示",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+                if (result != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine("所有字符串都不包含 *");
+            }
+
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
             {

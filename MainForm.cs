@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -661,9 +662,9 @@ namespace GasFormsApp
             }
         }
         // tab5调用tab6的函数
-        public void tab5_6_SaveButton(object sender, EventArgs e)
+        public bool tab5_6_SaveButton(object sender, EventArgs e)
         {
-            myTabLogic6.SaveButton_Click(sender, e);
+            return myTabLogic6.SaveButton_Click(sender, e);
         }
 
         // tab6调用tab5的函数
@@ -854,16 +855,27 @@ namespace GasFormsApp
         // 关闭确认？防止误操作将软件关闭
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                "确定要退出程序吗？",
+            string[] inputs = { tabPage1.Text, tabPage2.Text, tabPage3.Text, tabPage4.Text, tabPage5.Text };
+            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            if (hasAsterisk)
+            {
+                Console.WriteLine("至少有一个字符串包含 *");
+
+                DialogResult result = MessageBox.Show(
+                "数据未保存，确定要退出程序吗？",
                 "提示",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
 
-            if (result != DialogResult.Yes)
+                if (result != DialogResult.Yes)
+                {
+                    e.Cancel = true; // 取消关闭操作
+                }
+            }
+            else
             {
-                e.Cancel = true; // 取消关闭操作
+                Console.WriteLine("所有字符串都不包含 *");
             }
         }
     }

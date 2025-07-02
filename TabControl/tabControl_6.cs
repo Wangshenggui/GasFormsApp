@@ -681,7 +681,7 @@ namespace GasFormsApp.TabControl
         /// <summary>
         /// 按钮1点击事件：复制图片并保存用户数据为二进制文件
         /// </summary>
-        public void SaveButton_Click(object sender, EventArgs e)
+        public bool SaveButton_Click(object sender, EventArgs e)
         {
             ProjectGroupsForm newForm = new ProjectGroupsForm();
             newForm.ResultData = null;
@@ -694,7 +694,7 @@ namespace GasFormsApp.TabControl
             else
             {
                 MessageBox.Show($"已取消");
-                return;
+                return false;
             }
             string selectedPath = newForm.ResultData;
             if (Directory.Exists(selectedPath))
@@ -709,7 +709,7 @@ namespace GasFormsApp.TabControl
             }
             else
             {
-                return;
+                return false;
             }
             //MessageBox.Show($"窗口已关闭！{selectedPath}");
 
@@ -838,12 +838,14 @@ namespace GasFormsApp.TabControl
                 }
 
                 Console.WriteLine($"二进制保存成功，文件路径：{dataFilePath}");
-                MessageBox.Show("保存成功！", "提示：");
+                //MessageBox.Show("保存成功！", "提示：");
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("保存失败：" + ex.Message);
                 MessageBox.Show("保存失败：" + ex.Message, "提示：");
+                return false;
             }
         }
 
