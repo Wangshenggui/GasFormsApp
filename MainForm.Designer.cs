@@ -37,9 +37,9 @@ namespace GasFormsApp
             treeNode1});
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
             treeNode2});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -251,30 +251,31 @@ namespace GasFormsApp
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage3panel1 = new System.Windows.Forms.Panel();
             this.tabPage3panel2 = new System.Windows.Forms.Panel();
+            this.tabPage3panel3 = new System.Windows.Forms.Panel();
+            this.S1DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
+            this.S2DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
+            this.S1DesorpVolTextBox = new System.Windows.Forms.TextBox();
+            this.Sample1WeightTextBox = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
             this.tabPage3TemporarySavingButton = new GasFormsApp.UI.UCButton();
+            this.label83 = new System.Windows.Forms.Label();
             this.tabPage3RecoverDataButton = new GasFormsApp.UI.UCButton();
+            this.label101 = new System.Windows.Forms.Label();
             this.DesorpVolNormalCalTextBox = new System.Windows.Forms.TextBox();
+            this.label82 = new System.Windows.Forms.Label();
             this.DesorpVolNormalTextBox = new System.Windows.Forms.TextBox();
+            this.label121 = new System.Windows.Forms.Label();
             this.Sample2WeightTextBox = new System.Windows.Forms.TextBox();
             this.CrushDesorpTextBox = new System.Windows.Forms.TextBox();
-            this.label83 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.S2DesorpVolTextBox = new System.Windows.Forms.TextBox();
             this.label87 = new System.Windows.Forms.Label();
-            this.LabDesorbButton = new GasFormsApp.UI.UCButton();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.S1DesorpVolTextBox = new System.Windows.Forms.TextBox();
-            this.S2DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label122 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.Sample1WeightTextBox = new System.Windows.Forms.TextBox();
-            this.S1DesorpVolCalTextBox = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
+            this.LabDesorbButton = new GasFormsApp.UI.UCButton();
+            this.label122 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -431,6 +432,7 @@ namespace GasFormsApp
             this.tabPage3.SuspendLayout();
             this.tabPage3panel1.SuspendLayout();
             this.tabPage3panel2.SuspendLayout();
+            this.tabPage3panel3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage4DoubleBufferedPanel1.SuspendLayout();
             this.tabPage4DoubleBufferedFlowLayoutPanel1.SuspendLayout();
@@ -574,7 +576,7 @@ namespace GasFormsApp
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage1RecoverDataButton);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(148, 22);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Name = "tabPage1DoubleBufferedFlowLayoutPanel1";
-            this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(739, 468);
+            this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(739, 384);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -3012,7 +3014,6 @@ namespace GasFormsApp
             // tabPage3panel1
             // 
             this.tabPage3panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tabPage3panel1.AutoScroll = true;
             this.tabPage3panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage3panel1.Controls.Add(this.tabPage3panel2);
             this.tabPage3panel1.Controls.Add(this.label42);
@@ -3026,35 +3027,98 @@ namespace GasFormsApp
             // 
             this.tabPage3panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.tabPage3panel2.AutoScroll = true;
             this.tabPage3panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage3panel2.Controls.Add(this.tabPage3TemporarySavingButton);
-            this.tabPage3panel2.Controls.Add(this.tabPage3RecoverDataButton);
-            this.tabPage3panel2.Controls.Add(this.DesorpVolNormalCalTextBox);
-            this.tabPage3panel2.Controls.Add(this.DesorpVolNormalTextBox);
-            this.tabPage3panel2.Controls.Add(this.Sample2WeightTextBox);
-            this.tabPage3panel2.Controls.Add(this.CrushDesorpTextBox);
-            this.tabPage3panel2.Controls.Add(this.label83);
-            this.tabPage3panel2.Controls.Add(this.S2DesorpVolTextBox);
-            this.tabPage3panel2.Controls.Add(this.label87);
-            this.tabPage3panel2.Controls.Add(this.LabDesorbButton);
-            this.tabPage3panel2.Controls.Add(this.label86);
-            this.tabPage3panel2.Controls.Add(this.label84);
-            this.tabPage3panel2.Controls.Add(this.S1DesorpVolTextBox);
-            this.tabPage3panel2.Controls.Add(this.S2DesorpVolCalTextBox);
-            this.tabPage3panel2.Controls.Add(this.label88);
-            this.tabPage3panel2.Controls.Add(this.label122);
-            this.tabPage3panel2.Controls.Add(this.label85);
-            this.tabPage3panel2.Controls.Add(this.Sample1WeightTextBox);
-            this.tabPage3panel2.Controls.Add(this.S1DesorpVolCalTextBox);
-            this.tabPage3panel2.Controls.Add(this.label22);
-            this.tabPage3panel2.Controls.Add(this.label89);
-            this.tabPage3panel2.Controls.Add(this.label121);
-            this.tabPage3panel2.Controls.Add(this.label82);
-            this.tabPage3panel2.Controls.Add(this.label101);
-            this.tabPage3panel2.Location = new System.Drawing.Point(90, 55);
+            this.tabPage3panel2.Controls.Add(this.tabPage3panel3);
+            this.tabPage3panel2.Location = new System.Drawing.Point(99, 0);
             this.tabPage3panel2.Name = "tabPage3panel2";
-            this.tabPage3panel2.Size = new System.Drawing.Size(449, 959);
+            this.tabPage3panel2.Size = new System.Drawing.Size(410, 635);
             this.tabPage3panel2.TabIndex = 1003;
+            // 
+            // tabPage3panel3
+            // 
+            this.tabPage3panel3.AutoScroll = true;
+            this.tabPage3panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage3panel3.Controls.Add(this.S1DesorpVolCalTextBox);
+            this.tabPage3panel3.Controls.Add(this.S2DesorpVolCalTextBox);
+            this.tabPage3panel3.Controls.Add(this.S1DesorpVolTextBox);
+            this.tabPage3panel3.Controls.Add(this.Sample1WeightTextBox);
+            this.tabPage3panel3.Controls.Add(this.label89);
+            this.tabPage3panel3.Controls.Add(this.tabPage3TemporarySavingButton);
+            this.tabPage3panel3.Controls.Add(this.label83);
+            this.tabPage3panel3.Controls.Add(this.tabPage3RecoverDataButton);
+            this.tabPage3panel3.Controls.Add(this.label101);
+            this.tabPage3panel3.Controls.Add(this.DesorpVolNormalCalTextBox);
+            this.tabPage3panel3.Controls.Add(this.label82);
+            this.tabPage3panel3.Controls.Add(this.DesorpVolNormalTextBox);
+            this.tabPage3panel3.Controls.Add(this.label121);
+            this.tabPage3panel3.Controls.Add(this.Sample2WeightTextBox);
+            this.tabPage3panel3.Controls.Add(this.CrushDesorpTextBox);
+            this.tabPage3panel3.Controls.Add(this.label22);
+            this.tabPage3panel3.Controls.Add(this.S2DesorpVolTextBox);
+            this.tabPage3panel3.Controls.Add(this.label87);
+            this.tabPage3panel3.Controls.Add(this.label85);
+            this.tabPage3panel3.Controls.Add(this.LabDesorbButton);
+            this.tabPage3panel3.Controls.Add(this.label122);
+            this.tabPage3panel3.Controls.Add(this.label86);
+            this.tabPage3panel3.Controls.Add(this.label88);
+            this.tabPage3panel3.Controls.Add(this.label84);
+            this.tabPage3panel3.Location = new System.Drawing.Point(4, 56);
+            this.tabPage3panel3.Name = "tabPage3panel3";
+            this.tabPage3panel3.Size = new System.Drawing.Size(375, 532);
+            this.tabPage3panel3.TabIndex = 1003;
+            // 
+            // S1DesorpVolCalTextBox
+            // 
+            this.S1DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.S1DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(213, 309);
+            this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
+            this.S1DesorpVolCalTextBox.ReadOnly = true;
+            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 26);
+            this.S1DesorpVolCalTextBox.TabIndex = 34;
+            this.S1DesorpVolCalTextBox.TabStop = false;
+            this.S1DesorpVolCalTextBox.Text = "0";
+            // 
+            // S2DesorpVolCalTextBox
+            // 
+            this.S2DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.S2DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(213, 351);
+            this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
+            this.S2DesorpVolCalTextBox.ReadOnly = true;
+            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 26);
+            this.S2DesorpVolCalTextBox.TabIndex = 36;
+            this.S2DesorpVolCalTextBox.TabStop = false;
+            this.S2DesorpVolCalTextBox.Text = "0";
+            // 
+            // S1DesorpVolTextBox
+            // 
+            this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S1DesorpVolTextBox.Location = new System.Drawing.Point(213, 225);
+            this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
+            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(155, 26);
+            this.S1DesorpVolTextBox.TabIndex = 4;
+            // 
+            // Sample1WeightTextBox
+            // 
+            this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Sample1WeightTextBox.Location = new System.Drawing.Point(213, 141);
+            this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
+            this.Sample1WeightTextBox.Size = new System.Drawing.Size(155, 26);
+            this.Sample1WeightTextBox.TabIndex = 2;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label89.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label89.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label89.Location = new System.Drawing.Point(9, 145);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(207, 16);
+            this.label89.TabIndex = 22;
+            this.label89.Text = " 第 一 份 煤 样 重 量(g):";
             // 
             // tabPage3TemporarySavingButton
             // 
@@ -3066,7 +3130,7 @@ namespace GasFormsApp
             this.tabPage3TemporarySavingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabPage3TemporarySavingButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage3TemporarySavingButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.tabPage3TemporarySavingButton.Location = new System.Drawing.Point(108, 483);
+            this.tabPage3TemporarySavingButton.Location = new System.Drawing.Point(68, 483);
             this.tabPage3TemporarySavingButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.tabPage3TemporarySavingButton.Name = "tabPage3TemporarySavingButton";
             this.tabPage3TemporarySavingButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -3076,6 +3140,20 @@ namespace GasFormsApp
             this.tabPage3TemporarySavingButton.Text = "     临时保存";
             this.tabPage3TemporarySavingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tabPage3TemporarySavingButton.UseVisualStyleBackColor = false;
+            // 
+            // label83
+            // 
+            this.label83.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label83.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
+            this.label83.Location = new System.Drawing.Point(3, 4);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(178, 20);
+            this.label83.TabIndex = 26;
+            this.label83.Text = "实验室解吸测试->";
             // 
             // tabPage3RecoverDataButton
             // 
@@ -3087,7 +3165,7 @@ namespace GasFormsApp
             this.tabPage3RecoverDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabPage3RecoverDataButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage3RecoverDataButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.tabPage3RecoverDataButton.Location = new System.Drawing.Point(237, 483);
+            this.tabPage3RecoverDataButton.Location = new System.Drawing.Point(197, 483);
             this.tabPage3RecoverDataButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.tabPage3RecoverDataButton.Name = "tabPage3RecoverDataButton";
             this.tabPage3RecoverDataButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -3098,63 +3176,96 @@ namespace GasFormsApp
             this.tabPage3RecoverDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tabPage3RecoverDataButton.UseVisualStyleBackColor = false;
             // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.ForeColor = System.Drawing.Color.Red;
+            this.label101.Location = new System.Drawing.Point(134, 107);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(0, 12);
+            this.label101.TabIndex = 30;
+            // 
             // DesorpVolNormalCalTextBox
             // 
             this.DesorpVolNormalCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.DesorpVolNormalCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(216, 56);
+            this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(213, 56);
             this.DesorpVolNormalCalTextBox.Name = "DesorpVolNormalCalTextBox";
             this.DesorpVolNormalCalTextBox.ReadOnly = true;
-            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(173, 26);
+            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(155, 26);
             this.DesorpVolNormalCalTextBox.TabIndex = 31;
             this.DesorpVolNormalCalTextBox.TabStop = false;
             this.DesorpVolNormalCalTextBox.Text = "0";
             // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label82.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
+            this.label82.Location = new System.Drawing.Point(3, 107);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(199, 20);
+            this.label82.TabIndex = 27;
+            this.label82.Text = "密封粉碎解吸测试->";
+            // 
             // DesorpVolNormalTextBox
             // 
             this.DesorpVolNormalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(216, 24);
+            this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(213, 24);
             this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
-            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(173, 26);
+            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(155, 26);
             this.DesorpVolNormalTextBox.TabIndex = 1;
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label121.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label121.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label121.Location = new System.Drawing.Point(9, 313);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(207, 16);
+            this.label121.TabIndex = 33;
+            this.label121.Text = "第一份煤样解吸校准值(ml):";
             // 
             // Sample2WeightTextBox
             // 
             this.Sample2WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Sample2WeightTextBox.Location = new System.Drawing.Point(216, 183);
+            this.Sample2WeightTextBox.Location = new System.Drawing.Point(213, 183);
             this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
-            this.Sample2WeightTextBox.Size = new System.Drawing.Size(173, 26);
+            this.Sample2WeightTextBox.Size = new System.Drawing.Size(155, 26);
             this.Sample2WeightTextBox.TabIndex = 3;
             // 
             // CrushDesorpTextBox
             // 
             this.CrushDesorpTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.CrushDesorpTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CrushDesorpTextBox.Location = new System.Drawing.Point(216, 393);
+            this.CrushDesorpTextBox.Location = new System.Drawing.Point(213, 393);
             this.CrushDesorpTextBox.Name = "CrushDesorpTextBox";
             this.CrushDesorpTextBox.ReadOnly = true;
-            this.CrushDesorpTextBox.Size = new System.Drawing.Size(173, 26);
+            this.CrushDesorpTextBox.Size = new System.Drawing.Size(155, 26);
             this.CrushDesorpTextBox.TabIndex = 24;
             this.CrushDesorpTextBox.TabStop = false;
             this.CrushDesorpTextBox.Text = "0";
             // 
-            // label83
+            // label22
             // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label83.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
-            this.label83.Location = new System.Drawing.Point(6, 4);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(178, 20);
-            this.label83.TabIndex = 26;
-            this.label83.Text = "实验室解吸测试->";
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(241)))));
+            this.label22.Location = new System.Drawing.Point(17, 59);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(199, 16);
+            this.label22.TabIndex = 32;
+            this.label22.Text = "       解 吸 校 准 (ml):";
             // 
             // S2DesorpVolTextBox
             // 
             this.S2DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S2DesorpVolTextBox.Location = new System.Drawing.Point(216, 267);
+            this.S2DesorpVolTextBox.Location = new System.Drawing.Point(213, 267);
             this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
-            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(173, 26);
+            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(155, 26);
             this.S2DesorpVolTextBox.TabIndex = 5;
             // 
             // label87
@@ -3163,11 +3274,23 @@ namespace GasFormsApp
             this.label87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.label87.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label87.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label87.Location = new System.Drawing.Point(12, 270);
+            this.label87.Location = new System.Drawing.Point(9, 270);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(207, 16);
             this.label87.TabIndex = 20;
             this.label87.Text = "    第二份煤样解吸量(ml):";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label85.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label85.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label85.Location = new System.Drawing.Point(9, 186);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(207, 16);
+            this.label85.TabIndex = 17;
+            this.label85.Text = " 第 二 份 煤 样 重 量(g):";
             // 
             // LabDesorbButton
             // 
@@ -3178,7 +3301,7 @@ namespace GasFormsApp
             this.LabDesorbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LabDesorbButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LabDesorbButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.LabDesorbButton.Location = new System.Drawing.Point(139, 425);
+            this.LabDesorbButton.Location = new System.Drawing.Point(116, 425);
             this.LabDesorbButton.Name = "LabDesorbButton";
             this.LabDesorbButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.LabDesorbButton.Radius = 35;
@@ -3188,49 +3311,29 @@ namespace GasFormsApp
             this.LabDesorbButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LabDesorbButton.UseVisualStyleBackColor = false;
             // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label122.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label122.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label122.Location = new System.Drawing.Point(9, 355);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(207, 16);
+            this.label122.TabIndex = 35;
+            this.label122.Text = "第二份煤样解吸校准值(ml):";
+            // 
             // label86
             // 
             this.label86.AutoSize = true;
             this.label86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.label86.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label86.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label86.Location = new System.Drawing.Point(12, 396);
+            this.label86.Location = new System.Drawing.Point(9, 396);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(207, 16);
             this.label86.TabIndex = 21;
             this.label86.Text = "最 终 粉 碎 解 吸 量(ml):";
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label84.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label84.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(241)))));
-            this.label84.Location = new System.Drawing.Point(20, 27);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(199, 16);
-            this.label84.TabIndex = 25;
-            this.label84.Text = " 常 压 解 吸 体 积 (ml):";
-            // 
-            // S1DesorpVolTextBox
-            // 
-            this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S1DesorpVolTextBox.Location = new System.Drawing.Point(216, 225);
-            this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
-            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(173, 26);
-            this.S1DesorpVolTextBox.TabIndex = 4;
-            // 
-            // S2DesorpVolCalTextBox
-            // 
-            this.S2DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.S2DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 351);
-            this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
-            this.S2DesorpVolCalTextBox.ReadOnly = true;
-            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(173, 26);
-            this.S2DesorpVolCalTextBox.TabIndex = 36;
-            this.S2DesorpVolCalTextBox.TabStop = false;
-            this.S2DesorpVolCalTextBox.Text = "0";
             // 
             // label88
             // 
@@ -3238,111 +3341,23 @@ namespace GasFormsApp
             this.label88.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.label88.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label88.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label88.Location = new System.Drawing.Point(12, 228);
+            this.label88.Location = new System.Drawing.Point(9, 229);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(207, 16);
             this.label88.TabIndex = 18;
             this.label88.Text = "    第一份煤样解吸量(ml):";
             // 
-            // label122
+            // label84
             // 
-            this.label122.AutoSize = true;
-            this.label122.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label122.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label122.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label122.Location = new System.Drawing.Point(12, 354);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(207, 16);
-            this.label122.TabIndex = 35;
-            this.label122.Text = "第二份煤样解吸校准值(ml):";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label85.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label85.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label85.Location = new System.Drawing.Point(12, 186);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(207, 16);
-            this.label85.TabIndex = 17;
-            this.label85.Text = " 第 二 份 煤 样 重 量(g):";
-            // 
-            // Sample1WeightTextBox
-            // 
-            this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Sample1WeightTextBox.Location = new System.Drawing.Point(216, 141);
-            this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
-            this.Sample1WeightTextBox.Size = new System.Drawing.Size(173, 26);
-            this.Sample1WeightTextBox.TabIndex = 2;
-            // 
-            // S1DesorpVolCalTextBox
-            // 
-            this.S1DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.S1DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(216, 309);
-            this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
-            this.S1DesorpVolCalTextBox.ReadOnly = true;
-            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(173, 26);
-            this.S1DesorpVolCalTextBox.TabIndex = 34;
-            this.S1DesorpVolCalTextBox.TabStop = false;
-            this.S1DesorpVolCalTextBox.Text = "0";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(241)))));
-            this.label22.Location = new System.Drawing.Point(20, 59);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(199, 16);
-            this.label22.TabIndex = 32;
-            this.label22.Text = "       解 吸 校 准 (ml):";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label89.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label89.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label89.Location = new System.Drawing.Point(12, 142);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(207, 16);
-            this.label89.TabIndex = 22;
-            this.label89.Text = " 第 一 份 煤 样 重 量(g):";
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.label121.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label121.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label121.Location = new System.Drawing.Point(12, 312);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(207, 16);
-            this.label121.TabIndex = 33;
-            this.label121.Text = "第一份煤样解吸校准值(ml):";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label82.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
-            this.label82.Location = new System.Drawing.Point(6, 107);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(199, 20);
-            this.label82.TabIndex = 27;
-            this.label82.Text = "密封粉碎解吸测试->";
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.ForeColor = System.Drawing.Color.Red;
-            this.label101.Location = new System.Drawing.Point(137, 107);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(0, 12);
-            this.label101.TabIndex = 30;
+            this.label84.AutoSize = true;
+            this.label84.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label84.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label84.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(241)))));
+            this.label84.Location = new System.Drawing.Point(17, 27);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(199, 16);
+            this.label84.TabIndex = 25;
+            this.label84.Text = " 常 压 解 吸 体 积 (ml):";
             // 
             // label42
             // 
@@ -3392,7 +3407,7 @@ namespace GasFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage4DoubleBufferedFlowLayoutPanel1.AutoScroll = true;
-            this.tabPage4DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.tabPage4DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox3);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox1);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(133, 14);
@@ -4602,10 +4617,10 @@ namespace GasFormsApp
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabPage6.Controls.Add(this.splitContainer1);
-            this.tabPage6.Location = new System.Drawing.Point(4, 104);
+            this.tabPage6.Location = new System.Drawing.Point(4, 96);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1435, 639);
+            this.tabPage6.Size = new System.Drawing.Size(1435, 647);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             // 
@@ -4785,33 +4800,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 639);
@@ -5069,7 +5084,8 @@ namespace GasFormsApp
             this.tabPage3panel1.ResumeLayout(false);
             this.tabPage3panel1.PerformLayout();
             this.tabPage3panel2.ResumeLayout(false);
-            this.tabPage3panel2.PerformLayout();
+            this.tabPage3panel3.ResumeLayout(false);
+            this.tabPage3panel3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4DoubleBufferedPanel1.ResumeLayout(false);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.ResumeLayout(false);
@@ -5285,8 +5301,6 @@ namespace GasFormsApp
         public UI.UCButton SaveButton;
         public UI.UCButton GenRecordButton;
         private PictureBox pictureBox1;
-        private Panel tabPage3panel1;
-        private Panel tabPage3panel2;
         private Label label42;
         public UI.DoubleBufferedFlowLayoutPanel tabPage1DoubleBufferedFlowLayoutPanel1;
         public Panel tabPage1panel1;
@@ -5515,5 +5529,8 @@ namespace GasFormsApp
         public TabPage tabPage3;
         public TabPage tabPage4;
         public TabPage tabPage5;
+        public Panel tabPage3panel1;
+        public Panel tabPage3panel2;
+        public Panel tabPage3panel3;
     }
 }

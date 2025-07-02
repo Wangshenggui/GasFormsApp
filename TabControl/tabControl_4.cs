@@ -288,12 +288,12 @@ namespace GasFormsApp.TabControl
             // 限制宽度范围，保证最小宽度约为 465 + 10 (即 475)，最大宽度 940
             if (newWidth <= 940)
             {
-                newWidth = 470;
+                newWidth = 480;
             }
             else if (newWidth > 940)
             {
                 newWidth = 940;
-                //newHeight = 610; // 可选固定高度注释掉
+                newHeight = 610; // 可选固定高度注释掉
             }
 
             Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");

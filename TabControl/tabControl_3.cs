@@ -35,6 +35,9 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage3TemporarySavingButton.Click += tabPage3TemporarySavingButton_Click;
             _mainForm.tabPage3RecoverDataButton.Click += tabPage3RecoverDataButton_Click;
 
+            _mainForm.tabPage3panel1.Paint += tabPage3panel1_Paint;
+
+
             // 批量注册内容更改事件
             InitializeTextMonitoring();
         }
@@ -84,7 +87,44 @@ namespace GasFormsApp.TabControl
 
 
 
+        // tabPage3panel1_Paint 的 Paint 事件处理，用于动态调整其大小和位置，实现居中显示
+        private void tabPage3panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // 计算新的宽高，参考主面板尺寸，带一定比例缩放
+            int newWidth = _mainForm.tabPage3.ClientSize.Width - _mainForm.tabPage3.ClientSize.Width / 9;
+            int newHeight = _mainForm.tabPage3.ClientSize.Height - _mainForm.tabPage3.ClientSize.Height / 100;
 
+            // 应用计算得到的宽高
+            _mainForm.tabPage3panel1.Width = newWidth;
+            _mainForm.tabPage3panel1.Height = newHeight;
+
+            // 居中控件
+            _mainForm.tabPage3panel1.Left = (_mainForm.tabPage3.ClientSize.Width - newWidth) / 2;
+            _mainForm.tabPage3panel1.Top = (_mainForm.tabPage3.ClientSize.Height - newHeight) / 2;
+
+
+            _mainForm.tabPage3panel2.Left = (_mainForm.tabPage3panel1.Width - _mainForm.tabPage3panel2.Width) / 2;
+            //_mainForm.tabPage3panel2.Top = 100;
+
+            _mainForm.tabPage3panel3.Left = (_mainForm.tabPage3panel2.Width - _mainForm.tabPage3panel3.Width) / 2;
+            _mainForm.tabPage3panel3.Top = (_mainForm.tabPage3panel2.Height - _mainForm.tabPage3panel3.Height) / 2;
+
+            if (_mainForm.tabPage3panel3.Top <= 0) _mainForm.tabPage3panel3.Top = 0;
+
+            //bool vScroll = _mainForm.tabPage3panel2.VerticalScroll.Visible;
+            //bool hScroll = _mainForm.tabPage3panel2.HorizontalScroll.Visible;
+            //if (vScroll)
+            //{
+            //    //MessageBox.Show("垂直滚动条已触发");
+            //    //_mainForm.tabPage3panel2.Width = _mainForm.tabPage3panel2.Width + 20;
+            //}
+            //if (hScroll)
+            //{
+            //    //MessageBox.Show("水平滚动条已触发");
+            //}
+
+            Console.WriteLine($"{newWidth}-{newHeight}");
+        }
         /// <summary>
         /// 临时数据序列化类，保存tabPage3的所有相关数据
         /// </summary>

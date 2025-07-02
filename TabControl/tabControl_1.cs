@@ -263,7 +263,11 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 705 && newWidth <= 1055)
             {
                 newWidth = 720;
-                newHeight = 480;
+                
+                if(newHeight<400)
+                {
+                    newHeight = 400;
+                }
             }
             else if (newWidth > 1055)
             {
