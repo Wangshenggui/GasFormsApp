@@ -32,14 +32,14 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -3399,21 +3399,18 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedPanel1.Controls.Add(this.tabPage4DoubleBufferedFlowLayoutPanel1);
             this.tabPage4DoubleBufferedPanel1.Location = new System.Drawing.Point(0, 0);
             this.tabPage4DoubleBufferedPanel1.Name = "tabPage4DoubleBufferedPanel1";
-            this.tabPage4DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 679);
+            this.tabPage4DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 647);
             this.tabPage4DoubleBufferedPanel1.TabIndex = 1003;
             // 
             // tabPage4DoubleBufferedFlowLayoutPanel1
             // 
-            this.tabPage4DoubleBufferedFlowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage4DoubleBufferedFlowLayoutPanel1.AutoScroll = true;
             this.tabPage4DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox3);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox1);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(133, 14);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Name = "tabPage4DoubleBufferedFlowLayoutPanel1";
-            this.tabPage4DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(948, 618);
+            this.tabPage4DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(948, 606);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.TabIndex = 0;
             // 
             // groupBox3
@@ -3465,6 +3462,7 @@ namespace GasFormsApp
             // PorosityCheckBox
             // 
             this.PorosityCheckBox.AutoSize = true;
+            this.PorosityCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.PorosityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.PorosityCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.PorosityCheckBox.Location = new System.Drawing.Point(76, 503);
@@ -3473,7 +3471,7 @@ namespace GasFormsApp
             this.PorosityCheckBox.TabIndex = 64;
             this.PorosityCheckBox.TabStop = false;
             this.PorosityCheckBox.Text = "孔  隙  率 (K/%):";
-            this.PorosityCheckBox.UseVisualStyleBackColor = true;
+            this.PorosityCheckBox.UseVisualStyleBackColor = false;
             // 
             // NonDesorpGasQtyTextBox
             // 
@@ -3538,6 +3536,7 @@ namespace GasFormsApp
             // TrueDensityCheckBox
             // 
             this.TrueDensityCheckBox.AutoSize = true;
+            this.TrueDensityCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.TrueDensityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TrueDensityCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.TrueDensityCheckBox.Location = new System.Drawing.Point(76, 436);
@@ -3546,11 +3545,12 @@ namespace GasFormsApp
             this.TrueDensityCheckBox.TabIndex = 70;
             this.TrueDensityCheckBox.TabStop = false;
             this.TrueDensityCheckBox.Text = "真 密 度 (g/cm3):";
-            this.TrueDensityCheckBox.UseVisualStyleBackColor = true;
+            this.TrueDensityCheckBox.UseVisualStyleBackColor = false;
             // 
             // NonDesorpGasQtyCheckBox
             // 
             this.NonDesorpGasQtyCheckBox.AutoSize = true;
+            this.NonDesorpGasQtyCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.NonDesorpGasQtyCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.NonDesorpGasQtyCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.NonDesorpGasQtyCheckBox.Location = new System.Drawing.Point(76, 559);
@@ -3559,11 +3559,12 @@ namespace GasFormsApp
             this.NonDesorpGasQtyCheckBox.TabIndex = 67;
             this.NonDesorpGasQtyCheckBox.TabStop = false;
             this.NonDesorpGasQtyCheckBox.Text = "不可解吸瓦斯量 [Wc(m3/t)]:";
-            this.NonDesorpGasQtyCheckBox.UseVisualStyleBackColor = true;
+            this.NonDesorpGasQtyCheckBox.UseVisualStyleBackColor = false;
             // 
             // VadCheckBox
             // 
             this.VadCheckBox.AutoSize = true;
+            this.VadCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.VadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.VadCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.VadCheckBox.Location = new System.Drawing.Point(76, 303);
@@ -3572,11 +3573,12 @@ namespace GasFormsApp
             this.VadCheckBox.TabIndex = 66;
             this.VadCheckBox.TabStop = false;
             this.VadCheckBox.Text = "挥 发 分 (Vad/%):";
-            this.VadCheckBox.UseVisualStyleBackColor = true;
+            this.VadCheckBox.UseVisualStyleBackColor = false;
             // 
             // AppDensityCheckBox
             // 
             this.AppDensityCheckBox.AutoSize = true;
+            this.AppDensityCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.AppDensityCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.AppDensityCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.AppDensityCheckBox.Location = new System.Drawing.Point(76, 370);
@@ -3585,11 +3587,12 @@ namespace GasFormsApp
             this.AppDensityCheckBox.TabIndex = 65;
             this.AppDensityCheckBox.TabStop = false;
             this.AppDensityCheckBox.Text = "视相对密度  (γ):";
-            this.AppDensityCheckBox.UseVisualStyleBackColor = true;
+            this.AppDensityCheckBox.UseVisualStyleBackColor = false;
             // 
             // AadCheckBox
             // 
             this.AadCheckBox.AutoSize = true;
+            this.AadCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.AadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.AadCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.AadCheckBox.Location = new System.Drawing.Point(76, 235);
@@ -3598,11 +3601,12 @@ namespace GasFormsApp
             this.AadCheckBox.TabIndex = 63;
             this.AadCheckBox.TabStop = false;
             this.AadCheckBox.Text = "灰     分(Aad/%):";
-            this.AadCheckBox.UseVisualStyleBackColor = true;
+            this.AadCheckBox.UseVisualStyleBackColor = false;
             // 
             // MadCheckBox
             // 
             this.MadCheckBox.AutoSize = true;
+            this.MadCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.MadCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MadCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.MadCheckBox.Location = new System.Drawing.Point(76, 171);
@@ -3611,11 +3615,12 @@ namespace GasFormsApp
             this.MadCheckBox.TabIndex = 62;
             this.MadCheckBox.TabStop = false;
             this.MadCheckBox.Text = "水     分(Mad/%):";
-            this.MadCheckBox.UseVisualStyleBackColor = true;
+            this.MadCheckBox.UseVisualStyleBackColor = false;
             // 
             // AdsorpConstBCheckBox
             // 
             this.AdsorpConstBCheckBox.AutoSize = true;
+            this.AdsorpConstBCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.AdsorpConstBCheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.AdsorpConstBCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.AdsorpConstBCheckBox.Location = new System.Drawing.Point(76, 106);
@@ -3624,11 +3629,12 @@ namespace GasFormsApp
             this.AdsorpConstBCheckBox.TabIndex = 61;
             this.AdsorpConstBCheckBox.TabStop = false;
             this.AdsorpConstBCheckBox.Text = "吸附常数b(MPa-1):";
-            this.AdsorpConstBCheckBox.UseVisualStyleBackColor = true;
+            this.AdsorpConstBCheckBox.UseVisualStyleBackColor = false;
             // 
             // AdsorpConstACheckBox
             // 
             this.AdsorpConstACheckBox.AutoSize = true;
+            this.AdsorpConstACheckBox.BackColor = System.Drawing.Color.Transparent;
             this.AdsorpConstACheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.AdsorpConstACheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
             this.AdsorpConstACheckBox.Location = new System.Drawing.Point(76, 43);
@@ -3637,7 +3643,7 @@ namespace GasFormsApp
             this.AdsorpConstACheckBox.TabIndex = 10;
             this.AdsorpConstACheckBox.TabStop = false;
             this.AdsorpConstACheckBox.Text = "吸附常数a(cm3/g):";
-            this.AdsorpConstACheckBox.UseVisualStyleBackColor = true;
+            this.AdsorpConstACheckBox.UseVisualStyleBackColor = false;
             // 
             // WcOutCheckBox
             // 
@@ -3731,7 +3737,7 @@ namespace GasFormsApp
             // label95
             // 
             this.label95.AutoSize = true;
-            this.label95.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.label95.BackColor = System.Drawing.Color.Transparent;
             this.label95.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label95.Location = new System.Drawing.Point(145, 52);
             this.label95.Name = "label95";
@@ -3774,7 +3780,7 @@ namespace GasFormsApp
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.label94.BackColor = System.Drawing.Color.Transparent;
             this.label94.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label94.Location = new System.Drawing.Point(145, 181);
             this.label94.Name = "label94";
@@ -3785,7 +3791,7 @@ namespace GasFormsApp
             // P_CheckBox
             // 
             this.P_CheckBox.AutoSize = true;
-            this.P_CheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.P_CheckBox.BackColor = System.Drawing.Color.Transparent;
             this.P_CheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.P_CheckBox.Location = new System.Drawing.Point(140, 430);
             this.P_CheckBox.Name = "P_CheckBox";
@@ -3809,7 +3815,7 @@ namespace GasFormsApp
             // label93
             // 
             this.label93.AutoSize = true;
-            this.label93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.label93.BackColor = System.Drawing.Color.Transparent;
             this.label93.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label93.Location = new System.Drawing.Point(145, 373);
             this.label93.Name = "label93";
@@ -3832,7 +3838,7 @@ namespace GasFormsApp
             // label92
             // 
             this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.label92.BackColor = System.Drawing.Color.Transparent;
             this.label92.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label92.Location = new System.Drawing.Point(145, 115);
             this.label92.Name = "label92";
@@ -3843,7 +3849,7 @@ namespace GasFormsApp
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(145, 310);
             this.label21.Name = "label21";
@@ -3878,7 +3884,7 @@ namespace GasFormsApp
             // label91
             // 
             this.label91.AutoSize = true;
-            this.label91.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.label91.BackColor = System.Drawing.Color.Transparent;
             this.label91.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label91.Location = new System.Drawing.Point(145, 246);
             this.label91.Name = "label91";
@@ -4674,20 +4680,20 @@ namespace GasFormsApp
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(1, 61);
             this.treeView1.Name = "treeView1";
-            treeNode4.ImageKey = "项目";
-            treeNode4.Name = "项目";
-            treeNode4.SelectedImageKey = "项目";
-            treeNode4.Text = "项目";
-            treeNode5.ImageKey = "矿井.png";
-            treeNode5.Name = "矿井";
-            treeNode5.SelectedImageKey = "矿井.png";
-            treeNode5.Text = "矿井";
-            treeNode6.ImageKey = "根目录";
-            treeNode6.Name = "根目录";
-            treeNode6.SelectedImageKey = "根目录";
-            treeNode6.Text = "根目录";
+            treeNode1.ImageKey = "项目";
+            treeNode1.Name = "项目";
+            treeNode1.SelectedImageKey = "项目";
+            treeNode1.Text = "项目";
+            treeNode2.ImageKey = "矿井.png";
+            treeNode2.Name = "矿井";
+            treeNode2.SelectedImageKey = "矿井.png";
+            treeNode2.Text = "矿井";
+            treeNode3.ImageKey = "根目录";
+            treeNode3.Name = "根目录";
+            treeNode3.SelectedImageKey = "根目录";
+            treeNode3.Text = "根目录";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(298, 576);
             this.treeView1.TabIndex = 1;
@@ -4801,33 +4807,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 639);

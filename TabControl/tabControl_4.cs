@@ -275,7 +275,7 @@ namespace GasFormsApp.TabControl
             int newHeight;
 
             // 主窗体宽度大于980时调整宽度，否则使用全宽
-            if (_mainForm.Width > 980)
+            if (_mainForm.tabPage4DoubleBufferedPanel1.Width > 980)
             {
                 newWidth = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width;
             }
@@ -298,15 +298,20 @@ namespace GasFormsApp.TabControl
                 newHeight = 610; // 可选固定高度注释掉
             }
 
-            Console.WriteLine($"{_mainForm.Width}--{_mainForm.Height}");
-
+            
+            if(newHeight> _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height)
+            {
+                newHeight = _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - _mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height/100;
+            }
             // 设置内部 FlowLayoutPanel 宽高
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Width = newWidth;
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Height = newHeight;
 
+            Console.WriteLine($"{_mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Height}--{_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height}");
+
             // 居中定位
-            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
-            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
+            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width - _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Width) / 2;
+            _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Height) / 2;
         }
 
         // 当 WcOutCheckBox 选中状态改变时调用
