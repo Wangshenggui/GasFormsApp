@@ -37,9 +37,9 @@ namespace GasFormsApp
             treeNode1});
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
             treeNode2});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -3936,7 +3936,7 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedPanel1.Controls.Add(this.tabPage5DoubleBufferedFlowLayoutPanel2);
             this.tabPage5DoubleBufferedPanel1.Location = new System.Drawing.Point(0, 0);
             this.tabPage5DoubleBufferedPanel1.Name = "tabPage5DoubleBufferedPanel1";
-            this.tabPage5DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 679);
+            this.tabPage5DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 647);
             this.tabPage5DoubleBufferedPanel1.TabIndex = 1006;
             // 
             // tabPage5DoubleBufferedFlowLayoutPanel2
@@ -3952,9 +3952,9 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel15);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel17);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(210, 33);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(150, 33);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Name = "tabPage5DoubleBufferedFlowLayoutPanel2";
-            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(824, 540);
+            this.tabPage5DoubleBufferedFlowLayoutPanel2.Size = new System.Drawing.Size(809, 477);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.TabIndex = 1006;
             // 
             // tabPage5DoubleBufferedFlowLayoutPanel1
@@ -3973,7 +3973,7 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel8);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel9);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel10);
-            this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(37, 3);
+            this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(22, 3);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Name = "tabPage5DoubleBufferedFlowLayoutPanel1";
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(784, 138);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.TabIndex = 71;
@@ -4304,7 +4304,7 @@ namespace GasFormsApp
             this.tabPage5panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel11.Controls.Add(this.label119);
             this.tabPage5panel11.Controls.Add(this.dateTimePicker1);
-            this.tabPage5panel11.Location = new System.Drawing.Point(454, 154);
+            this.tabPage5panel11.Location = new System.Drawing.Point(439, 154);
             this.tabPage5panel11.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel11.Name = "tabPage5panel11";
             this.tabPage5panel11.Size = new System.Drawing.Size(367, 32);
@@ -4338,7 +4338,7 @@ namespace GasFormsApp
             this.tabPage5panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel12.Controls.Add(this.label5);
             this.tabPage5panel12.Controls.Add(this.dateTimePicker6);
-            this.tabPage5panel12.Location = new System.Drawing.Point(81, 154);
+            this.tabPage5panel12.Location = new System.Drawing.Point(66, 154);
             this.tabPage5panel12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel12.Name = "tabPage5panel12";
             this.tabPage5panel12.Size = new System.Drawing.Size(367, 32);
@@ -4372,7 +4372,7 @@ namespace GasFormsApp
             this.tabPage5panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel14.Controls.Add(this.label117);
             this.tabPage5panel14.Controls.Add(this.LabTestersTextBox);
-            this.tabPage5panel14.Location = new System.Drawing.Point(454, 206);
+            this.tabPage5panel14.Location = new System.Drawing.Point(439, 206);
             this.tabPage5panel14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel14.Name = "tabPage5panel14";
             this.tabPage5panel14.Size = new System.Drawing.Size(367, 32);
@@ -4406,7 +4406,7 @@ namespace GasFormsApp
             this.tabPage5panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel13.Controls.Add(this.DownholeTestersCheckBox);
             this.tabPage5panel13.Controls.Add(this.DownholeTestersTextBox);
-            this.tabPage5panel13.Location = new System.Drawing.Point(81, 206);
+            this.tabPage5panel13.Location = new System.Drawing.Point(66, 206);
             this.tabPage5panel13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel13.Name = "tabPage5panel13";
             this.tabPage5panel13.Size = new System.Drawing.Size(367, 32);
@@ -4441,7 +4441,7 @@ namespace GasFormsApp
             this.tabPage5panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel16.Controls.Add(this.label120);
             this.tabPage5panel16.Controls.Add(this.RemarkTextBox);
-            this.tabPage5panel16.Location = new System.Drawing.Point(454, 258);
+            this.tabPage5panel16.Location = new System.Drawing.Point(439, 258);
             this.tabPage5panel16.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel16.Name = "tabPage5panel16";
             this.tabPage5panel16.Size = new System.Drawing.Size(367, 64);
@@ -4473,7 +4473,7 @@ namespace GasFormsApp
             this.tabPage5panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
             this.tabPage5panel15.Controls.Add(this.label118);
             this.tabPage5panel15.Controls.Add(this.AuditorTextBox);
-            this.tabPage5panel15.Location = new System.Drawing.Point(81, 258);
+            this.tabPage5panel15.Location = new System.Drawing.Point(66, 258);
             this.tabPage5panel15.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.tabPage5panel15.Name = "tabPage5panel15";
             this.tabPage5panel15.Size = new System.Drawing.Size(367, 32);
@@ -4510,7 +4510,7 @@ namespace GasFormsApp
             this.tabPage5panel17.Controls.Add(this.GenReportButton);
             this.tabPage5panel17.Controls.Add(this.GenRecordButton);
             this.tabPage5panel17.Controls.Add(this.SaveButton);
-            this.tabPage5panel17.Location = new System.Drawing.Point(454, 335);
+            this.tabPage5panel17.Location = new System.Drawing.Point(439, 335);
             this.tabPage5panel17.Name = "tabPage5panel17";
             this.tabPage5panel17.Size = new System.Drawing.Size(367, 134);
             this.tabPage5panel17.TabIndex = 76;
@@ -4807,33 +4807,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 639);

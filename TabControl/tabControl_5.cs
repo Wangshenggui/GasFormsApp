@@ -297,9 +297,9 @@ namespace GasFormsApp.TabControl
             int newHeight = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 10;
 
             // 根据宽度调整布局
-            if (newWidth >= 515 && newWidth <= 566)
+            if (newWidth >= 416 && newWidth <= 612)
             {
-                newWidth = 415;
+                newWidth = 416;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = newWidth - 23;
@@ -310,9 +310,9 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage5panel16.Width = newWidth - 23;
                 _mainForm.tabPage5panel17.Width = newWidth - 23;
             }
-            else if (newWidth > 566 && newWidth <= 750)
+            else if (newWidth > 613 && newWidth <= 808)
             {
-                newWidth = 600 + 15;
+                newWidth = 613 + 0;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = newWidth - 28;
@@ -323,9 +323,11 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage5panel16.Width = newWidth - 28;
                 _mainForm.tabPage5panel17.Width = newWidth - 28;
             }
-            else if (newWidth > 750 && newWidth <= 939)
+            else if (newWidth > 809 && newWidth <= 1003)
             {
-                newWidth = 800;
+                newWidth = 809;
+                if(newHeight>478)
+                    newHeight = 478;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = 415 - 30;
@@ -336,10 +338,14 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage5panel16.Width = 415 - 30;
                 _mainForm.tabPage5panel17.Width = 415 - 30;
             }
-            else if (newWidth > 939)
+            else if (newWidth > 1004)
             {
-                newWidth = 1000;
+                newWidth = 1004;
                 newHeight = 460;
+                if (newHeight > _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height)
+                {
+                    newHeight = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 10;
+                }
                 int a = 28;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
@@ -350,7 +356,6 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage5panel15.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel16.Width = 500 + 15 - a;
                 _mainForm.tabPage5panel17.Width = 500 + 15 - a;
-                newHeight = 460;
             }
 
             // 居中定位
