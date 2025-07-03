@@ -130,9 +130,9 @@ namespace GasFormsApp.TabControl
             x += beforeSize.Width;
 
             Size matchSize = TextRenderer.MeasureText(e.Graphics, matchText, font, e.Bounds.Size, TextFormatFlags.NoPadding);
-            TextRenderer.DrawText(e.Graphics, matchText, font, new Point((int)x, (int)y),
-                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
-                TextFormatFlags.NoPadding);
+            //TextRenderer.DrawText(e.Graphics, matchText, font, new Point((int)x, (int)y),
+            //    (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
+            //    TextFormatFlags.NoPadding);
             // 绘制文本
             Font boldFont = new Font(font, FontStyle.Bold);
             TextRenderer.DrawText(
@@ -140,7 +140,7 @@ namespace GasFormsApp.TabControl
                 matchText,
                 boldFont,
                 new Point((int)x, (int)y),
-                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
+                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.Red,
                 TextFormatFlags.NoPadding
             );
             x += matchSize.Width;

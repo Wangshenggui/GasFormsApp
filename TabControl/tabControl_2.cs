@@ -42,6 +42,7 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.BulkImportButton, "批量导入(Ctrl + I)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage2TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage2RecoverDataButton, "恢复数据(Ctrl + R)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.pictureBox3, "右键导出图片");
 
             // 注册事件处理程序
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
@@ -52,6 +53,9 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
 
             _mainForm.TypeOfDestructionComboBox3.MouseWheel += TypeOfDestructionComboBox3_MouseWheel;
+
+            _mainForm.pictureBox3.MouseDown += pictureBox3_MouseDown;
+            _mainForm.导出图片ToolStripMenuItem.Click += 导出图片ToolStripMenuItem_Click;
 
             // 批量注册内容更改事件
             InitializeTextMonitoring();
@@ -779,32 +783,28 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void ExportImageButton_Click(object sender, EventArgs e)
         {
-            // 选择保存位置
+            if (_mainForm.pictureBox3.Image == null)
+            {
+                MessageBox.Show("没有图片！");
+                return;
+            }
+
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "PNG 文件 (*.png)|*.png",
-                Title = "保存生成的 PNG 文件"
+                Title = "导出图片"
             };
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                // 当前程序目录
-                string CurrentDir = AppDomain.CurrentDomain.BaseDirectory;
-                // Python生成的图片路径
-                string SystemDataPath = Path.Combine(CurrentDir, "Python_embed\\Python\\images\\output_image.png");
-
-                string outputPath = saveDialog.FileName;
-                string sourcePath = SystemDataPath;
-
                 try
                 {
-                    // 复制文件，若目标文件已存在则覆盖
-                    System.IO.File.Copy(sourcePath, outputPath, true);
-                    MessageBox.Show("图片复制成功！");
+                    _mainForm.pictureBox3.Image.Save(saveDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    MessageBox.Show("图片导出成功！");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("复制图片出错: " + ex.Message);
+                    MessageBox.Show("导出失败: " + ex.Message);
                 }
             }
         }
@@ -1095,6 +1095,18 @@ namespace GasFormsApp.TabControl
                     }
                 }
             }
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                _mainForm.tabPage2contextMenuStrip1.Show(_mainForm.pictureBox3, e.Location); // 弹出菜单
+            }
+        }
+        private void 导出图片ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExportImageButton_Click(sender,e);
         }
     }
 }

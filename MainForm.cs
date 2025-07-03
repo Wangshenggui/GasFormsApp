@@ -628,14 +628,24 @@ namespace GasFormsApp
                     break;
 
                 case Keys.G: // 生成
-                    switch (currentTab.Name)
+                    if (e.Shift)
                     {
-                        case "tabPage5":
-                            myTabLogic5.GenReportButton_Click(sender, e);
-                            break;
-                        case "tabPage6":
-                            myTabLogic6.ExportTheDocumentButton_Click(sender, e);
-                            break;
+                        if (currentTab.Name == "tabPage5")
+                        {
+                            myTabLogic5.GenRecordButton_Click(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        switch (currentTab.Name)
+                        {
+                            case "tabPage5":
+                                myTabLogic5.GenReportButton_Click(sender, e);
+                                break;
+                            case "tabPage6":
+                                myTabLogic6.ExportTheDocumentButton_Click(sender, e);
+                                break;
+                        }
                     }
                     e.Handled = true;
                     break;

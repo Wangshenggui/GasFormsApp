@@ -31,7 +31,8 @@ namespace GasFormsApp.TabControl
             _mainForm = form;
 
             // 设置工具提示
-            _mainForm.toolTip1.SetToolTip(_mainForm.GenReportButton, "生成报告(Ctrl + G)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.GenReportButton, "生成报告单(Ctrl + G)");
+            _mainForm.toolTip1.SetToolTip(_mainForm.GenRecordButton, "生成记录表(Ctrl + Shift + G)");
             _mainForm.toolTip1.SetToolTip(_mainForm.SaveButton, "保存数据(Ctrl + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage5TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage5RecoverDataButton, "恢复数据(Ctrl + R)");
@@ -647,7 +648,7 @@ namespace GasFormsApp.TabControl
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "Word 文件 (*.docx)|*.docx",
-                Title = "保存生成的 Word 文件"
+                Title = "生成记录表"
             };
 
             string outputPath = "";
@@ -842,7 +843,7 @@ namespace GasFormsApp.TabControl
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "Word 文件 (*.docx)|*.docx",
-                Title = "保存生成的 Word 文件"
+                Title = "生成报告单"
             };
 
             string outputPath = "";
