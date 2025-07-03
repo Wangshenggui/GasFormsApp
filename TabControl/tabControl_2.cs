@@ -376,8 +376,8 @@ namespace GasFormsApp.TabControl
             int newHeight = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height / 10;
 
             // 调试输出
-            Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
-            Console.WriteLine($"宽度: {newWidth}, 高度: {newHeight}");
+            //Console.WriteLine($"主界面 宽度: {_mainForm.Width}, 高度: {_mainForm.Height}");
+            //Console.WriteLine($"宽度: {newWidth}, 高度: {newHeight}");
 
             // 重置面板宽度
             _mainForm.tabPage2panel7.Width = 1;
@@ -394,6 +394,7 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage2TemporarySavingButton.Location = new Point(542, 78);
             _mainForm.tabPage2RecoverDataButton.Location = new Point(671, 78);
 
+            newHeight = _mainForm.tabPage2DoubleBufferedPanel2.Height;
             // 根据宽度调整布局
             if (newWidth <= 840) // 小尺寸布局
             {
@@ -414,13 +415,25 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 1165) // 大尺寸布局
             {
                 newWidth = 1165;
-                newHeight = 630;
+                
+                //if(_mainForm.tabPage2DoubleBufferedPanel2.Height>625)
+                //{
+                //    newHeight = _mainForm.tabPage2DoubleBufferedPanel2.Height;
+                //}
+                //else
+                //{
+                //    newHeight = 630;
+                //}
                 int a = 161;
                 _mainForm.tabPage2panel7.Width = a;
                 _mainForm.tabPage2panel8.Width = a;
                 _mainForm.tabPage2panel9.Width = 1;
                 _mainForm.tabPage2panel10.Width = a;
             }
+
+            Console.WriteLine($"宽度: {_mainForm.tabPage2DoubleBufferedPanel2.Width}, 高度: {_mainForm.tabPage2DoubleBufferedPanel2.Height}");
+
+            if (newHeight > 625) newHeight = 625;
 
             // 设置流式布局面板大小
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
