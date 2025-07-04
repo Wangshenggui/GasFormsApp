@@ -609,6 +609,15 @@ namespace GasFormsApp.TabControl
                     continue;
                 }
 
+                if (((int)currentValue) % 2 != 0)
+                {
+                    boxes[i].BackColor = Color.Green;
+                    //boxes[i].ForeColor = Color.Green;
+                    //boxes[i].Font = new Font(boxes[i].Font.FontFamily, boxes[i].Font.Size, FontStyle.Bold | FontStyle.Italic);
+                    isValid = false;
+                    continue;
+                }
+
                 if (hasLastValue && currentValue < lastValue) // 非递增
                 {
                     var errorFont = new Font(boxes[i].Font.FontFamily, boxes[i].Font.Size, FontStyle.Bold | FontStyle.Italic);
