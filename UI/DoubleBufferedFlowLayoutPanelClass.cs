@@ -1,29 +1,77 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace GasFormsApp.UI
 {
-    /// <summary>
-    /// 自定义的 FlowLayoutPanel，启用双缓冲以防止刷新时的闪烁。
-    /// 通常用于频繁重绘或动态添加控件的界面。
-    /// </summary>
     public class DoubleBufferedFlowLayoutPanel : FlowLayoutPanel
     {
-        // 注意：这个字段没有实质用途，在当前类中并不会被调用
-        // 是多余的自动生成代码
-        private FlowLayoutPanel flowLayoutPanel1;
+        private int _cornerRadius = 12;
 
-        /// <summary>
-        /// 构造函数，启用双缓冲和重绘时刷新。
-        /// </summary>
+        public int CornerRadius
+        {
+            get => _cornerRadius;
+            set { _cornerRadius = value; UpdateRegion(); Invalidate(); }
+        }
+
         public DoubleBufferedFlowLayoutPanel()
         {
-            this.DoubleBuffered = true;    // 开启双缓冲，减少闪烁
-            this.ResizeRedraw = true;      // 在控件尺寸改变时自动重绘
+            SetStyle(ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.UserPaint |
+                     ControlStyles.ResizeRedraw |
+                     ControlStyles.OptimizedDoubleBuffer |
+                     ControlStyles.SupportsTransparentBackColor, true);
+
+            this.DoubleBuffered = true;
+            this.BackColor = Color.White; // 背景色不要用 Transparent
         }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            using (GraphicsPath path = GetRoundedRectPath(this.ClientRectangle, _cornerRadius))
+            using (Brush brush = new SolidBrush(this.BackColor))
+            {
+                e.Graphics.FillPath(brush, path);
+            }
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateRegion();
+        }
+
+        private void UpdateRegion()
+        {
+            Rectangle rect = this.ClientRectangle;
+
+            if (rect.Width > 0 && rect.Height > 0)
+            {
+                using (GraphicsPath path = GetRoundedRectPath(rect, _cornerRadius))
+                {
+                    this.Region?.Dispose();
+                    this.Region = new Region(path);
+                }
+            }
+        }
+
+        private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius, int offset = 1)
+        {
+            int diameter = radius * 2;
+            GraphicsPath path = new GraphicsPath();
+
+            path.StartFigure();
+            path.AddArc(rect.X - offset, rect.Y - offset, diameter, diameter, 180, 90);                         // 左上
+            path.AddArc(rect.Right - diameter + offset, rect.Y - offset, diameter, diameter, 270, 90);          // 右上
+            path.AddArc(rect.Right - diameter + offset, rect.Bottom - diameter + offset, diameter, diameter, 0, 90); // 右下
+            path.AddArc(rect.X - offset, rect.Bottom - diameter + offset, diameter, diameter, 90, 90);          // 左下
+            path.CloseFigure();
+
+            return path;
+        }
+
     }
 }
