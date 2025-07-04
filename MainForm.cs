@@ -107,9 +107,29 @@ namespace GasFormsApp
 
 
         private List<TextBox> desorbTextBoxes;
+
+        public void EnableDoubleBufferingForAllControls(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                // 通过反射设置 DoubleBuffered 属性（私有属性）
+                PropertyInfo doubleBufferPropertyInfo = ctrl.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+                if (doubleBufferPropertyInfo != null)
+                {
+                    doubleBufferPropertyInfo.SetValue(ctrl, true, null);
+                }
+
+                // 递归对子控件继续启用
+                if (ctrl.HasChildren)
+                {
+                    EnableDoubleBufferingForAllControls(ctrl);
+                }
+            }
+        }
         public MainForm(bool v)
         {
             this.v = v;
+            this.Opacity = 0;
             InitializeComponent();
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -119,6 +139,10 @@ namespace GasFormsApp
               ControlStyles.AllPaintingInWmPaint |
               ControlStyles.UserPaint, true);
             this.UpdateStyles();
+
+            // 给整个窗体启用双缓冲（包括所有子控件）
+            //EnableDoubleBufferingForAllControls(this);
+            //this.DoubleBuffered = true;
 
 
             GasComp_Lab1 = "H₂";      // 氢气
@@ -313,8 +337,7 @@ namespace GasFormsApp
 
 
             //tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
-            //开启定时器
-            InputCheckTimer.Enabled = true;
+            
 
             // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
             this.tabControl1PictureBox.Click += tabControlxPictureBox_Click;
@@ -492,6 +515,19 @@ namespace GasFormsApp
                 this.Top = (screenHeight - this.Height) / 2;
             }
 
+            //// 隐藏 tabControl，防止闪烁
+            //tabControl1.Visible = false;
+
+            TabPage currentPage = tabControl1.SelectedTab;
+
+            foreach (TabPage page in tabControl1.TabPages)
+            {
+                tabControl1.SelectedTab = page;
+                Application.DoEvents(); // 强制加载控件内容
+            }
+
+            tabControl1.SelectedTab = currentPage;
+            //tabControl1.Visible = true;
 
             EnableDoubleBuffering(this.tabControl1);
 
@@ -556,6 +592,9 @@ namespace GasFormsApp
             {
                 label2.BackColor = Color.White;
             }
+
+            //开启定时器
+            InputCheckTimer.Enabled = true;
         }
         // 动态修改软件标题（非App上端）
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
@@ -575,6 +614,11 @@ namespace GasFormsApp
         {
             if(a++==1)
             {
+                if(this.Opacity == 0)
+                {
+                    this.Opacity = 1;
+                }
+                
                 a = 0;
                 TabPage currentTab = tabControl1.SelectedTab;
 

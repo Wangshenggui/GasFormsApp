@@ -173,11 +173,32 @@ namespace GasFormsApp.TabControl
 
         private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right && _mainForm.dataGridView1.Rows.Count > 0)
             {
-                _mainForm.tabPage6contextMenuStrip2.Show(_mainForm.dataGridView1, e.Location); // 弹出菜单
+                // 获取点击位置对应的行索引
+                DataGridView.HitTestInfo hit = _mainForm.dataGridView1.HitTest(e.X, e.Y);
+
+                if (hit.RowIndex >= 0)
+                {
+                    // 判断该行是否已被选中
+                    if (_mainForm.dataGridView1.Rows[hit.RowIndex].Selected)
+                    {
+                        // 在选中行上右键，弹出菜单
+                        _mainForm.tabPage6contextMenuStrip2.Show(_mainForm.dataGridView1, e.Location);
+                    }
+                    else
+                    {
+                        // 如果点击的是没选中的行，可以选择先选中它（可选）
+                        _mainForm.dataGridView1.ClearSelection();
+                        _mainForm.dataGridView1.Rows[hit.RowIndex].Selected = true;
+
+                        // 然后再弹出菜单
+                        _mainForm.tabPage6contextMenuStrip2.Show(_mainForm.dataGridView1, e.Location);
+                    }
+                }
             }
         }
+
         void SetTextBoxValues(Form form, string baseName, List<string> values, int startIndex = 1)
         {
             for (int i = 0; i < values.Count; i++)

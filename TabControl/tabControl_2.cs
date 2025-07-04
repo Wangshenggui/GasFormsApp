@@ -373,7 +373,7 @@ namespace GasFormsApp.TabControl
         /// <summary>
         /// 面板大小改变事件处理
         /// </summary>
-        private void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
+        public void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
         {
             // 计算新宽度和高度
             int newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 100;

@@ -124,5 +124,10 @@ namespace GasFormsApp
                 return builder.ToString();
             }
         }
+
+        private void ChangePasswordForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -86,6 +86,7 @@
             this.Controls.Add(this.txtOldPwd);
             this.Name = "ChangePasswordForm";
             this.Text = "修改用户信息";
+            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
