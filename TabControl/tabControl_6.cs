@@ -804,7 +804,7 @@ namespace GasFormsApp.TabControl
                     实验室常压解吸 = _mainForm.DesorpVolNormalTextBox.Text,
                     实验室常压解吸校准W2 = _mainForm.DesorpVolNormalCalTextBox.Text,
                     粉碎后第1份煤样重 = _mainForm.Sample1WeightTextBox.Text,
-                    第1份煤样解吸量 = _mainForm.Sample2WeightTextBox.Text,
+                    第1份煤样解吸量 = _mainForm.S1DesorpVolTextBox.Text,
                     第1份煤样解吸量校准 = _mainForm.S1DesorpVolCalTextBox.Text,
                     粉碎后第2份煤样重 = _mainForm.Sample2WeightTextBox.Text,
                     第2份煤样解吸量 = _mainForm.S2DesorpVolTextBox.Text,
