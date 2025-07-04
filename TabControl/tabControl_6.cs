@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Presentation;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -317,17 +318,25 @@ namespace GasFormsApp.TabControl
                         _mainForm.AuditorTextBox.Text = data.审核人员;
                         _mainForm.RemarkTextBox.Text = data.备注;
 
-                        
+
+
                         if (File.Exists(imagePath))
                         {
-                            Image img = Image.FromFile(imagePath);
-                            _mainForm.pictureBox3.Image = img;
-                            _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage; // 可选：拉伸填满
+                            using (var imgStream = new MemoryStream(File.ReadAllBytes(imagePath)))
+                            {
+                                using (var imgTemp = Image.FromStream(imgStream))
+                                {
+                                    // 复制一份 Bitmap，断开对流的依赖
+                                    _mainForm.pictureBox3.Image = new Bitmap(imgTemp);
+                                }
+                            }
+                            _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
                         }
                         else
                         {
                             MessageBox.Show("找不到图片文件：" + imagePath);
                         }
+
                         // 调用计算函数，防止tab4数据输出为0
                         _mainForm.tab6_4_ExpCalcButton_Click(sender,e);
 
@@ -739,15 +748,17 @@ namespace GasFormsApp.TabControl
 
             string input = _mainForm.SamplingSpotTextBox.Text;
             // 匹配中英文括号内的内容
-            Match match = Regex.Match(input, @"[（(](.*?)[）)]");
-            string timestamp = match.Success ? match.Groups[1].Value : "";  // 没有括号就返回空字符串
-            timestamp = timestamp + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            //Match match = Regex.Match(input, @"[（(](.*?)[）)]");
+            //string timestamp = match.Success ? match.Groups[1].Value : "";  // 没有括号就返回空字符串
+            //timestamp = timestamp + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
             // === 复制图片 ===
             // 定义原始图片路径
             string imageSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Python_embed", "Python", "images", "output_image.png");
 
             // 定义新的图片名称和路径
-            string newImageName = $"{timestamp}_Image.png";
+            //string newImageName = $"{timestamp}_Image.png";
+            string IdName = _mainForm.SampleNumTextBox.Text;
+            string newImageName = $"{IdName}_Image.png";
             string imageTargetPath = Path.Combine(selectedPath, newImageName);
 
             // 将图片复制到目标路径，若已存在则覆盖
@@ -763,7 +774,7 @@ namespace GasFormsApp.TabControl
                 // 创建用户数据对象，这里是模拟数据，也可以从界面控件读取
                 var user = new UserData
                 {
-                    ID = timestamp.ToString(),
+                    ID = IdName,
 
                     // tab1
                     矿井名称 = _mainForm.MineNameTextBox.Text,
@@ -849,7 +860,7 @@ namespace GasFormsApp.TabControl
 
 
                 // 定义要保存的二进制数据文件路径
-                string dataFilePath = Path.Combine(selectedPath, $"{timestamp}_BinData.bin");
+                string dataFilePath = Path.Combine(selectedPath, $"{IdName}_BinData.bin");
 
                 // 使用二进制格式化器将对象序列化保存到文件中
                 using (FileStream fs = new FileStream(dataFilePath, FileMode.Create))
