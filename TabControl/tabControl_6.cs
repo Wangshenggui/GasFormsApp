@@ -789,7 +789,8 @@ namespace GasFormsApp.TabControl
                 else
                 {
                     // 取消操作
-                    MessageBox.Show("文件未被复制。", "操作取消", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("文件未被复制。", "操作取消", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
                 }
             }
             else

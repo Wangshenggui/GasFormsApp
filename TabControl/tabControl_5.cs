@@ -564,31 +564,32 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void _SaveButton_Click(object sender, EventArgs e)
         {
-            string[] inputs = { 
-                _mainForm.tabPage1.Text, _mainForm.tabPage2.Text, 
-                _mainForm.tabPage3.Text, _mainForm.tabPage4.Text 
-            };
-            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
-            if (hasAsterisk)
-            {
-                Console.WriteLine("至少有一个字符串包含 *");
+            // 不必理会是否临时保存
+            //string[] inputs = { 
+            //    _mainForm.tabPage1.Text, _mainForm.tabPage2.Text, 
+            //    _mainForm.tabPage3.Text, _mainForm.tabPage4.Text 
+            //};
+            //bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            //if (hasAsterisk)
+            //{
+            //    Console.WriteLine("至少有一个字符串包含 *");
 
-                DialogResult result = MessageBox.Show(
-                "有未保存步骤，是否忽略？",
-                "提示",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2);
+            //    DialogResult result = MessageBox.Show(
+            //    "有未保存步骤，是否忽略？",
+            //    "提示",
+            //    MessageBoxButtons.YesNo,
+            //    MessageBoxIcon.Question,
+            //    MessageBoxDefaultButton.Button2);
 
-                if (result != DialogResult.Yes)
-                {
-                    return;
-                }
-            }
-            else
-            {
-                Console.WriteLine("所有字符串都不包含 *");
-            }
+            //    if (result != DialogResult.Yes)
+            //    {
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("所有字符串都不包含 *");
+            //}
 
             bool flag;
             flag = _mainForm.tab5_6_SaveButton(sender, e);
@@ -618,31 +619,32 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void GenRecordButton_Click(object sender, EventArgs e)
         {
-            string[] inputs = {
-                _mainForm.tabPage1.Text, _mainForm.tabPage2.Text,
-                _mainForm.tabPage3.Text, _mainForm.tabPage4.Text
-            };
-            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
-            if (hasAsterisk)
-            {
-                Console.WriteLine("至少有一个字符串包含 *");
+            // 不必理会是否临时保存
+            //string[] inputs = {
+            //    _mainForm.tabPage1.Text, _mainForm.tabPage2.Text,
+            //    _mainForm.tabPage3.Text, _mainForm.tabPage4.Text
+            //};
+            //bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            //if (hasAsterisk)
+            //{
+            //    Console.WriteLine("至少有一个字符串包含 *");
 
-                DialogResult result = MessageBox.Show(
-                "有未保存步骤，是否忽略？",
-                "提示",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2);
+            //    DialogResult result = MessageBox.Show(
+            //    "有未保存步骤，是否忽略？",
+            //    "提示",
+            //    MessageBoxButtons.YesNo,
+            //    MessageBoxIcon.Question,
+            //    MessageBoxDefaultButton.Button2);
 
-                if (result != DialogResult.Yes)
-                {
-                    return;
-                }
-            }
-            else
-            {
-                Console.WriteLine("所有字符串都不包含 *");
-            }
+            //    if (result != DialogResult.Yes)
+            //    {
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("所有字符串都不包含 *");
+            //}
 
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
@@ -813,31 +815,32 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void GenReportButton_Click(object sender, EventArgs e)
         {
-            string[] inputs = {
-                _mainForm.tabPage1.Text, _mainForm.tabPage2.Text,
-                _mainForm.tabPage3.Text, _mainForm.tabPage4.Text
-            };
-            bool hasAsterisk = inputs.Any(s => s.Contains("*"));
-            if (hasAsterisk)
-            {
-                Console.WriteLine("至少有一个字符串包含 *");
+            // 不必理会是否临时保存
+            //string[] inputs = {
+            //    _mainForm.tabPage1.Text, _mainForm.tabPage2.Text,
+            //    _mainForm.tabPage3.Text, _mainForm.tabPage4.Text
+            //};
+            //bool hasAsterisk = inputs.Any(s => s.Contains("*"));
+            //if (hasAsterisk)
+            //{
+            //    Console.WriteLine("至少有一个字符串包含 *");
 
-                DialogResult result = MessageBox.Show(
-                "有未保存步骤，是否忽略？",
-                "提示",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2);
+            //    DialogResult result = MessageBox.Show(
+            //    "有未保存步骤，是否忽略？",
+            //    "提示",
+            //    MessageBoxButtons.YesNo,
+            //    MessageBoxIcon.Question,
+            //    MessageBoxDefaultButton.Button2);
 
-                if (result != DialogResult.Yes)
-                {
-                    return;
-                }
-            }
-            else
-            {
-                Console.WriteLine("所有字符串都不包含 *");
-            }
+            //    if (result != DialogResult.Yes)
+            //    {
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("所有字符串都不包含 *");
+            //}
 
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog

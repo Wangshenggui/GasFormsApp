@@ -577,6 +577,7 @@ namespace GasFormsApp
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingPersonnelTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage1TemporarySavingButton);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage1RecoverDataButton);
+            //this.tabPage1DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(148, 22);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Name = "tabPage1DoubleBufferedFlowLayoutPanel1";
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(739, 384);
@@ -1092,9 +1093,10 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel5);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel10);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel6);
+            //this.tabPage2DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(57, 32);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Name = "tabPage2DoubleBufferedFlowLayoutPanel1";
-            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(1224, 574);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(1224, 609);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.TabIndex = 1002;
             // 
             // tabPage2panel7
@@ -3412,6 +3414,7 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox3);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox1);
+            //this.tabPage4DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(133, 14);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Name = "tabPage4DoubleBufferedFlowLayoutPanel1";
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(948, 606);
@@ -3955,6 +3958,7 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel16);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel15);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel17);
+            //this.tabPage5DoubleBufferedFlowLayoutPanel2.CornerRadius = 12;
             this.tabPage5DoubleBufferedFlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(150, 33);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Name = "tabPage5DoubleBufferedFlowLayoutPanel2";
@@ -3977,6 +3981,7 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel8);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel9);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel10);
+            //this.tabPage5DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(22, 3);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Name = "tabPage5DoubleBufferedFlowLayoutPanel1";
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(784, 138);

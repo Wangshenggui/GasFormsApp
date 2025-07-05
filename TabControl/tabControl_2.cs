@@ -824,6 +824,10 @@ namespace GasFormsApp.TabControl
         public void DrawCurvesButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("你干么：" + 45);
+
+            _mainForm.DesVolUndTextBox.Text = "0";
+            _mainForm.UndDesorpCalTextBox.Text = "0";
+            _mainForm.SampLossVolTextBox.Text = "0";
             
             // 收集所有解吸量文本框
             TextBox[] DesorbTextBox = new TextBox[60];
@@ -1099,8 +1103,8 @@ namespace GasFormsApp.TabControl
                             _mainForm.tabPage2.Text = "井下解吸";
                         }
 
-                        // 显示计算完成提示
-                        MessageBox.Show($"计算完成！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //// 显示计算完成提示
+                        //MessageBox.Show($"计算完成！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
