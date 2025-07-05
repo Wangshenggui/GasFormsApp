@@ -297,6 +297,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.W3_TextBox.Text = data.W3;
                         _mainForm.Wa_TextBox.Text = data.Wa;
                         _mainForm.Wc_TextBox.Text = data.Wc;
+                        _mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
                         _mainForm.W_TextBox.Text = data.W;
                         _mainForm.P_TextBox.Text = data.P;
 

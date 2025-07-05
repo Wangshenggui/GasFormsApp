@@ -63,7 +63,8 @@ namespace GasFormsApp.WordPperation
                 {"InitialVolume", InitialVolumeText},//量管初始体积（ml）
                 {"SamplingDepth", _mainForm.SamplingDepthTextBox.Text},//取样深度（m）
                 {"UgDesorpVol", Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text).ToString("F2")},//井下解吸量W11(ml)
-                {"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
+                //{"GasLossVol", InsertChart.GetGasLossVolText()},//瓦斯损失量W12(ml)
+                {"GasLossVol", _mainForm.SampLossVolTextBox.Text},//瓦斯损失量W12(ml)
                 {"DesorpVolNormal", _mainForm.DesorpVolNormalCalTextBox.Text},//实验室常压解吸W2(ml)
                 {"Sample1WeightText", _mainForm.Sample1WeightTextBox.Text},//粉碎后第1份煤样重(g)
                 {"Sample2WeightText", _mainForm.Sample2WeightTextBox.Text},//粉碎后第2份煤样重(g)
