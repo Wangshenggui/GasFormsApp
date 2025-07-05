@@ -45,10 +45,76 @@ namespace GasFormsApp
                 Directory.CreateDirectory(rootPath);
             }
 
+            treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
+            treeView1.DrawNode += treeView1_DrawNode;
+
             // 加载目录到树控件
             LoadFoldersToTree(rootPath);
+            // 回到顶部
+            if (treeView1.Nodes.Count > 0)
+            {
+                treeView1.TopNode = treeView1.Nodes[0];
+            }
         }
+        private void treeView1_DrawNode(object sender, DrawTreeNodeEventArgs e)
+        {
+            string text = e.Node.Text;
+            string keyword = FindMineTextBox.Text ?? "";
+            Font font = treeView1.Font;
+            int margin = 0;
+            int verticalMargin = 8;
 
+            Color textColor = Color.White;
+
+            int matchIndex = -1;
+            if (!string.IsNullOrEmpty(keyword))
+                matchIndex = text.ToLower().IndexOf(keyword.ToLower());
+
+            // **先用 TreeView 的背景色清理整行区域，避免遗留旧的绘制痕迹**
+            e.Graphics.FillRectangle(new SolidBrush(treeView1.BackColor), e.Bounds);
+
+            // 如果选中则绘制高亮背景并设置文字颜色
+            if ((e.State & TreeNodeStates.Selected) != 0)
+            {
+                e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
+                textColor = SystemColors.HighlightText;
+            }
+
+            float x = e.Bounds.Left + margin;
+            float y = e.Bounds.Top + verticalMargin;
+
+            if (string.IsNullOrEmpty(keyword) || matchIndex < 0)
+            {
+                TextRenderer.DrawText(e.Graphics, text, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+                return;
+            }
+
+            string before = text.Substring(0, matchIndex);
+            string matchText = text.Substring(matchIndex, keyword.Length);
+            string after = text.Substring(matchIndex + keyword.Length);
+
+            Size beforeSize = TextRenderer.MeasureText(e.Graphics, before, font, e.Bounds.Size, TextFormatFlags.NoPadding);
+            TextRenderer.DrawText(e.Graphics, before, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+            x += beforeSize.Width;
+
+            Size matchSize = TextRenderer.MeasureText(e.Graphics, matchText, font, e.Bounds.Size, TextFormatFlags.NoPadding);
+            //TextRenderer.DrawText(e.Graphics, matchText, font, new Point((int)x, (int)y),
+            //    (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
+            //    TextFormatFlags.NoPadding);
+            // 绘制文本
+            Font boldFont = new Font(font, FontStyle.Bold);
+            TextRenderer.DrawText(
+                e.Graphics,
+                matchText,
+                boldFont,
+                new Point((int)x, (int)y),
+                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.Red,
+                TextFormatFlags.NoPadding
+            );
+            x += matchSize.Width;
+
+            TextRenderer.DrawText(e.Graphics, after, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+        }
         /// <summary>
         /// 将指定根目录及其子目录加载到 TreeView 控件中显示
         /// </summary>
@@ -65,12 +131,14 @@ namespace GasFormsApp
 
             // 创建根节点，显示根目录名，Tag属性存储目录完整路径
             TreeNode rootNode = new TreeNode(rootDir.Name) { Tag = rootDir.FullName };
+            rootNode.ImageKey = "根目录";
+            rootNode.SelectedImageKey = "根目录";
 
             // 添加根节点到树控件
             treeView1.Nodes.Add(rootNode);
 
             // 递归添加子目录节点
-            AddSubDirectories(rootDir, rootNode);
+            AddSubDirectories(rootDir, rootNode, 1);
 
             // 展开所有节点，方便查看
             treeView1.ExpandAll();
@@ -80,19 +148,39 @@ namespace GasFormsApp
         /// </summary>
         /// <param name="dir">当前目录</param>
         /// <param name="parentNode">父节点</param>
-        private void AddSubDirectories(DirectoryInfo dir, TreeNode parentNode)
+        private void AddSubDirectories(DirectoryInfo dir, TreeNode parentNode, int level)
         {
-            // 遍历当前目录所有子目录
             foreach (var subDir in dir.GetDirectories())
             {
-                // 创建子节点，显示子目录名，Tag存储完整路径
-                TreeNode childNode = new TreeNode(subDir.Name) { Tag = subDir.FullName };
+                if (level == 1 && !subDir.Name.ToLower().Contains(FindMineTextBox.Text.ToLower()))
+                    continue;
 
-                // 添加子节点到父节点
+                TreeNode childNode = new TreeNode(subDir.Name)
+                {
+                    Tag = subDir.FullName
+                };
+
+                // 根据层级设置不同图标（示例）
+                if (level == 1)
+                {
+                    childNode.ImageKey = "矿井";
+                    childNode.SelectedImageKey = "矿井";
+                }
+                else if (level == 2)
+                {
+                    childNode.ImageKey = "项目";
+                    childNode.SelectedImageKey = "项目";
+                }
+                else
+                {
+                    childNode.ImageKey = "根目录";
+                    childNode.SelectedImageKey = "根目录";
+                }
+
                 parentNode.Nodes.Add(childNode);
 
-                // 递归调用，添加更深层的子目录
-                AddSubDirectories(subDir, childNode);
+                // 递归调用，层级 +1
+                AddSubDirectories(subDir, childNode, level + 1);
             }
         }
         /// <summary>
@@ -337,5 +425,47 @@ namespace GasFormsApp
             this.Close();
         }
 
+        //快捷键操作
+        private void ProjectGroupsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!e.Control) return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.F: // 查找
+                    FindMineTextBox.Focus();
+
+                    
+                    e.Handled = true;
+                    break;
+            }
+        }
+
+        private void FindMineTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // 回车被按下
+                // 获取程序启动目录
+                string basePath = Application.StartupPath;
+                // 构建目标文件夹路径：SystemData\DataAdministrationForm
+                string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+                // 如果路径不存在则创建
+                if (!Directory.Exists(rootPath))
+                {
+                    Directory.CreateDirectory(rootPath);
+                }
+                treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
+                treeView1.DrawNode += treeView1_DrawNode;
+                // 加载目录到树控件
+                LoadFoldersToTree(rootPath);
+                // 回到顶部
+                if (treeView1.Nodes.Count > 0)
+                {
+                    treeView1.TopNode = treeView1.Nodes[0];
+                }
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -367,6 +367,10 @@ namespace GasFormsApp.TabControl
                 string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
                 // 加载该路径下的文件夹结构到树控件
                 LoadFoldersToTree(rootPath);
+                if (_mainForm.treeView1.Nodes.Count > 0)
+                {
+                    _mainForm.treeView1.TopNode = _mainForm.treeView1.Nodes[0];
+                }
             }
         }
 
@@ -442,6 +446,10 @@ namespace GasFormsApp.TabControl
 
             // 展开所有节点，方便查看
             _mainForm.treeView1.ExpandAll();
+            if (_mainForm.treeView1.Nodes.Count > 0)
+            {
+                _mainForm.treeView1.TopNode = _mainForm.treeView1.Nodes[0];
+            }
         }
         /// <summary>
         /// 递归添加指定目录的所有子目录到指定父节点下
