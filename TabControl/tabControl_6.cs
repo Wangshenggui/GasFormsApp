@@ -338,14 +338,15 @@ namespace GasFormsApp.TabControl
                         }
 
                         // 调用计算函数，防止tab4数据输出为0
-                        _mainForm.tab6_4_ExpCalcButton_Click(sender,e);
+                        //_mainForm.tab6_4_ExpCalcButton_Click(sender,e);
 
                         MessageBox.Show("已恢复历史记录！");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("加载失败:W " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("[EXCEPTION] 加载失败：" + ex.ToString());  // 打印完整堆栈信息
                 }
             }
             else
@@ -770,7 +771,31 @@ namespace GasFormsApp.TabControl
             string imageTargetPath = Path.Combine(selectedPath, newImageName);
 
             // 将图片复制到目标路径，若已存在则覆盖
-            File.Copy(imageSourcePath, imageTargetPath, true);
+            if (File.Exists(imageTargetPath))
+            {
+                result = MessageBox.Show(
+                    $"已存在 \"{IdName}\" ，是否覆盖？",
+                    "确认覆盖",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    // 覆盖
+                    File.Copy(imageSourcePath, imageTargetPath, true);
+                }
+                else
+                {
+                    // 取消操作
+                    MessageBox.Show("文件未被复制。", "操作取消", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                // 文件不存在，直接复制
+                File.Copy(imageSourcePath, imageTargetPath);
+            }
             Console.WriteLine($"图片已复制到：{imageTargetPath}");
 
             //// 生成文档
