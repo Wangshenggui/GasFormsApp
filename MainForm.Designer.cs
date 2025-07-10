@@ -237,6 +237,7 @@ namespace GasFormsApp
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage2panel10 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage2panel6 = new System.Windows.Forms.Panel();
+            this.DataExportButton = new GasFormsApp.UI.UCButton();
             this.ExportImageButton = new GasFormsApp.UI.UCButton();
             this.BulkImportButton = new GasFormsApp.UI.UCButton();
             this.SampLossVolTextBox = new System.Windows.Forms.TextBox();
@@ -577,7 +578,6 @@ namespace GasFormsApp
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.SamplingPersonnelTextBox);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage1TemporarySavingButton);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage1RecoverDataButton);
-            //this.tabPage1DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(148, 22);
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Name = "tabPage1DoubleBufferedFlowLayoutPanel1";
             this.tabPage1DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(739, 384);
@@ -1093,10 +1093,9 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel5);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel10);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel6);
-            //this.tabPage2DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(57, 32);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Name = "tabPage2DoubleBufferedFlowLayoutPanel1";
-            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(1224, 609);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(1205, 609);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.TabIndex = 1002;
             // 
             // tabPage2panel7
@@ -2811,6 +2810,7 @@ namespace GasFormsApp
             // tabPage2panel6
             // 
             this.tabPage2panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(109)))));
+            this.tabPage2panel6.Controls.Add(this.DataExportButton);
             this.tabPage2panel6.Controls.Add(this.ExportImageButton);
             this.tabPage2panel6.Controls.Add(this.BulkImportButton);
             this.tabPage2panel6.Controls.Add(this.SampLossVolTextBox);
@@ -2826,6 +2826,26 @@ namespace GasFormsApp
             this.tabPage2panel6.Name = "tabPage2panel6";
             this.tabPage2panel6.Size = new System.Drawing.Size(806, 160);
             this.tabPage2panel6.TabIndex = 1000;
+            // 
+            // DataExportButton
+            // 
+            this.DataExportButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataExportButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataExportButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("DataExportButton.ButtonImage")));
+            this.DataExportButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.DataExportButton.FlatAppearance.BorderSize = 0;
+            this.DataExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DataExportButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataExportButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.DataExportButton.Location = new System.Drawing.Point(399, 78);
+            this.DataExportButton.Name = "DataExportButton";
+            this.DataExportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DataExportButton.Radius = 15;
+            this.DataExportButton.Size = new System.Drawing.Size(132, 42);
+            this.DataExportButton.TabIndex = 1007;
+            this.DataExportButton.Text = "     数据导出";
+            this.DataExportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DataExportButton.UseVisualStyleBackColor = false;
             // 
             // ExportImageButton
             // 
@@ -2867,7 +2887,6 @@ namespace GasFormsApp
             this.BulkImportButton.Text = "     批量导入";
             this.BulkImportButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BulkImportButton.UseVisualStyleBackColor = false;
-            this.BulkImportButton.Visible = false;
             // 
             // SampLossVolTextBox
             // 
@@ -3414,7 +3433,6 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox3);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Controls.Add(this.groupBox1);
-            //this.tabPage4DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(133, 14);
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Name = "tabPage4DoubleBufferedFlowLayoutPanel1";
             this.tabPage4DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(948, 606);
@@ -3958,7 +3976,6 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel16);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel15);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Controls.Add(this.tabPage5panel17);
-            //this.tabPage5DoubleBufferedFlowLayoutPanel2.CornerRadius = 12;
             this.tabPage5DoubleBufferedFlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Location = new System.Drawing.Point(150, 33);
             this.tabPage5DoubleBufferedFlowLayoutPanel2.Name = "tabPage5DoubleBufferedFlowLayoutPanel2";
@@ -3981,7 +3998,6 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel8);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel9);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage5panel10);
-            //this.tabPage5DoubleBufferedFlowLayoutPanel1.CornerRadius = 12;
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(22, 3);
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Name = "tabPage5DoubleBufferedFlowLayoutPanel1";
             this.tabPage5DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(784, 138);
@@ -5578,5 +5594,6 @@ namespace GasFormsApp
         public Panel tabPage3panel3;
         public ContextMenuStrip tabPage2contextMenuStrip1;
         public ToolStripMenuItem 导出图片ToolStripMenuItem;
+        public UI.UCButton DataExportButton;
     }
 }

@@ -43,6 +43,7 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage2TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage2RecoverDataButton, "恢复数据(Ctrl + R)");
             _mainForm.toolTip1.SetToolTip(_mainForm.pictureBox3, "右键导出图片");
+            _mainForm.toolTip1.SetToolTip(_mainForm.DataExportButton, "数据导出(Ctrl + O)");
 
             // 注册事件处理程序
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
@@ -51,6 +52,7 @@ namespace GasFormsApp.TabControl
             _mainForm.ExportImageButton.Click += ExportImageButton_Click;
             _mainForm.tabPage2TemporarySavingButton.Click += tabPage2TemporarySavingButton_Click;
             _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
+            _mainForm.DataExportButton.Click += DataExportButton_Click;
 
             _mainForm.TypeOfDestructionComboBox3.MouseWheel += TypeOfDestructionComboBox3_MouseWheel;
 
@@ -397,6 +399,8 @@ namespace GasFormsApp.TabControl
             _mainForm.ExportImageButton.Location = new Point(542, 13);
             _mainForm.tabPage2TemporarySavingButton.Location = new Point(542, 78);
             _mainForm.tabPage2RecoverDataButton.Location = new Point(671, 78);
+            
+            _mainForm.DataExportButton.Location = new Point(399, 78);
 
             newHeight = _mainForm.tabPage2DoubleBufferedPanel2.Height;
             // 根据宽度调整布局
@@ -410,6 +414,8 @@ namespace GasFormsApp.TabControl
                 _mainForm.ExportImageButton.Location = new Point(150, 133);
                 _mainForm.tabPage2TemporarySavingButton.Location = new Point(150, 203);
                 _mainForm.tabPage2RecoverDataButton.Location = new Point(279, 203);
+
+                _mainForm.DataExportButton.Location = new Point(7, 203);
             }
             else if (newWidth > 840 && newWidth <= 1165) // 中尺寸布局
             {
@@ -784,6 +790,106 @@ namespace GasFormsApp.TabControl
             {
                 MessageBox.Show("未选择文件");
                 return;
+            }
+        }
+
+        public string SelectSaveExcelFile()
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                var lastFolder = GasFormsApp.Settings.Default.LastFolder;
+                saveFileDialog.InitialDirectory = string.IsNullOrEmpty(lastFolder)
+                    ? Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    : lastFolder;
+
+                saveFileDialog.Filter = "Excel 文件 (*.xlsx)|*.xlsx|Excel 97-2003 文件 (*.xls)|*.xls";
+                saveFileDialog.Title = "请选择保存位置";
+                saveFileDialog.FileName = "新建Excel文件.xlsx"; // 可以根据需要设置默认文件名
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    GasFormsApp.Settings.Default.LastFolder = Path.GetDirectoryName(saveFileDialog.FileName);
+                    GasFormsApp.Settings.Default.Save();
+                    return saveFileDialog.FileName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        //数据导出
+
+        public void DataExportButton_Click(object sender, EventArgs e)
+        {
+            string excelPath = SelectSaveExcelFile();
+            if (!string.IsNullOrEmpty(excelPath))
+            {
+                try
+                {
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("Sheet1");
+
+                        // 写标题
+                        worksheet.Cell(1, 1).Value = "时间";
+                        worksheet.Cell(1, 2).Value = "解吸量";
+
+                        for (int i = 1; i <= 60; i++)
+                        {
+                            int row = i + 1; // Excel 第2行开始写数据
+
+                            double timeValue = 0; // 时间列值
+                            double desorbValue = 0; // 解吸量值
+
+                            // 前30行（i=1~30）：时间列=固定数字1~30
+                            if (i <= 30)
+                            {
+                                timeValue = i;
+                            }
+                            else
+                            {
+                                // 后30行：时间列=从 DataNumTextBox31~DataNumTextBox60 获取
+                                var dataNumTextbox = _mainForm.Controls.Find($"DataNumTextBox{i}", true);
+                                if (dataNumTextbox.Length > 0 && dataNumTextbox[0] is TextBox tbTime)
+                                {
+                                    double.TryParse(tbTime.Text, out timeValue);
+                                }
+                            }
+
+                            // 解吸量列：从 DesorbTextBox1~DesorbTextBox60 获取
+                            var desorbTextbox = _mainForm.Controls.Find($"DesorbTextBox{i}", true);
+                            if (desorbTextbox.Length > 0 && desorbTextbox[0] is TextBox tbDesorb)
+                            {
+                                double.TryParse(tbDesorb.Text, out desorbValue);
+                            }
+
+                            // 写入 Excel
+                            worksheet.Cell(row, 1).Value = timeValue;
+                            worksheet.Cell(row, 2).Value = desorbValue;
+                        }
+
+                        // 自动调整列宽
+                        //worksheet.Columns().AdjustToContents();
+                        //worksheet.Columns(1, 2).AdjustToContents();
+                        worksheet.Column(1).Width = 15; // 设置第一列宽度
+                        worksheet.Column(2).Width = 20; // 设置第二列宽度
+
+
+                        workbook.SaveAs(excelPath);
+                    }
+
+                    MessageBox.Show("Excel 文件已成功导出！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"导出失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("未选择文件", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
