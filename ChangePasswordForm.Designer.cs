@@ -44,6 +44,7 @@
             this.txtOldPwd.Font = new System.Drawing.Font("宋体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtOldPwd.Location = new System.Drawing.Point(145, 22);
             this.txtOldPwd.Name = "txtOldPwd";
+            this.txtOldPwd.PasswordChar = '*';
             this.txtOldPwd.Size = new System.Drawing.Size(100, 25);
             this.txtOldPwd.TabIndex = 0;
             // 
@@ -52,16 +53,18 @@
             this.txtNewPwd.Font = new System.Drawing.Font("宋体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtNewPwd.Location = new System.Drawing.Point(145, 118);
             this.txtNewPwd.Name = "txtNewPwd";
+            this.txtNewPwd.PasswordChar = '*';
             this.txtNewPwd.Size = new System.Drawing.Size(100, 25);
-            this.txtNewPwd.TabIndex = 1;
+            this.txtNewPwd.TabIndex = 2;
             // 
             // txtConfirmPwd
             // 
             this.txtConfirmPwd.Font = new System.Drawing.Font("宋体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtConfirmPwd.Location = new System.Drawing.Point(145, 153);
             this.txtConfirmPwd.Name = "txtConfirmPwd";
+            this.txtConfirmPwd.PasswordChar = '*';
             this.txtConfirmPwd.Size = new System.Drawing.Size(100, 25);
-            this.txtConfirmPwd.TabIndex = 2;
+            this.txtConfirmPwd.TabIndex = 3;
             // 
             // btnUpdatePwd
             // 
@@ -69,7 +72,7 @@
             this.btnUpdatePwd.Location = new System.Drawing.Point(155, 215);
             this.btnUpdatePwd.Name = "btnUpdatePwd";
             this.btnUpdatePwd.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdatePwd.TabIndex = 3;
+            this.btnUpdatePwd.TabIndex = 4;
             this.btnUpdatePwd.Text = "保存";
             this.btnUpdatePwd.UseVisualStyleBackColor = true;
             this.btnUpdatePwd.Click += new System.EventHandler(this.btnUpdatePwd_Click);
@@ -80,7 +83,7 @@
             this.txtNewUsername.Location = new System.Drawing.Point(145, 72);
             this.txtNewUsername.Name = "txtNewUsername";
             this.txtNewUsername.Size = new System.Drawing.Size(100, 25);
-            this.txtNewUsername.TabIndex = 4;
+            this.txtNewUsername.TabIndex = 1;
             // 
             // label1
             // 
@@ -138,9 +141,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdatePwd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "ChangePasswordForm";
+            this.ShowIcon = false;
             this.Text = "修改用户信息";
+            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePasswordForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

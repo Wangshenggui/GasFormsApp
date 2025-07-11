@@ -28,7 +28,7 @@ namespace GasFormsApp.UI
         private Panel borderTop;
 
         // 示例中的自定义工具栏按钮
-        private Button 信息管理Button;
+        private Button 账户管理Button;
 
         /// <summary>
         /// 初始化边框控件（三边：左、右、上），模拟原始窗口边框。
@@ -105,15 +105,10 @@ namespace GasFormsApp.UI
             InitializeBorder();         // 自定义边框
         }
 
-        private void 信息管理Button_Click(object sender, EventArgs e)
+        private void 账户管理Button_Click(object sender, EventArgs e)
         {
-            //string folder = "SystemData";
-            //string dbFile = Path.Combine(folder, "Account_password.db");
-
-            //MessageBox.Show("登录的用户名：" + MainForm.登录的用户名);
-
-            //ChangePasswordForm changePwdForm = new ChangePasswordForm(dbFile, MainForm.登录的用户名);
-            //changePwdForm.ShowDialog();
+            ChangePasswordForm changePwdForm = new ChangePasswordForm();
+            changePwdForm.ShowDialog();
         }
 
         /// <summary>
@@ -150,25 +145,25 @@ namespace GasFormsApp.UI
             };
             titleBar.Controls.Add(titleLabel);
 
-            //// 信息管理Button（示例）
-            //信息管理Button = new CustomBorderButton
-            //{
-            //    Text = " 数据管理 ",
-            //    BackColor = Color.FromArgb(17, 45, 78),
-            //    FlatStyle = FlatStyle.Flat,
-            //    Width = 85,
-            //    Borders = BorderSides.Left,
-            //    HoverBackColor = Color.FromArgb(80, 80, 80),
-            //    ForeColor = Color.LightGray,
-            //    Font = new Font("Segoe UI", 9, FontStyle.Bold),
-            //    BorderColor = Color.White,
-            //    BorderWidth = 2,
-            //    TabStop = false,
-            //    Location = new Point(titleLabel.Location.X + titleLabel.Width, 3)
-            //};
-            //信息管理Button.FlatAppearance.BorderSize = 0;
-            //titleBar.Controls.Add(信息管理Button);
-            //信息管理Button.Click += 信息管理Button_Click;
+            // 信息管理Button（示例）
+            账户管理Button = new CustomBorderButton
+            {
+                Text = " 账户管理 ",
+                BackColor = Color.FromArgb(17, 45, 78),
+                FlatStyle = FlatStyle.Flat,
+                Width = 85,
+                Borders = BorderSides.Left,
+                HoverBackColor = Color.FromArgb(80, 80, 80),
+                ForeColor = Color.LightGray,
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                BorderColor = Color.White,
+                BorderWidth = 2,
+                TabStop = false,
+                Location = new Point(titleLabel.Location.X + titleLabel.Width, 3)
+            };
+            账户管理Button.FlatAppearance.BorderSize = 0;
+            titleBar.Controls.Add(账户管理Button);
+            账户管理Button.Click += 账户管理Button_Click;
 
 
             // 你注释掉了最小化、最大化、关闭按钮部分，
