@@ -16,6 +16,7 @@ using System.Net;                   // 网络类
 using System.Management;           // 获取硬件信息
 using System.IO;                   // 文件操作
 using System.Data.SQLite;
+using CredentialManagement;
 
 namespace GasFormsApp
 {
@@ -120,21 +121,6 @@ namespace GasFormsApp
                 {
                     version = 2; // 第三个公钥通过
                 }
-
-                if (version == -1)
-                {
-                    MessageBox.Show("验证失败，注册信息无效！");
-                    this.Close();
-                    return;
-                }
-                else
-                {
-                    MainForm main = new MainForm(false);
-                    main.Version = version;
-                    this.Hide();          // 可选：如果想等 main 关掉后再关闭登录窗体
-                    main.ShowDialog();
-                    this.Close();         // 当 main 关闭后，关闭登录窗体
-                }
             }
             catch (Exception ex)
             {
@@ -143,6 +129,32 @@ namespace GasFormsApp
                 MessageBox.Show($"读取注册文件出错，请重新注册。{data}\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;
+            }
+
+
+            // 启动检测是否存在，不存在则创建默认密码
+            var existingCredential = CredentialHelper.LoadCredential();
+            if (existingCredential == null)
+            {
+                // 凭据不存在，跳转到修改密码界面
+                // 默认密码
+                var username = "Admin";
+                var password = "12345";
+                if (CredentialHelper.SaveCredential(username, password))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("保存失败！");
+                }
+            }
+
+            // 启动时显示用户名，只需要输入密码即可
+            var credential = CredentialHelper.LoadCredential();
+            if (credential != null)
+            {
+                txtName.Text = credential.Value.username;
             }
         }
 
@@ -163,84 +175,50 @@ namespace GasFormsApp
                 return builder.ToString();
             }
         }
+
         // 登录按钮点击事件
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            //string folder = "SystemData";
-            //string dbFile = Path.Combine(folder, "Account_password.db");
-
-            //// 获取用户输入
-            //string inputUser = txtName.Text.Trim();
-            //MainForm.登录的用户名 = inputUser;
-            //string inputPwd = txtPwd.Text.Trim();
-
-            //// 检查是否输入了用户名和密码
-            //if (string.IsNullOrEmpty(inputUser) || string.IsNullOrEmpty(inputPwd))
-            //{
-            //    MessageBox.Show("请输入用户名和密码！");
-            //    return;
-            //}
-
-            //string inputPwdHash = ComputeSha256Hash(inputPwd);
-
-            //try
-            //{
-            //    using (var conn = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
-            //    {
-            //        conn.Open();
-
-            //        string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password;";
-            //        var cmd = new SQLiteCommand(query, conn);
-            //        cmd.Parameters.AddWithValue("@username", inputUser);
-            //        cmd.Parameters.AddWithValue("@password", inputPwdHash);
-
-            //        int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-            //        if (count > 0)
-            //        {
-            //            // 登录成功
-            //            // 判断是否使用默认密码
-            //            string defaultPwdHash = ComputeSha256Hash("1234");
-            //            if (inputPwdHash == defaultPwdHash)
-            //            {
-            //                DialogResult result = MessageBox.Show(
-            //                    "当前使用的是默认密码，请及时修改密码以保障账户安全！\n是否立即修改密码？",
-            //                    "安全提示",
-            //                    MessageBoxButtons.OKCancel,
-            //                    MessageBoxIcon.Warning
-            //                );
-            //                if (result == DialogResult.OK)
-            //                {
-            //                    // 用户点击“确定”，打开修改密码窗口
-            //                    ChangePasswordForm changePwdForm = new ChangePasswordForm(dbFile, inputUser);
-            //                    changePwdForm.ShowDialog();
-            //                }
-            //                else
-            //                {
-            //                    // 用户点击“取消”
-            //                }
-            //            }
-            //            else
-            //            {
-                            
-            //            }
-
-
-                        MainForm main = new MainForm(false);
-                        this.Hide();
-                        main.ShowDialog();
-                        this.Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("用户名或密码错误！");
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("登录失败：" + ex.Message);
-            //}
+            var credential = CredentialHelper.LoadCredential();
+            if (credential != null)
+            {
+                //txtName.Text = credential.Value.username;
+                //txtPwd.Text = credential.Value.password;
+                //MessageBox.Show("加载成功！");
+                //Console.WriteLine($"用户名：{txtName.Text}");
+                if (credential.Value.username.Equals(txtName.Text.Trim(), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (credential.Value.password.Equals(txtPwd.Text.Trim(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (version == -1)
+                        {
+                            MessageBox.Show("验证失败，注册信息无效！");
+                            this.Close();
+                            return;
+                        }
+                        else
+                        {
+                            MainForm main = new MainForm(false);
+                            main.Version = version;
+                            this.Hide();          // 可选：如果想等 main 关掉后再关闭登录窗体
+                            main.ShowDialog();
+                            this.Close();         // 当 main 关闭后，关闭登录窗体
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("账号或密码错误！");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("账号或密码错误！");
+                }
+            }
+            else
+            {
+                MessageBox.Show("没有找到账户！");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -251,6 +229,83 @@ namespace GasFormsApp
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // 模拟点击按钮
+                btnLogin.PerformClick();
+
+                // 或直接调用你想执行的方法：
+                // SavePassword();
+
+                // 防止系统“叮”一声
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // 模拟点击按钮
+                btnLogin.PerformClick();
+
+                // 或直接调用你想执行的方法：
+                // SavePassword();
+
+                // 防止系统“叮”一声
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+    }
+
+
+    /// <summary>
+    /// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    public static class CredentialHelper
+    {
+        private const string Target = "GasFormsApp"; // 给凭据起个唯一的名字
+
+        public static bool SaveCredential(string username, string password)
+        {
+            using (var cred = new Credential())
+            {
+                cred.Password = password;
+                cred.Username = username;
+                cred.Target = Target;
+                cred.Type = CredentialType.Generic;
+                cred.PersistanceType = PersistanceType.LocalComputer;
+                return cred.Save();
+            }
+        }
+
+        public static (string username, string password)? LoadCredential()
+        {
+            using (var cred = new Credential { Target = Target })
+            {
+                if (cred.Load())
+                {
+                    return (cred.Username, cred.Password);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public static bool DeleteCredential()
+        {
+            using (var cred = new Credential { Target = Target })
+            {
+                return cred.Delete();
+            }
         }
     }
 }

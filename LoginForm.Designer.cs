@@ -81,6 +81,7 @@
             this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(114, 21);
             this.txtPwd.TabIndex = 21;
+            this.txtPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPwd_KeyDown);
             // 
             // txtName
             // 
@@ -88,6 +89,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(114, 21);
             this.txtName.TabIndex = 20;
+            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             // 
             // label2
             // 
