@@ -18,6 +18,11 @@ namespace GasFormsApp
 {
     public partial class MainForm : CustomForm
     {
+        // 登录和使用权限
+        public int Version { get; set; } = -1;
+        // 判断是否初始化
+        private bool tabControl1_isInitializing = true;
+
         // 记录鼠标右键位置
         private Point lastRightClickPosition;
         private Control lastRightClickedControl;
@@ -145,172 +150,6 @@ namespace GasFormsApp
             //this.DoubleBuffered = true;
 
 
-            GasComp_Lab1 = "H₂";      // 氢气
-            GasComp_Lab2 = "O₂";      // 氧气
-            GasComp_Lab3 = "N₂";      // 氮气
-            GasComp_Lab4 = "CO₂";     // 二氧化碳
-            GasComp_Lab5 = "CH₄";     // 甲烷
-            GasComp_Lab6 = "C₂H₆";    // 乙烷
-            GasComp_Lab7 = "C₃H₈";    // 丙烷
-            GasComp_Lab8 = "C₄H₁₀";   // 丁烷
-            GasComp_Lab9 = "NH₃";     // 氨气
-            GasComp_Lab10 = "H₂S";    // 硫化氢
-
-            GasComp_Dat1 = "0.50";   // H₂ 浓度（单位可为 %）
-            GasComp_Dat2 = "20.95";  // O₂（空气中含量约 21%）
-            GasComp_Dat3 = "78.08";  // N₂（空气中含量约 78%）
-            GasComp_Dat4 = "0.04";   // CO₂（空气中约 400 ppm ≈ 0.04%）
-            GasComp_Dat5 = "1.20";   // CH₄（例如沼气、天然气）
-            GasComp_Dat6 = "0.35";   // C₂H₆
-            GasComp_Dat7 = "0.25";   // C₃H₈
-            GasComp_Dat8 = "0.18";   // C₄H₁₀
-            GasComp_Dat9 = "0.10";   // NH₃
-            GasComp_Dat10 = "0.08";  // H₂S
-
-
-
-            //this.UseWaitCursor = true;
-            //this.UseWaitCursor = false;
-
-            #region 初始化 tabPage1
-            //// 设置表头名称
-            tabPage1.Text = "基本信息";
-            tabPage2.Text = "井下解吸";
-            tabPage3.Text = "常压解吸";
-            tabPage4.Text = "实验结果";
-            tabPage5.Text = "文档输出";
-            tabPage6.Text = "数据管理";
-
-            //// 加载嵌入资源图标
-            //try
-            //{
-            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.1.ico").ToBitmap());
-            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.2.ico").ToBitmap());
-            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.3.ico").ToBitmap());
-            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.4.ico").ToBitmap());
-            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.5.ico").ToBitmap());
-            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.6.ico").ToBitmap());
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("加载图标失败: " + ex.Message);
-            //}
-
-            // 设置表头图标
-            tabPage1.ImageIndex = 0;
-            tabPage2.ImageIndex = 1;
-            tabPage3.ImageIndex = 2;
-            tabPage4.ImageIndex = 3;
-            tabPage5.ImageIndex = 4;
-            tabPage6.ImageIndex = 5;
-
-            tabControl1.SelectedIndex = 0;
-
-
-            #endregion
-
-
-            ////dataGridView1.Columns.Add("Id", "Id");
-            ////dataGridView1.Columns.Add("Name", "Name");
-
-            //DataTable table = new DataTable();
-            //table.Columns.Add("Id", typeof(int));
-            //table.Columns.Add("Name", typeof(string));
-
-            //table.Rows.Add(1, "Alice");
-            //table.Rows.Add(2, "Bob");
-            //table.Rows.Add(3, "Bob");
-
-            //dataGridView1.DataSource = table;  // 自动生成列，显示数据
-
-
-
-
-
-            //#region 模拟用户输入 tabPage2
-
-            //// 模拟用户输入
-            //MineNameTextBox.Text = "名称";
-            //SamplingSpotTextBox.Text = "地点";
-            //BurialDepthTextBox.Text = "456";
-            //CoalSeamTextBox.Text = "煤层";
-            //LabAtmPressureTextBox.Text = "101.2";
-            //UndAtmPressureTextBox.Text = "103.4";
-            //LabTempTextBox.Text = "25";
-            //UndTempTextBox.Text = "18";
-            //MoistureSampleTextBox.Text = "1.2";
-            //RawCoalMoistureTextBox.Text = "4.1";
-            //SampleNumTextBox.Text = "M2025";
-            //SampleWeightTextBox.Text = "105";
-            //InitialVolumeTextBox.Text = "3";
-
-            //t0TextBox.Text = "2";
-
-            //DesorbTextBox1.Text = "36";
-            //DesorbTextBox2.Text = "56";
-            //DesorbTextBox3.Text = "76";
-            //DesorbTextBox4.Text = "86";
-            //DesorbTextBox5.Text = "98";
-            //DesorbTextBox6.Text = "106";
-            //DesorbTextBox7.Text = "114";
-            //DesorbTextBox8.Text = "122";
-            //DesorbTextBox9.Text = "128";
-            //DesorbTextBox10.Text = "144";
-            //DesorbTextBox11.Text = "152";
-            //DesorbTextBox12.Text = "166";
-            //DesorbTextBox13.Text = "178";
-            //DesorbTextBox14.Text = "192";
-            //DesorbTextBox15.Text = "200";
-            //DesorbTextBox16.Text = "208";
-            //DesorbTextBox17.Text = "218";
-            //DesorbTextBox18.Text = "232";
-            //DesorbTextBox19.Text = "244";
-            //DesorbTextBox20.Text = "250";
-            ////DesorbTextBox21.Text = "270";
-            //DesorbTextBox22.Text = "270";
-            ////DesorbTextBox23.Text = "324";
-            //DesorbTextBox24.Text = "298";
-            ////DesorbTextBox25.Text = "390";
-            //DesorbTextBox26.Text = "324";
-            ////DesorbTextBox27.Text = "416";
-            //DesorbTextBox28.Text = "358";
-            ////DesorbTextBox29.Text = "442";
-            //DesorbTextBox30.Text = "390";
-
-            //DataNumTextBox31.Text = "35";
-            //DataNumTextBox32.Text = "40";
-            //DataNumTextBox33.Text = "45";
-            //DataNumTextBox34.Text = "50";
-            //DataNumTextBox35.Text = "60";
-
-            //// 模拟输入数据
-            //for (int i = 31; i <= 60; i++)
-            //{
-            //    string controlName = "DataNumTextBox" + i;
-            //    Control[] foundControls = this.Controls.Find(controlName, true);
-            //    if (foundControls.Length > 0 && foundControls[0] is TextBox)
-            //    {
-            //        ((TextBox)foundControls[0]).Text = i.ToString(); // 可自定义内容
-            //    }
-            //}
-
-
-            //DesorpVolNormalTextBox.Text = "1";
-            //Sample1WeightTextBox.Text = "100";
-            //Sample2WeightTextBox.Text = "100";
-            //S1DesorpVolTextBox.Text = "30";
-            //S2DesorpVolTextBox.Text = "30";
-
-            //AdsorpConstATextBox.Text = "1";
-            //AdsorpConstBTextBox.Text = "2";
-            //MadTextBox.Text = "3";
-            //AadTextBox.Text = "4";
-            //PorosityTextBox.Text = "5";
-            //AppDensityTextBox.Text = "6";
-            //VadTextBox.Text = "7";
-
-            //#endregion
-
             myTabLogic1 = new tabControl_1(
                 this
             );
@@ -334,21 +173,6 @@ namespace GasFormsApp
             myTabLogic6 = new tabControl_6(
                 this
             );
-
-
-            //tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
-            
-
-            // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
-            this.tabControl1PictureBox.Click += tabControlxPictureBox_Click;
-            this.tabControl2PictureBox.Click += tabControlxPictureBox_Click;
-            this.tabControl3PictureBox.Click += tabControlxPictureBox_Click;
-            this.tabControl4PictureBox.Click += tabControlxPictureBox_Click;
-            this.tabControl5PictureBox.Click += tabControlxPictureBox_Click;
-            this.tabControl6PictureBox.Click += tabControlxPictureBox_Click;
-
-            //tabControl1.ItemSize = new Size(98, 100);
-            //tabControl1.ItemSize = new Size(98, 92);
         }
         // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
         private void tabControlxPictureBox_Click(object sender, EventArgs e)
@@ -477,6 +301,8 @@ namespace GasFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show($"版本：{Version}");
+
             //int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             //int screenHeight = Screen.PrimaryScreen.Bounds.Height;
 
@@ -488,6 +314,187 @@ namespace GasFormsApp
 
             //xRatio = screenWidth / 1920f; // 假设设计时是 1920x1080
             //yRatio = screenHeight / 1080f;
+            GasComp_Lab1 = "H₂";      // 氢气
+            GasComp_Lab2 = "O₂";      // 氧气
+            GasComp_Lab3 = "N₂";      // 氮气
+            GasComp_Lab4 = "CO₂";     // 二氧化碳
+            GasComp_Lab5 = "CH₄";     // 甲烷
+            GasComp_Lab6 = "C₂H₆";    // 乙烷
+            GasComp_Lab7 = "C₃H₈";    // 丙烷
+            GasComp_Lab8 = "C₄H₁₀";   // 丁烷
+            GasComp_Lab9 = "NH₃";     // 氨气
+            GasComp_Lab10 = "H₂S";    // 硫化氢
+
+            GasComp_Dat1 = "0.50";   // H₂ 浓度（单位可为 %）
+            GasComp_Dat2 = "20.95";  // O₂（空气中含量约 21%）
+            GasComp_Dat3 = "78.08";  // N₂（空气中含量约 78%）
+            GasComp_Dat4 = "0.04";   // CO₂（空气中约 400 ppm ≈ 0.04%）
+            GasComp_Dat5 = "1.20";   // CH₄（例如沼气、天然气）
+            GasComp_Dat6 = "0.35";   // C₂H₆
+            GasComp_Dat7 = "0.25";   // C₃H₈
+            GasComp_Dat8 = "0.18";   // C₄H₁₀
+            GasComp_Dat9 = "0.10";   // NH₃
+            GasComp_Dat10 = "0.08";  // H₂S
+
+
+
+            //this.UseWaitCursor = true;
+            //this.UseWaitCursor = false;
+
+            #region 初始化 tabPage1
+            //// 设置表头名称
+            tabPage1.Text = "基本信息";
+            tabPage2.Text = "井下解吸";
+            tabPage3.Text = "常压解吸";
+            tabPage4.Text = "实验结果";
+            tabPage5.Text = "文档输出";
+            tabPage6.Text = "数据管理";
+
+            //// 加载嵌入资源图标
+            //try
+            //{
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.1.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.2.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.3.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.4.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.5.ico").ToBitmap());
+            //    imageList1.Images.Add(LoadIconFromResource("GasFormsApp.Image.6.ico").ToBitmap());
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("加载图标失败: " + ex.Message);
+            //}
+
+            // 设置表头图标
+            tabPage1.ImageIndex = 0;
+            tabPage2.ImageIndex = 1;
+            tabPage3.ImageIndex = 2;
+            tabPage4.ImageIndex = 3;
+            tabPage5.ImageIndex = 4;
+            tabPage6.ImageIndex = 5;
+
+            tabControl1.SelectedIndex = 0;
+
+            tabControl1.Selecting += tabControl1_Selecting;
+
+
+            #endregion
+
+
+            ////dataGridView1.Columns.Add("Id", "Id");
+            ////dataGridView1.Columns.Add("Name", "Name");
+
+            //DataTable table = new DataTable();
+            //table.Columns.Add("Id", typeof(int));
+            //table.Columns.Add("Name", typeof(string));
+
+            //table.Rows.Add(1, "Alice");
+            //table.Rows.Add(2, "Bob");
+            //table.Rows.Add(3, "Bob");
+
+            //dataGridView1.DataSource = table;  // 自动生成列，显示数据
+
+
+
+
+
+            //#region 模拟用户输入 tabPage2
+
+            //// 模拟用户输入
+            //MineNameTextBox.Text = "名称";
+            //SamplingSpotTextBox.Text = "地点";
+            //BurialDepthTextBox.Text = "456";
+            //CoalSeamTextBox.Text = "煤层";
+            //LabAtmPressureTextBox.Text = "101.2";
+            //UndAtmPressureTextBox.Text = "103.4";
+            //LabTempTextBox.Text = "25";
+            //UndTempTextBox.Text = "18";
+            //MoistureSampleTextBox.Text = "1.2";
+            //RawCoalMoistureTextBox.Text = "4.1";
+            //SampleNumTextBox.Text = "M2025";
+            //SampleWeightTextBox.Text = "105";
+            //InitialVolumeTextBox.Text = "3";
+
+            //t0TextBox.Text = "2";
+
+            //DesorbTextBox1.Text = "36";
+            //DesorbTextBox2.Text = "56";
+            //DesorbTextBox3.Text = "76";
+            //DesorbTextBox4.Text = "86";
+            //DesorbTextBox5.Text = "98";
+            //DesorbTextBox6.Text = "106";
+            //DesorbTextBox7.Text = "114";
+            //DesorbTextBox8.Text = "122";
+            //DesorbTextBox9.Text = "128";
+            //DesorbTextBox10.Text = "144";
+            //DesorbTextBox11.Text = "152";
+            //DesorbTextBox12.Text = "166";
+            //DesorbTextBox13.Text = "178";
+            //DesorbTextBox14.Text = "192";
+            //DesorbTextBox15.Text = "200";
+            //DesorbTextBox16.Text = "208";
+            //DesorbTextBox17.Text = "218";
+            //DesorbTextBox18.Text = "232";
+            //DesorbTextBox19.Text = "244";
+            //DesorbTextBox20.Text = "250";
+            ////DesorbTextBox21.Text = "270";
+            //DesorbTextBox22.Text = "270";
+            ////DesorbTextBox23.Text = "324";
+            //DesorbTextBox24.Text = "298";
+            ////DesorbTextBox25.Text = "390";
+            //DesorbTextBox26.Text = "324";
+            ////DesorbTextBox27.Text = "416";
+            //DesorbTextBox28.Text = "358";
+            ////DesorbTextBox29.Text = "442";
+            //DesorbTextBox30.Text = "390";
+
+            //DataNumTextBox31.Text = "35";
+            //DataNumTextBox32.Text = "40";
+            //DataNumTextBox33.Text = "45";
+            //DataNumTextBox34.Text = "50";
+            //DataNumTextBox35.Text = "60";
+
+            //// 模拟输入数据
+            //for (int i = 31; i <= 60; i++)
+            //{
+            //    string controlName = "DataNumTextBox" + i;
+            //    Control[] foundControls = this.Controls.Find(controlName, true);
+            //    if (foundControls.Length > 0 && foundControls[0] is TextBox)
+            //    {
+            //        ((TextBox)foundControls[0]).Text = i.ToString(); // 可自定义内容
+            //    }
+            //}
+
+
+            //DesorpVolNormalTextBox.Text = "1";
+            //Sample1WeightTextBox.Text = "100";
+            //Sample2WeightTextBox.Text = "100";
+            //S1DesorpVolTextBox.Text = "30";
+            //S2DesorpVolTextBox.Text = "30";
+
+            //AdsorpConstATextBox.Text = "1";
+            //AdsorpConstBTextBox.Text = "2";
+            //MadTextBox.Text = "3";
+            //AadTextBox.Text = "4";
+            //PorosityTextBox.Text = "5";
+            //AppDensityTextBox.Text = "6";
+            //VadTextBox.Text = "7";
+
+            //#endregion
+
+            //tabPage5DoubleBufferedFlowLayoutPanel1.Enabled = false;
+
+
+            // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
+            this.tabControl1PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl2PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl3PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl4PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl5PictureBox.Click += tabControlxPictureBox_Click;
+            this.tabControl6PictureBox.Click += tabControlxPictureBox_Click;
+
+            //tabControl1.ItemSize = new Size(98, 100);
+            //tabControl1.ItemSize = new Size(98, 92);
 
             var loc = GasFormsApp.Settings.Default.WindowLocation;
             var size = GasFormsApp.Settings.Default.WindowSize;
@@ -593,9 +600,69 @@ namespace GasFormsApp
                 label2.BackColor = Color.White;
             }
 
+            if (Version == 0)
+            {
+                // 只留首页
+                //tabControl1.TabPages.Remove(tabPage2);
+                //tabControl1.TabPages.Remove(tabPage3);
+            }
+            else if (Version == 1)
+            {
+                // 留首页和管理页
+                //tabControl1.TabPages.Remove(tabPage3);
+            }
+            else if (Version == 2)
+            {
+                // 全部显示，不需要移除
+                tabControl1.TabPages.Remove(tabPage3);
+                tabControl1.TabPages.Remove(tabPage4);
+                tabControl1.TabPages.Remove(tabPage5);
+                tabControl1.TabPages.Remove(tabPage6);
+                tabControl3PictureBox.Visible = false;
+                tabControl4PictureBox.Visible = false;
+                tabControl5PictureBox.Visible = false;
+                tabControl6PictureBox.Visible = false;
+                panel1.Location = new System.Drawing.Point(200,73);
+            }
+            tabControl1_isInitializing = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
         }
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (tabControl1_isInitializing) return;
+
+            int targetIndex = tabControl1.TabPages.IndexOf(e.TabPage);
+
+            if (Version == 0)
+            {
+                //// 假设 Version=0 只能看第0页
+                //if (targetIndex > 0)
+                //{
+                //    e.Cancel = true;
+                //    MessageBox.Show("无权限");
+                //}
+            }
+            else if (Version == 1)
+            {
+                //// 假设 Version=1 可以看第0和第1页
+                //if (targetIndex > 1)
+                //{
+                //    e.Cancel = true;
+                //    MessageBox.Show("无权限");
+                //}
+            }
+            else if (Version == 2)
+            {
+                // 假设 Version=2 可以看第0和第1页
+                if (targetIndex > 1)
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("无权限");
+                }
+            }
+        }
+
         // 动态修改软件标题（非App上端）
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
         static extern int GetPrivateProfileString(
@@ -614,7 +681,7 @@ namespace GasFormsApp
         {
             if(a++==1)
             {
-                if(this.Opacity == 0)
+                if (this.Opacity == 0)
                 {
                     this.Opacity = 1;
                 }
