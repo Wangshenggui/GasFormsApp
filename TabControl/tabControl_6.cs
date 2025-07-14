@@ -242,6 +242,8 @@ namespace GasFormsApp.TabControl
                         _mainForm.MineNameTextBox.Text = data.矿井名称;
                         _mainForm.MineNameTextBox.Text = data.矿井名称;
                         _mainForm.SamplingSpotTextBox.Text = data.取样地点;
+                        _mainForm.X_YTextBox.Text = data.取样地点坐标;
+                        _mainForm.CoalTypeComboBox.Text = data.煤种;
                         _mainForm.BurialDepthTextBox.Text = data.埋深;
                         _mainForm.CoalSeamTextBox.Text = data.煤层;
                         _mainForm.UndAtmPressureTextBox.Text = data.井下大气压力;
@@ -601,6 +603,7 @@ namespace GasFormsApp.TabControl
             public string 矿井名称 { get; set; }
             public string 取样地点 { get; set; }
             public string 取样地点坐标 { get; set; }
+            public string 煤种 { get; set; }
             public string 埋深 { get; set; }
             public string 煤层 { get; set; }
             public string 井下大气压力 { get; set; }
@@ -816,6 +819,7 @@ namespace GasFormsApp.TabControl
                     矿井名称 = _mainForm.MineNameTextBox.Text,
                     取样地点 = _mainForm.SamplingSpotTextBox.Text,
                     取样地点坐标 = _mainForm.X_YTextBox.Text,
+                    煤种 = _mainForm.CoalTypeComboBox.Text,
                     埋深 = _mainForm.BurialDepthTextBox.Text,
                     煤层 = _mainForm.CoalSeamTextBox.Text,
                     井下大气压力 = _mainForm.UndAtmPressureTextBox.Text,

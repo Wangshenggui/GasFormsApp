@@ -831,10 +831,16 @@ namespace GasFormsApp.TabControl
                     using (var workbook = new XLWorkbook())
                     {
                         var worksheet = workbook.Worksheets.Add("Sheet1");
+                        worksheet.Style.Font.FontName = "宋体";
 
                         // 写标题
                         worksheet.Cell(1, 1).Value = "时间";
                         worksheet.Cell(1, 2).Value = "解吸量";
+                        worksheet.Cell(1, 3).Value = "取样地点坐标";
+                        worksheet.Cell(1, 4).Value = "煤种";
+
+                        worksheet.Cell(2, 3).Value = _mainForm.X_YTextBox.Text;
+                        worksheet.Cell(2, 4).Value = _mainForm.CoalTypeComboBox.Text;
 
                         for (int i = 1; i <= 60; i++)
                         {
@@ -875,6 +881,8 @@ namespace GasFormsApp.TabControl
                         //worksheet.Columns(1, 2).AdjustToContents();
                         worksheet.Column(1).Width = 15; // 设置第一列宽度
                         worksheet.Column(2).Width = 20; // 设置第二列宽度
+                        worksheet.Column(3).Width = 20;
+                        worksheet.Column(4).Width = 20;
 
 
                         workbook.SaveAs(excelPath);
