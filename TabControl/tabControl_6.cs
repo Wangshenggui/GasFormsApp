@@ -600,6 +600,7 @@ namespace GasFormsApp.TabControl
             /// </summary>
             public string 矿井名称 { get; set; }
             public string 取样地点 { get; set; }
+            public string 取样地点坐标 { get; set; }
             public string 埋深 { get; set; }
             public string 煤层 { get; set; }
             public string 井下大气压力 { get; set; }
@@ -814,6 +815,7 @@ namespace GasFormsApp.TabControl
                     // tab1
                     矿井名称 = _mainForm.MineNameTextBox.Text,
                     取样地点 = _mainForm.SamplingSpotTextBox.Text,
+                    取样地点坐标 = _mainForm.X_YTextBox.Text,
                     埋深 = _mainForm.BurialDepthTextBox.Text,
                     煤层 = _mainForm.CoalSeamTextBox.Text,
                     井下大气压力 = _mainForm.UndAtmPressureTextBox.Text,
@@ -1267,6 +1269,17 @@ namespace GasFormsApp.TabControl
 
                 _mainForm.dataGridView1.DataSource = null;
                 _mainForm.dataGridView1.DataSource = sortableList;
+
+                //if (_mainForm.FindTextBox.Text.Contains("X=") || _mainForm.FindTextBox.Text.Contains("Y="))
+                //{
+                //    // 只显示需要的列
+                //    string[] visibleColumns = { "取样地点", "取样地点坐标", "埋深" };
+                //    foreach (DataGridViewColumn col in _mainForm.dataGridView1.Columns)
+                //    {
+                //        col.Visible = visibleColumns.Contains(col.DataPropertyName);
+                //    }
+                //}
+                
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                 // 延迟恢复排序，避免排序没有立即生效
@@ -1406,6 +1419,15 @@ namespace GasFormsApp.TabControl
 
                 _mainForm.dataGridView1.DataSource = null;
                 _mainForm.dataGridView1.DataSource = sortableList;
+                if (_mainForm.FindTextBox.Text.Contains("X=") || _mainForm.FindTextBox.Text.Contains("Y="))
+                {
+                    // 只显示需要的列
+                    string[] visibleColumns = { "取样地点", "取样地点坐标", "埋深" };
+                    foreach (DataGridViewColumn col in _mainForm.dataGridView1.Columns)
+                    {
+                        col.Visible = visibleColumns.Contains(col.DataPropertyName);
+                    }
+                }
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                 // 绑定高亮事件
@@ -1436,8 +1458,15 @@ namespace GasFormsApp.TabControl
                         {
                             if (row.DataBoundItem is UserData user && user.ID == selectedUserId)
                             {
-                                row.Selected = true;
-                                _mainForm.dataGridView1.CurrentCell = row.Cells[0];
+                                // 确保第一个可见单元格
+                                DataGridViewCell firstVisibleCell = row.Cells.Cast<DataGridViewCell>()
+                                    .FirstOrDefault(c => c.Visible);
+
+                                if (firstVisibleCell != null)
+                                {
+                                    _mainForm.dataGridView1.CurrentCell = firstVisibleCell;
+                                }
+
                                 break;
                             }
                         }
