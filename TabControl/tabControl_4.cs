@@ -49,6 +49,19 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage4TemporarySavingButton.Click += tabPage4TemporarySavingButton_Click;
             _mainForm.tabPage4RecoverDataButton.Click += tabPage4RecoverDataButton_Click;
 
+            // 使相关复选框可编辑
+            MakeCheckBoxesEditable(
+                _mainForm.AdsorpConstACheckBox,
+                _mainForm.AdsorpConstBCheckBox,
+                _mainForm.MadCheckBox,
+                _mainForm.AadCheckBox,
+                _mainForm.PorosityCheckBox,
+                _mainForm.AppDensityCheckBox,
+                _mainForm.TrueDensityCheckBox,
+                _mainForm.VadCheckBox,
+                _mainForm.NonDesorpGasQtyCheckBox
+            );
+
             // 批量注册内容更改事件
             InitializeTextMonitoring();
         }

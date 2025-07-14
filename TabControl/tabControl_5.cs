@@ -614,6 +614,11 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        // 返回 true 表示至少有一个被选中
+        bool HasAnyChecked(params CheckBox[] checkBoxes)
+        {
+            return checkBoxes.Any(cb => cb.Checked);
+        }
         /// <summary>
         /// 生成记录表按钮点击事件
         /// </summary>
@@ -671,6 +676,20 @@ namespace GasFormsApp.TabControl
 
                 // 处理Wc和Gas选项
                 MainForm.Wc选项数量 = 动态处理Wc选项();
+
+                bool anyChecked = HasAnyChecked(
+                    _mainForm.AdsorpConstACheckBox,
+                    _mainForm.AdsorpConstBCheckBox,
+                    _mainForm.MadCheckBox,
+                    _mainForm.AadCheckBox,
+                    _mainForm.VadCheckBox,
+                    _mainForm.AppDensityCheckBox,
+                    _mainForm.TrueDensityCheckBox,
+                    _mainForm.PorosityCheckBox,
+                    _mainForm.NonDesorpGasQtyCheckBox
+                );
+                MainForm.WcOutCheckBoxFlag = anyChecked;
+                Console.WriteLine($"==================================================MainForm.WcOutCheckBoxFlag = {anyChecked}");
                 MainForm.Gas选项数量 = 动态处理Gas选项();
 
                 // 获取程序集
@@ -867,6 +886,18 @@ namespace GasFormsApp.TabControl
 
                 // 处理Wc和Gas选项
                 MainForm.Wc选项数量 = 动态处理Wc选项();
+                bool anyChecked = HasAnyChecked(
+                    _mainForm.AdsorpConstACheckBox,
+                    _mainForm.AdsorpConstBCheckBox,
+                    _mainForm.MadCheckBox,
+                    _mainForm.AadCheckBox,
+                    _mainForm.VadCheckBox,
+                    _mainForm.AppDensityCheckBox,
+                    _mainForm.TrueDensityCheckBox,
+                    _mainForm.PorosityCheckBox,
+                    _mainForm.NonDesorpGasQtyCheckBox
+                );
+                MainForm.WcOutCheckBoxFlag = anyChecked;
                 MainForm.Gas选项数量 = 动态处理Gas选项();
 
                 // 处理井下测试人员信息
@@ -894,6 +925,7 @@ namespace GasFormsApp.TabControl
                 }
 
                 // 获取报告模板资源名称
+
                 string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 Console.WriteLine($"---------：{Word_resourceName}");
 
