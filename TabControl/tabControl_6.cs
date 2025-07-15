@@ -323,8 +323,27 @@ namespace GasFormsApp.TabControl
 
 
 
+                        var targetFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Python_embed", "Python", "images");
+
+                        // 确保目标文件夹存在
+                        if (!Directory.Exists(targetFolder))
+                        {
+                            Directory.CreateDirectory(targetFolder);
+                        }
+
                         if (File.Exists(imagePath))
                         {
+                            // 将图片复制到目标文件夹
+                            var targetPath = Path.Combine(targetFolder, "output_image.png");
+                            try
+                            {
+                                File.Copy(imagePath, targetPath, overwrite: true); // 如果已存在就覆盖
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("复制图片文件时出错: " + ex.Message);
+                            }
+
                             using (var imgStream = new MemoryStream(File.ReadAllBytes(imagePath)))
                             {
                                 using (var imgTemp = Image.FromStream(imgStream))
@@ -339,6 +358,7 @@ namespace GasFormsApp.TabControl
                         {
                             MessageBox.Show("找不到图片文件：" + imagePath);
                         }
+
 
                         // 调用计算函数，防止tab4数据输出为0
                         //_mainForm.tab6_4_ExpCalcButton_Click(sender,e);
