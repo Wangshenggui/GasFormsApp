@@ -710,6 +710,10 @@ namespace GasFormsApp.TabControl
                 var timeCell = worksheet.Cell(row, 1); // 时间列
                 var valueCell = worksheet.Cell(row, 2); // 值列
 
+                _mainForm.X_YTextBox.Text = worksheet.Cell("C2").Value.ToString();
+                _mainForm.CoalTypeComboBox.Text = worksheet.Cell("D2").Value.ToString();
+                _mainForm.BurialDepthTextBox.Text = worksheet.Cell("E2").Value.ToString();
+
                 if (int.TryParse(timeCell.GetValue<string>(), out int time))
                 {
                     string desorbValue = valueCell.GetValue<string>();
@@ -743,6 +747,7 @@ namespace GasFormsApp.TabControl
                     }
                 }
             }
+
         }
 
         /// <summary>
@@ -838,9 +843,20 @@ namespace GasFormsApp.TabControl
                         worksheet.Cell(1, 2).Value = "解吸量";
                         worksheet.Cell(1, 3).Value = "取样地点坐标";
                         worksheet.Cell(1, 4).Value = "煤种";
+                        worksheet.Cell(1, 5).Value = "埋深";
 
                         worksheet.Cell(2, 3).Value = _mainForm.X_YTextBox.Text;
                         worksheet.Cell(2, 4).Value = _mainForm.CoalTypeComboBox.Text;
+                        if (double.TryParse(_mainForm.BurialDepthTextBox.Text, out double burialDepth))
+                        {
+                            worksheet.Cell(2, 5).Value = burialDepth;
+                        }
+                        else
+                        {
+                            // 可以根据需要做提示或默认值
+                            worksheet.Cell(2, 5).Value = 0; // 或者提示用户输入有误
+                        }
+
 
                         for (int i = 1; i <= 60; i++)
                         {
@@ -883,6 +899,7 @@ namespace GasFormsApp.TabControl
                         worksheet.Column(2).Width = 20; // 设置第二列宽度
                         worksheet.Column(3).Width = 20;
                         worksheet.Column(4).Width = 20;
+                        worksheet.Column(5).Width = 20;
 
 
                         workbook.SaveAs(excelPath);
