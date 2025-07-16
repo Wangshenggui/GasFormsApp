@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.InkML;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Presentation;
 using Google.Protobuf.WellKnownTypes;
 using System;
@@ -9,12 +10,14 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static GasFormsApp.TabControl.tabControl_2;
+using static Google.Protobuf.Reflection.FieldDescriptorProto.Types;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Control = System.Windows.Forms.Control;
 using Font = System.Drawing.Font;
@@ -88,6 +91,7 @@ namespace GasFormsApp.TabControl
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
+            _mainForm.导出矿井数据ToolStripMenuItem.Click += 导出矿井数据ToolStripMenuItem_Click;
         }
         private void treeView1_DrawNode(object sender, DrawTreeNodeEventArgs e)
         {
@@ -1558,10 +1562,37 @@ namespace GasFormsApp.TabControl
         }
 
 
+        private TreeNode _rightClickedNode;  // 定义一个字段
         private void treeView1_MouseDown(object sender, MouseEventArgs e)
         {
+            TreeNode clickedNode = _mainForm.treeView1.GetNodeAt(e.X, e.Y);
+            _rightClickedNode = _mainForm.treeView1.GetNodeAt(e.X, e.Y);
+
             if (e.Button == MouseButtons.Right)
             {
+                if (clickedNode != null)
+                {
+                    int level = clickedNode.Level;       // 当前层级（0,1,2...）
+                    string text = clickedNode.Text;      // 当前节点显示的名字
+
+                    if (level == 1)
+                    {
+                        //MessageBox.Show($"当前点击层级：{level},{text}");
+                        // 导出煤矿数据
+                        _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
+                    }
+                    else
+                    {
+                        _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                    }
+                }
+                else
+                {
+                    _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
+                    _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                }
                 _mainForm.tabPage6contextMenuStrip1.Show(_mainForm.treeView1, e.Location); // 弹出菜单
             }
         }
@@ -1573,6 +1604,356 @@ namespace GasFormsApp.TabControl
             string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
             // 加载该路径下的文件夹结构到树控件
             LoadFoldersToTree(rootPath);
+        }
+
+        public string SelectSaveExcelFile()
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                var lastFolder = GasFormsApp.Settings.Default.LastFolder;
+                saveFileDialog.InitialDirectory = string.IsNullOrEmpty(lastFolder)
+                    ? Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                    : lastFolder;
+
+                saveFileDialog.Filter = "Excel 文件 (*.xlsx)|*.xlsx|Excel 97-2003 文件 (*.xls)|*.xls";
+                saveFileDialog.Title = "请选择保存位置";
+                saveFileDialog.FileName = "新建Excel文件.xlsx"; // 可以根据需要设置默认文件名
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    GasFormsApp.Settings.Default.LastFolder = Path.GetDirectoryName(saveFileDialog.FileName);
+                    GasFormsApp.Settings.Default.Save();
+                    return saveFileDialog.FileName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+        private void 导出矿井数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_rightClickedNode != null)
+            {
+                string path = _rightClickedNode.Tag as string;
+                if (!string.IsNullOrEmpty(path))
+                {
+                    //MessageBox.Show($"当前节点路径：{path}");
+                    // 这里做导出等操作
+                    string excelPath = SelectSaveExcelFile();
+                    if (!string.IsNullOrEmpty(excelPath))
+                    {
+                        try
+                        {
+                            using (var workbook = new XLWorkbook())
+                            {
+                                var worksheet = workbook.Worksheets.Add("Sheet1");
+
+                                // 全局默认字体：宋体 11
+                                worksheet.Style.Font.FontName = "宋体";
+                                worksheet.Style.Font.FontSize = 11;
+
+                                // 合并 A1:I1，做标题
+                                worksheet.Range("A1:I1").Merge();
+                                var titleCell = worksheet.Cell("A1");
+                                string nodeText = _rightClickedNode.Text;
+                                titleCell.Value = nodeText;                  // 设置标题内容
+                                titleCell.Style.Font.FontName = "宋体";             // 字体
+                                titleCell.Style.Font.FontSize = 22;                // 字体大小
+                                titleCell.Style.Font.Bold = true;                  // 加粗（可选）
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                // 小标题
+                                worksheet.Range("A2:A3").Merge();
+                                titleCell = worksheet.Cell("A2");
+                                titleCell.Value = "序号";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                worksheet.Range("B2:B3").Merge();
+                                titleCell = worksheet.Cell("B2");
+                                titleCell.Value = "取样地点";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                worksheet.Range("C2:C3").Merge();
+                                titleCell = worksheet.Cell("C2");
+                                titleCell.Value = "埋深（m）";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                worksheet.Range("D2:D3").Merge();
+                                titleCell = worksheet.Cell("D2");
+                                titleCell.Value = "煤种";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                worksheet.Range("E2:G2").Merge();
+                                titleCell = worksheet.Cell("E2");
+                                titleCell.Value = "取样点坐标";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                worksheet.Cell("E3").Value = "X";
+                                worksheet.Cell("F3").Value = "Y";
+                                worksheet.Cell("G3").Value = "Z";
+                                foreach (var addr in new[] { "E3", "F3", "G3" })
+                                {
+                                    var cell = worksheet.Cell(addr);
+                                    cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                    cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+                                }
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+
+                                worksheet.Range("H2:H3").Merge();
+                                titleCell = worksheet.Cell("H2");
+                                titleCell.Value = "瓦斯含量（W）";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                worksheet.Range("I2:I3").Merge();
+                                titleCell = worksheet.Cell("I2");
+                                titleCell.Value = "瓦斯压力（P）";
+                                titleCell.Style.Font.FontName = "宋体";
+                                titleCell.Style.Font.FontSize = 14;
+                                titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                ////////////////////////////////////////////////////////
+                                worksheet.Column(1).Width = 12;
+                                worksheet.Column(2).Width = 50;
+                                worksheet.Column(3).Width = 12;
+                                worksheet.Column(4).Width = 12;
+                                worksheet.Column(5).Width = 12;
+                                worksheet.Column(6).Width = 12;
+                                worksheet.Column(7).Width = 12;
+                                worksheet.Column(8).Width = 18;
+                                worksheet.Column(9).Width = 18;
+                                ////////////////////////////////////////////////////////
+                                string nodePath = _rightClickedNode.Tag as string;
+                                if (!string.IsNullOrEmpty(nodePath))
+                                {
+                                    string directoryPath;
+
+                                    if (Directory.Exists(nodePath))
+                                    {
+                                        directoryPath = nodePath;
+                                    }
+                                    else if (File.Exists(nodePath))
+                                    {
+                                        directoryPath = Path.GetDirectoryName(nodePath);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("节点路径不存在！");
+                                        return;
+                                    }
+
+                                    string[] subDirs = Directory.GetDirectories(directoryPath);
+
+                                    int binFileCount = 0;  // 计数器
+
+                                    string message = $"当前目录：{directoryPath}\n子目录及文件列表：\n";
+
+                                    var binFiles = new List<string>();
+                                    foreach (var dir in subDirs)
+                                    {
+                                        message += $"目录：{Path.GetFileName(dir)}\n";
+
+                                        string[] files = Directory.GetFiles(dir, "*.bin");
+                                        binFiles.AddRange(files);
+                                        binFileCount += files.Length;  // 统计数量
+
+                                        foreach (var file in files)
+                                        {
+                                            message += $"  文件：{Path.GetFileName(file)}\n";
+                                        }
+                                    }
+
+                                    message += $"\n所有子目录中 .bin 文件总数：{binFileCount}";
+                                    BinaryFormatter formatter = new BinaryFormatter();
+                                    // 从 E4 开始写编号，F4 开始写文件名
+                                    for (int i = 0; i < binFileCount; i++)
+                                    {
+                                        //worksheet.Cell("A" + (4 + i)).Value = i + 1;  // 编号
+                                        //worksheet.Cell("F" + (4 + i)).Value = Path.GetFileName(binFiles[i]); // 文件名
+
+                                        titleCell = worksheet.Cell("A" + (4 + i));
+                                        titleCell.Value = i + 1;
+                                        titleCell.Style.Font.FontName = "宋体";
+                                        titleCell.Style.Font.FontSize = 12;
+                                        titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                        titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        //titleCell = worksheet.Cell("B" + (4 + i));
+                                        //titleCell.Value = Path.GetFileName(binFiles[i]);
+                                        //titleCell.Style.Font.FontName = "宋体";
+                                        //titleCell.Style.Font.FontSize = 12;
+                                        //titleCell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; // 居中
+                                        //titleCell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        //////////////////////////////////////////////////////////////////////////
+                                        //1
+                                        UserData user;
+                                        using (FileStream fs = new FileStream(binFiles[i], FileMode.Open))
+                                        {
+                                            user = (UserData)formatter.Deserialize(fs);
+                                        }
+
+                                        var cell = worksheet.Cell("B" + (4 + i));
+                                        cell.Value = user.取样地点;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        cell = worksheet.Cell("C" + (4 + i));
+                                        string depthStr = user.埋深;
+                                        double depthValue;
+                                        if (double.TryParse(depthStr, out depthValue))
+                                        {
+                                            // 转换成功，depthValue就是数字
+                                            Console.WriteLine($"埋深的数值是 {depthValue}");
+                                        }
+                                        else
+                                        {
+                                            // 转换失败，字符串格式不正确
+                                            Console.WriteLine("埋深转换成数字失败");
+                                        }
+                                        cell.Value = depthValue;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        cell = worksheet.Cell("D" + (4 + i));
+                                        cell.Value = user.煤种;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+
+                                        ///////////////////////////////////////////////////////////
+                                        string input = user.取样地点坐标;
+                                        // 如果 input 是 null，就替换为 ""
+                                        if (string.IsNullOrWhiteSpace(input))
+                                        {
+                                            input = "X=0,Y=0,Z=0";  // 或者直接 return / 设置默认值
+                                        }
+                                        double x = 0, y = 0, z = 0;
+                                        // 提取 X
+                                        var matchX = Regex.Match(input, @"X\s*=\s*([-+]?\d+(\.\d+)?)", RegexOptions.IgnoreCase);
+                                        if (matchX.Success && double.TryParse(matchX.Groups[1].Value, out double valX))
+                                        {
+                                            x = valX;
+                                        }
+                                        // 提取 Y
+                                        var matchY = Regex.Match(input, @"Y\s*=\s*([-+]?\d+(\.\d+)?)", RegexOptions.IgnoreCase);
+                                        if (matchY.Success && double.TryParse(matchY.Groups[1].Value, out double valY))
+                                        {
+                                            y = valY;
+                                        }
+                                        // 提取 Z
+                                        var matchZ = Regex.Match(input, @"Z\s*=\s*([-+]?\d+(\.\d+)?)", RegexOptions.IgnoreCase);
+                                        if (matchZ.Success && double.TryParse(matchZ.Groups[1].Value, out double valZ))
+                                        {
+                                            z = valZ;
+                                        }
+                                        ///////////////////////////////////////////////////////////
+                                        cell = worksheet.Cell("E" + (4 + i));
+                                        cell.Value = x;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        cell = worksheet.Cell("F" + (4 + i));
+                                        cell.Value = y;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        cell = worksheet.Cell("G" + (4 + i));
+                                        cell.Value = z;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        // 假设 user.W 和 user.P 是字符串类型，需要转换成数字
+                                        double w = 0, p = 0;
+                                        // 尝试转换 W
+                                        if (!double.TryParse(user.W, out w))
+                                        {
+                                            w = 0; // 转换失败时默认用 0（也可以用其他默认值）
+                                        }
+                                        // 尝试转换 P
+                                        if (!double.TryParse(user.P, out p))
+                                        {
+                                            p = 0;
+                                        }
+                                        // 写到 H 列
+                                        cell = worksheet.Cell("H" + (4 + i));
+                                        cell.Value = w;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+                                        // 写到 I 列
+                                        cell = worksheet.Cell("I" + (4 + i));
+                                        cell.Value = p;
+                                        cell.Style.Font.FontName = "宋体";
+                                        cell.Style.Font.FontSize = 12;
+                                        cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                        cell.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+                                    }
+
+                                    //MessageBox.Show(message);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("节点未关联路径！");
+                                }
+
+
+
+                                workbook.SaveAs(excelPath);
+                            }
+
+                            MessageBox.Show("Excel 文件已成功导出！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"导出失败: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("未选择文件", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("该节点没有设置路径！");
+                }
+            }
         }
     }
 }
