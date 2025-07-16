@@ -70,5 +70,17 @@ namespace GasFormsApp {
                 this["WindowState"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("WPS")]
+        public string OfficeType {
+            get {
+                return ((string)(this["OfficeType"]));
+            }
+            set {
+                this["OfficeType"] = value;
+            }
+        }
     }
 }

@@ -30,6 +30,9 @@ namespace GasFormsApp.TabControl
         {
             _mainForm = form;
 
+            // 读取Offince类型
+            _mainForm.WPSorOfficeLabel.Text = GasFormsApp.Settings.Default.OfficeType;
+
             // 设置工具提示
             _mainForm.toolTip1.SetToolTip(_mainForm.GenReportButton, "生成报告单(Ctrl + G)");
             _mainForm.toolTip1.SetToolTip(_mainForm.GenRecordButton, "生成记录表(Ctrl + Shift + G)");
@@ -45,6 +48,8 @@ namespace GasFormsApp.TabControl
 
             _mainForm.tabPage5TemporarySavingButton.Click += tabPage5TemporarySavingButton_Click;
             _mainForm.tabPage5RecoverDataButton.Click += tabPage5RecoverDataButton_Click;
+
+            _mainForm.WPSorOfficeLabel.Click += WPSorOfficeLabel_Click;
 
 
             // 批量注册内容更改事件
@@ -392,6 +397,34 @@ namespace GasFormsApp.TabControl
             // 缺失Gas和Wc
             { ( false,  false, 1, 1), "WPSGasFormsApp.WordTemplateNoWcNoGas.docx" },
         };
+        /// <summary>
+        /// 模板资源映射字典
+        /// 键: (是否有Wc数据, 是否有气体成分数据, Wc选项数量, Gas选项数量)
+        /// 值: 对应的Word模板资源名称
+        /// </summary>
+        private static readonly Dictionary<(bool, bool, int, int), string>
+            Office_resourceMap = new Dictionary<(bool, bool, int, int), string>
+        {
+            // 无缺失数据
+            { ( true,  true, 1, 1), "OfficeGasFormsApp.WordTemplate1_1.docx" },
+            { ( true,  true, 1, 2), "OfficeGasFormsApp.WordTemplate1_2.docx" },
+            { ( true,  true, 2, 1), "OfficeGasFormsApp.WordTemplate2_1.docx" },
+            { ( true,  true, 2, 2), "OfficeGasFormsApp.WordTemplate2_2.docx" },
+            { ( true,  true, 3, 1), "OfficeGasFormsApp.WordTemplate3_1.docx" },
+            { ( true,  true, 3, 2), "OfficeGasFormsApp.WordTemplate3_2.docx" },
+
+            // 缺失Gas
+            { ( true,  false, 1, 1), "OfficeGasFormsApp.WordTemplateNoGas1.docx" },
+            { ( true,  false, 2, 1), "OfficeGasFormsApp.WordTemplateNoGas2.docx" },
+            { ( true,  false, 3, 1), "OfficeGasFormsApp.WordTemplateNoGas3.docx" },
+
+            // 缺失Wc
+            { ( false,  true, 1, 1), "OfficeGasFormsApp.WordTemplateNoWc1.docx" },
+            { ( false,  true, 1, 2), "OfficeGasFormsApp.WordTemplateNoWc2.docx" },
+
+            // 缺失Gas和Wc
+            { ( false,  false, 1, 1), "OfficeGasFormsApp.WordTemplateNoWcNoGas.docx" },
+        };
 
         /// <summary>
         /// 根据条件获取Word模板资源名称
@@ -408,6 +441,23 @@ namespace GasFormsApp.TabControl
                 return "WPSGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
             }
         }
+        /// <summary>
+        /// 根据条件获取Word模板资源名称
+        /// </summary>
+        private string OfficeWord_ResourceName(bool wcFlag, bool gasCompFlag, int Wc数量, int Gas数量)
+        {
+            if (Office_resourceMap.TryGetValue((wcFlag, gasCompFlag, Wc数量, Gas数量), out var resourceName))
+            {
+                return resourceName;
+            }
+            else
+            {
+                // 默认返回一个模板
+                return "OfficeGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
+            }
+        }
+
+
 
         /// <summary>
         /// 记录表模板资源映射字典
@@ -435,6 +485,32 @@ namespace GasFormsApp.TabControl
             // 缺失Gas和Wc
             { ( false,  false, 1, 1), "WPSGasFormsApp.RecordSheetsNoWcNoGas.docx" },
         };
+        /// <summary>
+        /// 记录表模板资源映射字典
+        /// </summary>
+        private static readonly Dictionary<(bool, bool, int, int), string>
+            OfficeRecordMap = new Dictionary<(bool, bool, int, int), string>
+        {
+            // 无缺失数据
+            { ( true,  true, 1, 1), "OfficeGasFormsApp.RecordSheets1_1.docx" },
+            { ( true,  true, 1, 2), "OfficeGasFormsApp.RecordSheets1_2.docx" },
+            { ( true,  true, 2, 1), "OfficeGasFormsApp.RecordSheets2_1.docx" },
+            { ( true,  true, 2, 2), "OfficeGasFormsApp.RecordSheets2_2.docx" },
+            { ( true,  true, 3, 1), "OfficeGasFormsApp.RecordSheets3_1.docx" },
+            { ( true,  true, 3, 2), "OfficeGasFormsApp.RecordSheets3_2.docx" },
+
+            // 缺失Gas
+            { ( true,  false, 1, 1), "OfficeGasFormsApp.RecordSheetsNoGas1.docx" },
+            { ( true,  false, 2, 1), "OfficeGasFormsApp.RecordSheetsNoGas2.docx" },
+            { ( true,  false, 3, 1), "OfficeGasFormsApp.RecordSheetsNoGas3.docx" },
+
+            // 缺失Wc
+            { ( false,  true, 1, 1), "OfficeGasFormsApp.RecordSheetsNoWc1.docx" },
+            { ( false,  true, 1, 2), "OfficeGasFormsApp.RecordSheetsNoWc2.docx" },
+
+            // 缺失Gas和Wc
+            { ( false,  false, 1, 1), "OfficeGasFormsApp.RecordSheetsNoWcNoGas.docx" },
+        };
 
         /// <summary>
         /// 根据条件获取记录表模板资源名称
@@ -449,6 +525,18 @@ namespace GasFormsApp.TabControl
             {
                 // 默认返回一个模板
                 return "WPSGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
+            }
+        }
+        private string OfficeWord_RecordName(bool wcFlag, bool gasCompFlag, int Wc数量, int Gas数量)
+        {
+            if (OfficeRecordMap.TryGetValue((wcFlag, gasCompFlag, Wc数量, Gas数量), out var resourceName))
+            {
+                return resourceName;
+            }
+            else
+            {
+                // 默认返回一个模板
+                return "OfficeGasFormsApp.GasFormsApp.WordTemplate3_2.docx";
             }
         }
 
@@ -704,7 +792,24 @@ namespace GasFormsApp.TabControl
                 }
 
                 // 获取记录表模板资源名称
-                string Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                string Word_resourceName;
+                if (_mainForm.WPSorOfficeLabel.Text == "WPS")
+                {
+                    //MessageBox.Show("WPS");
+                    Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                }
+                else if (_mainForm.WPSorOfficeLabel.Text == "Office")
+                {
+                    //q
+                    //MessageBox.Show("Office");
+                    Word_resourceName = OfficeWord_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                }
+                else
+                {
+                    Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                }
+                MessageBox.Show($"{Word_resourceName}");
+                //string Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 Console.WriteLine($"寻找的记录表文件：{Word_resourceName}");
 
                 // 使用文件流读取模板
@@ -829,6 +934,26 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        // WPS or Office点击文本
+        public void WPSorOfficeLabel_Click(object sender, EventArgs e)
+        {
+            string str = _mainForm.WPSorOfficeLabel.Text;
+            if (str == "WPS")
+            {
+                str = "Office";
+            }
+            else if (str == "Office")
+            {
+                str = "WPS";
+            }
+
+            _mainForm.WPSorOfficeLabel.Text = str;
+
+            // 保存到用户设置
+            GasFormsApp.Settings.Default.OfficeType = str;
+            GasFormsApp.Settings.Default.Save();
+        }
+
         /// <summary>
         /// 生成报告按钮点击事件
         /// </summary>
@@ -925,8 +1050,25 @@ namespace GasFormsApp.TabControl
                 }
 
                 // 获取报告模板资源名称
+                //q
+                string Word_resourceName;
+                if (_mainForm.WPSorOfficeLabel.Text == "WPS")
+                {
+                    //MessageBox.Show("WPS");
+                    Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                }
+                else if (_mainForm.WPSorOfficeLabel.Text == "Office")
+                {
+                    //q
+                    //MessageBox.Show("Office");
+                    Word_resourceName = OfficeWord_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                }
+                else
+                {
+                    Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                }
 
-                string Word_resourceName = Word_ResourceName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
+                //MessageBox.Show($"资源名：{Word_resourceName}");
                 Console.WriteLine($"---------：{Word_resourceName}");
 
                 // 使用文件流读取模板

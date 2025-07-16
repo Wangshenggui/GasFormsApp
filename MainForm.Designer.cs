@@ -422,6 +422,7 @@ namespace GasFormsApp
             this.CoalTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
             this.X_YTextBox = new System.Windows.Forms.TextBox();
+            this.WPSorOfficeLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -4553,6 +4554,7 @@ namespace GasFormsApp
             // tabPage5panel17
             // 
             this.tabPage5panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.tabPage5panel17.Controls.Add(this.WPSorOfficeLabel);
             this.tabPage5panel17.Controls.Add(this.tabPage5TemporarySavingButton);
             this.tabPage5panel17.Controls.Add(this.tabPage5RecoverDataButton);
             this.tabPage5panel17.Controls.Add(this.GenReportButton);
@@ -5142,6 +5144,19 @@ namespace GasFormsApp
             this.X_YTextBox.Size = new System.Drawing.Size(167, 26);
             this.X_YTextBox.TabIndex = 1008;
             // 
+            // WPSorOfficeLabel
+            // 
+            this.WPSorOfficeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.WPSorOfficeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WPSorOfficeLabel.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.WPSorOfficeLabel.ForeColor = System.Drawing.Color.White;
+            this.WPSorOfficeLabel.Location = new System.Drawing.Point(4, 68);
+            this.WPSorOfficeLabel.Name = "WPSorOfficeLabel";
+            this.WPSorOfficeLabel.Size = new System.Drawing.Size(116, 42);
+            this.WPSorOfficeLabel.TabIndex = 1013;
+            this.WPSorOfficeLabel.Text = "WPS";
+            this.WPSorOfficeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5659,5 +5674,6 @@ namespace GasFormsApp
         public TextBox X_YTextBox;
         private Label label36;
         public ComboBox CoalTypeComboBox;
+        public Label WPSorOfficeLabel;
     }
 }
