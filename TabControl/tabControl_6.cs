@@ -1575,7 +1575,14 @@ namespace GasFormsApp.TabControl
                     int level = clickedNode.Level;       // 当前层级（0,1,2...）
                     string text = clickedNode.Text;      // 当前节点显示的名字
 
-                    if (level == 1)
+                    // 判断是否点击到节点文本上（Bounds 区域）
+                    Rectangle nodeTextBounds = clickedNode.Bounds;
+                    bool isOnText = (e.X >= nodeTextBounds.Left && e.X <= nodeTextBounds.Right);
+
+                    // 判断是否当前节点已被选中
+                    bool isSelected = (_mainForm.treeView1.SelectedNode == clickedNode);
+
+                    if (level == 1 && isOnText && isSelected)
                     {
                         //MessageBox.Show($"当前点击层级：{level},{text}");
                         // 导出煤矿数据

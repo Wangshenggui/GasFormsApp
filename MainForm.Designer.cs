@@ -32,14 +32,14 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -48,6 +48,8 @@ namespace GasFormsApp
             this.MineNameTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SamplingSpotTextBox = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.X_YTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.BurialDepthTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,6 +84,8 @@ namespace GasFormsApp
             this.AzimuthTextBox = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.SamplingPersonnelTextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.CoalTypeComboBox = new System.Windows.Forms.ComboBox();
             this.tabPage1TemporarySavingButton = new GasFormsApp.UI.UCButton();
             this.tabPage1RecoverDataButton = new GasFormsApp.UI.UCButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -373,6 +377,7 @@ namespace GasFormsApp
             this.label118 = new System.Windows.Forms.Label();
             this.AuditorTextBox = new System.Windows.Forms.TextBox();
             this.tabPage5panel17 = new System.Windows.Forms.Panel();
+            this.WPSorOfficeLabel = new System.Windows.Forms.Label();
             this.tabPage5TemporarySavingButton = new GasFormsApp.UI.UCButton();
             this.tabPage5RecoverDataButton = new GasFormsApp.UI.UCButton();
             this.GenReportButton = new GasFormsApp.UI.UCButton();
@@ -402,6 +407,7 @@ namespace GasFormsApp
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导出矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -418,12 +424,6 @@ namespace GasFormsApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label36 = new System.Windows.Forms.Label();
-            this.CoalTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.X_YTextBox = new System.Windows.Forms.TextBox();
-            this.WPSorOfficeLabel = new System.Windows.Forms.Label();
-            this.导出矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -637,6 +637,28 @@ namespace GasFormsApp
             this.SamplingSpotTextBox.Name = "SamplingSpotTextBox";
             this.SamplingSpotTextBox.Size = new System.Drawing.Size(167, 26);
             this.SamplingSpotTextBox.TabIndex = 2;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label39.Location = new System.Drawing.Point(710, 20);
+            this.label39.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(167, 16);
+            this.label39.TabIndex = 1007;
+            this.label39.Text = "取 样 地 点 坐 标  :";
+            // 
+            // X_YTextBox
+            // 
+            this.X_YTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.X_YTextBox.Location = new System.Drawing.Point(880, 15);
+            this.X_YTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.X_YTextBox.Name = "X_YTextBox";
+            this.X_YTextBox.Size = new System.Drawing.Size(167, 26);
+            this.X_YTextBox.TabIndex = 1008;
             // 
             // label7
             // 
@@ -1021,6 +1043,34 @@ namespace GasFormsApp
             this.SamplingPersonnelTextBox.Name = "SamplingPersonnelTextBox";
             this.SamplingPersonnelTextBox.Size = new System.Drawing.Size(167, 26);
             this.SamplingPersonnelTextBox.TabIndex = 37;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.label36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label36.Location = new System.Drawing.Point(710, 296);
+            this.label36.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(167, 16);
+            this.label36.TabIndex = 1005;
+            this.label36.Text = "     煤     种     :";
+            // 
+            // CoalTypeComboBox
+            // 
+            this.CoalTypeComboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CoalTypeComboBox.FormattingEnabled = true;
+            this.CoalTypeComboBox.Items.AddRange(new object[] {
+            "烟煤",
+            "无烟煤",
+            "褐煤"});
+            this.CoalTypeComboBox.Location = new System.Drawing.Point(880, 291);
+            this.CoalTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.CoalTypeComboBox.Name = "CoalTypeComboBox";
+            this.CoalTypeComboBox.Size = new System.Drawing.Size(167, 24);
+            this.CoalTypeComboBox.TabIndex = 1006;
+            this.CoalTypeComboBox.Text = "烟煤";
             // 
             // tabPage1TemporarySavingButton
             // 
@@ -4566,6 +4616,19 @@ namespace GasFormsApp
             this.tabPage5panel17.Size = new System.Drawing.Size(367, 134);
             this.tabPage5panel17.TabIndex = 76;
             // 
+            // WPSorOfficeLabel
+            // 
+            this.WPSorOfficeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.WPSorOfficeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WPSorOfficeLabel.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.WPSorOfficeLabel.ForeColor = System.Drawing.Color.White;
+            this.WPSorOfficeLabel.Location = new System.Drawing.Point(4, 68);
+            this.WPSorOfficeLabel.Name = "WPSorOfficeLabel";
+            this.WPSorOfficeLabel.Size = new System.Drawing.Size(116, 42);
+            this.WPSorOfficeLabel.TabIndex = 1013;
+            this.WPSorOfficeLabel.Text = "WPS";
+            this.WPSorOfficeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tabPage5TemporarySavingButton
             // 
             this.tabPage5TemporarySavingButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -4731,20 +4794,20 @@ namespace GasFormsApp
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(1, 61);
             this.treeView1.Name = "treeView1";
-            treeNode4.ImageKey = "项目";
-            treeNode4.Name = "项目";
-            treeNode4.SelectedImageKey = "项目";
-            treeNode4.Text = "项目";
-            treeNode5.ImageKey = "矿井.png";
-            treeNode5.Name = "矿井";
-            treeNode5.SelectedImageKey = "矿井.png";
-            treeNode5.Text = "矿井";
-            treeNode6.ImageKey = "根目录";
-            treeNode6.Name = "根目录";
-            treeNode6.SelectedImageKey = "根目录";
-            treeNode6.Text = "根目录";
+            treeNode1.ImageKey = "项目";
+            treeNode1.Name = "项目";
+            treeNode1.SelectedImageKey = "项目";
+            treeNode1.Text = "项目";
+            treeNode2.ImageKey = "矿井.png";
+            treeNode2.Name = "矿井";
+            treeNode2.SelectedImageKey = "矿井.png";
+            treeNode2.Text = "矿井";
+            treeNode3.ImageKey = "根目录";
+            treeNode3.Name = "根目录";
+            treeNode3.SelectedImageKey = "根目录";
+            treeNode3.Text = "根目录";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(298, 576);
             this.treeView1.TabIndex = 1;
@@ -4859,33 +4922,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 639);
@@ -4966,13 +5029,19 @@ namespace GasFormsApp
             this.刷新ToolStripMenuItem,
             this.导出矿井数据ToolStripMenuItem});
             this.tabPage6contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
-            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(149, 48);
             // 
             // 刷新ToolStripMenuItem
             // 
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.刷新ToolStripMenuItem.Text = "刷新";
+            // 
+            // 导出矿井数据ToolStripMenuItem
+            // 
+            this.导出矿井数据ToolStripMenuItem.Name = "导出矿井数据ToolStripMenuItem";
+            this.导出矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.导出矿井数据ToolStripMenuItem.Text = "导出矿井数据";
             // 
             // errorProvider1
             // 
@@ -5095,75 +5164,6 @@ namespace GasFormsApp
             this.导出图片ToolStripMenuItem.Name = "导出图片ToolStripMenuItem";
             this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出图片ToolStripMenuItem.Text = "导出图片";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Red;
-            this.label36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label36.Location = new System.Drawing.Point(710, 296);
-            this.label36.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(167, 16);
-            this.label36.TabIndex = 1005;
-            this.label36.Text = "     煤     种     :";
-            // 
-            // CoalTypeComboBox
-            // 
-            this.CoalTypeComboBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CoalTypeComboBox.FormattingEnabled = true;
-            this.CoalTypeComboBox.Items.AddRange(new object[] {
-            "烟煤",
-            "无烟煤",
-            "褐煤"});
-            this.CoalTypeComboBox.Location = new System.Drawing.Point(880, 291);
-            this.CoalTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.CoalTypeComboBox.Name = "CoalTypeComboBox";
-            this.CoalTypeComboBox.Size = new System.Drawing.Size(167, 24);
-            this.CoalTypeComboBox.TabIndex = 1006;
-            this.CoalTypeComboBox.Text = "烟煤";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
-            this.label39.Location = new System.Drawing.Point(710, 20);
-            this.label39.Margin = new System.Windows.Forms.Padding(10, 20, 0, 10);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(167, 16);
-            this.label39.TabIndex = 1007;
-            this.label39.Text = "取 样 地 点 坐 标  :";
-            // 
-            // X_YTextBox
-            // 
-            this.X_YTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.X_YTextBox.Location = new System.Drawing.Point(880, 15);
-            this.X_YTextBox.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.X_YTextBox.Name = "X_YTextBox";
-            this.X_YTextBox.Size = new System.Drawing.Size(167, 26);
-            this.X_YTextBox.TabIndex = 1008;
-            // 
-            // WPSorOfficeLabel
-            // 
-            this.WPSorOfficeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.WPSorOfficeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WPSorOfficeLabel.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.WPSorOfficeLabel.ForeColor = System.Drawing.Color.White;
-            this.WPSorOfficeLabel.Location = new System.Drawing.Point(4, 68);
-            this.WPSorOfficeLabel.Name = "WPSorOfficeLabel";
-            this.WPSorOfficeLabel.Size = new System.Drawing.Size(116, 42);
-            this.WPSorOfficeLabel.TabIndex = 1013;
-            this.WPSorOfficeLabel.Text = "WPS";
-            this.WPSorOfficeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // 导出矿井数据ToolStripMenuItem
-            // 
-            this.导出矿井数据ToolStripMenuItem.Name = "导出矿井数据ToolStripMenuItem";
-            this.导出矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.导出矿井数据ToolStripMenuItem.Text = "导出矿井数据";
             // 
             // MainForm
             // 
