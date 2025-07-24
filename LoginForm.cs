@@ -15,7 +15,6 @@ using System.Net.Sockets;           // Socket通信
 using System.Net;                   // 网络类
 using System.Management;           // 获取硬件信息
 using System.IO;                   // 文件操作
-using System.Data.SQLite;
 using CredentialManagement;
 
 namespace GasFormsApp
