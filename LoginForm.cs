@@ -89,47 +89,47 @@ namespace GasFormsApp
             string data = GetMotherboardAndCpuId();
             string path = Path.Combine(Directory.GetCurrentDirectory(), "RegistrationCode.dat");
 
-            if (!File.Exists(path))
-            {
-                // 如果注册文件不存在，则创建并提示注册
-                File.WriteAllText(path, data, Encoding.UTF8);
-                MessageBox.Show($"未找到注册文件，请先注册使用该软件。{data}", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
-                return;
-            }
+            //if (!File.Exists(path))
+            //{
+            //    // 如果注册文件不存在，则创建并提示注册
+            //    File.WriteAllText(path, data, Encoding.UTF8);
+            //    MessageBox.Show($"未找到注册文件，请先注册使用该软件。{data}", "限制登录", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    this.Close();
+            //    return;
+            //}
 
-            try
-            {
-                // 读取注册文件中的签名
-                string readBase64 = File.ReadAllText(path);
-                byte[] signature = Convert.FromBase64String(readBase64);
+            //try
+            //{
+            //    // 读取注册文件中的签名
+            //    string readBase64 = File.ReadAllText(path);
+            //    byte[] signature = Convert.FromBase64String(readBase64);
 
-                // 公钥（硬编码）
-                string publicKey1 = "<RSAKeyValue><Modulus>8r/dKXr83gjs4TfRl+UzqDjOyMnY0rgj94uqXkwWeOMKYBMOJFzB24/N/V0pLVcld4IiSvHsvXghMDlGXGNT5sp9pg+wKPjEKWAcHeGUOgSLwb2PIkiM7933B6AUQbhRz8veEuKr5AYmZOYuB8BFRKAcdtJcubr0MCW7xgvcT6bdpKYqvKKwM3mQ1WKBBY17us5twGTlI+vIcr+U6lB9SuJhLtP7bJ7ASjq3qz54L9+V4ykGUfllU0+ynlp4V+oTNlUS4a7Jq4psR0C6kd2L+qw9OBJwKFTZl9WP/KlQrm/LQgJX+zOlWfWfqZYlJ/7EjNRz6++SikJVY3/PdneIgQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
-                string publicKey2 = "<RSAKeyValue><Modulus>wfhq2txWrvedzpMQtejut0amzU/x/NskwyvnIFMT90jJ7HZmfFaFI91H0elo5jw33U/HOp/T4sdz8z/qag0RkQf1uyhXkjLTVcI+DIrGQvwfwZE1DH/XGBjvQ09DiJhYPIauhUwg4QzGUn9HPmsMBDAphRTvsySWGiIG8w0kr/9Cy7KOunBaL14sgAUaF2w068m9SXpH3JHXMLgIUFauo/xEAsHA4MxKHQbe6M+V3cA/Qja3x/AItsuVfwTJasm7Pjy14T0k0IVN4K4+drblcOvZ6VC2YlPFYLMwDoY4SuEv6h7gOHmLJC9FynM6GG4ht/2kj0xW7e7d2YXLDUwCAQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
-                string publicKey3 = "<RSAKeyValue><Modulus>u9AnxyAWTl61i4BhNfIB5wr4oC5PLmzrQjMZhnzPr8QKeZ+HY56PIoNH6qm9MksypCLyVAqp5Vd0Qp7y+fcOFw+j05V0wX+GpSXdG+w+FiH/AH5arV0FQRdPuUY3gWeEc8rvculWtQwqywLQtUXNbyaB1oxW0O0bn05kZnWhIr29zGV1jdZFT90dlOUeLVv4EucAqCjZUPJ5aHzYx7QKQd7JOvFC6oCbwvyN9fYloxpEQHRuc+EdkE7o3kuajNKAmFavmbOkr4qnwe2OSwteyCy7xPg21utkZtvWgcRWUhM6QTQJh11nE5kvk5cxL4j6maLPv2Mnjfrg62s3cBgNHQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+            //    // 公钥（硬编码）
+            //    string publicKey1 = "<RSAKeyValue><Modulus>8r/dKXr83gjs4TfRl+UzqDjOyMnY0rgj94uqXkwWeOMKYBMOJFzB24/N/V0pLVcld4IiSvHsvXghMDlGXGNT5sp9pg+wKPjEKWAcHeGUOgSLwb2PIkiM7933B6AUQbhRz8veEuKr5AYmZOYuB8BFRKAcdtJcubr0MCW7xgvcT6bdpKYqvKKwM3mQ1WKBBY17us5twGTlI+vIcr+U6lB9SuJhLtP7bJ7ASjq3qz54L9+V4ykGUfllU0+ynlp4V+oTNlUS4a7Jq4psR0C6kd2L+qw9OBJwKFTZl9WP/KlQrm/LQgJX+zOlWfWfqZYlJ/7EjNRz6++SikJVY3/PdneIgQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+            //    string publicKey2 = "<RSAKeyValue><Modulus>wfhq2txWrvedzpMQtejut0amzU/x/NskwyvnIFMT90jJ7HZmfFaFI91H0elo5jw33U/HOp/T4sdz8z/qag0RkQf1uyhXkjLTVcI+DIrGQvwfwZE1DH/XGBjvQ09DiJhYPIauhUwg4QzGUn9HPmsMBDAphRTvsySWGiIG8w0kr/9Cy7KOunBaL14sgAUaF2w068m9SXpH3JHXMLgIUFauo/xEAsHA4MxKHQbe6M+V3cA/Qja3x/AItsuVfwTJasm7Pjy14T0k0IVN4K4+drblcOvZ6VC2YlPFYLMwDoY4SuEv6h7gOHmLJC9FynM6GG4ht/2kj0xW7e7d2YXLDUwCAQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
+            //    string publicKey3 = "<RSAKeyValue><Modulus>u9AnxyAWTl61i4BhNfIB5wr4oC5PLmzrQjMZhnzPr8QKeZ+HY56PIoNH6qm9MksypCLyVAqp5Vd0Qp7y+fcOFw+j05V0wX+GpSXdG+w+FiH/AH5arV0FQRdPuUY3gWeEc8rvculWtQwqywLQtUXNbyaB1oxW0O0bn05kZnWhIr29zGV1jdZFT90dlOUeLVv4EucAqCjZUPJ5aHzYx7QKQd7JOvFC6oCbwvyN9fYloxpEQHRuc+EdkE7o3kuajNKAmFavmbOkr4qnwe2OSwteyCy7xPg21utkZtvWgcRWUhM6QTQJh11nE5kvk5cxL4j6maLPv2Mnjfrg62s3cBgNHQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>";
                 
-                if (VerifyData(data, signature, publicKey1))
-                {
-                    version = 0; // 第一个公钥通过
-                }
-                else if (VerifyData(data, signature, publicKey2))
-                {
-                    version = 1; // 第二个公钥通过
-                }
-                else if (VerifyData(data, signature, publicKey3))
-                {
-                    version = 2; // 第三个公钥通过
-                }
-            }
-            catch (Exception ex)
-            {
-                // 读取失败异常处理
-                File.WriteAllText(path, data, Encoding.UTF8);
-                MessageBox.Show($"读取注册文件出错，请重新注册。{data}\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                return;
-            }
+            //    if (VerifyData(data, signature, publicKey1))
+            //    {
+            //        version = 0; // 第一个公钥通过
+            //    }
+            //    else if (VerifyData(data, signature, publicKey2))
+            //    {
+            //        version = 1; // 第二个公钥通过
+            //    }
+            //    else if (VerifyData(data, signature, publicKey3))
+            //    {
+            //        version = 2; // 第三个公钥通过
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    // 读取失败异常处理
+            //    File.WriteAllText(path, data, Encoding.UTF8);
+            //    MessageBox.Show($"读取注册文件出错，请重新注册。{data}\n" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    this.Close();
+            //    return;
+            //}
 
 
             // 启动检测是否存在，不存在则创建默认密码

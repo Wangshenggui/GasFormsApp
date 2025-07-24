@@ -1,0 +1,4 @@
+python -m compileall aaa.py
+
+
+"E:\\E-Desktop\\GitHub\\GasFormsApp\\Python_embed\\python.exe" aaa.py
