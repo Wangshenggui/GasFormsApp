@@ -1079,7 +1079,7 @@ namespace GasFormsApp.TabControl
                     {
                         // 启动Python进程进行计算
                         var pythonPath = @"Python_embed\python.exe"; // 嵌入式Python解释器
-                        var scriptPath = @"Python_embed\Python\aaa.py"; // Python脚本路径
+                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc"; // Python脚本路径
 
                         ProcessStartInfo psi = new ProcessStartInfo
                         {
