@@ -808,7 +808,7 @@ namespace GasFormsApp.TabControl
                 {
                     Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 }
-                MessageBox.Show($"{Word_resourceName}");
+                //MessageBox.Show($"{Word_resourceName}");
                 //string Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 Console.WriteLine($"寻找的记录表文件：{Word_resourceName}");
 
