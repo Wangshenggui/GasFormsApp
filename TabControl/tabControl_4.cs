@@ -157,8 +157,11 @@ namespace GasFormsApp.TabControl
                 P_TextBox = _mainForm.P_TextBox.Text
             };
 
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            string tempFolder = Path.Combine(currentDir, "TempData");
+            // 获取当前用户的 AppData\Roaming 路径
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            // 拼接程序专用目录和 TempData 文件夹
+            string tempFolder = Path.Combine(appData, "瓦斯含量测定数据分析系统", "TempData");
 
             // 如果不存在临时数据目录则创建
             if (!Directory.Exists(tempFolder))
@@ -167,6 +170,7 @@ namespace GasFormsApp.TabControl
             }
 
             string savePath = Path.Combine(tempFolder, "tabPage4_temp.bin");
+
 
             try
             {
@@ -199,14 +203,16 @@ namespace GasFormsApp.TabControl
         // 点击“恢复数据”按钮时调用，从文件反序列化数据并恢复到控件
         public void tabPage4RecoverDataButton_Click(object sender, EventArgs e)
         {
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            string loadPath = Path.Combine(currentDir, "TempData", "tabPage4_temp.bin");
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string tempFolder = Path.Combine(appData, "瓦斯含量测定数据分析系统", "TempData");
+            string loadPath = Path.Combine(tempFolder, "tabPage4_temp.bin");
 
             if (!File.Exists(loadPath))
             {
                 MessageBox.Show("找不到临时保存的数据！");
                 return;
             }
+
 
             try
             {

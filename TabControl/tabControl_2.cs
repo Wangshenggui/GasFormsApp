@@ -221,9 +221,18 @@ namespace GasFormsApp.TabControl
             };
             data.ImageBytes = _mainForm.pictureBox3.Image != null ? ImageToBytes(_mainForm.pictureBox3.Image) : null;
 
+            //// 确保临时数据目录存在
+            //string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            //string tempFolder = Path.Combine(currentDir, "TempData");
+            //if (!Directory.Exists(tempFolder))
+            //{
+            //    Directory.CreateDirectory(tempFolder);
+            //}
+
+            //string savePath = Path.Combine(tempFolder, "tabPage2_temp.bin");
             // 确保临时数据目录存在
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            string tempFolder = Path.Combine(currentDir, "TempData");
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string tempFolder = Path.Combine(appData, "瓦斯含量测定数据分析系统", "TempData");
             if (!Directory.Exists(tempFolder))
             {
                 Directory.CreateDirectory(tempFolder);
@@ -280,14 +289,24 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void tabPage2RecoverDataButton_Click(object sender, EventArgs e)
         {
-            string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-            string loadPath = Path.Combine(currentDir, "TempData", "tabPage2_temp.bin");
+            //string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+            //string loadPath = Path.Combine(currentDir, "TempData", "tabPage2_temp.bin");
+
+            //if (!File.Exists(loadPath))
+            //{
+            //    MessageBox.Show("找不到临时保存的数据！");
+            //    return;
+            //}
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string tempFolder = Path.Combine(appData, "瓦斯含量测定数据分析系统", "TempData");
+            string loadPath = Path.Combine(tempFolder, "tabPage2_temp.bin");
 
             if (!File.Exists(loadPath))
             {
                 MessageBox.Show("找不到临时保存的数据！");
                 return;
             }
+
 
             try
             {
@@ -301,29 +320,38 @@ namespace GasFormsApp.TabControl
 
                     // 恢复日期时间控件值
                     // 安全赋值，只在值变化时才设置
-                    DateTime newValue2 = DateTime.Parse(data._dateTimePicker2);
-                    if (_mainForm.dateTimePicker2.Value.Date != newValue2.Date)
+                    if (DateTime.TryParse(data._dateTimePicker2, out DateTime newValue2))
                     {
-                        _mainForm.dateTimePicker2.Value = newValue2;
+                        if (_mainForm.dateTimePicker2.Value != newValue2)
+                        {
+                            _mainForm.dateTimePicker2.Value = newValue2;
+                        }
                     }
 
-                    DateTime newValue3 = DateTime.Parse(data._dateTimePicker3);
-                    if (_mainForm.dateTimePicker3.Value.Date != newValue3.Date)
+                    if (DateTime.TryParse(data._dateTimePicker3, out DateTime newValue3))
                     {
-                        _mainForm.dateTimePicker3.Value = newValue3;
+                        if (_mainForm.dateTimePicker3.Value != newValue3)
+                        {
+                            _mainForm.dateTimePicker3.Value = newValue3;
+                        }
                     }
 
-                    DateTime newValue4 = DateTime.Parse(data._dateTimePicker4);
-                    if (_mainForm.dateTimePicker4.Value.Date != newValue4.Date)
+                    if (DateTime.TryParse(data._dateTimePicker4, out DateTime newValue4))
                     {
-                        _mainForm.dateTimePicker4.Value = newValue4;
+                        if (_mainForm.dateTimePicker4.Value != newValue4)
+                        {
+                            _mainForm.dateTimePicker4.Value = newValue4;
+                        }
                     }
 
-                    DateTime newValue5 = DateTime.Parse(data._dateTimePicker5);
-                    if (_mainForm.dateTimePicker5.Value.Date != newValue5.Date)
+                    if (DateTime.TryParse(data._dateTimePicker5, out DateTime newValue5))
                     {
-                        _mainForm.dateTimePicker5.Value = newValue5;
+                        if (_mainForm.dateTimePicker5.Value != newValue5)
+                        {
+                            _mainForm.dateTimePicker5.Value = newValue5;
+                        }
                     }
+
 
 
                     // 恢复下拉框和文本框值
