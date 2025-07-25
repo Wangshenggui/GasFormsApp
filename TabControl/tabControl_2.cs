@@ -551,11 +551,12 @@ namespace GasFormsApp.TabControl
             // 计算时间差并显示在t0TextBox中
             DateTime time1 = _mainForm.dateTimePicker4.Value;
             DateTime time2 = _mainForm.dateTimePicker5.Value;
-            time1 = new DateTime(time1.Year, time1.Month, time1.Day, time1.Hour, time1.Minute, 0);
-            time2 = new DateTime(time2.Year, time2.Month, time2.Day, time2.Hour, time2.Minute, 0);
+
             TimeSpan diff = time1 - time2;
-            int minutes = (int)diff.TotalMinutes;
-            _mainForm.t0TextBox.Text = minutes.ToString();
+            double minutes = diff.TotalMinutes;
+            _mainForm.t0TextBox.Text = minutes.ToString("F2"); // 保留两位小数
+
+
 
             // 验证t0TextBox输入
             string input = _mainForm.t0TextBox.Text;
