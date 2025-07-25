@@ -73,13 +73,21 @@ namespace GasFormsApp.TabControl
             _mainForm.dataGridView1.CellClick += dataGridView1_CellClick;
 
             _mainForm.恢复历史记录ToolStripMenuItem.Click += 恢复历史记录ToolStripMenuItem_Click;
-            
 
 
-            // 获取当前程序启动的目录路径
-            string basePath = Application.StartupPath;
-            // 构建目标文件夹路径（相对于启动目录的 SystemData\DataAdministrationForm）
-            string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+
+            // 获取当前用户的 AppData\Roaming 路径
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\SystemData\DataAdministrationForm
+            string rootPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
+
+            // 如果路径不存在则创建
+            if (!Directory.Exists(rootPath))
+            {
+                Directory.CreateDirectory(rootPath);
+            }
+
             // 加载该路径下的文件夹结构到树控件
             LoadFoldersToTree(rootPath);
             // 绑定树控件节点选中事件
@@ -222,17 +230,24 @@ namespace GasFormsApp.TabControl
             if (selectedNode != null && selectedNode.Tag is string path)
             {
                 string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
-                
-                // 你可以在这里使用 path 做后续操作，比如打开文件、修改、加载等
-                string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-                string loadPath = Path.Combine(currentDir, path, name + "_BinData.bin");
-                string imagePath = Path.Combine(currentDir, path, name + "_Image.png");  // 图片路径
-                //MessageBox.Show("选中节点的路径是：" + loadPath);
+
+                // 获取当前用户的 AppData\Roaming 路径
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统
+                string programDataDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
+
+                // 拼接最终的文件路径
+                string loadPath = Path.Combine(programDataDir, path, name + "_BinData.bin");
+                string imagePath = Path.Combine(programDataDir, path, name + "_Image.png");  // 图片路径
+
+                // MessageBox.Show("选中节点的路径是：" + loadPath);
                 if (!File.Exists(loadPath))
                 {
                     MessageBox.Show("找不到已保存的数据！");
                     return;
                 }
+
 
                 try
                 {
@@ -327,7 +342,11 @@ namespace GasFormsApp.TabControl
 
 
 
-                        var targetFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Python_embed", "Python", "images");
+                        // 获取当前用户的 AppData\Roaming 路径
+                        //string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                        // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\images
+                        var targetFolder = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
 
                         // 确保目标文件夹存在
                         if (!Directory.Exists(targetFolder))
@@ -337,7 +356,7 @@ namespace GasFormsApp.TabControl
 
                         if (File.Exists(imagePath))
                         {
-                            // 将图片复制到目标文件夹
+                            // 将图片复制到 AppData 下的目标文件夹
                             var targetPath = Path.Combine(targetFolder, "output_image.png");
                             try
                             {
@@ -362,6 +381,7 @@ namespace GasFormsApp.TabControl
                         {
                             MessageBox.Show("找不到图片文件：" + imagePath);
                         }
+
 
 
                         // 调用计算函数，防止tab4数据输出为0
@@ -791,7 +811,15 @@ namespace GasFormsApp.TabControl
             //timestamp = timestamp + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
             // === 复制图片 ===
             // 定义原始图片路径
-            string imageSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Python_embed", "Python", "images", "output_image.png");
+            // 获取当前用户的 AppData\Roaming 路径
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\Image
+            string imageFolderPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
+
+            // 拼接图片文件路径
+            string imageSourcePath = Path.Combine(imageFolderPath, "output_image.png");
+
 
             // 定义新的图片名称和路径
             //string newImageName = $"{timestamp}_Image.png";

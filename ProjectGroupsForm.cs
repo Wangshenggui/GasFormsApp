@@ -33,17 +33,20 @@ namespace GasFormsApp
             this.Left = (screenWidth - this.Width) / 2;
             this.Top = (screenHeight - this.Height) / 2;
 
-            // 获取程序启动目录
-            string basePath = Application.StartupPath;
+            // 获取当前用户的 AppData\Roaming 路径
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            // 构建目标文件夹路径：SystemData\DataAdministrationForm
-            string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+            // 拼接你的程序专用目录，比如：AppData\Roaming\瓦斯含量测定数据分析系统\SystemData\DataAdministrationForm
+            string rootPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
 
             // 如果路径不存在则创建
             if (!Directory.Exists(rootPath))
             {
                 Directory.CreateDirectory(rootPath);
             }
+
+            // rootPath 就是最终的可用路径
+
 
             treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
             treeView1.DrawNode += treeView1_DrawNode;
