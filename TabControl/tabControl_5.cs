@@ -819,8 +819,32 @@ namespace GasFormsApp.TabControl
                 //string Word_resourceName = Word_RecordName(MainForm.WcOutCheckBoxFlag, MainForm.GasCompCheckBoxFlag, MainForm.Wc选项数量, MainForm.Gas选项数量);
                 Console.WriteLine($"寻找的记录表文件：{Word_resourceName}");
 
+                // 1. 取模板文件原路径（假设在程序目录）
+                string templateFilePath = Path.Combine(Environment.CurrentDirectory, Word_resourceName);
+
+                // 2. 取当前用户的AppData路径（这里用Roaming，可以改成Local）
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                // 3. 定义你的程序专用目录，比如 AppData\Roaming\你的程序名
+                string programAppDataDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
+
+                // 4. 确保目录存在
+                if (!Directory.Exists(programAppDataDir))
+                {
+                    Directory.CreateDirectory(programAppDataDir);
+                }
+
+                string tempTemplatePath = Path.Combine(programAppDataDir, Word_resourceName);
+                // 如果文件不存在，则复制
+                if (!File.Exists(tempTemplatePath))
+                {
+                    File.Copy(templateFilePath, tempTemplatePath);
+                }
+
+
+
                 // 使用文件流读取模板
-                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+                using (FileStream resourceStream = new FileStream(tempTemplatePath, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {
@@ -906,7 +930,7 @@ namespace GasFormsApp.TabControl
                         try
                         {
                             var pythonPath = @"Python_embed\python.exe"; // Python解释器路径
-                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc"; // Python脚本路径
+                            var scriptPath = @"Python_embed\Python\bbb.py"; // Python脚本路径
 
                             ProcessStartInfo psi = new ProcessStartInfo
                             {
@@ -925,9 +949,11 @@ namespace GasFormsApp.TabControl
                                 process.WaitForExit();
 
                                 Console.WriteLine("Python output:\n" + output);
+                                MessageBox.Show($"Python output:{output}");
                                 if (!string.IsNullOrEmpty(error))
                                 {
                                     Console.WriteLine("Python error:\n" + error);
+                                    MessageBox.Show($"Python error:{error}");
                                 }
                             }
                         }
@@ -1078,8 +1104,31 @@ namespace GasFormsApp.TabControl
                 //MessageBox.Show($"资源名：{Word_resourceName}");
                 Console.WriteLine($"---------：{Word_resourceName}");
 
+                // 1. 取模板文件原路径（假设在程序目录）
+                string templateFilePath = Path.Combine(Environment.CurrentDirectory, Word_resourceName);
+
+                // 2. 取当前用户的AppData路径（这里用Roaming，可以改成Local）
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                // 3. 定义你的程序专用目录，比如 AppData\Roaming\你的程序名
+                string programAppDataDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
+
+                // 4. 确保目录存在
+                if (!Directory.Exists(programAppDataDir))
+                {
+                    Directory.CreateDirectory(programAppDataDir);
+                }
+
+                string tempTemplatePath = Path.Combine(programAppDataDir, Word_resourceName);
+                // 如果文件不存在，则复制
+                if (!File.Exists(tempTemplatePath))
+                {
+                    File.Copy(templateFilePath, tempTemplatePath);
+                }
+
+
                 // 使用文件流读取模板
-                using (FileStream resourceStream = new FileStream(Word_resourceName, FileMode.Open))
+                using (FileStream resourceStream = new FileStream(tempTemplatePath, FileMode.Open))
                 {
                     if (resourceStream == null)
                     {
@@ -1163,7 +1212,7 @@ namespace GasFormsApp.TabControl
                         try
                         {
                             var pythonPath = @"Python_embed\python.exe";
-                            var scriptPath = @"Python_embed\Python\bbb.cpython-312.pyc";
+                            var scriptPath = @"Python_embed\Python\bbb.py";
 
                             ProcessStartInfo psi = new ProcessStartInfo
                             {
@@ -1182,9 +1231,11 @@ namespace GasFormsApp.TabControl
                                 process.WaitForExit();
 
                                 Console.WriteLine("Python output:\n" + output);
+                                //MessageBox.Show($"Python output:{output}");
                                 if (!string.IsNullOrEmpty(error))
                                 {
                                     Console.WriteLine("Python error:\n" + error);
+                                    //MessageBox.Show($"Python error:{error}");
                                 }
                             }
                         }
