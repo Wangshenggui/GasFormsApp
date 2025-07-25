@@ -32,14 +32,14 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -414,6 +414,7 @@ namespace GasFormsApp
             this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.更改背景色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更改字体颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更改LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabControl6PictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl5PictureBox = new System.Windows.Forms.PictureBox();
@@ -424,7 +425,6 @@ namespace GasFormsApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.更改LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -1336,7 +1336,7 @@ namespace GasFormsApp
             this.t0TextBox.Size = new System.Drawing.Size(230, 26);
             this.t0TextBox.TabIndex = 6;
             this.t0TextBox.TabStop = false;
-            this.t0TextBox.Text = "0";
+            this.t0TextBox.Text = "0.00";
             // 
             // label90
             // 
@@ -4796,20 +4796,20 @@ namespace GasFormsApp
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(1, 61);
             this.treeView1.Name = "treeView1";
-            treeNode4.ImageKey = "项目";
-            treeNode4.Name = "项目";
-            treeNode4.SelectedImageKey = "项目";
-            treeNode4.Text = "项目";
-            treeNode5.ImageKey = "矿井.png";
-            treeNode5.Name = "矿井";
-            treeNode5.SelectedImageKey = "矿井.png";
-            treeNode5.Text = "矿井";
-            treeNode6.ImageKey = "根目录";
-            treeNode6.Name = "根目录";
-            treeNode6.SelectedImageKey = "根目录";
-            treeNode6.Text = "根目录";
+            treeNode1.ImageKey = "项目";
+            treeNode1.Name = "项目";
+            treeNode1.SelectedImageKey = "项目";
+            treeNode1.Text = "项目";
+            treeNode2.ImageKey = "矿井.png";
+            treeNode2.Name = "矿井";
+            treeNode2.SelectedImageKey = "矿井.png";
+            treeNode2.Text = "矿井";
+            treeNode3.ImageKey = "根目录";
+            treeNode3.Name = "根目录";
+            treeNode3.SelectedImageKey = "根目录";
+            treeNode3.Text = "根目录";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(298, 576);
             this.treeView1.TabIndex = 1;
@@ -4924,33 +4924,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 639);
@@ -5069,21 +5069,28 @@ namespace GasFormsApp
             this.更改字体颜色ToolStripMenuItem,
             this.更改LogToolStripMenuItem});
             this.ChangeColorContextMenuStrip.Name = "contextMenuStrip1";
-            this.ChangeColorContextMenuStrip.Size = new System.Drawing.Size(181, 92);
+            this.ChangeColorContextMenuStrip.Size = new System.Drawing.Size(149, 70);
             // 
             // 更改背景色ToolStripMenuItem
             // 
             this.更改背景色ToolStripMenuItem.Name = "更改背景色ToolStripMenuItem";
-            this.更改背景色ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.更改背景色ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.更改背景色ToolStripMenuItem.Text = "更改背景色";
             this.更改背景色ToolStripMenuItem.Click += new System.EventHandler(this.更改背景色ToolStripMenuItem_Click);
             // 
             // 更改字体颜色ToolStripMenuItem
             // 
             this.更改字体颜色ToolStripMenuItem.Name = "更改字体颜色ToolStripMenuItem";
-            this.更改字体颜色ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.更改字体颜色ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.更改字体颜色ToolStripMenuItem.Text = "更改字体颜色";
             this.更改字体颜色ToolStripMenuItem.Click += new System.EventHandler(this.更改字体颜色ToolStripMenuItem_Click);
+            // 
+            // 更改LogToolStripMenuItem
+            // 
+            this.更改LogToolStripMenuItem.Name = "更改LogToolStripMenuItem";
+            this.更改LogToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.更改LogToolStripMenuItem.Text = "更改Log";
+            this.更改LogToolStripMenuItem.Click += new System.EventHandler(this.更改LogToolStripMenuItem_Click);
             // 
             // tabControl6PictureBox
             // 
@@ -5167,13 +5174,6 @@ namespace GasFormsApp
             this.导出图片ToolStripMenuItem.Name = "导出图片ToolStripMenuItem";
             this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出图片ToolStripMenuItem.Text = "导出图片";
-            // 
-            // 更改LogToolStripMenuItem
-            // 
-            this.更改LogToolStripMenuItem.Name = "更改LogToolStripMenuItem";
-            this.更改LogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.更改LogToolStripMenuItem.Text = "更改Log";
-            this.更改LogToolStripMenuItem.Click += new System.EventHandler(this.更改LogToolStripMenuItem_Click);
             // 
             // MainForm
             // 
