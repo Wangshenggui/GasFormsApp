@@ -1099,11 +1099,11 @@ namespace GasFormsApp.TabControl
                             process.WaitForExit();
 
                             Console.WriteLine("Python output:\n" + output);
-                            MessageBox.Show($"Python output:{output}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //MessageBox.Show($"Python output:{output}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             if (!string.IsNullOrEmpty(error))
                             {
                                 Console.WriteLine("Python error:\n" + error);
-                                MessageBox.Show($"Python error:{error}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                //MessageBox.Show($"Python error:{error}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -1111,14 +1111,14 @@ namespace GasFormsApp.TabControl
                     {
                         Console.WriteLine($"执行程序时发生错误：{ex.Message}");
                     }
-                    MessageBox.Show($"aaa", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     // 读取Python计算的结果
                     using (var accessor = tempmmf.CreateViewAccessor(0, temptotalBytes))
                     {
-                        MessageBox.Show($"bbb", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         double[] values = new double[5];
                         double lastValue = 0;
-                        MessageBox.Show($"ccc", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         // 等待Python写入结果
                         int a = 0;
                         while (true)
@@ -1130,7 +1130,7 @@ namespace GasFormsApp.TabControl
                             }
                             Thread.Sleep(10); // 避免忙等待
                         }
-                        MessageBox.Show($"ddd", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         // 超时处理
                         if (a > 100 * 5)
                         {
