@@ -659,6 +659,7 @@ namespace GasFormsApp
             this.X_YTextBox.Name = "X_YTextBox";
             this.X_YTextBox.Size = new System.Drawing.Size(167, 26);
             this.X_YTextBox.TabIndex = 1008;
+            this.X_YTextBox.Text = "X=,Y=";
             // 
             // label7
             // 

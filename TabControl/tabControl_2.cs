@@ -1079,7 +1079,7 @@ namespace GasFormsApp.TabControl
                     {
                         // 启动Python进程进行计算
                         var pythonPath = @"Python_embed\python.exe"; // 嵌入式Python解释器
-                        var scriptPath = @"Python_embed\Python\aaa.cpython-312.pyc"; // Python脚本路径
+                        var scriptPath = @"Python_embed\Python\aaa.py"; // Python脚本路径
 
                         ProcessStartInfo psi = new ProcessStartInfo
                         {
@@ -1099,9 +1099,11 @@ namespace GasFormsApp.TabControl
                             process.WaitForExit();
 
                             Console.WriteLine("Python output:\n" + output);
+                            MessageBox.Show($"Python output:{output}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             if (!string.IsNullOrEmpty(error))
                             {
                                 Console.WriteLine("Python error:\n" + error);
+                                MessageBox.Show($"Python error:{error}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -1109,13 +1111,14 @@ namespace GasFormsApp.TabControl
                     {
                         Console.WriteLine($"执行程序时发生错误：{ex.Message}");
                     }
-
+                    MessageBox.Show($"aaa", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     // 读取Python计算的结果
                     using (var accessor = tempmmf.CreateViewAccessor(0, temptotalBytes))
                     {
+                        MessageBox.Show($"bbb", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         double[] values = new double[5];
                         double lastValue = 0;
-
+                        MessageBox.Show($"ccc", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         // 等待Python写入结果
                         int a = 0;
                         while (true)
@@ -1127,7 +1130,7 @@ namespace GasFormsApp.TabControl
                             }
                             Thread.Sleep(10); // 避免忙等待
                         }
-                        
+                        MessageBox.Show($"ddd", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         // 超时处理
                         if (a > 100 * 5)
                         {
@@ -1136,15 +1139,23 @@ namespace GasFormsApp.TabControl
                             return;
                         }
 
-                        // 加载Python生成的图表图片
-                        string imageName = "Python_embed\\Python\\images\\output_image.png";
-                        string imagePath = Path.Combine(Environment.CurrentDirectory, imageName);
+                        // 获取当前用户 AppData\Roaming 路径
+                        string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                        // 拼接你的程序名和 Image 子目录
+                        string imageDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
+
+                        // 拼接图片完整路径
+                        string imagePath = Path.Combine(imageDir, "output_image.png");
+
+                        // 设置图片显示模式
                         _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+
                         try
                         {
                             if (File.Exists(imagePath))
                             {
-                                // 使用流加载图片避免文件锁定
+                                // 使用流加载图片，避免文件锁定
                                 using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
                                 {
                                     _mainForm.pictureBox3.Image = Image.FromStream(fs);
@@ -1159,6 +1170,7 @@ namespace GasFormsApp.TabControl
                         {
                             MessageBox.Show("加载图片时出错：" + ex.Message);
                         }
+
 
                         // 读取所有计算结果
                         for (int i = 0; i < values.Length; i++)
