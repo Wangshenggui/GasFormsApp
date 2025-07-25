@@ -1190,14 +1190,12 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("无法获取文档名称，请确认表格中有选中行。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("请选择要处理的行。");
-                return;
-            }
 
-            string sourceFolder = "SystemData";
-            string recycleFolder = "DataReclamation";
+            // 获取当前用户 AppData\Roaming\瓦斯含量测定数据分析系统 下的路径
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string baseFolder = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
+            string sourceFolder = Path.Combine(baseFolder, "SystemData");
+            string recycleFolder = Path.Combine(baseFolder, "DataReclamation");
 
             // 确保回收目录存在
             if (!Directory.Exists(recycleFolder))
@@ -1215,11 +1213,11 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("请先选择一个节点！");
                 return;
             }
+
             string selectedPath = selectedNode.Tag?.ToString();
             if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
             {
-                //ReloadTableData(selectedPath);
-                //MessageBox.Show($"所选节点路径：{selectedPath}");
+                // 如果选中叶子节点，就用该节点路径作为 sourceFolder
                 imagePath = Path.Combine(selectedPath, $"{name}_Image.png");
                 binPath = Path.Combine(selectedPath, $"{name}_BinData.bin");
                 docPath = Path.Combine(selectedPath, $"{name}_Doc.docx");
@@ -1234,7 +1232,7 @@ namespace GasFormsApp.TabControl
                     {
                         string destFile = Path.Combine(recycleFolder, Path.GetFileName(sourceFile));
 
-                        // 如果目标文件已存在，可以选择覆盖或者改名，这里用覆盖
+                        // 如果目标文件已存在，可以选择覆盖或者改名，这里直接覆盖
                         if (File.Exists(destFile))
                             File.Delete(destFile);
 
@@ -1249,15 +1247,9 @@ namespace GasFormsApp.TabControl
 
                 MoveFileToRecycle(imagePath);
                 MoveFileToRecycle(binPath);
-                MoveFileToRecycle(docPath);  // 处理 Word 文件
+                MoveFileToRecycle(docPath);  // Word 文件
 
-                selectedNode = _mainForm.treeView1.SelectedNode;
-                if (selectedNode == null)
-                {
-                    MessageBox.Show("请先选择一个节点！");
-                    return;
-                }
-                selectedPath = selectedNode.Tag?.ToString();
+                // 刷新表格数据
                 if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
                 {
                     ReloadTableData(selectedPath);
@@ -1270,6 +1262,7 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show($"移动文件时发生错误：{ex.Message}");
             }
         }
+
 
 
         private string _currentKeyword = "";
