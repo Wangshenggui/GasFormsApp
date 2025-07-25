@@ -949,11 +949,11 @@ namespace GasFormsApp.TabControl
                                 process.WaitForExit();
 
                                 Console.WriteLine("Python output:\n" + output);
-                                MessageBox.Show($"Python output:{output}");
+                                //MessageBox.Show($"Python output:{output}");
                                 if (!string.IsNullOrEmpty(error))
                                 {
                                     Console.WriteLine("Python error:\n" + error);
-                                    MessageBox.Show($"Python error:{error}");
+                                    //MessageBox.Show($"Python error:{error}");
                                 }
                             }
                         }
