@@ -409,10 +409,18 @@ namespace GasFormsApp.TabControl
                 // e.Handled = true;  // （可选）告诉系统事件已经处理，阻止系统发出“叮”声
                 e.SuppressKeyPress = true; // 阻止回车键被进一步处理，避免输入框响铃或换行
 
-                // 获取当前程序启动的目录路径
-                string basePath = Application.StartupPath;
-                // 构建目标文件夹路径（相对于启动目录的 SystemData\DataAdministrationForm）
-                string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+                // 获取当前用户的 AppData\Roaming 路径
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                // 构建目标文件夹路径：AppData\Roaming\瓦斯含量测定数据分析系统\SystemData\DataAdministrationForm
+                string rootPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
+
+                // 如果路径不存在则创建
+                if (!Directory.Exists(rootPath))
+                {
+                    Directory.CreateDirectory(rootPath);
+                }
+
                 // 加载该路径下的文件夹结构到树控件
                 LoadFoldersToTree(rootPath);
                 if (_mainForm.treeView1.Nodes.Count > 0)
