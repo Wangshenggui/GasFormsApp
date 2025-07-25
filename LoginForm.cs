@@ -156,12 +156,12 @@ namespace GasFormsApp
                 txtName.Text = credential.Value.username;
             }
 
-            // 模拟已登录
-            MainForm main = new MainForm(false);
-            main.Version = version;
-            this.Hide();          // 可选：如果想等 main 关掉后再关闭登录窗体
-            main.ShowDialog();
-            this.Close();         // 当 main 关闭后，关闭登录窗体
+            //// 模拟已登录
+            //MainForm main = new MainForm(false);
+            //main.Version = version;
+            //this.Hide();          // 可选：如果想等 main 关掉后再关闭登录窗体
+            //main.ShowDialog();
+            //this.Close();         // 当 main 关闭后，关闭登录窗体
         }
 
 
