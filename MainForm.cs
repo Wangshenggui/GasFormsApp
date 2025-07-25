@@ -598,15 +598,67 @@ namespace GasFormsApp
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // 动态修改软件标题（非App上端）
-            string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "CompanyName.ini");
-            string companyName = ReadValue("CompanyName", "CompanyName", iniPath);
+            //string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "CompanyName.ini");
+            //string companyName = ReadValue("CompanyName", "CompanyName", iniPath);
+            //label2.Text = companyName;
+            // 1. 获取用户AppData目录
+            appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            // 2. 目标文件路径
+            targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+            targetFile = Path.Combine(targetDir, "CompanyName.ini");
+            // 3. 程序运行目录下的源文件路径
+            sourceFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "CompanyName.ini");
+            // 4. 检查目标目录是否存在，不存在则创建
+            if (!Directory.Exists(targetDir))
+            {
+                Directory.CreateDirectory(targetDir);
+            }
+            // 5. 检查目标文件是否存在，若不存在则复制
+            if (!File.Exists(targetFile))
+            {
+                if (File.Exists(sourceFile))
+                {
+                    File.Copy(sourceFile, targetFile);
+                }
+                else
+                {
+                    MessageBox.Show($"程序目录下源文件不存在：{sourceFile}");
+                    return;
+                }
+            }
+            string companyName = ReadValue("CompanyName", "CompanyName", sourceFile);
             label2.Text = companyName;
 
-            // 读取Log栏颜色
-            iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            // 1. 获取用户AppData目录
+            appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            // 2. 目标文件路径
+            targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+            targetFile = Path.Combine(targetDir, "ColorConfig.ini");
+            // 3. 程序运行目录下的源文件路径
+            sourceFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            // 4. 检查目标目录是否存在，不存在则创建
+            if (!Directory.Exists(targetDir))
+            {
+                Directory.CreateDirectory(targetDir);
+            }
+            // 5. 检查目标文件是否存在，若不存在则复制
+            if (!File.Exists(targetFile))
+            {
+                if (File.Exists(sourceFile))
+                {
+                    File.Copy(sourceFile, targetFile);
+                }
+                else
+                {
+                    MessageBox.Show($"程序目录下源文件不存在：{sourceFile}");
+                    return;
+                }
+            }
 
+            // 读取Log栏颜色
+            //iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
             // 读取字体颜色
-            string LogForeColor = ReadValue("ColorConfig", "LogForeColor", iniPath);
+            string LogForeColor = ReadValue("ColorConfig", "LogForeColor", targetFile);
             if (LogForeColor.StartsWith("#") && LogForeColor.Length == 9)
             {
                 byte a = Convert.ToByte(LogForeColor.Substring(1, 2), 16);
@@ -621,7 +673,7 @@ namespace GasFormsApp
             }
 
             // 读取背景颜色
-            string LogBackColor = ReadValue("ColorConfig", "LogBackColor", iniPath);
+            string LogBackColor = ReadValue("ColorConfig", "LogBackColor", targetFile);
             if (LogBackColor.StartsWith("#") && LogBackColor.Length == 9)
             {
                 byte a = Convert.ToByte(LogBackColor.Substring(1, 2), 16);
@@ -1009,7 +1061,18 @@ namespace GasFormsApp
             else
                 ChooseBackColor(preciseControl);
 
-            string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            //string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            // 获取当前用户的 AppData\Roaming 路径
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            // 拼接专用目录
+            string configDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+            // 确保目录存在
+            if (!Directory.Exists(configDir))
+            {
+                Directory.CreateDirectory(configDir);
+            }
+            // 拼接 INI 文件完整路径
+            string iniPath = Path.Combine(configDir, "ColorConfig.ini");
             IniFile ini = new IniFile(iniPath);
 
             // 保存背景色
@@ -1032,7 +1095,18 @@ namespace GasFormsApp
 
             ChooseForeColor(preciseControl);
 
-            string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            //string iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "ColorConfig.ini");
+            // 获取当前用户的 AppData\Roaming 路径
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            // 拼接专用目录
+            string configDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+            // 确保目录存在
+            if (!Directory.Exists(configDir))
+            {
+                Directory.CreateDirectory(configDir);
+            }
+            // 拼接 INI 文件完整路径
+            string iniPath = Path.Combine(configDir, "ColorConfig.ini");
             IniFile ini = new IniFile(iniPath);
 
             // 保存背景色
