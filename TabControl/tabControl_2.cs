@@ -554,7 +554,10 @@ namespace GasFormsApp.TabControl
 
             TimeSpan diff = time1 - time2;
             double minutes = diff.TotalMinutes;
-            _mainForm.t0TextBox.Text = minutes.ToString("F2"); // 保留两位小数
+            // 四舍五入到两位小数
+            double roundedMinutes = Math.Round(minutes, 2);
+            // 显示
+            _mainForm.t0TextBox.Text = roundedMinutes.ToString("F2");
 
 
 
