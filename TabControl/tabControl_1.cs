@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+﻿using AntdUI;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -38,6 +39,8 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage1RecoverDataButton.Click += tabPage1RecoverDataButton_Click;
 
             _mainForm.SampleModeComboBox.MouseWheel += SampleModeComboBox_MouseWheel;
+
+            _mainForm.tabPage1panel1.MouseWheel += tabPage1panel1_MouseWheel;
 
             // 批量注册内容更改事件
             InitializeTextMonitoring();
@@ -105,6 +108,17 @@ namespace GasFormsApp.TabControl
         private void SampleModeComboBox_MouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
+        }
+        private void tabPage1panel1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            // 目标 FlowLayoutPanel 控件
+            var targetPanel = _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1;
+
+            // 计算新的滚动位置
+            int newY = -targetPanel.AutoScrollPosition.Y - e.Delta;
+
+            // 设置滚动（只垂直方向，横向可自行加）
+            targetPanel.AutoScrollPosition = new Point(0, newY);
         }
 
         // 定义序列化保存的临时数据结构，存储 tabPage1 中各控件的数据
@@ -289,8 +303,23 @@ namespace GasFormsApp.TabControl
             else if (newWidth > 1055)
             {
                 newWidth = 1070;
-                newHeight = 370;
+                //newHeight = 370;
+                if (newHeight < 400)
+                {
+                    newHeight = 400;
+                }
             }
+            _mainForm.MineNameTextBox.Width = newWidth - 25;
+            _mainForm.SamplingSpotTextBox.Width = newWidth - 25;
+            _mainForm.X_YTextBox.Width = newWidth - 25;
+
+            _mainForm.tabPage1panel2.Width = SystemInformation.VerticalScrollBarWidth;
+            _mainForm.tabPage1panel2.Height = newHeight;
+            Point location = _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Location;
+            int x = location.X;
+            int y = location.Y;
+            _mainForm.tabPage1panel2.Location = new Point(newWidth+x- SystemInformation.VerticalScrollBarWidth, y);
+
 
             // 应用计算得到的宽高
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width = newWidth;
@@ -302,7 +331,7 @@ namespace GasFormsApp.TabControl
         }
 
         // 验证文本框非空及特定格式的辅助方法
-        private void ValidateEmptyTextBox(TextBox textBox)
+        private void ValidateEmptyTextBox(Input textBox)
         {
             if (textBox == _mainForm.SamplingSpotTextBox)
             {
@@ -352,7 +381,7 @@ namespace GasFormsApp.TabControl
         }
 
         // 验证文本框内容是否为非负数字的辅助方法
-        private void ValidateNumericTextBox(TextBox textBox)
+        private void ValidateNumericTextBox(Input textBox)
         {
             string input = textBox.Text;
             textBox.BackColor = SystemColors.Window;
