@@ -548,8 +548,44 @@ namespace GasFormsApp
             myTabLogic5.TabControl_5_InputCheckTimer_Tick();
 
             // 动态加载log
-            string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.png");
-            Image img = Image.FromFile(imagePath);
+            //string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.png");
+            //Image img = Image.FromFile(imagePath);
+            // 1. 获取用户AppData目录
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            // 2. 目标文件路径
+            string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+            string targetFile = Path.Combine(targetDir, "log.png");
+
+            // 3. 程序运行目录下的源文件路径
+            string sourceFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "log.png");
+
+            // 4. 检查目标目录是否存在，不存在则创建
+            if (!Directory.Exists(targetDir))
+            {
+                Directory.CreateDirectory(targetDir);
+            }
+
+            // 5. 检查目标文件是否存在，若不存在则复制
+            if (!File.Exists(targetFile))
+            {
+                if (File.Exists(sourceFile))
+                {
+                    File.Copy(sourceFile, targetFile);
+                }
+                else
+                {
+                    MessageBox.Show($"程序目录下源文件不存在：{sourceFile}");
+                    return;
+                }
+            }
+            //Image img = Image.FromFile(targetFile);
+            Image img;
+            using (var tempImg = Image.FromFile(targetFile))
+            {
+                img = new Bitmap(tempImg);  // 从文件读到内存
+            }
+
             int fixedHeight = 40;
             // 等比例缩放计算新宽度
             int newWidth = (int)(img.Width * (fixedHeight / (float)img.Height));
@@ -1008,6 +1044,57 @@ namespace GasFormsApp
             Color foreColor = preciseControl.ForeColor;
             string foreColorStr = $"#{foreColor.A:X2}{foreColor.R:X2}{foreColor.G:X2}{foreColor.B:X2}";
             ini.Write("ColorConfig", "LogForeColor", foreColorStr);
+        }
+
+        private void 更改LogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 获取 AppData\瓦斯含量测定数据分析系统\Image 目录
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+            string targetFile = Path.Combine(targetDir, "log.png");
+
+            // 确保目标目录存在
+            if (!Directory.Exists(targetDir))
+            {
+                Directory.CreateDirectory(targetDir);
+            }
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "请选择新的 log.png 文件";
+                openFileDialog.Filter = "PNG图片|*.png";
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    try
+                    {
+                        // 覆盖复制到目标目录
+                        File.Copy(selectedFilePath, targetFile, true); // true=覆盖
+
+                        //MessageBox.Show("图片替换成功！");
+
+                        // 如果要立即显示新图片（推荐加载到内存，避免锁文件）：
+                        using (var tempImg = Image.FromFile(targetFile))
+                        {
+                            var img = new Bitmap(tempImg);
+                            pictureBox1.Image = img;
+
+                            int fixedHeight = 40;
+                            int newWidth = (int)(img.Width * (fixedHeight / (float)img.Height));
+                            pictureBox1.Height = fixedHeight;
+                            pictureBox1.Width = newWidth;
+                            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("复制失败：" + ex.Message);
+                    }
+                }
+            }
         }
 
         private void ChooseBackColor(Control control)
