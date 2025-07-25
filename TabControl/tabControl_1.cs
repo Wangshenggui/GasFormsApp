@@ -213,6 +213,12 @@ namespace GasFormsApp.TabControl
             // 目标文件路径
             string loadPath = Path.Combine(tempFolder, "tabPage1_temp.bin");
 
+            if (!File.Exists(loadPath))
+            {
+                MessageBox.Show("找不到临时保存的数据！");
+                return;
+            }
+
             try
             {
                 // 打开文件并进行反序列化恢复数据

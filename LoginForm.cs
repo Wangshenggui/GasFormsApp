@@ -196,13 +196,13 @@ namespace GasFormsApp
                 {
                     if (credential.Value.password.Equals(txtPwd.Text.Trim(), StringComparison.OrdinalIgnoreCase))
                     {
-                        if (version == -1)
-                        {
-                            MessageBox.Show("验证失败，注册信息无效！");
-                            this.Close();
-                            return;
-                        }
-                        else
+                        //if (version == -1)
+                        //{
+                        //    MessageBox.Show("验证失败，注册信息无效！");
+                        //    this.Close();
+                        //    return;
+                        //}
+                        //else
                         {
                             MainForm main = new MainForm(false);
                             main.Version = version;

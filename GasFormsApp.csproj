@@ -361,9 +361,8 @@
     <None Include="Image\常压解吸.jpg" />
     <None Include="Image\基本信息.png" />
     <None Include="Image\井下解吸.jpg" />
-    <Content Include="Image\AppLog %282%29.png" />
-    <Content Include="Image\AppLog %283%29.png" />
     <Content Include="Image\AppLog.ico" />
+    <None Include="Image\AppLog.png" />
     <Content Include="Image\保存.png" />
     <None Include="Image\打勾.png" />
     <None Include="Image\打叉.png" />

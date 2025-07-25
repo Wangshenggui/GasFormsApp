@@ -63,7 +63,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GasFormsApp.Properties.Resources.AppLog__3_;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(23, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 120);
@@ -73,7 +73,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(117)))), ((int)(((byte)(193)))));
+            this.btnLogin.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(144)))), ((int)(((byte)(246)))));
             this.btnLogin.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogin.Location = new System.Drawing.Point(18, 163);
             this.btnLogin.Name = "btnLogin";
@@ -84,6 +84,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(189)))), ((int)(((byte)(193)))));
             this.btnClose.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnClose.Location = new System.Drawing.Point(195, 163);
             this.btnClose.Name = "btnClose";

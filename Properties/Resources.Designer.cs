@@ -63,9 +63,9 @@ namespace GasFormsApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap AppLog__3_ {
+        internal static System.Drawing.Bitmap AppLog {
             get {
-                object obj = ResourceManager.GetObject("AppLog (3)", resourceCulture);
+                object obj = ResourceManager.GetObject("AppLog", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
