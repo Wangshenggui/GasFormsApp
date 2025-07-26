@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using AntdUI;
+using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
@@ -208,7 +209,7 @@ namespace GasFormsApp.TabControl
             for (int i = start; i <= end; i++)
             {
                 var ctl = parent.Controls.Find($"{baseName}{i}", true).FirstOrDefault();
-                list.Add(ctl is TextBox tb ? tb.Text : "");
+                list.Add(ctl is Input tb ? tb.Text : "");
             }
             return list;
         }
@@ -376,7 +377,7 @@ namespace GasFormsApp.TabControl
                     for (int i = 1; i <= 60; i++)
                     {
                         var ctl = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault();
-                        if (ctl is TextBox tb && data.DesorbTextList.Count >= i)
+                        if (ctl is Input tb && data.DesorbTextList.Count >= i)
                         {
                             tb.Text = data.DesorbTextList[i - 1];
                         }
@@ -387,7 +388,7 @@ namespace GasFormsApp.TabControl
                     {
                         var ctl = _mainForm.Controls.Find($"DataNumTextBox{i}", true).FirstOrDefault();
                         int index = i - 31;
-                        if (ctl is TextBox tb && data.DataNumTextList.Count > index)
+                        if (ctl is Input tb && data.DataNumTextList.Count > index)
                         {
                             tb.Text = data.DataNumTextList[index];
                         }
@@ -529,7 +530,7 @@ namespace GasFormsApp.TabControl
         /// 验证数据编号文本框(31-60)的输入
         /// </summary>
         /// <param name="textBox">要验证的文本框</param>
-        private void ValidateNumericDataNumTextBox31_60(TextBox textBox)
+        private void ValidateNumericDataNumTextBox31_60(Input textBox)
         {
             string input = textBox.Text;
             textBox.BackColor = Color.FromArgb(192, 192, 255); // 重置颜色
@@ -552,7 +553,7 @@ namespace GasFormsApp.TabControl
         /// 验证数值文本框的输入
         /// </summary>
         /// <param name="textBox">要验证的文本框</param>
-        private void ValidateNumericTextBox(TextBox textBox)
+        private void ValidateNumericTextBox(Input textBox)
         {
             string input = textBox.Text;
             textBox.BackColor = SystemColors.Window; // 重置颜色
@@ -625,7 +626,7 @@ namespace GasFormsApp.TabControl
             {
                 string controlName = "DataNumTextBox" + i;
                 Control ctl = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
-                if (ctl is TextBox tb)
+                if (ctl is Input tb)
                 {
                     ValidateNumericDataNumTextBox31_60(tb);
                 }
@@ -636,7 +637,7 @@ namespace GasFormsApp.TabControl
             {
                 string controlName = "DesorbTextBox" + i;
                 Control ctl = _mainForm.Controls.Find(controlName, true).FirstOrDefault();
-                if (ctl is TextBox tb)
+                if (ctl is Input tb)
                 {
                     ValidateNumericTextBox(tb);
                 }
@@ -652,12 +653,12 @@ namespace GasFormsApp.TabControl
         /// </summary>
         public void DigitalLegitimacyVerification_Tick()
         {
-            List<TextBox> boxes = new List<TextBox>();
+            List<Input> boxes = new List<Input>();
 
             // 收集所有解吸量文本框
             for (int i = 1; i <= 60; i++)
             {
-                var tb = _mainForm.Controls.Find("DesorbTextBox" + i, true).FirstOrDefault() as TextBox;
+                var tb = _mainForm.Controls.Find("DesorbTextBox" + i, true).FirstOrDefault() as Input;
                 if (tb != null)
                 {
                     boxes.Add(tb);
@@ -1036,11 +1037,11 @@ namespace GasFormsApp.TabControl
             _mainForm.SampLossVolTextBox.Text = "0";
             
             // 收集所有解吸量文本框
-            TextBox[] DesorbTextBox = new TextBox[60];
+            Input[] DesorbTextBox = new Input[60];
             for (int i = 0; i < 60; i++)
             {
                 string controlName = $"DesorbTextBox{i + 1}";
-                DesorbTextBox[i] = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
+                DesorbTextBox[i] = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as Input;
             }
 
             // 获取t0值
@@ -1069,15 +1070,16 @@ namespace GasFormsApp.TabControl
                 // 前30个数据点使用固定时间值
                 if (i < 30)
                 {
-                    controlName = $"DataNumLabel{a}";
-                    var textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as Label;
-                    Console.WriteLine($"取标签值:{controlName}->{textBox.Text}");
+                    //controlName = $"DataNumLabel{a}";
+                    //var textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as Input;
+                    //Console.WriteLine($"取标签值:{controlName}->{textBox.Text}");
                     Sqrt_Value = Math.Sqrt(t0 + a);
                 }
                 else if (i >= 30) // 后30个数据点使用文本框中的时间值
                 {
+                    //Console.WriteLine($"{i}");
                     controlName = $"DataNumTextBox{a}";
-                    var textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as TextBox;
+                    var textBox = _mainForm.Controls.Find(controlName, true).FirstOrDefault() as Input;
                     Console.WriteLine($"取DataNumTextBox:{controlName}->{textBox.Text}");
                     if (!string.IsNullOrEmpty(textBox.Text))
                         Sqrt_Value = Math.Sqrt(t0 + (double)Convert.ToDecimal(textBox.Text.Trim()));
@@ -1258,7 +1260,7 @@ namespace GasFormsApp.TabControl
                         for (int i = 1; i <= 60; i++)
                         {
                             string key = $"D{i:000}";
-                            var textBox = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+                            var textBox = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as Input;
 
                             if (textBox != null)
                             {

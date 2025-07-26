@@ -78,6 +78,7 @@ namespace GasFormsApp
             this.label4 = new System.Windows.Forms.Label();
             this.SamplingDepthTextBox = new AntdUI.Input();
             this.label8 = new System.Windows.Forms.Label();
+            this.SamplingTimeDateTimePicker = new AntdUI.DatePicker();
             this.label37 = new System.Windows.Forms.Label();
             this.DrillInclinationTextBox = new AntdUI.Input();
             this.label38 = new System.Windows.Forms.Label();
@@ -90,6 +91,8 @@ namespace GasFormsApp
             this.tabPage1RecoverDataButton = new GasFormsApp.UI.UCButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage2DoubleBufferedPanel2 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.tabPage2panel2 = new System.Windows.Forms.Panel();
+            this.tabPage2panel1 = new System.Windows.Forms.Panel();
             this.tabPage2DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
             this.tabPage2panel7 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage2DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
@@ -108,6 +111,36 @@ namespace GasFormsApp
             this.label32 = new System.Windows.Forms.Label();
             this.tabPage2panel8 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage2panel3 = new System.Windows.Forms.Panel();
+            this.DesorbTextBox30 = new AntdUI.Input();
+            this.DesorbTextBox29 = new AntdUI.Input();
+            this.DesorbTextBox28 = new AntdUI.Input();
+            this.DesorbTextBox27 = new AntdUI.Input();
+            this.DesorbTextBox26 = new AntdUI.Input();
+            this.DesorbTextBox25 = new AntdUI.Input();
+            this.DesorbTextBox24 = new AntdUI.Input();
+            this.DesorbTextBox23 = new AntdUI.Input();
+            this.DesorbTextBox22 = new AntdUI.Input();
+            this.DesorbTextBox21 = new AntdUI.Input();
+            this.DesorbTextBox20 = new AntdUI.Input();
+            this.DesorbTextBox19 = new AntdUI.Input();
+            this.DesorbTextBox18 = new AntdUI.Input();
+            this.DesorbTextBox17 = new AntdUI.Input();
+            this.DesorbTextBox16 = new AntdUI.Input();
+            this.DesorbTextBox15 = new AntdUI.Input();
+            this.DesorbTextBox14 = new AntdUI.Input();
+            this.DesorbTextBox13 = new AntdUI.Input();
+            this.DesorbTextBox12 = new AntdUI.Input();
+            this.DesorbTextBox11 = new AntdUI.Input();
+            this.DesorbTextBox10 = new AntdUI.Input();
+            this.DesorbTextBox9 = new AntdUI.Input();
+            this.DesorbTextBox8 = new AntdUI.Input();
+            this.DesorbTextBox7 = new AntdUI.Input();
+            this.DesorbTextBox6 = new AntdUI.Input();
+            this.DesorbTextBox5 = new AntdUI.Input();
+            this.DesorbTextBox4 = new AntdUI.Input();
+            this.DesorbTextBox3 = new AntdUI.Input();
+            this.DesorbTextBox2 = new AntdUI.Input();
+            this.DesorbTextBox1 = new AntdUI.Input();
             this.label24 = new System.Windows.Forms.Label();
             this.DataNumLabel26 = new System.Windows.Forms.Label();
             this.DataNumLabel16 = new System.Windows.Forms.Label();
@@ -141,100 +174,40 @@ namespace GasFormsApp
             this.DataNumLabel21 = new System.Windows.Forms.Label();
             this.DataNumLabel11 = new System.Windows.Forms.Label();
             this.DataNumLabel1 = new System.Windows.Forms.Label();
-            this.DesorbTextBox6 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox16 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox25 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox26 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox15 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox5 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox7 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox17 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox24 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox27 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox14 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox4 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox8 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox18 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox23 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox28 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox13 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox3 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox9 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox19 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox22 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox29 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox12 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox2 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox21 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox10 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox20 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox11 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox1 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox30 = new System.Windows.Forms.TextBox();
             this.tabPage2panel4 = new System.Windows.Forms.Panel();
+            this.DesorbTextBox60 = new AntdUI.Input();
             this.label27 = new System.Windows.Forms.Label();
+            this.DesorbTextBox59 = new AntdUI.Input();
             this.label29 = new System.Windows.Forms.Label();
-            this.DesorbTextBox36 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox58 = new AntdUI.Input();
             this.label28 = new System.Windows.Forms.Label();
-            this.DesorbTextBox46 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox55 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox56 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox45 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox60 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox35 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox59 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox37 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox58 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox47 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox57 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox54 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox56 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox57 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox55 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox44 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox54 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox34 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox53 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox38 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox52 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox48 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox51 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox53 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox50 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox58 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox49 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox43 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox48 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox33 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox47 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox39 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox46 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox49 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox45 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox52 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox44 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox59 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox43 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox42 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox42 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox32 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox41 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox51 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox40 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox40 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox39 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox50 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox38 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox41 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox37 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox31 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox36 = new System.Windows.Forms.TextBox();
-            this.DesorbTextBox60 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox35 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox31 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox34 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox32 = new System.Windows.Forms.TextBox();
-            this.DataNumTextBox33 = new System.Windows.Forms.TextBox();
+            this.DesorbTextBox57 = new AntdUI.Input();
+            this.DesorbTextBox56 = new AntdUI.Input();
+            this.DesorbTextBox55 = new AntdUI.Input();
+            this.DesorbTextBox54 = new AntdUI.Input();
+            this.DesorbTextBox53 = new AntdUI.Input();
+            this.DesorbTextBox52 = new AntdUI.Input();
+            this.DesorbTextBox50 = new AntdUI.Input();
+            this.DesorbTextBox51 = new AntdUI.Input();
+            this.DesorbTextBox49 = new AntdUI.Input();
+            this.DesorbTextBox48 = new AntdUI.Input();
+            this.DesorbTextBox47 = new AntdUI.Input();
+            this.DesorbTextBox46 = new AntdUI.Input();
+            this.DesorbTextBox45 = new AntdUI.Input();
+            this.DesorbTextBox44 = new AntdUI.Input();
+            this.DesorbTextBox43 = new AntdUI.Input();
+            this.DesorbTextBox42 = new AntdUI.Input();
+            this.DesorbTextBox41 = new AntdUI.Input();
+            this.DesorbTextBox40 = new AntdUI.Input();
+            this.DesorbTextBox39 = new AntdUI.Input();
+            this.DesorbTextBox38 = new AntdUI.Input();
+            this.DesorbTextBox37 = new AntdUI.Input();
+            this.DesorbTextBox36 = new AntdUI.Input();
+            this.DesorbTextBox35 = new AntdUI.Input();
+            this.DesorbTextBox34 = new AntdUI.Input();
+            this.DesorbTextBox33 = new AntdUI.Input();
+            this.DesorbTextBox32 = new AntdUI.Input();
+            this.DesorbTextBox31 = new AntdUI.Input();
             this.tabPage2panel9 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage2panel5 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
@@ -424,9 +397,36 @@ namespace GasFormsApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SamplingTimeDateTimePicker = new AntdUI.DatePicker();
-            this.tabPage2panel1 = new System.Windows.Forms.Panel();
-            this.tabPage2panel2 = new System.Windows.Forms.Panel();
+            this.DataNumTextBox40 = new AntdUI.Input();
+            this.DataNumTextBox39 = new AntdUI.Input();
+            this.DataNumTextBox38 = new AntdUI.Input();
+            this.DataNumTextBox37 = new AntdUI.Input();
+            this.DataNumTextBox36 = new AntdUI.Input();
+            this.DataNumTextBox35 = new AntdUI.Input();
+            this.DataNumTextBox34 = new AntdUI.Input();
+            this.DataNumTextBox33 = new AntdUI.Input();
+            this.DataNumTextBox32 = new AntdUI.Input();
+            this.DataNumTextBox31 = new AntdUI.Input();
+            this.DataNumTextBox50 = new AntdUI.Input();
+            this.DataNumTextBox49 = new AntdUI.Input();
+            this.DataNumTextBox48 = new AntdUI.Input();
+            this.DataNumTextBox47 = new AntdUI.Input();
+            this.DataNumTextBox46 = new AntdUI.Input();
+            this.DataNumTextBox45 = new AntdUI.Input();
+            this.DataNumTextBox44 = new AntdUI.Input();
+            this.DataNumTextBox43 = new AntdUI.Input();
+            this.DataNumTextBox42 = new AntdUI.Input();
+            this.DataNumTextBox41 = new AntdUI.Input();
+            this.DataNumTextBox60 = new AntdUI.Input();
+            this.DataNumTextBox59 = new AntdUI.Input();
+            this.DataNumTextBox58 = new AntdUI.Input();
+            this.DataNumTextBox57 = new AntdUI.Input();
+            this.DataNumTextBox56 = new AntdUI.Input();
+            this.DataNumTextBox55 = new AntdUI.Input();
+            this.DataNumTextBox54 = new AntdUI.Input();
+            this.DataNumTextBox53 = new AntdUI.Input();
+            this.DataNumTextBox52 = new AntdUI.Input();
+            this.DataNumTextBox51 = new AntdUI.Input();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -993,6 +993,18 @@ namespace GasFormsApp
             this.label8.TabIndex = 2;
             this.label8.Text = "取   样    时   间 :";
             // 
+            // SamplingTimeDateTimePicker
+            // 
+            this.SamplingTimeDateTimePicker.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SamplingTimeDateTimePicker.Format = "yyyy年 MM月dd日";
+            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(180, 371);
+            this.SamplingTimeDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
+            this.SamplingTimeDateTimePicker.Placement = AntdUI.TAlignFrom.Top;
+            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(167, 35);
+            this.SamplingTimeDateTimePicker.TabIndex = 17;
+            this.SamplingTimeDateTimePicker.ValueTimeHorizontal = true;
+            // 
             // label37
             // 
             this.label37.AutoSize = true;
@@ -1155,6 +1167,22 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedPanel2.Name = "tabPage2DoubleBufferedPanel2";
             this.tabPage2DoubleBufferedPanel2.Size = new System.Drawing.Size(1435, 647);
             this.tabPage2DoubleBufferedPanel2.TabIndex = 1002;
+            // 
+            // tabPage2panel2
+            // 
+            this.tabPage2panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage2panel2.Location = new System.Drawing.Point(1239, 250);
+            this.tabPage2panel2.Name = "tabPage2panel2";
+            this.tabPage2panel2.Size = new System.Drawing.Size(77, 100);
+            this.tabPage2panel2.TabIndex = 1;
+            // 
+            // tabPage2panel1
+            // 
+            this.tabPage2panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage2panel1.Location = new System.Drawing.Point(1239, 97);
+            this.tabPage2panel1.Name = "tabPage2panel1";
+            this.tabPage2panel1.Size = new System.Drawing.Size(77, 100);
+            this.tabPage2panel1.TabIndex = 0;
             // 
             // tabPage2DoubleBufferedFlowLayoutPanel1
             // 
@@ -1395,6 +1423,36 @@ namespace GasFormsApp
             // tabPage2panel3
             // 
             this.tabPage2panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox30);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox29);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox28);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox27);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox26);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox25);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox24);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox23);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox22);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox21);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox20);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox19);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox18);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox17);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox16);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox15);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox14);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox13);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox12);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox11);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox10);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox9);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox8);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox7);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox6);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox5);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox4);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox3);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox2);
+            this.tabPage2panel3.Controls.Add(this.DesorbTextBox1);
             this.tabPage2panel3.Controls.Add(this.label24);
             this.tabPage2panel3.Controls.Add(this.DataNumLabel26);
             this.tabPage2panel3.Controls.Add(this.DataNumLabel16);
@@ -1428,40 +1486,280 @@ namespace GasFormsApp
             this.tabPage2panel3.Controls.Add(this.DataNumLabel21);
             this.tabPage2panel3.Controls.Add(this.DataNumLabel11);
             this.tabPage2panel3.Controls.Add(this.DataNumLabel1);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox6);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox16);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox25);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox26);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox15);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox5);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox7);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox17);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox24);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox27);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox14);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox4);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox8);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox18);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox23);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox28);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox13);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox3);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox9);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox19);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox22);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox29);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox12);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox2);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox21);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox10);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox20);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox11);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox1);
-            this.tabPage2panel3.Controls.Add(this.DesorbTextBox30);
             this.tabPage2panel3.Location = new System.Drawing.Point(3, 112);
             this.tabPage2panel3.Name = "tabPage2panel3";
             this.tabPage2panel3.Size = new System.Drawing.Size(403, 346);
             this.tabPage2panel3.TabIndex = 1;
+            // 
+            // DesorbTextBox30
+            // 
+            this.DesorbTextBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox30.Location = new System.Drawing.Point(315, 314);
+            this.DesorbTextBox30.Name = "DesorbTextBox30";
+            this.DesorbTextBox30.PlaceholderText = "";
+            this.DesorbTextBox30.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox30.TabIndex = 175;
+            // 
+            // DesorbTextBox29
+            // 
+            this.DesorbTextBox29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox29.Location = new System.Drawing.Point(315, 282);
+            this.DesorbTextBox29.Name = "DesorbTextBox29";
+            this.DesorbTextBox29.PlaceholderText = "";
+            this.DesorbTextBox29.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox29.TabIndex = 174;
+            // 
+            // DesorbTextBox28
+            // 
+            this.DesorbTextBox28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox28.Location = new System.Drawing.Point(315, 250);
+            this.DesorbTextBox28.Name = "DesorbTextBox28";
+            this.DesorbTextBox28.PlaceholderText = "";
+            this.DesorbTextBox28.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox28.TabIndex = 173;
+            // 
+            // DesorbTextBox27
+            // 
+            this.DesorbTextBox27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox27.Location = new System.Drawing.Point(315, 218);
+            this.DesorbTextBox27.Name = "DesorbTextBox27";
+            this.DesorbTextBox27.PlaceholderText = "";
+            this.DesorbTextBox27.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox27.TabIndex = 172;
+            // 
+            // DesorbTextBox26
+            // 
+            this.DesorbTextBox26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox26.Location = new System.Drawing.Point(315, 186);
+            this.DesorbTextBox26.Name = "DesorbTextBox26";
+            this.DesorbTextBox26.PlaceholderText = "";
+            this.DesorbTextBox26.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox26.TabIndex = 171;
+            // 
+            // DesorbTextBox25
+            // 
+            this.DesorbTextBox25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox25.Location = new System.Drawing.Point(315, 154);
+            this.DesorbTextBox25.Name = "DesorbTextBox25";
+            this.DesorbTextBox25.PlaceholderText = "";
+            this.DesorbTextBox25.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox25.TabIndex = 170;
+            // 
+            // DesorbTextBox24
+            // 
+            this.DesorbTextBox24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox24.Location = new System.Drawing.Point(315, 122);
+            this.DesorbTextBox24.Name = "DesorbTextBox24";
+            this.DesorbTextBox24.PlaceholderText = "";
+            this.DesorbTextBox24.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox24.TabIndex = 169;
+            // 
+            // DesorbTextBox23
+            // 
+            this.DesorbTextBox23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox23.Location = new System.Drawing.Point(315, 90);
+            this.DesorbTextBox23.Name = "DesorbTextBox23";
+            this.DesorbTextBox23.PlaceholderText = "";
+            this.DesorbTextBox23.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox23.TabIndex = 168;
+            // 
+            // DesorbTextBox22
+            // 
+            this.DesorbTextBox22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox22.Location = new System.Drawing.Point(315, 58);
+            this.DesorbTextBox22.Name = "DesorbTextBox22";
+            this.DesorbTextBox22.PlaceholderText = "";
+            this.DesorbTextBox22.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox22.TabIndex = 167;
+            // 
+            // DesorbTextBox21
+            // 
+            this.DesorbTextBox21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox21.Location = new System.Drawing.Point(315, 26);
+            this.DesorbTextBox21.Name = "DesorbTextBox21";
+            this.DesorbTextBox21.PlaceholderText = "";
+            this.DesorbTextBox21.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox21.TabIndex = 166;
+            // 
+            // DesorbTextBox20
+            // 
+            this.DesorbTextBox20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox20.Location = new System.Drawing.Point(184, 309);
+            this.DesorbTextBox20.Name = "DesorbTextBox20";
+            this.DesorbTextBox20.PlaceholderText = "";
+            this.DesorbTextBox20.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox20.TabIndex = 165;
+            // 
+            // DesorbTextBox19
+            // 
+            this.DesorbTextBox19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox19.Location = new System.Drawing.Point(184, 277);
+            this.DesorbTextBox19.Name = "DesorbTextBox19";
+            this.DesorbTextBox19.PlaceholderText = "";
+            this.DesorbTextBox19.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox19.TabIndex = 164;
+            // 
+            // DesorbTextBox18
+            // 
+            this.DesorbTextBox18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox18.Location = new System.Drawing.Point(184, 245);
+            this.DesorbTextBox18.Name = "DesorbTextBox18";
+            this.DesorbTextBox18.PlaceholderText = "";
+            this.DesorbTextBox18.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox18.TabIndex = 163;
+            // 
+            // DesorbTextBox17
+            // 
+            this.DesorbTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox17.Location = new System.Drawing.Point(184, 213);
+            this.DesorbTextBox17.Name = "DesorbTextBox17";
+            this.DesorbTextBox17.PlaceholderText = "";
+            this.DesorbTextBox17.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox17.TabIndex = 162;
+            // 
+            // DesorbTextBox16
+            // 
+            this.DesorbTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox16.Location = new System.Drawing.Point(184, 181);
+            this.DesorbTextBox16.Name = "DesorbTextBox16";
+            this.DesorbTextBox16.PlaceholderText = "";
+            this.DesorbTextBox16.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox16.TabIndex = 161;
+            // 
+            // DesorbTextBox15
+            // 
+            this.DesorbTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox15.Location = new System.Drawing.Point(184, 149);
+            this.DesorbTextBox15.Name = "DesorbTextBox15";
+            this.DesorbTextBox15.PlaceholderText = "";
+            this.DesorbTextBox15.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox15.TabIndex = 160;
+            // 
+            // DesorbTextBox14
+            // 
+            this.DesorbTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox14.Location = new System.Drawing.Point(184, 117);
+            this.DesorbTextBox14.Name = "DesorbTextBox14";
+            this.DesorbTextBox14.PlaceholderText = "";
+            this.DesorbTextBox14.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox14.TabIndex = 159;
+            // 
+            // DesorbTextBox13
+            // 
+            this.DesorbTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox13.Location = new System.Drawing.Point(184, 85);
+            this.DesorbTextBox13.Name = "DesorbTextBox13";
+            this.DesorbTextBox13.PlaceholderText = "";
+            this.DesorbTextBox13.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox13.TabIndex = 158;
+            // 
+            // DesorbTextBox12
+            // 
+            this.DesorbTextBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox12.Location = new System.Drawing.Point(184, 53);
+            this.DesorbTextBox12.Name = "DesorbTextBox12";
+            this.DesorbTextBox12.PlaceholderText = "";
+            this.DesorbTextBox12.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox12.TabIndex = 157;
+            // 
+            // DesorbTextBox11
+            // 
+            this.DesorbTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox11.Location = new System.Drawing.Point(184, 21);
+            this.DesorbTextBox11.Name = "DesorbTextBox11";
+            this.DesorbTextBox11.PlaceholderText = "";
+            this.DesorbTextBox11.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox11.TabIndex = 156;
+            // 
+            // DesorbTextBox10
+            // 
+            this.DesorbTextBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox10.Location = new System.Drawing.Point(47, 309);
+            this.DesorbTextBox10.Name = "DesorbTextBox10";
+            this.DesorbTextBox10.PlaceholderText = "";
+            this.DesorbTextBox10.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox10.TabIndex = 155;
+            // 
+            // DesorbTextBox9
+            // 
+            this.DesorbTextBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox9.Location = new System.Drawing.Point(47, 277);
+            this.DesorbTextBox9.Name = "DesorbTextBox9";
+            this.DesorbTextBox9.PlaceholderText = "";
+            this.DesorbTextBox9.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox9.TabIndex = 154;
+            // 
+            // DesorbTextBox8
+            // 
+            this.DesorbTextBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox8.Location = new System.Drawing.Point(47, 245);
+            this.DesorbTextBox8.Name = "DesorbTextBox8";
+            this.DesorbTextBox8.PlaceholderText = "";
+            this.DesorbTextBox8.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox8.TabIndex = 153;
+            // 
+            // DesorbTextBox7
+            // 
+            this.DesorbTextBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox7.Location = new System.Drawing.Point(47, 213);
+            this.DesorbTextBox7.Name = "DesorbTextBox7";
+            this.DesorbTextBox7.PlaceholderText = "";
+            this.DesorbTextBox7.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox7.TabIndex = 152;
+            // 
+            // DesorbTextBox6
+            // 
+            this.DesorbTextBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox6.Location = new System.Drawing.Point(47, 181);
+            this.DesorbTextBox6.Name = "DesorbTextBox6";
+            this.DesorbTextBox6.PlaceholderText = "";
+            this.DesorbTextBox6.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox6.TabIndex = 151;
+            // 
+            // DesorbTextBox5
+            // 
+            this.DesorbTextBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox5.Location = new System.Drawing.Point(47, 149);
+            this.DesorbTextBox5.Name = "DesorbTextBox5";
+            this.DesorbTextBox5.PlaceholderText = "";
+            this.DesorbTextBox5.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox5.TabIndex = 150;
+            // 
+            // DesorbTextBox4
+            // 
+            this.DesorbTextBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox4.Location = new System.Drawing.Point(47, 117);
+            this.DesorbTextBox4.Name = "DesorbTextBox4";
+            this.DesorbTextBox4.PlaceholderText = "";
+            this.DesorbTextBox4.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox4.TabIndex = 149;
+            // 
+            // DesorbTextBox3
+            // 
+            this.DesorbTextBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox3.Location = new System.Drawing.Point(47, 85);
+            this.DesorbTextBox3.Name = "DesorbTextBox3";
+            this.DesorbTextBox3.PlaceholderText = "";
+            this.DesorbTextBox3.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox3.TabIndex = 148;
+            // 
+            // DesorbTextBox2
+            // 
+            this.DesorbTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox2.Location = new System.Drawing.Point(47, 53);
+            this.DesorbTextBox2.Name = "DesorbTextBox2";
+            this.DesorbTextBox2.PlaceholderText = "";
+            this.DesorbTextBox2.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox2.TabIndex = 147;
+            // 
+            // DesorbTextBox1
+            // 
+            this.DesorbTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox1.Location = new System.Drawing.Point(47, 21);
+            this.DesorbTextBox1.Name = "DesorbTextBox1";
+            this.DesorbTextBox1.PlaceholderText = "";
+            this.DesorbTextBox1.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox1.TabIndex = 146;
             // 
             // label24
             // 
@@ -1859,316 +2157,85 @@ namespace GasFormsApp
             this.DataNumLabel1.TabIndex = 3;
             this.DataNumLabel1.Text = "1";
             // 
-            // DesorbTextBox6
-            // 
-            this.DesorbTextBox6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox6.Location = new System.Drawing.Point(44, 185);
-            this.DesorbTextBox6.Name = "DesorbTextBox6";
-            this.DesorbTextBox6.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox6.TabIndex = 12;
-            // 
-            // DesorbTextBox16
-            // 
-            this.DesorbTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox16.Location = new System.Drawing.Point(183, 185);
-            this.DesorbTextBox16.Name = "DesorbTextBox16";
-            this.DesorbTextBox16.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox16.TabIndex = 22;
-            // 
-            // DesorbTextBox25
-            // 
-            this.DesorbTextBox25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox25.Location = new System.Drawing.Point(317, 153);
-            this.DesorbTextBox25.Name = "DesorbTextBox25";
-            this.DesorbTextBox25.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox25.TabIndex = 31;
-            // 
-            // DesorbTextBox26
-            // 
-            this.DesorbTextBox26.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox26.Location = new System.Drawing.Point(317, 185);
-            this.DesorbTextBox26.Name = "DesorbTextBox26";
-            this.DesorbTextBox26.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox26.TabIndex = 32;
-            // 
-            // DesorbTextBox15
-            // 
-            this.DesorbTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox15.Location = new System.Drawing.Point(183, 153);
-            this.DesorbTextBox15.Name = "DesorbTextBox15";
-            this.DesorbTextBox15.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox15.TabIndex = 21;
-            // 
-            // DesorbTextBox5
-            // 
-            this.DesorbTextBox5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox5.Location = new System.Drawing.Point(44, 153);
-            this.DesorbTextBox5.Name = "DesorbTextBox5";
-            this.DesorbTextBox5.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox5.TabIndex = 11;
-            // 
-            // DesorbTextBox7
-            // 
-            this.DesorbTextBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox7.Location = new System.Drawing.Point(44, 217);
-            this.DesorbTextBox7.Name = "DesorbTextBox7";
-            this.DesorbTextBox7.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox7.TabIndex = 13;
-            // 
-            // DesorbTextBox17
-            // 
-            this.DesorbTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox17.Location = new System.Drawing.Point(183, 217);
-            this.DesorbTextBox17.Name = "DesorbTextBox17";
-            this.DesorbTextBox17.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox17.TabIndex = 23;
-            // 
-            // DesorbTextBox24
-            // 
-            this.DesorbTextBox24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox24.Location = new System.Drawing.Point(317, 121);
-            this.DesorbTextBox24.Name = "DesorbTextBox24";
-            this.DesorbTextBox24.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox24.TabIndex = 30;
-            // 
-            // DesorbTextBox27
-            // 
-            this.DesorbTextBox27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox27.Location = new System.Drawing.Point(317, 217);
-            this.DesorbTextBox27.Name = "DesorbTextBox27";
-            this.DesorbTextBox27.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox27.TabIndex = 33;
-            // 
-            // DesorbTextBox14
-            // 
-            this.DesorbTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox14.Location = new System.Drawing.Point(183, 121);
-            this.DesorbTextBox14.Name = "DesorbTextBox14";
-            this.DesorbTextBox14.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox14.TabIndex = 20;
-            // 
-            // DesorbTextBox4
-            // 
-            this.DesorbTextBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox4.Location = new System.Drawing.Point(44, 121);
-            this.DesorbTextBox4.Name = "DesorbTextBox4";
-            this.DesorbTextBox4.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox4.TabIndex = 10;
-            // 
-            // DesorbTextBox8
-            // 
-            this.DesorbTextBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox8.Location = new System.Drawing.Point(44, 249);
-            this.DesorbTextBox8.Name = "DesorbTextBox8";
-            this.DesorbTextBox8.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox8.TabIndex = 14;
-            // 
-            // DesorbTextBox18
-            // 
-            this.DesorbTextBox18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox18.Location = new System.Drawing.Point(183, 249);
-            this.DesorbTextBox18.Name = "DesorbTextBox18";
-            this.DesorbTextBox18.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox18.TabIndex = 24;
-            // 
-            // DesorbTextBox23
-            // 
-            this.DesorbTextBox23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox23.Location = new System.Drawing.Point(317, 89);
-            this.DesorbTextBox23.Name = "DesorbTextBox23";
-            this.DesorbTextBox23.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox23.TabIndex = 29;
-            // 
-            // DesorbTextBox28
-            // 
-            this.DesorbTextBox28.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox28.Location = new System.Drawing.Point(317, 249);
-            this.DesorbTextBox28.Name = "DesorbTextBox28";
-            this.DesorbTextBox28.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox28.TabIndex = 34;
-            // 
-            // DesorbTextBox13
-            // 
-            this.DesorbTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox13.Location = new System.Drawing.Point(183, 89);
-            this.DesorbTextBox13.Name = "DesorbTextBox13";
-            this.DesorbTextBox13.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox13.TabIndex = 19;
-            // 
-            // DesorbTextBox3
-            // 
-            this.DesorbTextBox3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox3.Location = new System.Drawing.Point(44, 89);
-            this.DesorbTextBox3.Name = "DesorbTextBox3";
-            this.DesorbTextBox3.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox3.TabIndex = 9;
-            // 
-            // DesorbTextBox9
-            // 
-            this.DesorbTextBox9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox9.Location = new System.Drawing.Point(44, 281);
-            this.DesorbTextBox9.Name = "DesorbTextBox9";
-            this.DesorbTextBox9.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox9.TabIndex = 15;
-            // 
-            // DesorbTextBox19
-            // 
-            this.DesorbTextBox19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox19.Location = new System.Drawing.Point(183, 281);
-            this.DesorbTextBox19.Name = "DesorbTextBox19";
-            this.DesorbTextBox19.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox19.TabIndex = 25;
-            // 
-            // DesorbTextBox22
-            // 
-            this.DesorbTextBox22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox22.Location = new System.Drawing.Point(317, 57);
-            this.DesorbTextBox22.Name = "DesorbTextBox22";
-            this.DesorbTextBox22.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox22.TabIndex = 28;
-            // 
-            // DesorbTextBox29
-            // 
-            this.DesorbTextBox29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox29.Location = new System.Drawing.Point(317, 281);
-            this.DesorbTextBox29.Name = "DesorbTextBox29";
-            this.DesorbTextBox29.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox29.TabIndex = 35;
-            // 
-            // DesorbTextBox12
-            // 
-            this.DesorbTextBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox12.Location = new System.Drawing.Point(183, 57);
-            this.DesorbTextBox12.Name = "DesorbTextBox12";
-            this.DesorbTextBox12.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox12.TabIndex = 18;
-            // 
-            // DesorbTextBox2
-            // 
-            this.DesorbTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox2.Location = new System.Drawing.Point(44, 57);
-            this.DesorbTextBox2.Name = "DesorbTextBox2";
-            this.DesorbTextBox2.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox2.TabIndex = 8;
-            // 
-            // DesorbTextBox21
-            // 
-            this.DesorbTextBox21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox21.Location = new System.Drawing.Point(317, 25);
-            this.DesorbTextBox21.Name = "DesorbTextBox21";
-            this.DesorbTextBox21.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox21.TabIndex = 27;
-            // 
-            // DesorbTextBox10
-            // 
-            this.DesorbTextBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox10.Location = new System.Drawing.Point(44, 313);
-            this.DesorbTextBox10.Name = "DesorbTextBox10";
-            this.DesorbTextBox10.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox10.TabIndex = 16;
-            // 
-            // DesorbTextBox20
-            // 
-            this.DesorbTextBox20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox20.Location = new System.Drawing.Point(183, 313);
-            this.DesorbTextBox20.Name = "DesorbTextBox20";
-            this.DesorbTextBox20.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox20.TabIndex = 26;
-            // 
-            // DesorbTextBox11
-            // 
-            this.DesorbTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox11.Location = new System.Drawing.Point(183, 25);
-            this.DesorbTextBox11.Name = "DesorbTextBox11";
-            this.DesorbTextBox11.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox11.TabIndex = 17;
-            // 
-            // DesorbTextBox1
-            // 
-            this.DesorbTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox1.Location = new System.Drawing.Point(44, 25);
-            this.DesorbTextBox1.Name = "DesorbTextBox1";
-            this.DesorbTextBox1.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox1.TabIndex = 7;
-            // 
-            // DesorbTextBox30
-            // 
-            this.DesorbTextBox30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox30.Location = new System.Drawing.Point(317, 313);
-            this.DesorbTextBox30.Name = "DesorbTextBox30";
-            this.DesorbTextBox30.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox30.TabIndex = 36;
-            // 
             // tabPage2panel4
             // 
             this.tabPage2panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage2panel4.Controls.Add(this.label27);
-            this.tabPage2panel4.Controls.Add(this.label29);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox36);
-            this.tabPage2panel4.Controls.Add(this.label28);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox46);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox55);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox56);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox45);
             this.tabPage2panel4.Controls.Add(this.DataNumTextBox60);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox35);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox59);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox37);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox58);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox47);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox57);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox54);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox56);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox57);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox55);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox44);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox54);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox34);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox53);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox38);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox52);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox48);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox51);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox53);
             this.tabPage2panel4.Controls.Add(this.DataNumTextBox50);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox58);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox49);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox43);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox48);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox33);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox47);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox39);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox46);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox49);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox45);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox52);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox44);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox59);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox43);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox42);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox42);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox32);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox41);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox51);
             this.tabPage2panel4.Controls.Add(this.DataNumTextBox40);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox40);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox39);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox50);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox38);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox41);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox37);
-            this.tabPage2panel4.Controls.Add(this.DesorbTextBox31);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox36);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox59);
             this.tabPage2panel4.Controls.Add(this.DesorbTextBox60);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox49);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox58);
+            this.tabPage2panel4.Controls.Add(this.label27);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox39);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox57);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox48);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox59);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox56);
+            this.tabPage2panel4.Controls.Add(this.label29);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox47);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox55);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox38);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox58);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox54);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox46);
+            this.tabPage2panel4.Controls.Add(this.label28);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox53);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox37);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox45);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox52);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox57);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox51);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox56);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox44);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox36);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox55);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox43);
             this.tabPage2panel4.Controls.Add(this.DataNumTextBox35);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox31);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox42);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox54);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox41);
             this.tabPage2panel4.Controls.Add(this.DataNumTextBox34);
-            this.tabPage2panel4.Controls.Add(this.DataNumTextBox32);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox53);
             this.tabPage2panel4.Controls.Add(this.DataNumTextBox33);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox52);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox50);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox32);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox51);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox49);
+            this.tabPage2panel4.Controls.Add(this.DataNumTextBox31);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox48);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox47);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox46);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox45);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox44);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox43);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox42);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox41);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox40);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox39);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox38);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox37);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox36);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox35);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox34);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox33);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox32);
+            this.tabPage2panel4.Controls.Add(this.DesorbTextBox31);
             this.tabPage2panel4.Location = new System.Drawing.Point(412, 112);
             this.tabPage2panel4.Name = "tabPage2panel4";
             this.tabPage2panel4.Size = new System.Drawing.Size(403, 346);
             this.tabPage2panel4.TabIndex = 2;
+            // 
+            // DesorbTextBox60
+            // 
+            this.DesorbTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox60.Location = new System.Drawing.Point(318, 312);
+            this.DesorbTextBox60.Name = "DesorbTextBox60";
+            this.DesorbTextBox60.PlaceholderText = "";
+            this.DesorbTextBox60.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox60.TabIndex = 205;
             // 
             // label27
             // 
@@ -2182,6 +2249,15 @@ namespace GasFormsApp
             this.label27.TabIndex = 146;
             this.label27.Text = "时间   解吸量 ";
             // 
+            // DesorbTextBox59
+            // 
+            this.DesorbTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox59.Location = new System.Drawing.Point(318, 280);
+            this.DesorbTextBox59.Name = "DesorbTextBox59";
+            this.DesorbTextBox59.PlaceholderText = "";
+            this.DesorbTextBox59.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox59.TabIndex = 204;
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -2194,14 +2270,14 @@ namespace GasFormsApp
             this.label29.TabIndex = 148;
             this.label29.Text = "时间   解吸量 ";
             // 
-            // DesorbTextBox36
+            // DesorbTextBox58
             // 
-            this.DesorbTextBox36.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox36.Location = new System.Drawing.Point(44, 187);
-            this.DesorbTextBox36.Name = "DesorbTextBox36";
-            this.DesorbTextBox36.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox36.TabIndex = 48;
+            this.DesorbTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox58.Location = new System.Drawing.Point(318, 248);
+            this.DesorbTextBox58.Name = "DesorbTextBox58";
+            this.DesorbTextBox58.PlaceholderText = "";
+            this.DesorbTextBox58.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox58.TabIndex = 203;
             // 
             // label28
             // 
@@ -2215,626 +2291,248 @@ namespace GasFormsApp
             this.label28.TabIndex = 147;
             this.label28.Text = "时间   解吸量 ";
             // 
-            // DesorbTextBox46
+            // DesorbTextBox57
             // 
-            this.DesorbTextBox46.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox46.Location = new System.Drawing.Point(183, 187);
-            this.DesorbTextBox46.Name = "DesorbTextBox46";
-            this.DesorbTextBox46.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox46.TabIndex = 68;
-            // 
-            // DesorbTextBox55
-            // 
-            this.DesorbTextBox55.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox55.Location = new System.Drawing.Point(317, 155);
-            this.DesorbTextBox55.Name = "DesorbTextBox55";
-            this.DesorbTextBox55.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox55.TabIndex = 86;
+            this.DesorbTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox57.Location = new System.Drawing.Point(318, 216);
+            this.DesorbTextBox57.Name = "DesorbTextBox57";
+            this.DesorbTextBox57.PlaceholderText = "";
+            this.DesorbTextBox57.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox57.TabIndex = 202;
             // 
             // DesorbTextBox56
             // 
-            this.DesorbTextBox56.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox56.Location = new System.Drawing.Point(317, 187);
+            this.DesorbTextBox56.Location = new System.Drawing.Point(318, 184);
             this.DesorbTextBox56.Name = "DesorbTextBox56";
-            this.DesorbTextBox56.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox56.TabIndex = 88;
+            this.DesorbTextBox56.PlaceholderText = "";
+            this.DesorbTextBox56.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox56.TabIndex = 201;
             // 
-            // DesorbTextBox45
+            // DesorbTextBox55
             // 
-            this.DesorbTextBox45.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox45.Location = new System.Drawing.Point(183, 155);
-            this.DesorbTextBox45.Name = "DesorbTextBox45";
-            this.DesorbTextBox45.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox45.TabIndex = 66;
-            // 
-            // DataNumTextBox60
-            // 
-            this.DataNumTextBox60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox60.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox60.Location = new System.Drawing.Point(277, 318);
-            this.DataNumTextBox60.Name = "DataNumTextBox60";
-            this.DataNumTextBox60.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox60.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox60.TabIndex = 95;
-            this.DataNumTextBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox35
-            // 
-            this.DesorbTextBox35.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox35.Location = new System.Drawing.Point(44, 155);
-            this.DesorbTextBox35.Name = "DesorbTextBox35";
-            this.DesorbTextBox35.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox35.TabIndex = 46;
-            // 
-            // DataNumTextBox59
-            // 
-            this.DataNumTextBox59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox59.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox59.Location = new System.Drawing.Point(277, 286);
-            this.DataNumTextBox59.Name = "DataNumTextBox59";
-            this.DataNumTextBox59.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox59.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox59.TabIndex = 93;
-            this.DataNumTextBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox37
-            // 
-            this.DesorbTextBox37.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox37.Location = new System.Drawing.Point(44, 219);
-            this.DesorbTextBox37.Name = "DesorbTextBox37";
-            this.DesorbTextBox37.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox37.TabIndex = 50;
-            // 
-            // DataNumTextBox58
-            // 
-            this.DataNumTextBox58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox58.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox58.Location = new System.Drawing.Point(277, 254);
-            this.DataNumTextBox58.Name = "DataNumTextBox58";
-            this.DataNumTextBox58.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox58.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox58.TabIndex = 91;
-            this.DataNumTextBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox47
-            // 
-            this.DesorbTextBox47.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox47.Location = new System.Drawing.Point(183, 219);
-            this.DesorbTextBox47.Name = "DesorbTextBox47";
-            this.DesorbTextBox47.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox47.TabIndex = 70;
-            // 
-            // DataNumTextBox57
-            // 
-            this.DataNumTextBox57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox57.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox57.Location = new System.Drawing.Point(277, 222);
-            this.DataNumTextBox57.Name = "DataNumTextBox57";
-            this.DataNumTextBox57.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox57.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox57.TabIndex = 89;
-            this.DataNumTextBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox55.Location = new System.Drawing.Point(318, 152);
+            this.DesorbTextBox55.Name = "DesorbTextBox55";
+            this.DesorbTextBox55.PlaceholderText = "";
+            this.DesorbTextBox55.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox55.TabIndex = 200;
             // 
             // DesorbTextBox54
             // 
-            this.DesorbTextBox54.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox54.Location = new System.Drawing.Point(317, 123);
+            this.DesorbTextBox54.Location = new System.Drawing.Point(318, 120);
             this.DesorbTextBox54.Name = "DesorbTextBox54";
-            this.DesorbTextBox54.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox54.TabIndex = 84;
-            // 
-            // DataNumTextBox56
-            // 
-            this.DataNumTextBox56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox56.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox56.Location = new System.Drawing.Point(277, 190);
-            this.DataNumTextBox56.Name = "DataNumTextBox56";
-            this.DataNumTextBox56.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox56.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox56.TabIndex = 87;
-            this.DataNumTextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox57
-            // 
-            this.DesorbTextBox57.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox57.Location = new System.Drawing.Point(317, 219);
-            this.DesorbTextBox57.Name = "DesorbTextBox57";
-            this.DesorbTextBox57.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox57.TabIndex = 90;
-            // 
-            // DataNumTextBox55
-            // 
-            this.DataNumTextBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox55.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox55.Location = new System.Drawing.Point(277, 158);
-            this.DataNumTextBox55.Name = "DataNumTextBox55";
-            this.DataNumTextBox55.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox55.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox55.TabIndex = 85;
-            this.DataNumTextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox44
-            // 
-            this.DesorbTextBox44.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox44.Location = new System.Drawing.Point(183, 123);
-            this.DesorbTextBox44.Name = "DesorbTextBox44";
-            this.DesorbTextBox44.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox44.TabIndex = 64;
-            // 
-            // DataNumTextBox54
-            // 
-            this.DataNumTextBox54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox54.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox54.Location = new System.Drawing.Point(277, 126);
-            this.DataNumTextBox54.Name = "DataNumTextBox54";
-            this.DataNumTextBox54.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox54.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox54.TabIndex = 83;
-            this.DataNumTextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox34
-            // 
-            this.DesorbTextBox34.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox34.Location = new System.Drawing.Point(44, 123);
-            this.DesorbTextBox34.Name = "DesorbTextBox34";
-            this.DesorbTextBox34.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox34.TabIndex = 44;
-            // 
-            // DataNumTextBox53
-            // 
-            this.DataNumTextBox53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox53.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox53.Location = new System.Drawing.Point(277, 94);
-            this.DataNumTextBox53.Name = "DataNumTextBox53";
-            this.DataNumTextBox53.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox53.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox53.TabIndex = 81;
-            this.DataNumTextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox38
-            // 
-            this.DesorbTextBox38.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox38.Location = new System.Drawing.Point(44, 251);
-            this.DesorbTextBox38.Name = "DesorbTextBox38";
-            this.DesorbTextBox38.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox38.TabIndex = 52;
-            // 
-            // DataNumTextBox52
-            // 
-            this.DataNumTextBox52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox52.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox52.Location = new System.Drawing.Point(277, 62);
-            this.DataNumTextBox52.Name = "DataNumTextBox52";
-            this.DataNumTextBox52.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox52.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox52.TabIndex = 79;
-            this.DataNumTextBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox48
-            // 
-            this.DesorbTextBox48.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox48.Location = new System.Drawing.Point(183, 251);
-            this.DesorbTextBox48.Name = "DesorbTextBox48";
-            this.DesorbTextBox48.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox48.TabIndex = 72;
-            // 
-            // DataNumTextBox51
-            // 
-            this.DataNumTextBox51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox51.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox51.Location = new System.Drawing.Point(277, 30);
-            this.DataNumTextBox51.Name = "DataNumTextBox51";
-            this.DataNumTextBox51.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox51.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox51.TabIndex = 77;
-            this.DataNumTextBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox54.PlaceholderText = "";
+            this.DesorbTextBox54.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox54.TabIndex = 199;
             // 
             // DesorbTextBox53
             // 
-            this.DesorbTextBox53.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox53.Location = new System.Drawing.Point(317, 91);
+            this.DesorbTextBox53.Location = new System.Drawing.Point(318, 88);
             this.DesorbTextBox53.Name = "DesorbTextBox53";
-            this.DesorbTextBox53.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox53.TabIndex = 82;
-            // 
-            // DataNumTextBox50
-            // 
-            this.DataNumTextBox50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox50.Location = new System.Drawing.Point(143, 318);
-            this.DataNumTextBox50.Name = "DataNumTextBox50";
-            this.DataNumTextBox50.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox50.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox50.TabIndex = 75;
-            this.DataNumTextBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox58
-            // 
-            this.DesorbTextBox58.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox58.Location = new System.Drawing.Point(317, 251);
-            this.DesorbTextBox58.Name = "DesorbTextBox58";
-            this.DesorbTextBox58.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox58.TabIndex = 92;
-            // 
-            // DataNumTextBox49
-            // 
-            this.DataNumTextBox49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox49.Location = new System.Drawing.Point(143, 286);
-            this.DataNumTextBox49.Name = "DataNumTextBox49";
-            this.DataNumTextBox49.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox49.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox49.TabIndex = 73;
-            this.DataNumTextBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox43
-            // 
-            this.DesorbTextBox43.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox43.Location = new System.Drawing.Point(183, 91);
-            this.DesorbTextBox43.Name = "DesorbTextBox43";
-            this.DesorbTextBox43.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox43.TabIndex = 62;
-            // 
-            // DataNumTextBox48
-            // 
-            this.DataNumTextBox48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox48.Location = new System.Drawing.Point(143, 254);
-            this.DataNumTextBox48.Name = "DataNumTextBox48";
-            this.DataNumTextBox48.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox48.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox48.TabIndex = 71;
-            this.DataNumTextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox33
-            // 
-            this.DesorbTextBox33.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox33.Location = new System.Drawing.Point(44, 91);
-            this.DesorbTextBox33.Name = "DesorbTextBox33";
-            this.DesorbTextBox33.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox33.TabIndex = 42;
-            // 
-            // DataNumTextBox47
-            // 
-            this.DataNumTextBox47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox47.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox47.Location = new System.Drawing.Point(143, 222);
-            this.DataNumTextBox47.Name = "DataNumTextBox47";
-            this.DataNumTextBox47.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox47.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox47.TabIndex = 69;
-            this.DataNumTextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox39
-            // 
-            this.DesorbTextBox39.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox39.Location = new System.Drawing.Point(44, 283);
-            this.DesorbTextBox39.Name = "DesorbTextBox39";
-            this.DesorbTextBox39.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox39.TabIndex = 54;
-            // 
-            // DataNumTextBox46
-            // 
-            this.DataNumTextBox46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox46.Location = new System.Drawing.Point(143, 190);
-            this.DataNumTextBox46.Name = "DataNumTextBox46";
-            this.DataNumTextBox46.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox46.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox46.TabIndex = 67;
-            this.DataNumTextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox49
-            // 
-            this.DesorbTextBox49.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox49.Location = new System.Drawing.Point(183, 283);
-            this.DesorbTextBox49.Name = "DesorbTextBox49";
-            this.DesorbTextBox49.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox49.TabIndex = 74;
-            // 
-            // DataNumTextBox45
-            // 
-            this.DataNumTextBox45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox45.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox45.Location = new System.Drawing.Point(143, 158);
-            this.DataNumTextBox45.Name = "DataNumTextBox45";
-            this.DataNumTextBox45.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox45.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox45.TabIndex = 65;
-            this.DataNumTextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox53.PlaceholderText = "";
+            this.DesorbTextBox53.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox53.TabIndex = 198;
             // 
             // DesorbTextBox52
             // 
-            this.DesorbTextBox52.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox52.Location = new System.Drawing.Point(317, 59);
+            this.DesorbTextBox52.Location = new System.Drawing.Point(318, 56);
             this.DesorbTextBox52.Name = "DesorbTextBox52";
-            this.DesorbTextBox52.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox52.TabIndex = 80;
-            // 
-            // DataNumTextBox44
-            // 
-            this.DataNumTextBox44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox44.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox44.Location = new System.Drawing.Point(143, 126);
-            this.DataNumTextBox44.Name = "DataNumTextBox44";
-            this.DataNumTextBox44.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox44.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox44.TabIndex = 63;
-            this.DataNumTextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox59
-            // 
-            this.DesorbTextBox59.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox59.Location = new System.Drawing.Point(317, 283);
-            this.DesorbTextBox59.Name = "DesorbTextBox59";
-            this.DesorbTextBox59.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox59.TabIndex = 94;
-            // 
-            // DataNumTextBox43
-            // 
-            this.DataNumTextBox43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox43.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox43.Location = new System.Drawing.Point(143, 94);
-            this.DataNumTextBox43.Name = "DataNumTextBox43";
-            this.DataNumTextBox43.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox43.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox43.TabIndex = 61;
-            this.DataNumTextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox42
-            // 
-            this.DesorbTextBox42.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox42.Location = new System.Drawing.Point(183, 59);
-            this.DesorbTextBox42.Name = "DesorbTextBox42";
-            this.DesorbTextBox42.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox42.TabIndex = 60;
-            // 
-            // DataNumTextBox42
-            // 
-            this.DataNumTextBox42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox42.Location = new System.Drawing.Point(143, 62);
-            this.DataNumTextBox42.Name = "DataNumTextBox42";
-            this.DataNumTextBox42.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox42.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox42.TabIndex = 59;
-            this.DataNumTextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox32
-            // 
-            this.DesorbTextBox32.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox32.Location = new System.Drawing.Point(44, 59);
-            this.DesorbTextBox32.Name = "DesorbTextBox32";
-            this.DesorbTextBox32.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox32.TabIndex = 40;
-            // 
-            // DataNumTextBox41
-            // 
-            this.DataNumTextBox41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox41.Location = new System.Drawing.Point(143, 30);
-            this.DataNumTextBox41.Name = "DataNumTextBox41";
-            this.DataNumTextBox41.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox41.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox41.TabIndex = 57;
-            this.DataNumTextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox51
-            // 
-            this.DesorbTextBox51.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox51.Location = new System.Drawing.Point(317, 27);
-            this.DesorbTextBox51.Name = "DesorbTextBox51";
-            this.DesorbTextBox51.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox51.TabIndex = 78;
-            // 
-            // DataNumTextBox40
-            // 
-            this.DataNumTextBox40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox40.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox40.Location = new System.Drawing.Point(4, 318);
-            this.DataNumTextBox40.Name = "DataNumTextBox40";
-            this.DataNumTextBox40.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox40.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox40.TabIndex = 55;
-            this.DataNumTextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox40
-            // 
-            this.DesorbTextBox40.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox40.Location = new System.Drawing.Point(44, 315);
-            this.DesorbTextBox40.Name = "DesorbTextBox40";
-            this.DesorbTextBox40.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox40.TabIndex = 56;
-            // 
-            // DataNumTextBox39
-            // 
-            this.DataNumTextBox39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox39.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox39.Location = new System.Drawing.Point(4, 286);
-            this.DataNumTextBox39.Name = "DataNumTextBox39";
-            this.DataNumTextBox39.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox39.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox39.TabIndex = 53;
-            this.DataNumTextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox52.PlaceholderText = "";
+            this.DesorbTextBox52.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox52.TabIndex = 197;
             // 
             // DesorbTextBox50
             // 
-            this.DesorbTextBox50.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox50.Location = new System.Drawing.Point(183, 315);
+            this.DesorbTextBox50.Location = new System.Drawing.Point(186, 312);
             this.DesorbTextBox50.Name = "DesorbTextBox50";
-            this.DesorbTextBox50.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox50.TabIndex = 76;
+            this.DesorbTextBox50.PlaceholderText = "";
+            this.DesorbTextBox50.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox50.TabIndex = 195;
             // 
-            // DataNumTextBox38
+            // DesorbTextBox51
             // 
-            this.DataNumTextBox38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox38.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox38.Location = new System.Drawing.Point(4, 254);
-            this.DataNumTextBox38.Name = "DataNumTextBox38";
-            this.DataNumTextBox38.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox38.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox38.TabIndex = 51;
-            this.DataNumTextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox51.Location = new System.Drawing.Point(318, 24);
+            this.DesorbTextBox51.Name = "DesorbTextBox51";
+            this.DesorbTextBox51.PlaceholderText = "";
+            this.DesorbTextBox51.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox51.TabIndex = 196;
+            // 
+            // DesorbTextBox49
+            // 
+            this.DesorbTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox49.Location = new System.Drawing.Point(186, 280);
+            this.DesorbTextBox49.Name = "DesorbTextBox49";
+            this.DesorbTextBox49.PlaceholderText = "";
+            this.DesorbTextBox49.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox49.TabIndex = 194;
+            // 
+            // DesorbTextBox48
+            // 
+            this.DesorbTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox48.Location = new System.Drawing.Point(186, 248);
+            this.DesorbTextBox48.Name = "DesorbTextBox48";
+            this.DesorbTextBox48.PlaceholderText = "";
+            this.DesorbTextBox48.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox48.TabIndex = 193;
+            // 
+            // DesorbTextBox47
+            // 
+            this.DesorbTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox47.Location = new System.Drawing.Point(186, 216);
+            this.DesorbTextBox47.Name = "DesorbTextBox47";
+            this.DesorbTextBox47.PlaceholderText = "";
+            this.DesorbTextBox47.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox47.TabIndex = 192;
+            // 
+            // DesorbTextBox46
+            // 
+            this.DesorbTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox46.Location = new System.Drawing.Point(186, 184);
+            this.DesorbTextBox46.Name = "DesorbTextBox46";
+            this.DesorbTextBox46.PlaceholderText = "";
+            this.DesorbTextBox46.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox46.TabIndex = 191;
+            // 
+            // DesorbTextBox45
+            // 
+            this.DesorbTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox45.Location = new System.Drawing.Point(186, 152);
+            this.DesorbTextBox45.Name = "DesorbTextBox45";
+            this.DesorbTextBox45.PlaceholderText = "";
+            this.DesorbTextBox45.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox45.TabIndex = 190;
+            // 
+            // DesorbTextBox44
+            // 
+            this.DesorbTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox44.Location = new System.Drawing.Point(186, 120);
+            this.DesorbTextBox44.Name = "DesorbTextBox44";
+            this.DesorbTextBox44.PlaceholderText = "";
+            this.DesorbTextBox44.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox44.TabIndex = 189;
+            // 
+            // DesorbTextBox43
+            // 
+            this.DesorbTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox43.Location = new System.Drawing.Point(186, 88);
+            this.DesorbTextBox43.Name = "DesorbTextBox43";
+            this.DesorbTextBox43.PlaceholderText = "";
+            this.DesorbTextBox43.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox43.TabIndex = 188;
+            // 
+            // DesorbTextBox42
+            // 
+            this.DesorbTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox42.Location = new System.Drawing.Point(186, 56);
+            this.DesorbTextBox42.Name = "DesorbTextBox42";
+            this.DesorbTextBox42.PlaceholderText = "";
+            this.DesorbTextBox42.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox42.TabIndex = 187;
             // 
             // DesorbTextBox41
             // 
-            this.DesorbTextBox41.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox41.Location = new System.Drawing.Point(183, 27);
+            this.DesorbTextBox41.Location = new System.Drawing.Point(186, 24);
             this.DesorbTextBox41.Name = "DesorbTextBox41";
-            this.DesorbTextBox41.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox41.TabIndex = 58;
+            this.DesorbTextBox41.PlaceholderText = "";
+            this.DesorbTextBox41.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox41.TabIndex = 186;
             // 
-            // DataNumTextBox37
+            // DesorbTextBox40
             // 
-            this.DataNumTextBox37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox37.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox37.Location = new System.Drawing.Point(4, 222);
-            this.DataNumTextBox37.Name = "DataNumTextBox37";
-            this.DataNumTextBox37.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox37.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox37.TabIndex = 49;
-            this.DataNumTextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox40.Location = new System.Drawing.Point(49, 312);
+            this.DesorbTextBox40.Name = "DesorbTextBox40";
+            this.DesorbTextBox40.PlaceholderText = "";
+            this.DesorbTextBox40.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox40.TabIndex = 185;
+            // 
+            // DesorbTextBox39
+            // 
+            this.DesorbTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox39.Location = new System.Drawing.Point(49, 280);
+            this.DesorbTextBox39.Name = "DesorbTextBox39";
+            this.DesorbTextBox39.PlaceholderText = "";
+            this.DesorbTextBox39.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox39.TabIndex = 184;
+            // 
+            // DesorbTextBox38
+            // 
+            this.DesorbTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox38.Location = new System.Drawing.Point(49, 248);
+            this.DesorbTextBox38.Name = "DesorbTextBox38";
+            this.DesorbTextBox38.PlaceholderText = "";
+            this.DesorbTextBox38.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox38.TabIndex = 183;
+            // 
+            // DesorbTextBox37
+            // 
+            this.DesorbTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox37.Location = new System.Drawing.Point(49, 216);
+            this.DesorbTextBox37.Name = "DesorbTextBox37";
+            this.DesorbTextBox37.PlaceholderText = "";
+            this.DesorbTextBox37.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox37.TabIndex = 182;
+            // 
+            // DesorbTextBox36
+            // 
+            this.DesorbTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox36.Location = new System.Drawing.Point(49, 184);
+            this.DesorbTextBox36.Name = "DesorbTextBox36";
+            this.DesorbTextBox36.PlaceholderText = "";
+            this.DesorbTextBox36.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox36.TabIndex = 181;
+            // 
+            // DesorbTextBox35
+            // 
+            this.DesorbTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox35.Location = new System.Drawing.Point(49, 152);
+            this.DesorbTextBox35.Name = "DesorbTextBox35";
+            this.DesorbTextBox35.PlaceholderText = "";
+            this.DesorbTextBox35.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox35.TabIndex = 180;
+            // 
+            // DesorbTextBox34
+            // 
+            this.DesorbTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox34.Location = new System.Drawing.Point(49, 120);
+            this.DesorbTextBox34.Name = "DesorbTextBox34";
+            this.DesorbTextBox34.PlaceholderText = "";
+            this.DesorbTextBox34.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox34.TabIndex = 179;
+            // 
+            // DesorbTextBox33
+            // 
+            this.DesorbTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox33.Location = new System.Drawing.Point(49, 88);
+            this.DesorbTextBox33.Name = "DesorbTextBox33";
+            this.DesorbTextBox33.PlaceholderText = "";
+            this.DesorbTextBox33.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox33.TabIndex = 178;
+            // 
+            // DesorbTextBox32
+            // 
+            this.DesorbTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorbTextBox32.Location = new System.Drawing.Point(49, 56);
+            this.DesorbTextBox32.Name = "DesorbTextBox32";
+            this.DesorbTextBox32.PlaceholderText = "";
+            this.DesorbTextBox32.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox32.TabIndex = 177;
             // 
             // DesorbTextBox31
             // 
-            this.DesorbTextBox31.BackColor = System.Drawing.SystemColors.Window;
             this.DesorbTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox31.Location = new System.Drawing.Point(44, 27);
+            this.DesorbTextBox31.Location = new System.Drawing.Point(49, 24);
             this.DesorbTextBox31.Name = "DesorbTextBox31";
-            this.DesorbTextBox31.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox31.TabIndex = 38;
-            // 
-            // DataNumTextBox36
-            // 
-            this.DataNumTextBox36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox36.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox36.Location = new System.Drawing.Point(4, 190);
-            this.DataNumTextBox36.Name = "DataNumTextBox36";
-            this.DataNumTextBox36.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox36.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox36.TabIndex = 47;
-            this.DataNumTextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DesorbTextBox60
-            // 
-            this.DesorbTextBox60.BackColor = System.Drawing.SystemColors.Window;
-            this.DesorbTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorbTextBox60.Location = new System.Drawing.Point(317, 315);
-            this.DesorbTextBox60.Name = "DesorbTextBox60";
-            this.DesorbTextBox60.Size = new System.Drawing.Size(78, 26);
-            this.DesorbTextBox60.TabIndex = 96;
-            // 
-            // DataNumTextBox35
-            // 
-            this.DataNumTextBox35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox35.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox35.Location = new System.Drawing.Point(4, 158);
-            this.DataNumTextBox35.Name = "DataNumTextBox35";
-            this.DataNumTextBox35.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox35.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox35.TabIndex = 45;
-            this.DataNumTextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox31
-            // 
-            this.DataNumTextBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox31.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox31.Location = new System.Drawing.Point(4, 30);
-            this.DataNumTextBox31.Name = "DataNumTextBox31";
-            this.DataNumTextBox31.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox31.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox31.TabIndex = 37;
-            this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox34
-            // 
-            this.DataNumTextBox34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox34.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox34.Location = new System.Drawing.Point(4, 126);
-            this.DataNumTextBox34.Name = "DataNumTextBox34";
-            this.DataNumTextBox34.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox34.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox34.TabIndex = 43;
-            this.DataNumTextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox32
-            // 
-            this.DataNumTextBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox32.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox32.Location = new System.Drawing.Point(4, 62);
-            this.DataNumTextBox32.Name = "DataNumTextBox32";
-            this.DataNumTextBox32.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox32.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox32.TabIndex = 39;
-            this.DataNumTextBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // DataNumTextBox33
-            // 
-            this.DataNumTextBox33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(159)))), ((int)(((byte)(205)))));
-            this.DataNumTextBox33.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataNumTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DataNumTextBox33.Location = new System.Drawing.Point(4, 94);
-            this.DataNumTextBox33.Name = "DataNumTextBox33";
-            this.DataNumTextBox33.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataNumTextBox33.Size = new System.Drawing.Size(39, 19);
-            this.DataNumTextBox33.TabIndex = 41;
-            this.DataNumTextBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DesorbTextBox31.PlaceholderText = "";
+            this.DesorbTextBox31.Size = new System.Drawing.Size(85, 35);
+            this.DesorbTextBox31.TabIndex = 176;
             // 
             // tabPage2panel9
             // 
@@ -5190,33 +4888,305 @@ namespace GasFormsApp
             this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出图片ToolStripMenuItem.Text = "导出图片";
             // 
-            // SamplingTimeDateTimePicker
+            // DataNumTextBox40
             // 
-            this.SamplingTimeDateTimePicker.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SamplingTimeDateTimePicker.Format = "yyyy年 MM月dd日";
-            this.SamplingTimeDateTimePicker.Location = new System.Drawing.Point(180, 371);
-            this.SamplingTimeDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.SamplingTimeDateTimePicker.Name = "SamplingTimeDateTimePicker";
-            this.SamplingTimeDateTimePicker.Placement = AntdUI.TAlignFrom.Top;
-            this.SamplingTimeDateTimePicker.Size = new System.Drawing.Size(167, 35);
-            this.SamplingTimeDateTimePicker.TabIndex = 17;
-            this.SamplingTimeDateTimePicker.ValueTimeHorizontal = true;
+            this.DataNumTextBox40.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox40.Location = new System.Drawing.Point(3, 312);
+            this.DataNumTextBox40.Name = "DataNumTextBox40";
+            this.DataNumTextBox40.PlaceholderText = "";
+            this.DataNumTextBox40.Radius = 2;
+            this.DataNumTextBox40.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox40.TabIndex = 215;
             // 
-            // tabPage2panel1
+            // DataNumTextBox39
             // 
-            this.tabPage2panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage2panel1.Location = new System.Drawing.Point(1239, 97);
-            this.tabPage2panel1.Name = "tabPage2panel1";
-            this.tabPage2panel1.Size = new System.Drawing.Size(77, 100);
-            this.tabPage2panel1.TabIndex = 0;
+            this.DataNumTextBox39.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox39.Location = new System.Drawing.Point(3, 280);
+            this.DataNumTextBox39.Name = "DataNumTextBox39";
+            this.DataNumTextBox39.PlaceholderText = "";
+            this.DataNumTextBox39.Radius = 2;
+            this.DataNumTextBox39.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox39.TabIndex = 214;
             // 
-            // tabPage2panel2
+            // DataNumTextBox38
             // 
-            this.tabPage2panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage2panel2.Location = new System.Drawing.Point(1239, 250);
-            this.tabPage2panel2.Name = "tabPage2panel2";
-            this.tabPage2panel2.Size = new System.Drawing.Size(77, 100);
-            this.tabPage2panel2.TabIndex = 1;
+            this.DataNumTextBox38.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox38.Location = new System.Drawing.Point(3, 248);
+            this.DataNumTextBox38.Name = "DataNumTextBox38";
+            this.DataNumTextBox38.PlaceholderText = "";
+            this.DataNumTextBox38.Radius = 2;
+            this.DataNumTextBox38.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox38.TabIndex = 213;
+            // 
+            // DataNumTextBox37
+            // 
+            this.DataNumTextBox37.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox37.Location = new System.Drawing.Point(3, 216);
+            this.DataNumTextBox37.Name = "DataNumTextBox37";
+            this.DataNumTextBox37.PlaceholderText = "";
+            this.DataNumTextBox37.Radius = 2;
+            this.DataNumTextBox37.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox37.TabIndex = 212;
+            // 
+            // DataNumTextBox36
+            // 
+            this.DataNumTextBox36.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox36.Location = new System.Drawing.Point(3, 184);
+            this.DataNumTextBox36.Name = "DataNumTextBox36";
+            this.DataNumTextBox36.PlaceholderText = "";
+            this.DataNumTextBox36.Radius = 2;
+            this.DataNumTextBox36.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox36.TabIndex = 211;
+            // 
+            // DataNumTextBox35
+            // 
+            this.DataNumTextBox35.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox35.Location = new System.Drawing.Point(3, 152);
+            this.DataNumTextBox35.Name = "DataNumTextBox35";
+            this.DataNumTextBox35.PlaceholderText = "";
+            this.DataNumTextBox35.Radius = 2;
+            this.DataNumTextBox35.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox35.TabIndex = 210;
+            // 
+            // DataNumTextBox34
+            // 
+            this.DataNumTextBox34.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox34.Location = new System.Drawing.Point(3, 120);
+            this.DataNumTextBox34.Name = "DataNumTextBox34";
+            this.DataNumTextBox34.PlaceholderText = "";
+            this.DataNumTextBox34.Radius = 2;
+            this.DataNumTextBox34.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox34.TabIndex = 209;
+            // 
+            // DataNumTextBox33
+            // 
+            this.DataNumTextBox33.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox33.Location = new System.Drawing.Point(3, 88);
+            this.DataNumTextBox33.Name = "DataNumTextBox33";
+            this.DataNumTextBox33.PlaceholderText = "";
+            this.DataNumTextBox33.Radius = 2;
+            this.DataNumTextBox33.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox33.TabIndex = 208;
+            // 
+            // DataNumTextBox32
+            // 
+            this.DataNumTextBox32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox32.Location = new System.Drawing.Point(3, 56);
+            this.DataNumTextBox32.Name = "DataNumTextBox32";
+            this.DataNumTextBox32.PlaceholderText = "";
+            this.DataNumTextBox32.Radius = 2;
+            this.DataNumTextBox32.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox32.TabIndex = 207;
+            // 
+            // DataNumTextBox31
+            // 
+            this.DataNumTextBox31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox31.Location = new System.Drawing.Point(3, 24);
+            this.DataNumTextBox31.Name = "DataNumTextBox31";
+            this.DataNumTextBox31.PlaceholderText = "";
+            this.DataNumTextBox31.Radius = 2;
+            this.DataNumTextBox31.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox31.TabIndex = 206;
+            // 
+            // DataNumTextBox50
+            // 
+            this.DataNumTextBox50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox50.Location = new System.Drawing.Point(140, 317);
+            this.DataNumTextBox50.Name = "DataNumTextBox50";
+            this.DataNumTextBox50.PlaceholderText = "";
+            this.DataNumTextBox50.Radius = 2;
+            this.DataNumTextBox50.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox50.TabIndex = 225;
+            // 
+            // DataNumTextBox49
+            // 
+            this.DataNumTextBox49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox49.Location = new System.Drawing.Point(140, 285);
+            this.DataNumTextBox49.Name = "DataNumTextBox49";
+            this.DataNumTextBox49.PlaceholderText = "";
+            this.DataNumTextBox49.Radius = 2;
+            this.DataNumTextBox49.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox49.TabIndex = 224;
+            // 
+            // DataNumTextBox48
+            // 
+            this.DataNumTextBox48.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox48.Location = new System.Drawing.Point(140, 253);
+            this.DataNumTextBox48.Name = "DataNumTextBox48";
+            this.DataNumTextBox48.PlaceholderText = "";
+            this.DataNumTextBox48.Radius = 2;
+            this.DataNumTextBox48.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox48.TabIndex = 223;
+            // 
+            // DataNumTextBox47
+            // 
+            this.DataNumTextBox47.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox47.Location = new System.Drawing.Point(140, 221);
+            this.DataNumTextBox47.Name = "DataNumTextBox47";
+            this.DataNumTextBox47.PlaceholderText = "";
+            this.DataNumTextBox47.Radius = 2;
+            this.DataNumTextBox47.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox47.TabIndex = 222;
+            // 
+            // DataNumTextBox46
+            // 
+            this.DataNumTextBox46.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox46.Location = new System.Drawing.Point(140, 189);
+            this.DataNumTextBox46.Name = "DataNumTextBox46";
+            this.DataNumTextBox46.PlaceholderText = "";
+            this.DataNumTextBox46.Radius = 2;
+            this.DataNumTextBox46.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox46.TabIndex = 221;
+            // 
+            // DataNumTextBox45
+            // 
+            this.DataNumTextBox45.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox45.Location = new System.Drawing.Point(140, 157);
+            this.DataNumTextBox45.Name = "DataNumTextBox45";
+            this.DataNumTextBox45.PlaceholderText = "";
+            this.DataNumTextBox45.Radius = 2;
+            this.DataNumTextBox45.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox45.TabIndex = 220;
+            // 
+            // DataNumTextBox44
+            // 
+            this.DataNumTextBox44.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox44.Location = new System.Drawing.Point(140, 125);
+            this.DataNumTextBox44.Name = "DataNumTextBox44";
+            this.DataNumTextBox44.PlaceholderText = "";
+            this.DataNumTextBox44.Radius = 2;
+            this.DataNumTextBox44.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox44.TabIndex = 219;
+            // 
+            // DataNumTextBox43
+            // 
+            this.DataNumTextBox43.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox43.Location = new System.Drawing.Point(140, 93);
+            this.DataNumTextBox43.Name = "DataNumTextBox43";
+            this.DataNumTextBox43.PlaceholderText = "";
+            this.DataNumTextBox43.Radius = 2;
+            this.DataNumTextBox43.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox43.TabIndex = 218;
+            // 
+            // DataNumTextBox42
+            // 
+            this.DataNumTextBox42.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox42.Location = new System.Drawing.Point(140, 61);
+            this.DataNumTextBox42.Name = "DataNumTextBox42";
+            this.DataNumTextBox42.PlaceholderText = "";
+            this.DataNumTextBox42.Radius = 2;
+            this.DataNumTextBox42.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox42.TabIndex = 217;
+            // 
+            // DataNumTextBox41
+            // 
+            this.DataNumTextBox41.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox41.Location = new System.Drawing.Point(140, 29);
+            this.DataNumTextBox41.Name = "DataNumTextBox41";
+            this.DataNumTextBox41.PlaceholderText = "";
+            this.DataNumTextBox41.Radius = 2;
+            this.DataNumTextBox41.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox41.TabIndex = 216;
+            // 
+            // DataNumTextBox60
+            // 
+            this.DataNumTextBox60.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox60.Location = new System.Drawing.Point(277, 314);
+            this.DataNumTextBox60.Name = "DataNumTextBox60";
+            this.DataNumTextBox60.PlaceholderText = "";
+            this.DataNumTextBox60.Radius = 2;
+            this.DataNumTextBox60.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox60.TabIndex = 235;
+            // 
+            // DataNumTextBox59
+            // 
+            this.DataNumTextBox59.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox59.Location = new System.Drawing.Point(277, 282);
+            this.DataNumTextBox59.Name = "DataNumTextBox59";
+            this.DataNumTextBox59.PlaceholderText = "";
+            this.DataNumTextBox59.Radius = 2;
+            this.DataNumTextBox59.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox59.TabIndex = 234;
+            // 
+            // DataNumTextBox58
+            // 
+            this.DataNumTextBox58.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox58.Location = new System.Drawing.Point(277, 250);
+            this.DataNumTextBox58.Name = "DataNumTextBox58";
+            this.DataNumTextBox58.PlaceholderText = "";
+            this.DataNumTextBox58.Radius = 2;
+            this.DataNumTextBox58.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox58.TabIndex = 233;
+            // 
+            // DataNumTextBox57
+            // 
+            this.DataNumTextBox57.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox57.Location = new System.Drawing.Point(277, 218);
+            this.DataNumTextBox57.Name = "DataNumTextBox57";
+            this.DataNumTextBox57.PlaceholderText = "";
+            this.DataNumTextBox57.Radius = 2;
+            this.DataNumTextBox57.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox57.TabIndex = 232;
+            // 
+            // DataNumTextBox56
+            // 
+            this.DataNumTextBox56.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox56.Location = new System.Drawing.Point(277, 186);
+            this.DataNumTextBox56.Name = "DataNumTextBox56";
+            this.DataNumTextBox56.PlaceholderText = "";
+            this.DataNumTextBox56.Radius = 2;
+            this.DataNumTextBox56.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox56.TabIndex = 231;
+            // 
+            // DataNumTextBox55
+            // 
+            this.DataNumTextBox55.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox55.Location = new System.Drawing.Point(277, 154);
+            this.DataNumTextBox55.Name = "DataNumTextBox55";
+            this.DataNumTextBox55.PlaceholderText = "";
+            this.DataNumTextBox55.Radius = 2;
+            this.DataNumTextBox55.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox55.TabIndex = 230;
+            // 
+            // DataNumTextBox54
+            // 
+            this.DataNumTextBox54.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox54.Location = new System.Drawing.Point(277, 122);
+            this.DataNumTextBox54.Name = "DataNumTextBox54";
+            this.DataNumTextBox54.PlaceholderText = "";
+            this.DataNumTextBox54.Radius = 2;
+            this.DataNumTextBox54.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox54.TabIndex = 229;
+            // 
+            // DataNumTextBox53
+            // 
+            this.DataNumTextBox53.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox53.Location = new System.Drawing.Point(277, 90);
+            this.DataNumTextBox53.Name = "DataNumTextBox53";
+            this.DataNumTextBox53.PlaceholderText = "";
+            this.DataNumTextBox53.Radius = 2;
+            this.DataNumTextBox53.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox53.TabIndex = 228;
+            // 
+            // DataNumTextBox52
+            // 
+            this.DataNumTextBox52.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox52.Location = new System.Drawing.Point(277, 58);
+            this.DataNumTextBox52.Name = "DataNumTextBox52";
+            this.DataNumTextBox52.PlaceholderText = "";
+            this.DataNumTextBox52.Radius = 2;
+            this.DataNumTextBox52.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox52.TabIndex = 227;
+            // 
+            // DataNumTextBox51
+            // 
+            this.DataNumTextBox51.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DataNumTextBox51.Location = new System.Drawing.Point(277, 26);
+            this.DataNumTextBox51.Name = "DataNumTextBox51";
+            this.DataNumTextBox51.PlaceholderText = "";
+            this.DataNumTextBox51.Radius = 2;
+            this.DataNumTextBox51.Size = new System.Drawing.Size(46, 30);
+            this.DataNumTextBox51.TabIndex = 226;
             // 
             // MainForm
             // 
@@ -5475,67 +5445,7 @@ namespace GasFormsApp
         private Panel tabPage2panel4;
         private Label label27;
         private Label label29;
-        private TextBox DesorbTextBox36;
         private Label label28;
-        private TextBox DesorbTextBox46;
-        private TextBox DesorbTextBox55;
-        private TextBox DesorbTextBox56;
-        private TextBox DesorbTextBox45;
-        public TextBox DataNumTextBox60;
-        private TextBox DesorbTextBox35;
-        public TextBox DataNumTextBox59;
-        private TextBox DesorbTextBox37;
-        public TextBox DataNumTextBox58;
-        private TextBox DesorbTextBox47;
-        public TextBox DataNumTextBox57;
-        private TextBox DesorbTextBox54;
-        public TextBox DataNumTextBox56;
-        private TextBox DesorbTextBox57;
-        public TextBox DataNumTextBox55;
-        private TextBox DesorbTextBox44;
-        public TextBox DataNumTextBox54;
-        private TextBox DesorbTextBox34;
-        public TextBox DataNumTextBox53;
-        private TextBox DesorbTextBox38;
-        public TextBox DataNumTextBox52;
-        private TextBox DesorbTextBox48;
-        public TextBox DataNumTextBox51;
-        private TextBox DesorbTextBox53;
-        public TextBox DataNumTextBox50;
-        private TextBox DesorbTextBox58;
-        public TextBox DataNumTextBox49;
-        private TextBox DesorbTextBox43;
-        public TextBox DataNumTextBox48;
-        private TextBox DesorbTextBox33;
-        public TextBox DataNumTextBox47;
-        private TextBox DesorbTextBox39;
-        public TextBox DataNumTextBox46;
-        private TextBox DesorbTextBox49;
-        public TextBox DataNumTextBox45;
-        private TextBox DesorbTextBox52;
-        public TextBox DataNumTextBox44;
-        private TextBox DesorbTextBox59;
-        public TextBox DataNumTextBox43;
-        private TextBox DesorbTextBox42;
-        public TextBox DataNumTextBox42;
-        private TextBox DesorbTextBox32;
-        public TextBox DataNumTextBox41;
-        private TextBox DesorbTextBox51;
-        public TextBox DataNumTextBox40;
-        private TextBox DesorbTextBox40;
-        public TextBox DataNumTextBox39;
-        private TextBox DesorbTextBox50;
-        public TextBox DataNumTextBox38;
-        private TextBox DesorbTextBox41;
-        public TextBox DataNumTextBox37;
-        private TextBox DesorbTextBox31;
-        public TextBox DataNumTextBox36;
-        private TextBox DesorbTextBox60;
-        public TextBox DataNumTextBox35;
-        public TextBox DataNumTextBox31;
-        public TextBox DataNumTextBox34;
-        public TextBox DataNumTextBox32;
-        public TextBox DataNumTextBox33;
         private Panel tabPage2panel3;
         private Label label24;
         private Label DataNumLabel26;
@@ -5570,36 +5480,6 @@ namespace GasFormsApp
         private Label DataNumLabel21;
         private Label DataNumLabel11;
         private Label DataNumLabel1;
-        public TextBox DesorbTextBox6;
-        public TextBox DesorbTextBox16;
-        public TextBox DesorbTextBox25;
-        public TextBox DesorbTextBox26;
-        public TextBox DesorbTextBox15;
-        public TextBox DesorbTextBox5;
-        public TextBox DesorbTextBox7;
-        public TextBox DesorbTextBox17;
-        public TextBox DesorbTextBox24;
-        public TextBox DesorbTextBox27;
-        public TextBox DesorbTextBox14;
-        public TextBox DesorbTextBox4;
-        public TextBox DesorbTextBox8;
-        public TextBox DesorbTextBox18;
-        public TextBox DesorbTextBox23;
-        public TextBox DesorbTextBox28;
-        public TextBox DesorbTextBox13;
-        public TextBox DesorbTextBox3;
-        public TextBox DesorbTextBox9;
-        public TextBox DesorbTextBox19;
-        public TextBox DesorbTextBox22;
-        public TextBox DesorbTextBox29;
-        public TextBox DesorbTextBox12;
-        public TextBox DesorbTextBox2;
-        public TextBox DesorbTextBox21;
-        public TextBox DesorbTextBox10;
-        public TextBox DesorbTextBox20;
-        public TextBox DesorbTextBox11;
-        public TextBox DesorbTextBox1;
-        public TextBox DesorbTextBox30;
         private Label label23;
         public PictureBox pictureBox3;
         public TextBox SampLossVolTextBox;
@@ -5739,5 +5619,95 @@ namespace GasFormsApp
         public Panel tabPage2panel1;
         public Panel tabPage2panel5;
         public Panel tabPage2panel2;
+        public AntdUI.Input DesorbTextBox1;
+        public AntdUI.Input DesorbTextBox10;
+        public AntdUI.Input DesorbTextBox9;
+        public AntdUI.Input DesorbTextBox8;
+        public AntdUI.Input DesorbTextBox7;
+        public AntdUI.Input DesorbTextBox6;
+        public AntdUI.Input DesorbTextBox5;
+        public AntdUI.Input DesorbTextBox4;
+        public AntdUI.Input DesorbTextBox3;
+        public AntdUI.Input DesorbTextBox2;
+        public AntdUI.Input DesorbTextBox20;
+        public AntdUI.Input DesorbTextBox19;
+        public AntdUI.Input DesorbTextBox18;
+        public AntdUI.Input DesorbTextBox17;
+        public AntdUI.Input DesorbTextBox16;
+        public AntdUI.Input DesorbTextBox15;
+        public AntdUI.Input DesorbTextBox14;
+        public AntdUI.Input DesorbTextBox13;
+        public AntdUI.Input DesorbTextBox12;
+        public AntdUI.Input DesorbTextBox11;
+        public AntdUI.Input DesorbTextBox30;
+        public AntdUI.Input DesorbTextBox29;
+        public AntdUI.Input DesorbTextBox28;
+        public AntdUI.Input DesorbTextBox27;
+        public AntdUI.Input DesorbTextBox26;
+        public AntdUI.Input DesorbTextBox25;
+        public AntdUI.Input DesorbTextBox24;
+        public AntdUI.Input DesorbTextBox23;
+        public AntdUI.Input DesorbTextBox22;
+        public AntdUI.Input DesorbTextBox21;
+        public AntdUI.Input DesorbTextBox60;
+        public AntdUI.Input DesorbTextBox59;
+        public AntdUI.Input DesorbTextBox58;
+        public AntdUI.Input DesorbTextBox57;
+        public AntdUI.Input DesorbTextBox56;
+        public AntdUI.Input DesorbTextBox55;
+        public AntdUI.Input DesorbTextBox54;
+        public AntdUI.Input DesorbTextBox53;
+        public AntdUI.Input DesorbTextBox52;
+        public AntdUI.Input DesorbTextBox51;
+        public AntdUI.Input DesorbTextBox50;
+        public AntdUI.Input DesorbTextBox49;
+        public AntdUI.Input DesorbTextBox48;
+        public AntdUI.Input DesorbTextBox47;
+        public AntdUI.Input DesorbTextBox46;
+        public AntdUI.Input DesorbTextBox45;
+        public AntdUI.Input DesorbTextBox44;
+        public AntdUI.Input DesorbTextBox43;
+        public AntdUI.Input DesorbTextBox42;
+        public AntdUI.Input DesorbTextBox41;
+        public AntdUI.Input DesorbTextBox40;
+        public AntdUI.Input DesorbTextBox39;
+        public AntdUI.Input DesorbTextBox38;
+        public AntdUI.Input DesorbTextBox37;
+        public AntdUI.Input DesorbTextBox36;
+        public AntdUI.Input DesorbTextBox35;
+        public AntdUI.Input DesorbTextBox34;
+        public AntdUI.Input DesorbTextBox33;
+        public AntdUI.Input DesorbTextBox32;
+        public AntdUI.Input DesorbTextBox31;
+        public AntdUI.Input DataNumTextBox40;
+        public AntdUI.Input DataNumTextBox39;
+        public AntdUI.Input DataNumTextBox38;
+        public AntdUI.Input DataNumTextBox37;
+        public AntdUI.Input DataNumTextBox36;
+        public AntdUI.Input DataNumTextBox35;
+        public AntdUI.Input DataNumTextBox34;
+        public AntdUI.Input DataNumTextBox33;
+        public AntdUI.Input DataNumTextBox32;
+        public AntdUI.Input DataNumTextBox31;
+        public AntdUI.Input DataNumTextBox60;
+        public AntdUI.Input DataNumTextBox50;
+        public AntdUI.Input DataNumTextBox59;
+        public AntdUI.Input DataNumTextBox49;
+        public AntdUI.Input DataNumTextBox58;
+        public AntdUI.Input DataNumTextBox57;
+        public AntdUI.Input DataNumTextBox48;
+        public AntdUI.Input DataNumTextBox56;
+        public AntdUI.Input DataNumTextBox47;
+        public AntdUI.Input DataNumTextBox55;
+        public AntdUI.Input DataNumTextBox54;
+        public AntdUI.Input DataNumTextBox46;
+        public AntdUI.Input DataNumTextBox53;
+        public AntdUI.Input DataNumTextBox45;
+        public AntdUI.Input DataNumTextBox52;
+        public AntdUI.Input DataNumTextBox51;
+        public AntdUI.Input DataNumTextBox44;
+        public AntdUI.Input DataNumTextBox43;
+        public AntdUI.Input DataNumTextBox42;
+        public AntdUI.Input DataNumTextBox41;
     }
 }
