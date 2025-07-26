@@ -876,7 +876,8 @@ namespace GasFormsApp.TabControl
                             _mainForm.MoistureSampleTextBox.Text,
                             _mainForm.RawCoalMoistureTextBox.Text,
                             _mainForm.InitialVolumeTextBox.Text,
-                            _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                            //_mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                            $"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy-MM-dd}",
                             ReportTimeText);
 
                         // 保存到用户指定路径
@@ -1160,7 +1161,8 @@ namespace GasFormsApp.TabControl
                             _mainForm.MoistureSampleTextBox.Text,
                             _mainForm.RawCoalMoistureTextBox.Text,
                             _mainForm.InitialVolumeTextBox.Text,
-                            _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                            //_mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                            $"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy-MM-dd}",
                             ReportTimeText);
 
                         // 保存到用户指定路径
@@ -1317,7 +1319,8 @@ namespace GasFormsApp.TabControl
                         _mainForm.MoistureSampleTextBox.Text,
                         _mainForm.RawCoalMoistureTextBox.Text,
                         _mainForm.InitialVolumeTextBox.Text,
-                        _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                        //_mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                        $"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy-MM-dd}",
                         ReportTimeText);
 
                     // 保存到指定路径

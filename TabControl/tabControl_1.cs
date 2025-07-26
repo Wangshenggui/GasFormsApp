@@ -26,6 +26,7 @@ namespace GasFormsApp.TabControl
             // 设置工具提示
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage1TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage1RecoverDataButton, "恢复数据(Ctrl + R)");
+            //_mainForm.toolTip1.SetToolTip(_mainForm.SamplingSpotTextBox, "必须包含括号，例如：(孔号) 或 （孔号）");
 
             _mainForm.SamplingTimeDateTimePicker.Value = _mainForm.SamplingTimeDateTimePicker.Value;
 
@@ -42,9 +43,69 @@ namespace GasFormsApp.TabControl
 
             _mainForm.tabPage1panel1.MouseWheel += tabPage1panel1_MouseWheel;
 
+            _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Now;
+
+            _mainForm.SamplingTimeDateTimePicker.Click += SamplingTimeDateTimePicker_Click;
+            _mainForm.SampleModeComboBox.Click += Select_Click;
+            _mainForm.CoalTypeComboBox.Click += Select_Click;
+
             // 批量注册内容更改事件
             InitializeTextMonitoring();
         }
+        private void Select_Click(object sender, EventArgs e)
+        {
+            var select = sender as Select;
+            if (select == null) return;
+
+            // 获取控件左上角在屏幕坐标中的位置
+            var screenPoint = select.PointToScreen(Point.Empty);
+
+            // 控件中心 Y 坐标
+            int controlCenterY = screenPoint.Y + select.Height / 2;
+
+            // 获取屏幕工作区高度
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            // 判断中心点在屏幕的上半部分还是下半部分
+            if (controlCenterY < screenHeight / 2)
+            {
+                // 在屏幕上半部分，向下展开
+                select.Placement = AntdUI.TAlignFrom.BL;
+            }
+            else
+            {
+                // 在屏幕下半部分，向上展开
+                select.Placement = AntdUI.TAlignFrom.TL;
+            }
+        }
+        private void SamplingTimeDateTimePicker_Click(object sender, EventArgs e)
+        {
+            var picker = sender as DatePicker;
+            if (picker == null) return;
+
+            // 获取控件左上角在屏幕坐标中的位置
+            var screenPoint = picker.PointToScreen(Point.Empty);
+
+            // 控件中心 Y 坐标
+            int controlCenterY = screenPoint.Y + picker.Height / 2;
+
+            // 获取屏幕工作区高度
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            // 判断中心点在屏幕的上半部分还是下半部分
+            if (controlCenterY < screenHeight / 2)
+            {
+                // 在屏幕上半部分，向下展开
+                picker.Placement = AntdUI.TAlignFrom.BL;
+            }
+            else
+            {
+                // 在屏幕下半部分，向上展开
+                picker.Placement = AntdUI.TAlignFrom.TL;
+            }
+
+        }
+
         // 批量注册事件
         private void InitializeTextMonitoring()
         {
@@ -144,6 +205,8 @@ namespace GasFormsApp.TabControl
             public string DrillInclinationText { get; set; }
             public string AzimuthText { get; set; }
             public string SamplingPersonnelText { get; set; }
+            public string 煤种 { get; set; }
+            public string 取样点坐标 { get; set; }
         }
 
         // “临时保存”按钮点击事件处理函数
@@ -167,13 +230,15 @@ namespace GasFormsApp.TabControl
                 InitialVolumeText = _mainForm.InitialVolumeTextBox.Text,
                 SampleWeightText = _mainForm.SampleWeightTextBox.Text,
                 SamplingDepthText = _mainForm.SamplingDepthTextBox.Text,
-                _SamplingTimeDateTimePicker = _mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd"),
+                _SamplingTimeDateTimePicker = _mainForm.SamplingTimeDateTimePicker.Value.ToString(),
                 DrillInclinationText = _mainForm.DrillInclinationTextBox.Text,
                 AzimuthText = _mainForm.AzimuthTextBox.Text,
-                SamplingPersonnelText = _mainForm.SamplingPersonnelTextBox.Text
+                SamplingPersonnelText = _mainForm.SamplingPersonnelTextBox.Text,
+                煤种 = _mainForm.CoalTypeComboBox.Text,
+                取样点坐标 = _mainForm.X_YTextBox.Text,
             };
 
-            Console.WriteLine($"{_mainForm.SamplingTimeDateTimePicker.Value.ToString("yyyy-MM-dd")}");
+            Console.WriteLine($"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy-MM-dd}");
 
             //// 获取当前程序运行目录
             //string currentDir = AppDomain.CurrentDomain.BaseDirectory;
@@ -262,13 +327,18 @@ namespace GasFormsApp.TabControl
                     //_mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data._SamplingTimeDateTimePicker);
                     // 安全赋值，只在值变化时才设置
                     DateTime newValue = DateTime.Parse(data._SamplingTimeDateTimePicker);
-                    if (_mainForm.SamplingTimeDateTimePicker.Value.Date != newValue.Date)
+                    //$"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy-MM-dd}"
+                    //if (_mainForm.SamplingTimeDateTimePicker.Value.Date != newValue.Date)
+                    //MessageBox.Show($"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy/MM/dd}---{newValue.Date.ToString("yyyy/MM/dd")}");
+                    if ($"{_mainForm.SamplingTimeDateTimePicker.Value:yyyy/MM/dd}" != newValue.Date.ToString("yyyy/MM/dd"))
                     {
                         _mainForm.SamplingTimeDateTimePicker.Value = newValue;
                     }
                     _mainForm.DrillInclinationTextBox.Text = data.DrillInclinationText;
                     _mainForm.AzimuthTextBox.Text = data.AzimuthText;
                     _mainForm.SamplingPersonnelTextBox.Text = data.SamplingPersonnelText;
+                    _mainForm.CoalTypeComboBox.Text = data.煤种;
+                    _mainForm.X_YTextBox.Text = data.取样点坐标;
 
                     MessageBox.Show("数据已恢复！");
                 }
@@ -290,6 +360,7 @@ namespace GasFormsApp.TabControl
             if (newWidth >= 370 && newWidth <= 705)
             {
                 newWidth = 370;
+                _mainForm.tabPage1TemporarySavingButton.Margin = new Padding(40, 3, 3, 3);
             }
             else if (newWidth > 705 && newWidth <= 1055)
             {
@@ -299,6 +370,7 @@ namespace GasFormsApp.TabControl
                 {
                     newHeight = 400;
                 }
+                _mainForm.tabPage1TemporarySavingButton.Margin = new Padding(224, 3, 3, 3);
             }
             else if (newWidth > 1055)
             {
@@ -308,10 +380,11 @@ namespace GasFormsApp.TabControl
                 {
                     newHeight = 400;
                 }
+                _mainForm.tabPage1TemporarySavingButton.Margin = new Padding(390, 3, 3, 3);
             }
-            _mainForm.MineNameTextBox.Width = newWidth - 25;
-            _mainForm.SamplingSpotTextBox.Width = newWidth - 25;
-            _mainForm.X_YTextBox.Width = newWidth - 25;
+            _mainForm.MineNameTextBox.Width = newWidth - 23;
+            _mainForm.SamplingSpotTextBox.Width = newWidth - 23;
+            _mainForm.X_YTextBox.Width = newWidth - 23;
 
             _mainForm.tabPage1panel2.Width = SystemInformation.VerticalScrollBarWidth;
             _mainForm.tabPage1panel2.Height = newHeight;
@@ -352,19 +425,19 @@ namespace GasFormsApp.TabControl
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     textBox.BackColor = textBox.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
-                    _mainForm.errorProvider1.SetError(textBox, "");
+                    _mainForm.toolTip1.SetToolTip(_mainForm.SamplingSpotTextBox, null);
                 }
                 // 非空但括号不完整时，背景变红色提示错误
                 else if (!hasBracketPair)
                 {
                     textBox.BackColor = Color.Tomato;
-                    _mainForm.errorProvider1.SetError(textBox, "必须包含括号，例如：(孔号) 或 （孔号）");
+                    _mainForm.toolTip1.SetToolTip(_mainForm.SamplingSpotTextBox, "必须包含括号，例如：(孔号) 或 （孔号）");
                 }
                 // 括号成对时恢复默认颜色，清除错误提示
                 else
                 {
                     textBox.BackColor = SystemColors.Window;
-                    _mainForm.errorProvider1.SetError(textBox, "");
+                    _mainForm.toolTip1.SetToolTip(_mainForm.SamplingSpotTextBox, null);
                 }
             }
             else
