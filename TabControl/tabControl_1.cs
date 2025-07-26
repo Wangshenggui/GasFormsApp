@@ -380,19 +380,23 @@ namespace GasFormsApp.TabControl
                 {
                     newHeight = 400;
                 }
+                else if (newHeight > 400)
+                {
+                    newHeight = 450;
+                }
                 _mainForm.tabPage1TemporarySavingButton.Margin = new Padding(390, 3, 3, 3);
             }
-            _mainForm.MineNameTextBox.Width = newWidth - 23;
-            _mainForm.SamplingSpotTextBox.Width = newWidth - 23;
-            _mainForm.X_YTextBox.Width = newWidth - 23;
+
+            _mainForm.MineNameTextBox.Width = newWidth - 23-180;
+            _mainForm.SamplingSpotTextBox.Width = newWidth - 23 - 180;
+            _mainForm.X_YTextBox.Width = newWidth - 23 - 180;
 
             _mainForm.tabPage1panel2.Width = SystemInformation.VerticalScrollBarWidth;
             _mainForm.tabPage1panel2.Height = newHeight;
             Point location = _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Location;
             int x = location.X;
             int y = location.Y;
-            _mainForm.tabPage1panel2.Location = new Point(newWidth+x- SystemInformation.VerticalScrollBarWidth, y);
-
+            _mainForm.tabPage1panel2.Location = new Point(newWidth + x - SystemInformation.VerticalScrollBarWidth, y);
 
             // 应用计算得到的宽高
             _mainForm.tabPage1DoubleBufferedFlowLayoutPanel1.Width = newWidth;
