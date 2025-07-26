@@ -425,6 +425,8 @@ namespace GasFormsApp
             this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SamplingTimeDateTimePicker = new AntdUI.DatePicker();
+            this.tabPage2panel1 = new System.Windows.Forms.Panel();
+            this.tabPage2panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -1146,6 +1148,8 @@ namespace GasFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage2DoubleBufferedPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage2DoubleBufferedPanel2.Controls.Add(this.tabPage2panel2);
+            this.tabPage2DoubleBufferedPanel2.Controls.Add(this.tabPage2panel1);
             this.tabPage2DoubleBufferedPanel2.Controls.Add(this.tabPage2DoubleBufferedFlowLayoutPanel1);
             this.tabPage2DoubleBufferedPanel2.Location = new System.Drawing.Point(0, 0);
             this.tabPage2DoubleBufferedPanel2.Name = "tabPage2DoubleBufferedPanel2";
@@ -2899,6 +2903,7 @@ namespace GasFormsApp
             this.tabPage2panel6.Controls.Add(this.tabPage2TemporarySavingButton);
             this.tabPage2panel6.Controls.Add(this.tabPage2RecoverDataButton);
             this.tabPage2panel6.Location = new System.Drawing.Point(3, 464);
+            this.tabPage2panel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.tabPage2panel6.Name = "tabPage2panel6";
             this.tabPage2panel6.Size = new System.Drawing.Size(806, 160);
             this.tabPage2panel6.TabIndex = 1000;
@@ -5197,6 +5202,22 @@ namespace GasFormsApp
             this.SamplingTimeDateTimePicker.TabIndex = 17;
             this.SamplingTimeDateTimePicker.ValueTimeHorizontal = true;
             // 
+            // tabPage2panel1
+            // 
+            this.tabPage2panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage2panel1.Location = new System.Drawing.Point(1239, 97);
+            this.tabPage2panel1.Name = "tabPage2panel1";
+            this.tabPage2panel1.Size = new System.Drawing.Size(77, 100);
+            this.tabPage2panel1.TabIndex = 0;
+            // 
+            // tabPage2panel2
+            // 
+            this.tabPage2panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage2panel2.Location = new System.Drawing.Point(1239, 250);
+            this.tabPage2panel2.Name = "tabPage2panel2";
+            this.tabPage2panel2.Size = new System.Drawing.Size(77, 100);
+            this.tabPage2panel2.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5579,7 +5600,6 @@ namespace GasFormsApp
         public TextBox DesorbTextBox11;
         public TextBox DesorbTextBox1;
         public TextBox DesorbTextBox30;
-        private Panel tabPage2panel5;
         private Label label23;
         public PictureBox pictureBox3;
         public TextBox SampLossVolTextBox;
@@ -5716,5 +5736,8 @@ namespace GasFormsApp
         public AntdUI.Select SampleModeComboBox;
         public AntdUI.Select CoalTypeComboBox;
         public AntdUI.DatePicker SamplingTimeDateTimePicker;
+        public Panel tabPage2panel1;
+        public Panel tabPage2panel5;
+        public Panel tabPage2panel2;
     }
 }

@@ -59,8 +59,22 @@ namespace GasFormsApp.TabControl
             _mainForm.pictureBox3.MouseDown += pictureBox3_MouseDown;
             _mainForm.导出图片ToolStripMenuItem.Click += 导出图片ToolStripMenuItem_Click;
 
+            _mainForm.tabPage2DoubleBufferedPanel2.MouseWheel += tabPage2DoubleBufferedPanel2_MouseWheel;
+
             // 批量注册内容更改事件
             InitializeTextMonitoring();
+        }
+
+        private void tabPage2DoubleBufferedPanel2_MouseWheel(object sender, MouseEventArgs e)
+        {
+            // 目标 FlowLayoutPanel 控件
+            var targetPanel = _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1;
+
+            // 计算新的滚动位置
+            int newY = -targetPanel.AutoScrollPosition.Y - e.Delta;
+
+            // 设置滚动（只垂直方向，横向可自行加）
+            targetPanel.AutoScrollPosition = new Point(0, newY);
         }
         private void InitializeTextMonitoring()
         {
@@ -430,6 +444,9 @@ namespace GasFormsApp.TabControl
             
             _mainForm.DataExportButton.Location = new Point(399, 78);
 
+            _mainForm.tabPage2panel5.Size = new Size(321, 345);
+            _mainForm.tabPage2panel5.Margin = new Padding(3, 3, 3, 3);
+
             newHeight = _mainForm.tabPage2DoubleBufferedPanel2.Height;
             // 根据宽度调整布局
             if (newWidth <= 840) // 小尺寸布局
@@ -444,6 +461,9 @@ namespace GasFormsApp.TabControl
                 _mainForm.tabPage2RecoverDataButton.Location = new Point(279, 203);
 
                 _mainForm.DataExportButton.Location = new Point(7, 203);
+
+                _mainForm.tabPage2panel5.Size = new Size(509, 345);
+                _mainForm.tabPage2panel5.Margin = new Padding(45, 3, 3, 3);
             }
             else if (newWidth > 840 && newWidth <= 1165) // 中尺寸布局
             {
@@ -473,6 +493,10 @@ namespace GasFormsApp.TabControl
 
             if (newHeight > 625) newHeight = 625;
 
+            //509, 345
+            //321, 345
+
+
             // 设置流式布局面板大小
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Width = newWidth;
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Height = newHeight;
@@ -480,6 +504,25 @@ namespace GasFormsApp.TabControl
             // 居中定位
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width - newWidth) / 2;
             _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Height - newHeight) / 2;
+
+            _mainForm.tabPage2panel1.Width = SystemInformation.VerticalScrollBarWidth;
+            _mainForm.tabPage2panel1.Height = newHeight;
+            Point location = _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Location;
+            int x = location.X;
+            int y = location.Y;
+            _mainForm.tabPage2panel1.Location = new Point(newWidth + x - SystemInformation.VerticalScrollBarWidth, y);
+
+            // 设置 panel1 的高度等于系统水平滚动条的高度
+            _mainForm.tabPage2panel2.Height = SystemInformation.HorizontalScrollBarHeight;
+            // 设置宽度等于 FlowLayoutPanel 的新宽度
+            _mainForm.tabPage2panel2.Width = newWidth;
+            // FlowLayoutPanel 的位置
+            //Point location = _mainForm.tabPage2DoubleBufferedFlowLayoutPanel1.Location;
+             x = location.X;
+             y = location.Y;
+            // 放到底部：Y 坐标等于 FlowLayoutPanel 的顶部位置 + 高度 - 滚动条高度
+            _mainForm.tabPage2panel2.Location = new Point(x, y + newHeight - SystemInformation.HorizontalScrollBarHeight);
+
         }
 
         /// <summary>
