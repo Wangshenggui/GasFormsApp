@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using AntdUI;
+using System.Drawing;
 
 namespace GasFormsApp.TabControl
 {
@@ -51,9 +53,80 @@ namespace GasFormsApp.TabControl
 
             _mainForm.WPSorOfficeLabel.Click += WPSorOfficeLabel_Click;
 
+            _mainForm.tabPage5DoubleBufferedPanel1.MouseWheel += tabPage5DoubleBufferedPanel1_MouseWheel;
+
+
+            _mainForm.dateTimePicker6.Value = DateTime.Now;
+            _mainForm.dateTimePicker1.Value = DateTime.Now;
+            _mainForm.dateTimePicker6.Click += dateTimePicker6_Click;
+            _mainForm.dateTimePicker1.Click += dateTimePicker1_Click;
 
             // 批量注册内容更改事件
             InitializeTextMonitoring();
+        }
+
+        private void dateTimePicker1_Click(object sender, EventArgs e)
+        {
+            var picker = sender as DatePicker;
+            if (picker == null) return;
+
+            // 获取控件左上角在屏幕坐标中的位置
+            var screenPoint = picker.PointToScreen(Point.Empty);
+
+            // 控件中心 Y 坐标
+            int controlCenterY = screenPoint.Y + picker.Height / 2;
+
+            // 获取屏幕工作区高度
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            // 判断中心点在屏幕的上半部分还是下半部分
+            if (controlCenterY < screenHeight / 2)
+            {
+                // 在屏幕上半部分，向下展开
+                picker.Placement = AntdUI.TAlignFrom.BL;
+            }
+            else
+            {
+                // 在屏幕下半部分，向上展开
+                picker.Placement = AntdUI.TAlignFrom.TL;
+            }
+        }
+        private void dateTimePicker6_Click(object sender, EventArgs e)
+        {
+            var picker = sender as DatePicker;
+            if (picker == null) return;
+
+            // 获取控件左上角在屏幕坐标中的位置
+            var screenPoint = picker.PointToScreen(Point.Empty);
+
+            // 控件中心 Y 坐标
+            int controlCenterY = screenPoint.Y + picker.Height / 2;
+
+            // 获取屏幕工作区高度
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            // 判断中心点在屏幕的上半部分还是下半部分
+            if (controlCenterY < screenHeight / 2)
+            {
+                // 在屏幕上半部分，向下展开
+                picker.Placement = AntdUI.TAlignFrom.BL;
+            }
+            else
+            {
+                // 在屏幕下半部分，向上展开
+                picker.Placement = AntdUI.TAlignFrom.TL;
+            }
+        }
+        private void tabPage5DoubleBufferedPanel1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            // 目标 FlowLayoutPanel 控件
+            var targetPanel = _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2;
+
+            // 计算新的滚动位置
+            int newY = -targetPanel.AutoScrollPosition.Y - e.Delta;
+
+            // 设置滚动（只垂直方向，横向可自行加）
+            targetPanel.AutoScrollPosition = new Point(0, newY);
         }
         private void InitializeTextMonitoring()
         {
@@ -82,7 +155,7 @@ namespace GasFormsApp.TabControl
             // 批量绑定事件
             foreach (var control in _trackedControls)
             {
-                if (control is TextBox textBox)
+                if (control is Input textBox)
                     textBox.TextChanged += Control_TextChanged;
                 else if (control is ComboBox comboBox)
                     comboBox.TextChanged += Control_TextChanged;
@@ -96,7 +169,7 @@ namespace GasFormsApp.TabControl
             var changedControl = (Control)sender;
             string currentValue;
 
-            if (changedControl is TextBox textBox)
+            if (changedControl is Input textBox)
                 currentValue = textBox.Text;
             else if (changedControl is ComboBox comboBox)
                 currentValue = comboBox.Text;
@@ -153,10 +226,8 @@ namespace GasFormsApp.TabControl
                 C3H6Text = _mainForm.C3H6TextBox.Text,
                 C2H2Text = _mainForm.C2H2TextBox.Text,
                 COText = _mainForm.COTextBox.Text,
-
-                _dateTimePicker6 = _mainForm.dateTimePicker6.Value.ToString("yyyy-MM-dd"),
-                _dateTimePicker1 = _mainForm.dateTimePicker1.Value.ToString("yyyy-MM-dd"),
-
+                _dateTimePicker6 = $"{_mainForm.dateTimePicker6.Value:yyyy-MM-dd}",
+                _dateTimePicker1 = $"{_mainForm.dateTimePicker1.Value:yyyy-MM-dd}",
                 DownholeTestersText = _mainForm.DownholeTestersTextBox.Text,
                 LabTestersText = _mainForm.LabTestersTextBox.Text,
                 AuditorText = _mainForm.AuditorTextBox.Text,
@@ -250,15 +321,23 @@ namespace GasFormsApp.TabControl
                     //_mainForm.dateTimePicker1.Value = DateTime.TryParse(data._dateTimePicker1, out var dt1) ? dt1 : DateTime.Now;
                     // 安全赋值，只在值变化时才设置
                     DateTime newValue6 = DateTime.Parse(data._dateTimePicker6);
-                    if (_mainForm.dateTimePicker6.Value.Date != newValue6.Date)
+                    if ($"{_mainForm.dateTimePicker6.Value:yyyy/MM/dd}" != newValue6.Date.ToString("yyyy/MM/dd"))
                     {
                         _mainForm.dateTimePicker6.Value = newValue6;
                     }
+                    //if (_mainForm.dateTimePicker6.Value.Date != newValue6.Date)
+                    //{
+                    //    _mainForm.dateTimePicker6.Value = newValue6;
+                    //}
                     DateTime newValue1 = DateTime.Parse(data._dateTimePicker1);
-                    if (_mainForm.dateTimePicker1.Value.Date != newValue1.Date)
+                    if ($"{_mainForm.dateTimePicker1.Value:yyyy/MM/dd}" != newValue1.Date.ToString("yyyy/MM/dd"))
                     {
                         _mainForm.dateTimePicker1.Value = newValue1;
                     }
+                    //if (_mainForm.dateTimePicker1.Value.Date != newValue1.Date)
+                    //{
+                    //    _mainForm.dateTimePicker1.Value = newValue1;
+                    //}
 
                     _mainForm.DownholeTestersTextBox.Text = data.DownholeTestersText;
                     _mainForm.LabTestersTextBox.Text = data.LabTestersText;
@@ -359,7 +438,7 @@ namespace GasFormsApp.TabControl
                 {
                     newHeight = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height / 10;
                 }
-                int a = 28;
+                int a = 29;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Width = newWidth;
                 _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Height = newHeight;
                 _mainForm.tabPage5panel11.Width = 500 + 15 - a;
@@ -374,6 +453,14 @@ namespace GasFormsApp.TabControl
             // 居中定位
             _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Left = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width - newWidth) / 2;
             _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Top = (_mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Height - newHeight) / 2;
+
+            //tabPage5panel18
+            _mainForm.tabPage5panel18.Width = SystemInformation.VerticalScrollBarWidth;
+            _mainForm.tabPage5panel18.Height = newHeight;
+            Point location = _mainForm.tabPage5DoubleBufferedFlowLayoutPanel2.Location;
+            int x = location.X;
+            int y = location.Y;
+            _mainForm.tabPage5panel18.Location = new Point(newWidth + x - SystemInformation.VerticalScrollBarWidth, y);
         }
 
         /// <summary>

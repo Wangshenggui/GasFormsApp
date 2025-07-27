@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AntdUI;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -62,8 +63,22 @@ namespace GasFormsApp.TabControl
                 _mainForm.NonDesorpGasQtyCheckBox
             );
 
+            _mainForm.tabPage4DoubleBufferedPanel1.MouseWheel += tabPage4DoubleBufferedPanel1_MouseWheel;
+
             // 批量注册内容更改事件
             InitializeTextMonitoring();
+        }
+
+        private void tabPage4DoubleBufferedPanel1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            // 目标 FlowLayoutPanel 控件
+            var targetPanel = _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1;
+
+            // 计算新的滚动位置
+            int newY = -targetPanel.AutoScrollPosition.Y - e.Delta;
+
+            // 设置滚动（只垂直方向，横向可自行加）
+            targetPanel.AutoScrollPosition = new Point(0, newY);
         }
         private void InitializeTextMonitoring()
         {
@@ -84,7 +99,7 @@ namespace GasFormsApp.TabControl
             // 批量绑定事件
             foreach (var control in _trackedControls)
             {
-                if (control is TextBox textBox)
+                if (control is Input textBox)
                     textBox.TextChanged += Control_TextChanged;
                 else if (control is ComboBox comboBox)
                     comboBox.TextChanged += Control_TextChanged;
@@ -98,7 +113,7 @@ namespace GasFormsApp.TabControl
             var changedControl = (Control)sender;
             string currentValue;
 
-            if (changedControl is TextBox textBox)
+            if (changedControl is Input textBox)
                 currentValue = textBox.Text;
             else if (changedControl is ComboBox comboBox)
                 currentValue = comboBox.Text;
@@ -331,6 +346,15 @@ namespace GasFormsApp.TabControl
             // 居中定位
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Left = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Width - _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Width) / 2;
             _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Top = (_mainForm.tabPage4DoubleBufferedPanel1.ClientSize.Height - _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Height) / 2;
+
+
+            // tabPage4panel1
+            _mainForm.tabPage4panel1.Width = SystemInformation.VerticalScrollBarWidth;
+            _mainForm.tabPage4panel1.Height = newHeight;
+            Point location = _mainForm.tabPage4DoubleBufferedFlowLayoutPanel1.Location;
+            int x = location.X;
+            int y = location.Y;
+            _mainForm.tabPage4panel1.Location = new Point(newWidth + x - SystemInformation.VerticalScrollBarWidth, y);
         }
 
         // 当 WcOutCheckBox 选中状态改变时调用
@@ -388,7 +412,7 @@ namespace GasFormsApp.TabControl
         }
 
         // 验证数值型文本框，检查非空、无空格、有效数字且非负，否则标红
-        private void ValidateNumericTextBox(TextBox textBox)
+        private void ValidateNumericTextBox(Input textBox)
         {
             string input = textBox.Text;
 
@@ -412,7 +436,7 @@ namespace GasFormsApp.TabControl
         }
 
         // 验证非空文本框，空时改变背景色提示
-        private void ValidateEmptyTextBox(TextBox textBox)
+        private void ValidateEmptyTextBox(Input textBox)
         {
             string input = textBox.Text;
 

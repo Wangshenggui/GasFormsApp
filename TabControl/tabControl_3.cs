@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AntdUI;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -37,11 +38,25 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage3TemporarySavingButton.Click += tabPage3TemporarySavingButton_Click;
             _mainForm.tabPage3RecoverDataButton.Click += tabPage3RecoverDataButton_Click;
 
+            _mainForm.tabPage3.MouseWheel += tabPage3_MouseWheel;
+
             _mainForm.tabPage3panel1.Paint += tabPage3panel1_Paint;
 
 
             // 批量注册内容更改事件
             InitializeTextMonitoring();
+        }
+
+        private void tabPage3_MouseWheel(object sender, MouseEventArgs e)
+        {
+            // 目标 FlowLayoutPanel 控件
+            var targetPanel = _mainForm.tabPage3panel2;
+
+            // 计算新的滚动位置
+            int newY = -targetPanel.AutoScrollPosition.Y - e.Delta;
+
+            // 设置滚动（只垂直方向，横向可自行加）
+            targetPanel.AutoScrollPosition = new Point(0, newY);
         }
         private void InitializeTextMonitoring()
         {
@@ -59,7 +74,7 @@ namespace GasFormsApp.TabControl
             // 批量绑定事件
             foreach (var control in _trackedControls)
             {
-                if (control is TextBox textBox)
+                if (control is Input textBox)
                     textBox.TextChanged += Control_TextChanged;
                 else if (control is ComboBox comboBox)
                     comboBox.TextChanged += Control_TextChanged;
@@ -73,7 +88,7 @@ namespace GasFormsApp.TabControl
             var changedControl = (Control)sender;
             string currentValue;
 
-            if (changedControl is TextBox textBox)
+            if (changedControl is Input textBox)
                 currentValue = textBox.Text;
             else if (changedControl is ComboBox comboBox)
                 currentValue = comboBox.Text;
@@ -112,6 +127,17 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage3panel3.Top = (_mainForm.tabPage3panel2.Height - _mainForm.tabPage3panel3.Height) / 2;
 
             if (_mainForm.tabPage3panel3.Top <= 0) _mainForm.tabPage3panel3.Top = 0;
+
+            //_mainForm.tabPage3panel4.Location = _mainForm.tabPage3panel2.Location;
+
+            _mainForm.tabPage3panel4.Width = SystemInformation.VerticalScrollBarWidth;
+            _mainForm.tabPage3panel4.Height = newHeight;
+            Point location = _mainForm.tabPage3panel2.Location;
+            int x = location.X;
+            int y = location.Y;
+            newWidth = _mainForm.tabPage3panel2.Width;
+            newHeight = _mainForm.tabPage3panel2.Height;
+            _mainForm.tabPage3panel4.Location = new Point(newWidth + x - SystemInformation.VerticalScrollBarWidth, y);
 
             //bool vScroll = _mainForm.tabPage3panel2.VerticalScroll.Visible;
             //bool hScroll = _mainForm.tabPage3panel2.HorizontalScroll.Visible;
@@ -264,7 +290,7 @@ namespace GasFormsApp.TabControl
         /// 验证数值文本框的输入
         /// </summary>
         /// <param name="textBox">要验证的文本框</param>
-        private void ValidateNumericTextBox(TextBox textBox)
+        private void ValidateNumericTextBox(Input textBox)
         {
             string input = textBox.Text;
             textBox.BackColor = SystemColors.Window; // 重置颜色
@@ -287,7 +313,7 @@ namespace GasFormsApp.TabControl
         /// 验证文本框是否为空
         /// </summary>
         /// <param name="textBox">要验证的文本框</param>
-        private void ValidateEmptyTextBox(TextBox textBox)
+        private void ValidateEmptyTextBox(Input textBox)
         {
             string input = textBox.Text;
             textBox.BackColor = SystemColors.Window; // 重置背景色
