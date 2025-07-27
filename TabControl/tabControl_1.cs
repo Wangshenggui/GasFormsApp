@@ -131,13 +131,15 @@ namespace GasFormsApp.TabControl
                     _mainForm.DrillInclinationTextBox,
                     _mainForm.AzimuthTextBox,
                     _mainForm.SamplingPersonnelTextBox,
+                    _mainForm.X_YTextBox,
+                    _mainForm.CoalTypeComboBox,
                 }
             );
 
             // 批量绑定事件
             foreach (var control in _trackedControls)
             {
-                if (control is TextBox textBox)
+                if (control is Input textBox)
                     textBox.TextChanged += Control_TextChanged;
                 else if (control is ComboBox comboBox)
                     comboBox.TextChanged += Control_TextChanged;
@@ -151,7 +153,7 @@ namespace GasFormsApp.TabControl
             var changedControl = (Control)sender;
             string currentValue;
 
-            if (changedControl is TextBox textBox)
+            if (changedControl is Input textBox)
                 currentValue = textBox.Text;
             else if (changedControl is ComboBox comboBox)
                 currentValue = comboBox.Text;
@@ -540,6 +542,7 @@ namespace GasFormsApp.TabControl
             ValidateEmptyTextBox(_mainForm.CoalSeamTextBox);
             ValidateEmptyTextBox(_mainForm.SampleNumTextBox);
             ValidateEmptyTextBox(_mainForm.SamplingPersonnelTextBox);
+            ValidateEmptyTextBox(_mainForm.X_YTextBox);
         }
     }
 }

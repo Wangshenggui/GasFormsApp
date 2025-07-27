@@ -15,7 +15,6 @@ using Color = System.Drawing.Color;
 using ComboBox = System.Windows.Forms.ComboBox;
 using Control = System.Windows.Forms.Control;
 using Font = System.Drawing.Font;
-using TextBox = System.Windows.Forms.TextBox;
 
 namespace GasFormsApp.TabControl
 {
@@ -125,7 +124,7 @@ namespace GasFormsApp.TabControl
             // 批量绑定事件
             foreach (var control in _trackedControls)
             {
-                if (control is TextBox textBox)
+                if (control is Input textBox)
                     textBox.TextChanged += Control_TextChanged;
                 else if (control is ComboBox comboBox)
                     comboBox.TextChanged += Control_TextChanged;
@@ -139,7 +138,7 @@ namespace GasFormsApp.TabControl
             var changedControl = (Control)sender;
             string currentValue;
 
-            if (changedControl is TextBox textBox)
+            if (changedControl is Input textBox)
                 currentValue = textBox.Text;
             else if (changedControl is ComboBox comboBox)
                 currentValue = comboBox.Text;
@@ -576,7 +575,7 @@ namespace GasFormsApp.TabControl
         /// 验证文本框是否为空
         /// </summary>
         /// <param name="textBox">要验证的文本框</param>
-        private void ValidateEmptyTextBox(TextBox textBox)
+        private void ValidateEmptyTextBox(Input textBox)
         {
             string input = textBox.Text;
             textBox.BackColor = SystemColors.Window; // 重置背景色
@@ -798,7 +797,7 @@ namespace GasFormsApp.TabControl
                     if (time >= 1 && time <= 30)
                     {
                         string textBoxName = $"DesorbTextBox{time}";
-                        var tb = _mainForm.Controls.Find(textBoxName, true).FirstOrDefault() as TextBox;
+                        var tb = _mainForm.Controls.Find(textBoxName, true).FirstOrDefault() as Input;
                         if (tb != null)
                             tb.Text = desorbValue;
                     }
@@ -808,13 +807,13 @@ namespace GasFormsApp.TabControl
                     {
                         // 解吸量填充
                         string desorbBoxName = $"DesorbTextBox{desorbIndex}";
-                        var desorbTb = _mainForm.Controls.Find(desorbBoxName, true).FirstOrDefault() as TextBox;
+                        var desorbTb = _mainForm.Controls.Find(desorbBoxName, true).FirstOrDefault() as Input;
                         if (desorbTb != null)
                             desorbTb.Text = desorbValue;
 
                         // 时间填充
                         string dataNumBoxName = $"DataNumTextBox{dataNumIndex}";
-                        var dataTb = _mainForm.Controls.Find(dataNumBoxName, true).FirstOrDefault() as TextBox;
+                        var dataTb = _mainForm.Controls.Find(dataNumBoxName, true).FirstOrDefault() as Input;
                         if (dataTb != null)
                             dataTb.Text = time.ToString();
 
@@ -950,7 +949,7 @@ namespace GasFormsApp.TabControl
                             {
                                 // 后30行：时间列=从 DataNumTextBox31~DataNumTextBox60 获取
                                 var dataNumTextbox = _mainForm.Controls.Find($"DataNumTextBox{i}", true);
-                                if (dataNumTextbox.Length > 0 && dataNumTextbox[0] is TextBox tbTime)
+                                if (dataNumTextbox.Length > 0 && dataNumTextbox[0] is Input tbTime)
                                 {
                                     double.TryParse(tbTime.Text, out timeValue);
                                 }
@@ -958,7 +957,7 @@ namespace GasFormsApp.TabControl
 
                             // 解吸量列：从 DesorbTextBox1~DesorbTextBox60 获取
                             var desorbTextbox = _mainForm.Controls.Find($"DesorbTextBox{i}", true);
-                            if (desorbTextbox.Length > 0 && desorbTextbox[0] is TextBox tbDesorb)
+                            if (desorbTextbox.Length > 0 && desorbTextbox[0] is Input tbDesorb)
                             {
                                 double.TryParse(tbDesorb.Text, out desorbValue);
                             }

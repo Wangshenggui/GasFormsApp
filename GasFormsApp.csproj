@@ -355,6 +355,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Image\批量导入.png" />
     <None Include="Image\数据管理.jpg" />
     <None Include="Image\数据归档.jpg" />
     <None Include="Image\实验结果.jpg" />
