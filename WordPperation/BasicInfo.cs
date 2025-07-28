@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml;
+﻿using AntdUI;
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -343,7 +344,7 @@ namespace GasFormsApp.WordPperation
             for (int i = 1; i <= 60; i++)
             {
                 string key = $"D{i:000}";
-                var textBox = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as TextBox;
+                var textBox = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as Input;
 
                 if (textBox != null)
                 {
