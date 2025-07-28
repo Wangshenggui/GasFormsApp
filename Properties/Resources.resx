@@ -118,18 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="基本信息" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\基本信息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="井下解吸" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\井下解吸.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="常压解吸" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\常压解吸.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="数据管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\数据管理.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="打印" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\打印.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,16 +130,31 @@
   <data name="打勾" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\打勾.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="数据归档" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\数据归档.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="实验结果" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\实验结果.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AppLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\AppLog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="批量导入" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\批量导入.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_基本信息" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_基本信息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_井下解吸" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_井下解吸.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_常压解吸" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_常压解吸.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_实验结果" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_实验结果.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_数据归档" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_数据归档.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_数据归档1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_数据归档.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_数据管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\_数据管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

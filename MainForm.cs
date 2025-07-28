@@ -227,8 +227,8 @@ namespace GasFormsApp
             bool isSelected = (e.Index == tabControl1.SelectedIndex);
 
             // 渐变背景色（选中：蓝黑渐变，未选中：黑灰渐变）
-            Color startColor = isSelected ? Color.Blue : Color.Black;
-            Color endColor = isSelected ? Color.Black : Color.DarkGray;
+            Color startColor = isSelected ? Color.White : Color.White;
+            Color endColor = isSelected ? Color.White : Color.White;
 
             using (var gradientBrush = new LinearGradientBrush(
                 bounds,
@@ -250,7 +250,7 @@ namespace GasFormsApp
             //e.Graphics.DrawImage(tabImage, iconX, iconY, iconWidth, iconHeight);
 
             // 文字颜色（白色确保在深色背景下可读）
-            Color textColor = Color.White;
+            Color textColor = Color.Black;
 
             // 文字位置
             SizeF textSize = e.Graphics.MeasureString(tabText, e.Font);

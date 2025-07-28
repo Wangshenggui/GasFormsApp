@@ -257,6 +257,11 @@
     <Compile Include="ProjectGroupsForm.Designer.cs">
       <DependentUpon>ProjectGroupsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -309,14 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\CustomFormClass.resx">
       <DependentUpon>CustomFormClass.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,14 +356,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\批量导入.png" />
-    <None Include="Image\数据管理.jpg" />
-    <None Include="Image\数据归档.jpg" />
-    <None Include="Image\实验结果.jpg" />
-    <None Include="Image\常压解吸.jpg" />
-    <None Include="Image\基本信息.png" />
-    <None Include="Image\井下解吸.jpg" />
     <Content Include="Image\AppLog.ico" />
     <None Include="Image\AppLog.png" />
+    <Content Include="Image\_井下解吸.png" />
+    <Content Include="Image\_基本信息.png" />
+    <Content Include="Image\_实验结果.png" />
+    <Content Include="Image\_常压解吸.png" />
+    <Content Include="Image\_数据归档.png" />
+    <Content Include="Image\_数据管理.png" />
     <Content Include="Image\保存.png" />
     <None Include="Image\打勾.png" />
     <None Include="Image\打叉.png" />

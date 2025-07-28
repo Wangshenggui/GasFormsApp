@@ -32,14 +32,14 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -258,8 +258,18 @@ namespace GasFormsApp
             this.tabPage2RecoverDataButton = new GasFormsApp.UI.UCButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage3panel1 = new System.Windows.Forms.Panel();
+            this.tabPage3panel4 = new System.Windows.Forms.Panel();
             this.tabPage3panel2 = new System.Windows.Forms.Panel();
             this.tabPage3panel3 = new System.Windows.Forms.Panel();
+            this.CrushDesorpTextBox = new AntdUI.Input();
+            this.S2DesorpVolCalTextBox = new AntdUI.Input();
+            this.S1DesorpVolCalTextBox = new AntdUI.Input();
+            this.S2DesorpVolTextBox = new AntdUI.Input();
+            this.S1DesorpVolTextBox = new AntdUI.Input();
+            this.Sample2WeightTextBox = new AntdUI.Input();
+            this.Sample1WeightTextBox = new AntdUI.Input();
+            this.DesorpVolNormalCalTextBox = new AntdUI.Input();
+            this.DesorpVolNormalTextBox = new AntdUI.Input();
             this.label89 = new System.Windows.Forms.Label();
             this.tabPage3TemporarySavingButton = new GasFormsApp.UI.UCButton();
             this.label83 = new System.Windows.Forms.Label();
@@ -279,8 +289,18 @@ namespace GasFormsApp
             this.label96 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage4DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.tabPage4panel1 = new System.Windows.Forms.Panel();
             this.tabPage4DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.NonDesorpGasQtyTextBox = new AntdUI.Input();
+            this.PorosityTextBox = new AntdUI.Input();
+            this.TrueDensityTextBox = new AntdUI.Input();
+            this.AppDensityTextBox = new AntdUI.Input();
+            this.VadTextBox = new AntdUI.Input();
+            this.AadTextBox = new AntdUI.Input();
+            this.MadTextBox = new AntdUI.Input();
+            this.AdsorpConstBTextBox = new AntdUI.Input();
+            this.AdsorpConstATextBox = new AntdUI.Input();
             this.PorosityCheckBox = new System.Windows.Forms.CheckBox();
             this.TrueDensityCheckBox = new System.Windows.Forms.CheckBox();
             this.NonDesorpGasQtyCheckBox = new System.Windows.Forms.CheckBox();
@@ -292,6 +312,13 @@ namespace GasFormsApp
             this.AdsorpConstACheckBox = new System.Windows.Forms.CheckBox();
             this.WcOutCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.P_TextBox = new AntdUI.Input();
+            this.W_TextBox = new AntdUI.Input();
+            this.Wc_TextBox = new AntdUI.Input();
+            this.Wa_TextBox = new AntdUI.Input();
+            this.W3_TextBox = new AntdUI.Input();
+            this.W2_TextBox = new AntdUI.Input();
+            this.W1_TextBox = new AntdUI.Input();
             this.tabPage4TemporarySavingButton = new GasFormsApp.UI.UCButton();
             this.tabPage4RecoverDataButton = new GasFormsApp.UI.UCButton();
             this.label95 = new System.Windows.Forms.Label();
@@ -304,39 +331,56 @@ namespace GasFormsApp
             this.label91 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage5DoubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.tabPage5panel18 = new System.Windows.Forms.Panel();
             this.tabPage5DoubleBufferedFlowLayoutPanel2 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
             this.tabPage5DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
             this.tabPage5panel1 = new System.Windows.Forms.Panel();
             this.CH4CheckBox = new System.Windows.Forms.CheckBox();
+            this.CH4TextBox = new AntdUI.Input();
             this.tabPage5panel2 = new System.Windows.Forms.Panel();
             this.CO2CheckBox = new System.Windows.Forms.CheckBox();
+            this.CO2TextBox = new AntdUI.Input();
             this.tabPage5panel3 = new System.Windows.Forms.Panel();
             this.N2CheckBox = new System.Windows.Forms.CheckBox();
+            this.N2TextBox = new AntdUI.Input();
             this.tabPage5panel4 = new System.Windows.Forms.Panel();
             this.O2CheckBox = new System.Windows.Forms.CheckBox();
+            this.O2TextBox = new AntdUI.Input();
             this.tabPage5panel5 = new System.Windows.Forms.Panel();
             this.C2H4CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H4TextBox = new AntdUI.Input();
             this.tabPage5panel6 = new System.Windows.Forms.Panel();
             this.C3H8CheckBox = new System.Windows.Forms.CheckBox();
+            this.C3H8TextBox = new AntdUI.Input();
             this.tabPage5panel7 = new System.Windows.Forms.Panel();
             this.C2H6CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H6TextBox = new AntdUI.Input();
             this.tabPage5panel8 = new System.Windows.Forms.Panel();
             this.C3H6CheckBox = new System.Windows.Forms.CheckBox();
+            this.C3H6TextBox = new AntdUI.Input();
             this.tabPage5panel9 = new System.Windows.Forms.Panel();
             this.C2H2CheckBox = new System.Windows.Forms.CheckBox();
+            this.C2H2TextBox = new AntdUI.Input();
             this.tabPage5panel10 = new System.Windows.Forms.Panel();
             this.COCheckBox = new System.Windows.Forms.CheckBox();
+            this.COTextBox = new AntdUI.Input();
             this.tabPage5panel11 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new AntdUI.DatePicker();
             this.label119 = new System.Windows.Forms.Label();
             this.tabPage5panel12 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker6 = new AntdUI.DatePicker();
             this.tabPage5panel14 = new System.Windows.Forms.Panel();
+            this.LabTestersTextBox = new AntdUI.Input();
             this.label117 = new System.Windows.Forms.Label();
             this.tabPage5panel13 = new System.Windows.Forms.Panel();
+            this.DownholeTestersTextBox = new AntdUI.Input();
             this.DownholeTestersCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage5panel16 = new System.Windows.Forms.Panel();
+            this.RemarkTextBox = new AntdUI.Input();
             this.label120 = new System.Windows.Forms.Label();
             this.tabPage5panel15 = new System.Windows.Forms.Panel();
+            this.AuditorTextBox = new AntdUI.Input();
             this.label118 = new System.Windows.Forms.Label();
             this.tabPage5panel17 = new System.Windows.Forms.Panel();
             this.WPSorOfficeLabel = new System.Windows.Forms.Label();
@@ -386,50 +430,6 @@ namespace GasFormsApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DesorpVolNormalTextBox = new AntdUI.Input();
-            this.DesorpVolNormalCalTextBox = new AntdUI.Input();
-            this.Sample1WeightTextBox = new AntdUI.Input();
-            this.Sample2WeightTextBox = new AntdUI.Input();
-            this.S1DesorpVolTextBox = new AntdUI.Input();
-            this.S2DesorpVolTextBox = new AntdUI.Input();
-            this.S1DesorpVolCalTextBox = new AntdUI.Input();
-            this.S2DesorpVolCalTextBox = new AntdUI.Input();
-            this.CrushDesorpTextBox = new AntdUI.Input();
-            this.tabPage3panel4 = new System.Windows.Forms.Panel();
-            this.AdsorpConstATextBox = new AntdUI.Input();
-            this.AdsorpConstBTextBox = new AntdUI.Input();
-            this.MadTextBox = new AntdUI.Input();
-            this.AadTextBox = new AntdUI.Input();
-            this.VadTextBox = new AntdUI.Input();
-            this.AppDensityTextBox = new AntdUI.Input();
-            this.TrueDensityTextBox = new AntdUI.Input();
-            this.PorosityTextBox = new AntdUI.Input();
-            this.W1_TextBox = new AntdUI.Input();
-            this.W2_TextBox = new AntdUI.Input();
-            this.W3_TextBox = new AntdUI.Input();
-            this.Wa_TextBox = new AntdUI.Input();
-            this.Wc_TextBox = new AntdUI.Input();
-            this.W_TextBox = new AntdUI.Input();
-            this.P_TextBox = new AntdUI.Input();
-            this.NonDesorpGasQtyTextBox = new AntdUI.Input();
-            this.tabPage4panel1 = new System.Windows.Forms.Panel();
-            this.CH4TextBox = new AntdUI.Input();
-            this.CO2TextBox = new AntdUI.Input();
-            this.N2TextBox = new AntdUI.Input();
-            this.O2TextBox = new AntdUI.Input();
-            this.C2H4TextBox = new AntdUI.Input();
-            this.C3H8TextBox = new AntdUI.Input();
-            this.C2H6TextBox = new AntdUI.Input();
-            this.C3H6TextBox = new AntdUI.Input();
-            this.C2H2TextBox = new AntdUI.Input();
-            this.COTextBox = new AntdUI.Input();
-            this.DownholeTestersTextBox = new AntdUI.Input();
-            this.LabTestersTextBox = new AntdUI.Input();
-            this.AuditorTextBox = new AntdUI.Input();
-            this.tabPage5panel18 = new System.Windows.Forms.Panel();
-            this.RemarkTextBox = new AntdUI.Input();
-            this.dateTimePicker6 = new AntdUI.DatePicker();
-            this.dateTimePicker1 = new AntdUI.DatePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -3126,6 +3126,14 @@ namespace GasFormsApp
             this.tabPage3panel1.Size = new System.Drawing.Size(647, 635);
             this.tabPage3panel1.TabIndex = 1002;
             // 
+            // tabPage3panel4
+            // 
+            this.tabPage3panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage3panel4.Location = new System.Drawing.Point(535, 31);
+            this.tabPage3panel4.Name = "tabPage3panel4";
+            this.tabPage3panel4.Size = new System.Drawing.Size(77, 100);
+            this.tabPage3panel4.TabIndex = 1010;
+            // 
             // tabPage3panel2
             // 
             this.tabPage3panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3170,6 +3178,103 @@ namespace GasFormsApp
             this.tabPage3panel3.Name = "tabPage3panel3";
             this.tabPage3panel3.Size = new System.Drawing.Size(375, 532);
             this.tabPage3panel3.TabIndex = 1003;
+            // 
+            // CrushDesorpTextBox
+            // 
+            this.CrushDesorpTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.CrushDesorpTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CrushDesorpTextBox.Location = new System.Drawing.Point(213, 388);
+            this.CrushDesorpTextBox.Name = "CrushDesorpTextBox";
+            this.CrushDesorpTextBox.PlaceholderText = "";
+            this.CrushDesorpTextBox.ReadOnly = true;
+            this.CrushDesorpTextBox.SelectionStart = 1;
+            this.CrushDesorpTextBox.Size = new System.Drawing.Size(155, 35);
+            this.CrushDesorpTextBox.TabIndex = 1018;
+            this.CrushDesorpTextBox.Text = "0";
+            // 
+            // S2DesorpVolCalTextBox
+            // 
+            this.S2DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.S2DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(213, 347);
+            this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
+            this.S2DesorpVolCalTextBox.PlaceholderText = "";
+            this.S2DesorpVolCalTextBox.ReadOnly = true;
+            this.S2DesorpVolCalTextBox.SelectionStart = 1;
+            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 35);
+            this.S2DesorpVolCalTextBox.TabIndex = 1017;
+            this.S2DesorpVolCalTextBox.Text = "0";
+            // 
+            // S1DesorpVolCalTextBox
+            // 
+            this.S1DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.S1DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(213, 306);
+            this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
+            this.S1DesorpVolCalTextBox.PlaceholderText = "";
+            this.S1DesorpVolCalTextBox.ReadOnly = true;
+            this.S1DesorpVolCalTextBox.SelectionStart = 1;
+            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 35);
+            this.S1DesorpVolCalTextBox.TabIndex = 1016;
+            this.S1DesorpVolCalTextBox.Text = "0";
+            // 
+            // S2DesorpVolTextBox
+            // 
+            this.S2DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S2DesorpVolTextBox.Location = new System.Drawing.Point(213, 262);
+            this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
+            this.S2DesorpVolTextBox.PlaceholderText = "第二份煤样解吸量";
+            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(155, 35);
+            this.S2DesorpVolTextBox.TabIndex = 1015;
+            // 
+            // S1DesorpVolTextBox
+            // 
+            this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.S1DesorpVolTextBox.Location = new System.Drawing.Point(213, 222);
+            this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
+            this.S1DesorpVolTextBox.PlaceholderText = "第一份煤样解吸量";
+            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(155, 35);
+            this.S1DesorpVolTextBox.TabIndex = 1014;
+            // 
+            // Sample2WeightTextBox
+            // 
+            this.Sample2WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Sample2WeightTextBox.Location = new System.Drawing.Point(213, 179);
+            this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
+            this.Sample2WeightTextBox.PlaceholderText = "第二份煤样重量";
+            this.Sample2WeightTextBox.Size = new System.Drawing.Size(155, 35);
+            this.Sample2WeightTextBox.TabIndex = 1013;
+            // 
+            // Sample1WeightTextBox
+            // 
+            this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Sample1WeightTextBox.Location = new System.Drawing.Point(213, 137);
+            this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
+            this.Sample1WeightTextBox.PlaceholderText = "第一份煤样重量";
+            this.Sample1WeightTextBox.Size = new System.Drawing.Size(155, 35);
+            this.Sample1WeightTextBox.TabIndex = 1012;
+            // 
+            // DesorpVolNormalCalTextBox
+            // 
+            this.DesorpVolNormalCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.DesorpVolNormalCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(213, 46);
+            this.DesorpVolNormalCalTextBox.Name = "DesorpVolNormalCalTextBox";
+            this.DesorpVolNormalCalTextBox.PlaceholderText = "";
+            this.DesorpVolNormalCalTextBox.ReadOnly = true;
+            this.DesorpVolNormalCalTextBox.SelectionStart = 1;
+            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(155, 35);
+            this.DesorpVolNormalCalTextBox.TabIndex = 1011;
+            this.DesorpVolNormalCalTextBox.Text = "0";
+            // 
+            // DesorpVolNormalTextBox
+            // 
+            this.DesorpVolNormalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(213, 15);
+            this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
+            this.DesorpVolNormalTextBox.PlaceholderText = "常压解吸体积";
+            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(155, 35);
+            this.DesorpVolNormalTextBox.TabIndex = 1010;
             // 
             // label89
             // 
@@ -3417,6 +3522,14 @@ namespace GasFormsApp
             this.tabPage4DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 647);
             this.tabPage4DoubleBufferedPanel1.TabIndex = 1003;
             // 
+            // tabPage4panel1
+            // 
+            this.tabPage4panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage4panel1.Location = new System.Drawing.Point(1109, 48);
+            this.tabPage4panel1.Name = "tabPage4panel1";
+            this.tabPage4panel1.Size = new System.Drawing.Size(77, 100);
+            this.tabPage4panel1.TabIndex = 1011;
+            // 
             // tabPage4DoubleBufferedFlowLayoutPanel1
             // 
             this.tabPage4DoubleBufferedFlowLayoutPanel1.AutoScroll = true;
@@ -3457,6 +3570,91 @@ namespace GasFormsApp
             this.groupBox3.TabIndex = 61;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "不可解吸瓦斯量";
+            // 
+            // NonDesorpGasQtyTextBox
+            // 
+            this.NonDesorpGasQtyTextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.NonDesorpGasQtyTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.NonDesorpGasQtyTextBox.Location = new System.Drawing.Point(310, 551);
+            this.NonDesorpGasQtyTextBox.Name = "NonDesorpGasQtyTextBox";
+            this.NonDesorpGasQtyTextBox.PlaceholderText = "";
+            this.NonDesorpGasQtyTextBox.ReadOnly = true;
+            this.NonDesorpGasQtyTextBox.SelectionStart = 1;
+            this.NonDesorpGasQtyTextBox.Size = new System.Drawing.Size(102, 35);
+            this.NonDesorpGasQtyTextBox.TabIndex = 1019;
+            this.NonDesorpGasQtyTextBox.Text = "0";
+            // 
+            // PorosityTextBox
+            // 
+            this.PorosityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PorosityTextBox.Location = new System.Drawing.Point(233, 488);
+            this.PorosityTextBox.Name = "PorosityTextBox";
+            this.PorosityTextBox.PlaceholderText = "常压解吸体积";
+            this.PorosityTextBox.Size = new System.Drawing.Size(179, 35);
+            this.PorosityTextBox.TabIndex = 1018;
+            // 
+            // TrueDensityTextBox
+            // 
+            this.TrueDensityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TrueDensityTextBox.Location = new System.Drawing.Point(233, 427);
+            this.TrueDensityTextBox.Name = "TrueDensityTextBox";
+            this.TrueDensityTextBox.PlaceholderText = "常压解吸体积";
+            this.TrueDensityTextBox.Size = new System.Drawing.Size(179, 35);
+            this.TrueDensityTextBox.TabIndex = 1017;
+            // 
+            // AppDensityTextBox
+            // 
+            this.AppDensityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AppDensityTextBox.Location = new System.Drawing.Point(233, 359);
+            this.AppDensityTextBox.Name = "AppDensityTextBox";
+            this.AppDensityTextBox.PlaceholderText = "常压解吸体积";
+            this.AppDensityTextBox.Size = new System.Drawing.Size(179, 35);
+            this.AppDensityTextBox.TabIndex = 1016;
+            // 
+            // VadTextBox
+            // 
+            this.VadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.VadTextBox.Location = new System.Drawing.Point(233, 291);
+            this.VadTextBox.Name = "VadTextBox";
+            this.VadTextBox.PlaceholderText = "常压解吸体积";
+            this.VadTextBox.Size = new System.Drawing.Size(179, 35);
+            this.VadTextBox.TabIndex = 1015;
+            // 
+            // AadTextBox
+            // 
+            this.AadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AadTextBox.Location = new System.Drawing.Point(233, 227);
+            this.AadTextBox.Name = "AadTextBox";
+            this.AadTextBox.PlaceholderText = "常压解吸体积";
+            this.AadTextBox.Size = new System.Drawing.Size(179, 35);
+            this.AadTextBox.TabIndex = 1014;
+            // 
+            // MadTextBox
+            // 
+            this.MadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MadTextBox.Location = new System.Drawing.Point(233, 167);
+            this.MadTextBox.Name = "MadTextBox";
+            this.MadTextBox.PlaceholderText = "常压解吸体积";
+            this.MadTextBox.Size = new System.Drawing.Size(179, 35);
+            this.MadTextBox.TabIndex = 1013;
+            // 
+            // AdsorpConstBTextBox
+            // 
+            this.AdsorpConstBTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AdsorpConstBTextBox.Location = new System.Drawing.Point(233, 96);
+            this.AdsorpConstBTextBox.Name = "AdsorpConstBTextBox";
+            this.AdsorpConstBTextBox.PlaceholderText = "常压解吸体积";
+            this.AdsorpConstBTextBox.Size = new System.Drawing.Size(179, 35);
+            this.AdsorpConstBTextBox.TabIndex = 1012;
+            // 
+            // AdsorpConstATextBox
+            // 
+            this.AdsorpConstATextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AdsorpConstATextBox.Location = new System.Drawing.Point(233, 38);
+            this.AdsorpConstATextBox.Name = "AdsorpConstATextBox";
+            this.AdsorpConstATextBox.PlaceholderText = "常压解吸体积";
+            this.AdsorpConstATextBox.Size = new System.Drawing.Size(179, 35);
+            this.AdsorpConstATextBox.TabIndex = 1011;
             // 
             // PorosityCheckBox
             // 
@@ -3591,7 +3789,6 @@ namespace GasFormsApp
             this.WcOutCheckBox.Enabled = false;
             this.WcOutCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WcOutCheckBox.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.WcOutCheckBox.Image = global::GasFormsApp.Properties.Resources.打叉;
             this.WcOutCheckBox.Location = new System.Drawing.Point(20, 28);
             this.WcOutCheckBox.Margin = new System.Windows.Forms.Padding(0);
             this.WcOutCheckBox.Name = "WcOutCheckBox";
@@ -3630,6 +3827,97 @@ namespace GasFormsApp
             this.groupBox1.TabIndex = 1004;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "实验结果：";
+            // 
+            // P_TextBox
+            // 
+            this.P_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.P_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.P_TextBox.Location = new System.Drawing.Point(238, 421);
+            this.P_TextBox.Name = "P_TextBox";
+            this.P_TextBox.PlaceholderText = "";
+            this.P_TextBox.ReadOnly = true;
+            this.P_TextBox.SelectionStart = 1;
+            this.P_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.P_TextBox.TabIndex = 1018;
+            this.P_TextBox.Text = "0";
+            // 
+            // W_TextBox
+            // 
+            this.W_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.W_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W_TextBox.Location = new System.Drawing.Point(238, 368);
+            this.W_TextBox.Name = "W_TextBox";
+            this.W_TextBox.PlaceholderText = "";
+            this.W_TextBox.ReadOnly = true;
+            this.W_TextBox.SelectionStart = 1;
+            this.W_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.W_TextBox.TabIndex = 1017;
+            this.W_TextBox.Text = "0";
+            // 
+            // Wc_TextBox
+            // 
+            this.Wc_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.Wc_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Wc_TextBox.Location = new System.Drawing.Point(238, 306);
+            this.Wc_TextBox.Name = "Wc_TextBox";
+            this.Wc_TextBox.PlaceholderText = "";
+            this.Wc_TextBox.ReadOnly = true;
+            this.Wc_TextBox.SelectionStart = 1;
+            this.Wc_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.Wc_TextBox.TabIndex = 1016;
+            this.Wc_TextBox.Text = "0";
+            // 
+            // Wa_TextBox
+            // 
+            this.Wa_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.Wa_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Wa_TextBox.Location = new System.Drawing.Point(238, 242);
+            this.Wa_TextBox.Name = "Wa_TextBox";
+            this.Wa_TextBox.PlaceholderText = "";
+            this.Wa_TextBox.ReadOnly = true;
+            this.Wa_TextBox.SelectionStart = 1;
+            this.Wa_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.Wa_TextBox.TabIndex = 1015;
+            this.Wa_TextBox.Text = "0";
+            // 
+            // W3_TextBox
+            // 
+            this.W3_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.W3_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W3_TextBox.Location = new System.Drawing.Point(238, 176);
+            this.W3_TextBox.Name = "W3_TextBox";
+            this.W3_TextBox.PlaceholderText = "";
+            this.W3_TextBox.ReadOnly = true;
+            this.W3_TextBox.SelectionStart = 1;
+            this.W3_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.W3_TextBox.TabIndex = 1014;
+            this.W3_TextBox.Text = "0";
+            // 
+            // W2_TextBox
+            // 
+            this.W2_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.W2_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W2_TextBox.Location = new System.Drawing.Point(238, 106);
+            this.W2_TextBox.Name = "W2_TextBox";
+            this.W2_TextBox.PlaceholderText = "";
+            this.W2_TextBox.ReadOnly = true;
+            this.W2_TextBox.SelectionStart = 1;
+            this.W2_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.W2_TextBox.TabIndex = 1013;
+            this.W2_TextBox.Text = "0";
+            // 
+            // W1_TextBox
+            // 
+            this.W1_TextBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.W1_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.W1_TextBox.Location = new System.Drawing.Point(238, 43);
+            this.W1_TextBox.Name = "W1_TextBox";
+            this.W1_TextBox.PlaceholderText = "";
+            this.W1_TextBox.ReadOnly = true;
+            this.W1_TextBox.SelectionStart = 1;
+            this.W1_TextBox.Size = new System.Drawing.Size(179, 35);
+            this.W1_TextBox.TabIndex = 1012;
+            this.W1_TextBox.Text = "0";
             // 
             // tabPage4TemporarySavingButton
             // 
@@ -3797,6 +4085,14 @@ namespace GasFormsApp
             this.tabPage5DoubleBufferedPanel1.Size = new System.Drawing.Size(1435, 647);
             this.tabPage5DoubleBufferedPanel1.TabIndex = 1006;
             // 
+            // tabPage5panel18
+            // 
+            this.tabPage5panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.tabPage5panel18.Location = new System.Drawing.Point(1076, 93);
+            this.tabPage5panel18.Name = "tabPage5panel18";
+            this.tabPage5panel18.Size = new System.Drawing.Size(77, 100);
+            this.tabPage5panel18.TabIndex = 1012;
+            // 
             // tabPage5DoubleBufferedFlowLayoutPanel2
             // 
             this.tabPage5DoubleBufferedFlowLayoutPanel2.AutoScroll = true;
@@ -3861,6 +4157,15 @@ namespace GasFormsApp
             this.CH4CheckBox.Text = "CH₄(%):";
             this.CH4CheckBox.UseVisualStyleBackColor = false;
             // 
+            // CH4TextBox
+            // 
+            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CH4TextBox.Location = new System.Drawing.Point(99, -2);
+            this.CH4TextBox.Name = "CH4TextBox";
+            this.CH4TextBox.PlaceholderText = "CH₄";
+            this.CH4TextBox.Size = new System.Drawing.Size(79, 35);
+            this.CH4TextBox.TabIndex = 1012;
+            // 
             // tabPage5panel2
             // 
             this.tabPage5panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
@@ -3884,6 +4189,15 @@ namespace GasFormsApp
             this.CO2CheckBox.TabStop = false;
             this.CO2CheckBox.Text = "CO₂(%):";
             this.CO2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CO2TextBox
+            // 
+            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CO2TextBox.Location = new System.Drawing.Point(99, -2);
+            this.CO2TextBox.Name = "CO2TextBox";
+            this.CO2TextBox.PlaceholderText = "CO₂";
+            this.CO2TextBox.Size = new System.Drawing.Size(79, 35);
+            this.CO2TextBox.TabIndex = 1013;
             // 
             // tabPage5panel3
             // 
@@ -3909,6 +4223,15 @@ namespace GasFormsApp
             this.N2CheckBox.Text = "N₂(%):";
             this.N2CheckBox.UseVisualStyleBackColor = true;
             // 
+            // N2TextBox
+            // 
+            this.N2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.N2TextBox.Location = new System.Drawing.Point(99, -2);
+            this.N2TextBox.Name = "N2TextBox";
+            this.N2TextBox.PlaceholderText = "N₂";
+            this.N2TextBox.Size = new System.Drawing.Size(79, 35);
+            this.N2TextBox.TabIndex = 1014;
+            // 
             // tabPage5panel4
             // 
             this.tabPage5panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
@@ -3932,6 +4255,15 @@ namespace GasFormsApp
             this.O2CheckBox.TabStop = false;
             this.O2CheckBox.Text = "O₂(%):";
             this.O2CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // O2TextBox
+            // 
+            this.O2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.O2TextBox.Location = new System.Drawing.Point(99, -2);
+            this.O2TextBox.Name = "O2TextBox";
+            this.O2TextBox.PlaceholderText = "O₂";
+            this.O2TextBox.Size = new System.Drawing.Size(79, 35);
+            this.O2TextBox.TabIndex = 1015;
             // 
             // tabPage5panel5
             // 
@@ -3957,6 +4289,15 @@ namespace GasFormsApp
             this.C2H4CheckBox.Text = "C₂H₄(%):";
             this.C2H4CheckBox.UseVisualStyleBackColor = true;
             // 
+            // C2H4TextBox
+            // 
+            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H4TextBox.Location = new System.Drawing.Point(99, -2);
+            this.C2H4TextBox.Name = "C2H4TextBox";
+            this.C2H4TextBox.PlaceholderText = "C₂H₄";
+            this.C2H4TextBox.Size = new System.Drawing.Size(79, 35);
+            this.C2H4TextBox.TabIndex = 1013;
+            // 
             // tabPage5panel6
             // 
             this.tabPage5panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
@@ -3980,6 +4321,15 @@ namespace GasFormsApp
             this.C3H8CheckBox.TabStop = false;
             this.C3H8CheckBox.Text = "C₃H₈(%):";
             this.C3H8CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C3H8TextBox
+            // 
+            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H8TextBox.Location = new System.Drawing.Point(99, -2);
+            this.C3H8TextBox.Name = "C3H8TextBox";
+            this.C3H8TextBox.PlaceholderText = "C₃H₈";
+            this.C3H8TextBox.Size = new System.Drawing.Size(79, 35);
+            this.C3H8TextBox.TabIndex = 1014;
             // 
             // tabPage5panel7
             // 
@@ -4005,6 +4355,15 @@ namespace GasFormsApp
             this.C2H6CheckBox.Text = "C₂H₆(%):";
             this.C2H6CheckBox.UseVisualStyleBackColor = true;
             // 
+            // C2H6TextBox
+            // 
+            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H6TextBox.Location = new System.Drawing.Point(99, -3);
+            this.C2H6TextBox.Name = "C2H6TextBox";
+            this.C2H6TextBox.PlaceholderText = "C₂H₆";
+            this.C2H6TextBox.Size = new System.Drawing.Size(79, 35);
+            this.C2H6TextBox.TabIndex = 1015;
+            // 
             // tabPage5panel8
             // 
             this.tabPage5panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
@@ -4028,6 +4387,15 @@ namespace GasFormsApp
             this.C3H6CheckBox.TabStop = false;
             this.C3H6CheckBox.Text = "C₃H₆(%):";
             this.C3H6CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // C3H6TextBox
+            // 
+            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C3H6TextBox.Location = new System.Drawing.Point(99, -2);
+            this.C3H6TextBox.Name = "C3H6TextBox";
+            this.C3H6TextBox.PlaceholderText = "C₃H₆";
+            this.C3H6TextBox.Size = new System.Drawing.Size(79, 35);
+            this.C3H6TextBox.TabIndex = 1016;
             // 
             // tabPage5panel9
             // 
@@ -4053,6 +4421,15 @@ namespace GasFormsApp
             this.C2H2CheckBox.Text = "C₂H₂(%):";
             this.C2H2CheckBox.UseVisualStyleBackColor = true;
             // 
+            // C2H2TextBox
+            // 
+            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.C2H2TextBox.Location = new System.Drawing.Point(99, -2);
+            this.C2H2TextBox.Name = "C2H2TextBox";
+            this.C2H2TextBox.PlaceholderText = "C₂H₂";
+            this.C2H2TextBox.Size = new System.Drawing.Size(79, 35);
+            this.C2H2TextBox.TabIndex = 1014;
+            // 
             // tabPage5panel10
             // 
             this.tabPage5panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
@@ -4077,6 +4454,15 @@ namespace GasFormsApp
             this.COCheckBox.Text = "CO(%):";
             this.COCheckBox.UseVisualStyleBackColor = true;
             // 
+            // COTextBox
+            // 
+            this.COTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.COTextBox.Location = new System.Drawing.Point(99, -2);
+            this.COTextBox.Name = "COTextBox";
+            this.COTextBox.PlaceholderText = "CO";
+            this.COTextBox.Size = new System.Drawing.Size(79, 35);
+            this.COTextBox.TabIndex = 1015;
+            // 
             // tabPage5panel11
             // 
             this.tabPage5panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
@@ -4087,6 +4473,20 @@ namespace GasFormsApp
             this.tabPage5panel11.Name = "tabPage5panel11";
             this.tabPage5panel11.Size = new System.Drawing.Size(367, 32);
             this.tabPage5panel11.TabIndex = 71;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker1.Format = "yyyy年 MM月dd日";
+            this.dateTimePicker1.Location = new System.Drawing.Point(96, -2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Placement = AntdUI.TAlignFrom.Top;
+            this.dateTimePicker1.Size = new System.Drawing.Size(261, 35);
+            this.dateTimePicker1.TabIndex = 1013;
+            this.dateTimePicker1.ValueTimeHorizontal = true;
             // 
             // label119
             // 
@@ -4121,6 +4521,20 @@ namespace GasFormsApp
             this.label5.TabIndex = 46;
             this.label5.Text = "测试时间:";
             // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dateTimePicker6.Format = "yyyy年 MM月dd日";
+            this.dateTimePicker6.Location = new System.Drawing.Point(79, -2);
+            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Placement = AntdUI.TAlignFrom.Top;
+            this.dateTimePicker6.Size = new System.Drawing.Size(277, 35);
+            this.dateTimePicker6.TabIndex = 1010;
+            this.dateTimePicker6.ValueTimeHorizontal = true;
+            // 
             // tabPage5panel14
             // 
             this.tabPage5panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
@@ -4131,6 +4545,17 @@ namespace GasFormsApp
             this.tabPage5panel14.Name = "tabPage5panel14";
             this.tabPage5panel14.Size = new System.Drawing.Size(367, 32);
             this.tabPage5panel14.TabIndex = 73;
+            // 
+            // LabTestersTextBox
+            // 
+            this.LabTestersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LabTestersTextBox.Location = new System.Drawing.Point(125, -2);
+            this.LabTestersTextBox.Name = "LabTestersTextBox";
+            this.LabTestersTextBox.PlaceholderText = "实验室测试人员";
+            this.LabTestersTextBox.Size = new System.Drawing.Size(232, 35);
+            this.LabTestersTextBox.TabIndex = 1014;
             // 
             // label117
             // 
@@ -4154,6 +4579,17 @@ namespace GasFormsApp
             this.tabPage5panel13.Name = "tabPage5panel13";
             this.tabPage5panel13.Size = new System.Drawing.Size(367, 32);
             this.tabPage5panel13.TabIndex = 72;
+            // 
+            // DownholeTestersTextBox
+            // 
+            this.DownholeTestersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DownholeTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DownholeTestersTextBox.Location = new System.Drawing.Point(127, -1);
+            this.DownholeTestersTextBox.Name = "DownholeTestersTextBox";
+            this.DownholeTestersTextBox.PlaceholderText = "井下测试人员";
+            this.DownholeTestersTextBox.Size = new System.Drawing.Size(229, 35);
+            this.DownholeTestersTextBox.TabIndex = 1013;
             // 
             // DownholeTestersCheckBox
             // 
@@ -4180,6 +4616,19 @@ namespace GasFormsApp
             this.tabPage5panel16.Size = new System.Drawing.Size(367, 64);
             this.tabPage5panel16.TabIndex = 75;
             // 
+            // RemarkTextBox
+            // 
+            this.RemarkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemarkTextBox.AutoScroll = true;
+            this.RemarkTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RemarkTextBox.Location = new System.Drawing.Point(73, 2);
+            this.RemarkTextBox.Multiline = true;
+            this.RemarkTextBox.Name = "RemarkTextBox";
+            this.RemarkTextBox.PlaceholderText = "备注";
+            this.RemarkTextBox.Size = new System.Drawing.Size(284, 60);
+            this.RemarkTextBox.TabIndex = 1015;
+            // 
             // label120
             // 
             this.label120.AutoSize = true;
@@ -4201,6 +4650,17 @@ namespace GasFormsApp
             this.tabPage5panel15.Name = "tabPage5panel15";
             this.tabPage5panel15.Size = new System.Drawing.Size(367, 32);
             this.tabPage5panel15.TabIndex = 74;
+            // 
+            // AuditorTextBox
+            // 
+            this.AuditorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AuditorTextBox.Location = new System.Drawing.Point(79, -1);
+            this.AuditorTextBox.Name = "AuditorTextBox";
+            this.AuditorTextBox.PlaceholderText = "审核人员";
+            this.AuditorTextBox.Size = new System.Drawing.Size(277, 35);
+            this.AuditorTextBox.TabIndex = 1014;
             // 
             // label118
             // 
@@ -4406,20 +4866,20 @@ namespace GasFormsApp
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(1, 61);
             this.treeView1.Name = "treeView1";
-            treeNode1.ImageKey = "项目";
-            treeNode1.Name = "项目";
-            treeNode1.SelectedImageKey = "项目";
-            treeNode1.Text = "项目";
-            treeNode2.ImageKey = "矿井.png";
-            treeNode2.Name = "矿井";
-            treeNode2.SelectedImageKey = "矿井.png";
-            treeNode2.Text = "矿井";
-            treeNode3.ImageKey = "根目录";
-            treeNode3.Name = "根目录";
-            treeNode3.SelectedImageKey = "根目录";
-            treeNode3.Text = "根目录";
+            treeNode4.ImageKey = "项目";
+            treeNode4.Name = "项目";
+            treeNode4.SelectedImageKey = "项目";
+            treeNode4.Text = "项目";
+            treeNode5.ImageKey = "矿井.png";
+            treeNode5.Name = "矿井";
+            treeNode5.SelectedImageKey = "矿井.png";
+            treeNode5.Text = "矿井";
+            treeNode6.ImageKey = "根目录";
+            treeNode6.Name = "根目录";
+            treeNode6.SelectedImageKey = "根目录";
+            treeNode6.Text = "根目录";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode6});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(298, 576);
             this.treeView1.TabIndex = 1;
@@ -4534,33 +4994,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 639);
@@ -4700,7 +5160,7 @@ namespace GasFormsApp
             // 
             // tabControl6PictureBox
             // 
-            this.tabControl6PictureBox.Image = global::GasFormsApp.Properties.Resources.数据管理;
+            this.tabControl6PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl6PictureBox.Image")));
             this.tabControl6PictureBox.Location = new System.Drawing.Point(522, 83);
             this.tabControl6PictureBox.Name = "tabControl6PictureBox";
             this.tabControl6PictureBox.Size = new System.Drawing.Size(64, 64);
@@ -4710,7 +5170,7 @@ namespace GasFormsApp
             // 
             // tabControl5PictureBox
             // 
-            this.tabControl5PictureBox.Image = global::GasFormsApp.Properties.Resources.数据归档;
+            this.tabControl5PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl5PictureBox.Image")));
             this.tabControl5PictureBox.Location = new System.Drawing.Point(421, 83);
             this.tabControl5PictureBox.Name = "tabControl5PictureBox";
             this.tabControl5PictureBox.Size = new System.Drawing.Size(64, 64);
@@ -4720,7 +5180,7 @@ namespace GasFormsApp
             // 
             // tabControl4PictureBox
             // 
-            this.tabControl4PictureBox.Image = global::GasFormsApp.Properties.Resources.实验结果;
+            this.tabControl4PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl4PictureBox.Image")));
             this.tabControl4PictureBox.Location = new System.Drawing.Point(320, 83);
             this.tabControl4PictureBox.Name = "tabControl4PictureBox";
             this.tabControl4PictureBox.Size = new System.Drawing.Size(64, 64);
@@ -4730,7 +5190,7 @@ namespace GasFormsApp
             // 
             // tabControl3PictureBox
             // 
-            this.tabControl3PictureBox.Image = global::GasFormsApp.Properties.Resources.常压解吸;
+            this.tabControl3PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl3PictureBox.Image")));
             this.tabControl3PictureBox.Location = new System.Drawing.Point(219, 83);
             this.tabControl3PictureBox.Name = "tabControl3PictureBox";
             this.tabControl3PictureBox.Size = new System.Drawing.Size(64, 64);
@@ -4740,7 +5200,7 @@ namespace GasFormsApp
             // 
             // tabControl2PictureBox
             // 
-            this.tabControl2PictureBox.Image = global::GasFormsApp.Properties.Resources.井下解吸;
+            this.tabControl2PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl2PictureBox.Image")));
             this.tabControl2PictureBox.Location = new System.Drawing.Point(119, 83);
             this.tabControl2PictureBox.Name = "tabControl2PictureBox";
             this.tabControl2PictureBox.Size = new System.Drawing.Size(64, 64);
@@ -4750,7 +5210,7 @@ namespace GasFormsApp
             // 
             // tabControl1PictureBox
             // 
-            this.tabControl1PictureBox.Image = global::GasFormsApp.Properties.Resources.基本信息;
+            this.tabControl1PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl1PictureBox.Image")));
             this.tabControl1PictureBox.Location = new System.Drawing.Point(18, 83);
             this.tabControl1PictureBox.Name = "tabControl1PictureBox";
             this.tabControl1PictureBox.Size = new System.Drawing.Size(64, 64);
@@ -4780,467 +5240,6 @@ namespace GasFormsApp
             this.导出图片ToolStripMenuItem.Name = "导出图片ToolStripMenuItem";
             this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出图片ToolStripMenuItem.Text = "导出图片";
-            // 
-            // DesorpVolNormalTextBox
-            // 
-            this.DesorpVolNormalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorpVolNormalTextBox.Location = new System.Drawing.Point(213, 15);
-            this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
-            this.DesorpVolNormalTextBox.PlaceholderText = "常压解吸体积";
-            this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(155, 35);
-            this.DesorpVolNormalTextBox.TabIndex = 1010;
-            // 
-            // DesorpVolNormalCalTextBox
-            // 
-            this.DesorpVolNormalCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.DesorpVolNormalCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DesorpVolNormalCalTextBox.Location = new System.Drawing.Point(213, 46);
-            this.DesorpVolNormalCalTextBox.Name = "DesorpVolNormalCalTextBox";
-            this.DesorpVolNormalCalTextBox.PlaceholderText = "";
-            this.DesorpVolNormalCalTextBox.ReadOnly = true;
-            this.DesorpVolNormalCalTextBox.SelectionStart = 1;
-            this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(155, 35);
-            this.DesorpVolNormalCalTextBox.TabIndex = 1011;
-            this.DesorpVolNormalCalTextBox.Text = "0";
-            // 
-            // Sample1WeightTextBox
-            // 
-            this.Sample1WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Sample1WeightTextBox.Location = new System.Drawing.Point(213, 137);
-            this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
-            this.Sample1WeightTextBox.PlaceholderText = "第一份煤样重量";
-            this.Sample1WeightTextBox.Size = new System.Drawing.Size(155, 35);
-            this.Sample1WeightTextBox.TabIndex = 1012;
-            // 
-            // Sample2WeightTextBox
-            // 
-            this.Sample2WeightTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Sample2WeightTextBox.Location = new System.Drawing.Point(213, 179);
-            this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
-            this.Sample2WeightTextBox.PlaceholderText = "第二份煤样重量";
-            this.Sample2WeightTextBox.Size = new System.Drawing.Size(155, 35);
-            this.Sample2WeightTextBox.TabIndex = 1013;
-            // 
-            // S1DesorpVolTextBox
-            // 
-            this.S1DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S1DesorpVolTextBox.Location = new System.Drawing.Point(213, 222);
-            this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
-            this.S1DesorpVolTextBox.PlaceholderText = "第一份煤样解吸量";
-            this.S1DesorpVolTextBox.Size = new System.Drawing.Size(155, 35);
-            this.S1DesorpVolTextBox.TabIndex = 1014;
-            // 
-            // S2DesorpVolTextBox
-            // 
-            this.S2DesorpVolTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S2DesorpVolTextBox.Location = new System.Drawing.Point(213, 262);
-            this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
-            this.S2DesorpVolTextBox.PlaceholderText = "第二份煤样解吸量";
-            this.S2DesorpVolTextBox.Size = new System.Drawing.Size(155, 35);
-            this.S2DesorpVolTextBox.TabIndex = 1015;
-            // 
-            // S1DesorpVolCalTextBox
-            // 
-            this.S1DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.S1DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S1DesorpVolCalTextBox.Location = new System.Drawing.Point(213, 306);
-            this.S1DesorpVolCalTextBox.Name = "S1DesorpVolCalTextBox";
-            this.S1DesorpVolCalTextBox.PlaceholderText = "";
-            this.S1DesorpVolCalTextBox.ReadOnly = true;
-            this.S1DesorpVolCalTextBox.SelectionStart = 1;
-            this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 35);
-            this.S1DesorpVolCalTextBox.TabIndex = 1016;
-            this.S1DesorpVolCalTextBox.Text = "0";
-            // 
-            // S2DesorpVolCalTextBox
-            // 
-            this.S2DesorpVolCalTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.S2DesorpVolCalTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.S2DesorpVolCalTextBox.Location = new System.Drawing.Point(213, 347);
-            this.S2DesorpVolCalTextBox.Name = "S2DesorpVolCalTextBox";
-            this.S2DesorpVolCalTextBox.PlaceholderText = "";
-            this.S2DesorpVolCalTextBox.ReadOnly = true;
-            this.S2DesorpVolCalTextBox.SelectionStart = 1;
-            this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 35);
-            this.S2DesorpVolCalTextBox.TabIndex = 1017;
-            this.S2DesorpVolCalTextBox.Text = "0";
-            // 
-            // CrushDesorpTextBox
-            // 
-            this.CrushDesorpTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.CrushDesorpTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CrushDesorpTextBox.Location = new System.Drawing.Point(213, 388);
-            this.CrushDesorpTextBox.Name = "CrushDesorpTextBox";
-            this.CrushDesorpTextBox.PlaceholderText = "";
-            this.CrushDesorpTextBox.ReadOnly = true;
-            this.CrushDesorpTextBox.SelectionStart = 1;
-            this.CrushDesorpTextBox.Size = new System.Drawing.Size(155, 35);
-            this.CrushDesorpTextBox.TabIndex = 1018;
-            this.CrushDesorpTextBox.Text = "0";
-            // 
-            // tabPage3panel4
-            // 
-            this.tabPage3panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage3panel4.Location = new System.Drawing.Point(535, 31);
-            this.tabPage3panel4.Name = "tabPage3panel4";
-            this.tabPage3panel4.Size = new System.Drawing.Size(77, 100);
-            this.tabPage3panel4.TabIndex = 1010;
-            // 
-            // AdsorpConstATextBox
-            // 
-            this.AdsorpConstATextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AdsorpConstATextBox.Location = new System.Drawing.Point(233, 38);
-            this.AdsorpConstATextBox.Name = "AdsorpConstATextBox";
-            this.AdsorpConstATextBox.PlaceholderText = "常压解吸体积";
-            this.AdsorpConstATextBox.Size = new System.Drawing.Size(179, 35);
-            this.AdsorpConstATextBox.TabIndex = 1011;
-            // 
-            // AdsorpConstBTextBox
-            // 
-            this.AdsorpConstBTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AdsorpConstBTextBox.Location = new System.Drawing.Point(233, 96);
-            this.AdsorpConstBTextBox.Name = "AdsorpConstBTextBox";
-            this.AdsorpConstBTextBox.PlaceholderText = "常压解吸体积";
-            this.AdsorpConstBTextBox.Size = new System.Drawing.Size(179, 35);
-            this.AdsorpConstBTextBox.TabIndex = 1012;
-            // 
-            // MadTextBox
-            // 
-            this.MadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MadTextBox.Location = new System.Drawing.Point(233, 167);
-            this.MadTextBox.Name = "MadTextBox";
-            this.MadTextBox.PlaceholderText = "常压解吸体积";
-            this.MadTextBox.Size = new System.Drawing.Size(179, 35);
-            this.MadTextBox.TabIndex = 1013;
-            // 
-            // AadTextBox
-            // 
-            this.AadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AadTextBox.Location = new System.Drawing.Point(233, 227);
-            this.AadTextBox.Name = "AadTextBox";
-            this.AadTextBox.PlaceholderText = "常压解吸体积";
-            this.AadTextBox.Size = new System.Drawing.Size(179, 35);
-            this.AadTextBox.TabIndex = 1014;
-            // 
-            // VadTextBox
-            // 
-            this.VadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.VadTextBox.Location = new System.Drawing.Point(233, 291);
-            this.VadTextBox.Name = "VadTextBox";
-            this.VadTextBox.PlaceholderText = "常压解吸体积";
-            this.VadTextBox.Size = new System.Drawing.Size(179, 35);
-            this.VadTextBox.TabIndex = 1015;
-            // 
-            // AppDensityTextBox
-            // 
-            this.AppDensityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AppDensityTextBox.Location = new System.Drawing.Point(233, 359);
-            this.AppDensityTextBox.Name = "AppDensityTextBox";
-            this.AppDensityTextBox.PlaceholderText = "常压解吸体积";
-            this.AppDensityTextBox.Size = new System.Drawing.Size(179, 35);
-            this.AppDensityTextBox.TabIndex = 1016;
-            // 
-            // TrueDensityTextBox
-            // 
-            this.TrueDensityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TrueDensityTextBox.Location = new System.Drawing.Point(233, 427);
-            this.TrueDensityTextBox.Name = "TrueDensityTextBox";
-            this.TrueDensityTextBox.PlaceholderText = "常压解吸体积";
-            this.TrueDensityTextBox.Size = new System.Drawing.Size(179, 35);
-            this.TrueDensityTextBox.TabIndex = 1017;
-            // 
-            // PorosityTextBox
-            // 
-            this.PorosityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PorosityTextBox.Location = new System.Drawing.Point(233, 488);
-            this.PorosityTextBox.Name = "PorosityTextBox";
-            this.PorosityTextBox.PlaceholderText = "常压解吸体积";
-            this.PorosityTextBox.Size = new System.Drawing.Size(179, 35);
-            this.PorosityTextBox.TabIndex = 1018;
-            // 
-            // W1_TextBox
-            // 
-            this.W1_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.W1_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W1_TextBox.Location = new System.Drawing.Point(238, 43);
-            this.W1_TextBox.Name = "W1_TextBox";
-            this.W1_TextBox.PlaceholderText = "";
-            this.W1_TextBox.ReadOnly = true;
-            this.W1_TextBox.SelectionStart = 1;
-            this.W1_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.W1_TextBox.TabIndex = 1012;
-            this.W1_TextBox.Text = "0";
-            // 
-            // W2_TextBox
-            // 
-            this.W2_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.W2_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W2_TextBox.Location = new System.Drawing.Point(238, 106);
-            this.W2_TextBox.Name = "W2_TextBox";
-            this.W2_TextBox.PlaceholderText = "";
-            this.W2_TextBox.ReadOnly = true;
-            this.W2_TextBox.SelectionStart = 1;
-            this.W2_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.W2_TextBox.TabIndex = 1013;
-            this.W2_TextBox.Text = "0";
-            // 
-            // W3_TextBox
-            // 
-            this.W3_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.W3_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W3_TextBox.Location = new System.Drawing.Point(238, 176);
-            this.W3_TextBox.Name = "W3_TextBox";
-            this.W3_TextBox.PlaceholderText = "";
-            this.W3_TextBox.ReadOnly = true;
-            this.W3_TextBox.SelectionStart = 1;
-            this.W3_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.W3_TextBox.TabIndex = 1014;
-            this.W3_TextBox.Text = "0";
-            // 
-            // Wa_TextBox
-            // 
-            this.Wa_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.Wa_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Wa_TextBox.Location = new System.Drawing.Point(238, 242);
-            this.Wa_TextBox.Name = "Wa_TextBox";
-            this.Wa_TextBox.PlaceholderText = "";
-            this.Wa_TextBox.ReadOnly = true;
-            this.Wa_TextBox.SelectionStart = 1;
-            this.Wa_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.Wa_TextBox.TabIndex = 1015;
-            this.Wa_TextBox.Text = "0";
-            // 
-            // Wc_TextBox
-            // 
-            this.Wc_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.Wc_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Wc_TextBox.Location = new System.Drawing.Point(238, 306);
-            this.Wc_TextBox.Name = "Wc_TextBox";
-            this.Wc_TextBox.PlaceholderText = "";
-            this.Wc_TextBox.ReadOnly = true;
-            this.Wc_TextBox.SelectionStart = 1;
-            this.Wc_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.Wc_TextBox.TabIndex = 1016;
-            this.Wc_TextBox.Text = "0";
-            // 
-            // W_TextBox
-            // 
-            this.W_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.W_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W_TextBox.Location = new System.Drawing.Point(238, 368);
-            this.W_TextBox.Name = "W_TextBox";
-            this.W_TextBox.PlaceholderText = "";
-            this.W_TextBox.ReadOnly = true;
-            this.W_TextBox.SelectionStart = 1;
-            this.W_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.W_TextBox.TabIndex = 1017;
-            this.W_TextBox.Text = "0";
-            // 
-            // P_TextBox
-            // 
-            this.P_TextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.P_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.P_TextBox.Location = new System.Drawing.Point(238, 421);
-            this.P_TextBox.Name = "P_TextBox";
-            this.P_TextBox.PlaceholderText = "";
-            this.P_TextBox.ReadOnly = true;
-            this.P_TextBox.SelectionStart = 1;
-            this.P_TextBox.Size = new System.Drawing.Size(179, 35);
-            this.P_TextBox.TabIndex = 1018;
-            this.P_TextBox.Text = "0";
-            // 
-            // NonDesorpGasQtyTextBox
-            // 
-            this.NonDesorpGasQtyTextBox.BackColor = System.Drawing.Color.PeachPuff;
-            this.NonDesorpGasQtyTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NonDesorpGasQtyTextBox.Location = new System.Drawing.Point(310, 551);
-            this.NonDesorpGasQtyTextBox.Name = "NonDesorpGasQtyTextBox";
-            this.NonDesorpGasQtyTextBox.PlaceholderText = "";
-            this.NonDesorpGasQtyTextBox.ReadOnly = true;
-            this.NonDesorpGasQtyTextBox.SelectionStart = 1;
-            this.NonDesorpGasQtyTextBox.Size = new System.Drawing.Size(102, 35);
-            this.NonDesorpGasQtyTextBox.TabIndex = 1019;
-            this.NonDesorpGasQtyTextBox.Text = "0";
-            // 
-            // tabPage4panel1
-            // 
-            this.tabPage4panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage4panel1.Location = new System.Drawing.Point(1109, 48);
-            this.tabPage4panel1.Name = "tabPage4panel1";
-            this.tabPage4panel1.Size = new System.Drawing.Size(77, 100);
-            this.tabPage4panel1.TabIndex = 1011;
-            // 
-            // CH4TextBox
-            // 
-            this.CH4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CH4TextBox.Location = new System.Drawing.Point(99, -2);
-            this.CH4TextBox.Name = "CH4TextBox";
-            this.CH4TextBox.PlaceholderText = "CH₄";
-            this.CH4TextBox.Size = new System.Drawing.Size(79, 35);
-            this.CH4TextBox.TabIndex = 1012;
-            // 
-            // CO2TextBox
-            // 
-            this.CO2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CO2TextBox.Location = new System.Drawing.Point(99, -2);
-            this.CO2TextBox.Name = "CO2TextBox";
-            this.CO2TextBox.PlaceholderText = "CO₂";
-            this.CO2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.CO2TextBox.TabIndex = 1013;
-            // 
-            // N2TextBox
-            // 
-            this.N2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.N2TextBox.Location = new System.Drawing.Point(99, -2);
-            this.N2TextBox.Name = "N2TextBox";
-            this.N2TextBox.PlaceholderText = "N₂";
-            this.N2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.N2TextBox.TabIndex = 1014;
-            // 
-            // O2TextBox
-            // 
-            this.O2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.O2TextBox.Location = new System.Drawing.Point(99, -2);
-            this.O2TextBox.Name = "O2TextBox";
-            this.O2TextBox.PlaceholderText = "O₂";
-            this.O2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.O2TextBox.TabIndex = 1015;
-            // 
-            // C2H4TextBox
-            // 
-            this.C2H4TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H4TextBox.Location = new System.Drawing.Point(99, -2);
-            this.C2H4TextBox.Name = "C2H4TextBox";
-            this.C2H4TextBox.PlaceholderText = "C₂H₄";
-            this.C2H4TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C2H4TextBox.TabIndex = 1013;
-            // 
-            // C3H8TextBox
-            // 
-            this.C3H8TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H8TextBox.Location = new System.Drawing.Point(99, -2);
-            this.C3H8TextBox.Name = "C3H8TextBox";
-            this.C3H8TextBox.PlaceholderText = "C₃H₈";
-            this.C3H8TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C3H8TextBox.TabIndex = 1014;
-            // 
-            // C2H6TextBox
-            // 
-            this.C2H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H6TextBox.Location = new System.Drawing.Point(99, -3);
-            this.C2H6TextBox.Name = "C2H6TextBox";
-            this.C2H6TextBox.PlaceholderText = "C₂H₆";
-            this.C2H6TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C2H6TextBox.TabIndex = 1015;
-            // 
-            // C3H6TextBox
-            // 
-            this.C3H6TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C3H6TextBox.Location = new System.Drawing.Point(99, -2);
-            this.C3H6TextBox.Name = "C3H6TextBox";
-            this.C3H6TextBox.PlaceholderText = "C₃H₆";
-            this.C3H6TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C3H6TextBox.TabIndex = 1016;
-            // 
-            // C2H2TextBox
-            // 
-            this.C2H2TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.C2H2TextBox.Location = new System.Drawing.Point(99, -2);
-            this.C2H2TextBox.Name = "C2H2TextBox";
-            this.C2H2TextBox.PlaceholderText = "C₂H₂";
-            this.C2H2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C2H2TextBox.TabIndex = 1014;
-            // 
-            // COTextBox
-            // 
-            this.COTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.COTextBox.Location = new System.Drawing.Point(99, -2);
-            this.COTextBox.Name = "COTextBox";
-            this.COTextBox.PlaceholderText = "CO";
-            this.COTextBox.Size = new System.Drawing.Size(79, 35);
-            this.COTextBox.TabIndex = 1015;
-            // 
-            // DownholeTestersTextBox
-            // 
-            this.DownholeTestersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DownholeTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DownholeTestersTextBox.Location = new System.Drawing.Point(127, -1);
-            this.DownholeTestersTextBox.Name = "DownholeTestersTextBox";
-            this.DownholeTestersTextBox.PlaceholderText = "井下测试人员";
-            this.DownholeTestersTextBox.Size = new System.Drawing.Size(229, 35);
-            this.DownholeTestersTextBox.TabIndex = 1013;
-            // 
-            // LabTestersTextBox
-            // 
-            this.LabTestersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabTestersTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LabTestersTextBox.Location = new System.Drawing.Point(125, -2);
-            this.LabTestersTextBox.Name = "LabTestersTextBox";
-            this.LabTestersTextBox.PlaceholderText = "实验室测试人员";
-            this.LabTestersTextBox.Size = new System.Drawing.Size(232, 35);
-            this.LabTestersTextBox.TabIndex = 1014;
-            // 
-            // AuditorTextBox
-            // 
-            this.AuditorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AuditorTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AuditorTextBox.Location = new System.Drawing.Point(79, -1);
-            this.AuditorTextBox.Name = "AuditorTextBox";
-            this.AuditorTextBox.PlaceholderText = "审核人员";
-            this.AuditorTextBox.Size = new System.Drawing.Size(277, 35);
-            this.AuditorTextBox.TabIndex = 1014;
-            // 
-            // tabPage5panel18
-            // 
-            this.tabPage5panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage5panel18.Location = new System.Drawing.Point(1076, 93);
-            this.tabPage5panel18.Name = "tabPage5panel18";
-            this.tabPage5panel18.Size = new System.Drawing.Size(77, 100);
-            this.tabPage5panel18.TabIndex = 1012;
-            // 
-            // RemarkTextBox
-            // 
-            this.RemarkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemarkTextBox.AutoScroll = true;
-            this.RemarkTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RemarkTextBox.Location = new System.Drawing.Point(73, 2);
-            this.RemarkTextBox.Multiline = true;
-            this.RemarkTextBox.Name = "RemarkTextBox";
-            this.RemarkTextBox.PlaceholderText = "备注";
-            this.RemarkTextBox.Size = new System.Drawing.Size(284, 60);
-            this.RemarkTextBox.TabIndex = 1015;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker6.Format = "yyyy年 MM月dd日";
-            this.dateTimePicker6.Location = new System.Drawing.Point(79, -2);
-            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Placement = AntdUI.TAlignFrom.Top;
-            this.dateTimePicker6.Size = new System.Drawing.Size(277, 35);
-            this.dateTimePicker6.TabIndex = 1010;
-            this.dateTimePicker6.ValueTimeHorizontal = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dateTimePicker1.Format = "yyyy年 MM月dd日";
-            this.dateTimePicker1.Location = new System.Drawing.Point(96, -2);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Placement = AntdUI.TAlignFrom.Top;
-            this.dateTimePicker1.Size = new System.Drawing.Size(261, 35);
-            this.dateTimePicker1.TabIndex = 1013;
-            this.dateTimePicker1.ValueTimeHorizontal = true;
             // 
             // MainForm
             // 

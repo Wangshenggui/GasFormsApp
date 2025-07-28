@@ -63,6 +63,76 @@ namespace GasFormsApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _井下解吸 {
+            get {
+                object obj = ResourceManager.GetObject("_井下解吸", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _基本信息 {
+            get {
+                object obj = ResourceManager.GetObject("_基本信息", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _实验结果 {
+            get {
+                object obj = ResourceManager.GetObject("_实验结果", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _常压解吸 {
+            get {
+                object obj = ResourceManager.GetObject("_常压解吸", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _数据归档 {
+            get {
+                object obj = ResourceManager.GetObject("_数据归档", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _数据归档1 {
+            get {
+                object obj = ResourceManager.GetObject("_数据归档1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _数据管理 {
+            get {
+                object obj = ResourceManager.GetObject("_数据管理", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap AppLog {
             get {
                 object obj = ResourceManager.GetObject("AppLog", resourceCulture);
@@ -73,49 +143,9 @@ namespace GasFormsApp.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 井下解吸 {
-            get {
-                object obj = ResourceManager.GetObject("井下解吸", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap 保存 {
             get {
                 object obj = ResourceManager.GetObject("保存", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 基本信息 {
-            get {
-                object obj = ResourceManager.GetObject("基本信息", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 实验结果 {
-            get {
-                object obj = ResourceManager.GetObject("实验结果", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 常压解吸 {
-            get {
-                object obj = ResourceManager.GetObject("常压解吸", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,26 +186,6 @@ namespace GasFormsApp.Properties {
         internal static System.Drawing.Bitmap 批量导入 {
             get {
                 object obj = ResourceManager.GetObject("批量导入", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 数据归档 {
-            get {
-                object obj = ResourceManager.GetObject("数据归档", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 数据管理 {
-            get {
-                object obj = ResourceManager.GetObject("数据管理", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
