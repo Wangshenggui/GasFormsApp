@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -13,6 +14,7 @@ using System.Windows.Forms;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using GasFormsApp.TabControl;
 using GasFormsApp.UI;
+using Microsoft.VisualBasic;
 
 namespace GasFormsApp
 {
@@ -20,6 +22,8 @@ namespace GasFormsApp
     {
         // 登录和使用权限
         public int Version { get; set; } = -1;
+        // 记录标题名
+        public string 标题名 { get; set; } = "煤安矿山";
         // 判断是否初始化
         private bool tabControl1_isInitializing = true;
 
@@ -553,8 +557,39 @@ namespace GasFormsApp
             // 1. 获取用户AppData目录
             string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            // 2. 目标文件路径
+            // 2. 目标文件夹路径
             string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+
+            // 3. 检测是否存在
+            if (!Directory.Exists(targetDir))
+            {
+                Console.WriteLine("目标目录不存在，准备复制...");
+
+                // 4. 当前程序目录下的模板目录
+                string currentDir = AppDomain.CurrentDomain.BaseDirectory;
+                string sourceDir = Path.Combine(currentDir, "Image");
+
+                // 检测模板目录是否存在
+                if (Directory.Exists(sourceDir))
+                {
+                    // 复制整个目录
+                    CopyDirectory(sourceDir, targetDir);
+                    Console.WriteLine("复制完成！");
+                }
+                else
+                {
+                    Console.WriteLine("源目录不存在：" + sourceDir);
+                }
+            }
+            else
+            {
+                Console.WriteLine("目标目录已存在，无需复制。");
+            }
+            // 1. 获取用户AppData目录
+            appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            // 2. 目标文件路径
+            targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
             string targetFile = Path.Combine(targetDir, "log.png");
 
             // 3. 程序运行目录下的源文件路径
@@ -607,7 +642,7 @@ namespace GasFormsApp
             targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
             targetFile = Path.Combine(targetDir, "CompanyName.ini");
             // 3. 程序运行目录下的源文件路径
-            sourceFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "CompanyName.ini");
+            sourceFile = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image", "CompanyName.ini");
             // 4. 检查目标目录是否存在，不存在则创建
             if (!Directory.Exists(targetDir))
             {
@@ -715,6 +750,30 @@ namespace GasFormsApp
             tabControl1_isInitializing = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
+        }
+        /// <summary>
+        /// 递归复制目录
+        /// </summary>
+        static void CopyDirectory(string sourceDir, string destDir)
+        {
+            // 创建目标目录
+            Directory.CreateDirectory(destDir);
+
+            // 复制文件
+            foreach (string file in Directory.GetFiles(sourceDir))
+            {
+                string fileName = Path.GetFileName(file);
+                string destFile = Path.Combine(destDir, fileName);
+                File.Copy(file, destFile, true);
+            }
+
+            // 递归复制子目录
+            foreach (string directory in Directory.GetDirectories(sourceDir))
+            {
+                string dirName = Path.GetFileName(directory);
+                string destSubDir = Path.Combine(destDir, dirName);
+                CopyDirectory(directory, destSubDir);
+            }
         }
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -1118,6 +1177,50 @@ namespace GasFormsApp
             Color foreColor = preciseControl.ForeColor;
             string foreColorStr = $"#{foreColor.A:X2}{foreColor.R:X2}{foreColor.G:X2}{foreColor.B:X2}";
             ini.Write("ColorConfig", "LogForeColor", foreColorStr);
+        }
+        private void 更改标题ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            修改标题名 win = new 修改标题名();
+            win.标题名 = null;
+            DialogResult result = win.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string data = win.标题名;
+            }
+            else
+            {
+                //MessageBox.Show($"已取消");
+                return;
+            }
+            string main_标题名 = win.标题名;
+            //MessageBox.Show($"{main_标题名}");
+            //return;
+
+            //// 弹出输入框，获取用户输入
+            //string title = Interaction.InputBox("请输入新的标题名：", "更改标题", "默认标题");
+
+            if (!string.IsNullOrEmpty(main_标题名))
+            {
+                // 获取 AppData\Roaming 路径
+                string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                // 拼接目录
+                string configDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
+                // 确保目录存在
+                if (!Directory.Exists(configDir))
+                {
+                    Directory.CreateDirectory(configDir);
+                }
+                // 拼接 INI 文件完整路径
+                string iniPath = Path.Combine(configDir, "CompanyName.ini");
+                IniFile ini = new IniFile(iniPath);
+
+                // 写入
+                ini.Write("CompanyName", "CompanyName", main_标题名);
+
+
+                string companyName = ReadValue("CompanyName", "CompanyName", iniPath);
+                label2.Text = companyName;
+            }
         }
 
         private void 更改LogToolStripMenuItem_Click(object sender, EventArgs e)
