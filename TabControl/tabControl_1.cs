@@ -362,6 +362,10 @@ namespace GasFormsApp.TabControl
             if (newWidth >= 370 && newWidth <= 705)
             {
                 newWidth = 370;
+                if (newHeight < 370)
+                {
+                    newHeight = 370;
+                }
                 _mainForm.tabPage1TemporarySavingButton.Margin = new Padding(40, 3, 3, 3);
             }
             else if (newWidth > 705 && newWidth <= 1055)
