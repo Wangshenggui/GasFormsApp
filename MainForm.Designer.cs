@@ -32,11 +32,11 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -1246,7 +1246,7 @@ namespace GasFormsApp
             this.TypeOfDestructionComboBox3.Name = "TypeOfDestructionComboBox3";
             this.TypeOfDestructionComboBox3.SelectionStart = 3;
             this.TypeOfDestructionComboBox3.Size = new System.Drawing.Size(230, 35);
-            this.TypeOfDestructionComboBox3.TabIndex = 1010;
+            this.TypeOfDestructionComboBox3.TabIndex = 5;
             this.TypeOfDestructionComboBox3.Text = "Ⅰ 类";
             // 
             // dateTimePicker3
@@ -1340,7 +1340,8 @@ namespace GasFormsApp
             this.t0TextBox.ReadOnly = true;
             this.t0TextBox.SelectionStart = 4;
             this.t0TextBox.Size = new System.Drawing.Size(230, 35);
-            this.t0TextBox.TabIndex = 1010;
+            this.t0TextBox.TabIndex = 6;
+            this.t0TextBox.TabStop = false;
             this.t0TextBox.Text = "0.00";
             // 
             // dateTimePicker5
@@ -1498,7 +1499,7 @@ namespace GasFormsApp
             this.DesorbTextBox30.Name = "DesorbTextBox30";
             this.DesorbTextBox30.PlaceholderText = "";
             this.DesorbTextBox30.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox30.TabIndex = 175;
+            this.DesorbTextBox30.TabIndex = 36;
             // 
             // DesorbTextBox29
             // 
@@ -1507,7 +1508,7 @@ namespace GasFormsApp
             this.DesorbTextBox29.Name = "DesorbTextBox29";
             this.DesorbTextBox29.PlaceholderText = "";
             this.DesorbTextBox29.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox29.TabIndex = 174;
+            this.DesorbTextBox29.TabIndex = 35;
             // 
             // DesorbTextBox28
             // 
@@ -1516,7 +1517,7 @@ namespace GasFormsApp
             this.DesorbTextBox28.Name = "DesorbTextBox28";
             this.DesorbTextBox28.PlaceholderText = "";
             this.DesorbTextBox28.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox28.TabIndex = 173;
+            this.DesorbTextBox28.TabIndex = 34;
             // 
             // DesorbTextBox27
             // 
@@ -1525,7 +1526,7 @@ namespace GasFormsApp
             this.DesorbTextBox27.Name = "DesorbTextBox27";
             this.DesorbTextBox27.PlaceholderText = "";
             this.DesorbTextBox27.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox27.TabIndex = 172;
+            this.DesorbTextBox27.TabIndex = 33;
             // 
             // DesorbTextBox26
             // 
@@ -1534,7 +1535,7 @@ namespace GasFormsApp
             this.DesorbTextBox26.Name = "DesorbTextBox26";
             this.DesorbTextBox26.PlaceholderText = "";
             this.DesorbTextBox26.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox26.TabIndex = 171;
+            this.DesorbTextBox26.TabIndex = 32;
             // 
             // DesorbTextBox25
             // 
@@ -1543,7 +1544,7 @@ namespace GasFormsApp
             this.DesorbTextBox25.Name = "DesorbTextBox25";
             this.DesorbTextBox25.PlaceholderText = "";
             this.DesorbTextBox25.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox25.TabIndex = 170;
+            this.DesorbTextBox25.TabIndex = 31;
             // 
             // DesorbTextBox24
             // 
@@ -1552,7 +1553,7 @@ namespace GasFormsApp
             this.DesorbTextBox24.Name = "DesorbTextBox24";
             this.DesorbTextBox24.PlaceholderText = "";
             this.DesorbTextBox24.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox24.TabIndex = 169;
+            this.DesorbTextBox24.TabIndex = 30;
             // 
             // DesorbTextBox23
             // 
@@ -1561,7 +1562,7 @@ namespace GasFormsApp
             this.DesorbTextBox23.Name = "DesorbTextBox23";
             this.DesorbTextBox23.PlaceholderText = "";
             this.DesorbTextBox23.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox23.TabIndex = 168;
+            this.DesorbTextBox23.TabIndex = 29;
             // 
             // DesorbTextBox22
             // 
@@ -1570,7 +1571,7 @@ namespace GasFormsApp
             this.DesorbTextBox22.Name = "DesorbTextBox22";
             this.DesorbTextBox22.PlaceholderText = "";
             this.DesorbTextBox22.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox22.TabIndex = 167;
+            this.DesorbTextBox22.TabIndex = 28;
             // 
             // DesorbTextBox21
             // 
@@ -1579,7 +1580,7 @@ namespace GasFormsApp
             this.DesorbTextBox21.Name = "DesorbTextBox21";
             this.DesorbTextBox21.PlaceholderText = "";
             this.DesorbTextBox21.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox21.TabIndex = 166;
+            this.DesorbTextBox21.TabIndex = 27;
             // 
             // DesorbTextBox20
             // 
@@ -1588,7 +1589,7 @@ namespace GasFormsApp
             this.DesorbTextBox20.Name = "DesorbTextBox20";
             this.DesorbTextBox20.PlaceholderText = "";
             this.DesorbTextBox20.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox20.TabIndex = 165;
+            this.DesorbTextBox20.TabIndex = 26;
             // 
             // DesorbTextBox19
             // 
@@ -1597,7 +1598,7 @@ namespace GasFormsApp
             this.DesorbTextBox19.Name = "DesorbTextBox19";
             this.DesorbTextBox19.PlaceholderText = "";
             this.DesorbTextBox19.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox19.TabIndex = 164;
+            this.DesorbTextBox19.TabIndex = 25;
             // 
             // DesorbTextBox18
             // 
@@ -1606,7 +1607,7 @@ namespace GasFormsApp
             this.DesorbTextBox18.Name = "DesorbTextBox18";
             this.DesorbTextBox18.PlaceholderText = "";
             this.DesorbTextBox18.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox18.TabIndex = 163;
+            this.DesorbTextBox18.TabIndex = 24;
             // 
             // DesorbTextBox17
             // 
@@ -1615,7 +1616,7 @@ namespace GasFormsApp
             this.DesorbTextBox17.Name = "DesorbTextBox17";
             this.DesorbTextBox17.PlaceholderText = "";
             this.DesorbTextBox17.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox17.TabIndex = 162;
+            this.DesorbTextBox17.TabIndex = 23;
             // 
             // DesorbTextBox16
             // 
@@ -1624,7 +1625,7 @@ namespace GasFormsApp
             this.DesorbTextBox16.Name = "DesorbTextBox16";
             this.DesorbTextBox16.PlaceholderText = "";
             this.DesorbTextBox16.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox16.TabIndex = 161;
+            this.DesorbTextBox16.TabIndex = 22;
             // 
             // DesorbTextBox15
             // 
@@ -1633,7 +1634,7 @@ namespace GasFormsApp
             this.DesorbTextBox15.Name = "DesorbTextBox15";
             this.DesorbTextBox15.PlaceholderText = "";
             this.DesorbTextBox15.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox15.TabIndex = 160;
+            this.DesorbTextBox15.TabIndex = 21;
             // 
             // DesorbTextBox14
             // 
@@ -1642,7 +1643,7 @@ namespace GasFormsApp
             this.DesorbTextBox14.Name = "DesorbTextBox14";
             this.DesorbTextBox14.PlaceholderText = "";
             this.DesorbTextBox14.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox14.TabIndex = 159;
+            this.DesorbTextBox14.TabIndex = 20;
             // 
             // DesorbTextBox13
             // 
@@ -1651,7 +1652,7 @@ namespace GasFormsApp
             this.DesorbTextBox13.Name = "DesorbTextBox13";
             this.DesorbTextBox13.PlaceholderText = "";
             this.DesorbTextBox13.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox13.TabIndex = 158;
+            this.DesorbTextBox13.TabIndex = 19;
             // 
             // DesorbTextBox12
             // 
@@ -1660,7 +1661,7 @@ namespace GasFormsApp
             this.DesorbTextBox12.Name = "DesorbTextBox12";
             this.DesorbTextBox12.PlaceholderText = "";
             this.DesorbTextBox12.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox12.TabIndex = 157;
+            this.DesorbTextBox12.TabIndex = 18;
             // 
             // DesorbTextBox11
             // 
@@ -1669,7 +1670,7 @@ namespace GasFormsApp
             this.DesorbTextBox11.Name = "DesorbTextBox11";
             this.DesorbTextBox11.PlaceholderText = "";
             this.DesorbTextBox11.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox11.TabIndex = 156;
+            this.DesorbTextBox11.TabIndex = 17;
             // 
             // DesorbTextBox10
             // 
@@ -1678,7 +1679,7 @@ namespace GasFormsApp
             this.DesorbTextBox10.Name = "DesorbTextBox10";
             this.DesorbTextBox10.PlaceholderText = "";
             this.DesorbTextBox10.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox10.TabIndex = 155;
+            this.DesorbTextBox10.TabIndex = 16;
             // 
             // DesorbTextBox9
             // 
@@ -1687,7 +1688,7 @@ namespace GasFormsApp
             this.DesorbTextBox9.Name = "DesorbTextBox9";
             this.DesorbTextBox9.PlaceholderText = "";
             this.DesorbTextBox9.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox9.TabIndex = 154;
+            this.DesorbTextBox9.TabIndex = 15;
             // 
             // DesorbTextBox8
             // 
@@ -1696,7 +1697,7 @@ namespace GasFormsApp
             this.DesorbTextBox8.Name = "DesorbTextBox8";
             this.DesorbTextBox8.PlaceholderText = "";
             this.DesorbTextBox8.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox8.TabIndex = 153;
+            this.DesorbTextBox8.TabIndex = 14;
             // 
             // DesorbTextBox7
             // 
@@ -1705,7 +1706,7 @@ namespace GasFormsApp
             this.DesorbTextBox7.Name = "DesorbTextBox7";
             this.DesorbTextBox7.PlaceholderText = "";
             this.DesorbTextBox7.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox7.TabIndex = 152;
+            this.DesorbTextBox7.TabIndex = 13;
             // 
             // DesorbTextBox6
             // 
@@ -1714,7 +1715,7 @@ namespace GasFormsApp
             this.DesorbTextBox6.Name = "DesorbTextBox6";
             this.DesorbTextBox6.PlaceholderText = "";
             this.DesorbTextBox6.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox6.TabIndex = 151;
+            this.DesorbTextBox6.TabIndex = 12;
             // 
             // DesorbTextBox5
             // 
@@ -1723,7 +1724,7 @@ namespace GasFormsApp
             this.DesorbTextBox5.Name = "DesorbTextBox5";
             this.DesorbTextBox5.PlaceholderText = "";
             this.DesorbTextBox5.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox5.TabIndex = 150;
+            this.DesorbTextBox5.TabIndex = 11;
             // 
             // DesorbTextBox4
             // 
@@ -1732,7 +1733,7 @@ namespace GasFormsApp
             this.DesorbTextBox4.Name = "DesorbTextBox4";
             this.DesorbTextBox4.PlaceholderText = "";
             this.DesorbTextBox4.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox4.TabIndex = 149;
+            this.DesorbTextBox4.TabIndex = 10;
             // 
             // DesorbTextBox3
             // 
@@ -1741,7 +1742,7 @@ namespace GasFormsApp
             this.DesorbTextBox3.Name = "DesorbTextBox3";
             this.DesorbTextBox3.PlaceholderText = "";
             this.DesorbTextBox3.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox3.TabIndex = 148;
+            this.DesorbTextBox3.TabIndex = 9;
             // 
             // DesorbTextBox2
             // 
@@ -1750,7 +1751,7 @@ namespace GasFormsApp
             this.DesorbTextBox2.Name = "DesorbTextBox2";
             this.DesorbTextBox2.PlaceholderText = "";
             this.DesorbTextBox2.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox2.TabIndex = 147;
+            this.DesorbTextBox2.TabIndex = 8;
             // 
             // DesorbTextBox1
             // 
@@ -1759,7 +1760,7 @@ namespace GasFormsApp
             this.DesorbTextBox1.Name = "DesorbTextBox1";
             this.DesorbTextBox1.PlaceholderText = "";
             this.DesorbTextBox1.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox1.TabIndex = 146;
+            this.DesorbTextBox1.TabIndex = 7;
             // 
             // label24
             // 
@@ -2236,7 +2237,7 @@ namespace GasFormsApp
             this.DataNumTextBox60.PlaceholderText = "";
             this.DataNumTextBox60.Radius = 2;
             this.DataNumTextBox60.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox60.TabIndex = 235;
+            this.DataNumTextBox60.TabIndex = 95;
             // 
             // DataNumTextBox50
             // 
@@ -2246,7 +2247,7 @@ namespace GasFormsApp
             this.DataNumTextBox50.PlaceholderText = "";
             this.DataNumTextBox50.Radius = 2;
             this.DataNumTextBox50.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox50.TabIndex = 225;
+            this.DataNumTextBox50.TabIndex = 75;
             // 
             // DataNumTextBox40
             // 
@@ -2256,7 +2257,7 @@ namespace GasFormsApp
             this.DataNumTextBox40.PlaceholderText = "";
             this.DataNumTextBox40.Radius = 2;
             this.DataNumTextBox40.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox40.TabIndex = 215;
+            this.DataNumTextBox40.TabIndex = 55;
             // 
             // DataNumTextBox59
             // 
@@ -2266,7 +2267,7 @@ namespace GasFormsApp
             this.DataNumTextBox59.PlaceholderText = "";
             this.DataNumTextBox59.Radius = 2;
             this.DataNumTextBox59.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox59.TabIndex = 234;
+            this.DataNumTextBox59.TabIndex = 93;
             // 
             // DesorbTextBox60
             // 
@@ -2275,7 +2276,7 @@ namespace GasFormsApp
             this.DesorbTextBox60.Name = "DesorbTextBox60";
             this.DesorbTextBox60.PlaceholderText = "";
             this.DesorbTextBox60.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox60.TabIndex = 205;
+            this.DesorbTextBox60.TabIndex = 96;
             // 
             // DataNumTextBox49
             // 
@@ -2285,7 +2286,7 @@ namespace GasFormsApp
             this.DataNumTextBox49.PlaceholderText = "";
             this.DataNumTextBox49.Radius = 2;
             this.DataNumTextBox49.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox49.TabIndex = 224;
+            this.DataNumTextBox49.TabIndex = 73;
             // 
             // DataNumTextBox58
             // 
@@ -2295,7 +2296,7 @@ namespace GasFormsApp
             this.DataNumTextBox58.PlaceholderText = "";
             this.DataNumTextBox58.Radius = 2;
             this.DataNumTextBox58.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox58.TabIndex = 233;
+            this.DataNumTextBox58.TabIndex = 91;
             // 
             // label27
             // 
@@ -2317,7 +2318,7 @@ namespace GasFormsApp
             this.DataNumTextBox39.PlaceholderText = "";
             this.DataNumTextBox39.Radius = 2;
             this.DataNumTextBox39.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox39.TabIndex = 214;
+            this.DataNumTextBox39.TabIndex = 53;
             // 
             // DataNumTextBox57
             // 
@@ -2327,7 +2328,7 @@ namespace GasFormsApp
             this.DataNumTextBox57.PlaceholderText = "";
             this.DataNumTextBox57.Radius = 2;
             this.DataNumTextBox57.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox57.TabIndex = 232;
+            this.DataNumTextBox57.TabIndex = 89;
             // 
             // DataNumTextBox48
             // 
@@ -2337,7 +2338,7 @@ namespace GasFormsApp
             this.DataNumTextBox48.PlaceholderText = "";
             this.DataNumTextBox48.Radius = 2;
             this.DataNumTextBox48.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox48.TabIndex = 223;
+            this.DataNumTextBox48.TabIndex = 71;
             // 
             // DesorbTextBox59
             // 
@@ -2346,7 +2347,7 @@ namespace GasFormsApp
             this.DesorbTextBox59.Name = "DesorbTextBox59";
             this.DesorbTextBox59.PlaceholderText = "";
             this.DesorbTextBox59.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox59.TabIndex = 204;
+            this.DesorbTextBox59.TabIndex = 94;
             // 
             // DataNumTextBox56
             // 
@@ -2356,7 +2357,7 @@ namespace GasFormsApp
             this.DataNumTextBox56.PlaceholderText = "";
             this.DataNumTextBox56.Radius = 2;
             this.DataNumTextBox56.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox56.TabIndex = 231;
+            this.DataNumTextBox56.TabIndex = 87;
             // 
             // label29
             // 
@@ -2378,7 +2379,7 @@ namespace GasFormsApp
             this.DataNumTextBox47.PlaceholderText = "";
             this.DataNumTextBox47.Radius = 2;
             this.DataNumTextBox47.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox47.TabIndex = 222;
+            this.DataNumTextBox47.TabIndex = 69;
             // 
             // DataNumTextBox55
             // 
@@ -2388,7 +2389,7 @@ namespace GasFormsApp
             this.DataNumTextBox55.PlaceholderText = "";
             this.DataNumTextBox55.Radius = 2;
             this.DataNumTextBox55.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox55.TabIndex = 230;
+            this.DataNumTextBox55.TabIndex = 85;
             // 
             // DataNumTextBox38
             // 
@@ -2398,7 +2399,7 @@ namespace GasFormsApp
             this.DataNumTextBox38.PlaceholderText = "";
             this.DataNumTextBox38.Radius = 2;
             this.DataNumTextBox38.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox38.TabIndex = 213;
+            this.DataNumTextBox38.TabIndex = 51;
             // 
             // DesorbTextBox58
             // 
@@ -2407,7 +2408,7 @@ namespace GasFormsApp
             this.DesorbTextBox58.Name = "DesorbTextBox58";
             this.DesorbTextBox58.PlaceholderText = "";
             this.DesorbTextBox58.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox58.TabIndex = 203;
+            this.DesorbTextBox58.TabIndex = 92;
             // 
             // DataNumTextBox54
             // 
@@ -2417,7 +2418,7 @@ namespace GasFormsApp
             this.DataNumTextBox54.PlaceholderText = "";
             this.DataNumTextBox54.Radius = 2;
             this.DataNumTextBox54.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox54.TabIndex = 229;
+            this.DataNumTextBox54.TabIndex = 83;
             // 
             // DataNumTextBox46
             // 
@@ -2427,7 +2428,7 @@ namespace GasFormsApp
             this.DataNumTextBox46.PlaceholderText = "";
             this.DataNumTextBox46.Radius = 2;
             this.DataNumTextBox46.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox46.TabIndex = 221;
+            this.DataNumTextBox46.TabIndex = 67;
             // 
             // label28
             // 
@@ -2449,7 +2450,7 @@ namespace GasFormsApp
             this.DataNumTextBox53.PlaceholderText = "";
             this.DataNumTextBox53.Radius = 2;
             this.DataNumTextBox53.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox53.TabIndex = 228;
+            this.DataNumTextBox53.TabIndex = 81;
             // 
             // DataNumTextBox37
             // 
@@ -2459,7 +2460,7 @@ namespace GasFormsApp
             this.DataNumTextBox37.PlaceholderText = "";
             this.DataNumTextBox37.Radius = 2;
             this.DataNumTextBox37.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox37.TabIndex = 212;
+            this.DataNumTextBox37.TabIndex = 49;
             // 
             // DataNumTextBox45
             // 
@@ -2469,7 +2470,7 @@ namespace GasFormsApp
             this.DataNumTextBox45.PlaceholderText = "";
             this.DataNumTextBox45.Radius = 2;
             this.DataNumTextBox45.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox45.TabIndex = 220;
+            this.DataNumTextBox45.TabIndex = 65;
             // 
             // DataNumTextBox52
             // 
@@ -2479,7 +2480,7 @@ namespace GasFormsApp
             this.DataNumTextBox52.PlaceholderText = "";
             this.DataNumTextBox52.Radius = 2;
             this.DataNumTextBox52.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox52.TabIndex = 227;
+            this.DataNumTextBox52.TabIndex = 79;
             // 
             // DesorbTextBox57
             // 
@@ -2488,7 +2489,7 @@ namespace GasFormsApp
             this.DesorbTextBox57.Name = "DesorbTextBox57";
             this.DesorbTextBox57.PlaceholderText = "";
             this.DesorbTextBox57.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox57.TabIndex = 202;
+            this.DesorbTextBox57.TabIndex = 90;
             // 
             // DataNumTextBox51
             // 
@@ -2498,7 +2499,7 @@ namespace GasFormsApp
             this.DataNumTextBox51.PlaceholderText = "";
             this.DataNumTextBox51.Radius = 2;
             this.DataNumTextBox51.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox51.TabIndex = 226;
+            this.DataNumTextBox51.TabIndex = 77;
             // 
             // DesorbTextBox56
             // 
@@ -2507,7 +2508,7 @@ namespace GasFormsApp
             this.DesorbTextBox56.Name = "DesorbTextBox56";
             this.DesorbTextBox56.PlaceholderText = "";
             this.DesorbTextBox56.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox56.TabIndex = 201;
+            this.DesorbTextBox56.TabIndex = 88;
             // 
             // DataNumTextBox44
             // 
@@ -2517,7 +2518,7 @@ namespace GasFormsApp
             this.DataNumTextBox44.PlaceholderText = "";
             this.DataNumTextBox44.Radius = 2;
             this.DataNumTextBox44.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox44.TabIndex = 219;
+            this.DataNumTextBox44.TabIndex = 63;
             // 
             // DataNumTextBox36
             // 
@@ -2527,7 +2528,7 @@ namespace GasFormsApp
             this.DataNumTextBox36.PlaceholderText = "";
             this.DataNumTextBox36.Radius = 2;
             this.DataNumTextBox36.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox36.TabIndex = 211;
+            this.DataNumTextBox36.TabIndex = 47;
             // 
             // DesorbTextBox55
             // 
@@ -2536,7 +2537,7 @@ namespace GasFormsApp
             this.DesorbTextBox55.Name = "DesorbTextBox55";
             this.DesorbTextBox55.PlaceholderText = "";
             this.DesorbTextBox55.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox55.TabIndex = 200;
+            this.DesorbTextBox55.TabIndex = 86;
             // 
             // DataNumTextBox43
             // 
@@ -2546,7 +2547,7 @@ namespace GasFormsApp
             this.DataNumTextBox43.PlaceholderText = "";
             this.DataNumTextBox43.Radius = 2;
             this.DataNumTextBox43.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox43.TabIndex = 218;
+            this.DataNumTextBox43.TabIndex = 61;
             // 
             // DataNumTextBox35
             // 
@@ -2556,7 +2557,7 @@ namespace GasFormsApp
             this.DataNumTextBox35.PlaceholderText = "";
             this.DataNumTextBox35.Radius = 2;
             this.DataNumTextBox35.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox35.TabIndex = 210;
+            this.DataNumTextBox35.TabIndex = 45;
             // 
             // DataNumTextBox42
             // 
@@ -2566,7 +2567,7 @@ namespace GasFormsApp
             this.DataNumTextBox42.PlaceholderText = "";
             this.DataNumTextBox42.Radius = 2;
             this.DataNumTextBox42.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox42.TabIndex = 217;
+            this.DataNumTextBox42.TabIndex = 59;
             // 
             // DesorbTextBox54
             // 
@@ -2575,7 +2576,7 @@ namespace GasFormsApp
             this.DesorbTextBox54.Name = "DesorbTextBox54";
             this.DesorbTextBox54.PlaceholderText = "";
             this.DesorbTextBox54.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox54.TabIndex = 199;
+            this.DesorbTextBox54.TabIndex = 84;
             // 
             // DataNumTextBox41
             // 
@@ -2585,7 +2586,7 @@ namespace GasFormsApp
             this.DataNumTextBox41.PlaceholderText = "";
             this.DataNumTextBox41.Radius = 2;
             this.DataNumTextBox41.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox41.TabIndex = 216;
+            this.DataNumTextBox41.TabIndex = 57;
             // 
             // DataNumTextBox34
             // 
@@ -2595,7 +2596,7 @@ namespace GasFormsApp
             this.DataNumTextBox34.PlaceholderText = "";
             this.DataNumTextBox34.Radius = 2;
             this.DataNumTextBox34.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox34.TabIndex = 209;
+            this.DataNumTextBox34.TabIndex = 43;
             // 
             // DesorbTextBox53
             // 
@@ -2604,7 +2605,7 @@ namespace GasFormsApp
             this.DesorbTextBox53.Name = "DesorbTextBox53";
             this.DesorbTextBox53.PlaceholderText = "";
             this.DesorbTextBox53.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox53.TabIndex = 198;
+            this.DesorbTextBox53.TabIndex = 82;
             // 
             // DataNumTextBox33
             // 
@@ -2614,7 +2615,7 @@ namespace GasFormsApp
             this.DataNumTextBox33.PlaceholderText = "";
             this.DataNumTextBox33.Radius = 2;
             this.DataNumTextBox33.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox33.TabIndex = 208;
+            this.DataNumTextBox33.TabIndex = 41;
             // 
             // DesorbTextBox52
             // 
@@ -2623,7 +2624,7 @@ namespace GasFormsApp
             this.DesorbTextBox52.Name = "DesorbTextBox52";
             this.DesorbTextBox52.PlaceholderText = "";
             this.DesorbTextBox52.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox52.TabIndex = 197;
+            this.DesorbTextBox52.TabIndex = 80;
             // 
             // DesorbTextBox50
             // 
@@ -2632,7 +2633,7 @@ namespace GasFormsApp
             this.DesorbTextBox50.Name = "DesorbTextBox50";
             this.DesorbTextBox50.PlaceholderText = "";
             this.DesorbTextBox50.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox50.TabIndex = 195;
+            this.DesorbTextBox50.TabIndex = 76;
             // 
             // DataNumTextBox32
             // 
@@ -2642,7 +2643,7 @@ namespace GasFormsApp
             this.DataNumTextBox32.PlaceholderText = "";
             this.DataNumTextBox32.Radius = 2;
             this.DataNumTextBox32.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox32.TabIndex = 207;
+            this.DataNumTextBox32.TabIndex = 39;
             // 
             // DesorbTextBox51
             // 
@@ -2651,7 +2652,7 @@ namespace GasFormsApp
             this.DesorbTextBox51.Name = "DesorbTextBox51";
             this.DesorbTextBox51.PlaceholderText = "";
             this.DesorbTextBox51.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox51.TabIndex = 196;
+            this.DesorbTextBox51.TabIndex = 78;
             // 
             // DesorbTextBox49
             // 
@@ -2660,7 +2661,7 @@ namespace GasFormsApp
             this.DesorbTextBox49.Name = "DesorbTextBox49";
             this.DesorbTextBox49.PlaceholderText = "";
             this.DesorbTextBox49.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox49.TabIndex = 194;
+            this.DesorbTextBox49.TabIndex = 74;
             // 
             // DataNumTextBox31
             // 
@@ -2670,7 +2671,7 @@ namespace GasFormsApp
             this.DataNumTextBox31.PlaceholderText = "";
             this.DataNumTextBox31.Radius = 2;
             this.DataNumTextBox31.Size = new System.Drawing.Size(46, 30);
-            this.DataNumTextBox31.TabIndex = 206;
+            this.DataNumTextBox31.TabIndex = 37;
             // 
             // DesorbTextBox48
             // 
@@ -2679,7 +2680,7 @@ namespace GasFormsApp
             this.DesorbTextBox48.Name = "DesorbTextBox48";
             this.DesorbTextBox48.PlaceholderText = "";
             this.DesorbTextBox48.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox48.TabIndex = 193;
+            this.DesorbTextBox48.TabIndex = 72;
             // 
             // DesorbTextBox47
             // 
@@ -2688,7 +2689,7 @@ namespace GasFormsApp
             this.DesorbTextBox47.Name = "DesorbTextBox47";
             this.DesorbTextBox47.PlaceholderText = "";
             this.DesorbTextBox47.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox47.TabIndex = 192;
+            this.DesorbTextBox47.TabIndex = 70;
             // 
             // DesorbTextBox46
             // 
@@ -2697,7 +2698,7 @@ namespace GasFormsApp
             this.DesorbTextBox46.Name = "DesorbTextBox46";
             this.DesorbTextBox46.PlaceholderText = "";
             this.DesorbTextBox46.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox46.TabIndex = 191;
+            this.DesorbTextBox46.TabIndex = 68;
             // 
             // DesorbTextBox45
             // 
@@ -2706,7 +2707,7 @@ namespace GasFormsApp
             this.DesorbTextBox45.Name = "DesorbTextBox45";
             this.DesorbTextBox45.PlaceholderText = "";
             this.DesorbTextBox45.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox45.TabIndex = 190;
+            this.DesorbTextBox45.TabIndex = 66;
             // 
             // DesorbTextBox44
             // 
@@ -2715,7 +2716,7 @@ namespace GasFormsApp
             this.DesorbTextBox44.Name = "DesorbTextBox44";
             this.DesorbTextBox44.PlaceholderText = "";
             this.DesorbTextBox44.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox44.TabIndex = 189;
+            this.DesorbTextBox44.TabIndex = 64;
             // 
             // DesorbTextBox43
             // 
@@ -2724,7 +2725,7 @@ namespace GasFormsApp
             this.DesorbTextBox43.Name = "DesorbTextBox43";
             this.DesorbTextBox43.PlaceholderText = "";
             this.DesorbTextBox43.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox43.TabIndex = 188;
+            this.DesorbTextBox43.TabIndex = 62;
             // 
             // DesorbTextBox42
             // 
@@ -2733,7 +2734,7 @@ namespace GasFormsApp
             this.DesorbTextBox42.Name = "DesorbTextBox42";
             this.DesorbTextBox42.PlaceholderText = "";
             this.DesorbTextBox42.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox42.TabIndex = 187;
+            this.DesorbTextBox42.TabIndex = 60;
             // 
             // DesorbTextBox41
             // 
@@ -2742,7 +2743,7 @@ namespace GasFormsApp
             this.DesorbTextBox41.Name = "DesorbTextBox41";
             this.DesorbTextBox41.PlaceholderText = "";
             this.DesorbTextBox41.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox41.TabIndex = 186;
+            this.DesorbTextBox41.TabIndex = 58;
             // 
             // DesorbTextBox40
             // 
@@ -2751,7 +2752,7 @@ namespace GasFormsApp
             this.DesorbTextBox40.Name = "DesorbTextBox40";
             this.DesorbTextBox40.PlaceholderText = "";
             this.DesorbTextBox40.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox40.TabIndex = 185;
+            this.DesorbTextBox40.TabIndex = 56;
             // 
             // DesorbTextBox39
             // 
@@ -2760,7 +2761,7 @@ namespace GasFormsApp
             this.DesorbTextBox39.Name = "DesorbTextBox39";
             this.DesorbTextBox39.PlaceholderText = "";
             this.DesorbTextBox39.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox39.TabIndex = 184;
+            this.DesorbTextBox39.TabIndex = 54;
             // 
             // DesorbTextBox38
             // 
@@ -2769,7 +2770,7 @@ namespace GasFormsApp
             this.DesorbTextBox38.Name = "DesorbTextBox38";
             this.DesorbTextBox38.PlaceholderText = "";
             this.DesorbTextBox38.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox38.TabIndex = 183;
+            this.DesorbTextBox38.TabIndex = 52;
             // 
             // DesorbTextBox37
             // 
@@ -2778,7 +2779,7 @@ namespace GasFormsApp
             this.DesorbTextBox37.Name = "DesorbTextBox37";
             this.DesorbTextBox37.PlaceholderText = "";
             this.DesorbTextBox37.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox37.TabIndex = 182;
+            this.DesorbTextBox37.TabIndex = 50;
             // 
             // DesorbTextBox36
             // 
@@ -2787,7 +2788,7 @@ namespace GasFormsApp
             this.DesorbTextBox36.Name = "DesorbTextBox36";
             this.DesorbTextBox36.PlaceholderText = "";
             this.DesorbTextBox36.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox36.TabIndex = 181;
+            this.DesorbTextBox36.TabIndex = 48;
             // 
             // DesorbTextBox35
             // 
@@ -2796,7 +2797,7 @@ namespace GasFormsApp
             this.DesorbTextBox35.Name = "DesorbTextBox35";
             this.DesorbTextBox35.PlaceholderText = "";
             this.DesorbTextBox35.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox35.TabIndex = 180;
+            this.DesorbTextBox35.TabIndex = 46;
             // 
             // DesorbTextBox34
             // 
@@ -2805,7 +2806,7 @@ namespace GasFormsApp
             this.DesorbTextBox34.Name = "DesorbTextBox34";
             this.DesorbTextBox34.PlaceholderText = "";
             this.DesorbTextBox34.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox34.TabIndex = 179;
+            this.DesorbTextBox34.TabIndex = 44;
             // 
             // DesorbTextBox33
             // 
@@ -2814,7 +2815,7 @@ namespace GasFormsApp
             this.DesorbTextBox33.Name = "DesorbTextBox33";
             this.DesorbTextBox33.PlaceholderText = "";
             this.DesorbTextBox33.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox33.TabIndex = 178;
+            this.DesorbTextBox33.TabIndex = 42;
             // 
             // DesorbTextBox32
             // 
@@ -2823,7 +2824,7 @@ namespace GasFormsApp
             this.DesorbTextBox32.Name = "DesorbTextBox32";
             this.DesorbTextBox32.PlaceholderText = "";
             this.DesorbTextBox32.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox32.TabIndex = 177;
+            this.DesorbTextBox32.TabIndex = 40;
             // 
             // DesorbTextBox31
             // 
@@ -2832,7 +2833,7 @@ namespace GasFormsApp
             this.DesorbTextBox31.Name = "DesorbTextBox31";
             this.DesorbTextBox31.PlaceholderText = "";
             this.DesorbTextBox31.Size = new System.Drawing.Size(85, 35);
-            this.DesorbTextBox31.TabIndex = 176;
+            this.DesorbTextBox31.TabIndex = 38;
             // 
             // tabPage2panel9
             // 
@@ -2917,6 +2918,7 @@ namespace GasFormsApp
             this.SampLossVolTextBox.SelectionStart = 1;
             this.SampLossVolTextBox.Size = new System.Drawing.Size(222, 35);
             this.SampLossVolTextBox.TabIndex = 1013;
+            this.SampLossVolTextBox.TabStop = false;
             this.SampLossVolTextBox.Text = "0";
             // 
             // UndDesorpCalTextBox
@@ -2930,6 +2932,7 @@ namespace GasFormsApp
             this.UndDesorpCalTextBox.SelectionStart = 1;
             this.UndDesorpCalTextBox.Size = new System.Drawing.Size(222, 35);
             this.UndDesorpCalTextBox.TabIndex = 1012;
+            this.UndDesorpCalTextBox.TabStop = false;
             this.UndDesorpCalTextBox.Text = "0";
             // 
             // DesVolUndTextBox
@@ -2943,6 +2946,7 @@ namespace GasFormsApp
             this.DesVolUndTextBox.SelectionStart = 1;
             this.DesVolUndTextBox.Size = new System.Drawing.Size(222, 35);
             this.DesVolUndTextBox.TabIndex = 1011;
+            this.DesVolUndTextBox.TabStop = false;
             this.DesVolUndTextBox.Text = "0";
             // 
             // DataExportButton
@@ -3190,6 +3194,7 @@ namespace GasFormsApp
             this.CrushDesorpTextBox.SelectionStart = 1;
             this.CrushDesorpTextBox.Size = new System.Drawing.Size(155, 35);
             this.CrushDesorpTextBox.TabIndex = 1018;
+            this.CrushDesorpTextBox.TabStop = false;
             this.CrushDesorpTextBox.Text = "0";
             // 
             // S2DesorpVolCalTextBox
@@ -3203,6 +3208,7 @@ namespace GasFormsApp
             this.S2DesorpVolCalTextBox.SelectionStart = 1;
             this.S2DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 35);
             this.S2DesorpVolCalTextBox.TabIndex = 1017;
+            this.S2DesorpVolCalTextBox.TabStop = false;
             this.S2DesorpVolCalTextBox.Text = "0";
             // 
             // S1DesorpVolCalTextBox
@@ -3216,6 +3222,7 @@ namespace GasFormsApp
             this.S1DesorpVolCalTextBox.SelectionStart = 1;
             this.S1DesorpVolCalTextBox.Size = new System.Drawing.Size(155, 35);
             this.S1DesorpVolCalTextBox.TabIndex = 1016;
+            this.S1DesorpVolCalTextBox.TabStop = false;
             this.S1DesorpVolCalTextBox.Text = "0";
             // 
             // S2DesorpVolTextBox
@@ -3225,7 +3232,7 @@ namespace GasFormsApp
             this.S2DesorpVolTextBox.Name = "S2DesorpVolTextBox";
             this.S2DesorpVolTextBox.PlaceholderText = "第二份煤样解吸量";
             this.S2DesorpVolTextBox.Size = new System.Drawing.Size(155, 35);
-            this.S2DesorpVolTextBox.TabIndex = 1015;
+            this.S2DesorpVolTextBox.TabIndex = 5;
             // 
             // S1DesorpVolTextBox
             // 
@@ -3234,7 +3241,7 @@ namespace GasFormsApp
             this.S1DesorpVolTextBox.Name = "S1DesorpVolTextBox";
             this.S1DesorpVolTextBox.PlaceholderText = "第一份煤样解吸量";
             this.S1DesorpVolTextBox.Size = new System.Drawing.Size(155, 35);
-            this.S1DesorpVolTextBox.TabIndex = 1014;
+            this.S1DesorpVolTextBox.TabIndex = 4;
             // 
             // Sample2WeightTextBox
             // 
@@ -3243,7 +3250,7 @@ namespace GasFormsApp
             this.Sample2WeightTextBox.Name = "Sample2WeightTextBox";
             this.Sample2WeightTextBox.PlaceholderText = "第二份煤样重量";
             this.Sample2WeightTextBox.Size = new System.Drawing.Size(155, 35);
-            this.Sample2WeightTextBox.TabIndex = 1013;
+            this.Sample2WeightTextBox.TabIndex = 3;
             // 
             // Sample1WeightTextBox
             // 
@@ -3252,7 +3259,7 @@ namespace GasFormsApp
             this.Sample1WeightTextBox.Name = "Sample1WeightTextBox";
             this.Sample1WeightTextBox.PlaceholderText = "第一份煤样重量";
             this.Sample1WeightTextBox.Size = new System.Drawing.Size(155, 35);
-            this.Sample1WeightTextBox.TabIndex = 1012;
+            this.Sample1WeightTextBox.TabIndex = 2;
             // 
             // DesorpVolNormalCalTextBox
             // 
@@ -3265,6 +3272,7 @@ namespace GasFormsApp
             this.DesorpVolNormalCalTextBox.SelectionStart = 1;
             this.DesorpVolNormalCalTextBox.Size = new System.Drawing.Size(155, 35);
             this.DesorpVolNormalCalTextBox.TabIndex = 1011;
+            this.DesorpVolNormalCalTextBox.TabStop = false;
             this.DesorpVolNormalCalTextBox.Text = "0";
             // 
             // DesorpVolNormalTextBox
@@ -3274,7 +3282,7 @@ namespace GasFormsApp
             this.DesorpVolNormalTextBox.Name = "DesorpVolNormalTextBox";
             this.DesorpVolNormalTextBox.PlaceholderText = "常压解吸体积";
             this.DesorpVolNormalTextBox.Size = new System.Drawing.Size(155, 35);
-            this.DesorpVolNormalTextBox.TabIndex = 1010;
+            this.DesorpVolNormalTextBox.TabIndex = 1;
             // 
             // label89
             // 
@@ -3582,6 +3590,7 @@ namespace GasFormsApp
             this.NonDesorpGasQtyTextBox.SelectionStart = 1;
             this.NonDesorpGasQtyTextBox.Size = new System.Drawing.Size(102, 35);
             this.NonDesorpGasQtyTextBox.TabIndex = 1019;
+            this.NonDesorpGasQtyTextBox.TabStop = false;
             this.NonDesorpGasQtyTextBox.Text = "0";
             // 
             // PorosityTextBox
@@ -3591,7 +3600,7 @@ namespace GasFormsApp
             this.PorosityTextBox.Name = "PorosityTextBox";
             this.PorosityTextBox.PlaceholderText = "常压解吸体积";
             this.PorosityTextBox.Size = new System.Drawing.Size(179, 35);
-            this.PorosityTextBox.TabIndex = 1018;
+            this.PorosityTextBox.TabIndex = 8;
             // 
             // TrueDensityTextBox
             // 
@@ -3600,7 +3609,7 @@ namespace GasFormsApp
             this.TrueDensityTextBox.Name = "TrueDensityTextBox";
             this.TrueDensityTextBox.PlaceholderText = "常压解吸体积";
             this.TrueDensityTextBox.Size = new System.Drawing.Size(179, 35);
-            this.TrueDensityTextBox.TabIndex = 1017;
+            this.TrueDensityTextBox.TabIndex = 7;
             // 
             // AppDensityTextBox
             // 
@@ -3609,7 +3618,7 @@ namespace GasFormsApp
             this.AppDensityTextBox.Name = "AppDensityTextBox";
             this.AppDensityTextBox.PlaceholderText = "常压解吸体积";
             this.AppDensityTextBox.Size = new System.Drawing.Size(179, 35);
-            this.AppDensityTextBox.TabIndex = 1016;
+            this.AppDensityTextBox.TabIndex = 6;
             // 
             // VadTextBox
             // 
@@ -3618,7 +3627,7 @@ namespace GasFormsApp
             this.VadTextBox.Name = "VadTextBox";
             this.VadTextBox.PlaceholderText = "常压解吸体积";
             this.VadTextBox.Size = new System.Drawing.Size(179, 35);
-            this.VadTextBox.TabIndex = 1015;
+            this.VadTextBox.TabIndex = 5;
             // 
             // AadTextBox
             // 
@@ -3627,7 +3636,7 @@ namespace GasFormsApp
             this.AadTextBox.Name = "AadTextBox";
             this.AadTextBox.PlaceholderText = "常压解吸体积";
             this.AadTextBox.Size = new System.Drawing.Size(179, 35);
-            this.AadTextBox.TabIndex = 1014;
+            this.AadTextBox.TabIndex = 4;
             // 
             // MadTextBox
             // 
@@ -3636,7 +3645,7 @@ namespace GasFormsApp
             this.MadTextBox.Name = "MadTextBox";
             this.MadTextBox.PlaceholderText = "常压解吸体积";
             this.MadTextBox.Size = new System.Drawing.Size(179, 35);
-            this.MadTextBox.TabIndex = 1013;
+            this.MadTextBox.TabIndex = 3;
             // 
             // AdsorpConstBTextBox
             // 
@@ -3645,7 +3654,7 @@ namespace GasFormsApp
             this.AdsorpConstBTextBox.Name = "AdsorpConstBTextBox";
             this.AdsorpConstBTextBox.PlaceholderText = "常压解吸体积";
             this.AdsorpConstBTextBox.Size = new System.Drawing.Size(179, 35);
-            this.AdsorpConstBTextBox.TabIndex = 1012;
+            this.AdsorpConstBTextBox.TabIndex = 2;
             // 
             // AdsorpConstATextBox
             // 
@@ -3654,7 +3663,7 @@ namespace GasFormsApp
             this.AdsorpConstATextBox.Name = "AdsorpConstATextBox";
             this.AdsorpConstATextBox.PlaceholderText = "常压解吸体积";
             this.AdsorpConstATextBox.Size = new System.Drawing.Size(179, 35);
-            this.AdsorpConstATextBox.TabIndex = 1011;
+            this.AdsorpConstATextBox.TabIndex = 1;
             // 
             // PorosityCheckBox
             // 
@@ -3789,6 +3798,7 @@ namespace GasFormsApp
             this.WcOutCheckBox.Enabled = false;
             this.WcOutCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WcOutCheckBox.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.WcOutCheckBox.Image = global::GasFormsApp.Properties.Resources.打叉;
             this.WcOutCheckBox.Location = new System.Drawing.Point(20, 28);
             this.WcOutCheckBox.Margin = new System.Windows.Forms.Padding(0);
             this.WcOutCheckBox.Name = "WcOutCheckBox";
@@ -3839,6 +3849,7 @@ namespace GasFormsApp
             this.P_TextBox.SelectionStart = 1;
             this.P_TextBox.Size = new System.Drawing.Size(179, 35);
             this.P_TextBox.TabIndex = 1018;
+            this.P_TextBox.TabStop = false;
             this.P_TextBox.Text = "0";
             // 
             // W_TextBox
@@ -3852,6 +3863,7 @@ namespace GasFormsApp
             this.W_TextBox.SelectionStart = 1;
             this.W_TextBox.Size = new System.Drawing.Size(179, 35);
             this.W_TextBox.TabIndex = 1017;
+            this.W_TextBox.TabStop = false;
             this.W_TextBox.Text = "0";
             // 
             // Wc_TextBox
@@ -3865,6 +3877,7 @@ namespace GasFormsApp
             this.Wc_TextBox.SelectionStart = 1;
             this.Wc_TextBox.Size = new System.Drawing.Size(179, 35);
             this.Wc_TextBox.TabIndex = 1016;
+            this.Wc_TextBox.TabStop = false;
             this.Wc_TextBox.Text = "0";
             // 
             // Wa_TextBox
@@ -3878,6 +3891,7 @@ namespace GasFormsApp
             this.Wa_TextBox.SelectionStart = 1;
             this.Wa_TextBox.Size = new System.Drawing.Size(179, 35);
             this.Wa_TextBox.TabIndex = 1015;
+            this.Wa_TextBox.TabStop = false;
             this.Wa_TextBox.Text = "0";
             // 
             // W3_TextBox
@@ -3891,6 +3905,7 @@ namespace GasFormsApp
             this.W3_TextBox.SelectionStart = 1;
             this.W3_TextBox.Size = new System.Drawing.Size(179, 35);
             this.W3_TextBox.TabIndex = 1014;
+            this.W3_TextBox.TabStop = false;
             this.W3_TextBox.Text = "0";
             // 
             // W2_TextBox
@@ -3904,6 +3919,7 @@ namespace GasFormsApp
             this.W2_TextBox.SelectionStart = 1;
             this.W2_TextBox.Size = new System.Drawing.Size(179, 35);
             this.W2_TextBox.TabIndex = 1013;
+            this.W2_TextBox.TabStop = false;
             this.W2_TextBox.Text = "0";
             // 
             // W1_TextBox
@@ -3917,6 +3933,7 @@ namespace GasFormsApp
             this.W1_TextBox.SelectionStart = 1;
             this.W1_TextBox.Size = new System.Drawing.Size(179, 35);
             this.W1_TextBox.TabIndex = 1012;
+            this.W1_TextBox.TabStop = false;
             this.W1_TextBox.Text = "0";
             // 
             // tabPage4TemporarySavingButton
@@ -4164,7 +4181,7 @@ namespace GasFormsApp
             this.CH4TextBox.Name = "CH4TextBox";
             this.CH4TextBox.PlaceholderText = "CH₄";
             this.CH4TextBox.Size = new System.Drawing.Size(79, 35);
-            this.CH4TextBox.TabIndex = 1012;
+            this.CH4TextBox.TabIndex = 1;
             // 
             // tabPage5panel2
             // 
@@ -4197,7 +4214,7 @@ namespace GasFormsApp
             this.CO2TextBox.Name = "CO2TextBox";
             this.CO2TextBox.PlaceholderText = "CO₂";
             this.CO2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.CO2TextBox.TabIndex = 1013;
+            this.CO2TextBox.TabIndex = 2;
             // 
             // tabPage5panel3
             // 
@@ -4230,7 +4247,7 @@ namespace GasFormsApp
             this.N2TextBox.Name = "N2TextBox";
             this.N2TextBox.PlaceholderText = "N₂";
             this.N2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.N2TextBox.TabIndex = 1014;
+            this.N2TextBox.TabIndex = 3;
             // 
             // tabPage5panel4
             // 
@@ -4263,7 +4280,7 @@ namespace GasFormsApp
             this.O2TextBox.Name = "O2TextBox";
             this.O2TextBox.PlaceholderText = "O₂";
             this.O2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.O2TextBox.TabIndex = 1015;
+            this.O2TextBox.TabIndex = 4;
             // 
             // tabPage5panel5
             // 
@@ -4296,7 +4313,7 @@ namespace GasFormsApp
             this.C2H4TextBox.Name = "C2H4TextBox";
             this.C2H4TextBox.PlaceholderText = "C₂H₄";
             this.C2H4TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C2H4TextBox.TabIndex = 1013;
+            this.C2H4TextBox.TabIndex = 5;
             // 
             // tabPage5panel6
             // 
@@ -4329,7 +4346,7 @@ namespace GasFormsApp
             this.C3H8TextBox.Name = "C3H8TextBox";
             this.C3H8TextBox.PlaceholderText = "C₃H₈";
             this.C3H8TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C3H8TextBox.TabIndex = 1014;
+            this.C3H8TextBox.TabIndex = 6;
             // 
             // tabPage5panel7
             // 
@@ -4362,7 +4379,7 @@ namespace GasFormsApp
             this.C2H6TextBox.Name = "C2H6TextBox";
             this.C2H6TextBox.PlaceholderText = "C₂H₆";
             this.C2H6TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C2H6TextBox.TabIndex = 1015;
+            this.C2H6TextBox.TabIndex = 7;
             // 
             // tabPage5panel8
             // 
@@ -4395,7 +4412,7 @@ namespace GasFormsApp
             this.C3H6TextBox.Name = "C3H6TextBox";
             this.C3H6TextBox.PlaceholderText = "C₃H₆";
             this.C3H6TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C3H6TextBox.TabIndex = 1016;
+            this.C3H6TextBox.TabIndex = 8;
             // 
             // tabPage5panel9
             // 
@@ -4428,7 +4445,7 @@ namespace GasFormsApp
             this.C2H2TextBox.Name = "C2H2TextBox";
             this.C2H2TextBox.PlaceholderText = "C₂H₂";
             this.C2H2TextBox.Size = new System.Drawing.Size(79, 35);
-            this.C2H2TextBox.TabIndex = 1014;
+            this.C2H2TextBox.TabIndex = 9;
             // 
             // tabPage5panel10
             // 
@@ -4461,7 +4478,7 @@ namespace GasFormsApp
             this.COTextBox.Name = "COTextBox";
             this.COTextBox.PlaceholderText = "CO";
             this.COTextBox.Size = new System.Drawing.Size(79, 35);
-            this.COTextBox.TabIndex = 1015;
+            this.COTextBox.TabIndex = 10;
             // 
             // tabPage5panel11
             // 
@@ -4485,7 +4502,7 @@ namespace GasFormsApp
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Placement = AntdUI.TAlignFrom.Top;
             this.dateTimePicker1.Size = new System.Drawing.Size(261, 35);
-            this.dateTimePicker1.TabIndex = 1013;
+            this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.ValueTimeHorizontal = true;
             // 
             // label119
@@ -4532,7 +4549,7 @@ namespace GasFormsApp
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Placement = AntdUI.TAlignFrom.Top;
             this.dateTimePicker6.Size = new System.Drawing.Size(277, 35);
-            this.dateTimePicker6.TabIndex = 1010;
+            this.dateTimePicker6.TabIndex = 12;
             this.dateTimePicker6.ValueTimeHorizontal = true;
             // 
             // tabPage5panel14
@@ -4555,7 +4572,7 @@ namespace GasFormsApp
             this.LabTestersTextBox.Name = "LabTestersTextBox";
             this.LabTestersTextBox.PlaceholderText = "实验室测试人员";
             this.LabTestersTextBox.Size = new System.Drawing.Size(232, 35);
-            this.LabTestersTextBox.TabIndex = 1014;
+            this.LabTestersTextBox.TabIndex = 13;
             // 
             // label117
             // 
@@ -4589,7 +4606,7 @@ namespace GasFormsApp
             this.DownholeTestersTextBox.Name = "DownholeTestersTextBox";
             this.DownholeTestersTextBox.PlaceholderText = "井下测试人员";
             this.DownholeTestersTextBox.Size = new System.Drawing.Size(229, 35);
-            this.DownholeTestersTextBox.TabIndex = 1013;
+            this.DownholeTestersTextBox.TabIndex = 14;
             // 
             // DownholeTestersCheckBox
             // 
@@ -4627,7 +4644,7 @@ namespace GasFormsApp
             this.RemarkTextBox.Name = "RemarkTextBox";
             this.RemarkTextBox.PlaceholderText = "备注";
             this.RemarkTextBox.Size = new System.Drawing.Size(284, 60);
-            this.RemarkTextBox.TabIndex = 1015;
+            this.RemarkTextBox.TabIndex = 15;
             // 
             // label120
             // 
@@ -4660,7 +4677,7 @@ namespace GasFormsApp
             this.AuditorTextBox.Name = "AuditorTextBox";
             this.AuditorTextBox.PlaceholderText = "审核人员";
             this.AuditorTextBox.Size = new System.Drawing.Size(277, 35);
-            this.AuditorTextBox.TabIndex = 1014;
+            this.AuditorTextBox.TabIndex = 16;
             // 
             // label118
             // 
@@ -4866,20 +4883,20 @@ namespace GasFormsApp
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(1, 61);
             this.treeView1.Name = "treeView1";
-            treeNode4.ImageKey = "项目";
-            treeNode4.Name = "项目";
-            treeNode4.SelectedImageKey = "项目";
-            treeNode4.Text = "项目";
-            treeNode5.ImageKey = "矿井.png";
-            treeNode5.Name = "矿井";
-            treeNode5.SelectedImageKey = "矿井.png";
-            treeNode5.Text = "矿井";
-            treeNode6.ImageKey = "根目录";
-            treeNode6.Name = "根目录";
-            treeNode6.SelectedImageKey = "根目录";
-            treeNode6.Text = "根目录";
+            treeNode1.ImageKey = "项目";
+            treeNode1.Name = "项目";
+            treeNode1.SelectedImageKey = "项目";
+            treeNode1.Text = "项目";
+            treeNode2.ImageKey = "矿井.png";
+            treeNode2.Name = "矿井";
+            treeNode2.SelectedImageKey = "矿井.png";
+            treeNode2.Text = "矿井";
+            treeNode3.ImageKey = "根目录";
+            treeNode3.Name = "根目录";
+            treeNode3.SelectedImageKey = "根目录";
+            treeNode3.Text = "根目录";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(298, 576);
             this.treeView1.TabIndex = 1;
