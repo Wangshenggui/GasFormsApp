@@ -100,6 +100,28 @@ namespace GasFormsApp.TabControl
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
             _mainForm.导出矿井数据ToolStripMenuItem.Click += 导出矿井数据ToolStripMenuItem_Click;
+
+            // 启动当前tab定时器
+            _mainForm.tab6Timer1.Enabled = true;
+            _mainForm.tab6Timer1.Tick += tab6Timer1_Tick;
+        }
+
+        // 1s定时器
+        private void tab6Timer1_Tick(object sender, EventArgs e)
+        {
+            //_mainForm.刷新ToolStripMenuItem.PerformClick();
+            // 获取当前用户的 AppData\Roaming 路径
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\SystemData\DataAdministrationForm
+            string rootPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
+
+            // 如果路径不存在则创建
+            if (!Directory.Exists(rootPath))
+            {
+                Directory.CreateDirectory(rootPath);
+            }
+            LoadFoldersToTree_IfChanged(rootPath);
         }
         private void treeView1_DrawNode(object sender, DrawTreeNodeEventArgs e)
         {
@@ -475,6 +497,59 @@ namespace GasFormsApp.TabControl
                 _mainForm.dataGridView1.DataSource = null;
             }
         }
+        private string _lastDirectoryHash = string.Empty;
+        private string GetDirectoryStructureHash(string rootPath)
+        {
+            if (!Directory.Exists(rootPath)) return string.Empty;
+
+            List<string> dirs = new List<string>();
+
+            try
+            {
+                foreach (var dir in Directory.GetDirectories(rootPath, "*", SearchOption.AllDirectories))
+                {
+                    DirectoryInfo di = new DirectoryInfo(dir);
+                    // 拼接路径 + 最后修改时间
+                    dirs.Add(dir + di.LastWriteTimeUtc.Ticks);
+                }
+            }
+            catch
+            {
+                // 忽略异常，比如访问权限问题
+            }
+
+            // 排序，保证顺序一致
+            dirs.Sort();
+
+            // 拼成一个字符串
+            string combined = string.Join("|", dirs);
+
+            // 返回哈希
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes(combined);
+                byte[] hashBytes = md5.ComputeHash(bytes);
+                return BitConverter.ToString(hashBytes).Replace("-", "");
+            }
+        }
+        private void LoadFoldersToTree_IfChanged(string rootPath)
+        {
+            string currentHash = GetDirectoryStructureHash(rootPath);
+
+            if (currentHash == _lastDirectoryHash)
+            {
+                // 目录结构没变，不更新
+                return;
+            }
+
+            // 更新树
+            LoadFoldersToTree(rootPath);
+
+            // 更新哈希
+            _lastDirectoryHash = currentHash;
+        }
+
+
         /// <summary>
         /// 将指定根目录及其子目录加载到 TreeView 控件中显示
         /// </summary>

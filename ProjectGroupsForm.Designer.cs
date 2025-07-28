@@ -45,10 +45,10 @@
             this.新建项目名称ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重命名ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.FindMineTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.DetermineButton = new GasFormsApp.UI.UCButton();
-            this.CancelButton = new GasFormsApp.UI.UCButton();
+            this.FindMineTextBox = new AntdUI.Input();
+            this.DetermineButton = new AntdUI.Button();
+            this.CancelButton = new AntdUI.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.treeView1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
-            this.treeView1.Location = new System.Drawing.Point(0, 30);
+            this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
             treeNode1.ImageKey = "项目";
             treeNode1.Name = "项目";
@@ -81,7 +81,7 @@
             treeNode3,
             treeNode5});
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(604, 524);
+            this.treeView1.Size = new System.Drawing.Size(784, 537);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView1_AfterLabelEdit);
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -131,21 +131,12 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
-            this.panel1.Controls.Add(this.DetermineButton);
             this.panel1.Controls.Add(this.CancelButton);
-            this.panel1.Location = new System.Drawing.Point(133, 481);
+            this.panel1.Controls.Add(this.DetermineButton);
+            this.panel1.Location = new System.Drawing.Point(223, 490);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 59);
             this.panel1.TabIndex = 4;
-            // 
-            // FindMineTextBox
-            // 
-            this.FindMineTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FindMineTextBox.Location = new System.Drawing.Point(89, 3);
-            this.FindMineTextBox.Name = "FindMineTextBox";
-            this.FindMineTextBox.Size = new System.Drawing.Size(257, 26);
-            this.FindMineTextBox.TabIndex = 5;
-            this.FindMineTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindMineTextBox_KeyDown);
             // 
             // label17
             // 
@@ -158,40 +149,37 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "查找矿井：";
             // 
+            // FindMineTextBox
+            // 
+            this.FindMineTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FindMineTextBox.Location = new System.Drawing.Point(84, -1);
+            this.FindMineTextBox.Name = "FindMineTextBox";
+            this.FindMineTextBox.PlaceholderText = "输入查找内容";
+            this.FindMineTextBox.Radius = 1;
+            this.FindMineTextBox.Size = new System.Drawing.Size(260, 35);
+            this.FindMineTextBox.TabIndex = 40;
+            this.FindMineTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindMineTextBox_KeyDown);
+            // 
             // DetermineButton
             // 
-            this.DetermineButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.DetermineButton.ButtonImage = null;
-            this.DetermineButton.FlatAppearance.BorderSize = 0;
-            this.DetermineButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DetermineButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DetermineButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.DetermineButton.Location = new System.Drawing.Point(0, 12);
+            this.DetermineButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(144)))), ((int)(((byte)(246)))));
+            this.DetermineButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DetermineButton.Location = new System.Drawing.Point(1, 12);
             this.DetermineButton.Name = "DetermineButton";
-            this.DetermineButton.PressedColor = System.Drawing.Color.Silver;
-            this.DetermineButton.Radius = 15;
-            this.DetermineButton.Size = new System.Drawing.Size(105, 41);
-            this.DetermineButton.TabIndex = 2;
+            this.DetermineButton.Size = new System.Drawing.Size(122, 41);
+            this.DetermineButton.TabIndex = 41;
             this.DetermineButton.Text = "确定";
-            this.DetermineButton.UseVisualStyleBackColor = true;
             this.DetermineButton.Click += new System.EventHandler(this.DetermineButton_Click);
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CancelButton.ButtonImage = null;
-            this.CancelButton.FlatAppearance.BorderSize = 0;
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CancelButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.CancelButton.Location = new System.Drawing.Point(239, 12);
+            this.CancelButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(189)))), ((int)(((byte)(193)))));
+            this.CancelButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CancelButton.Location = new System.Drawing.Point(221, 12);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.PressedColor = System.Drawing.Color.Silver;
-            this.CancelButton.Radius = 15;
-            this.CancelButton.Size = new System.Drawing.Size(105, 41);
-            this.CancelButton.TabIndex = 3;
+            this.CancelButton.Size = new System.Drawing.Size(122, 41);
+            this.CancelButton.TabIndex = 41;
             this.CancelButton.Text = "取消";
-            this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // ProjectGroupsForm
@@ -199,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(604, 552);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
             this.Controls.Add(this.FindMineTextBox);
             this.Controls.Add(this.label17);
@@ -223,11 +211,11 @@
         private System.Windows.Forms.ToolStripMenuItem 重命名ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 新建项目名称ToolStripMenuItem;
         public System.Windows.Forms.TreeView treeView1;
-        private UI.UCButton DetermineButton;
-        private UI.UCButton CancelButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox FindMineTextBox;
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Label label17;
+        public AntdUI.Input FindMineTextBox;
+        private AntdUI.Button DetermineButton;
+        private AntdUI.Button CancelButton;
     }
 }

@@ -449,10 +449,15 @@ namespace GasFormsApp
             if (e.KeyCode == Keys.Enter)
             {
                 // 回车被按下
-                // 获取程序启动目录
-                string basePath = Application.StartupPath;
-                // 构建目标文件夹路径：SystemData\DataAdministrationForm
-                string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+                //// 获取程序启动目录
+                //string basePath = Application.StartupPath;
+                //// 构建目标文件夹路径：SystemData\DataAdministrationForm
+                //string rootPath = Path.Combine(basePath, "SystemData", "DataAdministrationForm");
+
+                // 获取当前用户的 AppData\Roaming 路径
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                // 拼接你的程序专用目录，比如：AppData\Roaming\瓦斯含量测定数据分析系统\SystemData\DataAdministrationForm
+                string rootPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
                 // 如果路径不存在则创建
                 if (!Directory.Exists(rootPath))
                 {
