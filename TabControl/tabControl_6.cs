@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Presentation;
 using Google.Protobuf.WellKnownTypes;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,7 +100,9 @@ namespace GasFormsApp.TabControl
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
+            _mainForm.导出矿井Excel统计表ToolStripMenuItem.Click += 导出矿井Excel统计表ToolStripMenuItem_Click;
             _mainForm.导出矿井数据ToolStripMenuItem.Click += 导出矿井数据ToolStripMenuItem_Click;
+            
 
             // 启动当前tab定时器
             _mainForm.tab6Timer1.Enabled = true;
@@ -1691,18 +1694,21 @@ namespace GasFormsApp.TabControl
                         //MessageBox.Show($"当前点击层级：{level},{text}");
                         // 导出煤矿数据
                         _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = false;
-                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
                     }
                     else
                     {
                         _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
-                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
                     }
                 }
                 else
                 {
                     _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
-                    _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                    _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
+                    _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
                 }
                 _mainForm.tabPage6contextMenuStrip1.Show(_mainForm.treeView1, e.Location); // 弹出菜单
             }
@@ -1750,7 +1756,142 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
+        
         private void 导出矿井数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
+
+            if (!Directory.Exists(targetDir))
+            {
+                Console.WriteLine("目标目录不存在，创建目录：" + targetDir);
+                Directory.CreateDirectory(targetDir);
+            }
+
+            var dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
+                Multiselect = true,
+                InitialDirectory = targetDir,
+                Title = "请选择需要导出的矿井目录"
+            };
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                Console.WriteLine("你选择的文件夹有：");
+                foreach (var folder in dialog.FileNames)
+                {
+                    Console.WriteLine(folder);
+                }
+                // 用户选完文件夹后
+                foreach (var selectedFolder in dialog.FileNames)
+                {
+                    // 判断是不是 targetDir 的直接子文件夹
+                    string parent = Directory.GetParent(selectedFolder)?.FullName;
+                    if (string.Equals(parent, targetDir, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine("合法选中：" + selectedFolder);
+                        // 继续处理
+                    }
+                    else
+                    {
+                        MessageBox.Show($"只能选择目录下的一级子文件夹!");
+                        // 这里可以取消整个操作或者让用户重新选择
+                        return;
+                    }
+                }
+
+                // 让用户选择导出目录
+                string exportDir = SelectExportFolder();
+                if (string.IsNullOrEmpty(exportDir))
+                {
+                    Console.WriteLine("用户未选择导出目录，程序终止。");
+                    return;
+                }
+
+                if (Directory.Exists(exportDir) && Directory.EnumerateFileSystemEntries(exportDir).Any())
+                {
+                    var result = MessageBox.Show(
+                        "导出目录已存在且不为空，是否覆盖？",
+                        "确认",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Directory.Delete(exportDir, true);
+                        Directory.CreateDirectory(exportDir);
+                    }
+                    else
+                    {
+                        MessageBox.Show("导出已取消。");
+                        return;
+                    }
+                }
+                else
+                {
+                    // 目录不存在或目录为空，直接创建或继续
+                    if (!Directory.Exists(exportDir))
+                        Directory.CreateDirectory(exportDir);
+                }
+
+                foreach (var sourceFolder in dialog.FileNames)
+                {
+                    string folderName = Path.GetFileName(sourceFolder);
+                    string destFolder = Path.Combine(exportDir, folderName);
+
+                    Console.WriteLine($"复制：{sourceFolder} -> {destFolder}");
+                    CopyDirectory(sourceFolder, destFolder);
+                }
+
+                Console.WriteLine("数据已成功导出到：" + exportDir);
+            }
+            else
+            {
+                Console.WriteLine("用户取消了选择");
+            }
+        }
+        // 弹出文件夹选择对话框，返回用户选择的路径，取消返回空字符串
+        private static string SelectExportFolder()
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                fbd.Description = "请选择导出数据的文件夹";
+                fbd.ShowNewFolderButton = true;
+                var result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    return fbd.SelectedPath;
+                }
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// 递归复制文件夹
+        /// </summary>
+        static void CopyDirectory(string sourceDir, string targetDir)
+        {
+            // 创建目标文件夹
+            Directory.CreateDirectory(targetDir);
+
+            // 复制所有文件
+            foreach (var file in Directory.GetFiles(sourceDir))
+            {
+                string fileName = Path.GetFileName(file);
+                string destFile = Path.Combine(targetDir, fileName);
+                File.Copy(file, destFile, true); // 覆盖
+            }
+
+            // 递归复制所有子文件夹
+            foreach (var subDir in Directory.GetDirectories(sourceDir))
+            {
+                string subDirName = Path.GetFileName(subDir);
+                string destSubDir = Path.Combine(targetDir, subDirName);
+                CopyDirectory(subDir, destSubDir);
+            }
+        }
+        private void 导出矿井Excel统计表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_rightClickedNode != null)
             {
