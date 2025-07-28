@@ -44,7 +44,7 @@ namespace GasFormsApp.TabControl
             _mainForm.WcOutCheckBox.CheckedChanged += WcOutCheckBox_CheckedChanged;
 
             // 绑定面板大小改变事件，用于动态调整控件大小和位置
-            _mainForm.tabPage4DoubleBufferedPanel1.SizeChanged += tabPage4DoubleBufferedPanel1_SizeChanged;
+            _mainForm.tabPage4DoubleBufferedPanel1.Paint += tabPage4DoubleBufferedPanel1_Paint;
 
             // 绑定临时保存和数据恢复按钮事件
             _mainForm.tabPage4TemporarySavingButton.Click += tabPage4TemporarySavingButton_Click;
@@ -303,7 +303,7 @@ namespace GasFormsApp.TabControl
         }
 
         // 面板大小变化时调整内部控件大小和居中
-        private void tabPage4DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
+        private void tabPage4DoubleBufferedPanel1_Paint(object sender, EventArgs e)
         {
             int newWidth;
             int newHeight;

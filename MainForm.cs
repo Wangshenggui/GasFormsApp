@@ -496,31 +496,31 @@ namespace GasFormsApp
             //tabControl1.ItemSize = new Size(98, 100);
             //tabControl1.ItemSize = new Size(98, 92);
 
-            //var loc = GasFormsApp.Settings.Default.WindowLocation;
-            //var size = GasFormsApp.Settings.Default.WindowSize;
-            //var state = GasFormsApp.Settings.Default.WindowState;
+            var loc = GasFormsApp.Settings.Default.WindowLocation;
+            var size = GasFormsApp.Settings.Default.WindowSize;
+            var state = GasFormsApp.Settings.Default.WindowState;
 
-            //bool isSizeValid = size.Width > 0 && size.Height > 0;
-            //bool isLocValid = loc.X > 0 && loc.Y > 0; // 简单判断，必要时可以改成屏幕边界检测
-            //if (isSizeValid && isLocValid)
-            //{
-            //    this.StartPosition = FormStartPosition.Manual;
-            //    this.Location = loc;
-            //    this.Size = size;
-            //    this.WindowState = state;
-            //}
-            //else
-            //{
-            //    // 没有保存过有效设置，使用默认设置
-            //    int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            //    int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            bool isSizeValid = size.Width > 0 && size.Height > 0;
+            bool isLocValid = loc.X > 0 && loc.Y > 0; // 简单判断，必要时可以改成屏幕边界检测
+            if (isSizeValid && isLocValid)
+            {
+                this.StartPosition = FormStartPosition.Manual;
+                this.Location = loc;
+                this.Size = size;
+                this.WindowState = state;
+            }
+            else
+            {
+                // 没有保存过有效设置，使用默认设置
+                int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+                int screenHeight = Screen.PrimaryScreen.Bounds.Height;
 
-            //    this.Width = (int)(screenWidth * .8);
-            //    this.Height = (int)(screenHeight * .8);
-            //    // 居中设置
-            //    this.Left = (screenWidth - this.Width) / 2;
-            //    this.Top = (screenHeight - this.Height) / 2;
-            //}
+                this.Width = (int)(screenWidth * .8);
+                this.Height = (int)(screenHeight * .8);
+                // 居中设置
+                this.Left = (screenWidth - this.Width) / 2;
+                this.Top = (screenHeight - this.Height) / 2;
+            }
 
             //// 隐藏 tabControl，防止闪烁
             //tabControl1.Visible = false;

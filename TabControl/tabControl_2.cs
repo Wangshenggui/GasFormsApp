@@ -48,7 +48,7 @@ namespace GasFormsApp.TabControl
             // 注册事件处理程序
             _mainForm.DrawCurvesButton.Click += DrawCurvesButton_Click;
             _mainForm.BulkImportButton.Click += BulkImportButton_Click;
-            _mainForm.tabPage2DoubleBufferedPanel2.SizeChanged += tabPage2DoubleBufferedPanel2_SizeChanged;
+            _mainForm.tabPage2DoubleBufferedPanel2.Paint += tabPage2DoubleBufferedPanel2_Paint;
             _mainForm.ExportImageButton.Click += ExportImageButton_Click;
             _mainForm.tabPage2TemporarySavingButton.Click += tabPage2TemporarySavingButton_Click;
             _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
@@ -415,9 +415,9 @@ namespace GasFormsApp.TabControl
         }
 
         /// <summary>
-        /// 面板大小改变事件处理
+        /// 面板重绘事件处理
         /// </summary>
-        public void tabPage2DoubleBufferedPanel2_SizeChanged(object sender, EventArgs e)
+        public void tabPage2DoubleBufferedPanel2_Paint(object sender, EventArgs e)
         {
             // 计算新宽度和高度
             int newWidth = _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 1 - _mainForm.tabPage2DoubleBufferedPanel2.ClientSize.Width / 100;

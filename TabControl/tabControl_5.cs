@@ -46,7 +46,7 @@ namespace GasFormsApp.TabControl
             _mainForm.GenReportButton.Click += GenReportButton_Click;
             _mainForm.GenRecordButton.Click += GenRecordButton_Click;
             _mainForm.SaveButton.Click += _SaveButton_Click;
-            _mainForm.tabPage5DoubleBufferedPanel1.SizeChanged += tabPage5DoubleBufferedPanel1_SizeChanged;
+            _mainForm.tabPage5DoubleBufferedPanel1.Paint += tabPage5DoubleBufferedPanel1_Paint;
 
             _mainForm.tabPage5TemporarySavingButton.Click += tabPage5TemporarySavingButton_Click;
             _mainForm.tabPage5RecoverDataButton.Click += tabPage5RecoverDataButton_Click;
@@ -382,7 +382,7 @@ namespace GasFormsApp.TabControl
         /// <summary>
         /// 面板大小改变事件处理
         /// </summary>
-        private void tabPage5DoubleBufferedPanel1_SizeChanged(object sender, EventArgs e)
+        private void tabPage5DoubleBufferedPanel1_Paint(object sender, EventArgs e)
         {
             // 计算新宽度和高度
             int newWidth = _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 1 - _mainForm.tabPage5DoubleBufferedPanel1.ClientSize.Width / 7;
