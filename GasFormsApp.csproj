@@ -266,6 +266,7 @@
     <Compile Include="ActicateKey.Designer.cs">
       <DependentUpon>ActicateKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ToolStripProfessionalRenderer.cs" />
     <Compile Include="修改标题名.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseExport.resx">
       <DependentUpon>DatabaseExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomBorderButtonClass.resx">
+      <DependentUpon>CustomBorderButtonClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="修改标题名.resx">
       <DependentUpon>修改标题名.cs</DependentUpon>

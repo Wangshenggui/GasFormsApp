@@ -32,14 +32,14 @@ namespace GasFormsApp
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage1panel1 = new System.Windows.Forms.Panel();
@@ -414,6 +414,7 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出矿井Excel统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导出矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -422,6 +423,9 @@ namespace GasFormsApp
             this.更换LogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更改标题ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tab6Timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl6PictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl5PictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl4PictureBox = new System.Windows.Forms.PictureBox();
@@ -429,10 +433,15 @@ namespace GasFormsApp
             this.tabControl2PictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1PictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tab6Timer1 = new System.Windows.Forms.Timer(this.components);
-            this.导出矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customMenuStrip1 = new GasFormsApp.UI.CustomMenuStrip();
+            this.开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新建ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -488,6 +497,7 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1.SuspendLayout();
             this.tabPage6contextMenuStrip2.SuspendLayout();
             this.ChangeColorContextMenuStrip.SuspendLayout();
+            this.tabPage2contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl6PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl5PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl4PictureBox)).BeginInit();
@@ -495,7 +505,7 @@ namespace GasFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPage2contextMenuStrip1.SuspendLayout();
+            this.customMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -514,11 +524,11 @@ namespace GasFormsApp
             this.tabControl1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.ItemSize = new System.Drawing.Size(98, 92);
-            this.tabControl1.Location = new System.Drawing.Point(0, 76);
+            this.tabControl1.Location = new System.Drawing.Point(0, 73);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(783, 486);
+            this.tabControl1.Size = new System.Drawing.Size(783, 489);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.TabStop = false;
@@ -532,7 +542,7 @@ namespace GasFormsApp
             this.tabPage1.Location = new System.Drawing.Point(4, 96);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(775, 386);
+            this.tabPage1.Size = new System.Drawing.Size(775, 389);
             this.tabPage1.TabIndex = 0;
             // 
             // tabPage1panel1
@@ -546,7 +556,7 @@ namespace GasFormsApp
             this.tabPage1panel1.Location = new System.Drawing.Point(0, 0);
             this.tabPage1panel1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1panel1.Name = "tabPage1panel1";
-            this.tabPage1panel1.Size = new System.Drawing.Size(776, 387);
+            this.tabPage1panel1.Size = new System.Drawing.Size(776, 390);
             this.tabPage1panel1.TabIndex = 2;
             // 
             // tabPage1panel2
@@ -1157,7 +1167,7 @@ namespace GasFormsApp
             this.tabPage2.Location = new System.Drawing.Point(4, 96);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(775, 386);
+            this.tabPage2.Size = new System.Drawing.Size(775, 389);
             this.tabPage2.TabIndex = 1;
             // 
             // tabPage2DoubleBufferedPanel2
@@ -1171,7 +1181,7 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedPanel2.Controls.Add(this.tabPage2DoubleBufferedFlowLayoutPanel1);
             this.tabPage2DoubleBufferedPanel2.Location = new System.Drawing.Point(0, 0);
             this.tabPage2DoubleBufferedPanel2.Name = "tabPage2DoubleBufferedPanel2";
-            this.tabPage2DoubleBufferedPanel2.Size = new System.Drawing.Size(776, 387);
+            this.tabPage2DoubleBufferedPanel2.Size = new System.Drawing.Size(776, 390);
             this.tabPage2DoubleBufferedPanel2.TabIndex = 1002;
             // 
             // tabPage2panel2
@@ -1209,7 +1219,7 @@ namespace GasFormsApp
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Controls.Add(this.tabPage2panel6);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Location = new System.Drawing.Point(57, 32);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.Name = "tabPage2DoubleBufferedFlowLayoutPanel1";
-            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(507, 313);
+            this.tabPage2DoubleBufferedFlowLayoutPanel1.Size = new System.Drawing.Size(507, 316);
             this.tabPage2DoubleBufferedFlowLayoutPanel1.TabIndex = 1002;
             // 
             // tabPage2panel7
@@ -3116,7 +3126,7 @@ namespace GasFormsApp
             this.tabPage3.Location = new System.Drawing.Point(4, 96);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(775, 386);
+            this.tabPage3.Size = new System.Drawing.Size(775, 389);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -3516,7 +3526,7 @@ namespace GasFormsApp
             this.tabPage4.Location = new System.Drawing.Point(4, 96);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(775, 386);
+            this.tabPage4.Size = new System.Drawing.Size(775, 389);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             // 
@@ -4088,7 +4098,7 @@ namespace GasFormsApp
             this.tabPage5.Location = new System.Drawing.Point(4, 96);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(775, 386);
+            this.tabPage5.Size = new System.Drawing.Size(775, 389);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             // 
@@ -4833,7 +4843,7 @@ namespace GasFormsApp
             this.tabPage6.Location = new System.Drawing.Point(4, 96);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(775, 386);
+            this.tabPage6.Size = new System.Drawing.Size(775, 389);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             // 
@@ -4886,20 +4896,20 @@ namespace GasFormsApp
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(1, 61);
             this.treeView1.Name = "treeView1";
-            treeNode4.ImageKey = "项目";
-            treeNode4.Name = "项目";
-            treeNode4.SelectedImageKey = "项目";
-            treeNode4.Text = "项目";
-            treeNode5.ImageKey = "矿井.png";
-            treeNode5.Name = "矿井";
-            treeNode5.SelectedImageKey = "矿井.png";
-            treeNode5.Text = "矿井";
-            treeNode6.ImageKey = "根目录";
-            treeNode6.Name = "根目录";
-            treeNode6.SelectedImageKey = "根目录";
-            treeNode6.Text = "根目录";
+            treeNode1.ImageKey = "项目";
+            treeNode1.Name = "项目";
+            treeNode1.SelectedImageKey = "项目";
+            treeNode1.Text = "项目";
+            treeNode2.ImageKey = "矿井.png";
+            treeNode2.Name = "矿井";
+            treeNode2.SelectedImageKey = "矿井.png";
+            treeNode2.Text = "矿井";
+            treeNode3.ImageKey = "根目录";
+            treeNode3.Name = "根目录";
+            treeNode3.SelectedImageKey = "根目录";
+            treeNode3.Text = "根目录";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6});
+            treeNode3});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(160, 325);
             this.treeView1.TabIndex = 1;
@@ -5015,33 +5025,33 @@ namespace GasFormsApp
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(212)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(279, 387);
@@ -5067,7 +5077,7 @@ namespace GasFormsApp
             this.label2.Font = new System.Drawing.Font("楷体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(2, 30);
+            this.label2.Location = new System.Drawing.Point(2, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(780, 40);
             this.label2.TabIndex = 2;
@@ -5111,7 +5121,7 @@ namespace GasFormsApp
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.panel1.Location = new System.Drawing.Point(606, 73);
+            this.panel1.Location = new System.Drawing.Point(606, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(574, 96);
             this.panel1.TabIndex = 1003;
@@ -5123,7 +5133,7 @@ namespace GasFormsApp
             this.导出矿井Excel统计表ToolStripMenuItem,
             this.导出矿井数据ToolStripMenuItem});
             this.tabPage6contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
-            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(190, 92);
+            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(190, 70);
             // 
             // 刷新ToolStripMenuItem
             // 
@@ -5136,6 +5146,12 @@ namespace GasFormsApp
             this.导出矿井Excel统计表ToolStripMenuItem.Name = "导出矿井Excel统计表ToolStripMenuItem";
             this.导出矿井Excel统计表ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.导出矿井Excel统计表ToolStripMenuItem.Text = "导出矿井Excel统计表";
+            // 
+            // 导出矿井数据ToolStripMenuItem
+            // 
+            this.导出矿井数据ToolStripMenuItem.Name = "导出矿井数据ToolStripMenuItem";
+            this.导出矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.导出矿井数据ToolStripMenuItem.Text = "导出矿井数据";
             // 
             // tabPage6contextMenuStrip2
             // 
@@ -5187,6 +5203,23 @@ namespace GasFormsApp
             this.更改标题ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.更改标题ToolStripMenuItem.Text = "更改标题";
             this.更改标题ToolStripMenuItem.Click += new System.EventHandler(this.更改标题ToolStripMenuItem_Click);
+            // 
+            // tabPage2contextMenuStrip1
+            // 
+            this.tabPage2contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.导出图片ToolStripMenuItem});
+            this.tabPage2contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
+            this.tabPage2contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            // 
+            // 导出图片ToolStripMenuItem
+            // 
+            this.导出图片ToolStripMenuItem.Name = "导出图片ToolStripMenuItem";
+            this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.导出图片ToolStripMenuItem.Text = "导出图片";
+            // 
+            // tab6Timer1
+            // 
+            this.tab6Timer1.Interval = 1000;
             // 
             // tabControl6PictureBox
             // 
@@ -5251,41 +5284,92 @@ namespace GasFormsApp
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(130)))));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(356, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // tabPage2contextMenuStrip1
+            // customMenuStrip1
             // 
-            this.tabPage2contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.导出图片ToolStripMenuItem});
-            this.tabPage2contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
-            this.tabPage2contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            this.customMenuStrip1.BackColor = System.Drawing.Color.White;
+            this.customMenuStrip1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.customMenuStrip1.ForeColor = System.Drawing.Color.Black;
+            this.customMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.开始ToolStripMenuItem,
+            this.文件ToolStripMenuItem});
+            this.customMenuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.customMenuStrip1.Name = "customMenuStrip1";
+            this.customMenuStrip1.Size = new System.Drawing.Size(784, 27);
+            this.customMenuStrip1.TabIndex = 1010;
+            this.customMenuStrip1.Text = "customMenuStrip1";
+            this.customMenuStrip1.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(85)))), ((int)(((byte)(108)))));
             // 
-            // 导出图片ToolStripMenuItem
+            // 开始ToolStripMenuItem
             // 
-            this.导出图片ToolStripMenuItem.Name = "导出图片ToolStripMenuItem";
-            this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.导出图片ToolStripMenuItem.Text = "导出图片";
+            this.开始ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.打开ToolStripMenuItem,
+            this.导出ToolStripMenuItem,
+            this.hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem});
+            this.开始ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.开始ToolStripMenuItem.Name = "开始ToolStripMenuItem";
+            this.开始ToolStripMenuItem.Size = new System.Drawing.Size(55, 23);
+            this.开始ToolStripMenuItem.Text = " 开始 ";
             // 
-            // tab6Timer1
+            // 打开ToolStripMenuItem
             // 
-            this.tab6Timer1.Interval = 1000;
+            this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(261, 24);
+            this.打开ToolStripMenuItem.Text = "打开";
             // 
-            // 导出矿井数据ToolStripMenuItem
+            // 导出ToolStripMenuItem
             // 
-            this.导出矿井数据ToolStripMenuItem.Name = "导出矿井数据ToolStripMenuItem";
-            this.导出矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.导出矿井数据ToolStripMenuItem.Text = "导出矿井数据";
+            this.导出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excelToolStripMenuItem});
+            this.导出ToolStripMenuItem.Name = "导出ToolStripMenuItem";
+            this.导出ToolStripMenuItem.Size = new System.Drawing.Size(261, 24);
+            this.导出ToolStripMenuItem.Text = "导出";
+            // 
+            // excelToolStripMenuItem
+            // 
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
+            this.excelToolStripMenuItem.Text = "Excel";
+            // 
+            // hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem
+            // 
+            this.hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem.Name = "hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem";
+            this.hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem.Size = new System.Drawing.Size(261, 24);
+            this.hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem.Text = "hjgiuahsydfijuhsnjpfiuhnapurf";
+            // 
+            // 文件ToolStripMenuItem
+            // 
+            this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新建ToolStripMenuItem,
+            this.保存ToolStripMenuItem});
+            this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(47, 23);
+            this.文件ToolStripMenuItem.Text = "文件";
+            // 
+            // 新建ToolStripMenuItem
+            // 
+            this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
+            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.新建ToolStripMenuItem.Text = "新建";
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.保存ToolStripMenuItem.Text = "保存";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.customMenuStrip1);
             this.Controls.Add(this.tabControl6PictureBox);
             this.Controls.Add(this.tabControl5PictureBox);
             this.Controls.Add(this.tabControl4PictureBox);
@@ -5297,9 +5381,8 @@ namespace GasFormsApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuStrip = this.customMenuStrip1;
             this.MinimumSize = new System.Drawing.Size(625, 600);
             this.Name = "MainForm";
             this.ShowIcon = false;
@@ -5307,16 +5390,6 @@ namespace GasFormsApp
             this.Text = "瓦斯含量测定数据分析系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl1PictureBox, 0);
-            this.Controls.SetChildIndex(this.tabControl2PictureBox, 0);
-            this.Controls.SetChildIndex(this.tabControl3PictureBox, 0);
-            this.Controls.SetChildIndex(this.tabControl4PictureBox, 0);
-            this.Controls.SetChildIndex(this.tabControl5PictureBox, 0);
-            this.Controls.SetChildIndex(this.tabControl6PictureBox, 0);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1panel1.ResumeLayout(false);
@@ -5402,6 +5475,7 @@ namespace GasFormsApp
             this.tabPage6contextMenuStrip1.ResumeLayout(false);
             this.tabPage6contextMenuStrip2.ResumeLayout(false);
             this.ChangeColorContextMenuStrip.ResumeLayout(false);
+            this.tabPage2contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl6PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl5PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl4PictureBox)).EndInit();
@@ -5409,8 +5483,10 @@ namespace GasFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.tabControl2PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPage2contextMenuStrip1.ResumeLayout(false);
+            this.customMenuStrip1.ResumeLayout(false);
+            this.customMenuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -5808,5 +5884,14 @@ namespace GasFormsApp
         public Timer tab6Timer1;
         private ToolStripMenuItem 更改标题ToolStripMenuItem;
         public ToolStripMenuItem 导出矿井数据ToolStripMenuItem;
+        private UI.CustomMenuStrip customMenuStrip1;
+        private ToolStripMenuItem 开始ToolStripMenuItem;
+        private ToolStripMenuItem 打开ToolStripMenuItem;
+        private ToolStripMenuItem 导出ToolStripMenuItem;
+        private ToolStripMenuItem 文件ToolStripMenuItem;
+        private ToolStripMenuItem 新建ToolStripMenuItem;
+        private ToolStripMenuItem 保存ToolStripMenuItem;
+        private ToolStripMenuItem excelToolStripMenuItem;
+        private ToolStripMenuItem hjgiuahsydfijuhsnjpfiuhnapurfToolStripMenuItem;
     }
 }

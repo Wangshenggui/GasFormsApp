@@ -90,19 +90,19 @@ namespace GasFormsApp.UI
         /// </summary>
         public CustomForm()
         {
-            // 允许窗体支持双击事件（必须）
-            this.SetStyle(ControlStyles.StandardDoubleClick, true);
+            //// 允许窗体支持双击事件（必须）
+            //this.SetStyle(ControlStyles.StandardDoubleClick, true);
 
-            // 设置为无边框窗体
-            this.FormBorderStyle = FormBorderStyle.None;
+            //// 设置为无边框窗体
+            //this.FormBorderStyle = FormBorderStyle.None;
 
-            // 初始位置
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(200, 200);
-            this.Padding = new Padding(2);
+            //// 初始位置
+            //this.StartPosition = FormStartPosition.Manual;
+            //this.Location = new Point(200, 200);
+            //this.Padding = new Padding(2);
 
-            InitializeCustomTitleBar(); // 自定义标题栏
-            InitializeBorder();         // 自定义边框
+            //InitializeCustomTitleBar(); // 自定义标题栏
+            //InitializeBorder();         // 自定义边框
         }
 
         private void 账户管理Button_Click(object sender, EventArgs e)
@@ -242,60 +242,60 @@ namespace GasFormsApp.UI
         /// <summary>
         /// 重写窗口消息，支持边框缩放（模拟 Windows 原生窗口边框行为）
         /// </summary>
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_NCHITTEST = 0x84;
-            const int HTCLIENT = 1;
-            const int HTLEFT = 10;
-            const int HTRIGHT = 11;
-            const int HTTOP = 12;
-            const int HTTOPLEFT = 13;
-            const int HTTOPRIGHT = 14;
-            const int HTBOTTOM = 15;
-            const int HTBOTTOMLEFT = 16;
-            const int HTBOTTOMRIGHT = 17;
+        //protected override void WndProc(ref Message m)
+        //{
+        //    const int WM_NCHITTEST = 0x84;
+        //    const int HTCLIENT = 1;
+        //    const int HTLEFT = 10;
+        //    const int HTRIGHT = 11;
+        //    const int HTTOP = 12;
+        //    const int HTTOPLEFT = 13;
+        //    const int HTTOPRIGHT = 14;
+        //    const int HTBOTTOM = 15;
+        //    const int HTBOTTOMLEFT = 16;
+        //    const int HTBOTTOMRIGHT = 17;
 
-            if (m.Msg == WM_NCHITTEST)
-            {
-                base.WndProc(ref m);
+        //    if (m.Msg == WM_NCHITTEST)
+        //    {
+        //        base.WndProc(ref m);
 
-                if ((int)m.Result == HTCLIENT)
-                {
-                    Point cursor = PointToClient(Cursor.Position);
-                    int gripSize = 5;
+        //        if ((int)m.Result == HTCLIENT)
+        //        {
+        //            Point cursor = PointToClient(Cursor.Position);
+        //            int gripSize = 5;
 
-                    if (cursor.Y <= gripSize)
-                    {
-                        if (cursor.X <= gripSize)
-                            m.Result = (IntPtr)HTTOPLEFT;
-                        else if (cursor.X >= this.ClientSize.Width - gripSize)
-                            m.Result = (IntPtr)HTTOPRIGHT;
-                        else
-                            m.Result = (IntPtr)HTTOP;
-                    }
-                    else if (cursor.Y >= this.ClientSize.Height - gripSize)
-                    {
-                        if (cursor.X <= gripSize)
-                            m.Result = (IntPtr)HTBOTTOMLEFT;
-                        else if (cursor.X >= this.ClientSize.Width - gripSize)
-                            m.Result = (IntPtr)HTBOTTOMRIGHT;
-                        else
-                            m.Result = (IntPtr)HTBOTTOM;
-                    }
-                    else if (cursor.X <= gripSize)
-                    {
-                        m.Result = (IntPtr)HTLEFT;
-                    }
-                    else if (cursor.X >= this.ClientSize.Width - gripSize)
-                    {
-                        m.Result = (IntPtr)HTRIGHT;
-                    }
-                }
-                return;
-            }
+        //            if (cursor.Y <= gripSize)
+        //            {
+        //                if (cursor.X <= gripSize)
+        //                    m.Result = (IntPtr)HTTOPLEFT;
+        //                else if (cursor.X >= this.ClientSize.Width - gripSize)
+        //                    m.Result = (IntPtr)HTTOPRIGHT;
+        //                else
+        //                    m.Result = (IntPtr)HTTOP;
+        //            }
+        //            else if (cursor.Y >= this.ClientSize.Height - gripSize)
+        //            {
+        //                if (cursor.X <= gripSize)
+        //                    m.Result = (IntPtr)HTBOTTOMLEFT;
+        //                else if (cursor.X >= this.ClientSize.Width - gripSize)
+        //                    m.Result = (IntPtr)HTBOTTOMRIGHT;
+        //                else
+        //                    m.Result = (IntPtr)HTBOTTOM;
+        //            }
+        //            else if (cursor.X <= gripSize)
+        //            {
+        //                m.Result = (IntPtr)HTLEFT;
+        //            }
+        //            else if (cursor.X >= this.ClientSize.Width - gripSize)
+        //            {
+        //                m.Result = (IntPtr)HTRIGHT;
+        //            }
+        //        }
+        //        return;
+        //    }
 
-            base.WndProc(ref m);
-        }
+        //    base.WndProc(ref m);
+        //}
 
         /// <summary>
         /// 默认生成方法（保留，不影响主逻辑）
