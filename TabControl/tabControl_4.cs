@@ -256,7 +256,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.W_TextBox.Text = data.W_TextBox;
                     _mainForm.P_TextBox.Text = data.P_TextBox;
 
-                    MessageBox.Show("数据已恢复！");
+                    //MessageBox.Show("数据已恢复！");
                 }
             }
             catch (Exception ex)

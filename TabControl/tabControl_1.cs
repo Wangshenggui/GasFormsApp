@@ -342,7 +342,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.CoalTypeComboBox.Text = data.煤种;
                     _mainForm.X_YTextBox.Text = data.取样点坐标;
 
-                    MessageBox.Show("数据已恢复！");
+                    //MessageBox.Show("数据已恢复！");
                 }
             }
             catch (Exception ex)

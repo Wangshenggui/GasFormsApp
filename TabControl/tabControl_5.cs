@@ -344,7 +344,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.AuditorTextBox.Text = data.AuditorText;
                     _mainForm.RemarkTextBox.Text = data.RemarkText;
 
-                    MessageBox.Show("数据已恢复！");
+                    //MessageBox.Show("数据已恢复！");
                 }
             }
             catch (Exception ex)

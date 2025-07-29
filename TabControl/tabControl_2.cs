@@ -405,7 +405,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
 
-                    MessageBox.Show("数据已恢复！");
+                    //MessageBox.Show("数据已恢复！");
                 }
             }
             catch (Exception ex)

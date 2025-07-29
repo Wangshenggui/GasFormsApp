@@ -113,6 +113,7 @@ namespace GasFormsApp
         private tabControl_5 myTabLogic5;
         private tabControl_6 myTabLogic6;
 
+        private ToolBarClass myToolBarClass;
 
 
         private List<TextBox> desorbTextBoxes;
@@ -177,6 +178,8 @@ namespace GasFormsApp
             myTabLogic6 = new tabControl_6(
                 this
             );
+
+            myToolBarClass = new ToolBarClass(this,this.ToolBarMenuStrip);
         }
         // 特殊处理，为了提高选项卡图标清晰度而设置的图片点击行为
         private void tabControlxPictureBox_Click(object sender, EventArgs e)
@@ -1351,5 +1354,40 @@ namespace GasFormsApp
             GasFormsApp.Settings.Default.WindowState = this.WindowState;
             GasFormsApp.Settings.Default.Save();
         }
+
+
+
+
+        // Tool调用tab1的函数
+        public void Tool_tab1_tabPage1RecoverDataButton(object sender, EventArgs e)
+        {
+            myTabLogic1.tabPage1RecoverDataButton_Click(sender, e);
+        }
+
+        // Tool调用tab2的函数
+        public void Tool_tab2_tabPage2RecoverDataButton(object sender, EventArgs e)
+        {
+            myTabLogic2.tabPage2RecoverDataButton_Click(sender, e);
+        }
+
+        // Tool调用tab3的函数
+        public void Tool_tab3_tabPage3RecoverDataButton(object sender, EventArgs e)
+        {
+            myTabLogic3.tabPage3RecoverDataButton_Click(sender, e);
+        }
+
+        // Tool调用tab4的函数
+        public void Tool_tab4_tabPage4RecoverDataButton(object sender, EventArgs e)
+        {
+            myTabLogic4.tabPage4RecoverDataButton_Click(sender, e);
+        }
+
+        // Tool调用tab5的函数
+        public void Tool_tab5_tabPage5RecoverDataButton(object sender, EventArgs e)
+        {
+            myTabLogic5.tabPage5RecoverDataButton_Click(sender, e);
+        }
+
+
     }
 }

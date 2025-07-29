@@ -277,7 +277,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.S2DesorpVolCalTextBox.Text = data.S2DesorpVolCalText;
                     _mainForm.CrushDesorpTextBox.Text = data.CrushDesorpTextBox;
 
-                    MessageBox.Show("数据已恢复！");
+                    //MessageBox.Show("数据已恢复！");
                 }
             }
             catch (Exception ex)
