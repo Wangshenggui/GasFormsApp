@@ -747,6 +747,20 @@ namespace GasFormsApp
                 tabControl6PictureBox.Visible = false;
                 panel1.Location = new System.Drawing.Point(200,73);
             }
+            //else
+            //{
+            //    tabControl1.TabPages.Remove(tabPage2);
+            //    tabControl1.TabPages.Remove(tabPage3);
+            //    tabControl1.TabPages.Remove(tabPage4);
+            //    tabControl1.TabPages.Remove(tabPage5);
+            //    tabControl1.TabPages.Remove(tabPage6);
+            //    tabControl2PictureBox.Visible = false;
+            //    tabControl3PictureBox.Visible = false;
+            //    tabControl4PictureBox.Visible = false;
+            //    tabControl5PictureBox.Visible = false;
+            //    tabControl6PictureBox.Visible = false;
+            //    panel1.Location = new System.Drawing.Point(200, 73);
+            //}
             tabControl1_isInitializing = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
