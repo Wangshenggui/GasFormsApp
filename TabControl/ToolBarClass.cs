@@ -113,6 +113,41 @@ namespace GasFormsApp.TabControl
 
 
                 }
+                else if(clickedItem.Text.Trim() == "更新登录密码")
+                {
+                    ChangePasswordForm changePwdForm = new ChangePasswordForm();
+                    changePwdForm.ShowDialog();
+                }
+                else if (clickedItem.Text.Trim() == "重置产品认证密钥")
+                {
+                    var result = MessageBox.Show(
+                        "确定要重置产品认证密钥吗？",
+                        "确认重置",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning,
+                        MessageBoxDefaultButton.Button2);  // 默认选中“否”
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // 清空密钥并保存
+                        GasFormsApp.Settings.Default.ActivateKey = "";
+                        GasFormsApp.Settings.Default.Save();
+
+                        // 提示用户
+                        MessageBox.Show("产品认证密钥已成功重置，程序将立即重启。", "完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // 重启软件
+                        Application.Restart();
+                        // 确保当前进程退出
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        // 用户点击了“否”
+                        // MessageBox.Show("操作已取消。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
             }
         }
     }

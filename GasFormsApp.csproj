@@ -254,12 +254,6 @@
     <Compile Include="ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseExport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DatabaseExport.Designer.cs">
-      <DependentUpon>DatabaseExport.cs</DependentUpon>
-    </Compile>
     <Compile Include="ActicateKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,9 +328,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DatabaseExport.resx">
-      <DependentUpon>DatabaseExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomBorderButtonClass.resx">
       <DependentUpon>CustomBorderButtonClass.cs</DependentUpon>

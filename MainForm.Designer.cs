@@ -436,6 +436,9 @@ namespace GasFormsApp
             this.ToolBarMenuStrip = new GasFormsApp.UI.CustomMenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.恢复上次编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.账户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新登录密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.重置产品认证密钥ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -5291,7 +5294,8 @@ namespace GasFormsApp
             this.ToolBarMenuStrip.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ToolBarMenuStrip.ForeColor = System.Drawing.Color.Black;
             this.ToolBarMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.文件ToolStripMenuItem});
+            this.文件ToolStripMenuItem,
+            this.账户ToolStripMenuItem});
             this.ToolBarMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolBarMenuStrip.Name = "ToolBarMenuStrip";
             this.ToolBarMenuStrip.Size = new System.Drawing.Size(784, 27);
@@ -5312,6 +5316,27 @@ namespace GasFormsApp
             this.恢复上次编辑ToolStripMenuItem.Name = "恢复上次编辑ToolStripMenuItem";
             this.恢复上次编辑ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.恢复上次编辑ToolStripMenuItem.Text = "恢复上次编辑";
+            // 
+            // 账户ToolStripMenuItem
+            // 
+            this.账户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.更新登录密码ToolStripMenuItem,
+            this.重置产品认证密钥ToolStripMenuItem});
+            this.账户ToolStripMenuItem.Name = "账户ToolStripMenuItem";
+            this.账户ToolStripMenuItem.Size = new System.Drawing.Size(63, 23);
+            this.账户ToolStripMenuItem.Text = "  账户  ";
+            // 
+            // 更新登录密码ToolStripMenuItem
+            // 
+            this.更新登录密码ToolStripMenuItem.Name = "更新登录密码ToolStripMenuItem";
+            this.更新登录密码ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.更新登录密码ToolStripMenuItem.Text = "更新登录密码";
+            // 
+            // 重置产品认证密钥ToolStripMenuItem
+            // 
+            this.重置产品认证密钥ToolStripMenuItem.Name = "重置产品认证密钥ToolStripMenuItem";
+            this.重置产品认证密钥ToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
+            this.重置产品认证密钥ToolStripMenuItem.Text = "重置产品认证密钥";
             // 
             // MainForm
             // 
@@ -5836,5 +5861,8 @@ namespace GasFormsApp
         private UI.CustomMenuStrip ToolBarMenuStrip;
         private ToolStripMenuItem 文件ToolStripMenuItem;
         private ToolStripMenuItem 恢复上次编辑ToolStripMenuItem;
+        private ToolStripMenuItem 账户ToolStripMenuItem;
+        private ToolStripMenuItem 更新登录密码ToolStripMenuItem;
+        private ToolStripMenuItem 重置产品认证密钥ToolStripMenuItem;
     }
 }
