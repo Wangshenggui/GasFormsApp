@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿using AntdUI;
+using ClosedXML.Excel;
 using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Presentation;
 using Google.Protobuf.WellKnownTypes;
@@ -21,8 +22,8 @@ using static GasFormsApp.TabControl.tabControl_2;
 using static Google.Protobuf.Reflection.FieldDescriptorProto.Types;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Control = System.Windows.Forms.Control;
+using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 using Font = System.Drawing.Font;
-using TextBox = System.Windows.Forms.TextBox;
 
 namespace GasFormsApp.TabControl
 {
@@ -245,7 +246,7 @@ namespace GasFormsApp.TabControl
             {
                 string name = $"{baseName}{i + startIndex}";
                 var ctl = form.Controls.Find(name, true).FirstOrDefault();
-                if (ctl is TextBox tb)
+                if (ctl is Input tb)
                 {
                     tb.Text = values[i];
                 }
@@ -850,7 +851,7 @@ namespace GasFormsApp.TabControl
             for (int i = start; i <= end; i++)
             {
                 var ctl = parent.Controls.Find($"{baseName}{i}", true).FirstOrDefault();
-                list.Add(ctl is TextBox tb ? tb.Text : "");
+                list.Add(ctl is Input tb ? tb.Text : "");
             }
             return list;
         }
