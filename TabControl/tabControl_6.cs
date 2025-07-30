@@ -3,6 +3,7 @@ using ClosedXML.Excel;
 using DocumentFormat.OpenXml.InkML;
 using DocumentFormat.OpenXml.Presentation;
 using Google.Protobuf.WellKnownTypes;
+using Microsoft.VisualBasic;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using static GasFormsApp.TabControl.tabControl_2;
 using static Google.Protobuf.Reflection.FieldDescriptorProto.Types;
@@ -24,6 +26,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Control = System.Windows.Forms.Control;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 using Font = System.Drawing.Font;
+using Image = System.Drawing.Image;
 
 namespace GasFormsApp.TabControl
 {
@@ -97,6 +100,7 @@ namespace GasFormsApp.TabControl
             _mainForm.treeView1.AfterSelect += treeView1_AfterSelect;
             _mainForm.treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
             _mainForm.treeView1.DrawNode += treeView1_DrawNode;
+            _mainForm.treeView1.AfterLabelEdit += treeView1_AfterLabelEdit;
             _mainForm.FindMineTextBox.KeyDown += FindMineTextBox_KeyDown;
 
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
@@ -108,6 +112,7 @@ namespace GasFormsApp.TabControl
             _mainForm.合并矿井数据ToolStripMenuItem.Click += 合并矿井数据ToolStripMenuItem_Click;
             _mainForm.删除项目ToolStripMenuItem.Click += 删除项目ToolStripMenuItem_Click;
             _mainForm.删除煤矿及项目ToolStripMenuItem.Click += 删除煤矿及项目ToolStripMenuItem_Click;
+            _mainForm.重命名ToolStripMenuItem.Click += 重命名ToolStripMenuItem_Click;
 
 
             // 启动当前tab定时器
@@ -1707,6 +1712,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["重命名ToolStripMenuItem"].Visible = false;
                     }
                     else if (level == 1 && isOnText && isSelected)
                     {
@@ -1718,6 +1724,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["重命名ToolStripMenuItem"].Visible = true;
                     }
                     // 点击项目
                     else if (level == 2 && isOnText && isSelected)
@@ -1728,6 +1735,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["重命名ToolStripMenuItem"].Visible = true;
                     }
                     else
                     {
@@ -1737,6 +1745,7 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["重命名ToolStripMenuItem"].Visible = false;
                     }
                 }
                 // 点击空白处
@@ -1748,6 +1757,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
                     _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
                     _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
+                    _mainForm.tabPage6contextMenuStrip1.Items["重命名ToolStripMenuItem"].Visible = false;
                 }
                 _mainForm.tabPage6contextMenuStrip1.Show(_mainForm.treeView1, e.Location); // 弹出菜单
             }
@@ -2421,5 +2431,55 @@ namespace GasFormsApp.TabControl
             }
         }
 
+        private void 重命名ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_rightClickedNode != null)
+            {
+                _mainForm.treeView1.LabelEdit = true;
+                _rightClickedNode.BeginEdit();
+            }
+        }
+
+        private void treeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            if (e.Label == null)
+                return; // 用户取消编辑
+
+            string oldPath = e.Node.Tag?.ToString();
+            if (string.IsNullOrEmpty(oldPath) || !Directory.Exists(oldPath))
+                return;
+
+            string newName = e.Label.Trim();
+
+            // 检查非法字符
+            if (string.IsNullOrWhiteSpace(newName) || newName.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+            {
+                MessageBox.Show("名称无效！");
+                e.CancelEdit = true;
+                return;
+            }
+
+            try
+            {
+                string parentPath = Path.GetDirectoryName(oldPath);
+                string newPath = Path.Combine(parentPath, newName);
+
+                if (Directory.Exists(newPath))
+                {
+                    MessageBox.Show("已存在同名文件夹！");
+                    e.CancelEdit = true;
+                    return;
+                }
+
+                // 重命名文件夹
+                Directory.Move(oldPath, newPath);
+                e.Node.Tag = newPath; // 更新路径
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("重命名失败：" + ex.Message);
+                e.CancelEdit = true;
+            }
+        }
     }
 }
