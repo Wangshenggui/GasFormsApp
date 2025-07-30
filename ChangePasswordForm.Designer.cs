@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
             this.txtNewUsername = new AntdUI.Input();
             this.txtOldPwd = new AntdUI.Input();
             this.txtNewPwd = new AntdUI.Input();
@@ -128,7 +129,7 @@
             // btnUpdatePwd
             // 
             this.btnUpdatePwd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpdatePwd.Location = new System.Drawing.Point(151, 210);
+            this.btnUpdatePwd.Location = new System.Drawing.Point(141, 210);
             this.btnUpdatePwd.Name = "btnUpdatePwd";
             this.btnUpdatePwd.Size = new System.Drawing.Size(102, 39);
             this.btnUpdatePwd.TabIndex = 30;
@@ -151,11 +152,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ChangePasswordForm";
-            this.ShowIcon = false;
-            this.Text = "修改用户信息";
+            this.Text = "修改登录信息";
             this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePasswordForm_KeyDown);
             this.ResumeLayout(false);

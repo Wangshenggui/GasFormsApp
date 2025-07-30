@@ -418,6 +418,7 @@ namespace GasFormsApp
             this.合并矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除项目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除煤矿及项目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.重命名ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -442,7 +443,6 @@ namespace GasFormsApp
             this.账户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新登录密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重置产品认证密钥ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.重命名ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -5138,7 +5138,7 @@ namespace GasFormsApp
             this.删除煤矿及项目ToolStripMenuItem,
             this.重命名ToolStripMenuItem});
             this.tabPage6contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
-            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(190, 180);
+            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(190, 158);
             // 
             // 刷新ToolStripMenuItem
             // 
@@ -5175,6 +5175,12 @@ namespace GasFormsApp
             this.删除煤矿及项目ToolStripMenuItem.Name = "删除煤矿及项目ToolStripMenuItem";
             this.删除煤矿及项目ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.删除煤矿及项目ToolStripMenuItem.Text = "删除煤矿及项目";
+            // 
+            // 重命名ToolStripMenuItem
+            // 
+            this.重命名ToolStripMenuItem.Name = "重命名ToolStripMenuItem";
+            this.重命名ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.重命名ToolStripMenuItem.Text = "重命名";
             // 
             // tabPage6contextMenuStrip2
             // 
@@ -5364,12 +5370,6 @@ namespace GasFormsApp
             this.重置产品认证密钥ToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
             this.重置产品认证密钥ToolStripMenuItem.Text = "重置产品认证密钥";
             // 
-            // 重命名ToolStripMenuItem
-            // 
-            this.重命名ToolStripMenuItem.Name = "重命名ToolStripMenuItem";
-            this.重命名ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.重命名ToolStripMenuItem.Text = "重命名";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5391,7 +5391,6 @@ namespace GasFormsApp
             this.MainMenuStrip = this.ToolBarMenuStrip;
             this.MinimumSize = new System.Drawing.Size(625, 600);
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "瓦斯含量测定数据分析系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("项目");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("节点2", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("项目");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("矿井", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("根目录", new System.Windows.Forms.TreeNode[] {
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("节点3");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("节点2", new System.Windows.Forms.TreeNode[] {
+            treeNode9});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectGroupsForm));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -45,10 +45,10 @@
             this.新建项目名称ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重命名ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CancelButton = new AntdUI.Button();
+            this.DetermineButton = new AntdUI.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.FindMineTextBox = new AntdUI.Input();
-            this.DetermineButton = new AntdUI.Button();
-            this.CancelButton = new AntdUI.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,24 +64,24 @@
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(0, 34);
             this.treeView1.Name = "treeView1";
-            treeNode1.ImageKey = "项目";
-            treeNode1.Name = "项目";
-            treeNode1.Text = "项目";
-            treeNode2.ImageKey = "矿井";
-            treeNode2.Name = "矿井";
-            treeNode2.Text = "矿井";
-            treeNode3.ImageKey = "根目录";
-            treeNode3.Name = "根目录";
-            treeNode3.Text = "根目录";
-            treeNode4.Name = "节点3";
-            treeNode4.Text = "节点3";
-            treeNode5.Name = "节点2";
-            treeNode5.Text = "节点2";
+            treeNode6.ImageKey = "项目";
+            treeNode6.Name = "项目";
+            treeNode6.Text = "项目";
+            treeNode7.ImageKey = "矿井";
+            treeNode7.Name = "矿井";
+            treeNode7.Text = "矿井";
+            treeNode8.ImageKey = "根目录";
+            treeNode8.Name = "根目录";
+            treeNode8.Text = "根目录";
+            treeNode9.Name = "节点3";
+            treeNode9.Text = "节点3";
+            treeNode10.Name = "节点2";
+            treeNode10.Text = "节点2";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode5});
+            treeNode8,
+            treeNode10});
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(784, 537);
+            this.treeView1.Size = new System.Drawing.Size(784, 528);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView1_AfterLabelEdit);
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -138,6 +138,28 @@
             this.panel1.Size = new System.Drawing.Size(344, 59);
             this.panel1.TabIndex = 4;
             // 
+            // CancelButton
+            // 
+            this.CancelButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(189)))), ((int)(((byte)(193)))));
+            this.CancelButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CancelButton.Location = new System.Drawing.Point(221, 12);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(122, 41);
+            this.CancelButton.TabIndex = 41;
+            this.CancelButton.Text = "取消";
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // DetermineButton
+            // 
+            this.DetermineButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(144)))), ((int)(((byte)(246)))));
+            this.DetermineButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.DetermineButton.Location = new System.Drawing.Point(1, 12);
+            this.DetermineButton.Name = "DetermineButton";
+            this.DetermineButton.Size = new System.Drawing.Size(122, 41);
+            this.DetermineButton.TabIndex = 41;
+            this.DetermineButton.Text = "确定";
+            this.DetermineButton.Click += new System.EventHandler(this.DetermineButton_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -160,40 +182,21 @@
             this.FindMineTextBox.TabIndex = 40;
             this.FindMineTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindMineTextBox_KeyDown);
             // 
-            // DetermineButton
-            // 
-            this.DetermineButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(144)))), ((int)(((byte)(246)))));
-            this.DetermineButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DetermineButton.Location = new System.Drawing.Point(1, 12);
-            this.DetermineButton.Name = "DetermineButton";
-            this.DetermineButton.Size = new System.Drawing.Size(122, 41);
-            this.DetermineButton.TabIndex = 41;
-            this.DetermineButton.Text = "确定";
-            this.DetermineButton.Click += new System.EventHandler(this.DetermineButton_Click);
-            // 
-            // CancelButton
-            // 
-            this.CancelButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(189)))), ((int)(((byte)(193)))));
-            this.CancelButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CancelButton.Location = new System.Drawing.Point(221, 12);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(122, 41);
-            this.CancelButton.TabIndex = 41;
-            this.CancelButton.Text = "取消";
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
             // ProjectGroupsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.ControlBox = false;
             this.Controls.Add(this.FindMineTextBox);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.treeView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ProjectGroupsForm";
             this.Text = "项目归类";
             this.Load += new System.EventHandler(this.ProjectGroupsForm_Load);

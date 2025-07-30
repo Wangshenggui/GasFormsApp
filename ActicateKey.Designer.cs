@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActicateKey));
             this.CloseButton = new AntdUI.Button();
             this.ActivationButton = new AntdUI.Button();
             this.ActivationCodeInput = new AntdUI.Input();
@@ -110,6 +111,7 @@
             this.Controls.Add(this.ActivationCodeInput);
             this.Controls.Add(this.UniqueIDInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ActicateKey";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "软件激活";
