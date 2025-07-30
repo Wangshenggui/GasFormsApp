@@ -1692,7 +1692,15 @@ namespace GasFormsApp.TabControl
                     // 判断是否当前节点已被选中
                     bool isSelected = (_mainForm.treeView1.SelectedNode == clickedNode);
 
-                    if (level == 1 && isOnText && isSelected)
+                    // 点击根目录
+                    if (level == 0 && isOnText && isSelected)
+                    {
+                        _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
+                    }
+                    else if (level == 1 && isOnText && isSelected)
                     {
                         //MessageBox.Show($"当前点击层级：{level},{text}");
                         // 导出煤矿数据
@@ -1701,14 +1709,23 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
                     }
+                    // 点击项目
+                    else if (level == 2 && isOnText && isSelected)
+                    {
+                        _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
+                    }
                     else
                     {
                         _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
-                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
-                        _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
                     }
                 }
+                // 点击空白处
                 else
                 {
                     _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
