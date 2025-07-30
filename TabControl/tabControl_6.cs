@@ -68,7 +68,8 @@ namespace GasFormsApp.TabControl
             _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
             // 注册单元格开始编辑事件的匿名函数，用于调试或日志记录编辑行为
-            _mainForm.dataGridView1.CellBeginEdit += (s, e) => {
+            _mainForm.dataGridView1.CellBeginEdit += (s, e) =>
+            {
                 Console.WriteLine($"CellBeginEdit at row {e.RowIndex}, col {e.ColumnIndex}");
             };
             _mainForm.dataGridView1.MouseDown += dataGridView1_MouseDown;
@@ -105,6 +106,8 @@ namespace GasFormsApp.TabControl
             _mainForm.导出矿井Excel统计表ToolStripMenuItem.Click += 导出矿井Excel统计表ToolStripMenuItem_Click;
             _mainForm.导出矿井数据ToolStripMenuItem.Click += 导出矿井数据ToolStripMenuItem_Click;
             _mainForm.合并矿井数据ToolStripMenuItem.Click += 合并矿井数据ToolStripMenuItem_Click;
+            _mainForm.删除项目ToolStripMenuItem.Click += 删除项目ToolStripMenuItem_Click;
+            _mainForm.删除煤矿及项目ToolStripMenuItem.Click += 删除煤矿及项目ToolStripMenuItem_Click;
 
 
             // 启动当前tab定时器
@@ -703,7 +706,7 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
-        
+
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -774,9 +777,9 @@ namespace GasFormsApp.TabControl
             public string 解吸量
             {
                 get => string.Join(", ", DesorbTextList);
-                        set => DesorbTextList = value?
-                    .Split(new[] { ',', '，' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Select(s => s.Trim()).ToList() ?? new List<string>();
+                set => DesorbTextList = value?
+            .Split(new[] { ',', '，' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(s => s.Trim()).ToList() ?? new List<string>();
             }
             public string 解吸时间
             {
@@ -976,9 +979,9 @@ namespace GasFormsApp.TabControl
                     取样深度 = _mainForm.SamplingDepthTextBox.Text,
                     取样时间 = _mainForm.SamplingTimeDateTimePicker.Text,
                     // 新加++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                    钻孔倾角 =_mainForm.DrillInclinationTextBox.Text,
+                    钻孔倾角 = _mainForm.DrillInclinationTextBox.Text,
                     方位角 = _mainForm.AzimuthTextBox.Text,
-                    取样人员 =_mainForm.SamplingPersonnelTextBox.Text,
+                    取样人员 = _mainForm.SamplingPersonnelTextBox.Text,
 
                     // tab2
                     打钻开始时间 = _mainForm.dateTimePicker2.Text,
@@ -1005,14 +1008,14 @@ namespace GasFormsApp.TabControl
                     最终粉碎解吸量 = _mainForm.CrushDesorpTextBox.Text,
 
                     // tab4
-                    吸附常数a =_mainForm.AdsorpConstATextBox.Text,
-                    吸附常数b =_mainForm.AdsorpConstBTextBox.Text,
-                    水分 =_mainForm.MadTextBox.Text,
-                    灰分 =_mainForm.AadTextBox.Text,
-                    孔隙率 =_mainForm.PorosityTextBox.Text,
-                    视相对密度 =_mainForm.AppDensityTextBox.Text,
-                    真密度 =_mainForm.TrueDensityTextBox.Text,
-                    挥发分 =_mainForm.VadTextBox.Text,
+                    吸附常数a = _mainForm.AdsorpConstATextBox.Text,
+                    吸附常数b = _mainForm.AdsorpConstBTextBox.Text,
+                    水分 = _mainForm.MadTextBox.Text,
+                    灰分 = _mainForm.AadTextBox.Text,
+                    孔隙率 = _mainForm.PorosityTextBox.Text,
+                    视相对密度 = _mainForm.AppDensityTextBox.Text,
+                    真密度 = _mainForm.TrueDensityTextBox.Text,
+                    挥发分 = _mainForm.VadTextBox.Text,
                     W1 = _mainForm.W1_TextBox.Text,
                     W2 = _mainForm.W2_TextBox.Text,
                     W3 = _mainForm.W3_TextBox.Text,
@@ -1224,7 +1227,7 @@ namespace GasFormsApp.TabControl
             {
                 return;
             }
-                
+
 
             string outputPath = Path.Combine(selectedPath, $"{name}_Doc.docx");
             Console.WriteLine($"[Log] 原始文档路径：{outputPath}");
@@ -1417,7 +1420,7 @@ namespace GasFormsApp.TabControl
                 //        col.Visible = visibleColumns.Contains(col.DataPropertyName);
                 //    }
                 //}
-                
+
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                 // 延迟恢复排序，避免排序没有立即生效
@@ -1494,7 +1497,7 @@ namespace GasFormsApp.TabControl
             }
             return allUsers;
         }
-        private void 查询显示(string path,string filterKeyword)
+        private void 查询显示(string path, string filterKeyword)
         {
             // 记录当前排序列和方向
             string sortColumnName = null;
@@ -1682,6 +1685,9 @@ namespace GasFormsApp.TabControl
             {
                 if (clickedNode != null)
                 {
+                    // 自动选中右键点击的节点
+                    _mainForm.treeView1.SelectedNode = clickedNode;
+
                     int level = clickedNode.Level;       // 当前层级（0,1,2...）
                     string text = clickedNode.Text;      // 当前节点显示的名字
 
@@ -1699,6 +1705,8 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
                     }
                     else if (level == 1 && isOnText && isSelected)
                     {
@@ -1708,6 +1716,8 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = true;
                     }
                     // 点击项目
                     else if (level == 2 && isOnText && isSelected)
@@ -1716,6 +1726,8 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
                     }
                     else
                     {
@@ -1723,6 +1735,8 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
                     }
                 }
                 // 点击空白处
@@ -1732,6 +1746,8 @@ namespace GasFormsApp.TabControl
                     _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
                     _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
                     _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
+                    _mainForm.tabPage6contextMenuStrip1.Items["删除项目ToolStripMenuItem"].Visible = false;
+                    _mainForm.tabPage6contextMenuStrip1.Items["删除煤矿及项目ToolStripMenuItem"].Visible = false;
                 }
                 _mainForm.tabPage6contextMenuStrip1.Show(_mainForm.treeView1, e.Location); // 弹出菜单
             }
@@ -1779,7 +1795,7 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
-        
+
         private void 导出矿井数据ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -2279,5 +2295,131 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
+
+        private void 删除项目ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_rightClickedNode != null)
+            {
+                string path = _rightClickedNode.Tag as string;
+
+                if (!string.IsNullOrEmpty(path))
+                {
+                    // 获取最后一级目录名
+                    string dirName = Path.GetFileName(path);
+
+                    // 弹出确认提示
+                    DialogResult confirm = MessageBox.Show(
+                        $"确定要移动项目到回收目录吗？\n\n项目名称：\r\n{dirName}",
+                        "确认移动",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            // 1. 获取 AppData 目录
+                            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                            // 2. 目标目录
+                            string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "DataReclamation");
+
+                            // 如果目标目录不存在，先创建
+                            if (!Directory.Exists(targetDir))
+                            {
+                                Directory.CreateDirectory(targetDir);
+                            }
+
+                            // 3. 拼接新的目标路径：目标目录 + 当前目录名
+                            string destPath = Path.Combine(targetDir, dirName);
+
+                            // 如果目标目录下已经有同名目录，为避免冲突，可加时间戳或GUID
+                            if (Directory.Exists(destPath))
+                            {
+                                string newDirName = dirName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                                destPath = Path.Combine(targetDir, newDirName);
+                            }
+
+                            // 4. 移动目录
+                            Directory.Move(path, destPath);
+
+                            // 5. 移动成功后，从 TreeView 移除节点
+                            //_rightClickedNode.Remove();
+
+                            // 可选：提示用户
+                            //MessageBox.Show($"项目已移动到：\n{destPath}", "移动成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"移动失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        private void 删除煤矿及项目ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_rightClickedNode != null)
+            {
+                string path = _rightClickedNode.Tag as string;
+
+                if (!string.IsNullOrEmpty(path))
+                {
+                    string dirName = Path.GetFileName(path);
+
+                    // 弹出确认提示
+                    DialogResult confirm = MessageBox.Show(
+                        $"确定要删除矿井数据吗？\n\n矿井名称：\r\n{Path.GetFileName(path)}",
+                        "确认删除",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            // 1. 获取 AppData 目录
+                            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                            // 2. 目标回收目录
+                            string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "DataReclamation");
+
+                            // 3. 如果目标目录不存在，先创建
+                            if (!Directory.Exists(targetDir))
+                            {
+                                Directory.CreateDirectory(targetDir);
+                            }
+
+                            // 4. 生成目标路径：目标目录 + 当前目录名
+                            string destPath = Path.Combine(targetDir, dirName);
+
+                            // 5. 如果已存在同名目录，加时间戳
+                            if (Directory.Exists(destPath))
+                            {
+                                string newDirName = dirName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                                destPath = Path.Combine(targetDir, newDirName);
+                            }
+
+                            // 6. 移动目录
+                            Directory.Move(path, destPath);
+
+                            // 7. 移动成功后，从 TreeView 移除节点
+                            //_rightClickedNode.Remove();
+
+                            // 8. 可选：提示用户
+                            //MessageBox.Show($"矿井数据已移动到：\n{destPath}", "移动成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"移动失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

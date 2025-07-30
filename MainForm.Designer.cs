@@ -415,6 +415,9 @@ namespace GasFormsApp
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出矿井Excel统计表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.合并矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除项目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除煤矿及项目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage6contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.恢复历史记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeColorContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -439,7 +442,6 @@ namespace GasFormsApp
             this.账户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新登录密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重置产品认证密钥ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.合并矿井数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage1panel1.SuspendLayout();
@@ -5130,9 +5132,11 @@ namespace GasFormsApp
             this.刷新ToolStripMenuItem,
             this.导出矿井Excel统计表ToolStripMenuItem,
             this.导出矿井数据ToolStripMenuItem,
-            this.合并矿井数据ToolStripMenuItem});
+            this.合并矿井数据ToolStripMenuItem,
+            this.删除项目ToolStripMenuItem,
+            this.删除煤矿及项目ToolStripMenuItem});
             this.tabPage6contextMenuStrip1.Name = "tabPage6contextMenuStrip1";
-            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(190, 114);
+            this.tabPage6contextMenuStrip1.Size = new System.Drawing.Size(190, 136);
             // 
             // 刷新ToolStripMenuItem
             // 
@@ -5151,6 +5155,24 @@ namespace GasFormsApp
             this.导出矿井数据ToolStripMenuItem.Name = "导出矿井数据ToolStripMenuItem";
             this.导出矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.导出矿井数据ToolStripMenuItem.Text = "导出矿井数据";
+            // 
+            // 合并矿井数据ToolStripMenuItem
+            // 
+            this.合并矿井数据ToolStripMenuItem.Name = "合并矿井数据ToolStripMenuItem";
+            this.合并矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.合并矿井数据ToolStripMenuItem.Text = "合并矿井数据";
+            // 
+            // 删除项目ToolStripMenuItem
+            // 
+            this.删除项目ToolStripMenuItem.Name = "删除项目ToolStripMenuItem";
+            this.删除项目ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.删除项目ToolStripMenuItem.Text = "删除项目";
+            // 
+            // 删除煤矿及项目ToolStripMenuItem
+            // 
+            this.删除煤矿及项目ToolStripMenuItem.Name = "删除煤矿及项目ToolStripMenuItem";
+            this.删除煤矿及项目ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.删除煤矿及项目ToolStripMenuItem.Text = "删除煤矿及项目";
             // 
             // tabPage6contextMenuStrip2
             // 
@@ -5339,12 +5361,6 @@ namespace GasFormsApp
             this.重置产品认证密钥ToolStripMenuItem.Name = "重置产品认证密钥ToolStripMenuItem";
             this.重置产品认证密钥ToolStripMenuItem.Size = new System.Drawing.Size(182, 24);
             this.重置产品认证密钥ToolStripMenuItem.Text = "重置产品认证密钥";
-            // 
-            // 合并矿井数据ToolStripMenuItem
-            // 
-            this.合并矿井数据ToolStripMenuItem.Name = "合并矿井数据ToolStripMenuItem";
-            this.合并矿井数据ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.合并矿井数据ToolStripMenuItem.Text = "合并矿井数据";
             // 
             // MainForm
             // 
@@ -5873,5 +5889,7 @@ namespace GasFormsApp
         private ToolStripMenuItem 更新登录密码ToolStripMenuItem;
         private ToolStripMenuItem 重置产品认证密钥ToolStripMenuItem;
         public ToolStripMenuItem 合并矿井数据ToolStripMenuItem;
+        public ToolStripMenuItem 删除项目ToolStripMenuItem;
+        public ToolStripMenuItem 删除煤矿及项目ToolStripMenuItem;
     }
 }
