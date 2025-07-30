@@ -99,10 +99,12 @@ namespace GasFormsApp.TabControl
 
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
+
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
             _mainForm.导出矿井Excel统计表ToolStripMenuItem.Click += 导出矿井Excel统计表ToolStripMenuItem_Click;
             _mainForm.导出矿井数据ToolStripMenuItem.Click += 导出矿井数据ToolStripMenuItem_Click;
-            
+            _mainForm.合并矿井数据ToolStripMenuItem.Click += 合并矿井数据ToolStripMenuItem_Click;
+
 
             // 启动当前tab定时器
             _mainForm.tab6Timer1.Enabled = true;
@@ -1696,12 +1698,14 @@ namespace GasFormsApp.TabControl
                         _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = false;
+                        _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = false;
                     }
                     else
                     {
                         _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
                         _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
+                        _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
                     }
                 }
                 else
@@ -1709,6 +1713,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.tabPage6contextMenuStrip1.Items["刷新ToolStripMenuItem"].Visible = true;
                     _mainForm.tabPage6contextMenuStrip1.Items["导出矿井Excel统计表ToolStripMenuItem"].Visible = false;
                     _mainForm.tabPage6contextMenuStrip1.Items["导出矿井数据ToolStripMenuItem"].Visible = true;
+                    _mainForm.tabPage6contextMenuStrip1.Items["合并矿井数据ToolStripMenuItem"].Visible = true;
                 }
                 _mainForm.tabPage6contextMenuStrip1.Show(_mainForm.treeView1, e.Location); // 弹出菜单
             }
@@ -1891,6 +1896,47 @@ namespace GasFormsApp.TabControl
                 CopyDirectory(subDir, destSubDir);
             }
         }
+
+        private void 合并矿井数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
+                Multiselect = true,
+                Title = "请选择需要合并的矿井目录"
+            };
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "SystemData", "DataAdministrationForm");
+
+                if (!Directory.Exists(targetDir))
+                {
+                    Directory.CreateDirectory(targetDir);
+                }
+
+                foreach (var sourceDir in dialog.FileNames)
+                {
+                    string folderName = Path.GetFileName(sourceDir.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar));
+                    string destSubDir = Path.Combine(targetDir, folderName);
+
+                    // 如果目标已存在同名矿井目录，添加当前时间后缀
+                    if (Directory.Exists(destSubDir))
+                    {
+                        string timeStamp = DateTime.Now.ToString("yyyyMMdd_HHmm");
+                        folderName = folderName + "_" + timeStamp;
+                        destSubDir = Path.Combine(targetDir, folderName);
+                    }
+
+                    CopyDirectory(sourceDir, destSubDir);
+                    Console.WriteLine($"已复制: {sourceDir} -> {destSubDir}");
+                }
+
+                MessageBox.Show("合并完成！", "提示");
+            }
+        }
+
         private void 导出矿井Excel统计表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_rightClickedNode != null)
