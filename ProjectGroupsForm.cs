@@ -143,8 +143,22 @@ namespace GasFormsApp
             // 递归添加子目录节点
             AddSubDirectories(rootDir, rootNode, 1);
 
-            // 展开所有节点，方便查看
-            treeView1.ExpandAll();
+            // 展开上次节点节点，方便查看
+            string savedNodeText = GasFormsApp.Settings.Default.SearchForMinesText;
+            //treeView1.ExpandAll();
+            foreach (TreeNode node in treeView1.Nodes)
+            {
+                // 第一级全部展开
+                node.Expand();
+                foreach (TreeNode child in node.Nodes)
+                {
+                    // SearchForMinesText
+                    if (child.Text == savedNodeText)
+                    {
+                        child.Expand();
+                    }
+                }
+            }
         }
         /// <summary>
         /// 递归添加指定目录的所有子目录到指定父节点下
@@ -352,6 +366,22 @@ namespace GasFormsApp
 
                 if(selectedNode.Level==2)
                 {
+                    // 获取当前目录的目录信息
+                    DirectoryInfo currentDir = new DirectoryInfo(path);
+                    // 上一级目录
+                    DirectoryInfo parentDir = currentDir.Parent;
+                    if (parentDir != null)
+                    {
+                        Console.WriteLine("当前目录名: " + currentDir.Name);
+                        Console.WriteLine("上一级目录名: " + parentDir.Name);
+
+                        GasFormsApp.Settings.Default.SearchForMinesText = parentDir.Name;
+                        GasFormsApp.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Console.WriteLine("没有上一级目录");
+                    }
                     ResultData = path;
                     this.DialogResult = DialogResult.OK; // 设置窗体的返回值
                     this.Close(); // 关闭窗口
@@ -418,6 +448,23 @@ namespace GasFormsApp
                 return;
             }
 
+            // 获取当前目录的目录信息
+            DirectoryInfo currentDir = new DirectoryInfo(path);
+            // 上一级目录
+            DirectoryInfo parentDir = currentDir.Parent;
+            if (parentDir != null)
+            {
+                Console.WriteLine("当前目录名: " + currentDir.Name);
+                Console.WriteLine("上一级目录名: " + parentDir.Name);
+
+                GasFormsApp.Settings.Default.SearchForMinesText = parentDir.Name;
+                GasFormsApp.Settings.Default.Save();
+            }
+            else
+            {
+                Console.WriteLine("没有上一级目录");
+            }
+            //MessageBox.Show($"牛逼：{parentDir.Name}");
             ResultData = path;
             this.DialogResult = DialogResult.OK;
             this.Close();

@@ -94,5 +94,17 @@ namespace GasFormsApp {
                 this["ActivateKey"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SearchForMinesText {
+            get {
+                return ((string)(this["SearchForMinesText"]));
+            }
+            set {
+                this["SearchForMinesText"] = value;
+            }
+        }
     }
 }
