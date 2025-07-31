@@ -438,7 +438,7 @@ namespace GasFormsApp
             this.tabControl1PictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ToolBarMenuStrip = new GasFormsApp.UI.CustomMenuStrip();
-            this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.恢复上次编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.账户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新登录密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -5326,7 +5326,7 @@ namespace GasFormsApp
             this.ToolBarMenuStrip.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ToolBarMenuStrip.ForeColor = System.Drawing.Color.Black;
             this.ToolBarMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.文件ToolStripMenuItem,
+            this.编辑ToolStripMenuItem,
             this.账户ToolStripMenuItem});
             this.ToolBarMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolBarMenuStrip.Name = "ToolBarMenuStrip";
@@ -5335,18 +5335,18 @@ namespace GasFormsApp
             this.ToolBarMenuStrip.Text = "customMenuStrip1";
             this.ToolBarMenuStrip.ThemeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(85)))), ((int)(((byte)(108)))));
             // 
-            // 文件ToolStripMenuItem
+            // 编辑ToolStripMenuItem
             // 
-            this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.编辑ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.恢复上次编辑ToolStripMenuItem});
-            this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(63, 23);
-            this.文件ToolStripMenuItem.Text = "  文件  ";
+            this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(63, 23);
+            this.编辑ToolStripMenuItem.Text = "  编辑  ";
             // 
             // 恢复上次编辑ToolStripMenuItem
             // 
             this.恢复上次编辑ToolStripMenuItem.Name = "恢复上次编辑ToolStripMenuItem";
-            this.恢复上次编辑ToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.恢复上次编辑ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.恢复上次编辑ToolStripMenuItem.Text = "恢复上次编辑";
             // 
             // 账户ToolStripMenuItem
@@ -5890,7 +5890,7 @@ namespace GasFormsApp
         private ToolStripMenuItem 更改标题ToolStripMenuItem;
         public ToolStripMenuItem 导出矿井数据ToolStripMenuItem;
         private UI.CustomMenuStrip ToolBarMenuStrip;
-        private ToolStripMenuItem 文件ToolStripMenuItem;
+        private ToolStripMenuItem 编辑ToolStripMenuItem;
         private ToolStripMenuItem 恢复上次编辑ToolStripMenuItem;
         private ToolStripMenuItem 账户ToolStripMenuItem;
         private ToolStripMenuItem 更新登录密码ToolStripMenuItem;

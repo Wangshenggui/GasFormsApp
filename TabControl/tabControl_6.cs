@@ -2017,7 +2017,47 @@ namespace GasFormsApp.TabControl
                 CopyDirectory(subDir, destSubDir);
             }
         }
+        static void _CopyDirectory(string sourceDir, string targetDir)
+        {
+            // 创建目标文件夹
+            Directory.CreateDirectory(targetDir);
 
+            // 复制所有文件
+            foreach (var file in Directory.GetFiles(sourceDir))
+            {
+                string fileName = Path.GetFileName(file);
+                string destFile = Path.Combine(targetDir, fileName);
+
+                if (File.Exists(destFile))
+                {
+                    // 如果存在同名文件，加时间戳
+                    string timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    string fileNameWithoutExt = Path.GetFileNameWithoutExtension(fileName);
+                    string extension = Path.GetExtension(fileName);
+                    string newFileName = $"{fileNameWithoutExt}_{timeStamp}{extension}";
+                    destFile = Path.Combine(targetDir, newFileName);
+                }
+
+                File.Copy(file, destFile);
+            }
+
+            // 递归复制所有子文件夹
+            foreach (var subDir in Directory.GetDirectories(sourceDir))
+            {
+                string subDirName = Path.GetFileName(subDir);
+                string destSubDir = Path.Combine(targetDir, subDirName);
+
+                if (Directory.Exists(destSubDir))
+                {
+                    // 如果存在同名文件夹，加时间戳
+                    string timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    string newSubDirName = $"{subDirName}_{timeStamp}";
+                    destSubDir = Path.Combine(targetDir, newSubDirName);
+                }
+
+                _CopyDirectory(subDir, destSubDir);
+            }
+        }
         private void 合并矿井数据ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var dialog = new CommonOpenFileDialog
@@ -2042,16 +2082,20 @@ namespace GasFormsApp.TabControl
                     string folderName = Path.GetFileName(sourceDir.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar));
                     string destSubDir = Path.Combine(targetDir, folderName);
 
-                    // 如果目标已存在同名矿井目录，添加当前时间后缀
                     if (Directory.Exists(destSubDir))
                     {
-                        string timeStamp = DateTime.Now.ToString("yyyyMMdd_HHmm");
-                        folderName = folderName + "_" + timeStamp;
-                        destSubDir = Path.Combine(targetDir, folderName);
+                        Console.WriteLine($"目标目录已存在：{destSubDir}，将合并数据。");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"创建新目录：{destSubDir}");
+                        Directory.CreateDirectory(destSubDir);
                     }
 
-                    CopyDirectory(sourceDir, destSubDir);
-                    Console.WriteLine($"已复制: {sourceDir} -> {destSubDir}");
+                    // 合并数据（同名文件覆盖）
+                    _CopyDirectory(sourceDir, destSubDir);
+
+                    Console.WriteLine($"已合并: {sourceDir} -> {destSubDir}");
                 }
 
                 MessageBox.Show("合并完成！", "提示");
