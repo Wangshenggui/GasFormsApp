@@ -522,5 +522,10 @@ namespace GasFormsApp
                 e.Handled = true;
             }
         }
+
+        private void treeView1_AfterExpand(object sender, TreeViewEventArgs e)
+        {
+            treeView1.Invalidate();
+        }
     }
 }
