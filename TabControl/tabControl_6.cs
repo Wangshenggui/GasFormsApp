@@ -260,6 +260,45 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
+        /// <summary>
+        /// 从字符串中提取数字字符串和布尔值
+        /// 输入格式应为: 数字[True] 或 数字[False]
+        /// 返回 (数字字符串, bool)；如果格式不匹配，返回 null
+        /// </summary>
+        static (string numberPart, bool boolPart)? ParseNumberAndBool(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return null;
+
+            int bracketIndex = input.IndexOf('[');
+            int endBracketIndex = input.IndexOf(']');
+
+            if (bracketIndex < 0 || endBracketIndex <= bracketIndex) return null;
+
+            string numberPart = input.Substring(0, bracketIndex).Trim();
+            string boolPartStr = input.Substring(bracketIndex + 1, endBracketIndex - bracketIndex - 1).Trim();
+
+            if (!bool.TryParse(boolPartStr, out bool boolPart)) return null;
+
+            return (numberPart, boolPart);
+        }
+        // 解析并赋值给文本框和复选框（如果有）
+        void ParseAndAssign(string input, Input textBox, System.Windows.Forms.CheckBox checkBox = null)
+        {
+            var result = ParseNumberAndBool(input);
+            if (result != null)
+            {
+                textBox.Text = result.Value.numberPart;
+                if (checkBox != null)
+                    checkBox.Checked = result.Value.boolPart;
+            }
+            else
+            {
+                // 没有复选框的，或者格式无效时，全部原样赋值到文本框
+                textBox.Text = input ?? "";
+                if (checkBox != null)
+                    checkBox.Checked = false;
+            }
+        }
         private void 恢复历史记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
@@ -341,37 +380,75 @@ namespace GasFormsApp.TabControl
                         _mainForm.S2DesorpVolCalTextBox.Text = data.第2份煤样解吸量校准;
                         _mainForm.CrushDesorpTextBox.Text = data.最终粉碎解吸量;
 
-                        _mainForm.AdsorpConstATextBox.Text = data.吸附常数a;
-                        _mainForm.AdsorpConstBTextBox.Text = data.吸附常数b;
-                        _mainForm.MadTextBox.Text = data.水分;
-                        _mainForm.AadTextBox.Text = data.灰分;
-                        _mainForm.PorosityTextBox.Text = data.孔隙率;
-                        _mainForm.AppDensityTextBox.Text = data.视相对密度;
-                        _mainForm.TrueDensityTextBox.Text = data.真密度;
-                        _mainForm.VadTextBox.Text = data.挥发分;
+
+                        //string input = data.吸附常数a;
+                        //var result = ParseNumberAndBool(input);
+                        //if (result != null)
+                        //{
+                        //    Console.WriteLine($"数字字符串: \"{result.Value.numberPart}\"");
+                        //    Console.WriteLine($"布尔值: {result.Value.boolPart}");
+
+                        //    _mainForm.AdsorpConstATextBox.Text = result.Value.numberPart;
+                        //    _mainForm.AdsorpConstACheckBox.Checked = result.Value.boolPart;
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("输入格式无效！");
+                        //}
+
+                        ParseAndAssign(data.吸附常数a, _mainForm.AdsorpConstATextBox, _mainForm.AdsorpConstACheckBox);
+                        ParseAndAssign(data.吸附常数b, _mainForm.AdsorpConstBTextBox, _mainForm.AdsorpConstBCheckBox); // 如果有复选框
+                        ParseAndAssign(data.水分, _mainForm.MadTextBox, _mainForm.MadCheckBox); // 如果有复选框，没有就传null
+                        ParseAndAssign(data.灰分, _mainForm.AadTextBox, _mainForm.AadCheckBox);
+                        ParseAndAssign(data.孔隙率, _mainForm.PorosityTextBox, _mainForm.PorosityCheckBox);
+                        ParseAndAssign(data.视相对密度, _mainForm.AppDensityTextBox, _mainForm.AppDensityCheckBox);
+                        ParseAndAssign(data.真密度, _mainForm.TrueDensityTextBox, _mainForm.TrueDensityCheckBox);
+                        ParseAndAssign(data.挥发分, _mainForm.VadTextBox, _mainForm.VadCheckBox);
+
+                        //_mainForm.AdsorpConstBTextBox.Text = data.吸附常数b;
+                        //_mainForm.MadTextBox.Text = data.水分;
+                        //_mainForm.AadTextBox.Text = data.灰分;
+                        //_mainForm.PorosityTextBox.Text = data.孔隙率;
+                        //_mainForm.AppDensityTextBox.Text = data.视相对密度;
+                        //_mainForm.TrueDensityTextBox.Text = data.真密度;
+                        //_mainForm.VadTextBox.Text = data.挥发分;
                         _mainForm.W1_TextBox.Text = data.W1;
                         _mainForm.W2_TextBox.Text = data.W2;
                         _mainForm.W3_TextBox.Text = data.W3;
                         _mainForm.Wa_TextBox.Text = data.Wa;
                         _mainForm.Wc_TextBox.Text = data.Wc;
-                        _mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
+                        //_mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
+                        ParseAndAssign(data.Wc, _mainForm.NonDesorpGasQtyTextBox, _mainForm.NonDesorpGasQtyCheckBox);
                         _mainForm.W_TextBox.Text = data.W;
-                        _mainForm.P_TextBox.Text = data.P;
+                        //_mainForm.P_TextBox.Text = data.P;
+                        ParseAndAssign(data.P, _mainForm.P_TextBox, _mainForm.P_CheckBox);
 
-                        _mainForm.CH4TextBox.Text = data.CH4;
-                        _mainForm.CO2TextBox.Text = data.CO2;
-                        _mainForm.N2TextBox.Text = data.N2;
-                        _mainForm.O2TextBox.Text = data.O2;
-                        _mainForm.C2H4TextBox.Text = data.C2H4;
-                        _mainForm.C3H8TextBox.Text = data.C3H8;
-                        _mainForm.C2H6TextBox.Text = data.C2H6;
-                        _mainForm.C3H6TextBox.Text = data.C3H6;
-                        _mainForm.C2H2TextBox.Text = data.C2H2;
-                        _mainForm.COTextBox.Text = data.CO;
+                        //_mainForm.CH4TextBox.Text = data.CH4;
+                        //_mainForm.CO2TextBox.Text = data.CO2;
+                        //_mainForm.N2TextBox.Text = data.N2;
+                        //_mainForm.O2TextBox.Text = data.O2;
+                        //_mainForm.C2H4TextBox.Text = data.C2H4;
+                        //_mainForm.C3H8TextBox.Text = data.C3H8;
+                        //_mainForm.C2H6TextBox.Text = data.C2H6;
+                        //_mainForm.C3H6TextBox.Text = data.C3H6;
+                        //_mainForm.C2H2TextBox.Text = data.C2H2;
+                        //_mainForm.COTextBox.Text = data.CO;
+                        ParseAndAssign(data.CH4, _mainForm.CH4TextBox, _mainForm.CH4CheckBox);
+                        ParseAndAssign(data.CO2, _mainForm.CO2TextBox, _mainForm.CO2CheckBox);
+                        ParseAndAssign(data.N2, _mainForm.N2TextBox, _mainForm.N2CheckBox);
+                        ParseAndAssign(data.O2, _mainForm.O2TextBox, _mainForm.O2CheckBox);
+                        ParseAndAssign(data.C2H4, _mainForm.C2H4TextBox, _mainForm.C2H4CheckBox);
+                        ParseAndAssign(data.C3H8, _mainForm.C3H8TextBox, _mainForm.C3H8CheckBox);
+                        ParseAndAssign(data.C2H6, _mainForm.C2H6TextBox, _mainForm.C2H6CheckBox);
+                        ParseAndAssign(data.C3H6, _mainForm.C3H6TextBox, _mainForm.C3H6CheckBox);
+                        ParseAndAssign(data.C2H2, _mainForm.C2H2TextBox, _mainForm.C2H2CheckBox);
+                        ParseAndAssign(data.CO, _mainForm.COTextBox, _mainForm.COCheckBox);
+
 
                         _mainForm.dateTimePicker6.Value = DateTime.Parse(data.测试时间);
                         _mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
-                        _mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
+                        //_mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
+                        ParseAndAssign(data.井下测试人员, _mainForm.DownholeTestersTextBox, _mainForm.DownholeTestersCheckBox);
                         _mainForm.LabTestersTextBox.Text = data.实验室测试人员;
                         _mainForm.AuditorTextBox.Text = data.审核人员;
                         _mainForm.RemarkTextBox.Text = data.备注;
@@ -1013,36 +1090,36 @@ namespace GasFormsApp.TabControl
                     最终粉碎解吸量 = _mainForm.CrushDesorpTextBox.Text,
 
                     // tab4
-                    吸附常数a = _mainForm.AdsorpConstATextBox.Text,
-                    吸附常数b = _mainForm.AdsorpConstBTextBox.Text,
-                    水分 = _mainForm.MadTextBox.Text,
-                    灰分 = _mainForm.AadTextBox.Text,
-                    孔隙率 = _mainForm.PorosityTextBox.Text,
-                    视相对密度 = _mainForm.AppDensityTextBox.Text,
-                    真密度 = _mainForm.TrueDensityTextBox.Text,
-                    挥发分 = _mainForm.VadTextBox.Text,
+                    吸附常数a = _mainForm.AdsorpConstATextBox.Text + $"[{_mainForm.AdsorpConstACheckBox.Checked}]",
+                    吸附常数b = _mainForm.AdsorpConstBTextBox.Text + $"[{_mainForm.AdsorpConstBCheckBox.Checked}]",
+                    水分 = _mainForm.MadTextBox.Text + $"[{_mainForm.MadCheckBox.Checked}]",
+                    灰分 = _mainForm.AadTextBox.Text + $"[{_mainForm.AadCheckBox.Checked}]",
+                    孔隙率 = _mainForm.PorosityTextBox.Text + $"[{_mainForm.PorosityCheckBox.Checked}]",
+                    视相对密度 = _mainForm.AppDensityTextBox.Text + $"[{_mainForm.AppDensityCheckBox.Checked}]",
+                    真密度 = _mainForm.TrueDensityTextBox.Text + $"[{_mainForm.TrueDensityCheckBox.Checked}]",
+                    挥发分 = _mainForm.VadTextBox.Text + $"[{_mainForm.VadCheckBox.Checked}]",
                     W1 = _mainForm.W1_TextBox.Text,
                     W2 = _mainForm.W2_TextBox.Text,
                     W3 = _mainForm.W3_TextBox.Text,
                     Wa = _mainForm.Wa_TextBox.Text,
-                    Wc = _mainForm.Wc_TextBox.Text,
+                    Wc = _mainForm.Wc_TextBox.Text + $"[{_mainForm.NonDesorpGasQtyCheckBox.Checked}]",
                     W = _mainForm.W_TextBox.Text,
-                    P = _mainForm.P_TextBox.Text,
+                    P = _mainForm.P_TextBox.Text + $"[{_mainForm.P_CheckBox.Checked}]",
 
                     // tab5
-                    CH4 = _mainForm.CH4TextBox.Text,
-                    CO2 = _mainForm.CO2TextBox.Text,
-                    N2 = _mainForm.N2TextBox.Text,
-                    O2 = _mainForm.O2TextBox.Text,
-                    C2H4 = _mainForm.C2H4TextBox.Text,
-                    C3H8 = _mainForm.C3H8TextBox.Text,
-                    C2H6 = _mainForm.C2H6TextBox.Text,
-                    C3H6 = _mainForm.C3H6TextBox.Text,
-                    C2H2 = _mainForm.C2H2TextBox.Text,
-                    CO = _mainForm.COTextBox.Text,
+                    CH4 = _mainForm.CH4TextBox.Text + $"[{_mainForm.CH4CheckBox.Checked}]",
+                    CO2 = _mainForm.CO2TextBox.Text + $"[{_mainForm.CO2CheckBox.Checked}]",
+                    N2 = _mainForm.N2TextBox.Text + $"[{_mainForm.N2CheckBox.Checked}]",
+                    O2 = _mainForm.O2TextBox.Text + $"[{_mainForm.O2CheckBox.Checked}]",
+                    C2H4 = _mainForm.C2H4TextBox.Text + $"[{_mainForm.C2H4CheckBox.Checked}]",
+                    C3H8 = _mainForm.C3H8TextBox.Text + $"[{_mainForm.C3H8CheckBox.Checked}]",
+                    C2H6 = _mainForm.C2H6TextBox.Text + $"[{_mainForm.C2H6CheckBox.Checked}]",
+                    C3H6 = _mainForm.C3H6TextBox.Text + $"[{_mainForm.C3H6CheckBox.Checked}]",
+                    C2H2 = _mainForm.C2H2TextBox.Text + $"[{_mainForm.C2H2CheckBox.Checked}]",
+                    CO = _mainForm.COTextBox.Text + $"[{_mainForm.COCheckBox.Checked}]",
                     测试时间 = _mainForm.dateTimePicker6.Text,
                     出报告时间 = _mainForm.dateTimePicker1.Text,
-                    井下测试人员 = _mainForm.DownholeTestersTextBox.Text,
+                    井下测试人员 = _mainForm.DownholeTestersTextBox.Text + $"[{_mainForm.DownholeTestersCheckBox.Checked}]",
                     实验室测试人员 = _mainForm.LabTestersTextBox.Text,
                     审核人员 = _mainForm.AuditorTextBox.Text,
                     备注 = _mainForm.RemarkTextBox.Text,
