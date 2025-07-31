@@ -748,7 +748,7 @@ namespace GasFormsApp
                 tabControl4PictureBox.Visible = false;
                 tabControl5PictureBox.Visible = false;
                 tabControl6PictureBox.Visible = false;
-                panel1.Location = new System.Drawing.Point(200,73);
+                panel1.Location = new System.Drawing.Point(200,70);
             }
             //else
             //{

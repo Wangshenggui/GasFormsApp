@@ -5124,7 +5124,7 @@ namespace GasFormsApp
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.panel1.Location = new System.Drawing.Point(606, 70);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(574, 96);
+            this.panel1.Size = new System.Drawing.Size(617, 96);
             this.panel1.TabIndex = 1003;
             // 
             // tabPage6contextMenuStrip1
@@ -5346,7 +5346,7 @@ namespace GasFormsApp
             // 恢复上次编辑ToolStripMenuItem
             // 
             this.恢复上次编辑ToolStripMenuItem.Name = "恢复上次编辑ToolStripMenuItem";
-            this.恢复上次编辑ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.恢复上次编辑ToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.恢复上次编辑ToolStripMenuItem.Text = "恢复上次编辑";
             // 
             // 账户ToolStripMenuItem

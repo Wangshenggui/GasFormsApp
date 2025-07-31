@@ -18,49 +18,50 @@ using System.IO;                   // 文件操作
 using CredentialManagement;
 using DialogResult = System.Windows.Forms.DialogResult;
 using System.Security.Cryptography.X509Certificates;
+using System.Net.NetworkInformation;
 
 namespace GasFormsApp
 {
     public partial class LoginForm : Form
     {
         int version = -1;  // -1表示验证失败
-        // 获取主板+CPU序列号（组合唯一识别码）
-        public static string GetMotherboardAndCpuId()
-        {
-            string motherboardSN = GetMotherboardSerialNumber();
-            string cpuId = GetCpuId();
-            return $"{motherboardSN}-{cpuId}";
-        }
+        //// 获取主板+CPU序列号（组合唯一识别码）
+        //public static string GetMotherboardAndCpuId()
+        //{
+        //    string motherboardSN = GetMotherboardSerialNumber();
+        //    string cpuId = GetCpuId();
+        //    return $"{motherboardSN}-{cpuId}";
+        //}
 
-        // 获取主板序列号
-        public static string GetMotherboardSerialNumber()
-        {
-            try
-            {
-                using (var searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard"))
-                {
-                    foreach (ManagementObject obj in searcher.Get())
-                        return obj["SerialNumber"]?.ToString().Trim() ?? "UNKNOWN";
-                }
-            }
-            catch { }
-            return "UNKNOWN";
-        }
+        //// 获取主板序列号
+        //public static string GetMotherboardSerialNumber()
+        //{
+        //    try
+        //    {
+        //        using (var searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard"))
+        //        {
+        //            foreach (ManagementObject obj in searcher.Get())
+        //                return obj["SerialNumber"]?.ToString().Trim() ?? "UNKNOWN";
+        //        }
+        //    }
+        //    catch { }
+        //    return "UNKNOWN";
+        //}
 
-        // 获取 CPU ID
-        public static string GetCpuId()
-        {
-            try
-            {
-                using (var searcher = new ManagementObjectSearcher("SELECT ProcessorId FROM Win32_Processor"))
-                {
-                    foreach (ManagementObject obj in searcher.Get())
-                        return obj["ProcessorId"]?.ToString().Trim() ?? "UNKNOWN";
-                }
-            }
-            catch { }
-            return "UNKNOWN";
-        }
+        //// 获取 CPU ID
+        //public static string GetCpuId()
+        //{
+        //    try
+        //    {
+        //        using (var searcher = new ManagementObjectSearcher("SELECT ProcessorId FROM Win32_Processor"))
+        //        {
+        //            foreach (ManagementObject obj in searcher.Get())
+        //                return obj["ProcessorId"]?.ToString().Trim() ?? "UNKNOWN";
+        //        }
+        //    }
+        //    catch { }
+        //    return "UNKNOWN";
+        //}
 
         // 使用 RSA 公钥验证签名合法性
         public static bool VerifyData(string data, byte[] signature, string publicKeyXml)
@@ -73,7 +74,75 @@ namespace GasFormsApp
             }
         }
 
+        private string GetCpuId()
+        {
+            try
+            {
+                using (ManagementClass mc = new ManagementClass("Win32_Processor"))
+                {
+                    foreach (ManagementObject mo in mc.GetInstances())
+                    {
+                        return mo["ProcessorId"] != null ? mo["ProcessorId"].ToString() : "";
+                    }
+                }
+            }
+            catch { }
+            return "";
+        }
 
+        private string GetDiskSerialNumber()
+        {
+            try
+            {
+                using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_PhysicalMedia"))
+                {
+                    foreach (ManagementObject mo in searcher.Get())
+                    {
+                        if (mo["SerialNumber"] != null)
+                        {
+                            string serial = mo["SerialNumber"].ToString();
+                            if (!string.IsNullOrWhiteSpace(serial))
+                                return serial.Trim();
+                        }
+                    }
+                }
+            }
+            catch { }
+            return "";
+        }
+
+        private string GetMacAddress()
+        {
+            try
+            {
+                NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+                foreach (NetworkInterface nic in nics)
+                {
+                    if (nic.NetworkInterfaceType != NetworkInterfaceType.Loopback && nic.OperationalStatus == OperationalStatus.Up)
+                    {
+                        return nic.GetPhysicalAddress().ToString();
+                    }
+                }
+            }
+            catch { }
+            return "";
+        }
+
+        private string GetMotherboardId()
+        {
+            try
+            {
+                using (ManagementClass mc = new ManagementClass("Win32_BaseBoard"))
+                {
+                    foreach (ManagementObject mo in mc.GetInstances())
+                    {
+                        return mo["SerialNumber"] != null ? mo["SerialNumber"].ToString() : "";
+                    }
+                }
+            }
+            catch { }
+            return "";
+        }
         // 定义三个公钥（最好提到类的静态字段或配置里）
         readonly string[] PublicKeys = new string[]
         {
@@ -83,7 +152,55 @@ namespace GasFormsApp
         };
         private void CheckActivation()
         {
-            var code = GasFormsApp.Settings.Default.MachineCode;
+            string cpuId = GetCpuId();
+            string diskSerial = GetDiskSerialNumber();
+            string macAddress = GetMacAddress();
+            string motherboardId = GetMotherboardId();
+
+            string combinedInfo = cpuId + diskSerial + macAddress + motherboardId;
+
+            //MessageBox.Show($"设备ID：{combinedInfo}");
+
+            var code = "";
+            // 生成哈希
+            byte[] bytes = Encoding.UTF8.GetBytes(combinedInfo);
+            //using (SHA256 sha256 = SHA256.Create())
+            //{
+            //    byte[] hashBytes = sha256.ComputeHash(bytes);
+            //    string base64Hash = Convert.ToBase64String(hashBytes);
+
+            //    Console.WriteLine("硬件组合信息: " + combinedInfo);
+            //    Console.WriteLine("Base64 哈希结果: " + base64Hash);
+
+            //    //GasFormsApp.Settings.Default.MachineCode = base64Hash;
+            //    //GasFormsApp.Settings.Default.Save();
+
+            //    code = base64Hash;
+            //}
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < 5; i++) // 取前5字节，每个字节2位，共10位
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+
+                // raw: e.g., "1A2B3C4D5E"
+                string raw = sb.ToString().ToUpper();
+
+                // 格式化：XXXXX-XXXXX
+                string formatted = string.Format("{0}-{1}",
+                    raw.Substring(0, 5),
+                    raw.Substring(5, 5));
+
+                code = formatted;
+                Console.WriteLine("激活码: " + formatted);
+            }
+
+
+            //var code = GasFormsApp.Settings.Default.MachineCode;
             byte[] signature = null;
 
             if (string.IsNullOrEmpty(code))
@@ -125,7 +242,7 @@ namespace GasFormsApp
             }
 
             // 最后再验证一遍新输入的激活码（或原始的）
-            version = VerifyAndGetVersion(GasFormsApp.Settings.Default.MachineCode, signature);
+            version = VerifyAndGetVersion(code, signature);
             if (version == -1)
             {
                 MessageBox.Show("激活码无效！");

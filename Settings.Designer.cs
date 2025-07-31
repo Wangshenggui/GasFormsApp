@@ -86,18 +86,6 @@ namespace GasFormsApp {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string MachineCode {
-            get {
-                return ((string)(this["MachineCode"]));
-            }
-            set {
-                this["MachineCode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ActivateKey {
             get {
                 return ((string)(this["ActivateKey"]));

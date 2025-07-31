@@ -17,9 +17,6 @@
     <Setting Name="OfficeType" Type="System.String" Scope="User">
       <Value Profile="(Default)">WPS</Value>
     </Setting>
-    <Setting Name="MachineCode" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="ActivateKey" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

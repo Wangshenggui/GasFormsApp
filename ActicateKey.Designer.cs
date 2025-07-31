@@ -82,6 +82,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(239)))), ((int)(((byte)(216)))));
             this.label1.Location = new System.Drawing.Point(26, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 23);
@@ -91,6 +92,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label2.Location = new System.Drawing.Point(72, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(251, 25);
@@ -102,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(383, 223);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -125,8 +127,8 @@
         private AntdUI.Button CloseButton;
         private AntdUI.Button ActivationButton;
         private AntdUI.Input ActivationCodeInput;
-        private AntdUI.Input UniqueIDInput;
         private AntdUI.Label label1;
         private AntdUI.Label label2;
+        private AntdUI.Input UniqueIDInput;
     }
 }
