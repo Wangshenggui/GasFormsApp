@@ -151,21 +151,27 @@ namespace GasFormsApp.TabControl
             int margin = 0;
             int verticalMargin = 8;
 
-            Color textColor = Color.White;
+            bool isSelected = (e.Node == _mainForm.treeView1.SelectedNode);
+            bool treeViewFocused = _mainForm.treeView1.Focused;
+
+            Color textColor = _mainForm.treeView1.ForeColor;
+
+            if (isSelected)
+            {
+                Color bgColor = treeViewFocused ? SystemColors.Highlight : Color.LightGray;
+                Color fgColor = treeViewFocused ? SystemColors.HighlightText : Color.Black;
+
+                e.Graphics.FillRectangle(new SolidBrush(bgColor), e.Bounds);
+                textColor = fgColor;
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(_mainForm.treeView1.BackColor), e.Bounds);
+            }
 
             int matchIndex = -1;
             if (!string.IsNullOrEmpty(keyword))
                 matchIndex = text.ToLower().IndexOf(keyword.ToLower());
-
-            // **先用 TreeView 的背景色清理整行区域，避免遗留旧的绘制痕迹**
-            e.Graphics.FillRectangle(new SolidBrush(_mainForm.treeView1.BackColor), e.Bounds);
-
-            // 如果选中则绘制高亮背景并设置文字颜色
-            if ((e.State & TreeNodeStates.Selected) != 0)
-            {
-                e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
-                textColor = SystemColors.HighlightText;
-            }
 
             float x = e.Bounds.Left + margin;
             float y = e.Bounds.Top + verticalMargin;
@@ -184,21 +190,16 @@ namespace GasFormsApp.TabControl
             TextRenderer.DrawText(e.Graphics, before, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
             x += beforeSize.Width;
 
-            Size matchSize = TextRenderer.MeasureText(e.Graphics, matchText, font, e.Bounds.Size, TextFormatFlags.NoPadding);
-            //TextRenderer.DrawText(e.Graphics, matchText, font, new Point((int)x, (int)y),
-            //    (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.FromArgb(48, 227, 202),
-            //    TextFormatFlags.NoPadding);
-            // 绘制文本
             Font boldFont = new Font(font, FontStyle.Bold);
             TextRenderer.DrawText(
                 e.Graphics,
                 matchText,
                 boldFont,
                 new Point((int)x, (int)y),
-                (e.State & TreeNodeStates.Selected) != 0 ? SystemColors.HighlightText : Color.Red,
+                textColor, // 用同样的 textColor，不用再分开判断
                 TextFormatFlags.NoPadding
             );
-            x += matchSize.Width;
+            x += TextRenderer.MeasureText(e.Graphics, matchText, boldFont, e.Bounds.Size, TextFormatFlags.NoPadding).Width;
 
             TextRenderer.DrawText(e.Graphics, after, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
         }

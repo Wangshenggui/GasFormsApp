@@ -118,5 +118,17 @@ namespace GasFormsApp {
                 this["Tab6SearchForMinesText"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
+        public int Tab6SplitContainerLeftWidth {
+            get {
+                return ((int)(this["Tab6SplitContainerLeftWidth"]));
+            }
+            set {
+                this["Tab6SplitContainerLeftWidth"] = value;
+            }
+        }
     }
 }

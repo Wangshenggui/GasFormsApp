@@ -392,13 +392,13 @@ namespace GasFormsApp
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label17 = new System.Windows.Forms.Label();
+            this.FindMineTextBox = new AntdUI.Input();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.FindMineTextBox = new System.Windows.Forms.TextBox();
             this.tabPage6panel1 = new System.Windows.Forms.Panel();
+            this.FindTextBox = new AntdUI.Input();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.FindTextBox = new System.Windows.Forms.TextBox();
             this.ExportTheDocumentButton = new System.Windows.Forms.Button();
             this.DeleteDataButton = new System.Windows.Forms.Button();
             this.ReloadDataButton = new System.Windows.Forms.Button();
@@ -4860,15 +4860,15 @@ namespace GasFormsApp
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.splitContainer1.Panel1.Controls.Add(this.label17);
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
             this.splitContainer1.Panel1.Controls.Add(this.FindMineTextBox);
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabPage6panel1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(776, 387);
-            this.splitContainer1.SplitterDistance = 162;
+            this.splitContainer1.SplitterDistance = 150;
             this.splitContainer1.TabIndex = 37;
             // 
             // label17
@@ -4884,6 +4884,15 @@ namespace GasFormsApp
             this.label17.Size = new System.Drawing.Size(87, 16);
             this.label17.TabIndex = 38;
             this.label17.Text = "查找矿井：";
+            // 
+            // FindMineTextBox
+            // 
+            this.FindMineTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FindMineTextBox.Location = new System.Drawing.Point(2, 25);
+            this.FindMineTextBox.Name = "FindMineTextBox";
+            this.FindMineTextBox.PlaceholderText = "输入矿井名称";
+            this.FindMineTextBox.Size = new System.Drawing.Size(266, 35);
+            this.FindMineTextBox.TabIndex = 1011;
             // 
             // treeView1
             // 
@@ -4912,7 +4921,7 @@ namespace GasFormsApp
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3});
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(160, 325);
+            this.treeView1.Size = new System.Drawing.Size(148, 325);
             this.treeView1.TabIndex = 1;
             // 
             // imageList2
@@ -4923,31 +4932,32 @@ namespace GasFormsApp
             this.imageList2.Images.SetKeyName(1, "根目录");
             this.imageList2.Images.SetKeyName(2, "矿井");
             // 
-            // FindMineTextBox
-            // 
-            this.FindMineTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FindMineTextBox.Location = new System.Drawing.Point(6, 29);
-            this.FindMineTextBox.Name = "FindMineTextBox";
-            this.FindMineTextBox.Size = new System.Drawing.Size(266, 26);
-            this.FindMineTextBox.TabIndex = 37;
-            // 
             // tabPage6panel1
             // 
             this.tabPage6panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPage6panel1.AutoScroll = true;
             this.tabPage6panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(64)))), ((int)(((byte)(89)))));
+            this.tabPage6panel1.Controls.Add(this.FindTextBox);
             this.tabPage6panel1.Controls.Add(this.pictureBox2);
             this.tabPage6panel1.Controls.Add(this.label30);
-            this.tabPage6panel1.Controls.Add(this.FindTextBox);
             this.tabPage6panel1.Controls.Add(this.ExportTheDocumentButton);
             this.tabPage6panel1.Controls.Add(this.DeleteDataButton);
             this.tabPage6panel1.Controls.Add(this.ReloadDataButton);
-            this.tabPage6panel1.Location = new System.Drawing.Point(285, 0);
+            this.tabPage6panel1.Location = new System.Drawing.Point(297, 0);
             this.tabPage6panel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.tabPage6panel1.Name = "tabPage6panel1";
             this.tabPage6panel1.Size = new System.Drawing.Size(324, 387);
             this.tabPage6panel1.TabIndex = 37;
+            // 
+            // FindTextBox
+            // 
+            this.FindTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FindTextBox.Location = new System.Drawing.Point(32, 360);
+            this.FindTextBox.Name = "FindTextBox";
+            this.FindTextBox.PlaceholderText = "输入矿井名称";
+            this.FindTextBox.Size = new System.Drawing.Size(266, 35);
+            this.FindTextBox.TabIndex = 1012;
             // 
             // pictureBox2
             // 
@@ -4972,19 +4982,11 @@ namespace GasFormsApp
             this.label30.TabIndex = 7;
             this.label30.Text = "查找内容：";
             // 
-            // FindTextBox
-            // 
-            this.FindTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FindTextBox.Location = new System.Drawing.Point(32, 360);
-            this.FindTextBox.Name = "FindTextBox";
-            this.FindTextBox.Size = new System.Drawing.Size(266, 26);
-            this.FindTextBox.TabIndex = 6;
-            // 
             // ExportTheDocumentButton
             // 
             this.ExportTheDocumentButton.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ExportTheDocumentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportTheDocumentButton.Location = new System.Drawing.Point(3, 392);
+            this.ExportTheDocumentButton.Location = new System.Drawing.Point(191, 318);
             this.ExportTheDocumentButton.Name = "ExportTheDocumentButton";
             this.ExportTheDocumentButton.Size = new System.Drawing.Size(53, 21);
             this.ExportTheDocumentButton.TabIndex = 4;
@@ -5055,7 +5057,7 @@ namespace GasFormsApp
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(279, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(291, 387);
             this.dataGridView1.StandardTab = true;
             this.dataGridView1.TabIndex = 0;
             // 
@@ -5529,7 +5531,6 @@ namespace GasFormsApp
         private TabPage tabPage6;
         public DataGridView dataGridView1;
         public Button ReloadDataButton;
-        public TextBox FindTextBox;
         public PictureBox pictureBox2;
         public Button DeleteDataButton;
         public Label label30;
@@ -5676,7 +5677,6 @@ namespace GasFormsApp
         private ColorDialog colorDialog1;
         private ImageList imageList2;
         public Label label17;
-        public TextBox FindMineTextBox;
         private ImageList imageList1;
         private PictureBox tabControl2PictureBox;
         private PictureBox tabControl3PictureBox;
@@ -5899,5 +5899,7 @@ namespace GasFormsApp
         public ToolStripMenuItem 删除项目ToolStripMenuItem;
         public ToolStripMenuItem 删除煤矿及项目ToolStripMenuItem;
         public ToolStripMenuItem 重命名ToolStripMenuItem;
+        public AntdUI.Input FindMineTextBox;
+        public AntdUI.Input FindTextBox;
     }
 }

@@ -764,6 +764,10 @@ namespace GasFormsApp
             //    tabControl6PictureBox.Visible = false;
             //    panel1.Location = new System.Drawing.Point(200, 73);
             //}
+
+            // 不能提前设置
+            splitContainer1.SplitterDistance = GasFormsApp.Settings.Default.Tab6SplitContainerLeftWidth;
+
             tabControl1_isInitializing = false;
             //开启定时器
             InputCheckTimer.Enabled = true;
@@ -1414,6 +1418,11 @@ namespace GasFormsApp
             {
                 //MessageBox.Show("没有选中任何节点");
             }
+
+
+            //MessageBox.Show($"左边宽度：{splitContainer1.SplitterDistance}");
+            // 保存数据管理界面文件树布局左边宽度
+            GasFormsApp.Settings.Default.Tab6SplitContainerLeftWidth = splitContainer1.SplitterDistance;
 
             GasFormsApp.Settings.Default.Save();
         }
