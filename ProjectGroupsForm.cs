@@ -144,21 +144,33 @@ namespace GasFormsApp
             AddSubDirectories(rootDir, rootNode, 1);
 
             // 展开上次节点节点，方便查看
-            string savedNodeText = GasFormsApp.Settings.Default.SearchForMinesText;
+            string savedNodeText = GasFormsApp.Settings.Default.Tab6SearchForMinesText;
             //treeView1.ExpandAll();
             foreach (TreeNode node in treeView1.Nodes)
             {
                 // 第一级全部展开
                 node.Expand();
+
+                TreeNode targetChild = null;
+
                 foreach (TreeNode child in node.Nodes)
                 {
-                    // SearchForMinesText
                     if (child.Text == savedNodeText)
                     {
                         child.Expand();
+                        targetChild = child;  // 记录找到的子节点
+                        break;               // 如果确定唯一，找到后可以跳出
                     }
                 }
+
+                if (targetChild != null)
+                {
+                    // 移动 targetChild 到该一级节点的第一个子节点位置
+                    node.Nodes.Remove(targetChild);
+                    node.Nodes.Insert(0, targetChild);
+                }
             }
+
         }
         /// <summary>
         /// 递归添加指定目录的所有子目录到指定父节点下

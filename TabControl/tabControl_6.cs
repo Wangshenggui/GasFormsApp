@@ -105,6 +105,7 @@ namespace GasFormsApp.TabControl
 
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
+            _mainForm.treeView1.AfterExpand += treeView1_AfterExpand;
 
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
             _mainForm.导出矿井Excel统计表ToolStripMenuItem.Click += 导出矿井Excel统计表ToolStripMenuItem_Click;
@@ -118,6 +119,11 @@ namespace GasFormsApp.TabControl
             // 启动当前tab定时器
             _mainForm.tab6Timer1.Enabled = true;
             _mainForm.tab6Timer1.Tick += tab6Timer1_Tick;
+        }
+        // 防止展开节点出现残影
+        private void treeView1_AfterExpand(object sender, TreeViewEventArgs e)
+        {
+            _mainForm.treeView1.Invalidate();
         }
 
         // 1s定时器
@@ -667,7 +673,35 @@ namespace GasFormsApp.TabControl
             AddSubDirectories(rootDir, rootNode, 1);
 
             // 展开所有节点，方便查看
-            _mainForm.treeView1.ExpandAll();
+            //_mainForm.treeView1.ExpandAll();
+            // 展开上次节点节点，方便查看
+            string savedNodeText = GasFormsApp.Settings.Default.Tab6SearchForMinesText;
+            //treeView1.ExpandAll();
+            foreach (TreeNode node in _mainForm.treeView1.Nodes)
+            {
+                // 第一级全部展开
+                node.Expand();
+
+                TreeNode targetChild = null;
+
+                foreach (TreeNode child in node.Nodes)
+                {
+                    if (child.Text == savedNodeText)
+                    {
+                        child.Expand();
+                        targetChild = child;  // 记录找到的子节点
+                        break;               // 如果确定唯一，找到后可以跳出
+                    }
+                }
+
+                if (targetChild != null)
+                {
+                    // 移动 targetChild 到该一级节点的第一个子节点位置
+                    node.Nodes.Remove(targetChild);
+                    node.Nodes.Insert(0, targetChild);
+                }
+            }
+
             if (_mainForm.treeView1.Nodes.Count > 0)
             {
                 _mainForm.treeView1.TopNode = _mainForm.treeView1.Nodes[0];
@@ -955,7 +989,7 @@ namespace GasFormsApp.TabControl
             }
             else
             {
-                MessageBox.Show($"已取消");
+                //MessageBox.Show($"已取消");
                 return false;
             }
             string selectedPath = newForm.ResultData;

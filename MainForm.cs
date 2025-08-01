@@ -1352,6 +1352,69 @@ namespace GasFormsApp
                 GasFormsApp.Settings.Default.WindowSize = this.RestoreBounds.Size;
             }
             GasFormsApp.Settings.Default.WindowState = this.WindowState;
+            //GasFormsApp.Settings.Default.Save();
+
+            // 获取当前选中节点
+            TreeNode selectedNode = treeView1.SelectedNode;
+            if (selectedNode != null)
+            {
+                // TreeNode.Level：从0开始，根节点是0级，子节点是1级，以此类推
+                int level = selectedNode.Level;
+
+                // 因为你可能更习惯用“第一级”“第二级”，可以 +1
+                int displayLevel = level + 1;
+
+                if(displayLevel == 1)
+                {
+
+                }
+                else if (displayLevel == 2)
+                {
+                    //MessageBox.Show($"当前选中节点是第 {displayLevel} 级");
+
+                    // 获取当前目录的目录信息
+                    DirectoryInfo currentDir = new DirectoryInfo(selectedNode.Tag?.ToString());
+                    if (currentDir != null)
+                    {
+                        //MessageBox.Show($"{currentDir.Name}");
+                        GasFormsApp.Settings.Default.Tab6SearchForMinesText = currentDir.Name;
+                    }
+                    else
+                    {
+                        Console.WriteLine("没有目录");
+                    }
+                }
+                else if (displayLevel == 3)
+                {
+                    //MessageBox.Show($"当前选中节点是第 {displayLevel} 级");
+
+                    // 获取当前目录的目录信息
+                    DirectoryInfo currentDir = new DirectoryInfo(selectedNode.Tag?.ToString());
+                    // 上一级目录
+                    DirectoryInfo parentDir = currentDir.Parent;
+                    if (parentDir != null)
+                    {
+                        Console.WriteLine("当前目录名: " + currentDir.Name);
+                        Console.WriteLine("上一级目录名: " + parentDir.Name);
+
+
+                        //MessageBox.Show($"{parentDir.Name}");
+                        GasFormsApp.Settings.Default.Tab6SearchForMinesText = parentDir.Name;
+                        //GasFormsApp.Settings.Default.Save();
+
+                        //MessageBox.Show($"{GasFormsApp.Settings.Default.Tab6SearchForMinesText}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("没有上一级目录");
+                    }
+                }
+            }
+            else
+            {
+                //MessageBox.Show("没有选中任何节点");
+            }
+
             GasFormsApp.Settings.Default.Save();
         }
 

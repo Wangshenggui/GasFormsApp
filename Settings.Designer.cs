@@ -106,5 +106,17 @@ namespace GasFormsApp {
                 this["SearchForMinesText"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Tab6SearchForMinesText {
+            get {
+                return ((string)(this["Tab6SearchForMinesText"]));
+            }
+            set {
+                this["Tab6SearchForMinesText"] = value;
+            }
+        }
     }
 }
