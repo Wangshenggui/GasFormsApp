@@ -424,6 +424,11 @@ namespace GasFormsApp.TabControl
                         _mainForm.W3_TextBox.Text = data.W3;
                         _mainForm.Wa_TextBox.Text = data.Wa;
                         _mainForm.Wc_TextBox.Text = data.Wc;
+                        var result = ParseNumberAndBool(data.Wc);
+                        if (result != null)
+                        {
+                            _mainForm.Wc_TextBox.Text = result.Value.numberPart;
+                        }
                         //_mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
                         ParseAndAssign(data.Wc, _mainForm.NonDesorpGasQtyTextBox, _mainForm.NonDesorpGasQtyCheckBox);
                         _mainForm.W_TextBox.Text = data.W;
@@ -2410,10 +2415,11 @@ namespace GasFormsApp.TabControl
                                             w = 0; // 转换失败时默认用 0（也可以用其他默认值）
                                         }
                                         // 尝试转换 P
-                                        if (!double.TryParse(user.P, out p))
+                                        if (!double.TryParse(user.P.Split('[')[0], out p))
                                         {
                                             p = 0;
                                         }
+                                        
                                         // 写到 H 列
                                         cell = worksheet.Cell("H" + (4 + i));
                                         cell.Value = w;

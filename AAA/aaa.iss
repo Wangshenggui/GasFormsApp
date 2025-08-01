@@ -3,12 +3,13 @@
 
 #define MyAppName "瓦斯含量测定数据分析系统"                         ; 应用程序名称
 #define MyAppVersion "1.5"                              ; 应用程序版本
-#define MyAppPublisher "My Company, Inc."               ; 发布者名称
-#define MyAppURL "https://www.example.com/"             ; 官方网址
+#define MyAppPublisher "贵州省煤安技术服务有限公司"               ; 发布者名称
+#define MyAppURL ""             ; 官方网址
 #define MyAppExeName "瓦斯含量测定数据分析系统.exe"                  ; 主程序可执行文件名
 #define MyAppAssocName MyAppName + " File"              ; 文件关联显示的名称
 #define MyAppAssocExt ".myp"                            ; 文件关联的扩展名
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt  ; 注册表键名（去掉空格）
+
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -27,7 +28,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\17851\Desktop\0B工程\GasFormsApp\AAA打包\AAA
+OutputDir=C:\Users\17851\Desktop\0B工程\GasFormsApp\AAA
 OutputBaseFilename=瓦斯含量测定数据分析系统
 SolidCompression=yes
 WizardStyle=modern
@@ -42,7 +43,7 @@ Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.i
 ; 定义额外任务，这里是“创建桌面快捷方式”，默认不勾选
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
-#define SrcRoot "C:\Users\17851\Desktop\0B工程\GasFormsApp\0A"          ; 定义源文件根目录
+#define SrcRoot "C:\Users\17851\Desktop\0B工程\GasFormsApp\AAA打包"          ; 定义源文件根目录
 
 [Files]
 ; 打包整个 SrcRoot 文件夹下的所有文件和子目录到安装目录
@@ -69,3 +70,6 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 [Run]
 ; 安装完成后运行主程序
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+
+

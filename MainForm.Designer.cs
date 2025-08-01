@@ -563,7 +563,7 @@ namespace GasFormsApp
             // tabPage1panel2
             // 
             this.tabPage1panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
-            this.tabPage1panel2.Location = new System.Drawing.Point(652, 39);
+            this.tabPage1panel2.Location = new System.Drawing.Point(671, 20);
             this.tabPage1panel2.Name = "tabPage1panel2";
             this.tabPage1panel2.Size = new System.Drawing.Size(47, 251);
             this.tabPage1panel2.TabIndex = 2;
@@ -2252,6 +2252,7 @@ namespace GasFormsApp
             this.DataNumTextBox60.Radius = 2;
             this.DataNumTextBox60.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox60.TabIndex = 95;
+            this.DataNumTextBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox50
             // 
@@ -2262,6 +2263,7 @@ namespace GasFormsApp
             this.DataNumTextBox50.Radius = 2;
             this.DataNumTextBox50.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox50.TabIndex = 75;
+            this.DataNumTextBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox40
             // 
@@ -2272,6 +2274,7 @@ namespace GasFormsApp
             this.DataNumTextBox40.Radius = 2;
             this.DataNumTextBox40.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox40.TabIndex = 55;
+            this.DataNumTextBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox59
             // 
@@ -2282,6 +2285,7 @@ namespace GasFormsApp
             this.DataNumTextBox59.Radius = 2;
             this.DataNumTextBox59.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox59.TabIndex = 93;
+            this.DataNumTextBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox60
             // 
@@ -2301,6 +2305,7 @@ namespace GasFormsApp
             this.DataNumTextBox49.Radius = 2;
             this.DataNumTextBox49.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox49.TabIndex = 73;
+            this.DataNumTextBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox58
             // 
@@ -2311,6 +2316,7 @@ namespace GasFormsApp
             this.DataNumTextBox58.Radius = 2;
             this.DataNumTextBox58.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox58.TabIndex = 91;
+            this.DataNumTextBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label27
             // 
@@ -2333,6 +2339,7 @@ namespace GasFormsApp
             this.DataNumTextBox39.Radius = 2;
             this.DataNumTextBox39.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox39.TabIndex = 53;
+            this.DataNumTextBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox57
             // 
@@ -2343,6 +2350,7 @@ namespace GasFormsApp
             this.DataNumTextBox57.Radius = 2;
             this.DataNumTextBox57.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox57.TabIndex = 89;
+            this.DataNumTextBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox48
             // 
@@ -2353,6 +2361,7 @@ namespace GasFormsApp
             this.DataNumTextBox48.Radius = 2;
             this.DataNumTextBox48.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox48.TabIndex = 71;
+            this.DataNumTextBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox59
             // 
@@ -2372,6 +2381,7 @@ namespace GasFormsApp
             this.DataNumTextBox56.Radius = 2;
             this.DataNumTextBox56.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox56.TabIndex = 87;
+            this.DataNumTextBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label29
             // 
@@ -2394,6 +2404,7 @@ namespace GasFormsApp
             this.DataNumTextBox47.Radius = 2;
             this.DataNumTextBox47.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox47.TabIndex = 69;
+            this.DataNumTextBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox55
             // 
@@ -2404,6 +2415,7 @@ namespace GasFormsApp
             this.DataNumTextBox55.Radius = 2;
             this.DataNumTextBox55.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox55.TabIndex = 85;
+            this.DataNumTextBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox38
             // 
@@ -2414,6 +2426,7 @@ namespace GasFormsApp
             this.DataNumTextBox38.Radius = 2;
             this.DataNumTextBox38.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox38.TabIndex = 51;
+            this.DataNumTextBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox58
             // 
@@ -2433,6 +2446,7 @@ namespace GasFormsApp
             this.DataNumTextBox54.Radius = 2;
             this.DataNumTextBox54.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox54.TabIndex = 83;
+            this.DataNumTextBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox46
             // 
@@ -2443,6 +2457,7 @@ namespace GasFormsApp
             this.DataNumTextBox46.Radius = 2;
             this.DataNumTextBox46.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox46.TabIndex = 67;
+            this.DataNumTextBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label28
             // 
@@ -2465,6 +2480,7 @@ namespace GasFormsApp
             this.DataNumTextBox53.Radius = 2;
             this.DataNumTextBox53.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox53.TabIndex = 81;
+            this.DataNumTextBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox37
             // 
@@ -2475,6 +2491,7 @@ namespace GasFormsApp
             this.DataNumTextBox37.Radius = 2;
             this.DataNumTextBox37.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox37.TabIndex = 49;
+            this.DataNumTextBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox45
             // 
@@ -2485,6 +2502,7 @@ namespace GasFormsApp
             this.DataNumTextBox45.Radius = 2;
             this.DataNumTextBox45.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox45.TabIndex = 65;
+            this.DataNumTextBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox52
             // 
@@ -2495,6 +2513,7 @@ namespace GasFormsApp
             this.DataNumTextBox52.Radius = 2;
             this.DataNumTextBox52.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox52.TabIndex = 79;
+            this.DataNumTextBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox57
             // 
@@ -2514,6 +2533,7 @@ namespace GasFormsApp
             this.DataNumTextBox51.Radius = 2;
             this.DataNumTextBox51.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox51.TabIndex = 77;
+            this.DataNumTextBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox56
             // 
@@ -2533,6 +2553,7 @@ namespace GasFormsApp
             this.DataNumTextBox44.Radius = 2;
             this.DataNumTextBox44.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox44.TabIndex = 63;
+            this.DataNumTextBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox36
             // 
@@ -2543,6 +2564,7 @@ namespace GasFormsApp
             this.DataNumTextBox36.Radius = 2;
             this.DataNumTextBox36.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox36.TabIndex = 47;
+            this.DataNumTextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox55
             // 
@@ -2562,6 +2584,7 @@ namespace GasFormsApp
             this.DataNumTextBox43.Radius = 2;
             this.DataNumTextBox43.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox43.TabIndex = 61;
+            this.DataNumTextBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox35
             // 
@@ -2572,6 +2595,7 @@ namespace GasFormsApp
             this.DataNumTextBox35.Radius = 2;
             this.DataNumTextBox35.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox35.TabIndex = 45;
+            this.DataNumTextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox42
             // 
@@ -2582,6 +2606,7 @@ namespace GasFormsApp
             this.DataNumTextBox42.Radius = 2;
             this.DataNumTextBox42.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox42.TabIndex = 59;
+            this.DataNumTextBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox54
             // 
@@ -2601,6 +2626,7 @@ namespace GasFormsApp
             this.DataNumTextBox41.Radius = 2;
             this.DataNumTextBox41.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox41.TabIndex = 57;
+            this.DataNumTextBox41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DataNumTextBox34
             // 
@@ -2611,6 +2637,7 @@ namespace GasFormsApp
             this.DataNumTextBox34.Radius = 2;
             this.DataNumTextBox34.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox34.TabIndex = 43;
+            this.DataNumTextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox53
             // 
@@ -2630,6 +2657,7 @@ namespace GasFormsApp
             this.DataNumTextBox33.Radius = 2;
             this.DataNumTextBox33.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox33.TabIndex = 41;
+            this.DataNumTextBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox52
             // 
@@ -2658,6 +2686,7 @@ namespace GasFormsApp
             this.DataNumTextBox32.Radius = 2;
             this.DataNumTextBox32.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox32.TabIndex = 39;
+            this.DataNumTextBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox51
             // 
@@ -2684,8 +2713,11 @@ namespace GasFormsApp
             this.DataNumTextBox31.Name = "DataNumTextBox31";
             this.DataNumTextBox31.PlaceholderText = "";
             this.DataNumTextBox31.Radius = 2;
+            this.DataNumTextBox31.SelectionStart = 3;
             this.DataNumTextBox31.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox31.TabIndex = 37;
+            this.DataNumTextBox31.Text = "123";
+            this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox48
             // 
@@ -3597,7 +3629,7 @@ namespace GasFormsApp
             // 
             this.NonDesorpGasQtyTextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.NonDesorpGasQtyTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NonDesorpGasQtyTextBox.Location = new System.Drawing.Point(310, 551);
+            this.NonDesorpGasQtyTextBox.Location = new System.Drawing.Point(310, 552);
             this.NonDesorpGasQtyTextBox.Name = "NonDesorpGasQtyTextBox";
             this.NonDesorpGasQtyTextBox.PlaceholderText = "";
             this.NonDesorpGasQtyTextBox.ReadOnly = true;
@@ -3610,7 +3642,7 @@ namespace GasFormsApp
             // PorosityTextBox
             // 
             this.PorosityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PorosityTextBox.Location = new System.Drawing.Point(233, 488);
+            this.PorosityTextBox.Location = new System.Drawing.Point(233, 497);
             this.PorosityTextBox.Name = "PorosityTextBox";
             this.PorosityTextBox.PlaceholderText = "常压解吸体积";
             this.PorosityTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3619,7 +3651,7 @@ namespace GasFormsApp
             // TrueDensityTextBox
             // 
             this.TrueDensityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TrueDensityTextBox.Location = new System.Drawing.Point(233, 427);
+            this.TrueDensityTextBox.Location = new System.Drawing.Point(233, 429);
             this.TrueDensityTextBox.Name = "TrueDensityTextBox";
             this.TrueDensityTextBox.PlaceholderText = "常压解吸体积";
             this.TrueDensityTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3628,7 +3660,7 @@ namespace GasFormsApp
             // AppDensityTextBox
             // 
             this.AppDensityTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AppDensityTextBox.Location = new System.Drawing.Point(233, 359);
+            this.AppDensityTextBox.Location = new System.Drawing.Point(233, 363);
             this.AppDensityTextBox.Name = "AppDensityTextBox";
             this.AppDensityTextBox.PlaceholderText = "常压解吸体积";
             this.AppDensityTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3637,7 +3669,7 @@ namespace GasFormsApp
             // VadTextBox
             // 
             this.VadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.VadTextBox.Location = new System.Drawing.Point(233, 291);
+            this.VadTextBox.Location = new System.Drawing.Point(233, 296);
             this.VadTextBox.Name = "VadTextBox";
             this.VadTextBox.PlaceholderText = "常压解吸体积";
             this.VadTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3646,7 +3678,7 @@ namespace GasFormsApp
             // AadTextBox
             // 
             this.AadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AadTextBox.Location = new System.Drawing.Point(233, 227);
+            this.AadTextBox.Location = new System.Drawing.Point(233, 229);
             this.AadTextBox.Name = "AadTextBox";
             this.AadTextBox.PlaceholderText = "常压解吸体积";
             this.AadTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3655,7 +3687,7 @@ namespace GasFormsApp
             // MadTextBox
             // 
             this.MadTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MadTextBox.Location = new System.Drawing.Point(233, 167);
+            this.MadTextBox.Location = new System.Drawing.Point(233, 164);
             this.MadTextBox.Name = "MadTextBox";
             this.MadTextBox.PlaceholderText = "常压解吸体积";
             this.MadTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3664,7 +3696,7 @@ namespace GasFormsApp
             // AdsorpConstBTextBox
             // 
             this.AdsorpConstBTextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AdsorpConstBTextBox.Location = new System.Drawing.Point(233, 96);
+            this.AdsorpConstBTextBox.Location = new System.Drawing.Point(233, 99);
             this.AdsorpConstBTextBox.Name = "AdsorpConstBTextBox";
             this.AdsorpConstBTextBox.PlaceholderText = "常压解吸体积";
             this.AdsorpConstBTextBox.Size = new System.Drawing.Size(179, 35);
@@ -3673,7 +3705,7 @@ namespace GasFormsApp
             // AdsorpConstATextBox
             // 
             this.AdsorpConstATextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AdsorpConstATextBox.Location = new System.Drawing.Point(233, 38);
+            this.AdsorpConstATextBox.Location = new System.Drawing.Point(233, 37);
             this.AdsorpConstATextBox.Name = "AdsorpConstATextBox";
             this.AdsorpConstATextBox.PlaceholderText = "常压解吸体积";
             this.AdsorpConstATextBox.Size = new System.Drawing.Size(179, 35);
@@ -3856,7 +3888,7 @@ namespace GasFormsApp
             // 
             this.P_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.P_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.P_TextBox.Location = new System.Drawing.Point(238, 421);
+            this.P_TextBox.Location = new System.Drawing.Point(238, 423);
             this.P_TextBox.Name = "P_TextBox";
             this.P_TextBox.PlaceholderText = "";
             this.P_TextBox.ReadOnly = true;
@@ -3870,7 +3902,7 @@ namespace GasFormsApp
             // 
             this.W_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W_TextBox.Location = new System.Drawing.Point(238, 368);
+            this.W_TextBox.Location = new System.Drawing.Point(238, 365);
             this.W_TextBox.Name = "W_TextBox";
             this.W_TextBox.PlaceholderText = "";
             this.W_TextBox.ReadOnly = true;
@@ -3884,7 +3916,7 @@ namespace GasFormsApp
             // 
             this.Wc_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.Wc_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Wc_TextBox.Location = new System.Drawing.Point(238, 306);
+            this.Wc_TextBox.Location = new System.Drawing.Point(238, 303);
             this.Wc_TextBox.Name = "Wc_TextBox";
             this.Wc_TextBox.PlaceholderText = "";
             this.Wc_TextBox.ReadOnly = true;
@@ -3898,7 +3930,7 @@ namespace GasFormsApp
             // 
             this.Wa_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.Wa_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Wa_TextBox.Location = new System.Drawing.Point(238, 242);
+            this.Wa_TextBox.Location = new System.Drawing.Point(238, 239);
             this.Wa_TextBox.Name = "Wa_TextBox";
             this.Wa_TextBox.PlaceholderText = "";
             this.Wa_TextBox.ReadOnly = true;
@@ -3912,7 +3944,7 @@ namespace GasFormsApp
             // 
             this.W3_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W3_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W3_TextBox.Location = new System.Drawing.Point(238, 176);
+            this.W3_TextBox.Location = new System.Drawing.Point(238, 173);
             this.W3_TextBox.Name = "W3_TextBox";
             this.W3_TextBox.PlaceholderText = "";
             this.W3_TextBox.ReadOnly = true;
@@ -3926,7 +3958,7 @@ namespace GasFormsApp
             // 
             this.W2_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W2_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W2_TextBox.Location = new System.Drawing.Point(238, 106);
+            this.W2_TextBox.Location = new System.Drawing.Point(238, 107);
             this.W2_TextBox.Name = "W2_TextBox";
             this.W2_TextBox.PlaceholderText = "";
             this.W2_TextBox.ReadOnly = true;
@@ -3940,7 +3972,7 @@ namespace GasFormsApp
             // 
             this.W1_TextBox.BackColor = System.Drawing.Color.PeachPuff;
             this.W1_TextBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.W1_TextBox.Location = new System.Drawing.Point(238, 43);
+            this.W1_TextBox.Location = new System.Drawing.Point(238, 44);
             this.W1_TextBox.Name = "W1_TextBox";
             this.W1_TextBox.PlaceholderText = "";
             this.W1_TextBox.ReadOnly = true;
