@@ -855,26 +855,26 @@ namespace GasFormsApp
                 }
                 
                 a = 0;
-                TabPage currentTab = tabControl1.SelectedTab;
+                //TabPage currentTab = tabControl1.SelectedTab;
 
-                switch (currentTab.Name)
-                {
-                    case "tabPage1":
-                        myTabLogic1.TabControl_1_InputCheckTimer_Tick();
-                        break;
-                    case "tabPage2":
-                        myTabLogic2.TabControl_2_InputCheckTimer_Tick();
-                        break;
-                    case "tabPage3":
-                        myTabLogic3.TabControl_3_InputCheckTimer_Tick();
-                        break;
-                    case "tabPage4":
-                        myTabLogic4.TabControl_4_InputCheckTimer_Tick();
-                        break;
-                    case "tabPage5":
-                        myTabLogic5.TabControl_5_InputCheckTimer_Tick();
-                        break;
-                }
+                //switch (currentTab.Name)
+                //{
+                    //case "tabPage1":
+                    //    myTabLogic1.TabControl_1_InputCheckTimer_Tick();
+                    //    break;
+                    //case "tabPage2":
+                    //    myTabLogic2.TabControl_2_InputCheckTimer_Tick();
+                    //    break;
+                    //case "tabPage3":
+                    //    myTabLogic3.TabControl_3_InputCheckTimer_Tick();
+                    //    break;
+                    //case "tabPage4":
+                    //    myTabLogic4.TabControl_4_InputCheckTimer_Tick();
+                    //    break;
+                    //case "tabPage5":
+                    //    myTabLogic5.TabControl_5_InputCheckTimer_Tick();
+                    //    break;
+                //}
             }
         }
 

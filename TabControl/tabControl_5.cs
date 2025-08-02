@@ -63,8 +63,33 @@ namespace GasFormsApp.TabControl
 
             // 批量注册内容更改事件
             InitializeTextMonitoring();
+            RegisterCheckBoxHandlers(_mainForm.tabPage5DoubleBufferedPanel1);
         }
-
+        // 递归注册 CheckedChanged
+        private void RegisterCheckBoxHandlers(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is CheckBox cb)
+                {
+                    cb.CheckedChanged += CommonCheckBoxChangedHandler;
+                }
+                // 如果还有子控件（比如在 Panel、GroupBox、TabPage 里）
+                if (ctrl.HasChildren)
+                {
+                    RegisterCheckBoxHandlers(ctrl);
+                }
+            }
+        }
+        // 公共处理函数
+        private void CommonCheckBoxChangedHandler(object sender, EventArgs e)
+        {
+            if (sender is CheckBox cb)
+            {
+                Console.WriteLine($"[CheckBox 切换] Name={cb.Name}, Checked={cb.Checked}");
+                TabControl_5_InputCheckTimer_Tick();
+            }
+        }
         private void dateTimePicker1_Click(object sender, EventArgs e)
         {
             var picker = sender as DatePicker;

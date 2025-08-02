@@ -100,6 +100,9 @@ namespace GasFormsApp.TabControl
             Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
 
             _mainForm.tabPage3.Text = "*常压解吸*";
+
+            // 改用内容变化回调，不使用定时器，降低CPU负载
+            TabControl_3_InputCheckTimer_Tick();
         }
 
 

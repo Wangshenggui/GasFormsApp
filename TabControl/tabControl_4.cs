@@ -125,6 +125,9 @@ namespace GasFormsApp.TabControl
             Console.WriteLine($"{changedControl.Name} 的值已修改: {currentValue}");
 
             _mainForm.tabPage4.Text = "*实验结果*";
+
+            // 改用内容变化回调，不使用定时器，降低CPU负载
+            TabControl_4_InputCheckTimer_Tick();
         }
 
         // 用于临时保存界面数据的类，标记为可序列化
