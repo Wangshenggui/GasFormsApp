@@ -429,7 +429,6 @@ namespace GasFormsApp
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabPage2contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.导出图片ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tab6Timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl6PictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl5PictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl4PictureBox = new System.Windows.Forms.PictureBox();
@@ -5280,10 +5279,6 @@ namespace GasFormsApp
             this.导出图片ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.导出图片ToolStripMenuItem.Text = "导出图片";
             // 
-            // tab6Timer1
-            // 
-            this.tab6Timer1.Interval = 1000;
-            // 
             // tabControl6PictureBox
             // 
             this.tabControl6PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("tabControl6PictureBox.Image")));
@@ -5918,7 +5913,6 @@ namespace GasFormsApp
         public AntdUI.Input RemarkTextBox;
         public AntdUI.DatePicker dateTimePicker6;
         public AntdUI.DatePicker dateTimePicker1;
-        public Timer tab6Timer1;
         private ToolStripMenuItem 更改标题ToolStripMenuItem;
         public ToolStripMenuItem 导出矿井数据ToolStripMenuItem;
         private UI.CustomMenuStrip ToolBarMenuStrip;
