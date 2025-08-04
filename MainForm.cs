@@ -15,6 +15,7 @@ using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using GasFormsApp.TabControl;
 using GasFormsApp.UI;
 using Microsoft.VisualBasic;
+using static GasFormsApp.TabControl.tabControl_6;
 
 namespace GasFormsApp
 {
@@ -305,6 +306,80 @@ namespace GasFormsApp
                 new object[] { true });
         }
 
+        // 升级bin数据库为WSHL
+        public void MergeOldDataWithImages(string rootFolderPath)
+        {
+            var formatter = new BinaryFormatter();
+
+            var binFiles = Directory.GetFiles(rootFolderPath, "*_BinData.bin", SearchOption.AllDirectories);
+
+            foreach (var oldBinFile in binFiles)
+            {
+                try
+                {
+                    string folder = Path.GetDirectoryName(oldBinFile);
+                    string oldFileName = Path.GetFileNameWithoutExtension(oldBinFile); // e.g. "123_BinData"
+                    string id = oldFileName.Replace("_BinData", ""); // e.g. "123"
+                    string imageFileName = $"{id}_Image.png";
+                    string imagePath = Path.Combine(folder, imageFileName);
+
+                    if (!File.Exists(imagePath))
+                    {
+                        Console.WriteLine($"图片文件不存在：{imagePath}，跳过...");
+                        continue;
+                    }
+
+                    // 反序列化旧的 UserData
+                    UserData userData;
+                    using (var fs = new FileStream(oldBinFile, FileMode.Open, FileAccess.Read))
+                    {
+                        userData = (UserData)formatter.Deserialize(fs);
+                    }
+
+                    // 读取图片字节
+                    byte[] imageBytes = File.ReadAllBytes(imagePath);
+                    userData.ImageData = imageBytes;
+
+                    // 新文件名：xxx_Data.WSHL
+                    string newFileName = $"{id}_Data.WSHL";
+                    string newFilePath = Path.Combine(folder, newFileName);
+
+                    // 重新序列化保存到新文件
+                    using (var fs = new FileStream(newFilePath, FileMode.Create, FileAccess.Write))
+                    {
+                        formatter.Serialize(fs, userData);
+                    }
+
+                    Console.WriteLine($"合并成功：{newFilePath}");
+
+                    // 删除旧文件和图片
+                    try
+                    {
+                        File.Delete(oldBinFile);
+                        Console.WriteLine($"已删除旧文件：{oldBinFile}");
+                    }
+                    catch (Exception delEx)
+                    {
+                        Console.WriteLine($"删除旧 bin 文件失败：{oldBinFile}，原因：{delEx.Message}");
+                    }
+
+                    try
+                    {
+                        File.Delete(imagePath);
+                        Console.WriteLine($"已删除图片文件：{imagePath}");
+                    }
+                    catch (Exception delEx)
+                    {
+                        Console.WriteLine($"删除图片文件失败：{imagePath}，原因：{delEx.Message}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"合并失败: {oldBinFile}，原因：{ex.Message}");
+                }
+            }
+        }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -591,6 +666,8 @@ namespace GasFormsApp
             // 1. 获取用户AppData目录
             appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
+            // 合并老版本bin
+            MergeOldDataWithImages(Path.Combine(appData, "瓦斯含量测定数据分析系统", "SystemData"));
             // 2. 目标文件路径
             targetDir = Path.Combine(appData, "瓦斯含量测定数据分析系统", "Image");
             string targetFile = Path.Combine(targetDir, "log.png");

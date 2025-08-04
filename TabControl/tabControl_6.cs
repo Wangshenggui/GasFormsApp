@@ -390,219 +390,431 @@ namespace GasFormsApp.TabControl
                     checkBox.Checked = false;
             }
         }
+//        private void 恢复历史记录ToolStripMenuItem_Click(object sender, EventArgs e)
+//        {
+//            TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+//            if (selectedNode != null && selectedNode.Tag is string path)
+//            {
+//                string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
+
+//                // 获取当前用户的 AppData\Roaming 路径
+//                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+//                // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统
+//                string programDataDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
+
+//                // 拼接最终的文件路径
+//                string loadPath = Path.Combine(programDataDir, path, name + "_BinData.bin");
+//                string imagePath = Path.Combine(programDataDir, path, name + "_Image.png");  // 图片路径
+
+//                // MessageBox.Show("选中节点的路径是：" + loadPath);
+//                if (!File.Exists(loadPath))
+//                {
+//                    MessageBox.Show("找不到已保存的数据！");
+//                    return;
+//                }
+
+
+//                try
+//                {
+//                    using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+//                    {
+//#pragma warning disable SYSLIB0011
+//                        var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+//                        UserData data = (UserData)formatter.Deserialize(fs);
+//#pragma warning restore SYSLIB0011
+
+//                        _mainForm.MineNameTextBox.Text = data.矿井名称;
+//                        _mainForm.MineNameTextBox.Text = data.矿井名称;
+//                        _mainForm.SamplingSpotTextBox.Text = data.取样地点;
+//                        _mainForm.X_YTextBox.Text = data.取样地点坐标;
+//                        _mainForm.CoalTypeComboBox.Text = data.煤种;
+//                        _mainForm.BurialDepthTextBox.Text = data.埋深;
+//                        _mainForm.CoalSeamTextBox.Text = data.煤层;
+//                        _mainForm.UndAtmPressureTextBox.Text = data.井下大气压力;
+//                        _mainForm.LabAtmPressureTextBox.Text = data.实验室大气压力;
+//                        _mainForm.UndTempTextBox.Text = data.井下环境温度;
+//                        _mainForm.LabTempTextBox.Text = data.实验室温度;
+//                        _mainForm.MoistureSampleTextBox.Text = data.煤样水分;
+//                        _mainForm.SampleModeComboBox.Text = data.取样方式;
+//                        _mainForm.SampleNumTextBox.Text = data.煤样编号;
+//                        _mainForm.RawCoalMoistureTextBox.Text = data.原煤水分;
+//                        _mainForm.InitialVolumeTextBox.Text = data.量管初始体积;
+//                        _mainForm.SampleWeightTextBox.Text = data.煤样重量;
+//                        _mainForm.SamplingDepthTextBox.Text = data.取样深度;
+//                        _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data.取样时间);
+//                        _mainForm.DrillInclinationTextBox.Text = data.钻孔倾角;
+//                        _mainForm.AzimuthTextBox.Text = data.方位角;
+//                        _mainForm.SamplingPersonnelTextBox.Text = data.取样人员;
+
+//                        _mainForm.dateTimePicker2.Value = DateTime.Parse(data.打钻开始时间);
+//                        _mainForm.dateTimePicker5.Value = DateTime.Parse(data.取芯开始时间);
+//                        _mainForm.dateTimePicker3.Value = DateTime.Parse(data.取芯结束时间);
+//                        _mainForm.dateTimePicker4.Value = DateTime.Parse(data.解吸开始时间);
+//                        _mainForm.TypeOfDestructionComboBox3.Text = data.煤的破坏类型;
+//                        _mainForm.t0TextBox.Text = data.t0;
+
+//                        SetTextBoxValues(_mainForm, "DesorbTextBox", data.DesorbTextList);
+//                        SetTextBoxValues(_mainForm, "DataNumTextBox", data.DataNumTextList, 31);
+
+//                        _mainForm.DesVolUndTextBox.Text = data.井下解吸量体积;
+//                        _mainForm.UndDesorpCalTextBox.Text = data.井下解吸量校准W11;
+//                        _mainForm.SampLossVolTextBox.Text = data.瓦斯损失量W12;
+
+//                        _mainForm.DesorpVolNormalTextBox.Text = data.实验室常压解吸;
+//                        _mainForm.DesorpVolNormalCalTextBox.Text = data.实验室常压解吸校准W2;
+//                        _mainForm.Sample1WeightTextBox.Text = data.粉碎后第1份煤样重;
+//                        _mainForm.Sample2WeightTextBox.Text = data.粉碎后第2份煤样重;
+//                        _mainForm.S1DesorpVolTextBox.Text = data.第1份煤样解吸量;
+//                        _mainForm.S1DesorpVolCalTextBox.Text = data.第1份煤样解吸量校准;
+//                        _mainForm.S2DesorpVolTextBox.Text = data.第2份煤样解吸量;
+//                        _mainForm.S2DesorpVolCalTextBox.Text = data.第2份煤样解吸量校准;
+//                        _mainForm.CrushDesorpTextBox.Text = data.最终粉碎解吸量;
+
+
+//                        //string input = data.吸附常数a;
+//                        //var result = ParseNumberAndBool(input);
+//                        //if (result != null)
+//                        //{
+//                        //    Console.WriteLine($"数字字符串: \"{result.Value.numberPart}\"");
+//                        //    Console.WriteLine($"布尔值: {result.Value.boolPart}");
+
+//                        //    _mainForm.AdsorpConstATextBox.Text = result.Value.numberPart;
+//                        //    _mainForm.AdsorpConstACheckBox.Checked = result.Value.boolPart;
+//                        //}
+//                        //else
+//                        //{
+//                        //    Console.WriteLine("输入格式无效！");
+//                        //}
+
+//                        ParseAndAssign(data.吸附常数a, _mainForm.AdsorpConstATextBox, _mainForm.AdsorpConstACheckBox);
+//                        ParseAndAssign(data.吸附常数b, _mainForm.AdsorpConstBTextBox, _mainForm.AdsorpConstBCheckBox); // 如果有复选框
+//                        ParseAndAssign(data.水分, _mainForm.MadTextBox, _mainForm.MadCheckBox); // 如果有复选框，没有就传null
+//                        ParseAndAssign(data.灰分, _mainForm.AadTextBox, _mainForm.AadCheckBox);
+//                        ParseAndAssign(data.孔隙率, _mainForm.PorosityTextBox, _mainForm.PorosityCheckBox);
+//                        ParseAndAssign(data.视相对密度, _mainForm.AppDensityTextBox, _mainForm.AppDensityCheckBox);
+//                        ParseAndAssign(data.真密度, _mainForm.TrueDensityTextBox, _mainForm.TrueDensityCheckBox);
+//                        ParseAndAssign(data.挥发分, _mainForm.VadTextBox, _mainForm.VadCheckBox);
+
+//                        //_mainForm.AdsorpConstBTextBox.Text = data.吸附常数b;
+//                        //_mainForm.MadTextBox.Text = data.水分;
+//                        //_mainForm.AadTextBox.Text = data.灰分;
+//                        //_mainForm.PorosityTextBox.Text = data.孔隙率;
+//                        //_mainForm.AppDensityTextBox.Text = data.视相对密度;
+//                        //_mainForm.TrueDensityTextBox.Text = data.真密度;
+//                        //_mainForm.VadTextBox.Text = data.挥发分;
+//                        _mainForm.W1_TextBox.Text = data.W1;
+//                        _mainForm.W2_TextBox.Text = data.W2;
+//                        _mainForm.W3_TextBox.Text = data.W3;
+//                        _mainForm.Wa_TextBox.Text = data.Wa;
+//                        _mainForm.Wc_TextBox.Text = data.Wc;
+//                        var result = ParseNumberAndBool(data.Wc);
+//                        if (result != null)
+//                        {
+//                            _mainForm.Wc_TextBox.Text = result.Value.numberPart;
+//                        }
+//                        //_mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
+//                        ParseAndAssign(data.Wc, _mainForm.NonDesorpGasQtyTextBox, _mainForm.NonDesorpGasQtyCheckBox);
+//                        _mainForm.W_TextBox.Text = data.W;
+//                        //_mainForm.P_TextBox.Text = data.P;
+//                        ParseAndAssign(data.P, _mainForm.P_TextBox, _mainForm.P_CheckBox);
+
+//                        //_mainForm.CH4TextBox.Text = data.CH4;
+//                        //_mainForm.CO2TextBox.Text = data.CO2;
+//                        //_mainForm.N2TextBox.Text = data.N2;
+//                        //_mainForm.O2TextBox.Text = data.O2;
+//                        //_mainForm.C2H4TextBox.Text = data.C2H4;
+//                        //_mainForm.C3H8TextBox.Text = data.C3H8;
+//                        //_mainForm.C2H6TextBox.Text = data.C2H6;
+//                        //_mainForm.C3H6TextBox.Text = data.C3H6;
+//                        //_mainForm.C2H2TextBox.Text = data.C2H2;
+//                        //_mainForm.COTextBox.Text = data.CO;
+//                        ParseAndAssign(data.CH4, _mainForm.CH4TextBox, _mainForm.CH4CheckBox);
+//                        ParseAndAssign(data.CO2, _mainForm.CO2TextBox, _mainForm.CO2CheckBox);
+//                        ParseAndAssign(data.N2, _mainForm.N2TextBox, _mainForm.N2CheckBox);
+//                        ParseAndAssign(data.O2, _mainForm.O2TextBox, _mainForm.O2CheckBox);
+//                        ParseAndAssign(data.C2H4, _mainForm.C2H4TextBox, _mainForm.C2H4CheckBox);
+//                        ParseAndAssign(data.C3H8, _mainForm.C3H8TextBox, _mainForm.C3H8CheckBox);
+//                        ParseAndAssign(data.C2H6, _mainForm.C2H6TextBox, _mainForm.C2H6CheckBox);
+//                        ParseAndAssign(data.C3H6, _mainForm.C3H6TextBox, _mainForm.C3H6CheckBox);
+//                        ParseAndAssign(data.C2H2, _mainForm.C2H2TextBox, _mainForm.C2H2CheckBox);
+//                        ParseAndAssign(data.CO, _mainForm.COTextBox, _mainForm.COCheckBox);
+
+
+//                        _mainForm.dateTimePicker6.Value = DateTime.Parse(data.测试时间);
+//                        _mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
+//                        //_mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
+//                        ParseAndAssign(data.井下测试人员, _mainForm.DownholeTestersTextBox, _mainForm.DownholeTestersCheckBox);
+//                        _mainForm.LabTestersTextBox.Text = data.实验室测试人员;
+//                        _mainForm.AuditorTextBox.Text = data.审核人员;
+//                        _mainForm.RemarkTextBox.Text = data.备注;
+
+
+
+//                        // 获取当前用户的 AppData\Roaming 路径
+//                        //string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+//                        // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\images
+//                        var targetFolder = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
+
+//                        // 确保目标文件夹存在
+//                        if (!Directory.Exists(targetFolder))
+//                        {
+//                            Directory.CreateDirectory(targetFolder);
+//                        }
+
+//                        if (File.Exists(imagePath))
+//                        {
+//                            // 将图片复制到 AppData 下的目标文件夹
+//                            var targetPath = Path.Combine(targetFolder, "output_image.png");
+//                            try
+//                            {
+//                                File.Copy(imagePath, targetPath, overwrite: true); // 如果已存在就覆盖
+//                            }
+//                            catch (Exception ex)
+//                            {
+//                                MessageBox.Show("复制图片文件时出错: " + ex.Message);
+//                            }
+
+//                            using (var imgStream = new MemoryStream(File.ReadAllBytes(imagePath)))
+//                            {
+//                                using (var imgTemp = Image.FromStream(imgStream))
+//                                {
+//                                    // 复制一份 Bitmap，断开对流的依赖
+//                                    _mainForm.pictureBox3.Image = new Bitmap(imgTemp);
+//                                }
+//                            }
+//                            _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+//                        }
+//                        else
+//                        {
+//                            MessageBox.Show("找不到图片文件：" + imagePath);
+//                        }
+
+
+
+//                        // 调用计算函数，防止tab4数据输出为0
+//                        //_mainForm.tab6_4_ExpCalcButton_Click(sender,e);
+
+//                        MessageBox.Show("已恢复历史记录！");
+//                    }
+//                }
+//                catch (Exception ex)
+//                {
+//                    MessageBox.Show("加载失败:W " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//                    Console.WriteLine("[EXCEPTION] 加载失败：" + ex.ToString());  // 打印完整堆栈信息
+//                }
+//            }
+//            else
+//            {
+//                MessageBox.Show("未选中有效节点或节点没有路径信息！");
+//            }
+//        }
         private void 恢复历史记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
             if (selectedNode != null && selectedNode.Tag is string path)
             {
-                string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
-
-                // 获取当前用户的 AppData\Roaming 路径
-                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-                // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统
-                string programDataDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
-
-                // 拼接最终的文件路径
-                string loadPath = Path.Combine(programDataDir, path, name + "_BinData.bin");
-                string imagePath = Path.Combine(programDataDir, path, name + "_Image.png");  // 图片路径
-
-                // MessageBox.Show("选中节点的路径是：" + loadPath);
-                if (!File.Exists(loadPath))
+                string name = _mainForm.dataGridView1.CurrentRow?.Cells["ID"].Value?.ToString();
+                if (string.IsNullOrEmpty(name))
                 {
-                    MessageBox.Show("找不到已保存的数据！");
+                    MessageBox.Show("请选择有效的用户！");
                     return;
                 }
 
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string programDataDir = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统");
+
+                string dataFileName = $"{name}_Data.WSHL";
+                string dataFilePath = Path.Combine(programDataDir, path, dataFileName);
+
+                if (!File.Exists(dataFilePath))
+                {
+                    MessageBox.Show("找不到已保存的数据文件：" + dataFilePath);
+                    return;
+                }
 
                 try
                 {
-                    using (FileStream fs = new FileStream(loadPath, FileMode.Open))
+                    UserData data;
+                    using (FileStream fs = new FileStream(dataFilePath, FileMode.Open, FileAccess.Read))
                     {
 #pragma warning disable SYSLIB0011
                         var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                        UserData data = (UserData)formatter.Deserialize(fs);
+                        data = (UserData)formatter.Deserialize(fs);
 #pragma warning restore SYSLIB0011
-
-                        _mainForm.MineNameTextBox.Text = data.矿井名称;
-                        _mainForm.MineNameTextBox.Text = data.矿井名称;
-                        _mainForm.SamplingSpotTextBox.Text = data.取样地点;
-                        _mainForm.X_YTextBox.Text = data.取样地点坐标;
-                        _mainForm.CoalTypeComboBox.Text = data.煤种;
-                        _mainForm.BurialDepthTextBox.Text = data.埋深;
-                        _mainForm.CoalSeamTextBox.Text = data.煤层;
-                        _mainForm.UndAtmPressureTextBox.Text = data.井下大气压力;
-                        _mainForm.LabAtmPressureTextBox.Text = data.实验室大气压力;
-                        _mainForm.UndTempTextBox.Text = data.井下环境温度;
-                        _mainForm.LabTempTextBox.Text = data.实验室温度;
-                        _mainForm.MoistureSampleTextBox.Text = data.煤样水分;
-                        _mainForm.SampleModeComboBox.Text = data.取样方式;
-                        _mainForm.SampleNumTextBox.Text = data.煤样编号;
-                        _mainForm.RawCoalMoistureTextBox.Text = data.原煤水分;
-                        _mainForm.InitialVolumeTextBox.Text = data.量管初始体积;
-                        _mainForm.SampleWeightTextBox.Text = data.煤样重量;
-                        _mainForm.SamplingDepthTextBox.Text = data.取样深度;
-                        _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data.取样时间);
-                        _mainForm.DrillInclinationTextBox.Text = data.钻孔倾角;
-                        _mainForm.AzimuthTextBox.Text = data.方位角;
-                        _mainForm.SamplingPersonnelTextBox.Text = data.取样人员;
-
-                        _mainForm.dateTimePicker2.Value = DateTime.Parse(data.打钻开始时间);
-                        _mainForm.dateTimePicker5.Value = DateTime.Parse(data.取芯开始时间);
-                        _mainForm.dateTimePicker3.Value = DateTime.Parse(data.取芯结束时间);
-                        _mainForm.dateTimePicker4.Value = DateTime.Parse(data.解吸开始时间);
-                        _mainForm.TypeOfDestructionComboBox3.Text = data.煤的破坏类型;
-                        _mainForm.t0TextBox.Text = data.t0;
-
-                        SetTextBoxValues(_mainForm, "DesorbTextBox", data.DesorbTextList);
-                        SetTextBoxValues(_mainForm, "DataNumTextBox", data.DataNumTextList, 31);
-
-                        _mainForm.DesVolUndTextBox.Text = data.井下解吸量体积;
-                        _mainForm.UndDesorpCalTextBox.Text = data.井下解吸量校准W11;
-                        _mainForm.SampLossVolTextBox.Text = data.瓦斯损失量W12;
-
-                        _mainForm.DesorpVolNormalTextBox.Text = data.实验室常压解吸;
-                        _mainForm.DesorpVolNormalCalTextBox.Text = data.实验室常压解吸校准W2;
-                        _mainForm.Sample1WeightTextBox.Text = data.粉碎后第1份煤样重;
-                        _mainForm.Sample2WeightTextBox.Text = data.粉碎后第2份煤样重;
-                        _mainForm.S1DesorpVolTextBox.Text = data.第1份煤样解吸量;
-                        _mainForm.S1DesorpVolCalTextBox.Text = data.第1份煤样解吸量校准;
-                        _mainForm.S2DesorpVolTextBox.Text = data.第2份煤样解吸量;
-                        _mainForm.S2DesorpVolCalTextBox.Text = data.第2份煤样解吸量校准;
-                        _mainForm.CrushDesorpTextBox.Text = data.最终粉碎解吸量;
-
-
-                        //string input = data.吸附常数a;
-                        //var result = ParseNumberAndBool(input);
-                        //if (result != null)
-                        //{
-                        //    Console.WriteLine($"数字字符串: \"{result.Value.numberPart}\"");
-                        //    Console.WriteLine($"布尔值: {result.Value.boolPart}");
-
-                        //    _mainForm.AdsorpConstATextBox.Text = result.Value.numberPart;
-                        //    _mainForm.AdsorpConstACheckBox.Checked = result.Value.boolPart;
-                        //}
-                        //else
-                        //{
-                        //    Console.WriteLine("输入格式无效！");
-                        //}
-
-                        ParseAndAssign(data.吸附常数a, _mainForm.AdsorpConstATextBox, _mainForm.AdsorpConstACheckBox);
-                        ParseAndAssign(data.吸附常数b, _mainForm.AdsorpConstBTextBox, _mainForm.AdsorpConstBCheckBox); // 如果有复选框
-                        ParseAndAssign(data.水分, _mainForm.MadTextBox, _mainForm.MadCheckBox); // 如果有复选框，没有就传null
-                        ParseAndAssign(data.灰分, _mainForm.AadTextBox, _mainForm.AadCheckBox);
-                        ParseAndAssign(data.孔隙率, _mainForm.PorosityTextBox, _mainForm.PorosityCheckBox);
-                        ParseAndAssign(data.视相对密度, _mainForm.AppDensityTextBox, _mainForm.AppDensityCheckBox);
-                        ParseAndAssign(data.真密度, _mainForm.TrueDensityTextBox, _mainForm.TrueDensityCheckBox);
-                        ParseAndAssign(data.挥发分, _mainForm.VadTextBox, _mainForm.VadCheckBox);
-
-                        //_mainForm.AdsorpConstBTextBox.Text = data.吸附常数b;
-                        //_mainForm.MadTextBox.Text = data.水分;
-                        //_mainForm.AadTextBox.Text = data.灰分;
-                        //_mainForm.PorosityTextBox.Text = data.孔隙率;
-                        //_mainForm.AppDensityTextBox.Text = data.视相对密度;
-                        //_mainForm.TrueDensityTextBox.Text = data.真密度;
-                        //_mainForm.VadTextBox.Text = data.挥发分;
-                        _mainForm.W1_TextBox.Text = data.W1;
-                        _mainForm.W2_TextBox.Text = data.W2;
-                        _mainForm.W3_TextBox.Text = data.W3;
-                        _mainForm.Wa_TextBox.Text = data.Wa;
-                        _mainForm.Wc_TextBox.Text = data.Wc;
-                        var result = ParseNumberAndBool(data.Wc);
-                        if (result != null)
-                        {
-                            _mainForm.Wc_TextBox.Text = result.Value.numberPart;
-                        }
-                        //_mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
-                        ParseAndAssign(data.Wc, _mainForm.NonDesorpGasQtyTextBox, _mainForm.NonDesorpGasQtyCheckBox);
-                        _mainForm.W_TextBox.Text = data.W;
-                        //_mainForm.P_TextBox.Text = data.P;
-                        ParseAndAssign(data.P, _mainForm.P_TextBox, _mainForm.P_CheckBox);
-
-                        //_mainForm.CH4TextBox.Text = data.CH4;
-                        //_mainForm.CO2TextBox.Text = data.CO2;
-                        //_mainForm.N2TextBox.Text = data.N2;
-                        //_mainForm.O2TextBox.Text = data.O2;
-                        //_mainForm.C2H4TextBox.Text = data.C2H4;
-                        //_mainForm.C3H8TextBox.Text = data.C3H8;
-                        //_mainForm.C2H6TextBox.Text = data.C2H6;
-                        //_mainForm.C3H6TextBox.Text = data.C3H6;
-                        //_mainForm.C2H2TextBox.Text = data.C2H2;
-                        //_mainForm.COTextBox.Text = data.CO;
-                        ParseAndAssign(data.CH4, _mainForm.CH4TextBox, _mainForm.CH4CheckBox);
-                        ParseAndAssign(data.CO2, _mainForm.CO2TextBox, _mainForm.CO2CheckBox);
-                        ParseAndAssign(data.N2, _mainForm.N2TextBox, _mainForm.N2CheckBox);
-                        ParseAndAssign(data.O2, _mainForm.O2TextBox, _mainForm.O2CheckBox);
-                        ParseAndAssign(data.C2H4, _mainForm.C2H4TextBox, _mainForm.C2H4CheckBox);
-                        ParseAndAssign(data.C3H8, _mainForm.C3H8TextBox, _mainForm.C3H8CheckBox);
-                        ParseAndAssign(data.C2H6, _mainForm.C2H6TextBox, _mainForm.C2H6CheckBox);
-                        ParseAndAssign(data.C3H6, _mainForm.C3H6TextBox, _mainForm.C3H6CheckBox);
-                        ParseAndAssign(data.C2H2, _mainForm.C2H2TextBox, _mainForm.C2H2CheckBox);
-                        ParseAndAssign(data.CO, _mainForm.COTextBox, _mainForm.COCheckBox);
-
-
-                        _mainForm.dateTimePicker6.Value = DateTime.Parse(data.测试时间);
-                        _mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
-                        //_mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
-                        ParseAndAssign(data.井下测试人员, _mainForm.DownholeTestersTextBox, _mainForm.DownholeTestersCheckBox);
-                        _mainForm.LabTestersTextBox.Text = data.实验室测试人员;
-                        _mainForm.AuditorTextBox.Text = data.审核人员;
-                        _mainForm.RemarkTextBox.Text = data.备注;
-
-
-
-                        // 获取当前用户的 AppData\Roaming 路径
-                        //string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-                        // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\images
-                        var targetFolder = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
-
-                        // 确保目标文件夹存在
-                        if (!Directory.Exists(targetFolder))
-                        {
-                            Directory.CreateDirectory(targetFolder);
-                        }
-
-                        if (File.Exists(imagePath))
-                        {
-                            // 将图片复制到 AppData 下的目标文件夹
-                            var targetPath = Path.Combine(targetFolder, "output_image.png");
-                            try
-                            {
-                                File.Copy(imagePath, targetPath, overwrite: true); // 如果已存在就覆盖
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("复制图片文件时出错: " + ex.Message);
-                            }
-
-                            using (var imgStream = new MemoryStream(File.ReadAllBytes(imagePath)))
-                            {
-                                using (var imgTemp = Image.FromStream(imgStream))
-                                {
-                                    // 复制一份 Bitmap，断开对流的依赖
-                                    _mainForm.pictureBox3.Image = new Bitmap(imgTemp);
-                                }
-                            }
-                            _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-                        }
-                        else
-                        {
-                            MessageBox.Show("找不到图片文件：" + imagePath);
-                        }
-
-
-
-                        // 调用计算函数，防止tab4数据输出为0
-                        //_mainForm.tab6_4_ExpCalcButton_Click(sender,e);
-
-                        MessageBox.Show("已恢复历史记录！");
                     }
+
+                    if (data == null)
+                    {
+                        MessageBox.Show("数据文件内容为空！");
+                        return;
+                    }
+
+                    // 赋值控件，保持你原来代码不变，这里示例
+                    _mainForm.MineNameTextBox.Text = data.矿井名称;
+                    _mainForm.MineNameTextBox.Text = data.矿井名称;
+                    _mainForm.SamplingSpotTextBox.Text = data.取样地点;
+                    _mainForm.X_YTextBox.Text = data.取样地点坐标;
+                    _mainForm.CoalTypeComboBox.Text = data.煤种;
+                    _mainForm.BurialDepthTextBox.Text = data.埋深;
+                    _mainForm.CoalSeamTextBox.Text = data.煤层;
+                    _mainForm.UndAtmPressureTextBox.Text = data.井下大气压力;
+                    _mainForm.LabAtmPressureTextBox.Text = data.实验室大气压力;
+                    _mainForm.UndTempTextBox.Text = data.井下环境温度;
+                    _mainForm.LabTempTextBox.Text = data.实验室温度;
+                    _mainForm.MoistureSampleTextBox.Text = data.煤样水分;
+                    _mainForm.SampleModeComboBox.Text = data.取样方式;
+                    _mainForm.SampleNumTextBox.Text = data.煤样编号;
+                    _mainForm.RawCoalMoistureTextBox.Text = data.原煤水分;
+                    _mainForm.InitialVolumeTextBox.Text = data.量管初始体积;
+                    _mainForm.SampleWeightTextBox.Text = data.煤样重量;
+                    _mainForm.SamplingDepthTextBox.Text = data.取样深度;
+                    _mainForm.SamplingTimeDateTimePicker.Value = DateTime.Parse(data.取样时间);
+                    _mainForm.DrillInclinationTextBox.Text = data.钻孔倾角;
+                    _mainForm.AzimuthTextBox.Text = data.方位角;
+                    _mainForm.SamplingPersonnelTextBox.Text = data.取样人员;
+
+                    _mainForm.dateTimePicker2.Value = DateTime.Parse(data.打钻开始时间);
+                    _mainForm.dateTimePicker5.Value = DateTime.Parse(data.取芯开始时间);
+                    _mainForm.dateTimePicker3.Value = DateTime.Parse(data.取芯结束时间);
+                    _mainForm.dateTimePicker4.Value = DateTime.Parse(data.解吸开始时间);
+                    _mainForm.TypeOfDestructionComboBox3.Text = data.煤的破坏类型;
+                    _mainForm.t0TextBox.Text = data.t0;
+
+                    SetTextBoxValues(_mainForm, "DesorbTextBox", data.DesorbTextList);
+                    SetTextBoxValues(_mainForm, "DataNumTextBox", data.DataNumTextList, 31);
+
+                    _mainForm.DesVolUndTextBox.Text = data.井下解吸量体积;
+                    _mainForm.UndDesorpCalTextBox.Text = data.井下解吸量校准W11;
+                    _mainForm.SampLossVolTextBox.Text = data.瓦斯损失量W12;
+
+                    _mainForm.DesorpVolNormalTextBox.Text = data.实验室常压解吸;
+                    _mainForm.DesorpVolNormalCalTextBox.Text = data.实验室常压解吸校准W2;
+                    _mainForm.Sample1WeightTextBox.Text = data.粉碎后第1份煤样重;
+                    _mainForm.Sample2WeightTextBox.Text = data.粉碎后第2份煤样重;
+                    _mainForm.S1DesorpVolTextBox.Text = data.第1份煤样解吸量;
+                    _mainForm.S1DesorpVolCalTextBox.Text = data.第1份煤样解吸量校准;
+                    _mainForm.S2DesorpVolTextBox.Text = data.第2份煤样解吸量;
+                    _mainForm.S2DesorpVolCalTextBox.Text = data.第2份煤样解吸量校准;
+                    _mainForm.CrushDesorpTextBox.Text = data.最终粉碎解吸量;
+
+
+                    //string input = data.吸附常数a;
+                    //var result = ParseNumberAndBool(input);
+                    //if (result != null)
+                    //{
+                    //    Console.WriteLine($"数字字符串: \"{result.Value.numberPart}\"");
+                    //    Console.WriteLine($"布尔值: {result.Value.boolPart}");
+
+                    //    _mainForm.AdsorpConstATextBox.Text = result.Value.numberPart;
+                    //    _mainForm.AdsorpConstACheckBox.Checked = result.Value.boolPart;
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("输入格式无效！");
+                    //}
+
+                    ParseAndAssign(data.吸附常数a, _mainForm.AdsorpConstATextBox, _mainForm.AdsorpConstACheckBox);
+                    ParseAndAssign(data.吸附常数b, _mainForm.AdsorpConstBTextBox, _mainForm.AdsorpConstBCheckBox); // 如果有复选框
+                    ParseAndAssign(data.水分, _mainForm.MadTextBox, _mainForm.MadCheckBox); // 如果有复选框，没有就传null
+                    ParseAndAssign(data.灰分, _mainForm.AadTextBox, _mainForm.AadCheckBox);
+                    ParseAndAssign(data.孔隙率, _mainForm.PorosityTextBox, _mainForm.PorosityCheckBox);
+                    ParseAndAssign(data.视相对密度, _mainForm.AppDensityTextBox, _mainForm.AppDensityCheckBox);
+                    ParseAndAssign(data.真密度, _mainForm.TrueDensityTextBox, _mainForm.TrueDensityCheckBox);
+                    ParseAndAssign(data.挥发分, _mainForm.VadTextBox, _mainForm.VadCheckBox);
+
+                    //_mainForm.AdsorpConstBTextBox.Text = data.吸附常数b;
+                    //_mainForm.MadTextBox.Text = data.水分;
+                    //_mainForm.AadTextBox.Text = data.灰分;
+                    //_mainForm.PorosityTextBox.Text = data.孔隙率;
+                    //_mainForm.AppDensityTextBox.Text = data.视相对密度;
+                    //_mainForm.TrueDensityTextBox.Text = data.真密度;
+                    //_mainForm.VadTextBox.Text = data.挥发分;
+                    _mainForm.W1_TextBox.Text = data.W1;
+                    _mainForm.W2_TextBox.Text = data.W2;
+                    _mainForm.W3_TextBox.Text = data.W3;
+                    _mainForm.Wa_TextBox.Text = data.Wa;
+                    _mainForm.Wc_TextBox.Text = data.Wc;
+                    var result = ParseNumberAndBool(data.Wc);
+                    if (result != null)
+                    {
+                        _mainForm.Wc_TextBox.Text = result.Value.numberPart;
+                    }
+                    //_mainForm.NonDesorpGasQtyTextBox.Text = data.Wc;// 这两个一样
+                    ParseAndAssign(data.Wc, _mainForm.NonDesorpGasQtyTextBox, _mainForm.NonDesorpGasQtyCheckBox);
+                    _mainForm.W_TextBox.Text = data.W;
+                    //_mainForm.P_TextBox.Text = data.P;
+                    ParseAndAssign(data.P, _mainForm.P_TextBox, _mainForm.P_CheckBox);
+
+                    //_mainForm.CH4TextBox.Text = data.CH4;
+                    //_mainForm.CO2TextBox.Text = data.CO2;
+                    //_mainForm.N2TextBox.Text = data.N2;
+                    //_mainForm.O2TextBox.Text = data.O2;
+                    //_mainForm.C2H4TextBox.Text = data.C2H4;
+                    //_mainForm.C3H8TextBox.Text = data.C3H8;
+                    //_mainForm.C2H6TextBox.Text = data.C2H6;
+                    //_mainForm.C3H6TextBox.Text = data.C3H6;
+                    //_mainForm.C2H2TextBox.Text = data.C2H2;
+                    //_mainForm.COTextBox.Text = data.CO;
+                    ParseAndAssign(data.CH4, _mainForm.CH4TextBox, _mainForm.CH4CheckBox);
+                    ParseAndAssign(data.CO2, _mainForm.CO2TextBox, _mainForm.CO2CheckBox);
+                    ParseAndAssign(data.N2, _mainForm.N2TextBox, _mainForm.N2CheckBox);
+                    ParseAndAssign(data.O2, _mainForm.O2TextBox, _mainForm.O2CheckBox);
+                    ParseAndAssign(data.C2H4, _mainForm.C2H4TextBox, _mainForm.C2H4CheckBox);
+                    ParseAndAssign(data.C3H8, _mainForm.C3H8TextBox, _mainForm.C3H8CheckBox);
+                    ParseAndAssign(data.C2H6, _mainForm.C2H6TextBox, _mainForm.C2H6CheckBox);
+                    ParseAndAssign(data.C3H6, _mainForm.C3H6TextBox, _mainForm.C3H6CheckBox);
+                    ParseAndAssign(data.C2H2, _mainForm.C2H2TextBox, _mainForm.C2H2CheckBox);
+                    ParseAndAssign(data.CO, _mainForm.COTextBox, _mainForm.COCheckBox);
+
+
+                    _mainForm.dateTimePicker6.Value = DateTime.Parse(data.测试时间);
+                    _mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
+                    //_mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
+                    ParseAndAssign(data.井下测试人员, _mainForm.DownholeTestersTextBox, _mainForm.DownholeTestersCheckBox);
+                    _mainForm.LabTestersTextBox.Text = data.实验室测试人员;
+                    _mainForm.AuditorTextBox.Text = data.审核人员;
+                    _mainForm.RemarkTextBox.Text = data.备注;
+
+                    // 从内存加载图片
+                    if (data.ImageData != null && data.ImageData.Length > 0)
+                    {
+                        using (var ms = new MemoryStream(data.ImageData))
+                        {
+                            _mainForm.pictureBox3.Image?.Dispose();
+                            _mainForm.pictureBox3.Image = Image.FromStream(ms);
+                        }
+                        _mainForm.pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        // 保存图片到 AppData 下的“Image”文件夹
+                        string imageFolder = Path.Combine(programDataDir, "Image");
+                        if (!Directory.Exists(imageFolder))
+                        {
+                            Directory.CreateDirectory(imageFolder);
+                        }
+
+                        string imageFilePath = Path.Combine(imageFolder, "output_image.png");
+                        try
+                        {
+                            File.WriteAllBytes(imageFilePath, data.ImageData);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("保存图片文件时出错: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("数据文件中没有图片数据！");
+                    }
+
+                    MessageBox.Show("已恢复历史记录！");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("加载失败:W " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Console.WriteLine("[EXCEPTION] 加载失败：" + ex.ToString());  // 打印完整堆栈信息
+                    MessageBox.Show("加载失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("[EXCEPTION] 加载失败：" + ex.ToString());
                 }
             }
             else
@@ -610,6 +822,7 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("未选中有效节点或节点没有路径信息！");
             }
         }
+
         // 矿井搜索
         private void FindMineTextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -683,6 +896,8 @@ namespace GasFormsApp.TabControl
                 // 非叶子节点或目录不存在，清空表格数据
                 _mainForm.dataGridView1.DataSource = null;
             }
+            // 触发列表选中
+            dataGridView1_SelectionChanged(_mainForm.dataGridView1, EventArgs.Empty);
         }
 
         /// <summary>
@@ -692,51 +907,59 @@ namespace GasFormsApp.TabControl
         private void LoadFoldersToTree(string rootPath)
         {
             DirectoryInfo rootDir = new DirectoryInfo(rootPath);
-
-            // 如果目录不存在，则不进行加载
             if (!rootDir.Exists) return;
 
-            // 清空树控件节点
+            // === 1. 更新前：保存当前选中节点路径 ===
+            string prevSelectedPath = null;
+            if (_mainForm.treeView1.SelectedNode != null && _mainForm.treeView1.SelectedNode.Tag is string tag)
+            {
+                prevSelectedPath = tag;
+            }
+
+            // === 2. 清空并重新加载节点 ===
             _mainForm.treeView1.Nodes.Clear();
 
-            // 创建根节点，显示根目录名，Tag属性存储目录完整路径
             TreeNode rootNode = new TreeNode(rootDir.Name) { Tag = rootDir.FullName };
             rootNode.ImageKey = "根目录";
             rootNode.SelectedImageKey = "根目录";
 
-            // 添加根节点到树控件
             _mainForm.treeView1.Nodes.Add(rootNode);
 
-            // 递归添加子目录节点
             AddSubDirectories(rootDir, rootNode, 1);
 
-            // 展开所有节点，方便查看
-            //_mainForm.treeView1.ExpandAll();
-            // 展开上次节点节点，方便查看
+            // === 3. 展开并尝试选中之前选中的节点 ===
             string savedNodeText = GasFormsApp.Settings.Default.Tab6SearchForMinesText;
-            //treeView1.ExpandAll();
+
             foreach (TreeNode node in _mainForm.treeView1.Nodes)
             {
-                // 第一级全部展开
                 node.Expand();
 
                 TreeNode targetChild = null;
-
                 foreach (TreeNode child in node.Nodes)
                 {
                     if (child.Text == savedNodeText)
                     {
                         child.Expand();
-                        targetChild = child;  // 记录找到的子节点
-                        break;               // 如果确定唯一，找到后可以跳出
+                        targetChild = child;
+                        break;
                     }
                 }
 
                 if (targetChild != null)
                 {
-                    // 移动 targetChild 到该一级节点的第一个子节点位置
                     node.Nodes.Remove(targetChild);
                     node.Nodes.Insert(0, targetChild);
+                }
+            }
+
+            // === 4. 如果记住了之前选中的路径，就在新树中找到并选中 ===
+            if (!string.IsNullOrEmpty(prevSelectedPath))
+            {
+                TreeNode found = FindNodeByTag(_mainForm.treeView1.Nodes, prevSelectedPath);
+                if (found != null)
+                {
+                    _mainForm.treeView1.SelectedNode = found;
+                    found.EnsureVisible(); // 滚动到可见
                 }
             }
 
@@ -745,6 +968,23 @@ namespace GasFormsApp.TabControl
                 _mainForm.treeView1.TopNode = _mainForm.treeView1.Nodes[0];
             }
         }
+        /// <summary>
+        /// 根据节点 Tag（目录路径）递归查找 TreeNode
+        /// </summary>
+        private TreeNode FindNodeByTag(TreeNodeCollection nodes, string targetTag)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Tag as string == targetTag)
+                    return node;
+
+                TreeNode foundInChild = FindNodeByTag(node.Nodes, targetTag);
+                if (foundInChild != null)
+                    return foundInChild;
+            }
+            return null;
+        }
+
         /// <summary>
         /// 递归添加指定目录的所有子目录到指定父节点下
         /// </summary>
@@ -793,8 +1033,6 @@ namespace GasFormsApp.TabControl
                 string name = _mainForm.dataGridView1.CurrentRow.Cells["ID"].Value?.ToString();
                 Console.WriteLine("当前选中名称：" + name);
 
-                // E:\E-Desktop\GitHub\GasFormsApp\bin\Release\SystemData
-
                 TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
                 if (selectedNode == null)
                 {
@@ -802,33 +1040,50 @@ namespace GasFormsApp.TabControl
                     return;
                 }
                 string selectedPath = selectedNode.Tag?.ToString();
-                string newImageName = $"{name}_Image.png";
-                string imagePath = Path.Combine("", newImageName);
-                if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
+                if (string.IsNullOrEmpty(selectedPath) || !Directory.Exists(selectedPath))
                 {
-                    newImageName = $"{name}_Image.png";
-                    imagePath = Path.Combine(selectedPath, newImageName);
-                }
-                else
-                {
+                    MessageBox.Show("节点路径无效！");
                     return;
                 }
 
-                // 设置 PictureBox 的显示模式
+                // 新的文件路径，改成 xxx_Data.WSHL
+                string dataFileName = $"{name}_Data.WSHL";
+                string dataFilePath = Path.Combine(selectedPath, dataFileName);
+
+                if (!File.Exists(dataFilePath))
+                {
+                    // 临时解决方案
+                    //MessageBox.Show("找不到数据文件：" + dataFilePath);
+                    return;
+                }
+
+                // 设置 PictureBox 显示模式
                 _mainForm.pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
                 try
                 {
-                    if (File.Exists(imagePath))
+                    UserData userData = null;
+                    using (FileStream fs = new FileStream(dataFilePath, FileMode.Open, FileAccess.Read))
                     {
-                        // 避免文件被锁，使用 Image.FromStream
-                        using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                        BinaryFormatter formatter = new BinaryFormatter();
+                        userData = (UserData)formatter.Deserialize(fs);
+                    }
+
+                    if (userData?.ImageData != null && userData.ImageData.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(userData.ImageData))
                         {
-                            _mainForm.pictureBox2.Image = Image.FromStream(fs);
+                            if (_mainForm.pictureBox2.Image != null)
+                            {
+                                _mainForm.pictureBox2.Image.Dispose();
+                                _mainForm.pictureBox2.Image = null;
+                            }
+                            _mainForm.pictureBox2.Image = Image.FromStream(ms);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("找不到图片文件：" + imagePath);
+                        MessageBox.Show("数据文件中没有图片数据！");
                     }
                 }
                 catch (Exception ex)
@@ -837,6 +1092,8 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
+
+
 
         // 解决一些问题
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -994,6 +1251,8 @@ namespace GasFormsApp.TabControl
             public string 实验室测试人员 { get; set; }
             public string 审核人员 { get; set; }
             public string 备注 { get; set; }
+
+            public byte[] ImageData;   // 用于保存图片
         }
 
         //// 当前程序目录
@@ -1021,94 +1280,67 @@ namespace GasFormsApp.TabControl
             newForm.ResultData = null;
             DialogResult result = newForm.ShowDialog();
 
-            if (result == DialogResult.OK)
+            if (result != DialogResult.OK)
             {
-                string data = newForm.ResultData;
-            }
-            else
-            {
-                //MessageBox.Show($"已取消");
+                // 用户取消了操作
                 return false;
             }
+
             string selectedPath = newForm.ResultData;
-            if (Directory.Exists(selectedPath))
+            if (string.IsNullOrEmpty(selectedPath))
             {
-                // 如果 SystemData 文件夹不存在，则创建
-                if (!Directory.Exists(selectedPath))
-                {
-                    MessageBox.Show($"创建路径：{selectedPath}");
-                    Directory.CreateDirectory(selectedPath);
-                    Console.WriteLine($"{selectedPath} 文件夹不存在，已创建");
-                }
-            }
-            else
-            {
+                MessageBox.Show("请选择有效的保存路径！");
                 return false;
             }
-            //MessageBox.Show($"窗口已关闭！{selectedPath}");
 
-            // 生成时间戳，用于命名文件
-            //string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-
-            string input = _mainForm.SamplingSpotTextBox.Text;
-            // 匹配中英文括号内的内容
-            //Match match = Regex.Match(input, @"[（(](.*?)[）)]");
-            //string timestamp = match.Success ? match.Groups[1].Value : "";  // 没有括号就返回空字符串
-            //timestamp = timestamp + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            // === 复制图片 ===
-            // 定义原始图片路径
-            // 获取当前用户的 AppData\Roaming 路径
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-            // 拼接程序专用目录：AppData\Roaming\瓦斯含量测定数据分析系统\Image
-            string imageFolderPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
-
-            // 拼接图片文件路径
-            string imageSourcePath = Path.Combine(imageFolderPath, "output_image.png");
-
-
-            // 定义新的图片名称和路径
-            //string newImageName = $"{timestamp}_Image.png";
-            string IdName = _mainForm.SampleNumTextBox.Text;
-            string newImageName = $"{IdName}_Image.png";
-            string imageTargetPath = Path.Combine(selectedPath, newImageName);
-
-            // 将图片复制到目标路径，若已存在则覆盖
-            if (File.Exists(imageTargetPath))
+            // 如果目录不存在，创建之
+            if (!Directory.Exists(selectedPath))
             {
-                result = MessageBox.Show(
-                    $"已存在 \"{IdName}\" ，是否覆盖？",
-                    "确认覆盖",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
-
-                if (result == DialogResult.Yes)
+                try
                 {
-                    // 覆盖
-                    File.Copy(imageSourcePath, imageTargetPath, true);
+                    Directory.CreateDirectory(selectedPath);
+                    Console.WriteLine($"目录不存在，已创建：{selectedPath}");
                 }
-                else
+                catch (Exception ex)
                 {
-                    // 取消操作
-                    //MessageBox.Show("文件未被复制。", "操作取消", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("创建目录失败：" + ex.Message);
                     return false;
                 }
             }
-            else
+
+            // 获取保存时用的ID，作为文件名关键部分
+            string IdName = _mainForm.SampleNumTextBox.Text?.Trim();
+            if (string.IsNullOrEmpty(IdName))
             {
-                // 文件不存在，直接复制
-                File.Copy(imageSourcePath, imageTargetPath);
+                MessageBox.Show("请输入有效的煤样编号！");
+                return false;
             }
-            Console.WriteLine($"图片已复制到：{imageTargetPath}");
 
-            //// 生成文档
-            //_mainForm.tab6_5_GenerateReportToDatabase(timestamp);
+            // === 读取图片数据 ===
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string imageFolderPath = Path.Combine(appDataPath, "瓦斯含量测定数据分析系统", "Image");
+            string imageSourcePath = Path.Combine(imageFolderPath, "output_image.png");
 
-            // === 保存用户数据 ===
+            if (!File.Exists(imageSourcePath))
+            {
+                MessageBox.Show("未找到要保存的图片文件：" + imageSourcePath);
+                return false;
+            }
+
+            byte[] imageData;
             try
             {
-                // 创建用户数据对象，这里是模拟数据，也可以从界面控件读取
+                imageData = File.ReadAllBytes(imageSourcePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("读取图片文件失败：" + ex.Message);
+                return false;
+            }
+
+            // === 创建并填充 UserData 对象 ===
+            try
+            {
                 var user = new UserData
                 {
                     ID = IdName,
@@ -1132,7 +1364,6 @@ namespace GasFormsApp.TabControl
                     煤样重量 = _mainForm.SampleWeightTextBox.Text,
                     取样深度 = _mainForm.SamplingDepthTextBox.Text,
                     取样时间 = _mainForm.SamplingTimeDateTimePicker.Text,
-                    // 新加++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     钻孔倾角 = _mainForm.DrillInclinationTextBox.Text,
                     方位角 = _mainForm.AzimuthTextBox.Text,
                     取样人员 = _mainForm.SamplingPersonnelTextBox.Text,
@@ -1195,30 +1426,29 @@ namespace GasFormsApp.TabControl
                     实验室测试人员 = _mainForm.LabTestersTextBox.Text,
                     审核人员 = _mainForm.AuditorTextBox.Text,
                     备注 = _mainForm.RemarkTextBox.Text,
+
+                    // 保存图片字节
+                    ImageData = imageData
                 };
 
+                string dataFilePath = Path.Combine(selectedPath, $"{IdName}_Data.WSHL");
 
-                // 定义要保存的二进制数据文件路径
-                string dataFilePath = Path.Combine(selectedPath, $"{IdName}_BinData.bin");
-
-                // 使用二进制格式化器将对象序列化保存到文件中
                 using (FileStream fs = new FileStream(dataFilePath, FileMode.Create))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
                     formatter.Serialize(fs, user);
                 }
 
-                Console.WriteLine($"二进制保存成功，文件路径：{dataFilePath}");
-                //MessageBox.Show("保存成功！", "提示：");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("保存失败：" + ex.Message);
-                MessageBox.Show("保存失败：" + ex.Message, "提示：");
+                MessageBox.Show("保存失败：" + ex.Message);
+                Console.WriteLine("保存失败：" + ex.ToString());
                 return false;
             }
         }
+
 
         /// <summary>
         /// 按钮2点击事件：读取所有保存的用户数据并绑定到 DataGridView
@@ -1441,9 +1671,7 @@ namespace GasFormsApp.TabControl
                 Directory.CreateDirectory(recycleFolder);
             }
 
-            string imagePath = Path.Combine(sourceFolder, $"{name}_Image.png");
-            string binPath = Path.Combine(sourceFolder, $"{name}_BinData.bin");
-            string docPath = Path.Combine(sourceFolder, $"{name}_Doc.docx");  // 添加 Word 文件路径
+            string binPath = Path.Combine(sourceFolder, $"{name}_Data.WSHL");
 
             TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
             if (selectedNode == null)
@@ -1456,9 +1684,7 @@ namespace GasFormsApp.TabControl
             if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
             {
                 // 如果选中叶子节点，就用该节点路径作为 sourceFolder
-                imagePath = Path.Combine(selectedPath, $"{name}_Image.png");
-                binPath = Path.Combine(selectedPath, $"{name}_BinData.bin");
-                docPath = Path.Combine(selectedPath, $"{name}_Doc.docx");
+                binPath = Path.Combine(selectedPath, $"{name}_Data.WSHL");
             }
 
             try
@@ -1483,9 +1709,7 @@ namespace GasFormsApp.TabControl
                     }
                 }
 
-                MoveFileToRecycle(imagePath);
                 MoveFileToRecycle(binPath);
-                MoveFileToRecycle(docPath);  // Word 文件
 
                 // 刷新表格数据
                 if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
@@ -1508,16 +1732,13 @@ namespace GasFormsApp.TabControl
         {
             _currentKeyword = "";
 
-            // 记录当前排序列和方向
             string sortColumnName = null;
             ListSortDirection sortDirection = ListSortDirection.Ascending;
 
-            // 记录选中用户ID
             string selectedUserId = null;
 
             try
             {
-                // 先保存排序信息和选中行信息
                 if (_mainForm.dataGridView1.SortedColumn != null)
                 {
                     sortColumnName = _mainForm.dataGridView1.SortedColumn.DataPropertyName;
@@ -1534,11 +1755,12 @@ namespace GasFormsApp.TabControl
 
                 if (!Directory.Exists(path))
                 {
-                    Console.WriteLine("BinData 文件夹不存在！");
+                    Console.WriteLine("数据文件夹不存在！");
                     return;
                 }
 
-                string[] files = Directory.GetFiles(path, "*.bin");
+                // 读取所有 _Data.WSHL 文件
+                string[] files = Directory.GetFiles(path, "*_Data.WSHL", SearchOption.TopDirectoryOnly);
                 if (files.Length == 0)
                 {
                     Console.WriteLine("没有找到数据文件！");
@@ -1559,25 +1781,13 @@ namespace GasFormsApp.TabControl
 
                 var sortableList = new SortableBindingList<UserData>(allUsers);
 
-                // 解绑事件，避免刷新时触发选中变化事件等
                 _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
 
                 _mainForm.dataGridView1.DataSource = null;
                 _mainForm.dataGridView1.DataSource = sortableList;
 
-                //if (_mainForm.FindTextBox.Text.Contains("X=") || _mainForm.FindTextBox.Text.Contains("Y="))
-                //{
-                //    // 只显示需要的列
-                //    string[] visibleColumns = { "取样地点", "取样地点坐标", "埋深" };
-                //    foreach (DataGridViewColumn col in _mainForm.dataGridView1.Columns)
-                //    {
-                //        col.Visible = visibleColumns.Contains(col.DataPropertyName);
-                //    }
-                //}
-
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                // 延迟恢复排序，避免排序没有立即生效
                 if (sortColumnName != null)
                 {
                     _mainForm.dataGridView1.BeginInvoke(new Action(() =>
@@ -1593,7 +1803,6 @@ namespace GasFormsApp.TabControl
                     }));
                 }
 
-                // 延迟恢复选中行
                 if (!string.IsNullOrEmpty(selectedUserId))
                 {
                     _mainForm.dataGridView1.BeginInvoke(new Action(() =>
@@ -1610,7 +1819,6 @@ namespace GasFormsApp.TabControl
                     }));
                 }
 
-                // 重新绑定事件
                 _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
                 Console.WriteLine("数据加载完成，已绑定到 dataGridView1。");
@@ -1623,46 +1831,54 @@ namespace GasFormsApp.TabControl
 
 
 
-        private List<UserData> LoadAllUsers(string path)
+
+        // 读取指定目录下所有 *_Data.WSHL 文件，反序列化成 UserData 列表
+        List<UserData> LoadAllUsers(string folderPath)
         {
-            if (!Directory.Exists(path))
+            List<UserData> allUsers = new List<UserData>();
+
+            if (!Directory.Exists(folderPath))
             {
-                Console.WriteLine("BinData 文件夹不存在！");
-                return new List<UserData>();
+                Console.WriteLine("目录不存在：" + folderPath);
+                return allUsers;
             }
 
-            string[] files = Directory.GetFiles(path, "*.bin");
+            string[] files = Directory.GetFiles(folderPath, "*_Data.WSHL", SearchOption.TopDirectoryOnly);
             if (files.Length == 0)
             {
                 Console.WriteLine("没有找到数据文件！");
-                return new List<UserData>();
+                return allUsers;
             }
 
-            List<UserData> allUsers = new List<UserData>();
             BinaryFormatter formatter = new BinaryFormatter();
 
             foreach (var file in files)
             {
-                using (FileStream fs = new FileStream(file, FileMode.Open))
+                try
                 {
-                    UserData user = (UserData)formatter.Deserialize(fs);
-                    allUsers.Add(user);
+                    using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+                    {
+                        UserData user = (UserData)formatter.Deserialize(fs);
+                        allUsers.Add(user);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"读取文件失败：{file}，原因：{ex.Message}");
                 }
             }
+
             return allUsers;
         }
+
         private void 查询显示(string path, string filterKeyword)
         {
-            // 记录当前排序列和方向
             string sortColumnName = null;
             ListSortDirection sortDirection = ListSortDirection.Ascending;
-
-            // 记录选中用户ID（假设UserData有ID属性）
             string selectedUserId = null;
 
             try
             {
-                // 先记录排序信息和选中行信息
                 if (_mainForm.dataGridView1.SortedColumn != null)
                 {
                     sortColumnName = _mainForm.dataGridView1.SortedColumn.DataPropertyName;
@@ -1677,7 +1893,7 @@ namespace GasFormsApp.TabControl
                     selectedUserId = selectedUser.ID;
                 }
 
-                List<UserData> allUsers = LoadAllUsers(path);
+                List<UserData> allUsers = LoadAllUsers(path);  // 调用新版读取方法
 
                 if (allUsers.Count == 0)
                 {
@@ -1685,7 +1901,7 @@ namespace GasFormsApp.TabControl
                     return;
                 }
 
-                _currentKeyword = filterKeyword; // 保存当前关键字，用于高亮
+                _currentKeyword = filterKeyword;
 
                 List<UserData> filteredUsers;
                 if (string.IsNullOrEmpty(filterKeyword))
@@ -1708,27 +1924,25 @@ namespace GasFormsApp.TabControl
 
                 var sortableList = new SortableBindingList<UserData>(filteredUsers);
 
-                // 解绑事件，防止刷新时触发 SelectionChanged 等事件
                 _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
                 _mainForm.dataGridView1.CellPainting -= DataGridView1_CellPainting;
 
                 _mainForm.dataGridView1.DataSource = null;
                 _mainForm.dataGridView1.DataSource = sortableList;
+
                 if (_mainForm.FindTextBox.Text.Contains("X=") || _mainForm.FindTextBox.Text.Contains("Y="))
                 {
-                    // 只显示需要的列
                     string[] visibleColumns = { "取样地点", "取样地点坐标", "埋深" };
                     foreach (DataGridViewColumn col in _mainForm.dataGridView1.Columns)
                     {
                         col.Visible = visibleColumns.Contains(col.DataPropertyName);
                     }
                 }
+
                 _mainForm.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                // 绑定高亮事件
                 _mainForm.dataGridView1.CellPainting += DataGridView1_CellPainting;
 
-                // 延迟恢复排序
                 if (sortColumnName != null)
                 {
                     _mainForm.dataGridView1.BeginInvoke(new Action(() =>
@@ -1744,7 +1958,6 @@ namespace GasFormsApp.TabControl
                     }));
                 }
 
-                // 延迟恢复选中行
                 if (!string.IsNullOrEmpty(selectedUserId))
                 {
                     _mainForm.dataGridView1.BeginInvoke(new Action(() =>
@@ -1753,7 +1966,6 @@ namespace GasFormsApp.TabControl
                         {
                             if (row.DataBoundItem is UserData user && user.ID == selectedUserId)
                             {
-                                // 确保第一个可见单元格
                                 DataGridViewCell firstVisibleCell = row.Cells.Cast<DataGridViewCell>()
                                     .FirstOrDefault(c => c.Visible);
 
@@ -1768,7 +1980,6 @@ namespace GasFormsApp.TabControl
                     }));
                 }
 
-                // 重新绑定事件
                 _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
 
                 Console.WriteLine($"数据加载完成，筛选关键字：'{filterKeyword}'，结果数：{filteredUsers.Count}");
@@ -1778,6 +1989,7 @@ namespace GasFormsApp.TabControl
                 Console.WriteLine("读取失败：" + ex.Message);
             }
         }
+
 
         private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
