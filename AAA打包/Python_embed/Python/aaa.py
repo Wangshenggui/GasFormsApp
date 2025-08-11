@@ -248,7 +248,7 @@ n_pos = int(np.ceil(pos_limit / step))
 n_neg = int(np.ceil(abs(neg_limit) / step))
 
 # 构造刻度：从 -n_neg*step 到 +n_pos*step，以 step 为间隔
-yticks = np.arange(-n_neg * step, (n_pos + 1) * step, step)
+yticks = np.arange(-(n_neg+1) * step, (n_pos + 1) * step, step)
 print("yticks:", yticks)
 
 # 设置 y 轴刻度
@@ -287,7 +287,7 @@ ax.annotate('', xy=(_xxx-1+0.5, 0), xytext=(0-0.03, 0),
 
 max_tick = max(ax.get_yticks())
 min_tick_shown = min(ax.get_yticks())
-ax.set_ylim(custom_round_up(intercept) - step, max_tick + step)  # 多留一格
+ax.set_ylim(custom_round_up(intercept) - step * 2, max_tick + step)  # 多留一格
 ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, min_tick_shown-0/19.1),
 # ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, 0),
             arrowprops=dict(arrowstyle='->', lw=1.0, color='#000000',antialiased=False,
