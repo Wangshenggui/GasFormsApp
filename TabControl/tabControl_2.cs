@@ -792,6 +792,43 @@ namespace GasFormsApp.TabControl
                 _mainForm.CoalTypeComboBox.Text = worksheet.Cell("D2").Value.ToString();
                 _mainForm.BurialDepthTextBox.Text = worksheet.Cell("E2").Value.ToString();
 
+                Control[] controls = {
+                    //tab1
+                    _mainForm.MineNameTextBox,
+                    _mainForm.SamplingSpotTextBox,
+                    _mainForm.CoalSeamTextBox,
+                    _mainForm.UndAtmPressureTextBox,
+                    _mainForm.UndTempTextBox,
+                    _mainForm.LabAtmPressureTextBox,
+                    _mainForm.LabTempTextBox,
+                    _mainForm.MoistureSampleTextBox,
+                    _mainForm.SampleModeComboBox,
+                    _mainForm.SampleNumTextBox,
+                    _mainForm.RawCoalMoistureTextBox,
+                    _mainForm.InitialVolumeTextBox,
+                    _mainForm.SampleWeightTextBox,
+                    _mainForm.SamplingDepthTextBox,
+                    _mainForm.SamplingTimeDateTimePicker,
+                    _mainForm.DrillInclinationTextBox,
+                    _mainForm.AzimuthTextBox,
+                    _mainForm.SamplingPersonnelTextBox,
+
+                    //tab2
+                    _mainForm.dateTimePicker2,
+                    _mainForm.dateTimePicker3,
+                    _mainForm.dateTimePicker5,
+                    _mainForm.dateTimePicker4,
+                    _mainForm.TypeOfDestructionComboBox3,
+                };
+
+                for (int i = 0; i < controls.Length; i++)
+                {
+                    controls[i].Text = worksheet.Cell(i + 3, 4).GetValue<string>();
+                }
+
+
+
+
                 if (int.TryParse(timeCell.GetValue<string>(), out int time))
                 {
                     string desorbValue = valueCell.GetValue<string>();
@@ -876,7 +913,7 @@ namespace GasFormsApp.TabControl
             }
         }
 
-        public string SelectSaveExcelFile()
+        public string SelectSaveExcelFile(string name)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -887,7 +924,7 @@ namespace GasFormsApp.TabControl
 
                 saveFileDialog.Filter = "Excel 文件 (*.xlsx)|*.xlsx|Excel 97-2003 文件 (*.xls)|*.xls";
                 saveFileDialog.Title = "请选择保存位置";
-                saveFileDialog.FileName = "新建Excel文件.xlsx"; // 可以根据需要设置默认文件名
+                saveFileDialog.FileName = $"{name}.xlsx"; // 可以根据需要设置默认文件名
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -903,10 +940,10 @@ namespace GasFormsApp.TabControl
         }
 
         //数据导出
-
         public void DataExportButton_Click(object sender, EventArgs e)
         {
-            string excelPath = SelectSaveExcelFile();
+            string FileName = "[" + _mainForm.SampleNumTextBox.Text.Trim() + "]" + _mainForm.SamplingSpotTextBox.Text.Trim();
+            string excelPath = SelectSaveExcelFile(FileName);
             if (!string.IsNullOrEmpty(excelPath))
             {
                 try
@@ -923,6 +960,46 @@ namespace GasFormsApp.TabControl
                         worksheet.Cell(1, 4).Value = "煤种";
                         worksheet.Cell(1, 5).Value = "埋深";
 
+                        string[] names = {
+                            //tab1
+                            "矿井名称：",
+                            "取样地点：",
+                            "煤层：",
+                            "井下压力：",
+                            "井下温度：",
+                            "实验室压力：",
+                            "实验室温度：",
+                            "煤样水分：",
+                            "取样方式：",
+                            "煤样编号：",
+                            "原煤水分：",
+                            "量管初始体积：",
+                            "样品重量：",
+                            "取样深度：",
+                            "取样时间：",
+                            "钻孔倾角：",
+                            "方位角：",
+                            "取样人员：",
+                            //tab2
+                            "打钻开始时间：",
+                            "取芯结束时间：",
+                            "取芯开始时间：",
+                            "解吸开始时间：",
+                            "煤的破坏类型：",
+                        };
+                        for (int i = 0; i < names.Length; i++)
+                        {
+                            var cell = worksheet.Cell(i + 3, 3);
+                            cell.Value = names[i];
+                            cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+
+                            cell.Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                            cell.Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                            cell.Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                            cell.Style.Border.RightBorder = XLBorderStyleValues.Thin;
+                        }
+
+                        // 写数据
                         worksheet.Cell(2, 3).Value = _mainForm.X_YTextBox.Text;
                         worksheet.Cell(2, 4).Value = _mainForm.CoalTypeComboBox.Text;
                         if (double.TryParse(_mainForm.BurialDepthTextBox.Text, out double burialDepth))
@@ -933,6 +1010,47 @@ namespace GasFormsApp.TabControl
                         {
                             // 可以根据需要做提示或默认值
                             worksheet.Cell(2, 5).Value = 0; // 或者提示用户输入有误
+                        }
+
+                        string[] texts = {
+                            //tab1
+                            _mainForm.MineNameTextBox.Text,
+                            _mainForm.SamplingSpotTextBox.Text,
+                            _mainForm.CoalSeamTextBox.Text,
+                            _mainForm.UndAtmPressureTextBox.Text,
+                            _mainForm.UndTempTextBox.Text,
+                            _mainForm.LabAtmPressureTextBox.Text,
+                            _mainForm.LabTempTextBox.Text,
+                            _mainForm.MoistureSampleTextBox.Text,
+                            _mainForm.SampleModeComboBox.Text,
+                            _mainForm.SampleNumTextBox.Text,
+                            _mainForm.RawCoalMoistureTextBox.Text,
+                            _mainForm.InitialVolumeTextBox.Text,
+                            _mainForm.SampleWeightTextBox.Text,
+                            _mainForm.SamplingDepthTextBox.Text,
+                            _mainForm.SamplingTimeDateTimePicker.Text,
+                            _mainForm.DrillInclinationTextBox.Text,
+                            _mainForm.AzimuthTextBox.Text,
+                            _mainForm.SamplingPersonnelTextBox.Text,
+
+                            //tab2
+                            _mainForm.dateTimePicker2.Text,
+                            _mainForm.dateTimePicker3.Text,
+                            _mainForm.dateTimePicker5.Text,
+                            _mainForm.dateTimePicker4.Text,
+                            _mainForm.TypeOfDestructionComboBox3.Text,
+                        };
+
+                        for (int i = 0; i < texts.Length; i++)
+                        {
+                            var cell = worksheet.Cell(i + 3, 4);
+                            cell.Value = texts[i];
+                            cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
+
+                            cell.Style.Border.TopBorder = XLBorderStyleValues.Thin;
+                            cell.Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+                            cell.Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+                            cell.Style.Border.RightBorder = XLBorderStyleValues.Thin;
                         }
 
 
@@ -976,7 +1094,7 @@ namespace GasFormsApp.TabControl
                         worksheet.Column(1).Width = 15; // 设置第一列宽度
                         worksheet.Column(2).Width = 20; // 设置第二列宽度
                         worksheet.Column(3).Width = 20;
-                        worksheet.Column(4).Width = 20;
+                        worksheet.Column(4).Width = 20 * 3;
                         worksheet.Column(5).Width = 20;
 
 

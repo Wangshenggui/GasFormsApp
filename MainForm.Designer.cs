@@ -2712,10 +2712,8 @@ namespace GasFormsApp
             this.DataNumTextBox31.Name = "DataNumTextBox31";
             this.DataNumTextBox31.PlaceholderText = "";
             this.DataNumTextBox31.Radius = 2;
-            this.DataNumTextBox31.SelectionStart = 3;
             this.DataNumTextBox31.Size = new System.Drawing.Size(46, 30);
             this.DataNumTextBox31.TabIndex = 37;
-            this.DataNumTextBox31.Text = "123";
             this.DataNumTextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DesorbTextBox48
