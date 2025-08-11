@@ -76,10 +76,10 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>83E5591E27CC32744FD540FFF646F6DA610FC3E5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>20A129C63B97E7DEA309C7950651B82868329FFD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>GasFormsApp_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>GasFormsApp_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -370,6 +370,7 @@
       <DependentUpon>UCButtonClass.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="GasFormsApp_2_TemporaryKey.pfx" />
     <None Include="GasFormsApp_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

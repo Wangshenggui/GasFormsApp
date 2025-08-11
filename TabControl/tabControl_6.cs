@@ -2141,7 +2141,7 @@ namespace GasFormsApp.TabControl
             LoadFoldersToTree(rootPath);
         }
 
-        public string SelectSaveExcelFile()
+        public string SelectSaveExcelFile(string name)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -2152,7 +2152,7 @@ namespace GasFormsApp.TabControl
 
                 saveFileDialog.Filter = "Excel 文件 (*.xlsx)|*.xlsx|Excel 97-2003 文件 (*.xls)|*.xls";
                 saveFileDialog.Title = "请选择保存位置";
-                saveFileDialog.FileName = "新建Excel文件.xlsx"; // 可以根据需要设置默认文件名
+                saveFileDialog.FileName = $"{name}" + ".xlsx"; // 可以根据需要设置默认文件名
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -2391,11 +2391,12 @@ namespace GasFormsApp.TabControl
             if (_rightClickedNode != null)
             {
                 string path = _rightClickedNode.Tag as string;
+                string nodeName = _rightClickedNode.Text; // 这里是节点名字
                 if (!string.IsNullOrEmpty(path))
                 {
-                    //MessageBox.Show($"当前节点路径：{path}");
+                    //MessageBox.Show($"当前节点路径：{path}\n当前节点名称：{nodeName}");
                     // 这里做导出等操作
-                    string excelPath = SelectSaveExcelFile();
+                    string excelPath = SelectSaveExcelFile(nodeName);
                     if (!string.IsNullOrEmpty(excelPath))
                     {
                         try
@@ -2529,7 +2530,7 @@ namespace GasFormsApp.TabControl
                                     {
                                         message += $"目录：{Path.GetFileName(dir)}\n";
 
-                                        string[] files = Directory.GetFiles(dir, "*.bin");
+                                        string[] files = Directory.GetFiles(dir, "*.WSHL");
                                         binFiles.AddRange(files);
                                         binFileCount += files.Length;  // 统计数量
 
@@ -2539,7 +2540,7 @@ namespace GasFormsApp.TabControl
                                         }
                                     }
 
-                                    message += $"\n所有子目录中 .bin 文件总数：{binFileCount}";
+                                    message += $"\n所有子目录中 .WSHL 文件总数：{binFileCount}";
                                     BinaryFormatter formatter = new BinaryFormatter();
                                     // 从 E4 开始写编号，F4 开始写文件名
                                     for (int i = 0; i < binFileCount; i++)
