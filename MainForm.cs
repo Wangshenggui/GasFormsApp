@@ -383,6 +383,30 @@ namespace GasFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // 假设有一个 RichTextBox，名字是 richTextBox1
+
+
+            // 设置示例文本
+
+            // 先全部设置正常字体大小，取消偏移
+            richTextBox1.Select(0, richTextBox1.Text.Length);
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font.FontFamily, 12);
+            richTextBox1.SelectionCharOffset = 0;  // 取消偏移
+
+            // 设置第二个字符为小字体（9号）
+            richTextBox1.Select(1, 1);
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font.FontFamily, 9);
+            richTextBox1.SelectionCharOffset = 0;  // 普通位置
+
+            // 设置第五个字符为上标（小字体+上移）
+            richTextBox1.Select(4, 1);
+            richTextBox1.SelectionFont = new Font(richTextBox1.Font.FontFamily, 9);
+            richTextBox1.SelectionCharOffset = 5;  // 上移 5 个像素（可以调节）
+
+            // 取消选择，避免光标停留在选中位置
+            richTextBox1.SelectionLength = 0;
+
+
             //MessageBox.Show($"版本：{Version}");
 
             //int screenWidth = Screen.PrimaryScreen.Bounds.Width;
