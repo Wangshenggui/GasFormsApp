@@ -54,6 +54,8 @@ namespace GasFormsApp.TabControl
             _mainForm.tabPage2RecoverDataButton.Click += tabPage2RecoverDataButton_Click;
             _mainForm.DataExportButton.Click += DataExportButton_Click;
 
+            _mainForm.ClearButton.Click += ClearButton_Click;
+
             _mainForm.TypeOfDestructionComboBox3.MouseWheel += TypeOfDestructionComboBox3_MouseWheel;
 
             _mainForm.pictureBox3.MouseDown += pictureBox3_MouseDown;
@@ -604,6 +606,10 @@ namespace GasFormsApp.TabControl
             double roundedMinutes = Math.Round(minutes, 2);
             // 显示
             _mainForm.t0TextBox.Text = roundedMinutes.ToString("F2");
+            // 同时显示成 "Xmin Ysec"
+            int m = (int)roundedMinutes;              // 整数部分 -> 分钟
+            double s = (roundedMinutes - m) * 60;     // 小数部分 -> 秒
+            _mainForm.t0TextBox_m_s.Text = $"{roundedMinutes.ToString("F2")}" + $"[{m}m {s:F0}s]";
 
 
 
@@ -1144,6 +1150,26 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
+        // 清空输入内容按钮
+        public void ClearButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 60; i++)
+            {
+                var tb = _mainForm.Controls.Find($"DesorbTextBox{i}", true).FirstOrDefault() as Input;
+                if (tb != null)
+                {
+                    tb.Clear();
+                }
+            }
+            // 清空 DataNumTextBox31-60
+            for (int i = 31; i <= 60; i++)
+            {
+                var tb = _mainForm.Controls.Find($"DataNumTextBox{i}", true).FirstOrDefault() as Input;
+                tb?.Clear();
+            }
+        }
+
+
 
         /// <summary>
         /// 计算按钮点击事件

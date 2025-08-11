@@ -103,6 +103,7 @@ namespace GasFormsApp
             this.label33 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.doubleBufferedPanel1 = new GasFormsApp.UI.DoubleBufferedPanel();
+            this.t0TextBox_m_s = new AntdUI.Input();
             this.t0TextBox = new AntdUI.Input();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
@@ -244,6 +245,7 @@ namespace GasFormsApp
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage2panel10 = new GasFormsApp.UI.DoubleBufferedPanel();
             this.tabPage2panel6 = new System.Windows.Forms.Panel();
+            this.ClearButton = new GasFormsApp.UI.UCButton();
             this.SampLossVolTextBox = new AntdUI.Input();
             this.UndDesorpCalTextBox = new AntdUI.Input();
             this.DesVolUndTextBox = new AntdUI.Input();
@@ -1332,6 +1334,7 @@ namespace GasFormsApp
             // doubleBufferedPanel1
             // 
             this.doubleBufferedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.doubleBufferedPanel1.Controls.Add(this.t0TextBox_m_s);
             this.doubleBufferedPanel1.Controls.Add(this.t0TextBox);
             this.doubleBufferedPanel1.Controls.Add(this.dateTimePicker5);
             this.doubleBufferedPanel1.Controls.Add(this.dateTimePicker4);
@@ -1343,6 +1346,21 @@ namespace GasFormsApp
             this.doubleBufferedPanel1.Size = new System.Drawing.Size(403, 103);
             this.doubleBufferedPanel1.TabIndex = 1003;
             // 
+            // t0TextBox_m_s
+            // 
+            this.t0TextBox_m_s.BackColor = System.Drawing.Color.PeachPuff;
+            this.t0TextBox_m_s.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t0TextBox_m_s.Location = new System.Drawing.Point(141, 68);
+            this.t0TextBox_m_s.Name = "t0TextBox_m_s";
+            this.t0TextBox_m_s.PlaceholderText = "";
+            this.t0TextBox_m_s.ReadOnly = true;
+            this.t0TextBox_m_s.SelectionStart = 7;
+            this.t0TextBox_m_s.Size = new System.Drawing.Size(230, 35);
+            this.t0TextBox_m_s.TabIndex = 110;
+            this.t0TextBox_m_s.TabStop = false;
+            this.t0TextBox_m_s.Text = "0min 0s";
+            this.t0TextBox_m_s.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // t0TextBox
             // 
             this.t0TextBox.BackColor = System.Drawing.Color.PeachPuff;
@@ -1352,7 +1370,7 @@ namespace GasFormsApp
             this.t0TextBox.PlaceholderText = "";
             this.t0TextBox.ReadOnly = true;
             this.t0TextBox.SelectionStart = 4;
-            this.t0TextBox.Size = new System.Drawing.Size(230, 35);
+            this.t0TextBox.Size = new System.Drawing.Size(115, 35);
             this.t0TextBox.TabIndex = 6;
             this.t0TextBox.TabStop = false;
             this.t0TextBox.Text = "0.00";
@@ -2932,6 +2950,7 @@ namespace GasFormsApp
             // tabPage2panel6
             // 
             this.tabPage2panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(109)))));
+            this.tabPage2panel6.Controls.Add(this.ClearButton);
             this.tabPage2panel6.Controls.Add(this.SampLossVolTextBox);
             this.tabPage2panel6.Controls.Add(this.UndDesorpCalTextBox);
             this.tabPage2panel6.Controls.Add(this.DesVolUndTextBox);
@@ -2949,6 +2968,26 @@ namespace GasFormsApp
             this.tabPage2panel6.Name = "tabPage2panel6";
             this.tabPage2panel6.Size = new System.Drawing.Size(806, 160);
             this.tabPage2panel6.TabIndex = 1000;
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ClearButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClearButton.ButtonImage = ((System.Drawing.Image)(resources.GetObject("ClearButton.ButtonImage")));
+            this.ClearButton.FillMode = GasFormsApp.UI.FillMode.Gradient;
+            this.ClearButton.FlatAppearance.BorderSize = 0;
+            this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ClearButton.HoverColor = System.Drawing.Color.LightBlue;
+            this.ClearButton.Location = new System.Drawing.Point(542, 13);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.ClearButton.Radius = 15;
+            this.ClearButton.Size = new System.Drawing.Size(116, 42);
+            this.ClearButton.TabIndex = 1014;
+            this.ClearButton.Text = "     清空输入";
+            this.ClearButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClearButton.UseVisualStyleBackColor = false;
             // 
             // SampLossVolTextBox
             // 
@@ -3022,7 +3061,7 @@ namespace GasFormsApp
             this.ExportImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExportImageButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ExportImageButton.HoverColor = System.Drawing.Color.LightBlue;
-            this.ExportImageButton.Location = new System.Drawing.Point(542, 13);
+            this.ExportImageButton.Location = new System.Drawing.Point(500, 115);
             this.ExportImageButton.Name = "ExportImageButton";
             this.ExportImageButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ExportImageButton.Radius = 15;
@@ -5925,5 +5964,7 @@ namespace GasFormsApp
         public ToolStripMenuItem 重命名ToolStripMenuItem;
         public AntdUI.Input FindMineTextBox;
         public AntdUI.Input FindTextBox;
+        public AntdUI.Input t0TextBox_m_s;
+        public UI.UCButton ClearButton;
     }
 }
