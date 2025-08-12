@@ -1809,6 +1809,10 @@ namespace GasFormsApp.TabControl
                 if (!Directory.Exists(path))
                 {
                     Console.WriteLine("数据文件夹不存在！");
+
+                    // 清空dataGridView1数据
+                    _mainForm.dataGridView1.DataSource = null;
+                    _mainForm.dataGridView1.Rows.Clear();
                     return;
                 }
 
@@ -1817,6 +1821,7 @@ namespace GasFormsApp.TabControl
                 if (files.Length == 0)
                 {
                     Console.WriteLine("没有找到数据文件！");
+                    _mainForm.dataGridView1.DataSource = null; // 清空绑定的数据
                     return;
                 }
 
@@ -1946,11 +1951,19 @@ namespace GasFormsApp.TabControl
                     selectedUserId = selectedUser.ID;
                 }
 
+                if (!Directory.Exists(path))
+                {
+                    Console.WriteLine("数据文件夹不存在！");
+                    ClearDataGridView();
+                    return;
+                }
+
                 List<UserData> allUsers = LoadAllUsers(path);  // 调用新版读取方法
 
                 if (allUsers.Count == 0)
                 {
                     Console.WriteLine("没有数据，无法筛选！");
+                    ClearDataGridView();
                     return;
                 }
 
@@ -1975,6 +1988,13 @@ namespace GasFormsApp.TabControl
                         .ToList();
                 }
 
+                if (filteredUsers.Count == 0)
+                {
+                    Console.WriteLine("筛选结果为空！");
+                    ClearDataGridView();
+                    return;
+                }
+
                 var sortableList = new SortableBindingList<UserData>(filteredUsers);
 
                 _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
@@ -1989,6 +2009,14 @@ namespace GasFormsApp.TabControl
                     foreach (DataGridViewColumn col in _mainForm.dataGridView1.Columns)
                     {
                         col.Visible = visibleColumns.Contains(col.DataPropertyName);
+                    }
+                }
+                else
+                {
+                    // 确保其他情况全部列都可见
+                    foreach (DataGridViewColumn col in _mainForm.dataGridView1.Columns)
+                    {
+                        col.Visible = true;
                     }
                 }
 
@@ -2040,8 +2068,22 @@ namespace GasFormsApp.TabControl
             catch (Exception ex)
             {
                 Console.WriteLine("读取失败：" + ex.Message);
+                ClearDataGridView();
             }
         }
+
+        private void ClearDataGridView()
+        {
+            _mainForm.dataGridView1.SelectionChanged -= dataGridView1_SelectionChanged;
+            _mainForm.dataGridView1.CellPainting -= DataGridView1_CellPainting;
+
+            _mainForm.dataGridView1.DataSource = null;
+            _mainForm.dataGridView1.Rows.Clear();
+
+            _mainForm.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            _mainForm.dataGridView1.CellPainting += DataGridView1_CellPainting;
+        }
+
 
 
         private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
