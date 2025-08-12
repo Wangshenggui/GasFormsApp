@@ -609,7 +609,7 @@ namespace GasFormsApp.TabControl
             // 同时显示成 "Xmin Ysec"
             int m = (int)roundedMinutes;              // 整数部分 -> 分钟
             double s = (roundedMinutes - m) * 60;     // 小数部分 -> 秒
-            _mainForm.t0TextBox_m_s.Text = $"{roundedMinutes.ToString("F2")}" + $"[{m}m {s:F0}s]";
+            _mainForm.t0TextBox_m_s.Text = $"{roundedMinutes.ToString("F2")}" + $"[{m}min {s:F0}s]";
 
 
 

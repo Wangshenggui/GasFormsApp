@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+
 
 namespace GasFormsApp.TabControl
 {
@@ -23,6 +25,203 @@ namespace GasFormsApp.TabControl
             _mainForm.toolTip1.SetToolTip(_mainForm.ExpCalcButton, "计算(Ctrl + D)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage4TemporarySavingButton, "临时保存(Ctrl + Shift + S)");
             _mainForm.toolTip1.SetToolTip(_mainForm.tabPage4RecoverDataButton, "恢复数据(Ctrl + R)");
+
+            // 设置上下标
+            var boxes = new[] { _mainForm.W1RichTextBox, _mainForm.W2RichTextBox, _mainForm.W3RichTextBox };
+            foreach (var box in boxes)
+            {
+                SetRichTextFormat(box);
+            }
+            // 全部设置正常字体
+            _mainForm.WaRichTextBox.Select(0, _mainForm.WaRichTextBox.Text.Length);
+            _mainForm.WaRichTextBox.SelectionFont = new Font(_mainForm.WaRichTextBox.Font.FontFamily, 12);
+            _mainForm.WaRichTextBox.SelectionCharOffset = 0;
+            // 第五个字符：小字体 + 上标
+            _mainForm.WaRichTextBox.Select(4, 1);
+            _mainForm.WaRichTextBox.SelectionFont = new Font(_mainForm.WaRichTextBox.Font.FontFamily, 9);
+            _mainForm.WaRichTextBox.SelectionCharOffset = 5;
+            // 取消选择
+            _mainForm.WaRichTextBox.SelectionLength = 0;
+
+            // 全部设置正常字体
+            _mainForm.WcRichTextBox.Select(0, _mainForm.WcRichTextBox.Text.Length);
+            _mainForm.WcRichTextBox.SelectionFont = new Font(_mainForm.WcRichTextBox.Font.FontFamily, 12);
+            _mainForm.WcRichTextBox.SelectionCharOffset = 0;
+            // 第五个字符：小字体 + 上标
+            _mainForm.WcRichTextBox.Select(4, 1);
+            _mainForm.WcRichTextBox.SelectionFont = new Font(_mainForm.WcRichTextBox.Font.FontFamily, 9);
+            _mainForm.WcRichTextBox.SelectionCharOffset = 5;
+            // 取消选择
+            _mainForm.WcRichTextBox.SelectionLength = 0;
+
+            // 全部设置正常字体
+            _mainForm.WRichTextBox.Select(0, _mainForm.WRichTextBox.Text.Length);
+            _mainForm.WRichTextBox.SelectionFont = new Font(_mainForm.WRichTextBox.Font.FontFamily, 12);
+            _mainForm.WRichTextBox.SelectionCharOffset = 0;
+            // 第四个字符：小字体 + 上标
+            _mainForm.WRichTextBox.Select(3, 1);
+            _mainForm.WRichTextBox.SelectionFont = new Font(_mainForm.WRichTextBox.Font.FontFamily, 9);
+            _mainForm.WRichTextBox.SelectionCharOffset = 5;
+            // 取消选择
+            _mainForm.WRichTextBox.SelectionLength = 0;
+
+            _mainForm.AdsorpConstACheckBox.Paint += (s, pe) =>
+            {
+                var cb = (CheckBox)s;
+
+                // 清除背景
+                pe.Graphics.Clear(cb.Parent?.BackColor ?? Color.White);
+
+                // 绘制复选框
+                CheckBoxRenderer.DrawCheckBox(
+                    pe.Graphics,
+                    new Point(0, (cb.Height - 16) / 2),
+                    cb.Checked ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal
+                );
+
+                Color textColor = Color.FromArgb(48, 227, 202);
+                using (Brush textBrush = new SolidBrush(textColor))
+                using (Font normalFont = new Font("宋体", 12, FontStyle.Regular))
+                using (Font superscriptFont = new Font("宋体", 9, FontStyle.Regular))
+                {
+                    string part1 = "吸附常数a(cm"; // 普通字体部分
+                    string superscript = "3";      // 上标字符
+                    string part2 = "/g):";         // 后续普通字体
+
+                    float textX = 15;
+                    float textY = (cb.Height - normalFont.Height) / 2;
+
+                    // 画普通文字 part1
+                    pe.Graphics.DrawString(part1, normalFont, textBrush, textX, textY);
+                    var part1Size = pe.Graphics.MeasureString(part1, normalFont);
+
+                    // 上标偏移，向上移约40%
+                    float offsetY = -2;
+                    pe.Graphics.DrawString(superscript, superscriptFont, textBrush, textX + part1Size.Width - 4, textY + offsetY);
+                    var superSize = pe.Graphics.MeasureString(superscript, superscriptFont);
+
+                    // 画后续文字 part2
+                    pe.Graphics.DrawString(part2, normalFont, textBrush, textX + part1Size.Width + superSize.Width - 8, textY);
+                }
+            };
+
+            _mainForm.AdsorpConstBCheckBox.Paint += (s, pe) =>
+            {
+                var cb = (CheckBox)s;
+
+                // 清除背景
+                pe.Graphics.Clear(cb.Parent?.BackColor ?? Color.White);
+
+                // 绘制复选框
+                CheckBoxRenderer.DrawCheckBox(
+                    pe.Graphics,
+                    new Point(0, (cb.Height - 16) / 2),
+                    cb.Checked ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal
+                );
+
+                Color textColor = Color.FromArgb(48, 227, 202);
+                using (Brush textBrush = new SolidBrush(textColor))
+                using (Font normalFont = new Font("宋体", 12, FontStyle.Regular))
+                using (Font superscriptFont = new Font("宋体", 9, FontStyle.Regular))
+                {
+                    string part1 = "吸附常数b(MPa"; // 普通字体部分
+                    string superscript = "-1";      // 上标字符
+                    string part2 = "):";         // 后续普通字体
+
+                    float textX = 15;
+                    float textY = (cb.Height - normalFont.Height) / 2;
+
+                    // 画普通文字 part1
+                    pe.Graphics.DrawString(part1, normalFont, textBrush, textX, textY);
+                    var part1Size = pe.Graphics.MeasureString(part1, normalFont);
+
+                    // 上标偏移，向上移约40%
+                    float offsetY = -2;
+                    pe.Graphics.DrawString(superscript, superscriptFont, textBrush, textX + part1Size.Width - 4, textY + offsetY);
+                    var superSize = pe.Graphics.MeasureString(superscript, superscriptFont);
+
+                    // 画后续文字 part2
+                    pe.Graphics.DrawString(part2, normalFont, textBrush, textX + part1Size.Width + superSize.Width - 8, textY);
+                }
+            };
+            _mainForm.TrueDensityCheckBox.Paint += (s, pe) =>
+            {
+                var cb = (CheckBox)s;
+
+                // 清除背景
+                pe.Graphics.Clear(cb.Parent?.BackColor ?? Color.White);
+
+                // 绘制复选框
+                CheckBoxRenderer.DrawCheckBox(
+                    pe.Graphics,
+                    new Point(0, (cb.Height - 16) / 2),
+                    cb.Checked ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal
+                );
+
+                Color textColor = Color.FromArgb(48, 227, 202);
+                using (Brush textBrush = new SolidBrush(textColor))
+                using (Font normalFont = new Font("宋体", 12, FontStyle.Regular))
+                using (Font superscriptFont = new Font("宋体", 9, FontStyle.Regular))
+                {
+                    string part1 = "真 密 度 (g/cm"; // 普通字体部分真 密 度 (g/cm³):
+                    string superscript = "3";      // 上标字符
+                    string part2 = "):";         // 后续普通字体
+
+                    float textX = 13;
+                    float textY = (cb.Height - normalFont.Height) / 2;
+
+                    // 画普通文字 part1
+                    pe.Graphics.DrawString(part1, normalFont, textBrush, textX, textY);
+                    var part1Size = pe.Graphics.MeasureString(part1, normalFont);
+
+                    // 上标偏移，向上移约40%
+                    float offsetY = -2;
+                    pe.Graphics.DrawString(superscript, superscriptFont, textBrush, textX + part1Size.Width - 4, textY + offsetY);
+                    var superSize = pe.Graphics.MeasureString(superscript, superscriptFont);
+
+                    // 画后续文字 part2
+                    pe.Graphics.DrawString(part2, normalFont, textBrush, textX + part1Size.Width + superSize.Width - 8, textY);
+                }
+            };
+            _mainForm.NonDesorpGasQtyCheckBox.Paint += (s, pe) =>
+            {
+                var cb = (CheckBox)s;
+
+                // 清除背景
+                pe.Graphics.Clear(cb.Parent?.BackColor ?? Color.White);
+
+                // 绘制复选框
+                CheckBoxRenderer.DrawCheckBox(
+                    pe.Graphics,
+                    new Point(0, (cb.Height - 16) / 2),
+                    cb.Checked ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal
+                );
+
+                Color textColor = Color.FromArgb(48, 227, 202);
+                using (Brush textBrush = new SolidBrush(textColor))
+                using (Font normalFont = new Font("宋体", 12, FontStyle.Regular))
+                using (Font superscriptFont = new Font("宋体", 9, FontStyle.Regular))
+                {
+                    string part1 = "不可解吸瓦斯量 [Wc(m"; // 普通字体部分不可解吸瓦斯量 [Wc(m³/t)]:
+                    string superscript = "3";      // 上标字符
+                    string part2 = "/t)]:";         // 后续普通字体
+
+                    float textX = 15;
+                    float textY = (cb.Height - normalFont.Height) / 2;
+
+                    // 画普通文字 part1
+                    pe.Graphics.DrawString(part1, normalFont, textBrush, textX, textY);
+                    var part1Size = pe.Graphics.MeasureString(part1, normalFont);
+
+                    // 上标偏移，向上移约40%
+                    float offsetY = -2;
+                    pe.Graphics.DrawString(superscript, superscriptFont, textBrush, textX + part1Size.Width - 4, textY + offsetY);
+                    var superSize = pe.Graphics.MeasureString(superscript, superscriptFont);
+
+                    // 画后续文字 part2
+                    pe.Graphics.DrawString(part2, normalFont, textBrush, textX + part1Size.Width + superSize.Width - 8, textY);
+                }
+            };
 
             // 绑定计算按钮点击事件
             _mainForm.ExpCalcButton.Click += ExpCalcButton_Click;
@@ -67,6 +266,27 @@ namespace GasFormsApp.TabControl
 
             // 批量注册内容更改事件
             InitializeTextMonitoring();
+        }
+
+        private void SetRichTextFormat(RichTextBox rtb)
+        {
+            // 全部设置正常字体
+            rtb.Select(0, rtb.Text.Length);
+            rtb.SelectionFont = new Font(rtb.Font.FontFamily, 12);
+            rtb.SelectionCharOffset = 0;
+
+            // 第二个字符：小字体
+            rtb.Select(1, 1);
+            rtb.SelectionFont = new Font(rtb.Font.FontFamily, 9);
+            rtb.SelectionCharOffset = 0;
+
+            // 第五个字符：小字体 + 上标
+            rtb.Select(4, 1);
+            rtb.SelectionFont = new Font(rtb.Font.FontFamily, 9);
+            rtb.SelectionCharOffset = 5;
+
+            // 取消选择
+            rtb.SelectionLength = 0;
         }
 
         private void tabPage4DoubleBufferedPanel1_MouseWheel(object sender, MouseEventArgs e)
@@ -488,12 +708,37 @@ namespace GasFormsApp.TabControl
         private double getWc()
         {
             float p = 0.1f; // 常数，瓦斯压力参数
-            float AD = Convert.ToSingle(_mainForm.AadTextBox.Text.Trim());        // 灰分
-            float Md = Convert.ToSingle(_mainForm.MadTextBox.Text.Trim());       // 水分
-            float F = Convert.ToSingle(_mainForm.PorosityTextBox.Text.Trim());   // 孔隙率
-            float r = Convert.ToSingle(_mainForm.AppDensityTextBox.Text.Trim()); // 视密度
-            float a = Convert.ToSingle(_mainForm.AdsorpConstATextBox.Text.Trim());// 吸附常数a
-            float b = Convert.ToSingle(_mainForm.AdsorpConstBTextBox.Text.Trim());// 吸附常数b
+
+            if (!float.TryParse(_mainForm.AadTextBox.Text.Trim(), out float AD))
+            {
+                return double.NaN;
+            }
+
+            if (!float.TryParse(_mainForm.MadTextBox.Text.Trim(), out float Md))
+            {
+                return double.NaN;
+            }
+
+            if (!float.TryParse(_mainForm.PorosityTextBox.Text.Trim(), out float F))
+            {
+                return double.NaN;
+            }
+
+            if (!float.TryParse(_mainForm.AppDensityTextBox.Text.Trim(), out float r))
+            {
+                return double.NaN;
+            }
+
+            if (!float.TryParse(_mainForm.AdsorpConstATextBox.Text.Trim(), out float a))
+            {
+                return double.NaN;
+            }
+
+            if (!float.TryParse(_mainForm.AdsorpConstBTextBox.Text.Trim(), out float b))
+            {
+                return double.NaN;
+            }
+
 
             // 计算公式：见业务逻辑
             double x = a * b * p * (100 - AD - Md) / ((1 + b * p) * 100 * (1 + 0.31 * Md)) + F / (100 * r);
@@ -504,34 +749,69 @@ namespace GasFormsApp.TabControl
         // 计算按钮点击事件处理函数，执行全部相关计算并显示结果
         public void ExpCalcButton_Click(object sender, EventArgs e)
         {
+            _mainForm.NonDesorpGasQtyTextBox.Text = "-.--";
+            _mainForm.Wc_TextBox.Text = "-.--";
             // 计算Wc
-            MainForm.Wc = getWc();
+            MainForm.Wc = getWc(); 
+            if (double.IsNaN(MainForm.Wc))
+            {
+                // 输入错误，已提示，后续不继续
+                return;
+            }
             _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString("F2");
+            if (!float.TryParse(_mainForm.NonDesorpGasQtyTextBox.Text, out float wc))
+            {
+                return;
+            }
+            MainForm.Wc = wc;
+            _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F2");
 
             // 计算W1
-            float SampleWeight = (float)Convert.ToDecimal(_mainForm.SampleWeightTextBox.Text);       // 煤样重量
-            float SampLossVol = (float)Convert.ToDecimal(_mainForm.SampLossVolTextBox.Text);         // 取样损失体积
-            float UndDesorpCal = (float)Convert.ToDecimal(_mainForm.UndDesorpCalTextBox.Text);       // 井下解吸校准
+            float SampleWeight;
+            if (!float.TryParse(_mainForm.SampleWeightTextBox.Text, out SampleWeight))
+            {
+                return;
+            }
+
+            float SampLossVol;
+            if (!float.TryParse(_mainForm.SampLossVolTextBox.Text, out SampLossVol))
+            {
+                return;
+            }
+
+            float UndDesorpCal;
+            if (!float.TryParse(_mainForm.UndDesorpCalTextBox.Text, out UndDesorpCal))
+            {
+                return;
+            }
+
             MainForm.W1 = (UndDesorpCal + Math.Abs(SampLossVol)) / SampleWeight;
             _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F2");
 
+            // 先安全解析实验室解吸体积
+            if (!float.TryParse(_mainForm.DesorpVolNormalCalTextBox.Text, out float DesorpVolNormal))
+            {
+                return; // 或其他错误处理
+            }
+
             // 计算W2
-            float DesorpVolNormal = (float)Convert.ToDecimal(_mainForm.DesorpVolNormalCalTextBox.Text);// 实验室解吸
             MainForm.W2 = DesorpVolNormal / SampleWeight;
             _mainForm.W2_TextBox.Text = MainForm.W2.ToString("F2");
 
+            // 先安全解析 CrushDesorp
+            if (!float.TryParse(_mainForm.CrushDesorpTextBox.Text, out float CrushDesorp))
+            {
+                return;
+            }
+
             // 计算W3
-            float CrushDesorp = (float)Convert.ToDecimal(_mainForm.CrushDesorpTextBox.Text);
             MainForm.W3 = CrushDesorp;
             _mainForm.W3_TextBox.Text = MainForm.W3.ToString("F2");
+
 
             // 计算Wa
             MainForm.Wa = MainForm.W1 + MainForm.W2 + MainForm.W3;
             _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F2");
-
-            // 重新读取 Wc 并显示
-            MainForm.Wc = (float)Convert.ToDecimal(_mainForm.NonDesorpGasQtyTextBox.Text);
-            _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F2");
 
             // 计算 W 总量
             MainForm.W = MainForm.Wa + MainForm.Wc;

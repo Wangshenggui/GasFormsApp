@@ -770,7 +770,17 @@ namespace GasFormsApp.TabControl
 
 
                     _mainForm.dateTimePicker6.Value = DateTime.Parse(data.测试时间);
-                    _mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
+                    //_mainForm.dateTimePicker1.Value = DateTime.Parse(data.出报告时间);
+                    if (DateTime.TryParse(data.出报告时间, out DateTime reportDate))
+                    {
+                        _mainForm.dateTimePicker1.Value = reportDate;
+                    }
+                    else
+                    {
+                        // 格式不对或者空白，给一个默认值，比如当前时间，或者不改
+                        _mainForm.dateTimePicker1.Value = DateTime.Now;
+                    }
+
                     //_mainForm.DownholeTestersTextBox.Text = data.井下测试人员;
                     ParseAndAssign(data.井下测试人员, _mainForm.DownholeTestersTextBox, _mainForm.DownholeTestersCheckBox);
                     _mainForm.LabTestersTextBox.Text = data.实验室测试人员;
@@ -1430,6 +1440,49 @@ namespace GasFormsApp.TabControl
                     // 保存图片字节
                     ImageData = imageData
                 };
+                //string timeInfo =
+                //    $"取样时间: {user.取样时间}\n" +
+                //    $"打钻开始时间: {user.打钻开始时间}\n" +
+                //    $"取芯开始时间: {user.取芯开始时间}\n" +
+                //    $"取芯结束时间: {user.取芯结束时间}\n" +
+                //    $"解吸开始时间: {user.解吸开始时间}\n" +
+                //    $"测试时间: {user.测试时间}\n" +
+                //    $"出报告时间: {user.出报告时间}";
+                //MessageBox.Show(timeInfo);
+                int CheckTimeFields(UserData u)
+                {
+                    var times = new Dictionary<string, string>
+                    {
+                        { "取样时间", u.取样时间 },
+                        { "打钻开始时间", u.打钻开始时间 },
+                        { "取芯开始时间", u.取芯开始时间 },
+                        { "取芯结束时间", u.取芯结束时间 },
+                        { "解吸开始时间", u.解吸开始时间 },
+                        { "测试时间", u.测试时间 },
+                        { "出报告时间", u.出报告时间 }
+                    };
+
+                    var emptyFields = times.Where(kv => string.IsNullOrWhiteSpace(kv.Value))
+                                           .Select(kv => kv.Key)
+                                           .ToList();
+
+                    if (emptyFields.Count > 0)
+                    {
+                        string msg = "以下时间字段为空，请填写：\n" + string.Join("\n", emptyFields);
+                        MessageBox.Show(msg, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return -1;  // 有空字段，返回 -1
+                    }
+
+                    return 0; // 全部都有值，返回0
+                }
+
+                int checkResult = CheckTimeFields(user);
+                if (checkResult == -1)
+                {
+                    // 时间字段有空，直接退出函数
+                    return false;
+                }
+
 
                 string dataFilePath = Path.Combine(selectedPath, $"{IdName}_Data.WSHL");
 
