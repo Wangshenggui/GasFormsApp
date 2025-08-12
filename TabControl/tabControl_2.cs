@@ -446,7 +446,9 @@ namespace GasFormsApp.TabControl
             _mainForm.ExportImageButton.Location = new Point(542, 13);
             _mainForm.tabPage2TemporarySavingButton.Location = new Point(542, 78);
             _mainForm.tabPage2RecoverDataButton.Location = new Point(671, 78);
-            
+            _mainForm.ClearButton.Location = new Point(542, 13);
+
+
             _mainForm.DataExportButton.Location = new Point(399, 78);
 
             _mainForm.tabPage2panel5.Size = new Size(321, 345);
@@ -464,6 +466,7 @@ namespace GasFormsApp.TabControl
                 _mainForm.ExportImageButton.Location = new Point(150, 133);
                 _mainForm.tabPage2TemporarySavingButton.Location = new Point(150, 203);
                 _mainForm.tabPage2RecoverDataButton.Location = new Point(279, 203);
+                _mainForm.ClearButton.Location = new Point(150, 133);
 
                 _mainForm.DataExportButton.Location = new Point(7, 203);
 
