@@ -23,10 +23,13 @@ using System.Windows.Forms;
 using static GasFormsApp.TabControl.tabControl_2;
 using static Google.Protobuf.Reflection.FieldDescriptorProto.Types;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms;
 using Control = System.Windows.Forms.Control;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 using Font = System.Drawing.Font;
 using Image = System.Drawing.Image;
+using System.Runtime.InteropServices;
+using System.Drawing.Imaging;
 
 namespace GasFormsApp.TabControl
 {
@@ -106,6 +109,14 @@ namespace GasFormsApp.TabControl
             _mainForm.FindTextBox.KeyDown += FindTextBox_KeyDown;
             _mainForm.treeView1.MouseDown += treeView1_MouseDown;
             _mainForm.treeView1.AfterExpand += treeView1_AfterExpand;
+            //_mainForm.treeView1.ItemDrag += treeView1_ItemDrag;
+            //_mainForm.treeView1.DragEnter += treeView1_DragEnter;
+            //_mainForm.treeView1.DragOver += treeView1_DragOver;
+            _mainForm.treeView1.ItemDrag += treeView1_ItemDrag;
+            _mainForm.treeView1.DragEnter += treeView1_DragEnter;
+            _mainForm.treeView1.DragOver += treeView1_DragOver;
+            _mainForm.treeView1.DragLeave += treeView1_DragLeave;
+            _mainForm.treeView1.DragDrop += treeView1_DragDrop;
 
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
             _mainForm.导出矿井Excel统计表ToolStripMenuItem.Click += 导出矿井Excel统计表ToolStripMenuItem_Click;
@@ -118,6 +129,243 @@ namespace GasFormsApp.TabControl
             // 检测数据是否有变化
             InitFileSystemWatcher();
         }
+
+        private ImageList dragImageList;
+        private Bitmap SetImageOpacity(Image image, float opacity)
+        {
+            // opacity 范围0-1，0完全透明，1不透明
+            Bitmap bmp = new Bitmap(image.Width, image.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.Matrix33 = opacity;  // 设置透明度
+
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                g.Clear(Color.Transparent);
+                g.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
+            }
+            return bmp;
+        }
+
+        // 假设你有个方法通过节点获取路径
+        private string GetFilePath(TreeNode node)
+        {
+            // 这里根据你的实际存储路径方式改写
+            // 例如：node.Tag 存了路径
+            return node?.Tag as string ?? "(无路径)";
+        }
+        // 需要一个字段存开始拖动路径
+        private string startDragPath = null;
+        private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            if (!(e.Item is TreeNode node)) return;
+
+            // 打印开始拖动日志
+            startDragPath = GetFilePath(node);
+            Console.WriteLine($"开始拖动节点: {node.Text}, 路径: {startDragPath}");
+
+
+            // --- 你的原拖动代码 ---
+            Image icon = Properties.Resources.项目;
+
+            Font font = _mainForm.treeView1.Font;
+            Size textSize = TextRenderer.MeasureText(node.Text, font);
+
+            int padding = 4;
+            int bmpWidth = icon.Width + padding + textSize.Width;
+            int bmpHeight = Math.Max(icon.Height, textSize.Height);
+
+            int maxSize = 256;
+            bmpWidth = Math.Min(bmpWidth, maxSize);
+            bmpHeight = Math.Min(bmpHeight, maxSize);
+
+            Bitmap bmp = new Bitmap(bmpWidth, bmpHeight);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.Clear(Color.Transparent);
+                g.DrawImage(icon, 0, (bmpHeight - icon.Height) / 2);
+                TextRenderer.DrawText(g, node.Text, font, new Point(icon.Width + padding, (bmpHeight - textSize.Height) / 2), Color.FromArgb(255, 255, 0));
+            }
+            bmp = SetImageOpacity(bmp, 0.99f);
+
+            dragImageList?.Dispose();
+            dragImageList = new ImageList();
+            dragImageList.ColorDepth = ColorDepth.Depth32Bit;
+            dragImageList.ImageSize = new Size(bmpWidth, bmpHeight);
+            dragImageList.TransparentColor = Color.Transparent;
+
+            dragImageList.Images.Add(bmp);
+
+            IntPtr himl = dragImageList.Handle;
+            Point cursorPos = Cursor.Position;
+
+            ImageList_BeginDrag(himl, 0, 0, 0);
+            ImageList_DragEnter(_mainForm.treeView1.Handle, cursorPos.X, cursorPos.Y);
+
+            DragDropEffects effect = _mainForm.treeView1.DoDragDrop(node, DragDropEffects.Move);
+
+            ImageList_EndDrag();
+            ImageList_DragLeave(_mainForm.treeView1.Handle);
+
+            if (dragImageList != null)
+            {
+                dragImageList.Dispose();
+                dragImageList = null;
+            }
+        }
+        private void treeView1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(TreeNode)))
+                e.Effect = DragDropEffects.Move;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void treeView1_DragOver(object sender, DragEventArgs e)
+        {
+            if (dragImageList != null)
+            {
+                Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
+                ImageList_DragMove(pt.X, pt.Y);
+            }
+
+            if (e.Data.GetDataPresent(typeof(TreeNode)))
+                e.Effect = DragDropEffects.Move;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void treeView1_DragLeave(object sender, EventArgs e)
+        {
+            if (dragImageList != null)
+                ImageList_DragLeave(_mainForm.treeView1.Handle);
+        }
+
+        private void treeView1_DragDrop(object sender, DragEventArgs e)
+        {
+            Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
+            TreeNode targetNode = _mainForm.treeView1.GetNodeAt(pt);
+
+            if (targetNode != null)
+            {
+                string targetPath = GetFilePath(targetNode);
+                Console.WriteLine($"拖动放下节点到: {targetNode.Text}, 路径: {targetPath}");
+
+                if (!string.IsNullOrEmpty(startDragPath) && Directory.Exists(startDragPath)
+                    && !string.IsNullOrEmpty(targetPath) && Directory.Exists(targetPath))
+                {
+                    // 添加确认框
+                    DialogResult result = MessageBox.Show(
+                        $"是否将 “{Path.GetFileName(startDragPath)}” 合并到 “{targetNode.Text}”？",
+                        "确认合并",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            CopyAllFilesAndDirectories(startDragPath, targetPath);
+                            Console.WriteLine("复制完成");
+
+                            // 复制完成后删除源目录及所有内容
+                            Directory.Delete(startDragPath, true);
+                            Console.WriteLine("源目录已删除");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"操作失败: {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("用户取消了合并操作");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("起始路径或目标路径无效，无法复制文件");
+                }
+            }
+            else
+            {
+                Console.WriteLine("拖动放下节点到: 空白区域");
+            }
+
+            ImageList_EndDrag();
+            dragImageList?.Dispose();
+            dragImageList = null;
+
+            startDragPath = null; // 清空记录
+        }
+
+        private void CopyAllFilesAndDirectories(string sourceDir, string targetDir)
+        {
+            if (!Directory.Exists(targetDir))
+            {
+                Directory.CreateDirectory(targetDir);
+            }
+
+            // 复制所有文件
+            string[] files = Directory.GetFiles(sourceDir);
+            foreach (string filePath in files)
+            {
+                string fileName = Path.GetFileName(filePath);
+                string destFile = Path.Combine(targetDir, fileName);
+
+                // 检查目标文件是否已存在
+                if (File.Exists(destFile))
+                {
+                    // 询问用户是否覆盖
+                    DialogResult overwriteResult = MessageBox.Show(
+                        $"文件 “{fileName}” 已存在，是否覆盖？",
+                        "确认覆盖",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (overwriteResult == DialogResult.No)
+                    {
+                        continue; // 跳过当前文件
+                    }
+                }
+
+                // 执行复制
+                File.Copy(filePath, destFile, overwrite: true);
+            }
+
+            // 递归复制子目录
+            string[] directories = Directory.GetDirectories(sourceDir);
+            foreach (string dirPath in directories)
+            {
+                string dirName = Path.GetFileName(dirPath);
+                string destSubDir = Path.Combine(targetDir, dirName);
+                CopyAllFilesAndDirectories(dirPath, destSubDir);
+            }
+        }
+
+
+        #region WinAPI 导入
+
+        [DllImport("comctl32.dll")]
+        private static extern bool ImageList_BeginDrag(IntPtr himlTrack, int iTrack, int dxHotspot, int dyHotspot);
+
+        [DllImport("comctl32.dll")]
+        private static extern void ImageList_EndDrag();
+
+        [DllImport("comctl32.dll")]
+        private static extern bool ImageList_DragEnter(IntPtr hwndLock, int x, int y);
+
+        [DllImport("comctl32.dll")]
+        private static extern bool ImageList_DragMove(int x, int y);
+
+        [DllImport("comctl32.dll")]
+        private static extern bool ImageList_DragLeave(IntPtr hwndLock);
+        #endregion
+
+
+
         private FileSystemWatcher _watcher;
         private string _rootPath;
         private string _lastDirectoryHash = string.Empty;
@@ -148,7 +396,7 @@ namespace GasFormsApp.TabControl
             _watcher.EnableRaisingEvents = true;
 
             // 初始化防抖定时器，300ms 内只执行一次
-            _debounceTimer = new System.Timers.Timer(1000);
+            _debounceTimer = new System.Timers.Timer(500);
             _debounceTimer.AutoReset = false; // 只触发一次
             _debounceTimer.Elapsed += (s, e) => RefreshTreeIfChanged();
         }
@@ -2821,7 +3069,7 @@ namespace GasFormsApp.TabControl
 
                     // 弹出确认提示
                     DialogResult confirm = MessageBox.Show(
-                        $"确定要移动项目到回收目录吗？\n\n项目名称：\r\n{dirName}",
+                        $"确定要删除项目吗？\n\n项目名称：\r\n{dirName}",
                         "确认移动",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning

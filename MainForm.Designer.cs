@@ -294,6 +294,7 @@ namespace GasFormsApp
             this.tabPage4panel1 = new System.Windows.Forms.Panel();
             this.tabPage4DoubleBufferedFlowLayoutPanel1 = new GasFormsApp.UI.DoubleBufferedFlowLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AdsorpConstACheckBox = new System.Windows.Forms.CheckBox();
             this.NonDesorpGasQtyTextBox = new AntdUI.Input();
             this.PorosityTextBox = new AntdUI.Input();
             this.TrueDensityTextBox = new AntdUI.Input();
@@ -311,7 +312,6 @@ namespace GasFormsApp
             this.AadCheckBox = new System.Windows.Forms.CheckBox();
             this.MadCheckBox = new System.Windows.Forms.CheckBox();
             this.AdsorpConstBCheckBox = new System.Windows.Forms.CheckBox();
-            this.AdsorpConstACheckBox = new System.Windows.Forms.CheckBox();
             this.WcOutCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.WRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -3661,6 +3661,20 @@ namespace GasFormsApp
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "不可解吸瓦斯量";
             // 
+            // AdsorpConstACheckBox
+            // 
+            this.AdsorpConstACheckBox.AutoSize = true;
+            this.AdsorpConstACheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.AdsorpConstACheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.AdsorpConstACheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
+            this.AdsorpConstACheckBox.Location = new System.Drawing.Point(70, 44);
+            this.AdsorpConstACheckBox.Name = "AdsorpConstACheckBox";
+            this.AdsorpConstACheckBox.Size = new System.Drawing.Size(162, 20);
+            this.AdsorpConstACheckBox.TabIndex = 10;
+            this.AdsorpConstACheckBox.TabStop = false;
+            this.AdsorpConstACheckBox.Text = "吸附常数a(cm³/g):";
+            this.AdsorpConstACheckBox.UseVisualStyleBackColor = false;
+            // 
             // NonDesorpGasQtyTextBox
             // 
             this.NonDesorpGasQtyTextBox.BackColor = System.Drawing.Color.PeachPuff;
@@ -3858,20 +3872,6 @@ namespace GasFormsApp
             this.AdsorpConstBCheckBox.TabStop = false;
             this.AdsorpConstBCheckBox.Text = "吸附常数b(MPa⁻¹):";
             this.AdsorpConstBCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // AdsorpConstACheckBox
-            // 
-            this.AdsorpConstACheckBox.AutoSize = true;
-            this.AdsorpConstACheckBox.BackColor = System.Drawing.Color.Transparent;
-            this.AdsorpConstACheckBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.AdsorpConstACheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(227)))), ((int)(((byte)(202)))));
-            this.AdsorpConstACheckBox.Location = new System.Drawing.Point(70, 44);
-            this.AdsorpConstACheckBox.Name = "AdsorpConstACheckBox";
-            this.AdsorpConstACheckBox.Size = new System.Drawing.Size(162, 20);
-            this.AdsorpConstACheckBox.TabIndex = 10;
-            this.AdsorpConstACheckBox.TabStop = false;
-            this.AdsorpConstACheckBox.Text = "吸附常数a(cm³/g):";
-            this.AdsorpConstACheckBox.UseVisualStyleBackColor = false;
             // 
             // WcOutCheckBox
             // 
@@ -4970,6 +4970,7 @@ namespace GasFormsApp
             // 
             // treeView1
             // 
+            this.treeView1.AllowDrop = true;
             this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -5741,7 +5742,6 @@ namespace GasFormsApp
         private ColorDialog colorDialog1;
         private ImageList imageList2;
         public Label label17;
-        private ImageList imageList1;
         private PictureBox tabControl2PictureBox;
         private PictureBox tabControl3PictureBox;
         private PictureBox tabControl4PictureBox;
@@ -5972,5 +5972,6 @@ namespace GasFormsApp
         public RichTextBox WRichTextBox;
         public RichTextBox WcRichTextBox;
         public RichTextBox WaRichTextBox;
+        public ImageList imageList1;
     }
 }

@@ -403,6 +403,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\导出图片.png" />
+    <None Include="Image\项目.png" />
     <None Include="Image\批量导入.png" />
     <Content Include="Image\AppLog.ico" />
     <None Include="Image\AppLog.png" />
