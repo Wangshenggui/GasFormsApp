@@ -81,7 +81,7 @@
             treeNode3,
             treeNode5});
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(784, 477);
+            this.treeView1.Size = new System.Drawing.Size(784, 480);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView1_AfterLabelEdit);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand);
@@ -134,16 +134,16 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.DetermineButton);
-            this.panel1.Location = new System.Drawing.Point(0, 509);
+            this.panel1.Location = new System.Drawing.Point(0, 515);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 54);
+            this.panel1.Size = new System.Drawing.Size(784, 44);
             this.panel1.TabIndex = 4;
             // 
             // CancelButton
             // 
             this.CancelButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(189)))), ((int)(((byte)(193)))));
             this.CancelButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CancelButton.Location = new System.Drawing.Point(437, 8);
+            this.CancelButton.Location = new System.Drawing.Point(437, 2);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(122, 41);
             this.CancelButton.TabIndex = 41;
@@ -154,7 +154,7 @@
             // 
             this.DetermineButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(144)))), ((int)(((byte)(246)))));
             this.DetermineButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DetermineButton.Location = new System.Drawing.Point(217, 8);
+            this.DetermineButton.Location = new System.Drawing.Point(217, 2);
             this.DetermineButton.Name = "DetermineButton";
             this.DetermineButton.Size = new System.Drawing.Size(122, 41);
             this.DetermineButton.TabIndex = 41;
@@ -165,7 +165,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(217)))), ((int)(((byte)(214)))));
+            this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(12, 7);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(87, 16);
@@ -187,12 +187,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.FindMineTextBox);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.treeView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;

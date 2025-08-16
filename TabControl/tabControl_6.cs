@@ -223,19 +223,112 @@ namespace GasFormsApp.TabControl
                 e.Effect = DragDropEffects.None;
         }
 
+        [DllImport("comctl32.dll", CharSet = CharSet.Auto)]
+        private static extern bool ImageList_DragShowNolock(bool fShow);
+
+        // 拖动影像是否被隐藏
+        private bool dragImageHidden = false;
+
         private void treeView1_DragOver(object sender, DragEventArgs e)
         {
-            if (dragImageList != null)
+            Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
+
+            if (!e.Data.GetDataPresent(typeof(TreeNode)) || dragImageList == null)
             {
-                Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
-                ImageList_DragMove(pt.X, pt.Y);
+                e.Effect = DragDropEffects.None;
+                return;
             }
 
-            if (e.Data.GetDataPresent(typeof(TreeNode)))
-                e.Effect = DragDropEffects.Move;
-            else
+            TreeNode targetNode = _mainForm.treeView1.GetNodeAt(pt);
+            if (targetNode == null)
+            {
                 e.Effect = DragDropEffects.None;
+                return;
+            }
+
+            string targetPath = GetFilePath(targetNode);
+
+            // 获取拖拽节点
+            TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
+
+            // 禁止拖到自身或子目录
+            if (string.Equals(startDragPath, targetPath, StringComparison.OrdinalIgnoreCase) ||
+                targetPath.StartsWith(startDragPath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                e.Effect = DragDropEffects.None;
+                ImageList_DragShowNolock(false);
+                dragImageHidden = true;
+                return;
+            }
+
+            // 新增：禁止树级别1拖到级别2
+            if (draggedNode.Level == 1 && targetNode.Level == 2)
+            {
+                e.Effect = DragDropEffects.None;
+                ImageList_DragShowNolock(false);
+                dragImageHidden = true;
+                return;
+            }
+
+            // 新增：禁止拖到上级目录
+            if (startDragPath.StartsWith(targetPath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+            {
+                e.Effect = DragDropEffects.None;
+                ImageList_DragShowNolock(false);
+                dragImageHidden = true;
+                return;
+            }
+
+            // 禁止拖动 Level 2 节点
+            if (draggedNode.Level == 2)
+            {
+                e.Effect = DragDropEffects.None;
+                ImageList_DragShowNolock(false);
+                dragImageHidden = true;
+                return;
+            }
+
+
+            // 允许拖动
+            e.Effect = DragDropEffects.Move;
+            if (dragImageHidden)
+                ImageList_DragShowNolock(true);
+
+            ImageList_DragMove(pt.X, pt.Y);
+            dragImageHidden = false;
         }
+
+
+        // 封装：隐藏拖动影像（彻底清除残影）
+        private void HideDragImage()
+        {
+            if (!dragImageHidden)
+            {
+                ImageList_DragShowNolock(false);
+                ImageList_EndDrag();
+                dragImageHidden = true;
+            }
+        }
+
+        // 封装：恢复拖动影像并跟随鼠标
+        private void ShowDragImage(Point pt)
+        {
+            if (dragImageList == null)
+                return;
+
+            if (dragImageHidden)
+            {
+                IntPtr himl = dragImageList.Handle;
+                ImageList_BeginDrag(himl, 0, 0, 0);
+                ImageList_DragEnter(_mainForm.treeView1.Handle, pt.X, pt.Y);
+                ImageList_DragShowNolock(true);
+                dragImageHidden = false;
+            }
+
+            ImageList_DragMove(pt.X, pt.Y);
+        }
+
+
 
         private void treeView1_DragLeave(object sender, EventArgs e)
         {
