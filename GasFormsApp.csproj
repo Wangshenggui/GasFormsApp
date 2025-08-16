@@ -85,7 +85,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AntdUI, Version=2.0.13.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">

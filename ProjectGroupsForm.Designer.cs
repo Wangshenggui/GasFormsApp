@@ -81,7 +81,7 @@
             treeNode3,
             treeNode5});
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(784, 528);
+            this.treeView1.Size = new System.Drawing.Size(784, 477);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeView1_AfterLabelEdit);
             this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand);
@@ -134,16 +134,16 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(85)))), ((int)(((byte)(128)))));
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.DetermineButton);
-            this.panel1.Location = new System.Drawing.Point(223, 490);
+            this.panel1.Location = new System.Drawing.Point(0, 509);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 59);
+            this.panel1.Size = new System.Drawing.Size(784, 54);
             this.panel1.TabIndex = 4;
             // 
             // CancelButton
             // 
             this.CancelButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(189)))), ((int)(((byte)(193)))));
             this.CancelButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CancelButton.Location = new System.Drawing.Point(221, 12);
+            this.CancelButton.Location = new System.Drawing.Point(437, 8);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(122, 41);
             this.CancelButton.TabIndex = 41;
@@ -154,7 +154,7 @@
             // 
             this.DetermineButton.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(144)))), ((int)(((byte)(246)))));
             this.DetermineButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DetermineButton.Location = new System.Drawing.Point(1, 12);
+            this.DetermineButton.Location = new System.Drawing.Point(217, 8);
             this.DetermineButton.Name = "DetermineButton";
             this.DetermineButton.Size = new System.Drawing.Size(122, 41);
             this.DetermineButton.TabIndex = 41;

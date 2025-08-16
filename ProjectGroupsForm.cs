@@ -26,8 +26,8 @@ namespace GasFormsApp
             // 获取屏幕宽高并设置窗体大小为屏幕的54%
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            this.Width = (int)(screenWidth * 0.54);
-            this.Height = (int)(screenHeight * 0.54);
+            this.Width = (int)(screenWidth * 0.64);
+            this.Height = (int)(screenHeight * 0.64);
 
             // 窗体居中显示
             this.Left = (screenWidth - this.Width) / 2;
@@ -144,7 +144,7 @@ namespace GasFormsApp
             AddSubDirectories(rootDir, rootNode, 1);
 
             // 展开上次节点节点，方便查看
-            string savedNodeText = GasFormsApp.Settings.Default.Tab6SearchForMinesText;
+            string savedNodeText = GasFormsApp.Settings.Default.SearchForMinesText;
             //treeView1.ExpandAll();
             foreach (TreeNode node in treeView1.Nodes)
             {
@@ -243,8 +243,10 @@ namespace GasFormsApp
             }
         }
 
+        private TreeNode lastClickedNode = null;
         private void treeView1_MouseDown(object sender, MouseEventArgs e)
         {
+            lastClickedNode = treeView1.GetNodeAt(e.X, e.Y);
             if (e.Button == MouseButtons.Right)
             {
                 TreeNode clickedNode = treeView1.GetNodeAt(e.X, e.Y);
@@ -370,18 +372,17 @@ namespace GasFormsApp
         public string ResultData { get; set; }
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            TreeNode selectedNode = e.Node;
+            TreeNode selectedNode = lastClickedNode;
+
             if (selectedNode != null)
             {
                 string path = selectedNode.Tag?.ToString();
-                //MessageBox.Show($"你双击了节点：{selectedNode.Text}\n路径：{path}");
 
-                if(selectedNode.Level==2)
+                if (selectedNode.Level == 2)
                 {
-                    // 获取当前目录的目录信息
                     DirectoryInfo currentDir = new DirectoryInfo(path);
-                    // 上一级目录
                     DirectoryInfo parentDir = currentDir.Parent;
+
                     if (parentDir != null)
                     {
                         Console.WriteLine("当前目录名: " + currentDir.Name);
@@ -394,9 +395,10 @@ namespace GasFormsApp
                     {
                         Console.WriteLine("没有上一级目录");
                     }
+
                     ResultData = path;
-                    this.DialogResult = DialogResult.OK; // 设置窗体的返回值
-                    this.Close(); // 关闭窗口
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
         }

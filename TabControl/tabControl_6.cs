@@ -1573,6 +1573,28 @@ namespace GasFormsApp.TabControl
                 MessageBox.Show("请输入有效的煤样编号！");
                 return false;
             }
+            // 构造完整文件路径
+            string fileName = $"{IdName}_Data.WSHL";
+            string fullFilePath = Path.Combine(selectedPath, fileName);
+
+            // 检查文件是否存在
+            if (File.Exists(fullFilePath))
+            {
+                DialogResult overwriteResult = MessageBox.Show(
+                    $"文件已存在：{fileName}\n是否覆盖？",
+                    "文件已存在",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (overwriteResult == DialogResult.No)
+                {
+                    // 用户选择不覆盖
+                    return false;
+                }
+                // 如果用户选择 Yes，则继续保存，会覆盖文件
+            }
+
 
             // === 读取图片数据 ===
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
