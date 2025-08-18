@@ -1354,11 +1354,11 @@ namespace GasFormsApp
             this.t0TextBox_m_s.Name = "t0TextBox_m_s";
             this.t0TextBox_m_s.PlaceholderText = "";
             this.t0TextBox_m_s.ReadOnly = true;
-            this.t0TextBox_m_s.SelectionStart = 7;
+            this.t0TextBox_m_s.SelectionStart = 13;
             this.t0TextBox_m_s.Size = new System.Drawing.Size(230, 35);
             this.t0TextBox_m_s.TabIndex = 110;
             this.t0TextBox_m_s.TabStop = false;
-            this.t0TextBox_m_s.Text = "0min 0s";
+            this.t0TextBox_m_s.Text = "0.00[0min 0s]";
             this.t0TextBox_m_s.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // t0TextBox

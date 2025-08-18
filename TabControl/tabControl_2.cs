@@ -89,6 +89,7 @@ namespace GasFormsApp.TabControl
                     _mainForm.dateTimePicker5,
                     _mainForm.dateTimePicker4,
                     _mainForm.t0TextBox,
+                    _mainForm.t0TextBox_m_s,
                 }
             );
             // 动态添加 DesorbTextBox1 ~ DesorbTextBox60
@@ -630,6 +631,20 @@ namespace GasFormsApp.TabControl
             else if (!double.TryParse(input, out double value) || value < 0 || value > 5)
             {
                 _mainForm.t0TextBox.BackColor = Color.Red;
+            }
+            string input_m_s = _mainForm.t0TextBox_m_s.Text;
+            _mainForm.t0TextBox_m_s.BackColor = System.Drawing.Color.PeachPuff;
+            if (input.Contains(" "))
+            {
+                _mainForm.t0TextBox_m_s.BackColor = Color.Red;
+            }
+            else if (string.IsNullOrWhiteSpace(input))
+            {
+                _mainForm.t0TextBox_m_s.BackColor = _mainForm.t0TextBox_m_s.Focused ? SystemColors.MenuHighlight : Color.DarkGray;
+            }
+            else if (!double.TryParse(input, out double value) || value < 0 || value > 5)
+            {
+                _mainForm.t0TextBox_m_s.BackColor = Color.Red;
             }
 
             // 验证数据编号文本框(31-60)
