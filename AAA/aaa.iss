@@ -28,11 +28,11 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\17851\Desktop\0B工程\GasFormsApp\AAA
+OutputDir=F:\2023-12-29Desktop\GitHub\GasFormsApp\AAA
 OutputBaseFilename=瓦斯含量测定数据分析系统
 SolidCompression=yes
 WizardStyle=modern
-SetupIconFile=C:\Users\17851\Desktop\0B工程\GasFormsApp\Image\AppLog.ico
+SetupIconFile=F:\2023-12-29Desktop\GitHub\GasFormsApp\Image\AppLog.ico
 
 [Languages]
 ; 使用简体中文界面
@@ -43,7 +43,7 @@ Name: "chinesesimplified"; MessagesFile: "compiler:Languages\ChineseSimplified.i
 ; 定义额外任务，这里是“创建桌面快捷方式”，默认不勾选
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
-#define SrcRoot "C:\Users\17851\Desktop\0B工程\GasFormsApp\AAA打包"          ; 定义源文件根目录
+#define SrcRoot "F:\2023-12-29Desktop\GitHub\GasFormsApp\AAA打包"          ; 定义源文件根目录
 
 [Files]
 ; 打包整个 SrcRoot 文件夹下的所有文件和子目录到安装目录
