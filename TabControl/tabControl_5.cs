@@ -858,11 +858,13 @@ namespace GasFormsApp.TabControl
             //    Console.WriteLine("所有字符串都不包含 *");
             //}
 
+            string File_Name = "[" + _mainForm.SampleNumTextBox.Text.Trim() + "]" + _mainForm.SamplingSpotTextBox.Text.Trim();
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "Word 文件 (*.docx)|*.docx",
-                Title = "生成记录表"
+                Title = "生成记录表",
+                FileName = "记录表" + File_Name,
             };
 
             string outputPath = "";
@@ -1132,11 +1134,13 @@ namespace GasFormsApp.TabControl
             //    Console.WriteLine("所有字符串都不包含 *");
             //}
 
+            string File_Name = "[" + _mainForm.SampleNumTextBox.Text.Trim() + "]" + _mainForm.SamplingSpotTextBox.Text.Trim();
             // 选择保存位置
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Filter = "Word 文件 (*.docx)|*.docx",
-                Title = "生成报告单"
+                Title = "生成报告单",
+                FileName = "报告单" + File_Name,
             };
 
             string outputPath = "";

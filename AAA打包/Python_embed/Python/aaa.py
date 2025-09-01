@@ -8,6 +8,10 @@ from ctypes import wintypes  # Windows类型定义
 import struct  # 字节打包/解包
 import time  # 时间相关操作
 
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 # 设置中文字体（解决乱码）
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
 matplotlib.rcParams['axes.unicode_minus'] = False    # 解决负号显示问题
@@ -268,6 +272,12 @@ plt.rcParams['ytick.labelsize'] = 18
 # ax.set_xlabel(r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$    ', fontsize=18, loc='right',fontname='Times New Roman')
 ax.set_xlabel(r'$\sqrt{t_0 + t}$' + "(min$^{0.5}$)       ", fontsize=18, loc='right',fontname='Times New Roman')
 
+# 获取 y 轴范围
+ymin, ymax = ax.get_ylim()
+
+
+
+
 
 # 设置坐标轴样式
 # ax.spines['top'].set_visible(False)  # 隐藏上边框
@@ -287,12 +297,15 @@ ax.annotate('', xy=(_xxx-1+0.5, 0), xytext=(0-0.03, 0),
 
 max_tick = max(ax.get_yticks())
 min_tick_shown = min(ax.get_yticks())
+max_tick_shown = max(ax.get_yticks())
 ax.set_ylim(custom_round_up(intercept) - step * 2, max_tick + step)  # 多留一格
 ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, min_tick_shown-0/19.1),
 # ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, 0),
             arrowprops=dict(arrowstyle='->', lw=1.0, color='#000000',antialiased=False,
                             shrinkA=0, shrinkB=0))  # Y轴箭头
-
+# 在y轴顶部显示单位
+unit = 'ml'  # 你需要显示的单位
+ax.text(0, max_tick + step, unit, ha='center', va='bottom', fontsize=18, color='black')
 # import matplotlib.patches as patches
 # x0 = 0
 # y_top = 0
@@ -311,7 +324,93 @@ ax.annotate('', xy=(0, max_tick + step - step * 0.2), xytext=(0, min_tick_shown-
 # 显示横坐标单位
 # ax.text(_xxx-1+0.5-3.3, -80, r'$\sqrt{t_0 + t}\ (\mathrm{min}^{0.5})$', fontsize=18, color='black')
 
-print("显示的最小刻度:", min_tick_shown)
+xmin, xmax = ax.get_xlim()
+print("x显示的最小刻度和最大刻度：", xmin, xmax)
+# 根据最大x值决定偏移量
+# 定义映射表
+offset_map = {
+    (4,2): -0.112,
+    (4,3): -0.136,
+    (4,4): -0.162,
+    (4,5): -0.186,
+
+    (5,2): -0.112,
+    (5,3): -0.136 + 0.01 + 0.01,
+    (5,4): -0.162 + 0.01 + 0.01,
+    (5,5): -0.186 + 0.01 + 0.01 - 0.005,
+
+    (6,2): -0.112,
+    (6,3): -0.136,
+    (6,4): -0.162,
+    (6,5): -0.186 - 0.01,
+
+    (7,2): -0.112 + 0.001,
+    (7,3): -0.136 - 0.002,
+    (7,4): -0.162 - 0.005,
+    (7,5): -0.186 - 0.01,
+
+    (8,2): -0.112 - 0.001,
+    (8,3): -0.136 - 0.002,
+    (8,4): -0.162 - 0.005,
+    (8,5): -0.186 - 0.01,
+
+    (9,2): -0.112 - 0.001,
+    (9,3): -0.136 - 0.002,
+    (9,4): -0.162 - 0.005,
+    (9,5): -0.186 - 0.01,
+
+    (10,2): -0.112 - 0.001,
+    (10,3): -0.136 - 0.002,
+    (10,4): -0.162 - 0.005,
+    (10,5): -0.186 - 0.01,
+
+    (11,2): -0.112 - 0.001,
+    (11,3): -0.136 - 0.002,
+    (11,4): -0.162 - 0.005, 
+    (11,5): -0.186 - 0.01,
+
+    (12,2): -0.112 - 0.001,
+    (12,3): -0.136 - 0.002,
+    (12,4): -0.162 - 0.005, 
+    (12,5): -0.186 - 0.01,
+}
+# 根据 (xmax, ymax) 取偏移量，默认 0
+xOffset = offset_map.get((int(xmax), len(str(int(ymax)))), 0)
+# print('x偏移量:',xOffset)
+# ax.text(xOffset, 0.5, "解吸量", 
+#         transform=ax.transAxes,   # 相对坐标
+#         fontsize=18, rotation=90,
+#         va='bottom', ha='center',
+#         fontname='SimSun')
+
+# ax.text(xOffset, 0, "解吸量", 
+#         transform=ax.transAxes,   # 相对坐标
+#         fontsize=18, rotation=90,
+#         va='bottom', ha='center',
+#         fontname='SimSun')
+
+# 正半轴中点
+y_center_pos = (0 + max_tick_shown) / 2 + step / 2
+
+# 负半轴中点
+y_center_neg = (min_tick_shown + 0) / 2
+
+# 正半轴文字
+ax.text(xOffset, y_center_pos, "解吸量",
+        fontsize=18, rotation=90,
+        va='center', ha='center',
+        fontname='SimSun',
+        transform=ax.get_yaxis_transform())  # x相对坐标，y数据坐标
+
+# 负半轴文字
+ax.text(xOffset, y_center_neg, "损失量",
+        fontsize=18, rotation=90,
+        va='center', ha='center',
+        fontname='SimSun',
+        transform=ax.get_yaxis_transform())  # x相对坐标，y数据坐标
+
+
+print("显示的最小刻度和最大刻度：", min_tick_shown,max_tick_shown)
 print((n_pos + 1) * step,custom_round_up(intercept)-20,"最大刻度：",max_tick)
 
 from matplotlib.ticker import FixedLocator
@@ -358,6 +457,10 @@ file_path = os.path.join(target_dir, "output_image.png")
 with open(file_path, 'wb') as f:
     f.write(img_bytes.read())
 
+# from PIL import Image
+# # 打开并显示
+# img = Image.open(file_path)
+# img.show()
 
 # 关闭图形释放内存
 plt.close()

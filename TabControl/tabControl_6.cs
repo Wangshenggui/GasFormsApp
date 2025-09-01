@@ -30,6 +30,8 @@ using Font = System.Drawing.Font;
 using Image = System.Drawing.Image;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
+using Microsoft.VisualBasic.FileIO;
+using SearchOption = System.IO.SearchOption;
 
 namespace GasFormsApp.TabControl
 {
@@ -364,7 +366,11 @@ namespace GasFormsApp.TabControl
                             Console.WriteLine("复制完成");
 
                             // 复制完成后删除源目录及所有内容
-                            Directory.Delete(startDragPath, true);
+                            Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
+                                startDragPath,
+                                UIOption.OnlyErrorDialogs,
+                                RecycleOption.SendToRecycleBin
+                            );
                             Console.WriteLine("源目录已删除");
                         }
                         catch (Exception ex)
@@ -2105,16 +2111,25 @@ namespace GasFormsApp.TabControl
 
             try
             {
-                // 移动文件方法
+                // 移动文件方法（避免覆盖：目标已存在时自动改名）
                 void MoveFileToRecycle(string sourceFile)
                 {
                     if (File.Exists(sourceFile))
                     {
-                        string destFile = Path.Combine(recycleFolder, Path.GetFileName(sourceFile));
+                        string fileName = Path.GetFileNameWithoutExtension(sourceFile);
+                        string extension = Path.GetExtension(sourceFile);
+                        string destFile = Path.Combine(recycleFolder, fileName + extension);
 
-                        // 如果目标文件已存在，可以选择覆盖或者改名，这里直接覆盖
-                        if (File.Exists(destFile))
-                            File.Delete(destFile);
+                        int count = 1;
+                        // 如果已存在，就加上序号
+                        while (File.Exists(destFile))
+                        {
+                            destFile = Path.Combine(
+                                recycleFolder,
+                                $"{fileName}_{count}{extension}"
+                            );
+                            count++;
+                        }
 
                         File.Move(sourceFile, destFile);
                         Console.WriteLine($"已移动文件：{sourceFile} -> {destFile}");
@@ -2124,6 +2139,7 @@ namespace GasFormsApp.TabControl
                         Console.WriteLine($"文件不存在：{sourceFile}");
                     }
                 }
+
 
                 MoveFileToRecycle(binPath);
 
@@ -2646,25 +2662,12 @@ namespace GasFormsApp.TabControl
 
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                Console.WriteLine("你选择的文件夹有：");
-                foreach (var folder in dialog.FileNames)
-                {
-                    Console.WriteLine(folder);
-                }
-                // 用户选完文件夹后
                 foreach (var selectedFolder in dialog.FileNames)
                 {
-                    // 判断是不是 targetDir 的直接子文件夹
                     string parent = Directory.GetParent(selectedFolder)?.FullName;
-                    if (string.Equals(parent, targetDir, StringComparison.OrdinalIgnoreCase))
+                    if (!string.Equals(parent, targetDir, StringComparison.OrdinalIgnoreCase))
                     {
-                        Console.WriteLine("合法选中：" + selectedFolder);
-                        // 继续处理
-                    }
-                    else
-                    {
-                        MessageBox.Show($"只能选择目录下的一级子文件夹!");
-                        // 这里可以取消整个操作或者让用户重新选择
+                        MessageBox.Show("只能选择目录下的一级子文件夹!");
                         return;
                     }
                 }
@@ -2677,48 +2680,30 @@ namespace GasFormsApp.TabControl
                     return;
                 }
 
-                if (Directory.Exists(exportDir) && Directory.EnumerateFileSystemEntries(exportDir).Any())
-                {
-                    var result = MessageBox.Show(
-                        "导出目录已存在且不为空，是否覆盖？",
-                        "确认",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
+                // 在 exportDir 下创建带时间戳的子文件夹
+                string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                string exportSubDir = Path.Combine(exportDir, $"矿井数据导出_{timestamp}");
+                Directory.CreateDirectory(exportSubDir);
 
-                    if (result == DialogResult.Yes)
-                    {
-                        Directory.Delete(exportDir, true);
-                        Directory.CreateDirectory(exportDir);
-                    }
-                    else
-                    {
-                        MessageBox.Show("导出已取消。");
-                        return;
-                    }
-                }
-                else
-                {
-                    // 目录不存在或目录为空，直接创建或继续
-                    if (!Directory.Exists(exportDir))
-                        Directory.CreateDirectory(exportDir);
-                }
-
+                // 复制文件夹
                 foreach (var sourceFolder in dialog.FileNames)
                 {
                     string folderName = Path.GetFileName(sourceFolder);
-                    string destFolder = Path.Combine(exportDir, folderName);
+                    string destFolder = Path.Combine(exportSubDir, folderName);
 
                     Console.WriteLine($"复制：{sourceFolder} -> {destFolder}");
                     CopyDirectory(sourceFolder, destFolder);
                 }
 
-                Console.WriteLine("数据已成功导出到：" + exportDir);
+                Console.WriteLine("数据已成功导出到：" + exportSubDir);
+                MessageBox.Show("数据已成功导出到：" + exportSubDir, "导出完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 Console.WriteLine("用户取消了选择");
             }
         }
+
         // 弹出文件夹选择对话框，返回用户选择的路径，取消返回空字符串
         private static string SelectExportFolder()
         {

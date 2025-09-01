@@ -167,7 +167,7 @@ def insert_picture_after_bookmark(doc, bookmark_name, image_path):
     new_p = OxmlElement('w:p')
     para_elem.addnext(new_p)
     new_para = Paragraph(new_p, doc)
-    new_para.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    new_para.alignment = WD_ALIGN_PARAGRAPH.LEFT
 
     print("[INFO] 正在裁剪图片...")
     a = 0.05  # 裁剪右边 5%
