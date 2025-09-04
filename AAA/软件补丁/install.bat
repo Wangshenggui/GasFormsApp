@@ -4,25 +4,28 @@ setlocal
 
 set "SoftName=瓦斯含量测定数据分析系统"
 
-:: 64 位 Program Files
-set "Path1=%ProgramFiles%\%SoftName%"
-:: 32 位 Program Files (x86)
-set "Path2=%ProgramFiles(x86)%\%SoftName%"
+set "InstallPath="
 
-:: 查找软件安装目录
-if exist "%Path1%" (
-    set "InstallPath=%Path1%"
-) else if exist "%Path2%" (
-    set "InstallPath=%Path2%"
-) else (
-    echo 未找到软件目录
-    pause
-    exit /b
+:: 遍历所有逻辑盘符
+for %%D in (C D E F G H I J K L M N O P Q R S T U V W X Y Z) do (
+    if exist "%%D:\Program Files\%SoftName%" (
+        set "InstallPath=%%D:\Program Files\%SoftName%"
+        goto :found
+    )
+    if exist "%%D:\Program Files (x86)\%SoftName%" (
+        set "InstallPath=%%D:\Program Files (x86)\%SoftName%"
+        goto :found
+    )
 )
 
+echo 未找到软件目录
+pause
+exit /b
+
+:found
 echo 安装路径: "%InstallPath%"
 
-:: 设置 Python 子目录
+:: Python 子目录
 set "PythonDir=%InstallPath%\Python_embed\Python"
 
 if not exist "%PythonDir%" (
@@ -36,16 +39,7 @@ pushd "%PythonDir%"
 dir /b
 popd
 
-:: 检查写权限
-:: > "%PythonDir%\_write_test.txt" (
-::     echo 测试写入
-:: ) 2>nul || (
-::     echo ERROR: 没有权限写入 "%PythonDir%"，请以管理员身份运行此 BAT
-::     pause
-::     exit /b
-:: )
-
-:: 设置源文件路径为 BAT 所在目录
+:: 源文件路径为 BAT 所在目录
 set "SourceFile=%~dp0aaa.py"
 
 if not exist "%SourceFile%" (
