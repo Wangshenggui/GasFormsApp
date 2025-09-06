@@ -758,13 +758,13 @@ namespace GasFormsApp.TabControl
                 // 输入错误，已提示，后续不继续
                 return;
             }
-            _mainForm.NonDesorpGasQtyTextBox.Text = MainForm.Wc.ToString("F2");
+            _mainForm.NonDesorpGasQtyTextBox.Text = Math.Round(MainForm.Wc, 2, MidpointRounding.ToEven).ToString("F2");
             if (!float.TryParse(_mainForm.NonDesorpGasQtyTextBox.Text, out float wc))
             {
                 return;
             }
             MainForm.Wc = wc;
-            _mainForm.Wc_TextBox.Text = MainForm.Wc.ToString("F2");
+            _mainForm.Wc_TextBox.Text = Math.Round(MainForm.Wc, 2, MidpointRounding.ToEven).ToString("F2");
 
             // 计算W1
             float SampleWeight;
@@ -786,7 +786,7 @@ namespace GasFormsApp.TabControl
             }
 
             MainForm.W1 = (UndDesorpCal + Math.Abs(SampLossVol)) / SampleWeight;
-            _mainForm.W1_TextBox.Text = MainForm.W1.ToString("F2");
+            _mainForm.W1_TextBox.Text = Math.Round(MainForm.W1, 2, MidpointRounding.ToEven).ToString("F2");
 
             // 先安全解析实验室解吸体积
             if (!float.TryParse(_mainForm.DesorpVolNormalCalTextBox.Text, out float DesorpVolNormal))
@@ -796,7 +796,7 @@ namespace GasFormsApp.TabControl
 
             // 计算W2
             MainForm.W2 = DesorpVolNormal / SampleWeight;
-            _mainForm.W2_TextBox.Text = MainForm.W2.ToString("F2");
+            _mainForm.W2_TextBox.Text = Math.Round(MainForm.W2, 2, MidpointRounding.ToEven).ToString("F2");
 
             // 先安全解析 CrushDesorp
             if (!float.TryParse(_mainForm.CrushDesorpTextBox.Text, out float CrushDesorp))
@@ -806,16 +806,18 @@ namespace GasFormsApp.TabControl
 
             // 计算W3
             MainForm.W3 = CrushDesorp;
-            _mainForm.W3_TextBox.Text = MainForm.W3.ToString("F2");
+            _mainForm.W3_TextBox.Text = Math.Round(MainForm.W3, 2, MidpointRounding.ToEven).ToString("F2");
 
 
             // 计算Wa
-            MainForm.Wa = MainForm.W1 + MainForm.W2 + MainForm.W3;
-            _mainForm.Wa_TextBox.Text = MainForm.Wa.ToString("F2");
+            MainForm.Wa = double.Parse(_mainForm.W1_TextBox.Text) 
+                + double.Parse(_mainForm.W2_TextBox.Text) 
+                + double.Parse(_mainForm.W3_TextBox.Text);
+            _mainForm.Wa_TextBox.Text = Math.Round(MainForm.Wa, 2, MidpointRounding.ToEven).ToString("F2");
 
             // 计算 W 总量
-            MainForm.W = MainForm.Wa + MainForm.Wc;
-            _mainForm.W_TextBox.Text = MainForm.W.ToString("F2");
+            MainForm.W = double.Parse(_mainForm.Wa_TextBox.Text) + double.Parse(_mainForm.Wc_TextBox.Text);
+            _mainForm.W_TextBox.Text = Math.Round(MainForm.W, 2, MidpointRounding.ToEven).ToString("F2");
 
             /*
              * 以下是计算瓦斯压力 P 的复杂公式，变量含义见注释
@@ -858,7 +860,7 @@ namespace GasFormsApp.TabControl
             // 使用二次公式求根，并减去0.1作为最终瓦斯压力 P
             double Pt = Math.Round((-bt + Math.Sqrt(bt * bt - 4 * at * ct)) / (2 * at), 4) - 0.1;
             MainForm.P = Pt;
-            _mainForm.P_TextBox.Text = MainForm.P.ToString("F2");
+            _mainForm.P_TextBox.Text = Math.Round(MainForm.P, 2, MidpointRounding.ToEven).ToString("F2");
 
             // 修改了数据，未保存直接计算
             if (_mainForm.tabPage4.Text == "*实验结果*")
