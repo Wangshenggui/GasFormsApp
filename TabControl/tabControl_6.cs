@@ -364,6 +364,20 @@ namespace GasFormsApp.TabControl
                 }
             }
         }
+        // 判断两个路径是否位于同一级目录
+        private bool ArePathsInSameLevel(string path1, string path2)
+        {
+            // 获取两个路径的父级目录
+            string parentPath1 = Directory.GetParent(path1)?.FullName;
+            string parentPath2 = Directory.GetParent(path2)?.FullName;
+
+            // 去除末尾的反斜杠以确保一致性
+            parentPath1 = parentPath1?.TrimEnd(Path.DirectorySeparatorChar);
+            parentPath2 = parentPath2?.TrimEnd(Path.DirectorySeparatorChar);
+
+            // 比较父目录路径
+            return string.Equals(parentPath1, parentPath2, StringComparison.OrdinalIgnoreCase);
+        }
 
 
         private void treeView1_DragDrop(object sender, DragEventArgs e)
@@ -455,27 +469,70 @@ namespace GasFormsApp.TabControl
                         // 从 Level 2 拖动到 Level 2
                         else if (draggedNode.Level == 2 && targetNode.Level == 2)
                         {
-                            // 在目标 Level 2 目录下，复制源 Level 2 目录下的所有文件
-                            try
+                            // 判断源目录和目标目录是否在不同的 Level 1 下
+                            if (!ArePathsInSameLevel(startDragPath, targetPath))//不在同一路径
                             {
-                                // 复制第一个 Level 2 目录下的所有文件到目标 Level 2 目录
-                                CopyAllFilesAndDirectories(startDragPath, targetPath);
-                                Console.WriteLine("复制完成");
+                                // 获取目标 Level 2 路径的父级目录（上一级目录）
+                                string parentTargetPath = Directory.GetParent(targetPath)?.FullName;
 
-                                // 如果需要，删除源目录及其内容
-                                Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
-                                    startDragPath,
-                                    UIOption.OnlyErrorDialogs,
-                                    RecycleOption.SendToRecycleBin
-                                );
-                                Console.WriteLine("源目录已删除");
+                                if (string.IsNullOrEmpty(parentTargetPath))
+                                {
+                                    Console.WriteLine("目标路径无效！");
+                                    return; // 如果无法获取父级路径，直接返回
+                                }
+
+                                // 计算新的目标路径：目标目录的上一级目录 + 源目录名称
+                                string targetLevel2Path = Path.Combine(parentTargetPath, Path.GetFileName(startDragPath));
+
+                                // 如果目标 Level 2 路径已存在，直接复制文件，否则先创建目标目录
+                                if (!Directory.Exists(targetLevel2Path))
+                                {
+                                    Directory.CreateDirectory(targetLevel2Path);
+                                    Console.WriteLine($"创建新的目录：{targetLevel2Path}");
+                                }
+
+                                // 复制目录中的所有文件到目标目录
+                                try
+                                {
+                                    CopyAllFilesAndDirectories(startDragPath, targetLevel2Path);
+                                    Console.WriteLine("复制完成");
+
+                                    // 如果需要，删除源目录及其内容
+                                    Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
+                                        startDragPath,
+                                        UIOption.OnlyErrorDialogs,
+                                        RecycleOption.SendToRecycleBin
+                                    );
+                                    Console.WriteLine("源目录已删除");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine($"操作失败: {ex.Message}");
+                                }
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                Console.WriteLine($"操作失败: {ex.Message}");
+                                // 在目标 Level 2 目录下，复制源 Level 2 目录下的所有文件
+                                try
+                                {
+                                    // 复制第一个 Level 2 目录下的所有文件到目标 Level 2 目录
+                                    CopyAllFilesAndDirectories(startDragPath, targetPath);
+                                    Console.WriteLine("复制完成");
+
+                                    // 如果需要，删除源目录及其内容
+                                    Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
+                                        startDragPath,
+                                        UIOption.OnlyErrorDialogs,
+                                        RecycleOption.SendToRecycleBin
+                                    );
+                                    Console.WriteLine("源目录已删除");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine($"操作失败: {ex.Message}");
+                                }
                             }
                         }
-
                         else
                         {
                             Console.WriteLine("不允许此拖动操作：仅允许从 Level 2 拖动到 Level 1 或者 Level 1 到 Level 1 或 Level 2 到 Level 2");
@@ -486,6 +543,8 @@ namespace GasFormsApp.TabControl
                 {
                     Console.WriteLine("起始路径或目标路径无效，无法复制文件");
                 }
+                // **选中当前的目标节点**
+                _mainForm.treeView1.SelectedNode = targetNode;
             }
             else
             {
@@ -499,6 +558,60 @@ namespace GasFormsApp.TabControl
 
             // 清空记录
             startDragPath = null;
+
+            // 获取当前选中节点
+            TreeNode selectedNode = _mainForm.treeView1.SelectedNode;
+            if (selectedNode != null)
+            {
+                // TreeNode.Level：从0开始，根节点是0级，子节点是1级，以此类推
+                int level = selectedNode.Level;
+
+                // 因为你可能更习惯用“第一级”“第二级”，可以 +1
+                int displayLevel = level + 1;
+
+                if (displayLevel == 1)
+                {
+
+                }
+                else if (displayLevel == 2)
+                {
+                    // 获取当前目录的目录信息
+                    DirectoryInfo currentDir = new DirectoryInfo(selectedNode.Tag?.ToString());
+                    if (currentDir != null)
+                    {
+                        GasFormsApp.Settings.Default.Tab6SearchForMinesText = currentDir.Name;
+                    }
+                    else
+                    {
+                        Console.WriteLine("没有目录");
+                    }
+                }
+                else if (displayLevel == 3)
+                {
+                    // 获取当前目录的目录信息
+                    DirectoryInfo currentDir = new DirectoryInfo(selectedNode.Tag?.ToString());
+                    // 上一级目录
+                    DirectoryInfo parentDir = currentDir.Parent;
+                    if (parentDir != null)
+                    {
+                        Console.WriteLine("当前目录名: " + currentDir.Name);
+                        Console.WriteLine("上一级目录名: " + parentDir.Name);
+
+
+                        //MessageBox.Show($"{parentDir.Name}");
+                        GasFormsApp.Settings.Default.Tab6SearchForMinesText = parentDir.Name;
+                    }
+                    else
+                    {
+                        Console.WriteLine("没有上一级目录");
+                    }
+                }
+            }
+            else
+            {
+                //MessageBox.Show("没有选中任何节点");
+            }
+            GasFormsApp.Settings.Default.Save();
         }
 
 
