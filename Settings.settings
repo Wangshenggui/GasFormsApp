@@ -29,5 +29,8 @@
     <Setting Name="Tab6SplitContainerLeftWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">150</Value>
     </Setting>
+    <Setting Name="ActivateID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

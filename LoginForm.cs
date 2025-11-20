@@ -25,43 +25,6 @@ namespace GasFormsApp
     public partial class LoginForm : Form
     {
         int version = -1;  // -1表示验证失败
-        //// 获取主板+CPU序列号（组合唯一识别码）
-        //public static string GetMotherboardAndCpuId()
-        //{
-        //    string motherboardSN = GetMotherboardSerialNumber();
-        //    string cpuId = GetCpuId();
-        //    return $"{motherboardSN}-{cpuId}";
-        //}
-
-        //// 获取主板序列号
-        //public static string GetMotherboardSerialNumber()
-        //{
-        //    try
-        //    {
-        //        using (var searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard"))
-        //        {
-        //            foreach (ManagementObject obj in searcher.Get())
-        //                return obj["SerialNumber"]?.ToString().Trim() ?? "UNKNOWN";
-        //        }
-        //    }
-        //    catch { }
-        //    return "UNKNOWN";
-        //}
-
-        //// 获取 CPU ID
-        //public static string GetCpuId()
-        //{
-        //    try
-        //    {
-        //        using (var searcher = new ManagementObjectSearcher("SELECT ProcessorId FROM Win32_Processor"))
-        //        {
-        //            foreach (ManagementObject obj in searcher.Get())
-        //                return obj["ProcessorId"]?.ToString().Trim() ?? "UNKNOWN";
-        //        }
-        //    }
-        //    catch { }
-        //    return "UNKNOWN";
-        //}
 
         // 使用 RSA 公钥验证签名合法性
         public static bool VerifyData(string data, byte[] signature, string publicKeyXml)
@@ -73,76 +36,6 @@ namespace GasFormsApp
                 return rsa.VerifyData(dataBytes, CryptoConfig.MapNameToOID("SHA256"), signature);
             }
         }
-
-        private string GetCpuId()
-        {
-            try
-            {
-                using (ManagementClass mc = new ManagementClass("Win32_Processor"))
-                {
-                    foreach (ManagementObject mo in mc.GetInstances())
-                    {
-                        return mo["ProcessorId"] != null ? mo["ProcessorId"].ToString() : "";
-                    }
-                }
-            }
-            catch { }
-            return "";
-        }
-
-        private string GetDiskSerialNumber()
-        {
-            try
-            {
-                using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_PhysicalMedia"))
-                {
-                    foreach (ManagementObject mo in searcher.Get())
-                    {
-                        if (mo["SerialNumber"] != null)
-                        {
-                            string serial = mo["SerialNumber"].ToString();
-                            if (!string.IsNullOrWhiteSpace(serial))
-                                return serial.Trim();
-                        }
-                    }
-                }
-            }
-            catch { }
-            return "";
-        }
-
-        private string GetMacAddress()
-        {
-            try
-            {
-                NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
-                foreach (NetworkInterface nic in nics)
-                {
-                    if (nic.NetworkInterfaceType != NetworkInterfaceType.Loopback && nic.OperationalStatus == OperationalStatus.Up)
-                    {
-                        return nic.GetPhysicalAddress().ToString();
-                    }
-                }
-            }
-            catch { }
-            return "";
-        }
-
-        private string GetMotherboardId()
-        {
-            try
-            {
-                using (ManagementClass mc = new ManagementClass("Win32_BaseBoard"))
-                {
-                    foreach (ManagementObject mo in mc.GetInstances())
-                    {
-                        return mo["SerialNumber"] != null ? mo["SerialNumber"].ToString() : "";
-                    }
-                }
-            }
-            catch { }
-            return "";
-        }
         // 定义三个公钥（最好提到类的静态字段或配置里）
         readonly string[] PublicKeys = new string[]
         {
@@ -150,33 +43,67 @@ namespace GasFormsApp
             "<RSAKeyValue><Modulus>wfhq2txWrvedzpMQtejut0amzU/x/NskwyvnIFMT90jJ7HZmfFaFI91H0elo5jw33U/HOp/T4sdz8z/qag0RkQf1uyhXkjLTVcI+DIrGQvwfwZE1DH/XGBjvQ09DiJhYPIauhUwg4QzGUn9HPmsMBDAphRTvsySWGiIG8w0kr/9Cy7KOunBaL14sgAUaF2w068m9SXpH3JHXMLgIUFauo/xEAsHA4MxKHQbe6M+V3cA/Qja3x/AItsuVfwTJasm7Pjy14T0k0IVN4K4+drblcOvZ6VC2YlPFYLMwDoY4SuEv6h7gOHmLJC9FynM6GG4ht/2kj0xW7e7d2YXLDUwCAQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>",
             "<RSAKeyValue><Modulus>u9AnxyAWTl61i4BhNfIB5wr4oC5PLmzrQjMZhnzPr8QKeZ+HY56PIoNH6qm9MksypCLyVAqp5Vd0Qp7y+fcOFw+j05V0wX+GpSXdG+w+FiH/AH5arV0FQRdPuUY3gWeEc8rvculWtQwqywLQtUXNbyaB1oxW0O0bn05kZnWhIr29zGV1jdZFT90dlOUeLVv4EucAqCjZUPJ5aHzYx7QKQd7JOvFC6oCbwvyN9fYloxpEQHRuc+EdkE7o3kuajNKAmFavmbOkr4qnwe2OSwteyCy7xPg21utkZtvWgcRWUhM6QTQJh11nE5kvk5cxL4j6maLPv2Mnjfrg62s3cBgNHQ==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
         };
+
+        string GetWindowsInstallDate()
+        {
+            try
+            {
+                using (var searcher = new ManagementObjectSearcher("SELECT InstallDate FROM Win32_OperatingSystem"))
+                {
+                    foreach (ManagementObject obj in searcher.Get())
+                    {
+                        string installDateStr = obj["InstallDate"]?.ToString();
+                        if (!string.IsNullOrEmpty(installDateStr))
+                        {
+                            // 格式：20221102113045.000000+480
+                            DateTime installDate = ManagementDateTimeConverter.ToDateTime(installDateStr);
+                            return installDate.ToString("yyyy-MM-dd HH:mm:ss");
+                        }
+                    }
+                }
+            }
+            catch { }
+            return "UNKNOWN";
+        }
+        // 获取系统构建版本
+        public static string GetWindowsBuild()
+        {
+            try
+            {
+                using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion"))
+                {
+                    return key?.GetValue("CurrentBuild")?.ToString() ?? "Unknown";
+                }
+            }
+            catch { }
+            return "Unknown";
+        }
+        public static string GetSystemUUID()
+        {
+            try
+            {
+                var searcher = new ManagementObjectSearcher("SELECT * FROM Win32_ComputerSystemProduct");
+                foreach (var item in searcher.Get())
+                {
+                    return item["UUID"]?.ToString();
+                }
+                return "Unknown";
+            }
+            catch
+            {
+                return "Unknown";
+            }
+        }
         private void CheckActivation()
         {
-            string cpuId = GetCpuId();
-            string diskSerial = GetDiskSerialNumber();
-            string macAddress = GetMacAddress();
-            string motherboardId = GetMotherboardId();
-
-            string combinedInfo = cpuId + diskSerial + macAddress + motherboardId;
-
+            string combinedInfo = GetWindowsBuild() + GetWindowsInstallDate() + GetSystemUUID();
             //MessageBox.Show($"设备ID：{combinedInfo}");
+
 
             var code = "";
             // 生成哈希
             byte[] bytes = Encoding.UTF8.GetBytes(combinedInfo);
-            //using (SHA256 sha256 = SHA256.Create())
-            //{
-            //    byte[] hashBytes = sha256.ComputeHash(bytes);
-            //    string base64Hash = Convert.ToBase64String(hashBytes);
 
-            //    Console.WriteLine("硬件组合信息: " + combinedInfo);
-            //    Console.WriteLine("Base64 哈希结果: " + base64Hash);
-
-            //    //GasFormsApp.Settings.Default.MachineCode = base64Hash;
-            //    //GasFormsApp.Settings.Default.Save();
-
-            //    code = base64Hash;
-            //}
             using (SHA256 sha256 = SHA256.Create())
             {
                 byte[] hashBytes = sha256.ComputeHash(bytes);

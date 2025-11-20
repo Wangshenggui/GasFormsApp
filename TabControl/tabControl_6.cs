@@ -235,6 +235,7 @@ namespace GasFormsApp.TabControl
         {
             Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
 
+            // 判断是否有有效的拖动数据和节点
             if (!e.Data.GetDataPresent(typeof(TreeNode)) || dragImageList == null)
             {
                 e.Effect = DragDropEffects.None;
@@ -249,6 +250,7 @@ namespace GasFormsApp.TabControl
             }
 
             string targetPath = GetFilePath(targetNode);
+            Console.WriteLine("当前鼠标所处的节点路径：" + targetPath);
 
             // 获取拖拽节点
             TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
@@ -281,14 +283,14 @@ namespace GasFormsApp.TabControl
                 return;
             }
 
-            // 禁止拖动 Level 2 节点
-            if (draggedNode.Level == 2)
-            {
-                e.Effect = DragDropEffects.None;
-                ImageList_DragShowNolock(false);
-                dragImageHidden = true;
-                return;
-            }
+            //// 禁止拖动 Level 2 节点
+            //if (draggedNode.Level == 2)
+            //{
+            //    e.Effect = DragDropEffects.None;
+            //    ImageList_DragShowNolock(false);
+            //    dragImageHidden = true;
+            //    return;
+            //}
 
 
             // 允许拖动
@@ -338,6 +340,32 @@ namespace GasFormsApp.TabControl
                 ImageList_DragLeave(_mainForm.treeView1.Handle);
         }
 
+        // 只复制文件（不递归复制子目录）
+        private void CopyFilesToDirectory(string sourceDir, string targetDir)
+        {
+            // 确保目标目录存在
+            if (!Directory.Exists(targetDir))
+            {
+                Directory.CreateDirectory(targetDir);
+            }
+
+            // 复制文件（仅复制文件，不包括子目录）
+            foreach (string file in Directory.GetFiles(sourceDir))
+            {
+                string destFile = Path.Combine(targetDir, Path.GetFileName(file));
+                try
+                {
+                    File.Copy(file, destFile, true); // true 表示覆盖同名文件
+                    Console.WriteLine($"文件复制: {file} -> {destFile}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"复制文件失败: {ex.Message}");
+                }
+            }
+        }
+
+
         private void treeView1_DragDrop(object sender, DragEventArgs e)
         {
             Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
@@ -348,6 +376,7 @@ namespace GasFormsApp.TabControl
                 string targetPath = GetFilePath(targetNode);
                 Console.WriteLine($"拖动放下节点到: {targetNode.Text}, 路径: {targetPath}");
 
+                // 检查起始路径和目标路径是否有效
                 if (!string.IsNullOrEmpty(startDragPath) && Directory.Exists(startDragPath)
                     && !string.IsNullOrEmpty(targetPath) && Directory.Exists(targetPath))
                 {
@@ -360,27 +389,97 @@ namespace GasFormsApp.TabControl
 
                     if (result == DialogResult.Yes)
                     {
-                        try
-                        {
-                            CopyAllFilesAndDirectories(startDragPath, targetPath);
-                            Console.WriteLine("复制完成");
+                        // 获取拖动的节点
+                        TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
 
-                            // 复制完成后删除源目录及所有内容
-                            Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
-                                startDragPath,
-                                UIOption.OnlyErrorDialogs,
-                                RecycleOption.SendToRecycleBin
-                            );
-                            Console.WriteLine("源目录已删除");
-                        }
-                        catch (Exception ex)
+                        // 检查从 Level 2 拖动到 Level 1
+                        if (draggedNode.Level == 2 && targetNode.Level == 1)
                         {
-                            Console.WriteLine($"操作失败: {ex.Message}");
+                            // 在目标 Level 1 目录下创建一个新的子目录
+                            string newDirPath = Path.Combine(targetPath, draggedNode.Text); // 使用 Level 2 节点的名字作为新目录名
+                            if (!Directory.Exists(newDirPath))
+                            {
+                                Directory.CreateDirectory(newDirPath);
+                                Console.WriteLine($"创建新的子目录: {newDirPath}");
+                            }
+
+                            // 复制 Level 2 目录下的所有内容到新的子目录
+                            try
+                            {
+                                CopyAllFilesAndDirectories(startDragPath, newDirPath);
+                                Console.WriteLine("复制完成");
+
+                                // 如果需要，删除源目录及其内容
+                                Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
+                                    startDragPath,
+                                    UIOption.OnlyErrorDialogs,
+                                    RecycleOption.SendToRecycleBin
+                                );
+                                Console.WriteLine("源目录已删除");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"操作失败: {ex.Message}");
+                            }
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("用户取消了合并操作");
+                        // 从 Level 1 拖动到 Level 1
+                        else if (draggedNode.Level == 1 && targetNode.Level == 1)
+                        {
+                            // 如果源目录和目标目录不同，则执行复制
+                            if (string.Compare(startDragPath, targetPath, StringComparison.OrdinalIgnoreCase) != 0)
+                            {
+                                // 复制 Level 1 目录下的所有内容到目标目录
+                                try
+                                {
+                                    CopyAllFilesAndDirectories(startDragPath, targetPath);
+                                    Console.WriteLine("复制完成");
+
+                                    // 如果需要，删除源目录及其内容
+                                    Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
+                                        startDragPath,
+                                        UIOption.OnlyErrorDialogs,
+                                        RecycleOption.SendToRecycleBin
+                                    );
+                                    Console.WriteLine("源目录已删除");
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine($"操作失败: {ex.Message}");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("不能将目录拖动到自身，操作被取消。");
+                            }
+                        }
+                        // 从 Level 2 拖动到 Level 2
+                        else if (draggedNode.Level == 2 && targetNode.Level == 2)
+                        {
+                            // 在目标 Level 2 目录下，复制源 Level 2 目录下的所有文件
+                            try
+                            {
+                                // 复制第一个 Level 2 目录下的所有文件到目标 Level 2 目录
+                                CopyAllFilesAndDirectories(startDragPath, targetPath);
+                                Console.WriteLine("复制完成");
+
+                                // 如果需要，删除源目录及其内容
+                                Microsoft.VisualBasic.FileIO.FileSystem.DeleteDirectory(
+                                    startDragPath,
+                                    UIOption.OnlyErrorDialogs,
+                                    RecycleOption.SendToRecycleBin
+                                );
+                                Console.WriteLine("源目录已删除");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"操作失败: {ex.Message}");
+                            }
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("不允许此拖动操作：仅允许从 Level 2 拖动到 Level 1 或者 Level 1 到 Level 1 或 Level 2 到 Level 2");
+                        }
                     }
                 }
                 else
@@ -393,12 +492,15 @@ namespace GasFormsApp.TabControl
                 Console.WriteLine("拖动放下节点到: 空白区域");
             }
 
+            // 结束拖动操作，清理拖动状态
             ImageList_EndDrag();
             dragImageList?.Dispose();
             dragImageList = null;
 
-            startDragPath = null; // 清空记录
+            // 清空记录
+            startDragPath = null;
         }
+
 
         private void CopyAllFilesAndDirectories(string sourceDir, string targetDir)
         {
