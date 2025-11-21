@@ -119,6 +119,7 @@ namespace GasFormsApp.TabControl
             _mainForm.treeView1.DragOver += treeView1_DragOver;
             _mainForm.treeView1.DragLeave += treeView1_DragLeave;
             _mainForm.treeView1.DragDrop += treeView1_DragDrop;
+            _mainForm.treeView1.MouseWheel += treeView1_Wheel;
 
             _mainForm.刷新ToolStripMenuItem.Click += 刷新ToolStripMenuItem_Click;
             _mainForm.导出矿井Excel统计表ToolStripMenuItem.Click += 导出矿井Excel统计表ToolStripMenuItem_Click;
@@ -231,9 +232,116 @@ namespace GasFormsApp.TabControl
         // 拖动影像是否被隐藏
         private bool dragImageHidden = false;
 
+        private Point _lastMousePosition;
+        private bool _isFirstDragOver = true;
+
+
+        [DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, IntPtr lParam);
+
+        private const int WM_VSCROLL = 0x0115;
+        private const int SB_LINEDOWN = 1;
+        private const int SB_LINEUP = 0;
+
+        private void ScrollTreeViewUp()
+        {
+            SendMessage(_mainForm.treeView1.Handle, WM_VSCROLL, (IntPtr)SB_LINEUP, IntPtr.Zero);
+        }
+
+        private void ScrollTreeViewDown()
+        {
+            SendMessage(_mainForm.treeView1.Handle, WM_VSCROLL, (IntPtr)SB_LINEDOWN, IntPtr.Zero);
+        }
+
+
         private void treeView1_DragOver(object sender, DragEventArgs e)
         {
+            TreeNode targetNode;
+            string targetPath;
+            TreeNode draggedNode;
             Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
+            int mouseY = pt.Y;
+            int scrollThreshold = 80;
+
+            // 检查是否需要滚动
+            if (mouseY < scrollThreshold || mouseY > _mainForm.treeView1.Height - scrollThreshold)
+            {
+                // 滚动前隐藏图标
+                if (!dragImageHidden)
+                {
+                    ImageList_DragShowNolock(false);
+                    dragImageHidden = true;
+                }
+
+                // 执行滚动
+                if (mouseY < scrollThreshold)
+                    ScrollTreeViewUp();
+                else
+                    ScrollTreeViewDown();
+
+                // 滚动后立即返回，让下一次 DragOver 事件处理图标显示
+                e.Effect = DragDropEffects.Move;
+
+
+
+                // 判断是否有有效的拖动数据和节点
+                if (!e.Data.GetDataPresent(typeof(TreeNode)) || dragImageList == null)
+                {
+                    e.Effect = DragDropEffects.None;
+                    return;
+                }
+
+                targetNode = _mainForm.treeView1.GetNodeAt(pt);
+                if (targetNode == null)
+                {
+                    e.Effect = DragDropEffects.None;
+                    return;
+                }
+
+                targetPath = GetFilePath(targetNode);
+                //Console.WriteLine("当前鼠标所处的节点路径：" + targetPath);
+
+                // 获取拖拽节点
+                draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
+
+                // 禁止拖到自身或子目录
+                if (string.Equals(startDragPath, targetPath, StringComparison.OrdinalIgnoreCase) ||
+                    targetPath.StartsWith(startDragPath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+                {
+                    e.Effect = DragDropEffects.None;
+                    ImageList_DragShowNolock(false);
+                    dragImageHidden = true;
+                    return;
+                }
+
+                // 新增：禁止树级别1拖到级别2
+                if (draggedNode.Level == 1 && targetNode.Level == 2)
+                {
+                    e.Effect = DragDropEffects.None;
+                    ImageList_DragShowNolock(false);
+                    dragImageHidden = true;
+                    return;
+                }
+
+                // 新增：禁止拖到上级目录
+                if (startDragPath.StartsWith(targetPath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+                {
+                    e.Effect = DragDropEffects.None;
+                    ImageList_DragShowNolock(false);
+                    dragImageHidden = true;
+                    return;
+                }
+
+                //// 禁止拖动 Level 2 节点
+                //if (draggedNode.Level == 2)
+                //{
+                //    e.Effect = DragDropEffects.None;
+                //    ImageList_DragShowNolock(false);
+                //    dragImageHidden = true;
+                //    return;
+                //}
+                return;
+            }
 
             // 判断是否有有效的拖动数据和节点
             if (!e.Data.GetDataPresent(typeof(TreeNode)) || dragImageList == null)
@@ -242,18 +350,18 @@ namespace GasFormsApp.TabControl
                 return;
             }
 
-            TreeNode targetNode = _mainForm.treeView1.GetNodeAt(pt);
+            targetNode = _mainForm.treeView1.GetNodeAt(pt);
             if (targetNode == null)
             {
                 e.Effect = DragDropEffects.None;
                 return;
             }
 
-            string targetPath = GetFilePath(targetNode);
-            Console.WriteLine("当前鼠标所处的节点路径：" + targetPath);
+            targetPath = GetFilePath(targetNode);
+            //Console.WriteLine("当前鼠标所处的节点路径：" + targetPath);
 
             // 获取拖拽节点
-            TreeNode draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
+            draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
 
             // 禁止拖到自身或子目录
             if (string.Equals(startDragPath, targetPath, StringComparison.OrdinalIgnoreCase) ||
@@ -293,13 +401,14 @@ namespace GasFormsApp.TabControl
             //}
 
 
-            // 允许拖动
+            // 允许拖动时确保图标显示
             e.Effect = DragDropEffects.Move;
             if (dragImageHidden)
+            {
                 ImageList_DragShowNolock(true);
-
+                dragImageHidden = false;
+            }
             ImageList_DragMove(pt.X, pt.Y);
-            dragImageHidden = false;
         }
 
 
@@ -338,6 +447,33 @@ namespace GasFormsApp.TabControl
         {
             if (dragImageList != null)
                 ImageList_DragLeave(_mainForm.treeView1.Handle);
+        }
+
+        private void treeView1_Wheel(object sender, MouseEventArgs e)
+        {
+            //// 判断滚轮的增量值
+            //int delta = e.Delta;
+
+            //// 如果是向上滚动
+            //if (delta > 0)
+            //{
+            //    // 向上滚动逻辑
+            //    if (_mainForm.treeView1.TopNode != null && _mainForm.treeView1.TopNode.PrevNode != null)
+            //    {
+            //        _mainForm.treeView1.TopNode = _mainForm.treeView1.TopNode.PrevNode;
+            //    }
+            //}
+            //// 如果是向下滚动
+            //else if (delta < 0)
+            //{
+            //    // 向下滚动逻辑
+            //    if (_mainForm.treeView1.TopNode != null && _mainForm.treeView1.TopNode.NextNode != null)
+            //    {
+            //        _mainForm.treeView1.TopNode = _mainForm.treeView1.TopNode.NextNode;
+            //    }
+            //}
+
+            //Console.WriteLine("滚动方向：" + (delta > 0 ? "向上" : "向下"));
         }
 
         // 只复制文件（不递归复制子目录）
@@ -382,6 +518,7 @@ namespace GasFormsApp.TabControl
 
         private void treeView1_DragDrop(object sender, DragEventArgs e)
         {
+            _isFirstDragOver = true;
             Point pt = _mainForm.treeView1.PointToClient(new Point(e.X, e.Y));
             TreeNode targetNode = _mainForm.treeView1.GetNodeAt(pt);
 
@@ -792,7 +929,8 @@ namespace GasFormsApp.TabControl
         private void treeView1_DrawNode(object sender, DrawTreeNodeEventArgs e)
         {
             string text = e.Node.Text;
-            string keyword = _mainForm.FindMineTextBox.Text ?? "";
+            string keywords = _mainForm.FindMineTextBox.Text ?? ""; // 获取搜索框中的所有关键字
+            string[] searchKeywords = keywords.Split(new char[] { ',', '|' }, StringSplitOptions.RemoveEmptyEntries); // 按逗号和竖线分割关键字
             Font font = _mainForm.treeView1.Font;
             int margin = 0;
             int verticalMargin = 8;
@@ -802,6 +940,7 @@ namespace GasFormsApp.TabControl
 
             Color textColor = _mainForm.treeView1.ForeColor;
 
+            // 如果节点被选中，设置选中的背景颜色和文字颜色
             if (isSelected)
             {
                 Color bgColor = treeViewFocused ? SystemColors.Highlight : Color.LightGray;
@@ -812,43 +951,68 @@ namespace GasFormsApp.TabControl
             }
             else
             {
+                // 没有选中时，使用背景颜色
                 e.Graphics.FillRectangle(new SolidBrush(_mainForm.treeView1.BackColor), e.Bounds);
             }
 
-            int matchIndex = -1;
-            if (!string.IsNullOrEmpty(keyword))
-                matchIndex = text.ToLower().IndexOf(keyword.ToLower());
-
+            // 初始化 x 坐标，准备绘制
             float x = e.Bounds.Left + margin;
             float y = e.Bounds.Top + verticalMargin;
 
-            if (string.IsNullOrEmpty(keyword) || matchIndex < 0)
+            // 如果没有关键字，直接绘制节点名称
+            if (string.IsNullOrEmpty(keywords))
             {
                 TextRenderer.DrawText(e.Graphics, text, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
                 return;
             }
 
-            string before = text.Substring(0, matchIndex);
-            string matchText = text.Substring(matchIndex, keyword.Length);
-            string after = text.Substring(matchIndex + keyword.Length);
+            // 定义不同的高亮颜色（可以根据需要添加更多颜色）
+            Color[] highlightColors = new Color[] { Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Purple };
 
-            Size beforeSize = TextRenderer.MeasureText(e.Graphics, before, font, e.Bounds.Size, TextFormatFlags.NoPadding);
-            TextRenderer.DrawText(e.Graphics, before, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
-            x += beforeSize.Width;
+            // 记录当前绘制的位置
+            int currentIndex = 0;
 
-            Font boldFont = new Font(font, FontStyle.Bold);
-            TextRenderer.DrawText(
-                e.Graphics,
-                matchText,
-                boldFont,
-                new Point((int)x, (int)y),
-                textColor, // 用同样的 textColor，不用再分开判断
-                TextFormatFlags.NoPadding
-            );
-            x += TextRenderer.MeasureText(e.Graphics, matchText, boldFont, e.Bounds.Size, TextFormatFlags.NoPadding).Width;
+            // 遍历每个关键字，逐个高亮（按照输入的顺序）
+            for (int i = 0; i < searchKeywords.Length; i++)
+            {
+                string keyword = searchKeywords[i];
+                int matchIndex = text.ToLower().IndexOf(keyword.ToLower(), currentIndex);
 
-            TextRenderer.DrawText(e.Graphics, after, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+                // 如果找到了关键字
+                if (matchIndex >= 0)
+                {
+                    // 绘制当前关键字之前的文本（不加粗）
+                    string before = text.Substring(currentIndex, matchIndex - currentIndex);
+                    Size beforeSize = TextRenderer.MeasureText(e.Graphics, before, font, e.Bounds.Size, TextFormatFlags.NoPadding);
+                    TextRenderer.DrawText(e.Graphics, before, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+                    x += beforeSize.Width;
+
+                    // 绘制匹配到的关键字（加粗显示，并使用不同的颜色）
+                    string matchText = text.Substring(matchIndex, keyword.Length);
+                    Font boldFont = new Font(font, FontStyle.Bold);
+                    TextRenderer.DrawText(
+                        e.Graphics,
+                        matchText,
+                        boldFont,
+                        new Point((int)x, (int)y),
+                        highlightColors[i % highlightColors.Length], // 按顺序轮流使用颜色
+                        TextFormatFlags.NoPadding
+                    );
+                    x += TextRenderer.MeasureText(e.Graphics, matchText, boldFont, e.Bounds.Size, TextFormatFlags.NoPadding).Width;
+
+                    // 更新当前查找的位置，从当前匹配后的文本继续查找
+                    currentIndex = matchIndex + keyword.Length;
+                }
+            }
+
+            // 绘制剩余的文本（不加粗）
+            if (currentIndex < text.Length)
+            {
+                string after = text.Substring(currentIndex);
+                TextRenderer.DrawText(e.Graphics, after, font, new Point((int)x, (int)y), textColor, TextFormatFlags.NoPadding);
+            }
         }
+
 
 
 
@@ -1452,6 +1616,7 @@ namespace GasFormsApp.TabControl
             // 并且该节点对应的路径是有效目录
             if (selectedNode.Nodes.Count == 0 && Directory.Exists(selectedPath))
             {
+                Console.WriteLine($"选中的树节点:{selectedPath}");
                 // 加载该目录下的文件到表格显示
                 string str = _mainForm.FindTextBox.Text;
                 if (string.IsNullOrEmpty(str))
@@ -1564,39 +1729,105 @@ namespace GasFormsApp.TabControl
         /// <param name="parentNode">父节点</param>
         private void AddSubDirectories(DirectoryInfo dir, TreeNode parentNode, int level)
         {
-            foreach (var subDir in dir.GetDirectories())
+            // 获取搜索框文本
+            string searchText = _mainForm.FindMineTextBox.Text;
+
+            // 如果搜索框为空，直接加载所有子目录，不进行过滤
+            if (string.IsNullOrEmpty(searchText))
             {
-                if (level == 1 && !subDir.Name.ToLower().Contains(_mainForm.FindMineTextBox.Text.ToLower()))
-                    continue;
-
-                TreeNode childNode = new TreeNode(subDir.Name)
+                // 如果搜索框为空，直接加载所有目录
+                foreach (var subDir in dir.GetDirectories())
                 {
-                    Tag = subDir.FullName
-                };
+                    // 创建树节点，设置目录的显示名称和 Tag（目录路径）
+                    TreeNode childNode = new TreeNode(subDir.Name)
+                    {
+                        Tag = subDir.FullName // 存储该目录的完整路径
+                    };
 
-                // 根据层级设置不同图标（示例）
-                if (level == 1)
-                {
-                    childNode.ImageKey = "矿井";
-                    childNode.SelectedImageKey = "矿井";
+                    // 根据层级设置不同图标
+                    if (level == 1)
+                    {
+                        childNode.ImageKey = "矿井"; // 设置 Level 1 的图标
+                        childNode.SelectedImageKey = "矿井"; // 设置 Level 1 选中时的图标
+                    }
+                    else if (level == 2)
+                    {
+                        childNode.ImageKey = "项目"; // 设置 Level 2 的图标
+                        childNode.SelectedImageKey = "项目"; // 设置 Level 2 选中时的图标
+                    }
+                    else
+                    {
+                        childNode.ImageKey = "根目录"; // 设置其他层级的图标
+                        childNode.SelectedImageKey = "根目录"; // 设置其他层级选中时的图标
+                    }
+
+                    // 将子节点添加到父节点中
+                    parentNode.Nodes.Add(childNode);
+
+                    // 递归调用，处理子目录
+                    AddSubDirectories(subDir, childNode, level + 1);
                 }
-                else if (level == 2)
-                {
-                    childNode.ImageKey = "项目";
-                    childNode.SelectedImageKey = "项目";
-                }
-                else
-                {
-                    childNode.ImageKey = "根目录";
-                    childNode.SelectedImageKey = "根目录";
-                }
+            }
+            else
+            {
+                // 如果搜索框有内容，按逗号 `,` 或竖线 `|` 分割成多个关键字
+                string[] searchKeywords = searchText.Split(new char[] {'|' }, StringSplitOptions.RemoveEmptyEntries);
 
-                parentNode.Nodes.Add(childNode);
+                // 遍历当前目录下的所有子目录
+                foreach (var subDir in dir.GetDirectories())
+                {
+                    // 过滤条件：Level 1 层级的目录名需要包含任意一个搜索框中的关键字
+                    if (level == 1)
+                    {
+                        // 如果搜索框中有内容，逐个检查是否匹配
+                        bool matches = false;
+                        foreach (var keyword in searchKeywords)
+                        {
+                            // 忽略大小写，检查目录名称是否包含当前关键字
+                            if (subDir.Name.ToLower().Contains(keyword.Trim().ToLower()))
+                            {
+                                matches = true;
+                                break; // 如果匹配任何一个关键字，跳出循环
+                            }
+                        }
 
-                // 递归调用，层级 +1
-                AddSubDirectories(subDir, childNode, level + 1);
+                        // 如果没有任何匹配，跳过该目录
+                        if (!matches)
+                            continue;
+                    }
+
+                    // 创建树节点，设置目录的显示名称和 Tag（目录路径）
+                    TreeNode childNode = new TreeNode(subDir.Name)
+                    {
+                        Tag = subDir.FullName // 存储该目录的完整路径
+                    };
+
+                    // 根据层级设置不同图标
+                    if (level == 1)
+                    {
+                        childNode.ImageKey = "矿井"; // 设置 Level 1 的图标
+                        childNode.SelectedImageKey = "矿井"; // 设置 Level 1 选中时的图标
+                    }
+                    else if (level == 2)
+                    {
+                        childNode.ImageKey = "项目"; // 设置 Level 2 的图标
+                        childNode.SelectedImageKey = "项目"; // 设置 Level 2 选中时的图标
+                    }
+                    else
+                    {
+                        childNode.ImageKey = "根目录"; // 设置其他层级的图标
+                        childNode.SelectedImageKey = "根目录"; // 设置其他层级选中时的图标
+                    }
+
+                    // 将子节点添加到父节点中
+                    parentNode.Nodes.Add(childNode);
+
+                    // 递归调用，处理子目录
+                    AddSubDirectories(subDir, childNode, level + 1);
+                }
             }
         }
+
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {

@@ -1127,6 +1127,7 @@ namespace GasFormsApp
             const int WM_ENTERSIZEMOVE = 0x0231;
             const int WM_EXITSIZEMOVE = 0x0232;
             const int WM_SIZE = 0x0005;
+            const int WM_MOUSEWHEEL = 0x020A; // 鼠标滚轮消息
 
             const int SIZE_MAXIMIZED = 2;
             const int SIZE_RESTORED = 1;
@@ -1159,6 +1160,35 @@ namespace GasFormsApp
                             ResumeDrawing(this);
                             this.Invalidate();
                         }));
+                    }
+                    break;
+                case WM_MOUSEWHEEL:
+                    // 获取滚轮的增量值
+                    int delta = (short)(m.WParam.ToInt32() >> 16);
+
+                    // 判断鼠标是否在 TreeView 控件上
+                    if (treeView1.ClientRectangle.Contains(treeView1.PointToClient(MousePosition)))
+                    {
+                        // 如果滚轮向上滚动
+                        if (delta > 0)
+                        {
+                            // 如果当前已到达最顶部，滚动到上一个节点
+                            if (treeView1.TopNode != null && treeView1.TopNode.PrevNode != null)
+                            {
+                                treeView1.TopNode = treeView1.TopNode.PrevNode;
+                            }
+                        }
+                        // 如果滚轮向下滚动
+                        else if (delta < 0)
+                        {
+                            // 如果当前已到达最底部，滚动到下一个节点
+                            if (treeView1.TopNode != null && treeView1.TopNode.NextNode != null)
+                            {
+                                treeView1.TopNode = treeView1.TopNode.NextNode;
+                            }
+                        }
+
+                        Console.WriteLine("滚动");
                     }
                     break;
             }
